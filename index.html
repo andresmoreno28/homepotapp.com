@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HomePot - Shared Expenses Made Simple</title>
+  <meta name="description" content="HomePot makes shared expenses effortless. Track, split, and settle expenses with your group. Free for iOS.">
+  <link rel="icon" type="image/png" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🏠</text></svg>">
+  <style>
+    :root {
+      --primary: #1B3A4B;
+      --secondary: #4ECDC4;
+      --accent: #FF6B6B;
+      --light: #F8FAFC;
+      --gray: #64748B;
+      --white: #FFFFFF;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      color: var(--primary);
+      background: var(--light);
+      line-height: 1.6;
+    }
+    .container { max-width: 800px; margin: 0 auto; padding: 0 24px; }
+
+    /* Hero */
+    .hero {
+      text-align: center;
+      padding: 80px 24px 60px;
+      background: linear-gradient(135deg, var(--primary) 0%, #2C5F6E 100%);
+      color: var(--white);
+    }
+    .hero-logo { font-size: 64px; margin-bottom: 16px; }
+    .hero h1 { font-size: 2.5rem; font-weight: 800; margin-bottom: 8px; }
+    .hero .subtitle { font-size: 1.2rem; opacity: 0.85; margin-bottom: 32px; }
+    .badge {
+      display: inline-block;
+      background: var(--secondary);
+      color: var(--primary);
+      padding: 12px 32px;
+      border-radius: 30px;
+      font-weight: 700;
+      font-size: 1rem;
+      text-decoration: none;
+    }
+
+    /* Features */
+    .features {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 24px;
+      padding: 60px 24px;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+    .feature {
+      background: var(--white);
+      border-radius: 16px;
+      padding: 28px 24px;
+      text-align: center;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+    }
+    .feature-icon { font-size: 2rem; margin-bottom: 12px; }
+    .feature h3 { font-size: 1rem; margin-bottom: 6px; }
+    .feature p { font-size: 0.875rem; color: var(--gray); }
+
+    /* Footer */
+    footer {
+      text-align: center;
+      padding: 40px 24px;
+      color: var(--gray);
+      font-size: 0.875rem;
+    }
+    footer a { color: var(--secondary); text-decoration: none; }
+    footer a:hover { text-decoration: underline; }
+    .footer-links { margin-bottom: 12px; }
+    .footer-links a { margin: 0 12px; }
+  </style>
+</head>
+<body>
+  <div class="hero">
+    <div class="hero-logo">🏠</div>
+    <h1>HomePot</h1>
+    <p class="subtitle">Shared expenses made simple. Track, split, and settle with your group.</p>
+    <a href="https://apps.apple.com/app/homepot/id6759216594" class="badge">Download on the App Store</a>
+  </div>
+
+  <div class="features">
+    <div class="feature">
+      <div class="feature-icon">💰</div>
+      <h3>Track Expenses</h3>
+      <p>Record shared expenses instantly. Categorize, add receipts, and keep everything organized.</p>
+    </div>
+    <div class="feature">
+      <div class="feature-icon">🤖</div>
+      <h3>AI Receipt Scanner</h3>
+      <p>Snap a photo of any receipt and HomePot extracts the amount, items, and store automatically.</p>
+    </div>
+    <div class="feature">
+      <div class="feature-icon">📊</div>
+      <h3>Smart Analytics</h3>
+      <p>Interactive charts, spending trends, and monthly comparisons at a glance.</p>
+    </div>
+    <div class="feature">
+      <div class="feature-icon">🔄</div>
+      <h3>Fair Settlements</h3>
+      <p>Monthly close calculates exactly who owes what. Settle up in seconds.</p>
+    </div>
+    <div class="feature">
+      <div class="feature-icon">🔒</div>
+      <h3>Private & Secure</h3>
+      <p>Encrypted storage, GDPR compliant. No ads, no tracking, no data selling.</p>
+    </div>
+    <div class="feature">
+      <div class="feature-icon">🌍</div>
+      <h3>Multi-Language</h3>
+      <p>Available in English, Spanish, French, German, and Portuguese with 10+ currencies.</p>
+    </div>
+  </div>
+
+  <footer>
+    <div class="footer-links">
+      <a href="/privacy">Privacy Policy</a>
+      <a href="/support">Support</a>
+    </div>
+    <p>&copy; 2026 HomePot. All rights reserved.</p>
+    <p style="margin-top: 8px;">Contact: <a href="mailto:homepotapp@gmail.com">homepotapp@gmail.com</a></p>
+  </footer>
+</body>
+</html>
