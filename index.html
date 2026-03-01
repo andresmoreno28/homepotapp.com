@@ -3,129 +3,597 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>HomePot - Shared Expenses Made Simple</title>
+  <title>HomePot — Shared Expenses Made Simple</title>
   <meta name="description" content="HomePot makes shared expenses effortless. Track, split, and settle expenses with your group. Free for iOS.">
-  <link rel="icon" type="image/png" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🏠</text></svg>">
+  <meta property="og:title" content="HomePot — Shared Expenses Made Simple">
+  <meta property="og:description" content="Track, split, and settle shared expenses in seconds. Built for couples, roommates, and families.">
+  <meta property="og:image" content="https://homepotapp.com/assets/screenshots/dashboard.png">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://homepotapp.com">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🏠</text></svg>">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" rel="stylesheet">
+
+  <!-- Tailwind CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            cream: '#F4F1DE',
+            darkBlue: '#3D405B',
+            terracotta: '#E07A5F',
+            sage: '#81B29A',
+            yellowSoft: '#F2CC8F',
+          },
+          fontFamily: {
+            sans: ['"Plus Jakarta Sans"', 'system-ui', 'sans-serif'],
+          },
+        },
+      },
+    }
+  </script>
+
   <style>
-    :root {
-      --primary: #1B3A4B;
-      --secondary: #4ECDC4;
-      --accent: #FF6B6B;
-      --light: #F8FAFC;
-      --gray: #64748B;
-      --white: #FFFFFF;
-    }
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-    body {
-      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-      color: var(--primary);
-      background: var(--light);
-      line-height: 1.6;
-    }
-    .container { max-width: 800px; margin: 0 auto; padding: 0 24px; }
-
-    /* Hero */
-    .hero {
-      text-align: center;
-      padding: 80px 24px 60px;
-      background: linear-gradient(135deg, var(--primary) 0%, #2C5F6E 100%);
-      color: var(--white);
-    }
-    .hero-logo { font-size: 64px; margin-bottom: 16px; }
-    .hero h1 { font-size: 2.5rem; font-weight: 800; margin-bottom: 8px; }
-    .hero .subtitle { font-size: 1.2rem; opacity: 0.85; margin-bottom: 32px; }
-    .badge {
-      display: inline-block;
-      background: var(--secondary);
-      color: var(--primary);
-      padding: 12px 32px;
-      border-radius: 30px;
-      font-weight: 700;
-      font-size: 1rem;
-      text-decoration: none;
+    /* Grain texture */
+    .grain-bg { position: relative; }
+    .grain-bg::before {
+      content: ""; position: absolute; inset: 0;
+      opacity: 0.03; pointer-events: none; z-index: 1;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
     }
 
-    /* Features */
-    .features {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 24px;
-      padding: 60px 24px;
-      max-width: 800px;
-      margin: 0 auto;
-    }
-    .feature {
-      background: var(--white);
-      border-radius: 16px;
-      padding: 28px 24px;
-      text-align: center;
-      box-shadow: 0 2px 12px rgba(0,0,0,0.06);
-    }
-    .feature-icon { font-size: 2rem; margin-bottom: 12px; }
-    .feature h3 { font-size: 1rem; margin-bottom: 6px; }
-    .feature p { font-size: 0.875rem; color: var(--gray); }
+    /* Scroll reveals */
+    .reveal { opacity: 0; transform: translateY(30px); transition: opacity 0.7s ease, transform 0.7s ease; }
+    .reveal.visible { opacity: 1; transform: translateY(0); }
+    .reveal-delay-1 { transition-delay: 0.1s; }
+    .reveal-delay-2 { transition-delay: 0.2s; }
+    .reveal-delay-3 { transition-delay: 0.3s; }
 
-    /* Footer */
-    footer {
-      text-align: center;
-      padding: 40px 24px;
-      color: var(--gray);
-      font-size: 0.875rem;
+    @media (prefers-reduced-motion: reduce) {
+      .reveal { opacity: 1; transform: none; transition: none; }
     }
-    footer a { color: var(--secondary); text-decoration: none; }
-    footer a:hover { text-decoration: underline; }
-    .footer-links { margin-bottom: 12px; }
-    .footer-links a { margin: 0 12px; }
+
+    /* Smooth scroll */
+    html { scroll-behavior: smooth; }
   </style>
 </head>
-<body>
-  <div class="hero">
-    <div class="hero-logo">🏠</div>
-    <h1>HomePot</h1>
-    <p class="subtitle">Shared expenses made simple. Track, split, and settle with your group.</p>
-    <a href="https://apps.apple.com/app/homepot/id6759216594" class="badge">Download on the App Store</a>
-  </div>
+<body class="font-sans text-darkBlue antialiased">
 
-  <div class="features">
-    <div class="feature">
-      <div class="feature-icon">💰</div>
-      <h3>Track Expenses</h3>
-      <p>Record shared expenses instantly. Categorize, add receipts, and keep everything organized.</p>
-    </div>
-    <div class="feature">
-      <div class="feature-icon">🤖</div>
-      <h3>AI Receipt Scanner</h3>
-      <p>Snap a photo of any receipt and HomePot extracts the amount, items, and store automatically.</p>
-    </div>
-    <div class="feature">
-      <div class="feature-icon">📊</div>
-      <h3>Smart Analytics</h3>
-      <p>Interactive charts, spending trends, and monthly comparisons at a glance.</p>
-    </div>
-    <div class="feature">
-      <div class="feature-icon">🔄</div>
-      <h3>Fair Settlements</h3>
-      <p>Monthly close calculates exactly who owes what. Settle up in seconds.</p>
-    </div>
-    <div class="feature">
-      <div class="feature-icon">🔒</div>
-      <h3>Private & Secure</h3>
-      <p>Encrypted storage, GDPR compliant. No ads, no tracking, no data selling.</p>
-    </div>
-    <div class="feature">
-      <div class="feature-icon">🌍</div>
-      <h3>Multi-Language</h3>
-      <p>Available in English, Spanish, French, German, and Portuguese with 10+ currencies.</p>
-    </div>
-  </div>
+  <!-- ========== 1. NAVBAR ========== -->
+  <nav data-navbar class="fixed top-0 inset-x-0 z-50 transition-shadow duration-300" style="backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); background: rgba(244,241,222,0.8);">
+    <div class="max-w-7xl mx-auto flex items-center justify-between px-6 py-4">
+      <!-- Logo -->
+      <a href="/" class="flex items-center gap-2">
+        <div class="w-10 h-10 bg-terracotta rounded-xl flex items-center justify-center">
+          <span class="material-symbols-outlined text-white text-xl">home</span>
+        </div>
+        <span class="text-xl font-extrabold text-darkBlue">HomePot</span>
+      </a>
 
-  <footer>
-    <div class="footer-links">
-      <a href="/privacy">Privacy Policy</a>
-      <a href="/support">Support</a>
+      <!-- Language pills (desktop) -->
+      <div class="hidden lg:flex items-center gap-1 rounded-full px-2 py-1" style="background: rgba(244,241,222,0.6); backdrop-filter: blur(8px);">
+        <a href="#" data-lang="en" class="px-3 py-1 rounded-full text-sm font-semibold text-darkBlue transition-colors">EN</a>
+        <a href="#" data-lang="es" class="px-3 py-1 rounded-full text-sm text-darkBlue/40 transition-colors">ES</a>
+        <a href="#" data-lang="fr" class="px-3 py-1 rounded-full text-sm text-darkBlue/40 transition-colors">FR</a>
+        <a href="#" data-lang="de" class="px-3 py-1 rounded-full text-sm text-darkBlue/40 transition-colors">DE</a>
+        <a href="#" data-lang="pt" class="px-3 py-1 rounded-full text-sm text-darkBlue/40 transition-colors">PT</a>
+      </div>
+
+      <!-- Download button -->
+      <a href="https://apps.apple.com/app/homepot/id6759216594" class="bg-terracotta text-white px-5 py-2.5 rounded-full text-sm font-semibold hover:bg-terracotta/90 transition-colors" data-i18n="nav.download">Download</a>
     </div>
-    <p>&copy; 2026 HomePot. All rights reserved.</p>
-    <p style="margin-top: 8px;">Contact: <a href="mailto:homepotapp@gmail.com">homepotapp@gmail.com</a></p>
+  </nav>
+
+  <!-- ========== 2. HERO ========== -->
+  <section class="min-h-screen bg-cream grain-bg flex items-center pt-20">
+    <div class="max-w-7xl mx-auto px-6 py-16 lg:py-24 w-full">
+      <div class="grid lg:grid-cols-12 gap-12 lg:gap-16 items-center">
+        <!-- Text side -->
+        <div class="lg:col-span-7 relative z-10">
+          <!-- Badge -->
+          <div class="inline-flex items-center gap-2 bg-sage/10 text-sage rounded-full px-4 py-2 text-sm font-medium mb-6">
+            <span class="relative flex h-2.5 w-2.5">
+              <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-sage opacity-75"></span>
+              <span class="relative inline-flex rounded-full h-2.5 w-2.5 bg-sage"></span>
+            </span>
+            <span data-i18n="hero.badge">Free for iOS</span>
+          </div>
+
+          <!-- Headline -->
+          <h1 class="text-4xl lg:text-[56px] font-extrabold text-darkBlue leading-tight mb-6" data-i18n="hero.headline">Stop fighting about money.</h1>
+
+          <!-- Subtitle -->
+          <p class="text-lg lg:text-xl text-gray-500 mb-8 max-w-xl" data-i18n="hero.subtitle">Track, split, and settle shared expenses in seconds. Built for couples, roommates, and families who want peace.</p>
+
+          <!-- CTAs -->
+          <div class="flex flex-col sm:flex-row items-start sm:items-center gap-4 mb-8">
+            <!-- App Store button -->
+            <a href="https://apps.apple.com/app/homepot/id6759216594" class="inline-flex items-center gap-3 bg-darkBlue text-white rounded-xl px-6 py-3.5 hover:bg-darkBlue/90 transition-colors">
+              <svg class="w-7 h-7" viewBox="0 0 24 24" fill="currentColor"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>
+              <div class="text-left">
+                <span class="text-xs opacity-80 block" data-i18n="hero.cta_appstore">Download on the</span>
+                <span class="text-lg font-semibold leading-tight" data-i18n="hero.cta_appstore_sub">App Store</span>
+              </div>
+            </a>
+            <!-- Learn more button -->
+            <a href="#features" data-scroll-to="#features" class="inline-flex items-center gap-2 text-terracotta font-semibold border-2 border-terracotta rounded-xl px-6 py-3.5 hover:bg-terracotta/5 transition-colors">
+              <span data-i18n="hero.cta_learn">Learn more</span>
+              <span class="material-symbols-outlined text-xl">arrow_downward</span>
+            </a>
+          </div>
+
+          <!-- Trust badges -->
+          <div class="flex flex-wrap items-center gap-4 text-sm text-gray-500">
+            <span class="flex items-center gap-1.5"><span class="material-symbols-outlined text-sage text-lg">check_circle</span><span data-i18n="hero.trust_noads">No ads</span></span>
+            <span class="text-gray-300">·</span>
+            <span class="flex items-center gap-1.5"><span class="material-symbols-outlined text-sage text-lg">check_circle</span><span data-i18n="hero.trust_notracking">No tracking</span></span>
+            <span class="text-gray-300">·</span>
+            <span class="flex items-center gap-1.5"><span class="material-symbols-outlined text-sage text-lg">check_circle</span><span data-i18n="hero.trust_gdpr">GDPR compliant</span></span>
+          </div>
+        </div>
+
+        <!-- Phone side (desktop) -->
+        <div class="hidden lg:flex lg:col-span-5 relative justify-center items-center min-h-[500px]">
+          <!-- Decorative blobs -->
+          <div class="absolute w-[500px] h-[500px] bg-yellowSoft rounded-full blur-[120px] opacity-15 -top-10 -right-20"></div>
+          <div class="absolute w-[400px] h-[400px] bg-sage rounded-full blur-[100px] opacity-10 bottom-0 -left-10"></div>
+          <!-- Back phone -->
+          <img src="assets/screenshots/stats.png" alt="HomePot statistics" class="absolute max-w-[280px] rounded-[2.5rem] shadow-2xl transform rotate-[5deg] translate-x-8 -translate-y-4 z-10">
+          <!-- Front phone -->
+          <img src="assets/screenshots/dashboard.png" alt="HomePot dashboard" class="relative max-w-[280px] rounded-[2.5rem] shadow-2xl transform -rotate-[5deg] -translate-x-4 translate-y-4 z-20">
+        </div>
+
+        <!-- Phone side (mobile - single phone) -->
+        <div class="flex lg:hidden justify-center">
+          <img src="assets/screenshots/dashboard.png" alt="HomePot dashboard" class="max-w-[260px] rounded-[2.5rem] shadow-2xl">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== 3. SOCIAL PROOF BAR ========== -->
+  <section class="bg-white py-12">
+    <div class="max-w-5xl mx-auto px-6 reveal">
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
+        <div class="flex flex-col items-center gap-2">
+          <span class="material-symbols-outlined text-sage text-3xl">translate</span>
+          <span class="font-semibold text-darkBlue" data-i18n="social.languages">5 Languages</span>
+        </div>
+        <div class="flex flex-col items-center gap-2">
+          <span class="material-symbols-outlined text-sage text-3xl">currency_exchange</span>
+          <span class="font-semibold text-darkBlue" data-i18n="social.currencies">10+ Currencies</span>
+        </div>
+        <div class="flex flex-col items-center gap-2">
+          <span class="material-symbols-outlined text-sage text-3xl">block</span>
+          <span class="font-semibold text-darkBlue" data-i18n="social.noads">No Ads</span>
+        </div>
+        <div class="flex flex-col items-center gap-2">
+          <span class="material-symbols-outlined text-sage text-3xl">verified_user</span>
+          <span class="font-semibold text-darkBlue" data-i18n="social.gdpr">GDPR Compliant</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== 4. FEATURE 1 — Smart Tracking ========== -->
+  <section id="features" class="bg-white py-20 lg:py-28">
+    <div class="max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-12 lg:gap-20 items-center reveal">
+      <!-- Text LEFT -->
+      <div>
+        <span class="inline-block bg-sage/10 text-sage text-sm font-semibold px-4 py-1.5 rounded-full mb-4" data-i18n="f1.pill">Smart Tracking</span>
+        <h2 class="text-3xl lg:text-5xl font-extrabold text-darkBlue mb-4" data-i18n="f1.title">Add expenses in seconds</h2>
+        <p class="text-lg text-gray-500 mb-6" data-i18n="f1.desc">One tap, choose a category, done. No more awkward 'who paid for what?' conversations.</p>
+        <div class="flex items-center gap-2 text-sage font-medium">
+          <span class="material-symbols-outlined">check_circle</span>
+          <span data-i18n="f1.bullet">Smart categories & recurring expenses</span>
+        </div>
+      </div>
+      <!-- Phone RIGHT -->
+      <div class="relative flex justify-center">
+        <div class="absolute w-[350px] h-[350px] bg-sage rounded-full blur-[100px] opacity-10 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"></div>
+        <img src="assets/screenshots/expense.png" alt="Add expense screen" loading="lazy" class="relative max-w-[300px] mx-auto rounded-[2rem] shadow-2xl transform rotate-2 hover:rotate-0 transition-transform duration-500">
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== 5. FEATURE 2 — AI Powered ========== -->
+  <section class="bg-cream grain-bg py-20 lg:py-28">
+    <div class="max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-12 lg:gap-20 items-center reveal">
+      <!-- Phone LEFT -->
+      <div class="relative flex justify-center order-2 lg:order-1">
+        <div class="absolute w-[350px] h-[350px] bg-terracotta rounded-full blur-[100px] opacity-10 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"></div>
+        <img src="assets/screenshots/paywall.png" alt="AI receipt scanner" loading="lazy" class="relative max-w-[300px] mx-auto rounded-[2rem] shadow-2xl transform -rotate-2 hover:rotate-0 transition-transform duration-500">
+      </div>
+      <!-- Text RIGHT -->
+      <div class="order-1 lg:order-2">
+        <span class="inline-block bg-terracotta/10 text-terracotta text-sm font-semibold px-4 py-1.5 rounded-full mb-4" data-i18n="f2.pill">AI Powered</span>
+        <h2 class="text-3xl lg:text-5xl font-extrabold text-darkBlue mb-4" data-i18n="f2.title">Scan receipts with AI</h2>
+        <p class="text-lg text-gray-500 mb-6" data-i18n="f2.desc">Point your camera at any receipt. Amount, merchant, items — extracted automatically.</p>
+        <div class="flex items-center gap-2 text-terracotta font-medium">
+          <span class="material-symbols-outlined">auto_awesome</span>
+          <span data-i18n="f2.bullet">Line items & confidence detection</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== 6. FEATURE 3 — Real-Time ========== -->
+  <section class="bg-white py-20 lg:py-28">
+    <div class="max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-12 lg:gap-20 items-center reveal">
+      <!-- Text LEFT -->
+      <div>
+        <span class="inline-block bg-sage/10 text-sage text-sm font-semibold px-4 py-1.5 rounded-full mb-4" data-i18n="f3.pill">Real-Time</span>
+        <h2 class="text-3xl lg:text-5xl font-extrabold text-darkBlue mb-4" data-i18n="f3.title">Always know who owes what</h2>
+        <p class="text-lg text-gray-500 mb-6" data-i18n="f3.desc">Live balances, spending breakdown, fixed vs variable. Everyone sees the same numbers, no more guessing.</p>
+        <div class="flex items-center gap-2 text-sage font-medium">
+          <span class="material-symbols-outlined">sync_alt</span>
+          <span data-i18n="f3.bullet">Shared Fund & Expense Split modes</span>
+        </div>
+      </div>
+      <!-- Phone RIGHT -->
+      <div class="relative flex justify-center">
+        <div class="absolute w-[350px] h-[350px] bg-sage rounded-full blur-[100px] opacity-10 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"></div>
+        <img src="assets/screenshots/dashboard.png" alt="Real-time balances" loading="lazy" class="relative max-w-[300px] mx-auto rounded-[2rem] shadow-2xl transform rotate-2 hover:rotate-0 transition-transform duration-500">
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== 7. FEATURE 4 — One Tap ========== -->
+  <section class="bg-cream grain-bg py-20 lg:py-28">
+    <div class="max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-12 lg:gap-20 items-center reveal">
+      <!-- Phone LEFT -->
+      <div class="relative flex justify-center order-2 lg:order-1">
+        <div class="absolute w-[350px] h-[350px] bg-terracotta rounded-full blur-[100px] opacity-10 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"></div>
+        <img src="assets/screenshots/close-month.png" alt="Monthly settlement" loading="lazy" class="relative max-w-[300px] mx-auto rounded-[2rem] shadow-2xl transform -rotate-2 hover:rotate-0 transition-transform duration-500">
+      </div>
+      <!-- Text RIGHT -->
+      <div class="order-1 lg:order-2">
+        <span class="inline-block bg-terracotta/10 text-terracotta text-sm font-semibold px-4 py-1.5 rounded-full mb-4" data-i18n="f4.pill">One Tap</span>
+        <h2 class="text-3xl lg:text-5xl font-extrabold text-darkBlue mb-4" data-i18n="f4.title">Settle up with one tap</h2>
+        <p class="text-lg text-gray-500 mb-6" data-i18n="f4.desc">Monthly close calculates the minimum transfers needed. See who owes whom, confirm, done.</p>
+        <div class="flex items-center gap-2 text-terracotta font-medium">
+          <span class="material-symbols-outlined">payments</span>
+          <span data-i18n="f4.bullet">Fair calculations, minimized transfers</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== 8. FEATURE 5 — Insights ========== -->
+  <section class="bg-white py-20 lg:py-28">
+    <div class="max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-12 lg:gap-20 items-center reveal">
+      <!-- Text LEFT -->
+      <div>
+        <span class="inline-block bg-sage/10 text-sage text-sm font-semibold px-4 py-1.5 rounded-full mb-4" data-i18n="f5.pill">Insights</span>
+        <h2 class="text-3xl lg:text-5xl font-extrabold text-darkBlue mb-4" data-i18n="f5.title">See where your money goes</h2>
+        <p class="text-lg text-gray-500 mb-6" data-i18n="f5.desc">Interactive charts, category breakdowns, and spending trends. Knowledge is power.</p>
+        <div class="flex items-center gap-2 text-sage font-medium">
+          <span class="material-symbols-outlined">bar_chart</span>
+          <span data-i18n="f5.bullet">Export CSV & PDF anytime</span>
+        </div>
+      </div>
+      <!-- Phone RIGHT -->
+      <div class="relative flex justify-center">
+        <div class="absolute w-[350px] h-[350px] bg-sage rounded-full blur-[100px] opacity-10 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"></div>
+        <img src="assets/screenshots/stats.png" alt="Statistics and charts" loading="lazy" class="relative max-w-[300px] mx-auto rounded-[2rem] shadow-2xl transform rotate-2 hover:rotate-0 transition-transform duration-500">
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== 9. HOW IT WORKS ========== -->
+  <section class="bg-cream grain-bg py-20 lg:py-28">
+    <div class="max-w-5xl mx-auto px-6">
+      <h2 class="text-3xl lg:text-5xl font-extrabold text-darkBlue text-center mb-16 reveal" data-i18n="how.title">Get started in under a minute</h2>
+
+      <div class="relative grid md:grid-cols-3 gap-8">
+        <!-- Dotted connector -->
+        <div class="hidden md:block absolute top-12 left-[20%] right-[20%] border-t-2 border-dashed border-darkBlue/10"></div>
+
+        <!-- Step 1 -->
+        <div class="bg-white rounded-2xl p-8 shadow-sm hover:shadow-md transition-shadow text-center relative reveal reveal-delay-1">
+          <div class="w-16 h-16 bg-sage/15 rounded-full flex items-center justify-center mx-auto mb-5">
+            <span class="material-symbols-outlined text-sage text-3xl">cottage</span>
+          </div>
+          <h3 class="text-lg font-bold text-darkBlue mb-2" data-i18n="how.step1_title">Create your group</h3>
+          <p class="text-gray-500" data-i18n="how.step1_desc">Sign up and invite your roommates or partner. Takes 30 seconds.</p>
+        </div>
+
+        <!-- Step 2 -->
+        <div class="bg-white rounded-2xl p-8 shadow-sm hover:shadow-md transition-shadow text-center relative reveal reveal-delay-2">
+          <div class="w-16 h-16 bg-terracotta/15 rounded-full flex items-center justify-center mx-auto mb-5">
+            <span class="material-symbols-outlined text-terracotta text-3xl">receipt_long</span>
+          </div>
+          <h3 class="text-lg font-bold text-darkBlue mb-2" data-i18n="how.step2_title">Add shared expenses</h3>
+          <p class="text-gray-500" data-i18n="how.step2_desc">Snap a receipt or add manually. We handle the math.</p>
+        </div>
+
+        <!-- Step 3 -->
+        <div class="bg-white rounded-2xl p-8 shadow-sm hover:shadow-md transition-shadow text-center relative reveal reveal-delay-3">
+          <div class="w-16 h-16 bg-yellowSoft/30 rounded-full flex items-center justify-center mx-auto mb-5">
+            <span class="material-symbols-outlined text-yellowSoft text-3xl">check_circle</span>
+          </div>
+          <h3 class="text-lg font-bold text-darkBlue mb-2" data-i18n="how.step3_title">Settle up monthly</h3>
+          <p class="text-gray-500" data-i18n="how.step3_desc">See who owes what and settle debts with minimal transfers.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== 10. PRICING ========== -->
+  <section id="pricing" class="bg-white py-20 lg:py-28">
+    <div class="max-w-5xl mx-auto px-6">
+      <div class="text-center mb-12 reveal">
+        <h2 class="text-3xl lg:text-5xl font-extrabold text-darkBlue mb-4" data-i18n="pricing.title">Simple, honest pricing</h2>
+        <p class="text-lg text-gray-500" data-i18n="pricing.subtitle">Start for free, upgrade when you need more.</p>
+      </div>
+
+      <!-- Toggle -->
+      <div class="flex items-center justify-center gap-4 mb-12 reveal">
+        <span class="text-sm font-medium text-darkBlue" data-i18n="pricing.monthly">Monthly</span>
+        <button data-pricing-toggle role="switch" aria-checked="true" class="relative inline-flex h-7 w-12 items-center rounded-full bg-terracotta transition-colors focus:outline-none focus:ring-2 focus:ring-terracotta/50">
+          <span class="inline-block h-5 w-5 transform rounded-full bg-white shadow transition-transform translate-x-5"></span>
+        </button>
+        <span class="text-sm font-medium text-darkBlue" data-i18n="pricing.annual">Annual</span>
+        <span class="bg-sage/15 text-sage text-xs font-bold px-3 py-1 rounded-full" data-i18n="pricing.save">Save 42%</span>
+      </div>
+
+      <!-- Cards -->
+      <div class="grid lg:grid-cols-2 max-w-4xl mx-auto gap-8 reveal">
+        <!-- Free card -->
+        <div class="ring-1 ring-gray-200 rounded-3xl p-8">
+          <h3 class="text-2xl font-bold text-darkBlue mb-1" data-i18n="pricing.free_name">Free</h3>
+          <p class="text-gray-500 text-sm mb-6" data-i18n="pricing.free_desc">Perfect for getting started.</p>
+          <div class="flex items-baseline gap-1 mb-8">
+            <span class="text-4xl font-extrabold text-darkBlue" data-i18n="pricing.free_price">$0</span>
+            <span class="text-gray-400" data-i18n="pricing.free_period">/month</span>
+          </div>
+          <ul class="space-y-3 mb-8">
+            <li class="flex items-center gap-2 text-sm"><span class="material-symbols-outlined text-terracotta text-lg">check</span><span data-i18n="pricing.free_f1">1 group</span></li>
+            <li class="flex items-center gap-2 text-sm"><span class="material-symbols-outlined text-terracotta text-lg">check</span><span data-i18n="pricing.free_f2">Unlimited expenses</span></li>
+            <li class="flex items-center gap-2 text-sm"><span class="material-symbols-outlined text-terracotta text-lg">check</span><span data-i18n="pricing.free_f3">Multi-currency</span></li>
+            <li class="flex items-center gap-2 text-sm"><span class="material-symbols-outlined text-terracotta text-lg">check</span><span data-i18n="pricing.free_f4">Cloud sync</span></li>
+          </ul>
+          <a href="https://apps.apple.com/app/homepot/id6759216594" class="block text-center border-2 border-darkBlue text-darkBlue font-semibold rounded-full py-3 hover:bg-darkBlue/5 transition-colors" data-i18n="pricing.free_cta">Start Free</a>
+        </div>
+
+        <!-- Pro card -->
+        <div class="ring-2 ring-terracotta rounded-3xl p-8 relative">
+          <div class="absolute -top-4 left-1/2 -translate-x-1/2 bg-terracotta text-white text-xs font-bold px-4 py-1.5 rounded-full" data-i18n="pricing.pro_badge">Most Popular</div>
+          <h3 class="text-2xl font-bold text-terracotta mb-1" data-i18n="pricing.pro_name">Pro</h3>
+          <p class="text-gray-500 text-sm mb-6" data-i18n="pricing.pro_desc">For power users who want the full experience.</p>
+          <!-- Monthly price (hidden by default since annual is on) -->
+          <div data-price-monthly class="hidden flex items-baseline gap-1 mb-8">
+            <span class="text-4xl font-extrabold text-darkBlue" data-i18n="pricing.pro_price_monthly">&euro;4.99</span>
+            <span class="text-gray-400" data-i18n="pricing.pro_period_monthly">/month</span>
+          </div>
+          <!-- Annual price (shown by default) -->
+          <div data-price-annual class="flex items-baseline gap-1 mb-8">
+            <span class="text-4xl font-extrabold text-darkBlue" data-i18n="pricing.pro_price_annual">&euro;2.92</span>
+            <span class="text-gray-400" data-i18n="pricing.pro_period_annual">/mo, billed annually</span>
+          </div>
+          <ul class="space-y-3 mb-8">
+            <li class="flex items-center gap-2 text-sm"><span class="material-symbols-outlined text-terracotta text-lg">check</span><span data-i18n="pricing.pro_f1">Unlimited groups</span></li>
+            <li class="flex items-center gap-2 text-sm"><span class="material-symbols-outlined text-terracotta text-lg">check</span><span data-i18n="pricing.pro_f2">AI Receipt Scanner</span></li>
+            <li class="flex items-center gap-2 text-sm"><span class="material-symbols-outlined text-terracotta text-lg">check</span><span data-i18n="pricing.pro_f3">CSV & PDF Export</span></li>
+            <li class="flex items-center gap-2 text-sm"><span class="material-symbols-outlined text-terracotta text-lg">check</span><span data-i18n="pricing.pro_f4">Smart Analytics</span></li>
+            <li class="flex items-center gap-2 text-sm"><span class="material-symbols-outlined text-terracotta text-lg">check</span><span data-i18n="pricing.pro_f5">Recurring Expenses</span></li>
+          </ul>
+          <a href="https://apps.apple.com/app/homepot/id6759216594" class="block text-center bg-terracotta text-white font-semibold rounded-full py-3 hover:bg-terracotta/90 transition-colors" data-i18n="pricing.pro_cta">Go Pro</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== 11. CTA FINAL ========== -->
+  <section class="bg-cream grain-bg py-20 lg:py-28 relative overflow-hidden">
+    <!-- Decorative blobs -->
+    <div class="absolute w-[400px] h-[400px] bg-yellowSoft rounded-full blur-[80px] opacity-15 -top-20 -left-20"></div>
+    <div class="absolute w-[300px] h-[300px] bg-sage rounded-full blur-[80px] opacity-15 -bottom-10 -right-10"></div>
+
+    <div class="max-w-3xl mx-auto px-6 text-center relative z-10">
+      <h2 class="text-3xl lg:text-5xl font-extrabold text-darkBlue mb-4 reveal" data-i18n="cta.title">Ready to stop the money arguments?</h2>
+      <p class="text-lg text-gray-500 mb-10 reveal" data-i18n="cta.subtitle">Join households worldwide managing shared expenses effortlessly.</p>
+
+      <!-- Email form -->
+      <form id="email-form" class="flex flex-col sm:flex-row gap-3 max-w-lg mx-auto mb-4 reveal" onsubmit="return false;">
+        <input type="email" id="email-input" required class="flex-1 rounded-full bg-white py-4 px-6 text-darkBlue placeholder-gray-400 outline-none ring-1 ring-gray-200 focus:ring-terracotta transition-colors" data-i18n-placeholder="cta.placeholder" placeholder="Enter your email">
+        <button type="submit" class="bg-terracotta text-white rounded-full py-4 px-8 font-semibold hover:bg-terracotta/90 transition-colors whitespace-nowrap" data-i18n="cta.button">Get 3 months Pro free</button>
+      </form>
+      <p id="email-success" class="hidden text-sm text-sage font-medium mb-10">Thanks! We'll be in touch soon.</p>
+      <p class="text-sm text-gray-400 mb-10 reveal" data-i18n="cta.disclaimer">No spam, unsubscribe anytime.</p>
+
+      <!-- Trust badges -->
+      <div class="flex flex-wrap items-center justify-center gap-6 text-sm text-gray-500 mb-10 reveal">
+        <span class="flex items-center gap-1.5"><span class="material-symbols-outlined text-sage text-lg">lock</span><span data-i18n="cta.trust_encrypted">Encrypted</span></span>
+        <span class="text-gray-300">·</span>
+        <span class="flex items-center gap-1.5"><span class="material-symbols-outlined text-sage text-lg">verified_user</span><span data-i18n="cta.trust_gdpr">GDPR</span></span>
+        <span class="text-gray-300">·</span>
+        <span class="flex items-center gap-1.5"><span class="material-symbols-outlined text-sage text-lg">visibility_off</span><span data-i18n="cta.trust_notracking">No tracking</span></span>
+      </div>
+
+      <!-- App Store badge -->
+      <a href="https://apps.apple.com/app/homepot/id6759216594" class="inline-flex items-center gap-3 bg-darkBlue text-white rounded-xl px-6 py-3.5 hover:bg-darkBlue/90 transition-colors reveal">
+        <svg class="w-7 h-7" viewBox="0 0 24 24" fill="currentColor"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>
+        <div class="text-left">
+          <span class="text-xs opacity-80 block" data-i18n="hero.cta_appstore">Download on the</span>
+          <span class="text-lg font-semibold leading-tight" data-i18n="hero.cta_appstore_sub">App Store</span>
+        </div>
+      </a>
+    </div>
+  </section>
+
+  <!-- ========== 12. FOOTER ========== -->
+  <footer class="bg-white border-t border-gray-100">
+    <div class="max-w-7xl mx-auto px-6 py-16">
+      <div class="grid md:grid-cols-2 lg:grid-cols-5 gap-12 mb-12">
+        <!-- Logo column -->
+        <div class="lg:col-span-2">
+          <a href="/" class="flex items-center gap-2 mb-4">
+            <div class="w-10 h-10 bg-terracotta rounded-xl flex items-center justify-center">
+              <span class="material-symbols-outlined text-white text-xl">home</span>
+            </div>
+            <span class="text-xl font-extrabold text-darkBlue">HomePot</span>
+          </a>
+          <p class="text-gray-500 text-sm mb-4 max-w-xs" data-i18n="footer.desc">Shared expenses made simple for couples, roommates, and families.</p>
+          <a href="mailto:homepotapp@gmail.com" class="text-sm text-terracotta hover:underline">homepotapp@gmail.com</a>
+        </div>
+
+        <!-- Product -->
+        <div>
+          <h4 class="font-bold text-darkBlue mb-4" data-i18n="footer.product">Product</h4>
+          <ul class="space-y-2 text-sm text-gray-500">
+            <li><a href="#features" class="hover:text-terracotta transition-colors" data-i18n="footer.features">Features</a></li>
+            <li><a href="#pricing" class="hover:text-terracotta transition-colors" data-i18n="footer.pricing">Pricing</a></li>
+            <li><a href="https://apps.apple.com/app/homepot/id6759216594" class="hover:text-terracotta transition-colors" data-i18n="footer.download">Download</a></li>
+          </ul>
+        </div>
+
+        <!-- Support -->
+        <div>
+          <h4 class="font-bold text-darkBlue mb-4" data-i18n="footer.support_title">Support</h4>
+          <ul class="space-y-2 text-sm text-gray-500">
+            <li><a href="/support" class="hover:text-terracotta transition-colors" data-i18n="footer.help">Help Center</a></li>
+            <li><a href="mailto:homepotapp@gmail.com" class="hover:text-terracotta transition-colors" data-i18n="footer.contact">Contact Us</a></li>
+          </ul>
+        </div>
+
+        <!-- Legal -->
+        <div>
+          <h4 class="font-bold text-darkBlue mb-4" data-i18n="footer.legal_title">Legal</h4>
+          <ul class="space-y-2 text-sm text-gray-500">
+            <li><a href="/privacy" class="hover:text-terracotta transition-colors" data-i18n="footer.privacy">Privacy Policy</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Bottom bar -->
+      <div class="border-t border-gray-100 pt-8 flex flex-col md:flex-row items-center justify-between gap-4">
+        <p class="text-sm text-gray-400" data-i18n="footer.copyright">&copy; 2026 HomePot. All rights reserved.</p>
+        <div class="flex items-center gap-4">
+          <!-- Twitter/X -->
+          <a href="#" aria-label="Twitter" class="text-gray-400 hover:text-darkBlue transition-colors">
+            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+          </a>
+          <!-- LinkedIn -->
+          <a href="#" aria-label="LinkedIn" class="text-gray-400 hover:text-darkBlue transition-colors">
+            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+          </a>
+          <!-- Instagram -->
+          <a href="#" aria-label="Instagram" class="text-gray-400 hover:text-darkBlue transition-colors">
+            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+          </a>
+        </div>
+      </div>
+    </div>
   </footer>
+
+  <!-- ========== JAVASCRIPT ========== -->
+  <script>
+    // 1. Scroll Reveal
+    const revealObserver = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if (e.isIntersecting) {
+          e.target.classList.add('visible');
+          revealObserver.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.1 });
+    document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      document.querySelectorAll('.reveal').forEach(el => el.classList.add('visible'));
+    }
+
+    // 2. Navbar scroll shadow
+    const navbar = document.querySelector('[data-navbar]');
+    window.addEventListener('scroll', () => {
+      navbar.classList.toggle('shadow-sm', window.scrollY > 50);
+    });
+
+    // 3. i18n
+    let currentLang = localStorage.getItem('homepot_lang') ||
+      (['en','es','fr','de','pt'].includes(navigator.language.slice(0,2)) ? navigator.language.slice(0,2) : 'en');
+    let translations = {};
+
+    async function loadTranslations() {
+      const res = await fetch('i18n/translations.json');
+      translations = await res.json();
+      setLang(currentLang);
+    }
+
+    function setLang(lang) {
+      currentLang = lang;
+      localStorage.setItem('homepot_lang', lang);
+      document.querySelectorAll('[data-i18n]').forEach(el => {
+        const key = el.dataset.i18n;
+        if (translations[lang]?.[key]) el.textContent = translations[lang][key];
+      });
+      document.querySelectorAll('[data-i18n-placeholder]').forEach(el => {
+        const key = el.dataset.i18nPlaceholder;
+        if (translations[lang]?.[key]) el.placeholder = translations[lang][key];
+      });
+      document.querySelectorAll('[data-lang]').forEach(pill => {
+        pill.classList.toggle('text-darkBlue', pill.dataset.lang === lang);
+        pill.classList.toggle('font-semibold', pill.dataset.lang === lang);
+        pill.classList.toggle('text-darkBlue/40', pill.dataset.lang !== lang);
+      });
+      document.documentElement.lang = lang;
+    }
+
+    document.querySelectorAll('[data-lang]').forEach(pill => {
+      pill.addEventListener('click', e => { e.preventDefault(); setLang(pill.dataset.lang); });
+    });
+    loadTranslations();
+
+    // 4. Pricing toggle
+    const pricingToggle = document.querySelector('[data-pricing-toggle]');
+    if (pricingToggle) {
+      let isAnnual = true;
+      pricingToggle.addEventListener('click', () => {
+        isAnnual = !isAnnual;
+        pricingToggle.setAttribute('aria-checked', isAnnual);
+        pricingToggle.querySelector('span').classList.toggle('translate-x-5', isAnnual);
+        pricingToggle.querySelector('span').classList.toggle('translate-x-0', !isAnnual);
+        pricingToggle.classList.toggle('bg-terracotta', isAnnual);
+        pricingToggle.classList.toggle('bg-gray-300', !isAnnual);
+        document.querySelectorAll('[data-price-monthly]').forEach(el => {
+          el.classList.toggle('hidden', isAnnual);
+          if (!isAnnual) el.classList.add('flex');
+          else el.classList.remove('flex');
+        });
+        document.querySelectorAll('[data-price-annual]').forEach(el => {
+          el.classList.toggle('hidden', !isAnnual);
+          if (isAnnual) el.classList.add('flex');
+          else el.classList.remove('flex');
+        });
+      });
+    }
+
+    // 5. Smooth scroll for "Learn more"
+    document.querySelector('[data-scroll-to]')?.addEventListener('click', e => {
+      e.preventDefault();
+      const target = e.currentTarget.dataset.scrollTo || e.currentTarget.getAttribute('data-scroll-to');
+      document.querySelector(target)?.scrollIntoView({ behavior: 'smooth' });
+    });
+
+    // 6. Email form (placeholder until Kit integration)
+    const emailForm = document.getElementById('email-form');
+    if (emailForm) {
+      emailForm.addEventListener('submit', (e) => {
+        e.preventDefault();
+        const email = document.getElementById('email-input').value;
+        if (email) {
+          emailForm.classList.add('hidden');
+          document.getElementById('email-success').classList.remove('hidden');
+        }
+      });
+    }
+  </script>
 </body>
 </html>

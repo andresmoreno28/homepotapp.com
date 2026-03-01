@@ -5,268 +5,347 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Privacy Policy - HomePot</title>
   <meta name="description" content="HomePot Privacy Policy. Learn how we protect your data.">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🏠</text></svg>">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" rel="stylesheet">
+
+  <!-- Tailwind CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            cream: '#F4F1DE',
+            darkBlue: '#3D405B',
+            terracotta: '#E07A5F',
+            sage: '#81B29A',
+            yellowSoft: '#F2CC8F',
+          },
+          fontFamily: {
+            sans: ['"Plus Jakarta Sans"', 'system-ui', 'sans-serif'],
+          },
+        },
+      },
+    }
+  </script>
+
   <style>
-    :root {
-      --primary: #1B3A4B;
-      --secondary: #4ECDC4;
-      --accent: #FF6B6B;
-      --light: #F8FAFC;
-      --gray: #64748B;
-      --white: #FFFFFF;
+    .grain-bg { position: relative; }
+    .grain-bg::before {
+      content: ""; position: absolute; inset: 0;
+      opacity: 0.03; pointer-events: none; z-index: 1;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
     }
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-    body {
-      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-      color: var(--primary);
-      background: var(--light);
-      line-height: 1.7;
-    }
-    .header {
-      background: linear-gradient(135deg, var(--primary) 0%, #2C5F6E 100%);
-      color: var(--white);
-      padding: 40px 24px;
-      text-align: center;
-    }
-    .header a { color: var(--secondary); text-decoration: none; font-size: 0.9rem; }
-    .header h1 { font-size: 2rem; margin-top: 8px; }
-    .header .updated { opacity: 0.7; font-size: 0.9rem; margin-top: 4px; }
-    .container { max-width: 720px; margin: 0 auto; padding: 40px 24px 60px; }
-
-    .highlights {
-      background: rgba(78, 205, 196, 0.08);
-      border: 1px solid rgba(78, 205, 196, 0.25);
-      border-radius: 16px;
-      padding: 24px;
-      margin-bottom: 40px;
-    }
-    .highlights h2 {
-      color: var(--secondary);
-      font-size: 1.1rem;
-      margin-bottom: 12px;
-    }
-    .highlights ul { list-style: none; padding: 0; }
-    .highlights li {
-      padding: 4px 0;
-      padding-left: 24px;
-      position: relative;
-      font-size: 0.95rem;
-    }
-    .highlights li::before {
-      content: "✓";
-      position: absolute;
-      left: 0;
-      color: var(--secondary);
-      font-weight: bold;
-    }
-
-    h2 {
-      font-size: 1.25rem;
-      margin-top: 32px;
-      margin-bottom: 8px;
-      color: var(--primary);
-    }
-    p, li { color: #334155; font-size: 0.95rem; }
-    p { margin-bottom: 12px; }
-    ul { margin-bottom: 12px; padding-left: 24px; }
-    li { margin-bottom: 4px; }
-
-    .summary {
-      background: rgba(255, 107, 107, 0.06);
-      border: 1px solid rgba(255, 107, 107, 0.2);
-      border-radius: 16px;
-      padding: 24px;
-      margin-top: 40px;
-    }
-    .summary h2 { color: var(--accent); margin-top: 0; }
-
-    footer {
-      text-align: center;
-      padding: 32px 24px;
-      color: var(--gray);
-      font-size: 0.85rem;
-    }
-    footer a { color: var(--secondary); text-decoration: none; }
+    html { scroll-behavior: smooth; }
   </style>
 </head>
-<body>
-  <div class="header">
-    <a href="/">&larr; HomePot</a>
-    <h1>Privacy Policy</h1>
-    <p class="updated">Last updated: February 2026</p>
-  </div>
+<body class="font-sans text-darkBlue antialiased bg-gray-50">
 
-  <div class="container">
-    <div class="highlights">
-      <h2>Privacy at a Glance</h2>
-      <ul>
-        <li>Data encrypted in transit and at rest</li>
-        <li>Secure storage on Supabase (AWS)</li>
-        <li>Your data is only shared with your group</li>
-        <li>No tracking, advertising, or third-party analytics</li>
-        <li>You can delete your account and data at any time</li>
-        <li>We comply with GDPR, CCPA, LGPD, and international laws</li>
+  <!-- NAVBAR -->
+  <nav class="fixed top-0 inset-x-0 z-50" style="backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); background: rgba(244,241,222,0.8);">
+    <div class="max-w-7xl mx-auto flex items-center justify-between px-6 py-4">
+      <a href="/" class="flex items-center gap-2">
+        <div class="w-10 h-10 bg-terracotta rounded-xl flex items-center justify-center">
+          <span class="material-symbols-outlined text-white text-xl">home</span>
+        </div>
+        <span class="text-xl font-extrabold text-darkBlue">HomePot</span>
+      </a>
+      <a href="/" class="text-sm text-terracotta font-semibold hover:underline">&larr; Back to home</a>
+    </div>
+  </nav>
+
+  <!-- HEADER -->
+  <section class="bg-cream grain-bg pt-24 pb-16">
+    <div class="max-w-3xl mx-auto px-6 text-center relative z-10">
+      <div class="inline-flex items-center gap-2 bg-sage/10 text-sage rounded-full px-4 py-2 text-sm font-medium mb-6">
+        <span class="material-symbols-outlined text-lg">shield</span>
+        Your data, your rights
+      </div>
+      <h1 class="text-4xl lg:text-5xl font-extrabold text-darkBlue mb-3">Privacy Policy</h1>
+      <p class="text-gray-500 text-lg">Last updated: February 2026</p>
+    </div>
+  </section>
+
+  <!-- CONTENT -->
+  <div class="max-w-3xl mx-auto px-6 -mt-8 relative z-10 pb-20">
+    <div class="bg-white rounded-3xl shadow-sm p-8 lg:p-12">
+
+      <!-- Privacy at a Glance -->
+      <div class="bg-sage/10 border border-sage/20 rounded-2xl p-6 mb-10">
+        <h2 class="text-xl font-bold text-sage mb-4 flex items-center gap-2 mt-0">
+          <span class="material-symbols-outlined">verified_user</span>
+          Privacy at a Glance
+        </h2>
+        <ul class="space-y-3">
+          <li class="flex items-start gap-3 text-gray-600">
+            <span class="material-symbols-outlined text-sage text-xl mt-0.5">check_circle</span>
+            Data encrypted in transit and at rest
+          </li>
+          <li class="flex items-start gap-3 text-gray-600">
+            <span class="material-symbols-outlined text-sage text-xl mt-0.5">check_circle</span>
+            Secure storage on Supabase (AWS)
+          </li>
+          <li class="flex items-start gap-3 text-gray-600">
+            <span class="material-symbols-outlined text-sage text-xl mt-0.5">check_circle</span>
+            Your data is only shared with your group
+          </li>
+          <li class="flex items-start gap-3 text-gray-600">
+            <span class="material-symbols-outlined text-sage text-xl mt-0.5">check_circle</span>
+            No tracking, advertising, or third-party analytics
+          </li>
+          <li class="flex items-start gap-3 text-gray-600">
+            <span class="material-symbols-outlined text-sage text-xl mt-0.5">check_circle</span>
+            You can delete your account and data at any time
+          </li>
+          <li class="flex items-start gap-3 text-gray-600">
+            <span class="material-symbols-outlined text-sage text-xl mt-0.5">check_circle</span>
+            We comply with GDPR, CCPA, LGPD, and international laws
+          </li>
+        </ul>
+      </div>
+
+      <!-- Data Controller -->
+      <h2 class="text-xl font-bold text-darkBlue mt-10 mb-3 flex items-center gap-2">
+        <span class="material-symbols-outlined text-terracotta">business</span>
+        Data Controller
+      </h2>
+      <p class="text-gray-600 mb-3 leading-relaxed">The data controller for your personal data is:</p>
+      <p class="text-gray-600 mb-3 leading-relaxed"><strong class="text-darkBlue font-semibold">HomePot App</strong><br>Email: <a href="mailto:homepotapp@gmail.com" class="text-terracotta hover:underline">homepotapp@gmail.com</a></p>
+      <p class="text-gray-600 mb-3 leading-relaxed">You can contact us at any time to exercise your rights or resolve any privacy-related inquiries.</p>
+
+      <!-- Introduction -->
+      <h2 class="text-xl font-bold text-darkBlue mt-10 mb-3 flex items-center gap-2">
+        <span class="material-symbols-outlined text-terracotta">info</span>
+        Introduction
+      </h2>
+      <p class="text-gray-600 mb-3 leading-relaxed">This Privacy Policy describes how HomePot ("the App", "we", "our") collects, uses, and protects your information when you use our mobile application.</p>
+      <p class="text-gray-600 mb-3 leading-relaxed">We are committed to protecting your privacy. This policy is designed to comply with:</p>
+      <ul class="list-disc pl-6 space-y-1 text-gray-600 mb-4">
+        <li>General Data Protection Regulation (GDPR) &mdash; European Union</li>
+        <li>California Consumer Privacy Act (CCPA) &mdash; California, USA</li>
+        <li>General Data Protection Law (LGPD) &mdash; Brazil</li>
+        <li>Other applicable privacy laws worldwide</li>
       </ul>
-    </div>
+      <p class="text-gray-600 mb-3 leading-relaxed">By using HomePot, you agree to the practices described in this policy.</p>
 
-    <h2>Data Controller</h2>
-    <p>The data controller for your personal data is:</p>
-    <p><strong>HomePot App</strong><br>Email: <a href="mailto:homepotapp@gmail.com">homepotapp@gmail.com</a></p>
-    <p>You can contact us at any time to exercise your rights or resolve any privacy-related inquiries.</p>
+      <!-- Information We Collect -->
+      <h2 class="text-xl font-bold text-darkBlue mt-10 mb-3 flex items-center gap-2">
+        <span class="material-symbols-outlined text-terracotta">database</span>
+        Information We Collect
+      </h2>
+      <p class="text-gray-600 mb-3 leading-relaxed">To provide you with the service, we collect the following information:</p>
+      <ul class="list-disc pl-6 space-y-1 text-gray-600 mb-4">
+        <li><strong class="text-darkBlue font-semibold">Email address:</strong> for authentication and essential communication</li>
+        <li><strong class="text-darkBlue font-semibold">Name:</strong> to identify you within your groups</li>
+        <li><strong class="text-darkBlue font-semibold">Expense data:</strong> amounts, descriptions, categories, and dates you record</li>
+        <li><strong class="text-darkBlue font-semibold">Group data:</strong> group name, invite code, members, and roles</li>
+        <li><strong class="text-darkBlue font-semibold">Recurring expenses:</strong> periodic expense settings</li>
+        <li><strong class="text-darkBlue font-semibold">Monthly closings:</strong> settlement history between members</li>
+        <li><strong class="text-darkBlue font-semibold">Profile photo</strong> (optional): image you choose from your gallery</li>
+        <li><strong class="text-darkBlue font-semibold">Group image</strong> (optional): image that admins assign to the group</li>
+        <li><strong class="text-darkBlue font-semibold">Receipt photos</strong> (optional): images of receipts for expense tracking</li>
+      </ul>
+      <p class="text-gray-600 mb-3 leading-relaxed">Profile, group, and receipt photos are stored in Supabase Storage. They are accessible by members of your groups. You can delete them at any time from Settings.</p>
+      <p class="text-gray-600 mb-3 leading-relaxed">All this information is voluntarily provided by you when using the App.</p>
 
-    <h2>Introduction</h2>
-    <p>This Privacy Policy describes how HomePot ("the App", "we", "our") collects, uses, and protects your information when you use our mobile application.</p>
-    <p>We are committed to protecting your privacy. This policy is designed to comply with:</p>
-    <ul>
-      <li>General Data Protection Regulation (GDPR) &mdash; European Union</li>
-      <li>California Consumer Privacy Act (CCPA) &mdash; California, USA</li>
-      <li>General Data Protection Law (LGPD) &mdash; Brazil</li>
-      <li>Other applicable privacy laws worldwide</li>
-    </ul>
-    <p>By using HomePot, you agree to the practices described in this policy.</p>
+      <!-- Data We Do NOT Collect -->
+      <h2 class="text-xl font-bold text-darkBlue mt-10 mb-3 flex items-center gap-2">
+        <span class="material-symbols-outlined text-terracotta">block</span>
+        Data We Do NOT Collect
+      </h2>
+      <p class="text-gray-600 mb-3 leading-relaxed">We do NOT collect:</p>
+      <ul class="list-disc pl-6 space-y-1 text-gray-600 mb-4">
+        <li>Location or geolocation data</li>
+        <li>Contacts or calendar</li>
+        <li>Advertising identifiers</li>
+        <li>Usage data with third-party analytics</li>
+        <li>Real financial information (bank accounts, cards)</li>
+        <li>Social media information</li>
+        <li>Device identifiers for tracking</li>
+      </ul>
+      <p class="text-gray-600 mb-3 leading-relaxed">Note: the App accesses your photo gallery only when you choose to upload a profile, group, or receipt image. We do not access your camera or scan your gallery without your action. Images are processed locally (compression and cropping) before being uploaded.</p>
 
-    <h2>Information We Collect</h2>
-    <p>To provide you with the service, we collect the following information:</p>
-    <ul>
-      <li><strong>Email address:</strong> for authentication and essential communication</li>
-      <li><strong>Name:</strong> to identify you within your groups</li>
-      <li><strong>Expense data:</strong> amounts, descriptions, categories, and dates you record</li>
-      <li><strong>Group data:</strong> group name, invite code, members, and roles</li>
-      <li><strong>Recurring expenses:</strong> periodic expense settings</li>
-      <li><strong>Monthly closings:</strong> settlement history between members</li>
-      <li><strong>Profile photo</strong> (optional): image you choose from your gallery</li>
-      <li><strong>Group image</strong> (optional): image that admins assign to the group</li>
-      <li><strong>Receipt photos</strong> (optional): images of receipts for expense tracking</li>
-    </ul>
-    <p>Profile, group, and receipt photos are stored in Supabase Storage. They are accessible by members of your groups. You can delete them at any time from Settings.</p>
-    <p>All this information is voluntarily provided by you when using the App.</p>
+      <!-- How We Store Your Data -->
+      <h2 class="text-xl font-bold text-darkBlue mt-10 mb-3 flex items-center gap-2">
+        <span class="material-symbols-outlined text-terracotta">cloud</span>
+        How We Store Your Data
+      </h2>
+      <p class="text-gray-600 mb-3 leading-relaxed">Your data is securely stored on Supabase, a database platform that uses Amazon Web Services (AWS) infrastructure.</p>
+      <ul class="list-disc pl-6 space-y-1 text-gray-600 mb-4">
+        <li>Data is encrypted in transit (TLS/SSL) and at rest</li>
+        <li>Authentication uses secure JWT tokens</li>
+        <li>Passwords are stored with bcrypt hashing, never in plain text</li>
+        <li>Sessions are securely managed with expo-secure-store on your device</li>
+        <li>Row-level security (RLS) policies are applied so you can only access data from your groups</li>
+        <li>Images are stored with access policies that restrict reading to group members and modification only to the owner</li>
+      </ul>
 
-    <h2>Data We Do NOT Collect</h2>
-    <p>We do NOT collect:</p>
-    <ul>
-      <li>Location or geolocation data</li>
-      <li>Contacts or calendar</li>
-      <li>Advertising identifiers</li>
-      <li>Usage data with third-party analytics</li>
-      <li>Real financial information (bank accounts, cards)</li>
-      <li>Social media information</li>
-      <li>Device identifiers for tracking</li>
-    </ul>
-    <p>Note: the App accesses your photo gallery only when you choose to upload a profile, group, or receipt image. We do not access your camera or scan your gallery without your action. Images are processed locally (compression and cropping) before being uploaded.</p>
+      <!-- How We Share Your Data -->
+      <h2 class="text-xl font-bold text-darkBlue mt-10 mb-3 flex items-center gap-2">
+        <span class="material-symbols-outlined text-terracotta">group</span>
+        How We Share Your Data
+      </h2>
+      <p class="text-gray-600 mb-3 leading-relaxed">Your data is only shared with members of the groups you belong to. Specifically:</p>
+      <ul class="list-disc pl-6 space-y-1 text-gray-600 mb-4">
+        <li>Your name and email are visible to your group members</li>
+        <li>Your profile photo (if set) is visible to your group members</li>
+        <li>Expenses you record are visible to all group members</li>
+        <li>Monthly closings and balances are visible to group members</li>
+      </ul>
+      <p class="text-gray-600 mb-3 leading-relaxed"><strong class="text-darkBlue font-semibold">We do NOT sell, rent, or share your data with third parties for advertising, marketing, or other commercial purposes.</strong></p>
 
-    <h2>How We Store Your Data</h2>
-    <p>Your data is securely stored on Supabase, a database platform that uses Amazon Web Services (AWS) infrastructure.</p>
-    <ul>
-      <li>Data is encrypted in transit (TLS/SSL) and at rest</li>
-      <li>Authentication uses secure JWT tokens</li>
-      <li>Passwords are stored with bcrypt hashing, never in plain text</li>
-      <li>Sessions are securely managed with expo-secure-store on your device</li>
-      <li>Row-level security (RLS) policies are applied so you can only access data from your groups</li>
-      <li>Images are stored with access policies that restrict reading to group members and modification only to the owner</li>
-    </ul>
+      <!-- Data Retention and Deletion -->
+      <h2 class="text-xl font-bold text-darkBlue mt-10 mb-3 flex items-center gap-2">
+        <span class="material-symbols-outlined text-terracotta">delete</span>
+        Data Retention and Deletion
+      </h2>
+      <p class="text-gray-600 mb-3 leading-relaxed">Your data is retained as long as you have an active account on HomePot.</p>
+      <p class="text-gray-600 mb-3 leading-relaxed">To delete your data:</p>
+      <ul class="list-disc pl-6 space-y-1 text-gray-600 mb-4">
+        <li>You can delete your account from Settings &gt; "Delete my account"</li>
+        <li>You can delete your profile photo from Settings (tap your avatar)</li>
+        <li>You can leave an individual group from group Settings</li>
+        <li>You can delete an entire group if you are the owner</li>
+      </ul>
+      <p class="text-gray-600 mb-3 leading-relaxed">When you delete your account, your profile, profile photo, memberships, and groups where you are the only member are immediately deleted. Profile and group images are removed from storage. Accounts inactive for more than 2 years may be automatically deleted, with prior email notice at least 30 days in advance.</p>
+      <p class="text-gray-600 mb-3 leading-relaxed">You can also request deletion by contacting us at <a href="mailto:homepotapp@gmail.com" class="text-terracotta hover:underline">homepotapp@gmail.com</a>.</p>
 
-    <h2>How We Share Your Data</h2>
-    <p>Your data is only shared with members of the groups you belong to. Specifically:</p>
-    <ul>
-      <li>Your name and email are visible to your group members</li>
-      <li>Your profile photo (if set) is visible to your group members</li>
-      <li>Expenses you record are visible to all group members</li>
-      <li>Monthly closings and balances are visible to group members</li>
-    </ul>
-    <p><strong>We do NOT sell, rent, or share your data with third parties for advertising, marketing, or other commercial purposes.</strong></p>
+      <!-- Third-Party Services -->
+      <h2 class="text-xl font-bold text-darkBlue mt-10 mb-3 flex items-center gap-2">
+        <span class="material-symbols-outlined text-terracotta">extension</span>
+        Third-Party Services
+      </h2>
+      <p class="text-gray-600 mb-3 leading-relaxed">HomePot uses the following third-party services:</p>
+      <ul class="list-disc pl-6 space-y-1 text-gray-600 mb-4">
+        <li><strong class="text-darkBlue font-semibold">Supabase:</strong> authentication, database, file and image storage (AWS infrastructure)</li>
+        <li><strong class="text-darkBlue font-semibold">Expo:</strong> application development framework</li>
+        <li><strong class="text-darkBlue font-semibold">Apple App Store / Google Play Store:</strong> distribution and payment processing</li>
+        <li><strong class="text-darkBlue font-semibold">RevenueCat:</strong> in-app subscription management</li>
+      </ul>
+      <p class="text-gray-600 mb-3 leading-relaxed">Subscription payments are processed entirely by Apple or Google. We do not receive or store credit card data or financial payment information.</p>
+      <p class="text-gray-600 mb-3 leading-relaxed">These services have their own privacy policies. We do not use analytics, advertising, social media, or tracking services of any kind.</p>
 
-    <h2>Data Retention and Deletion</h2>
-    <p>Your data is retained as long as you have an active account on HomePot.</p>
-    <p>To delete your data:</p>
-    <ul>
-      <li>You can delete your account from Settings &gt; "Delete my account"</li>
-      <li>You can delete your profile photo from Settings (tap your avatar)</li>
-      <li>You can leave an individual group from group Settings</li>
-      <li>You can delete an entire group if you are the owner</li>
-    </ul>
-    <p>When you delete your account, your profile, profile photo, memberships, and groups where you are the only member are immediately deleted. Profile and group images are removed from storage. Accounts inactive for more than 2 years may be automatically deleted, with prior email notice at least 30 days in advance.</p>
-    <p>You can also request deletion by contacting us at <a href="mailto:homepotapp@gmail.com">homepotapp@gmail.com</a>.</p>
+      <!-- Children's Privacy -->
+      <h2 class="text-xl font-bold text-darkBlue mt-10 mb-3 flex items-center gap-2">
+        <span class="material-symbols-outlined text-terracotta">child_care</span>
+        Children's Privacy
+      </h2>
+      <p class="text-gray-600 mb-3 leading-relaxed">HomePot is not intended for children under 16 years of age. We do not knowingly collect information from children under this age.</p>
+      <p class="text-gray-600 mb-3 leading-relaxed">If you are a parent or guardian and believe your child has provided us with personal information, contact us and we will delete that data immediately.</p>
 
-    <h2>Third-Party Services</h2>
-    <p>HomePot uses the following third-party services:</p>
-    <ul>
-      <li><strong>Supabase:</strong> authentication, database, file and image storage (AWS infrastructure)</li>
-      <li><strong>Expo:</strong> application development framework</li>
-      <li><strong>Apple App Store / Google Play Store:</strong> distribution and payment processing</li>
-      <li><strong>RevenueCat:</strong> in-app subscription management</li>
-    </ul>
-    <p>Subscription payments are processed entirely by Apple or Google. We do not receive or store credit card data or financial payment information.</p>
-    <p>These services have their own privacy policies. We do not use analytics, advertising, social media, or tracking services of any kind.</p>
+      <!-- Your Rights Under the GDPR -->
+      <h2 class="text-xl font-bold text-darkBlue mt-10 mb-3 flex items-center gap-2">
+        <span class="material-symbols-outlined text-terracotta">gavel</span>
+        Your Rights Under the GDPR (EU Users)
+      </h2>
+      <p class="text-gray-600 mb-3 leading-relaxed">If you reside in the European Union, you have the following rights:</p>
+      <ul class="list-disc pl-6 space-y-1 text-gray-600 mb-4">
+        <li><strong class="text-darkBlue font-semibold">Right of access:</strong> request a copy of your personal data</li>
+        <li><strong class="text-darkBlue font-semibold">Right of rectification:</strong> correct inaccurate data</li>
+        <li><strong class="text-darkBlue font-semibold">Right of erasure:</strong> request the deletion of your data</li>
+        <li><strong class="text-darkBlue font-semibold">Right to data portability:</strong> receive your data in a structured format</li>
+        <li><strong class="text-darkBlue font-semibold">Right to object:</strong> object to the processing of your data</li>
+        <li><strong class="text-darkBlue font-semibold">Right to restriction:</strong> restrict the processing of your data</li>
+      </ul>
+      <p class="text-gray-600 mb-3 leading-relaxed">To exercise these rights, contact us through the information provided below.</p>
 
-    <h2>Children's Privacy</h2>
-    <p>HomePot is not intended for children under 16 years of age. We do not knowingly collect information from children under this age.</p>
-    <p>If you are a parent or guardian and believe your child has provided us with personal information, contact us and we will delete that data immediately.</p>
+      <!-- Your Rights Under the CCPA -->
+      <h2 class="text-xl font-bold text-darkBlue mt-10 mb-3 flex items-center gap-2">
+        <span class="material-symbols-outlined text-terracotta">policy</span>
+        Your Rights Under the CCPA (California Users)
+      </h2>
+      <p class="text-gray-600 mb-3 leading-relaxed">If you reside in California, you have the right to:</p>
+      <ul class="list-disc pl-6 space-y-1 text-gray-600 mb-4">
+        <li>Know what personal data we collect</li>
+        <li>Request the deletion of your personal data</li>
+        <li>Not be discriminated against for exercising your privacy rights</li>
+      </ul>
+      <p class="text-gray-600 mb-3 leading-relaxed">We do NOT sell personal information. HomePot does not participate in the sale of consumer data as defined by the CCPA.</p>
 
-    <h2>Your Rights Under the GDPR (EU Users)</h2>
-    <p>If you reside in the European Union, you have the following rights:</p>
-    <ul>
-      <li><strong>Right of access:</strong> request a copy of your personal data</li>
-      <li><strong>Right of rectification:</strong> correct inaccurate data</li>
-      <li><strong>Right of erasure:</strong> request the deletion of your data</li>
-      <li><strong>Right to data portability:</strong> receive your data in a structured format</li>
-      <li><strong>Right to object:</strong> object to the processing of your data</li>
-      <li><strong>Right to restriction:</strong> restrict the processing of your data</li>
-    </ul>
-    <p>To exercise these rights, contact us through the information provided below.</p>
+      <!-- International Users -->
+      <h2 class="text-xl font-bold text-darkBlue mt-10 mb-3 flex items-center gap-2">
+        <span class="material-symbols-outlined text-terracotta">public</span>
+        International Users
+      </h2>
+      <p class="text-gray-600 mb-3 leading-relaxed">HomePot is available worldwide. Your data is stored on servers located in the European Union or the United States (depending on Supabase infrastructure).</p>
+      <p class="text-gray-600 mb-3 leading-relaxed">If you access from outside these regions, your information may be transferred to these servers. By using the App, you consent to this transfer, which is carried out with appropriate safeguards under applicable laws.</p>
 
-    <h2>Your Rights Under the CCPA (California Users)</h2>
-    <p>If you reside in California, you have the right to:</p>
-    <ul>
-      <li>Know what personal data we collect</li>
-      <li>Request the deletion of your personal data</li>
-      <li>Not be discriminated against for exercising your privacy rights</li>
-    </ul>
-    <p>We do NOT sell personal information. HomePot does not participate in the sale of consumer data as defined by the CCPA.</p>
+      <!-- Security -->
+      <h2 class="text-xl font-bold text-darkBlue mt-10 mb-3 flex items-center gap-2">
+        <span class="material-symbols-outlined text-terracotta">shield</span>
+        Security
+      </h2>
+      <p class="text-gray-600 mb-3 leading-relaxed">We take the security of your data very seriously:</p>
+      <ul class="list-disc pl-6 space-y-1 text-gray-600 mb-4">
+        <li>Data encryption in transit and at rest</li>
+        <li>Secure authentication with JWT tokens</li>
+        <li>Row-level security (RLS) policies in the database</li>
+        <li>Passwords stored with bcrypt hashing</li>
+        <li>Sessions securely managed on your device</li>
+      </ul>
+      <p class="text-gray-600 mb-3 leading-relaxed">Although we implement robust security measures, no method of transmission over the Internet is 100% secure. We cannot guarantee the absolute security of your data.</p>
 
-    <h2>International Users</h2>
-    <p>HomePot is available worldwide. Your data is stored on servers located in the European Union or the United States (depending on Supabase infrastructure).</p>
-    <p>If you access from outside these regions, your information may be transferred to these servers. By using the App, you consent to this transfer, which is carried out with appropriate safeguards under applicable laws.</p>
+      <!-- Legal Basis for Processing -->
+      <h2 class="text-xl font-bold text-darkBlue mt-10 mb-3 flex items-center gap-2">
+        <span class="material-symbols-outlined text-terracotta">balance</span>
+        Legal Basis for Processing (GDPR)
+      </h2>
+      <p class="text-gray-600 mb-3 leading-relaxed">The processing of your data is based on:</p>
+      <ul class="list-disc pl-6 space-y-1 text-gray-600 mb-4">
+        <li><strong class="text-darkBlue font-semibold">Contract performance:</strong> we need your data to provide you with the service</li>
+        <li><strong class="text-darkBlue font-semibold">Consent:</strong> by creating your account, you consent to the processing of your data</li>
+        <li><strong class="text-darkBlue font-semibold">Legitimate interest:</strong> maintaining the security and operation of the App</li>
+      </ul>
+      <p class="text-gray-600 mb-3 leading-relaxed">You can withdraw your consent at any time by deleting your account.</p>
 
-    <h2>Security</h2>
-    <p>We take the security of your data very seriously:</p>
-    <ul>
-      <li>Data encryption in transit and at rest</li>
-      <li>Secure authentication with JWT tokens</li>
-      <li>Row-level security (RLS) policies in the database</li>
-      <li>Passwords stored with bcrypt hashing</li>
-      <li>Sessions securely managed on your device</li>
-    </ul>
-    <p>Although we implement robust security measures, no method of transmission over the Internet is 100% secure. We cannot guarantee the absolute security of your data.</p>
+      <!-- Changes to This Policy -->
+      <h2 class="text-xl font-bold text-darkBlue mt-10 mb-3 flex items-center gap-2">
+        <span class="material-symbols-outlined text-terracotta">edit_note</span>
+        Changes to This Policy
+      </h2>
+      <p class="text-gray-600 mb-3 leading-relaxed">We may update this Privacy Policy from time to time. Changes will be reflected in the "Last updated" date at the top of this policy.</p>
+      <p class="text-gray-600 mb-3 leading-relaxed">For significant changes, we will provide a notice within the App. Your continued use of HomePot after any changes constitutes your acceptance of the updated policy.</p>
 
-    <h2>Legal Basis for Processing (GDPR)</h2>
-    <p>The processing of your data is based on:</p>
-    <ul>
-      <li><strong>Contract performance:</strong> we need your data to provide you with the service</li>
-      <li><strong>Consent:</strong> by creating your account, you consent to the processing of your data</li>
-      <li><strong>Legitimate interest:</strong> maintaining the security and operation of the App</li>
-    </ul>
-    <p>You can withdraw your consent at any time by deleting your account.</p>
+      <!-- Contact -->
+      <h2 class="text-xl font-bold text-darkBlue mt-10 mb-3 flex items-center gap-2">
+        <span class="material-symbols-outlined text-terracotta">mail</span>
+        Contact
+      </h2>
+      <p class="text-gray-600 mb-3 leading-relaxed">If you have questions, concerns, or requests about this Privacy Policy, contact us:</p>
+      <ul class="list-disc pl-6 space-y-1 text-gray-600 mb-4">
+        <li>Email: <a href="mailto:homepotapp@gmail.com" class="text-terracotta hover:underline">homepotapp@gmail.com</a></li>
+        <li>Through the contact information available in the app store (App Store / Google Play)</li>
+      </ul>
+      <p class="text-gray-600 mb-3 leading-relaxed">For GDPR-related inquiries from EU residents, you also have the right to file a complaint with your local data protection authority.</p>
 
-    <h2>Changes to This Policy</h2>
-    <p>We may update this Privacy Policy from time to time. Changes will be reflected in the "Last updated" date at the top of this policy.</p>
-    <p>For significant changes, we will provide a notice within the App. Your continued use of HomePot after any changes constitutes your acceptance of the updated policy.</p>
+      <!-- Summary -->
+      <div class="bg-terracotta/5 border border-terracotta/20 rounded-2xl p-6 mt-10">
+        <h2 class="text-xl font-bold text-terracotta mb-3 flex items-center gap-2 mt-0">
+          <span class="material-symbols-outlined">summarize</span>
+          Summary
+        </h2>
+        <p class="text-gray-600 leading-relaxed">HomePot collects only the data necessary to function: your email, name, the expenses you record, and optionally, profile and group photos. Your data is securely stored, shared only with members of your group, and never sold to third parties. You have full control over your data and can delete it at any time.</p>
+      </div>
 
-    <h2>Contact</h2>
-    <p>If you have questions, concerns, or requests about this Privacy Policy, contact us:</p>
-    <ul>
-      <li>Email: <a href="mailto:homepotapp@gmail.com">homepotapp@gmail.com</a></li>
-      <li>Through the contact information available in the app store (App Store / Google Play)</li>
-    </ul>
-    <p>For GDPR-related inquiries from EU residents, you also have the right to file a complaint with your local data protection authority.</p>
-
-    <div class="summary">
-      <h2>Summary</h2>
-      <p>HomePot collects only the data necessary to function: your email, name, the expenses you record, and optionally, profile and group photos. Your data is securely stored, shared only with members of your group, and never sold to third parties. You have full control over your data and can delete it at any time.</p>
     </div>
   </div>
 
-  <footer>
-    <p><a href="/">HomePot</a> &middot; <a href="/support">Support</a></p>
-    <p style="margin-top: 8px;">&copy; 2026 HomePot. All rights reserved.</p>
+  <!-- FOOTER -->
+  <footer class="border-t border-gray-100 bg-white">
+    <div class="max-w-7xl mx-auto px-6 py-8 flex flex-col md:flex-row items-center justify-between gap-4">
+      <a href="/" class="text-sm text-darkBlue font-semibold hover:text-terracotta">HomePot</a>
+      <div class="flex gap-6 text-sm text-gray-400">
+        <a href="/privacy" class="hover:text-terracotta transition-colors">Privacy Policy</a>
+        <a href="/support" class="hover:text-terracotta transition-colors">Support</a>
+      </div>
+      <p class="text-sm text-gray-400">&copy; 2026 HomePot</p>
+    </div>
   </footer>
+
 </body>
 </html>

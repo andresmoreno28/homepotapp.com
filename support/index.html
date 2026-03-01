@@ -5,240 +5,263 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Support - HomePot</title>
   <meta name="description" content="Get help with HomePot. FAQs, troubleshooting, and contact information.">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🏠</text></svg>">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" rel="stylesheet">
+
+  <!-- Tailwind CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            cream: '#F4F1DE',
+            darkBlue: '#3D405B',
+            terracotta: '#E07A5F',
+            sage: '#81B29A',
+            yellowSoft: '#F2CC8F',
+          },
+          fontFamily: {
+            sans: ['"Plus Jakarta Sans"', 'system-ui', 'sans-serif'],
+          },
+        },
+      },
+    }
+  </script>
+
   <style>
-    :root {
-      --primary: #1B3A4B;
-      --secondary: #4ECDC4;
-      --accent: #FF6B6B;
-      --light: #F8FAFC;
-      --gray: #64748B;
-      --white: #FFFFFF;
+    .grain-bg { position: relative; }
+    .grain-bg::before {
+      content: ""; position: absolute; inset: 0;
+      opacity: 0.03; pointer-events: none; z-index: 1;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
     }
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-    body {
-      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-      color: var(--primary);
-      background: var(--light);
-      line-height: 1.7;
-    }
-    .header {
-      background: linear-gradient(135deg, var(--primary) 0%, #2C5F6E 100%);
-      color: var(--white);
-      padding: 40px 24px;
-      text-align: center;
-    }
-    .header a { color: var(--secondary); text-decoration: none; font-size: 0.9rem; }
-    .header h1 { font-size: 2rem; margin-top: 8px; }
-    .header p { opacity: 0.85; margin-top: 4px; }
-    .container { max-width: 720px; margin: 0 auto; padding: 40px 24px 60px; }
+    html { scroll-behavior: smooth; }
 
-    .contact-box {
-      background: var(--white);
-      border-radius: 16px;
-      padding: 28px;
-      box-shadow: 0 2px 12px rgba(0,0,0,0.06);
-      text-align: center;
-      margin-bottom: 40px;
-    }
-    .contact-box .icon { font-size: 2.5rem; margin-bottom: 12px; }
-    .contact-box h2 { font-size: 1.2rem; margin-bottom: 8px; }
-    .contact-box p { color: var(--gray); font-size: 0.95rem; margin-bottom: 16px; }
-    .contact-box a.email-btn {
-      display: inline-block;
-      background: var(--secondary);
-      color: var(--primary);
-      padding: 12px 28px;
-      border-radius: 30px;
-      font-weight: 700;
-      text-decoration: none;
-      font-size: 1rem;
-    }
-
-    h2 { font-size: 1.3rem; margin-top: 36px; margin-bottom: 16px; }
-    .faq-category { margin-bottom: 32px; }
-    .faq-category h3 {
-      font-size: 1.05rem;
-      color: var(--secondary);
-      margin-bottom: 12px;
-      padding-bottom: 8px;
-      border-bottom: 2px solid rgba(78, 205, 196, 0.2);
-    }
-
-    details {
-      background: var(--white);
-      border-radius: 12px;
-      margin-bottom: 8px;
-      box-shadow: 0 1px 4px rgba(0,0,0,0.04);
-    }
-    summary {
-      padding: 14px 20px;
-      cursor: pointer;
-      font-weight: 600;
-      font-size: 0.95rem;
-      list-style: none;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-    summary::after {
+    /* Custom details/summary markers */
+    details summary { list-style: none; }
+    details summary::-webkit-details-marker { display: none; }
+    details summary::after {
       content: "+";
-      font-size: 1.2rem;
-      color: var(--gray);
-      transition: transform 0.2s;
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: #E07A5F;
+      transition: transform 0.2s ease;
+      flex-shrink: 0;
     }
     details[open] summary::after {
-      content: "−";
+      content: "\2212";
     }
-    summary::-webkit-details-marker { display: none; }
-    .answer {
-      padding: 0 20px 16px;
-      font-size: 0.9rem;
-      color: #475569;
-      line-height: 1.7;
+    @media (prefers-reduced-motion: reduce) {
+      details summary::after { transition: none; }
     }
-    .answer p { margin-bottom: 8px; }
-
-    .troubleshoot {
-      background: rgba(255, 107, 107, 0.06);
-      border: 1px solid rgba(255, 107, 107, 0.2);
-      border-radius: 16px;
-      padding: 24px;
-      margin-top: 40px;
-    }
-    .troubleshoot h2 { color: var(--accent); margin-top: 0; }
-    .troubleshoot ul { padding-left: 20px; }
-    .troubleshoot li { color: #475569; font-size: 0.9rem; margin-bottom: 6px; }
-
-    footer {
-      text-align: center;
-      padding: 32px 24px;
-      color: var(--gray);
-      font-size: 0.85rem;
-    }
-    footer a { color: var(--secondary); text-decoration: none; }
   </style>
 </head>
-<body>
-  <div class="header">
-    <a href="/">&larr; HomePot</a>
-    <h1>Support</h1>
-    <p>We're here to help</p>
-  </div>
+<body class="font-sans text-darkBlue antialiased bg-gray-50">
 
-  <div class="container">
-    <div class="contact-box">
-      <div class="icon">📧</div>
-      <h2>Contact Us</h2>
-      <p>Have a question or need help? We typically respond within 24 hours.</p>
-      <a href="mailto:homepotapp@gmail.com" class="email-btn">homepotapp@gmail.com</a>
-    </div>
-
-    <h2>Frequently Asked Questions</h2>
-
-    <div class="faq-category">
-      <h3>About HomePot</h3>
-      <details>
-        <summary>What is HomePot?</summary>
-        <div class="answer"><p>HomePot is an app for managing shared expenses among groups of people. Perfect for couples, roommates, families, or any group sharing expenses. It allows you to record expenses, calculate what each person owes, and keep clear track of shared accounts.</p></div>
-      </details>
-      <details>
-        <summary>What is the difference between Shared Fund and Expense Split?</summary>
-        <div class="answer">
-          <p><strong>Shared Fund:</strong> ideal for homes and stable cohabitation. Everyone contributes to a common fund and expenses are deducted from it. At month-end, each person contributes their proportional share.</p>
-          <p><strong>Expense Split:</strong> ideal for trips, events, or temporary groups. Each person pays with their own money and at the end, it calculates who owes whom, simplifying transfers.</p>
+  <!-- NAVBAR -->
+  <nav class="fixed top-0 inset-x-0 z-50" style="backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); background: rgba(244,241,222,0.8);">
+    <div class="max-w-7xl mx-auto flex items-center justify-between px-6 py-4">
+      <a href="/" class="flex items-center gap-2">
+        <div class="w-10 h-10 bg-terracotta rounded-xl flex items-center justify-center">
+          <span class="material-symbols-outlined text-white text-xl">home</span>
         </div>
-      </details>
-      <details>
-        <summary>How much does HomePot cost?</summary>
-        <div class="answer"><p>HomePot offers a free plan with all essential features for 1 group, including unlimited expenses and multi-currency support. No ads ever. For unlimited groups and advanced features (AI receipt scanner, analytics, export), we offer HomePot Pro through a monthly or annual subscription.</p></div>
-      </details>
+        <span class="text-xl font-extrabold text-darkBlue">HomePot</span>
+      </a>
+      <a href="/" class="text-sm text-terracotta font-semibold hover:underline">&larr; Back to home</a>
+    </div>
+  </nav>
+
+  <!-- HEADER -->
+  <section class="bg-cream grain-bg pt-24 pb-16">
+    <div class="max-w-3xl mx-auto px-6 text-center relative z-10">
+      <div class="inline-flex items-center gap-2 bg-terracotta/10 text-terracotta rounded-full px-4 py-2 text-sm font-medium mb-6">
+        <span class="material-symbols-outlined text-lg">support_agent</span>
+        Help Center
+      </div>
+      <h1 class="text-4xl lg:text-5xl font-extrabold text-darkBlue mb-3">Support</h1>
+      <p class="text-gray-500 text-lg">We're here to help</p>
+    </div>
+  </section>
+
+  <!-- CONTENT -->
+  <div class="max-w-3xl mx-auto px-6 -mt-8 relative z-10 pb-20">
+
+    <!-- Contact Box -->
+    <div class="bg-white rounded-2xl shadow-sm p-8 text-center mb-10">
+      <div class="w-14 h-14 bg-terracotta/10 rounded-full flex items-center justify-center mx-auto mb-4">
+        <span class="material-symbols-outlined text-terracotta text-3xl">mail</span>
+      </div>
+      <h2 class="text-xl font-bold text-darkBlue mb-2">Contact Us</h2>
+      <p class="text-gray-500 mb-6">Have a question or need help? We typically respond within 24 hours.</p>
+      <a href="mailto:homepotapp@gmail.com" class="inline-block bg-terracotta text-white px-8 py-3 rounded-full font-semibold hover:bg-terracotta/90 transition-colors">homepotapp@gmail.com</a>
     </div>
 
-    <div class="faq-category">
-      <h3>Groups & Members</h3>
-      <details>
-        <summary>How do I invite someone to my group?</summary>
-        <div class="answer"><p>In Settings you can view and copy your group's invite code. Share it with the people you want to invite. They can join using that code when signing up or from the "Join a group" option.</p></div>
-      </details>
-      <details>
-        <summary>Can I belong to multiple groups?</summary>
-        <div class="answer"><p>With the free plan you can have 1 group. With HomePot Pro you can have unlimited groups and easily switch between them from the group selector on the main screen.</p></div>
-      </details>
-      <details>
-        <summary>What roles are available?</summary>
-        <div class="answer">
-          <p><strong>Owner:</strong> full control, can transfer ownership and delete the group</p>
-          <p><strong>Admin:</strong> full management (members, expenses, categories)</p>
-          <p><strong>Manager:</strong> manages expenses and categories</p>
-          <p><strong>Member:</strong> can view and add expenses</p>
-        </div>
-      </details>
+    <!-- FAQ Section -->
+    <div class="bg-white rounded-3xl shadow-sm p-8 lg:p-12">
+      <h2 class="text-2xl font-extrabold text-darkBlue mb-8">Frequently Asked Questions</h2>
+
+      <!-- About HomePot -->
+      <div class="mb-8">
+        <h3 class="text-lg font-bold text-terracotta mb-4 pb-2 border-b border-terracotta/10 flex items-center gap-2">
+          <span class="material-symbols-outlined">info</span>
+          About HomePot
+        </h3>
+
+        <details class="bg-white rounded-xl mb-2 shadow-sm ring-1 ring-gray-100">
+          <summary class="p-4 font-semibold text-darkBlue cursor-pointer flex justify-between items-center">What is HomePot?</summary>
+          <div class="px-4 pb-4 text-gray-600"><p>HomePot is an app for managing shared expenses among groups of people. Perfect for couples, roommates, families, or any group sharing expenses. It allows you to record expenses, calculate what each person owes, and keep clear track of shared accounts.</p></div>
+        </details>
+
+        <details class="bg-white rounded-xl mb-2 shadow-sm ring-1 ring-gray-100">
+          <summary class="p-4 font-semibold text-darkBlue cursor-pointer flex justify-between items-center">What is the difference between Shared Fund and Expense Split?</summary>
+          <div class="px-4 pb-4 text-gray-600">
+            <p class="mb-2"><strong class="text-darkBlue font-semibold">Shared Fund:</strong> ideal for homes and stable cohabitation. Everyone contributes to a common fund and expenses are deducted from it. At month-end, each person contributes their proportional share.</p>
+            <p><strong class="text-darkBlue font-semibold">Expense Split:</strong> ideal for trips, events, or temporary groups. Each person pays with their own money and at the end, it calculates who owes whom, simplifying transfers.</p>
+          </div>
+        </details>
+
+        <details class="bg-white rounded-xl mb-2 shadow-sm ring-1 ring-gray-100">
+          <summary class="p-4 font-semibold text-darkBlue cursor-pointer flex justify-between items-center">How much does HomePot cost?</summary>
+          <div class="px-4 pb-4 text-gray-600"><p>HomePot offers a free plan with all essential features for 1 group, including unlimited expenses and multi-currency support. No ads ever. For unlimited groups and advanced features (AI receipt scanner, analytics, export), we offer HomePot Pro through a monthly or annual subscription.</p></div>
+        </details>
+      </div>
+
+      <!-- Groups & Members -->
+      <div class="mb-8">
+        <h3 class="text-lg font-bold text-terracotta mb-4 pb-2 border-b border-terracotta/10 flex items-center gap-2">
+          <span class="material-symbols-outlined">group</span>
+          Groups &amp; Members
+        </h3>
+
+        <details class="bg-white rounded-xl mb-2 shadow-sm ring-1 ring-gray-100">
+          <summary class="p-4 font-semibold text-darkBlue cursor-pointer flex justify-between items-center">How do I invite someone to my group?</summary>
+          <div class="px-4 pb-4 text-gray-600"><p>In Settings you can view and copy your group's invite code. Share it with the people you want to invite. They can join using that code when signing up or from the "Join a group" option.</p></div>
+        </details>
+
+        <details class="bg-white rounded-xl mb-2 shadow-sm ring-1 ring-gray-100">
+          <summary class="p-4 font-semibold text-darkBlue cursor-pointer flex justify-between items-center">Can I belong to multiple groups?</summary>
+          <div class="px-4 pb-4 text-gray-600"><p>With the free plan you can have 1 group. With HomePot Pro you can have unlimited groups and easily switch between them from the group selector on the main screen.</p></div>
+        </details>
+
+        <details class="bg-white rounded-xl mb-2 shadow-sm ring-1 ring-gray-100">
+          <summary class="p-4 font-semibold text-darkBlue cursor-pointer flex justify-between items-center">What roles are available?</summary>
+          <div class="px-4 pb-4 text-gray-600">
+            <p class="mb-2"><strong class="text-darkBlue font-semibold">Owner:</strong> full control, can transfer ownership and delete the group</p>
+            <p class="mb-2"><strong class="text-darkBlue font-semibold">Admin:</strong> full management (members, expenses, categories)</p>
+            <p class="mb-2"><strong class="text-darkBlue font-semibold">Manager:</strong> manages expenses and categories</p>
+            <p><strong class="text-darkBlue font-semibold">Member:</strong> can view and add expenses</p>
+          </div>
+        </details>
+      </div>
+
+      <!-- Expenses & Finances -->
+      <div class="mb-8">
+        <h3 class="text-lg font-bold text-terracotta mb-4 pb-2 border-b border-terracotta/10 flex items-center gap-2">
+          <span class="material-symbols-outlined">receipt_long</span>
+          Expenses &amp; Finances
+        </h3>
+
+        <details class="bg-white rounded-xl mb-2 shadow-sm ring-1 ring-gray-100">
+          <summary class="p-4 font-semibold text-darkBlue cursor-pointer flex justify-between items-center">How do I record an expense?</summary>
+          <div class="px-4 pb-4 text-gray-600"><p>Tap the "+" button on the expenses screen. Enter the amount, a description, select the category and the date. In Expense Split mode, you can also indicate who paid and who participates.</p></div>
+        </details>
+
+        <details class="bg-white rounded-xl mb-2 shadow-sm ring-1 ring-gray-100">
+          <summary class="p-4 font-semibold text-darkBlue cursor-pointer flex justify-between items-center">What are recurring expenses?</summary>
+          <div class="px-4 pb-4 text-gray-600"><p>These are expenses that repeat every month (rent, internet, electricity, etc.). You can set them up once and HomePot will automatically add them each month, saving you time.</p></div>
+        </details>
+
+        <details class="bg-white rounded-xl mb-2 shadow-sm ring-1 ring-gray-100">
+          <summary class="p-4 font-semibold text-darkBlue cursor-pointer flex justify-between items-center">What is the monthly close?</summary>
+          <div class="px-4 pb-4 text-gray-600"><p>At the end of each month, you can perform a monthly close. HomePot calculates exactly how much each member needs to contribute or transfer, based on all expenses for the month. The closing history is saved.</p></div>
+        </details>
+
+        <details class="bg-white rounded-xl mb-2 shadow-sm ring-1 ring-gray-100">
+          <summary class="p-4 font-semibold text-darkBlue cursor-pointer flex justify-between items-center">Does HomePot process real payments?</summary>
+          <div class="px-4 pb-4 text-gray-600"><p>No. HomePot is a tracking and calculation tool. Actual payments and transfers between members are made outside the app (Venmo, Bizum, bank transfer, cash, etc.).</p></div>
+        </details>
+      </div>
+
+      <!-- Privacy & Data -->
+      <div class="mb-8">
+        <h3 class="text-lg font-bold text-terracotta mb-4 pb-2 border-b border-terracotta/10 flex items-center gap-2">
+          <span class="material-symbols-outlined">lock</span>
+          Privacy &amp; Data
+        </h3>
+
+        <details class="bg-white rounded-xl mb-2 shadow-sm ring-1 ring-gray-100">
+          <summary class="p-4 font-semibold text-darkBlue cursor-pointer flex justify-between items-center">Where is my data stored?</summary>
+          <div class="px-4 pb-4 text-gray-600"><p>Your data is securely stored on Supabase (Amazon Web Services infrastructure). It is encrypted in transit and at rest, and is only accessible by members of your group.</p></div>
+        </details>
+
+        <details class="bg-white rounded-xl mb-2 shadow-sm ring-1 ring-gray-100">
+          <summary class="p-4 font-semibold text-darkBlue cursor-pointer flex justify-between items-center">Can I delete my data?</summary>
+          <div class="px-4 pb-4 text-gray-600"><p>Yes. You can delete your entire account from Settings &gt; "Delete my account". This will permanently erase your profile, your membership in all groups, and groups where you are the only member. You can also leave an individual group or delete a group if you are the owner.</p></div>
+        </details>
+      </div>
+
+      <!-- Account Issues -->
+      <div class="mb-8">
+        <h3 class="text-lg font-bold text-terracotta mb-4 pb-2 border-b border-terracotta/10 flex items-center gap-2">
+          <span class="material-symbols-outlined">manage_accounts</span>
+          Account Issues
+        </h3>
+
+        <details class="bg-white rounded-xl mb-2 shadow-sm ring-1 ring-gray-100">
+          <summary class="p-4 font-semibold text-darkBlue cursor-pointer flex justify-between items-center">I forgot my password</summary>
+          <div class="px-4 pb-4 text-gray-600"><p>On the sign-in screen or in Settings &gt; Security, you can request a password reset email. Check your inbox (and spam folder).</p></div>
+        </details>
+
+        <details class="bg-white rounded-xl mb-2 shadow-sm ring-1 ring-gray-100">
+          <summary class="p-4 font-semibold text-darkBlue cursor-pointer flex justify-between items-center">What happens if I delete the app?</summary>
+          <div class="px-4 pb-4 text-gray-600">
+            <p class="mb-2">Your data remains safe on our servers. If you reinstall the app and sign in with the same account, you will recover all your data and groups.</p>
+            <p>If you want to completely delete your account and data, do so from Settings &gt; "Delete my account" before uninstalling.</p>
+          </div>
+        </details>
+
+        <details class="bg-white rounded-xl mb-2 shadow-sm ring-1 ring-gray-100">
+          <summary class="p-4 font-semibold text-darkBlue cursor-pointer flex justify-between items-center">I cannot leave my group</summary>
+          <div class="px-4 pb-4 text-gray-600"><p>If you are the group owner, you must first transfer ownership to another member from Settings. If you are the only member, you can delete the group directly.</p></div>
+        </details>
+      </div>
     </div>
 
-    <div class="faq-category">
-      <h3>Expenses & Finances</h3>
-      <details>
-        <summary>How do I record an expense?</summary>
-        <div class="answer"><p>Tap the "+" button on the expenses screen. Enter the amount, a description, select the category and the date. In Expense Split mode, you can also indicate who paid and who participates.</p></div>
-      </details>
-      <details>
-        <summary>What are recurring expenses?</summary>
-        <div class="answer"><p>These are expenses that repeat every month (rent, internet, electricity, etc.). You can set them up once and HomePot will automatically add them each month, saving you time.</p></div>
-      </details>
-      <details>
-        <summary>What is the monthly close?</summary>
-        <div class="answer"><p>At the end of each month, you can perform a monthly close. HomePot calculates exactly how much each member needs to contribute or transfer, based on all expenses for the month. The closing history is saved.</p></div>
-      </details>
-      <details>
-        <summary>Does HomePot process real payments?</summary>
-        <div class="answer"><p>No. HomePot is a tracking and calculation tool. Actual payments and transfers between members are made outside the app (Venmo, Bizum, bank transfer, cash, etc.).</p></div>
-      </details>
-    </div>
-
-    <div class="faq-category">
-      <h3>Privacy & Data</h3>
-      <details>
-        <summary>Where is my data stored?</summary>
-        <div class="answer"><p>Your data is securely stored on Supabase (Amazon Web Services infrastructure). It is encrypted in transit and at rest, and is only accessible by members of your group.</p></div>
-      </details>
-      <details>
-        <summary>Can I delete my data?</summary>
-        <div class="answer"><p>Yes. You can delete your entire account from Settings &gt; "Delete my account". This will permanently erase your profile, your membership in all groups, and groups where you are the only member. You can also leave an individual group or delete a group if you are the owner.</p></div>
-      </details>
-    </div>
-
-    <div class="faq-category">
-      <h3>Account Issues</h3>
-      <details>
-        <summary>I forgot my password</summary>
-        <div class="answer"><p>On the sign-in screen or in Settings &gt; Security, you can request a password reset email. Check your inbox (and spam folder).</p></div>
-      </details>
-      <details>
-        <summary>What happens if I delete the app?</summary>
-        <div class="answer"><p>Your data remains safe on our servers. If you reinstall the app and sign in with the same account, you will recover all your data and groups.</p><p>If you want to completely delete your account and data, do so from Settings &gt; "Delete my account" before uninstalling.</p></div>
-      </details>
-      <details>
-        <summary>I cannot leave my group</summary>
-        <div class="answer"><p>If you are the group owner, you must first transfer ownership to another member from Settings. If you are the only member, you can delete the group directly.</p></div>
-      </details>
-    </div>
-
-    <div class="troubleshoot">
-      <h2>Still Need Help?</h2>
-      <p>If you couldn't find your answer above, try these steps:</p>
-      <ul>
+    <!-- Still Need Help? -->
+    <div class="bg-sage/10 border border-sage/20 rounded-2xl p-6 mt-10">
+      <h2 class="text-xl font-bold text-sage mb-3 flex items-center gap-2">
+        <span class="material-symbols-outlined">help</span>
+        Still Need Help?
+      </h2>
+      <p class="text-gray-600 mb-3 leading-relaxed">If you couldn't find your answer above, try these steps:</p>
+      <ul class="list-disc pl-6 space-y-1 text-gray-600 mb-4">
         <li>Make sure you have the latest version of HomePot installed</li>
         <li>Restart the app</li>
         <li>Check your internet connection</li>
-        <li>Email us at <a href="mailto:homepotapp@gmail.com">homepotapp@gmail.com</a> with details about your issue</li>
+        <li>Email us at <a href="mailto:homepotapp@gmail.com" class="text-terracotta hover:underline">homepotapp@gmail.com</a> with details about your issue</li>
       </ul>
-      <p style="margin-top: 12px; font-size: 0.9rem;">We typically respond within 24 hours. Please include your device model and iOS version when reporting bugs.</p>
+      <p class="text-gray-500 text-sm">We typically respond within 24 hours. Please include your device model and iOS version when reporting bugs.</p>
     </div>
+
   </div>
 
-  <footer>
-    <p><a href="/">HomePot</a> &middot; <a href="/privacy">Privacy Policy</a></p>
-    <p style="margin-top: 8px;">&copy; 2026 HomePot. All rights reserved.</p>
+  <!-- FOOTER -->
+  <footer class="border-t border-gray-100 bg-white">
+    <div class="max-w-7xl mx-auto px-6 py-8 flex flex-col md:flex-row items-center justify-between gap-4">
+      <a href="/" class="text-sm text-darkBlue font-semibold hover:text-terracotta">HomePot</a>
+      <div class="flex gap-6 text-sm text-gray-400">
+        <a href="/privacy" class="hover:text-terracotta transition-colors">Privacy Policy</a>
+        <a href="/support" class="hover:text-terracotta transition-colors">Support</a>
+      </div>
+      <p class="text-sm text-gray-400">&copy; 2026 HomePot</p>
+    </div>
   </footer>
+
 </body>
 </html>
