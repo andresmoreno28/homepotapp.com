@@ -188,6 +188,43 @@
         </details>
       </div>
 
+      <!-- AI Receipt Scanner -->
+      <div class="mb-8">
+        <h3 class="text-lg font-bold text-terracotta mb-4 pb-2 border-b border-terracotta/10 flex items-center gap-2">
+          <span class="material-symbols-outlined">document_scanner</span>
+          AI Receipt Scanner
+        </h3>
+
+        <details class="bg-white rounded-xl mb-2 shadow-sm ring-1 ring-gray-100">
+          <summary class="p-4 font-semibold text-darkBlue cursor-pointer flex justify-between items-center">What is the AI Receipt Scanner?</summary>
+          <div class="px-4 pb-4 text-gray-600"><p>It's a feature that lets you take a photo of a receipt and automatically extracts the amount, merchant name, line items, and category. It uses artificial intelligence (Anthropic Claude) to read the receipt and fill in the expense details for you.</p></div>
+        </details>
+
+        <details class="bg-white rounded-xl mb-2 shadow-sm ring-1 ring-gray-100">
+          <summary class="p-4 font-semibold text-darkBlue cursor-pointer flex justify-between items-center">How many scans can I do?</summary>
+          <div class="px-4 pb-4 text-gray-600"><p>Free users get 3 lifetime scans to try the feature. HomePot Pro users get 50 scans per month with no cooldown between scans.</p></div>
+        </details>
+
+        <details class="bg-white rounded-xl mb-2 shadow-sm ring-1 ring-gray-100">
+          <summary class="p-4 font-semibold text-darkBlue cursor-pointer flex justify-between items-center">What data is extracted from the receipt?</summary>
+          <div class="px-4 pb-4 text-gray-600">
+            <p class="mb-2">The scanner extracts:</p>
+            <ul class="list-disc pl-6 space-y-1">
+              <li>Total amount</li>
+              <li>Merchant/store name</li>
+              <li>Individual line items (name, quantity, unit price)</li>
+              <li>Suggested category based on the type of purchase</li>
+            </ul>
+            <p class="mt-2">You can review and edit all extracted data before saving the expense.</p>
+          </div>
+        </details>
+
+        <details class="bg-white rounded-xl mb-2 shadow-sm ring-1 ring-gray-100">
+          <summary class="p-4 font-semibold text-darkBlue cursor-pointer flex justify-between items-center">Is my receipt data private?</summary>
+          <div class="px-4 pb-4 text-gray-600"><p>Yes. Receipt images are sent to Anthropic's AI service for text extraction only. They are not stored by the AI provider and are not used for training. The receipt photo is stored in your group's secure storage and is only accessible by group members.</p></div>
+        </details>
+      </div>
+
       <!-- Privacy & Data -->
       <div class="mb-8">
         <h3 class="text-lg font-bold text-terracotta mb-4 pb-2 border-b border-terracotta/10 flex items-center gap-2">

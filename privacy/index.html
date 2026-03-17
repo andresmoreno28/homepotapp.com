@@ -150,7 +150,8 @@
         <li><strong class="text-darkBlue font-semibold">Group image</strong> (optional): image that admins assign to the group</li>
         <li><strong class="text-darkBlue font-semibold">Receipt photos</strong> (optional): images of receipts for expense tracking</li>
       </ul>
-      <p class="text-gray-600 mb-3 leading-relaxed">Profile, group, and receipt photos are stored in Supabase Storage. They are accessible by members of your groups. You can delete them at any time from Settings.</p>
+      <p class="text-gray-600 mb-3 leading-relaxed">Profile, group, and receipt photos are stored in Supabase Storage. They are accessible by members of your groups. You can delete them at any time.</p>
+      <p class="text-gray-600 mb-3 leading-relaxed">When you use the AI Receipt Scanner, receipt images are temporarily sent to a third-party AI service (Anthropic Claude) for processing. The AI extracts text data (amount, merchant, items, category) and returns it to the App. Images are not stored by the AI service.</p>
       <p class="text-gray-600 mb-3 leading-relaxed">All this information is voluntarily provided by you when using the App.</p>
 
       <!-- Data We Do NOT Collect -->
@@ -168,7 +169,7 @@
         <li>Social media information</li>
         <li>Device identifiers for tracking</li>
       </ul>
-      <p class="text-gray-600 mb-3 leading-relaxed">Note: the App accesses your photo gallery only when you choose to upload a profile, group, or receipt image. We do not access your camera or scan your gallery without your action. Images are processed locally (compression and cropping) before being uploaded.</p>
+      <p class="text-gray-600 mb-3 leading-relaxed">Note: the App accesses your camera and photo gallery only when you choose to upload a profile, group, or receipt image, or when you use the AI Receipt Scanner to capture a receipt. Images are processed locally (compression and cropping) before being uploaded or sent for AI processing.</p>
 
       <!-- How We Store Your Data -->
       <h2 class="text-xl font-bold text-darkBlue mt-10 mb-3 flex items-center gap-2">
@@ -183,6 +184,7 @@
         <li>Sessions are securely managed with expo-secure-store on your device</li>
         <li>Row-level security (RLS) policies are applied so you can only access data from your groups</li>
         <li>Images are stored with access policies that restrict reading to group members and modification only to the owner</li>
+        <li>Receipt images sent to the AI scanner are transmitted over encrypted connections and are not retained by the AI provider</li>
       </ul>
 
       <!-- How We Share Your Data -->
@@ -225,8 +227,10 @@
         <li><strong class="text-darkBlue font-semibold">Supabase:</strong> authentication, database, file and image storage (AWS infrastructure)</li>
         <li><strong class="text-darkBlue font-semibold">Expo:</strong> application development framework</li>
         <li><strong class="text-darkBlue font-semibold">Apple App Store / Google Play Store:</strong> distribution and payment processing</li>
+        <li><strong class="text-darkBlue font-semibold">Anthropic (Claude AI):</strong> AI-powered receipt scanning to extract expense data from receipt photos</li>
         <li><strong class="text-darkBlue font-semibold">RevenueCat:</strong> in-app subscription management</li>
       </ul>
+      <p class="text-gray-600 mb-3 leading-relaxed">When you use the AI Receipt Scanner, the receipt image is sent to Anthropic's Claude AI for text extraction. Anthropic does not store the images or use them for training. See Anthropic's privacy policy for more details.</p>
       <p class="text-gray-600 mb-3 leading-relaxed">Subscription payments are processed entirely by Apple or Google. We do not receive or store credit card data or financial payment information.</p>
       <p class="text-gray-600 mb-3 leading-relaxed">These services have their own privacy policies. We do not use analytics, advertising, social media, or tracking services of any kind.</p>
 
@@ -329,7 +333,7 @@
           <span class="material-symbols-outlined">summarize</span>
           Summary
         </h2>
-        <p class="text-gray-600 leading-relaxed">HomePot collects only the data necessary to function: your email, name, the expenses you record, and optionally, profile and group photos. Your data is securely stored, shared only with members of your group, and never sold to third parties. You have full control over your data and can delete it at any time.</p>
+        <p class="text-gray-600 leading-relaxed">HomePot collects only the data necessary to function: your email, name, the expenses you record, and optionally, profile photos, group images, and receipt photos. When using the AI Receipt Scanner, images are temporarily processed by Anthropic Claude but are not stored by them. Your data is securely stored, shared only with members of your group, and never sold to third parties. You have full control over your data and can delete it at any time.</p>
       </div>
 
     </div>
