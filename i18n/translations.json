@@ -90,7 +90,9 @@
     "footer.copyright": "© 2026 HomePot. All rights reserved.",
     "pricing.free_f5": "10 AI scans/month",
     "pricing.pro_f6": "Currency conversion",
-    "pricing.pro_f7": "Recurring expenses"
+    "pricing.pro_f7": "Recurring expenses",
+    "pricing.free_f6": "Smart settlements",
+    "pricing.free_f7": "No ads ever"
   },
   "es": {
     "nav.download": "Descargar",
@@ -183,7 +185,9 @@
     "footer.copyright": "© 2026 HomePot. Todos los derechos reservados.",
     "pricing.free_f5": "10 escaneos IA/mes",
     "pricing.pro_f6": "Conversión de divisas",
-    "pricing.pro_f7": "Gastos recurrentes"
+    "pricing.pro_f7": "Gastos recurrentes",
+    "pricing.free_f6": "Liquidaciones inteligentes",
+    "pricing.free_f7": "Sin anuncios"
   },
   "fr": {
     "nav.download": "Télécharger",
@@ -276,7 +280,9 @@
     "footer.copyright": "© 2026 HomePot. Tous droits réservés.",
     "pricing.free_f5": "10 scans IA/mois",
     "pricing.pro_f6": "Conversion de devises",
-    "pricing.pro_f7": "Dépenses récurrentes"
+    "pricing.pro_f7": "Dépenses récurrentes",
+    "pricing.free_f6": "Liquidations intelligentes",
+    "pricing.free_f7": "Sans publicité"
   },
   "de": {
     "nav.download": "Herunterladen",
@@ -369,7 +375,9 @@
     "footer.copyright": "© 2026 HomePot. Alle Rechte vorbehalten.",
     "pricing.free_f5": "10 KI-Scans/Monat",
     "pricing.pro_f6": "Währungsumrechnung",
-    "pricing.pro_f7": "Wiederkehrende Ausgaben"
+    "pricing.pro_f7": "Wiederkehrende Ausgaben",
+    "pricing.free_f6": "Smarte Abrechnungen",
+    "pricing.free_f7": "Keine Werbung"
   },
   "pt": {
     "nav.download": "Baixar",
@@ -462,6 +470,8 @@
     "footer.copyright": "© 2026 HomePot. Todos os direitos reservados.",
     "pricing.free_f5": "10 scans IA/mês",
     "pricing.pro_f6": "Conversão de moedas",
-    "pricing.pro_f7": "Despesas recorrentes"
+    "pricing.pro_f7": "Despesas recorrentes",
+    "pricing.free_f6": "Liquidações inteligentes",
+    "pricing.free_f7": "Sem anúncios"
   }
 }
