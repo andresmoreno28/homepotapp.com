@@ -71,8 +71,8 @@
     "cta.title": "Ready to stop the money arguments?",
     "cta.subtitle": "Join households worldwide managing shared expenses effortlessly.",
     "cta.placeholder": "Enter your email",
-    "cta.button": "Get 3 months Pro free",
-    "cta.disclaimer": "No spam, unsubscribe anytime.",
+    "cta.button": "1 month Pro free",
+    "cta.disclaimer": "No spam. Sign up in the app with the same email to activate Pro.",
     "cta.trust_encrypted": "Encrypted",
     "cta.trust_gdpr": "GDPR",
     "cta.trust_notracking": "No tracking",
@@ -92,7 +92,9 @@
     "pricing.pro_f6": "Currency conversion",
     "pricing.pro_f7": "Recurring expenses",
     "pricing.free_f6": "Smart settlements",
-    "pricing.free_f7": "No ads ever"
+    "pricing.free_f7": "No ads ever",
+    "cta.success": "Done! Sign up in the app with the same email to activate your free month of Pro.",
+    "cta.error": "Something went wrong. Please try again."
   },
   "es": {
     "nav.download": "Descargar",
@@ -166,8 +168,8 @@
     "cta.title": "¿Listo para dejar de discutir por dinero?",
     "cta.subtitle": "Únete a hogares de todo el mundo que gestionan gastos compartidos sin esfuerzo.",
     "cta.placeholder": "Introduce tu email",
-    "cta.button": "3 meses Pro gratis",
-    "cta.disclaimer": "Sin spam, cancela cuando quieras.",
+    "cta.button": "1 mes Pro gratis",
+    "cta.disclaimer": "Sin spam. Regístrate en la app con el mismo email para activar Pro.",
     "cta.trust_encrypted": "Cifrado",
     "cta.trust_gdpr": "GDPR",
     "cta.trust_notracking": "Sin rastreo",
@@ -187,7 +189,9 @@
     "pricing.pro_f6": "Conversión de divisas",
     "pricing.pro_f7": "Gastos recurrentes",
     "pricing.free_f6": "Liquidaciones inteligentes",
-    "pricing.free_f7": "Sin anuncios"
+    "pricing.free_f7": "Sin anuncios",
+    "cta.success": "Hecho! Regístrate en la app con el mismo email para activar tu mes gratis de Pro.",
+    "cta.error": "Algo salió mal. Inténtalo de nuevo."
   },
   "fr": {
     "nav.download": "Télécharger",
@@ -261,8 +265,8 @@
     "cta.title": "Prêt·e à en finir avec les disputes d'argent ?",
     "cta.subtitle": "Rejoins des foyers du monde entier qui gèrent leurs dépenses communes sans prise de tête.",
     "cta.placeholder": "Entre ton email",
-    "cta.button": "3 mois Pro offerts",
-    "cta.disclaimer": "Pas de spam, désinscription à tout moment.",
+    "cta.button": "1 mois Pro gratuit",
+    "cta.disclaimer": "Pas de spam. Inscrivez-vous dans l'app avec le même email pour activer Pro.",
     "cta.trust_encrypted": "Chiffré",
     "cta.trust_gdpr": "RGPD",
     "cta.trust_notracking": "Sans traçage",
@@ -282,7 +286,9 @@
     "pricing.pro_f6": "Conversion de devises",
     "pricing.pro_f7": "Dépenses récurrentes",
     "pricing.free_f6": "Liquidations intelligentes",
-    "pricing.free_f7": "Sans publicité"
+    "pricing.free_f7": "Sans publicité",
+    "cta.success": "C'est fait ! Inscrivez-vous dans l'app avec le même email pour activer votre mois gratuit de Pro.",
+    "cta.error": "Une erreur s'est produite. Réessayez."
   },
   "de": {
     "nav.download": "Herunterladen",
@@ -356,8 +362,8 @@
     "cta.title": "Bereit, den Geldstreit zu beenden?",
     "cta.subtitle": "Schließ dich Haushalten weltweit an, die gemeinsame Ausgaben mühelos verwalten.",
     "cta.placeholder": "Deine E-Mail eingeben",
-    "cta.button": "3 Monate Pro gratis",
-    "cta.disclaimer": "Kein Spam, jederzeit abmelden.",
+    "cta.button": "1 Monat Pro gratis",
+    "cta.disclaimer": "Kein Spam. Registriere dich in der App mit derselben E-Mail für Pro.",
     "cta.trust_encrypted": "Verschlüsselt",
     "cta.trust_gdpr": "DSGVO",
     "cta.trust_notracking": "Kein Tracking",
@@ -377,7 +383,9 @@
     "pricing.pro_f6": "Währungsumrechnung",
     "pricing.pro_f7": "Wiederkehrende Ausgaben",
     "pricing.free_f6": "Smarte Abrechnungen",
-    "pricing.free_f7": "Keine Werbung"
+    "pricing.free_f7": "Keine Werbung",
+    "cta.success": "Fertig! Registriere dich in der App mit derselben E-Mail, um deinen kostenlosen Pro-Monat zu aktivieren.",
+    "cta.error": "Etwas ist schiefgelaufen. Bitte erneut versuchen."
   },
   "pt": {
     "nav.download": "Baixar",
@@ -451,8 +459,8 @@
     "cta.title": "Pronto pra parar de brigar por dinheiro?",
     "cta.subtitle": "Junte-se a lares do mundo todo que gerenciam despesas compartilhadas sem estresse.",
     "cta.placeholder": "Digite seu email",
-    "cta.button": "3 meses Pro grátis",
-    "cta.disclaimer": "Sem spam, cancele quando quiser.",
+    "cta.button": "1 mês Pro grátis",
+    "cta.disclaimer": "Sem spam. Registre-se no app com o mesmo email para ativar o Pro.",
     "cta.trust_encrypted": "Criptografado",
     "cta.trust_gdpr": "LGPD",
     "cta.trust_notracking": "Sem rastreamento",
@@ -472,6 +480,8 @@
     "pricing.pro_f6": "Conversão de moedas",
     "pricing.pro_f7": "Despesas recorrentes",
     "pricing.free_f6": "Liquidações inteligentes",
-    "pricing.free_f7": "Sem anúncios"
+    "pricing.free_f7": "Sem anúncios",
+    "cta.success": "Pronto! Registre-se no app com o mesmo email para ativar seu mês grátis de Pro.",
+    "cta.error": "Algo deu errado. Tente novamente."
   }
 }

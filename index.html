@@ -407,12 +407,13 @@
       <p class="text-lg text-gray-500 mb-10 reveal" data-i18n="cta.subtitle">Join households worldwide managing shared expenses effortlessly.</p>
 
       <!-- Email form -->
-      <form id="email-form" class="flex flex-col sm:flex-row gap-3 max-w-lg mx-auto mb-4 reveal" onsubmit="return false;">
+      <form id="email-form" class="flex flex-col sm:flex-row gap-3 max-w-lg mx-auto mb-4 reveal">
         <input type="email" id="email-input" required class="flex-1 rounded-full bg-white py-4 px-6 text-darkBlue placeholder-gray-400 outline-none ring-1 ring-gray-200 focus:ring-terracotta transition-colors" data-i18n-placeholder="cta.placeholder" placeholder="Enter your email">
-        <button type="submit" class="bg-terracotta text-white rounded-full py-4 px-8 font-semibold hover:bg-terracotta/90 transition-colors whitespace-nowrap" data-i18n="cta.button">Get 3 months Pro free</button>
+        <button type="submit" id="email-btn" class="bg-terracotta text-white rounded-full py-4 px-8 font-semibold hover:bg-terracotta/90 transition-colors whitespace-nowrap" data-i18n="cta.button">1 month Pro free</button>
       </form>
-      <p id="email-success" class="hidden text-sm text-sage font-medium mb-10">Thanks! We'll be in touch soon.</p>
-      <p class="text-sm text-gray-400 mb-10 reveal" data-i18n="cta.disclaimer">No spam, unsubscribe anytime.</p>
+      <p id="email-success" class="hidden text-sm text-sage font-medium mb-4" data-i18n="cta.success">Done! Sign up in the app with the same email to activate your free month of Pro.</p>
+      <p id="email-error" class="hidden text-sm text-red-500 font-medium mb-4" data-i18n="cta.error">Something went wrong. Please try again.</p>
+      <p class="text-sm text-gray-400 mb-10 reveal" data-i18n="cta.disclaimer">No spam. Sign up in the app with the same email to activate Pro.</p>
 
       <!-- Trust badges -->
       <div class="flex flex-wrap items-center justify-center gap-6 text-sm text-gray-500 mb-10 reveal">
@@ -587,15 +588,37 @@
       document.querySelector(target)?.scrollIntoView({ behavior: 'smooth' });
     });
 
-    // 6. Email form (placeholder until Kit integration)
+    // 6. Email form → Supabase promo-signup edge function
     const emailForm = document.getElementById('email-form');
     if (emailForm) {
-      emailForm.addEventListener('submit', (e) => {
+      emailForm.addEventListener('submit', async (e) => {
         e.preventDefault();
-        const email = document.getElementById('email-input').value;
-        if (email) {
-          emailForm.classList.add('hidden');
-          document.getElementById('email-success').classList.remove('hidden');
+        const email = document.getElementById('email-input').value.trim();
+        const btn = document.getElementById('email-btn');
+        const successEl = document.getElementById('email-success');
+        const errorEl = document.getElementById('email-error');
+        if (!email) return;
+
+        btn.disabled = true;
+        btn.textContent = '...';
+        errorEl.classList.add('hidden');
+
+        try {
+          const res = await fetch('https://haggaeeajlbmktsinbek.supabase.co/functions/v1/promo-signup', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ email }),
+          });
+          if (res.ok) {
+            emailForm.classList.add('hidden');
+            successEl.classList.remove('hidden');
+          } else {
+            throw new Error('Failed');
+          }
+        } catch {
+          errorEl.classList.remove('hidden');
+          btn.disabled = false;
+          btn.textContent = translations[currentLang]?.['cta.button'] || '1 month Pro free';
         }
       });
     }
