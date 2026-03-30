@@ -152,7 +152,16 @@
     "terms.s19_title": "EU consumer rights",
     "terms.s19_p1": "EU consumers have rights under EU consumer protection laws that cannot be excluded by contract. You have the right to withdraw from purchases within 14 days per the EU Consumer Rights Directive, unless you have started using the App with express consent.",
     "terms.s20_title": "Contact",
-    "terms.s20_p1": "For questions about these Terms, contact us at homepotapp@gmail.com or through the app store listing."
+    "terms.s20_p1": "For questions about these Terms, contact us at homepotapp@gmail.com or through the app store listing.",
+    "footer.desc": "Shared expenses made simple for couples, roommates, and families.",
+    "footer.product": "Product",
+    "footer.features": "Features",
+    "footer.pricing": "Pricing",
+    "footer.download": "Download",
+    "footer.support_title": "Support",
+    "footer.help": "Help Center",
+    "footer.contact": "Contact Us",
+    "footer.legal_title": "Legal"
   },
   "es": {
     "support.back": "← Volver al inicio",
@@ -307,7 +316,16 @@
     "terms.s19_title": "Derechos del consumidor de la UE",
     "terms.s19_p1": "Los consumidores de la UE tienen derechos en virtud de las leyes de proteccion al consumidor de la UE que no pueden excluirse por contrato. Tienes derecho a desistir de las compras en un plazo de 14 dias segun la Directiva de Derechos del Consumidor de la UE, salvo que hayas comenzado a utilizar la App con consentimiento expreso.",
     "terms.s20_title": "Contacto",
-    "terms.s20_p1": "Para preguntas sobre estos Terminos, contactanos en homepotapp@gmail.com o a traves de la ficha de la app en la tienda."
+    "terms.s20_p1": "Para preguntas sobre estos Terminos, contactanos en homepotapp@gmail.com o a traves de la ficha de la app en la tienda.",
+    "footer.desc": "Gastos compartidos fáciles para parejas, compañeros de piso y familias.",
+    "footer.product": "Producto",
+    "footer.features": "Funciones",
+    "footer.pricing": "Precios",
+    "footer.download": "Descargar",
+    "footer.support_title": "Soporte",
+    "footer.help": "Centro de ayuda",
+    "footer.contact": "Contáctanos",
+    "footer.legal_title": "Legal"
   },
   "fr": {
     "support.back": "← Retour a l'accueil",
@@ -462,7 +480,16 @@
     "terms.s19_title": "Droits des consommateurs de l'UE",
     "terms.s19_p1": "Les consommateurs de l'UE ont des droits en vertu des lois de protection des consommateurs de l'UE qui ne peuvent etre exclus par contrat. Vous avez le droit de vous retracter de vos achats dans un delai de 14 jours conformement a la Directive sur les droits des consommateurs de l'UE, sauf si vous avez commence a utiliser l'App avec consentement expres.",
     "terms.s20_title": "Contact",
-    "terms.s20_p1": "Pour toute question concernant ces Conditions, contactez-nous a homepotapp@gmail.com ou via la fiche de l'application sur le store."
+    "terms.s20_p1": "Pour toute question concernant ces Conditions, contactez-nous a homepotapp@gmail.com ou via la fiche de l'application sur le store.",
+    "footer.desc": "Dépenses partagées simplifiées pour couples, colocataires et familles.",
+    "footer.product": "Produit",
+    "footer.features": "Fonctionnalités",
+    "footer.pricing": "Tarifs",
+    "footer.download": "Télécharger",
+    "footer.support_title": "Support",
+    "footer.help": "Centre d'aide",
+    "footer.contact": "Nous contacter",
+    "footer.legal_title": "Légal"
   },
   "de": {
     "support.back": "← Zuruck zur Startseite",
@@ -617,7 +644,16 @@
     "terms.s19_title": "EU-Verbraucherrechte",
     "terms.s19_p1": "EU-Verbraucher haben Rechte nach den EU-Verbraucherschutzgesetzen, die vertraglich nicht ausgeschlossen werden konnen. Sie haben das Recht, innerhalb von 14 Tagen gemass der EU-Verbraucherrechterichtlinie von Kaufen zuruckzutreten, es sei denn, Sie haben mit ausdrucklicher Zustimmung mit der Nutzung der App begonnen.",
     "terms.s20_title": "Kontakt",
-    "terms.s20_p1": "Bei Fragen zu diesen Bedingungen kontaktieren Sie uns unter homepotapp@gmail.com oder uber den App-Store-Eintrag."
+    "terms.s20_p1": "Bei Fragen zu diesen Bedingungen kontaktieren Sie uns unter homepotapp@gmail.com oder uber den App-Store-Eintrag.",
+    "footer.desc": "Gemeinsame Ausgaben einfach gemacht für Paare, WGs und Familien.",
+    "footer.product": "Produkt",
+    "footer.features": "Funktionen",
+    "footer.pricing": "Preise",
+    "footer.download": "Download",
+    "footer.support_title": "Support",
+    "footer.help": "Hilfecenter",
+    "footer.contact": "Kontakt",
+    "footer.legal_title": "Rechtliches"
   },
   "pt": {
     "support.back": "← Voltar ao inicio",
@@ -772,6 +808,15 @@
     "terms.s19_title": "Direitos do consumidor da UE",
     "terms.s19_p1": "Os consumidores da UE tem direitos sob as leis de protecao ao consumidor da UE que nao podem ser excluidos por contrato. Voce tem o direito de desistir de compras dentro de 14 dias conforme a Diretiva de Direitos do Consumidor da UE, salvo se voce tiver comecado a usar o App com consentimento expresso.",
     "terms.s20_title": "Contato",
-    "terms.s20_p1": "Para duvidas sobre estes Termos, entre em contato conosco em homepotapp@gmail.com ou pela pagina do aplicativo na loja."
+    "terms.s20_p1": "Para duvidas sobre estes Termos, entre em contato conosco em homepotapp@gmail.com ou pela pagina do aplicativo na loja.",
+    "footer.desc": "Despesas compartilhadas simples para casais, colegas e famílias.",
+    "footer.product": "Produto",
+    "footer.features": "Funcionalidades",
+    "footer.pricing": "Preços",
+    "footer.download": "Download",
+    "footer.support_title": "Suporte",
+    "footer.help": "Central de ajuda",
+    "footer.contact": "Fale conosco",
+    "footer.legal_title": "Legal"
   }
 }

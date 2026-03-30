@@ -209,15 +209,43 @@
   </div>
 
   <!-- FOOTER -->
-  <footer class="border-t border-gray-100 bg-white">
-    <div class="max-w-7xl mx-auto px-6 py-8 flex flex-col md:flex-row items-center justify-between gap-4">
-      <a href="/" class="text-sm text-darkBlue font-semibold hover:text-terracotta">HomePot</a>
-      <div class="flex gap-6 text-sm text-gray-400">
-        <a href="/privacy" class="hover:text-terracotta transition-colors" data-i18n="footer.privacy">Privacy Policy</a>
-        <a href="/terms" class="hover:text-terracotta transition-colors" data-i18n="footer.terms">Terms of Service</a>
-        <a href="/support" class="hover:text-terracotta transition-colors" data-i18n="footer.support">Support</a>
+  <footer class="bg-white border-t border-gray-100">
+    <div class="max-w-7xl mx-auto px-6 py-16">
+      <div class="grid md:grid-cols-2 lg:grid-cols-5 gap-12 mb-12">
+        <div class="lg:col-span-2">
+          <a href="/" class="flex items-center gap-2 mb-4">
+            <div class="w-10 h-10 bg-terracotta rounded-xl flex items-center justify-center"><span class="material-symbols-outlined text-white text-xl">home</span></div>
+            <span class="text-xl font-extrabold text-darkBlue">HomePot</span>
+          </a>
+          <p class="text-gray-500 text-sm mb-4 max-w-xs" data-i18n="footer.desc">Shared expenses made simple for couples, roommates, and families.</p>
+          <a href="mailto:homepotapp@gmail.com" class="text-sm text-terracotta hover:underline">homepotapp@gmail.com</a>
+        </div>
+        <div>
+          <h4 class="font-bold text-darkBlue mb-4" data-i18n="footer.product">Product</h4>
+          <ul class="space-y-2 text-sm text-gray-500">
+            <li><a href="/#features" class="hover:text-terracotta transition-colors" data-i18n="footer.features">Features</a></li>
+            <li><a href="/#pricing" class="hover:text-terracotta transition-colors" data-i18n="footer.pricing">Pricing</a></li>
+            <li><a href="/#cta" class="hover:text-terracotta transition-colors" data-i18n="footer.download">Download</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="font-bold text-darkBlue mb-4" data-i18n="footer.support_title">Support</h4>
+          <ul class="space-y-2 text-sm text-gray-500">
+            <li><a href="/support" class="hover:text-terracotta transition-colors" data-i18n="footer.help">Help Center</a></li>
+            <li><a href="mailto:homepotapp@gmail.com" class="hover:text-terracotta transition-colors" data-i18n="footer.contact">Contact Us</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="font-bold text-darkBlue mb-4" data-i18n="footer.legal_title">Legal</h4>
+          <ul class="space-y-2 text-sm text-gray-500">
+            <li><a href="/privacy" class="hover:text-terracotta transition-colors" data-i18n="footer.privacy">Privacy Policy</a></li>
+            <li><a href="/terms" class="hover:text-terracotta transition-colors" data-i18n="footer.terms">Terms of Service</a></li>
+          </ul>
+        </div>
       </div>
-      <p class="text-sm text-gray-400">&copy; 2026 HomePot</p>
+      <div class="border-t border-gray-100 pt-8 flex flex-col md:flex-row items-center justify-between gap-4">
+        <p class="text-sm text-gray-400">&copy; 2026 HomePot. All rights reserved.</p>
+      </div>
     </div>
   </footer>
 
