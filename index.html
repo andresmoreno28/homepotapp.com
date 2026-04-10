@@ -119,10 +119,10 @@
           <div class="flex flex-col sm:flex-row items-start sm:items-center gap-4 mb-8">
             <!-- App Store Pre-Order badge (official Apple) -->
             <a href="https://apps.apple.com/app/homepot-shared-expenses/id6759216594" target="_blank" rel="noopener" class="hover:opacity-80 transition-opacity">
-              <img data-badge-lang src="/assets/badges/preorder-en.svg" alt="Pre-order on the App Store" class="h-12">
+              <img data-badge-lang src="/assets/badges/preorder-en.svg" alt="Pre-order on the App Store" style="height:48px;width:auto;">
             </a>
             <!-- Learn more button -->
-            <a href="#features" data-scroll-to="#features" class="inline-flex items-center gap-2 text-terracotta font-semibold border-2 border-terracotta rounded-xl px-6 py-3.5 hover:bg-terracotta/5 transition-colors">
+            <a href="#features" data-scroll-to="#features" class="inline-flex items-center justify-center gap-2 text-terracotta font-semibold border-2 border-terracotta rounded-xl hover:bg-terracotta/5 transition-colors" style="height:48px;padding:0 24px;">
               <span data-i18n="hero.cta_learn">Learn more</span>
               <span class="material-symbols-outlined text-xl">arrow_downward</span>
             </a>
@@ -424,9 +424,11 @@
       </div>
 
       <!-- App Store Pre-Order badge (official Apple) -->
-      <a href="https://apps.apple.com/app/homepot-shared-expenses/id6759216594" target="_blank" rel="noopener" class="hover:opacity-80 transition-opacity reveal">
-        <img data-badge-lang src="/assets/badges/preorder-en.svg" alt="Pre-order on the App Store" class="h-12">
-      </a>
+      <div class="flex justify-center mt-6 reveal">
+        <a href="https://apps.apple.com/app/homepot-shared-expenses/id6759216594" target="_blank" rel="noopener" class="hover:opacity-80 transition-opacity">
+          <img data-badge-lang src="/assets/badges/preorder-en.svg" alt="Pre-order on the App Store" style="height:48px;width:auto;">
+        </a>
+      </div>
     </div>
   </section>
 
