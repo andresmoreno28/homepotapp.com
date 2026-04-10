@@ -61,6 +61,27 @@
 
     @media (prefers-reduced-motion: reduce) {
       .reveal { opacity: 1; transform: none; transition: none; }
+      .trust-marquee-track { animation: none !important; }
+    }
+
+    /* Trust marquee */
+    .trust-marquee { position: relative; }
+    .trust-marquee::before, .trust-marquee::after {
+      content: ""; position: absolute; top: 0; bottom: 0; width: 80px; z-index: 2; pointer-events: none;
+    }
+    .trust-marquee::before { left: 0; background: linear-gradient(to right, white, transparent); }
+    .trust-marquee::after { right: 0; background: linear-gradient(to left, white, transparent); }
+    .trust-marquee-track {
+      display: flex; gap: 3rem; white-space: nowrap;
+      animation: marquee 30s linear infinite;
+    }
+    .trust-item {
+      display: flex; align-items: center; gap: 0.5rem; flex-shrink: 0;
+      font-size: 0.875rem; font-weight: 600; color: #3D405B;
+    }
+    @keyframes marquee {
+      0% { transform: translateX(0); }
+      100% { transform: translateX(-50%); }
     }
 
     /* Smooth scroll */
@@ -74,9 +95,7 @@
     <div class="max-w-7xl mx-auto flex items-center justify-between px-6 py-4">
       <!-- Logo -->
       <a href="/" class="flex items-center gap-2">
-        <div class="w-10 h-10 bg-terracotta rounded-xl flex items-center justify-center">
-          <span class="material-symbols-outlined text-white text-xl">home</span>
-        </div>
+        <img src="/assets/icon-80.png" alt="HomePot" class="w-10 h-10 rounded-xl">
         <span class="text-xl font-extrabold text-darkBlue">HomePot</span>
       </a>
 
@@ -158,25 +177,31 @@
   </section>
 
   <!-- ========== 3. SOCIAL PROOF BAR ========== -->
-  <section class="bg-white py-12">
-    <div class="max-w-5xl mx-auto px-6 reveal">
-      <div class="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
-        <div class="flex flex-col items-center gap-2">
-          <span class="material-symbols-outlined text-sage text-3xl">translate</span>
-          <span class="font-semibold text-darkBlue" data-i18n="social.languages">5 Languages</span>
-        </div>
-        <div class="flex flex-col items-center gap-2">
-          <span class="material-symbols-outlined text-sage text-3xl">currency_exchange</span>
-          <span class="font-semibold text-darkBlue" data-i18n="social.currencies">10+ Currencies</span>
-        </div>
-        <div class="flex flex-col items-center gap-2">
-          <span class="material-symbols-outlined text-sage text-3xl">block</span>
-          <span class="font-semibold text-darkBlue" data-i18n="social.noads">No Ads</span>
-        </div>
-        <div class="flex flex-col items-center gap-2">
-          <span class="material-symbols-outlined text-sage text-3xl">verified_user</span>
-          <span class="font-semibold text-darkBlue" data-i18n="social.gdpr">GDPR Compliant</span>
-        </div>
+  <!-- Trust marquee -->
+  <section class="bg-white py-8 overflow-hidden">
+    <div class="trust-marquee">
+      <div class="trust-marquee-track">
+        <div class="trust-item"><span class="material-symbols-outlined text-sage">verified_user</span><span>GDPR Compliant</span></div>
+        <div class="trust-item"><span class="material-symbols-outlined text-sage">shield</span><span>CCPA Compliant</span></div>
+        <div class="trust-item"><span class="material-symbols-outlined text-sage">lock</span><span>256-bit Encryption</span></div>
+        <div class="trust-item"><span class="material-symbols-outlined text-sage">block</span><span>Zero Ads Forever</span></div>
+        <div class="trust-item"><span class="material-symbols-outlined text-sage">visibility_off</span><span>No Tracking</span></div>
+        <div class="trust-item"><span class="material-symbols-outlined text-sage">translate</span><span>5 Languages</span></div>
+        <div class="trust-item"><span class="material-symbols-outlined text-sage">currency_exchange</span><span>14 Currencies</span></div>
+        <div class="trust-item"><span class="material-symbols-outlined text-sage">cloud_done</span><span>AWS Infrastructure</span></div>
+        <div class="trust-item"><span class="material-symbols-outlined text-sage">delete_forever</span><span>Delete Anytime</span></div>
+        <div class="trust-item"><span class="material-symbols-outlined text-sage">smart_toy</span><span>AI-Powered Scanner</span></div>
+        <!-- Duplicate for seamless loop -->
+        <div class="trust-item"><span class="material-symbols-outlined text-sage">verified_user</span><span>GDPR Compliant</span></div>
+        <div class="trust-item"><span class="material-symbols-outlined text-sage">shield</span><span>CCPA Compliant</span></div>
+        <div class="trust-item"><span class="material-symbols-outlined text-sage">lock</span><span>256-bit Encryption</span></div>
+        <div class="trust-item"><span class="material-symbols-outlined text-sage">block</span><span>Zero Ads Forever</span></div>
+        <div class="trust-item"><span class="material-symbols-outlined text-sage">visibility_off</span><span>No Tracking</span></div>
+        <div class="trust-item"><span class="material-symbols-outlined text-sage">translate</span><span>5 Languages</span></div>
+        <div class="trust-item"><span class="material-symbols-outlined text-sage">currency_exchange</span><span>14 Currencies</span></div>
+        <div class="trust-item"><span class="material-symbols-outlined text-sage">cloud_done</span><span>AWS Infrastructure</span></div>
+        <div class="trust-item"><span class="material-symbols-outlined text-sage">delete_forever</span><span>Delete Anytime</span></div>
+        <div class="trust-item"><span class="material-symbols-outlined text-sage">smart_toy</span><span>AI-Powered Scanner</span></div>
       </div>
     </div>
   </section>
