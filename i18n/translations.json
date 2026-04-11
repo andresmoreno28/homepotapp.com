@@ -54,7 +54,7 @@
     "pricing.free_f2": "20 expenses/month",
     "pricing.free_f3": "Multi-currency",
     "pricing.free_f4": "Cloud sync",
-    "pricing.free_cta": "Pre-Order Free",
+    "pricing.free_cta": "Get 1 month Pro free",
     "pricing.pro_name": "Pro",
     "pricing.pro_badge": "Most Popular",
     "pricing.pro_desc": "For power users who want the full experience.",
@@ -67,7 +67,7 @@
     "pricing.pro_f3": "CSV & PDF Export",
     "pricing.pro_f4": "Smart Analytics",
     "pricing.pro_f5": "Unlimited expenses",
-    "pricing.pro_cta": "Pre-Order Free",
+    "pricing.pro_cta": "Try Pro free for 1 month",
     "cta.title": "Ready to stop the money arguments?",
     "cta.subtitle": "Join households worldwide managing shared expenses effortlessly.",
     "cta.placeholder": "Enter your email",
@@ -119,7 +119,9 @@
     "trust.currencies": "14 Currencies",
     "trust.aws": "AWS Infrastructure",
     "trust.delete": "Delete Anytime",
-    "trust.ai": "AI-Powered Scanner"
+    "trust.ai": "AI-Powered Scanner",
+    "hero.cta_promo": "1 month Pro free",
+    "hero.promo_hint": "Sign up below and get 1 month of Pro for free when we launch."
   },
   "es": {
     "nav.download": "Reservar gratis",
@@ -176,7 +178,7 @@
     "pricing.free_f2": "20 gastos/mes",
     "pricing.free_f3": "Multi-divisa",
     "pricing.free_f4": "Sincronización en la nube",
-    "pricing.free_cta": "Reservar gratis",
+    "pricing.free_cta": "Consigue 1 mes Pro gratis",
     "pricing.pro_name": "Pro",
     "pricing.pro_badge": "Más popular",
     "pricing.pro_desc": "Para quienes quieren la experiencia completa.",
@@ -189,7 +191,7 @@
     "pricing.pro_f3": "Exportar CSV y PDF",
     "pricing.pro_f4": "Analíticas avanzadas",
     "pricing.pro_f5": "Gastos ilimitados",
-    "pricing.pro_cta": "Reservar gratis",
+    "pricing.pro_cta": "Prueba Pro gratis 1 mes",
     "cta.title": "¿Listo para dejar de discutir por dinero?",
     "cta.subtitle": "Únete a hogares de todo el mundo que gestionan gastos compartidos sin esfuerzo.",
     "cta.placeholder": "Introduce tu email",
@@ -241,7 +243,9 @@
     "trust.currencies": "14 monedas",
     "trust.aws": "Infraestructura AWS",
     "trust.delete": "Borrar cuando quieras",
-    "trust.ai": "Escáner con IA"
+    "trust.ai": "Escáner con IA",
+    "hero.cta_promo": "1 mes Pro gratis",
+    "hero.promo_hint": "Regístrate abajo y consigue 1 mes de Pro gratis cuando lancemos."
   },
   "fr": {
     "nav.download": "Précommander",
@@ -298,7 +302,7 @@
     "pricing.free_f2": "20 dépenses/mois",
     "pricing.free_f3": "Multi-devises",
     "pricing.free_f4": "Synchronisation cloud",
-    "pricing.free_cta": "Précommander",
+    "pricing.free_cta": "1 mois Pro gratuit",
     "pricing.pro_name": "Pro",
     "pricing.pro_badge": "Le plus populaire",
     "pricing.pro_desc": "Pour ceux qui veulent l'expérience complète.",
@@ -311,7 +315,7 @@
     "pricing.pro_f3": "Export CSV et PDF",
     "pricing.pro_f4": "Analyses avancées",
     "pricing.pro_f5": "Dépenses illimitées",
-    "pricing.pro_cta": "Précommander",
+    "pricing.pro_cta": "Essayer Pro gratuitement 1 mois",
     "cta.title": "Prêt·e à en finir avec les disputes d'argent ?",
     "cta.subtitle": "Rejoins des foyers du monde entier qui gèrent leurs dépenses communes sans prise de tête.",
     "cta.placeholder": "Entre ton email",
@@ -363,7 +367,9 @@
     "trust.currencies": "14 devises",
     "trust.aws": "Infrastructure AWS",
     "trust.delete": "Supprimer à tout moment",
-    "trust.ai": "Scanner IA"
+    "trust.ai": "Scanner IA",
+    "hero.cta_promo": "1 mois Pro gratuit",
+    "hero.promo_hint": "Inscrivez-vous ci-dessous et obtenez 1 mois de Pro gratuit au lancement."
   },
   "de": {
     "nav.download": "Vorbestellen",
@@ -420,7 +426,7 @@
     "pricing.free_f2": "20 Ausgaben/Monat",
     "pricing.free_f3": "Multi-Währung",
     "pricing.free_f4": "Cloud-Sync",
-    "pricing.free_cta": "Kostenlos vorbestellen",
+    "pricing.free_cta": "1 Monat Pro gratis",
     "pricing.pro_name": "Pro",
     "pricing.pro_badge": "Am beliebtesten",
     "pricing.pro_desc": "Für alle, die das volle Erlebnis wollen.",
@@ -433,7 +439,7 @@
     "pricing.pro_f3": "CSV- & PDF-Export",
     "pricing.pro_f4": "Smarte Analysen",
     "pricing.pro_f5": "Unbegrenzte Ausgaben",
-    "pricing.pro_cta": "Kostenlos vorbestellen",
+    "pricing.pro_cta": "Pro 1 Monat gratis testen",
     "cta.title": "Bereit, den Geldstreit zu beenden?",
     "cta.subtitle": "Schließ dich Haushalten weltweit an, die gemeinsame Ausgaben mühelos verwalten.",
     "cta.placeholder": "Deine E-Mail eingeben",
@@ -485,7 +491,9 @@
     "trust.currencies": "14 Währungen",
     "trust.aws": "AWS-Infrastruktur",
     "trust.delete": "Jederzeit löschen",
-    "trust.ai": "KI-Scanner"
+    "trust.ai": "KI-Scanner",
+    "hero.cta_promo": "1 Monat Pro gratis",
+    "hero.promo_hint": "Melde dich unten an und erhalte 1 Monat Pro gratis zum Launch."
   },
   "pt": {
     "nav.download": "Reservar grátis",
@@ -542,7 +550,7 @@
     "pricing.free_f2": "20 despesas/mês",
     "pricing.free_f3": "Multi-moeda",
     "pricing.free_f4": "Sincronização na nuvem",
-    "pricing.free_cta": "Reservar grátis",
+    "pricing.free_cta": "1 mês Pro grátis",
     "pricing.pro_name": "Pro",
     "pricing.pro_badge": "Mais popular",
     "pricing.pro_desc": "Para quem quer a experiência completa.",
@@ -555,7 +563,7 @@
     "pricing.pro_f3": "Exportar CSV e PDF",
     "pricing.pro_f4": "Análises avançadas",
     "pricing.pro_f5": "Despesas ilimitadas",
-    "pricing.pro_cta": "Reservar grátis",
+    "pricing.pro_cta": "Experimente Pro grátis por 1 mês",
     "cta.title": "Pronto pra parar de brigar por dinheiro?",
     "cta.subtitle": "Junte-se a lares do mundo todo que gerenciam despesas compartilhadas sem estresse.",
     "cta.placeholder": "Digite seu email",
@@ -607,6 +615,8 @@
     "trust.currencies": "14 moedas",
     "trust.aws": "Infraestrutura AWS",
     "trust.delete": "Apagar quando quiser",
-    "trust.ai": "Scanner com IA"
+    "trust.ai": "Scanner com IA",
+    "hero.cta_promo": "1 mês Pro grátis",
+    "hero.promo_hint": "Cadastre-se abaixo e ganhe 1 mês de Pro grátis no lançamento."
   }
 }
