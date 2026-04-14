@@ -1,0 +1,278 @@
+{
+  "meta": {
+    "ogLocale": "es_ES"
+  },
+  "ui": {
+    "nav": {
+      "download": "Reservar gratis"
+    },
+    "footer": {
+      "desc": "Gastos compartidos simplificados para parejas, compis de piso y familias.",
+      "product": "Producto",
+      "features": "Funciones",
+      "pricing": "Precios",
+      "download": "Descargar",
+      "support_title": "Soporte",
+      "help": "Centro de ayuda",
+      "contact": "Contacto",
+      "legal_title": "Legal",
+      "privacy": "Política de privacidad",
+      "terms": "Términos de servicio",
+      "copyright": "© 2026 HomePot. Todos los derechos reservados."
+    },
+    "cta": {
+      "title": "¿Listo para dejar de discutir por dinero?",
+      "subtitle": "Únete a hogares de todo el mundo que gestionan gastos compartidos sin esfuerzo.",
+      "placeholder": "Introduce tu email",
+      "button": "1 mes Pro gratis",
+      "success": "¡Hecho! Regístrate en la app con el mismo email para activar tu mes gratis de Pro.",
+      "error": "Algo salió mal. Inténtalo de nuevo.",
+      "disclaimer": "Sin spam. Regístrate en la app con el mismo email para activar Pro.",
+      "trust_encrypted": "Cifrado",
+      "trust_gdpr": "RGPD",
+      "trust_notracking": "Sin rastreo"
+    },
+    "comparison": {
+      "eyebrow": "Comparación honesta",
+      "cta_promo": "1 mes Pro gratis",
+      "table_header_feature": "Característica",
+      "table_disclaimer": "Basado en información pública a fecha de 2026. Datos de Splitwise extraídos de su web y reseñas del App Store.",
+      "diff_title": "Qué hace a HomePot diferente",
+      "diff_subtitle": "Cada función construida alrededor de una promesa: sin anuncios, sin rastreo, sin fricción.",
+      "pain_title": "Lo que dicen los usuarios",
+      "pain_subtitle": "Frustraciones reales que escuchamos de quienes se pasan.",
+      "pain_disclaimer": "Citas parafraseadas de reseñas públicas del App Store. Sin personas identificadas."
+    }
+  },
+  "pages": {
+    "home": {
+      "title": "HomePot — Gastos compartidos sin dramas",
+      "description": "HomePot simplifica los gastos compartidos. Registra, divide y liquida con tu grupo en segundos. Gratis para iOS.",
+      "hero": {
+        "badge": "Gratis para iOS",
+        "headline": "Deja de discutir por dinero.",
+        "subtitle": "Registra, divide y liquida gastos compartidos en segundos. Hecha para parejas, compis de piso y familias que quieren vivir en paz.",
+        "cta_promo": "1 mes Pro gratis",
+        "promo_hint": "Regístrate abajo y consigue 1 mes de Pro gratis cuando lancemos.",
+        "trust_noads": "Sin anuncios",
+        "trust_notracking": "Sin rastreo",
+        "trust_gdpr": "Cumple con RGPD"
+      },
+      "trust": {
+        "gdpr": "Cumple con RGPD",
+        "ccpa": "Cumple con CCPA",
+        "encryption": "Cifrado de 256 bits",
+        "noads": "Cero anuncios para siempre",
+        "notracking": "Sin rastreo",
+        "languages": "5 idiomas",
+        "currencies": "14 monedas",
+        "aws": "Infraestructura AWS",
+        "delete": "Borra cuando quieras",
+        "ai": "Escáner con IA"
+      },
+      "showcase": {
+        "title": "Funciones destacadas",
+        "subtitle": "Descubre qué hace a HomePot diferente.",
+        "scan_title": "Escanea tickets con IA.",
+        "scan_desc": "Apunta la cámara a cualquier ticket. Importe, comercio, artículos, descuentos e impuestos — extraídos automáticamente.",
+        "balance_title": "Siempre sabes quién debe qué.",
+        "balance_desc": "Saldos en vivo, desglose de gastos, fijos vs variables. Todos ven los mismos números, sin adivinar.",
+        "balance_total": "Total del mes",
+        "balance_per_person": "SALDO POR PERSONA",
+        "balance_paid": "Pagó",
+        "balance_owes": "Debe",
+        "balance_transfers": "TRANSFERENCIAS A LIQUIDAR"
+      },
+      "f1": {
+        "pill": "Registro inteligente",
+        "title": "Añade gastos en segundos",
+        "desc": "Un toque, elige categoría, listo. Se acabaron las conversaciones incómodas de «quién pagó qué».",
+        "bullet": "Categorías inteligentes y gastos recurrentes"
+      },
+      "f2": {
+        "pill": "Con IA",
+        "title": "Escanea tickets con IA",
+        "desc": "Apunta con la cámara a cualquier ticket. Importe, comercio, artículos — extraído automáticamente.",
+        "bullet": "Desglose de artículos y detección de confianza"
+      },
+      "f3": {
+        "pill": "Tiempo real",
+        "title": "Siempre sabes quién debe qué",
+        "desc": "Saldos en vivo, desglose de gastos, fijos vs variables. Todos ven los mismos números, sin adivinar.",
+        "bullet": "Modos Bote Común y División de gastos"
+      },
+      "f4": {
+        "pill": "Un toque",
+        "title": "Liquida con un toque",
+        "desc": "El cierre mensual calcula las transferencias mínimas. Mira quién debe a quién, confirma y listo.",
+        "bullet": "Cálculos justos, transferencias minimizadas"
+      },
+      "f5": {
+        "pill": "Análisis",
+        "title": "Descubre en qué se va tu dinero",
+        "desc": "Gráficos interactivos, desgloses por categoría y tendencias de gasto. La información es poder.",
+        "bullet": "Exporta CSV y PDF cuando quieras"
+      },
+      "how": {
+        "title": "Empieza en menos de un minuto",
+        "step1_title": "Crea tu grupo",
+        "step1_desc": "Regístrate e invita a tus compis o pareja. Lleva 30 segundos.",
+        "step2_title": "Añade gastos compartidos",
+        "step2_desc": "Escanea un ticket o añádelo a mano. Nosotros hacemos las cuentas.",
+        "step3_title": "Liquida cada mes",
+        "step3_desc": "Mira quién debe qué y salda deudas con el mínimo de transferencias."
+      },
+      "pricing": {
+        "title": "Precios simples y honestos",
+        "subtitle": "Empieza gratis, mejora cuando lo necesites.",
+        "monthly": "Mensual",
+        "annual": "Anual",
+        "save": "Ahorra un 42%",
+        "free_name": "Gratis",
+        "free_desc": "Perfecto para empezar.",
+        "free_price": "0€",
+        "free_period": "/mes",
+        "free_features": [
+          "1 grupo",
+          "20 gastos/mes",
+          "10 escaneos IA/mes",
+          "Liquidaciones inteligentes",
+          "Multi-divisa",
+          "Sin anuncios",
+          "Sincronización en la nube"
+        ],
+        "free_cta": "Consigue 1 mes Pro gratis",
+        "pro_name": "Pro",
+        "pro_badge": "Más popular",
+        "pro_desc": "Para quienes quieren la experiencia completa.",
+        "pro_price_monthly": "4,99€",
+        "pro_price_annual": "2,92€",
+        "pro_period_monthly": "/mes",
+        "pro_period_annual": "/mes, facturado anualmente",
+        "pro_features": [
+          "Gastos ilimitados",
+          "Grupos ilimitados",
+          "Escáner de tickets con IA",
+          "Conversión de divisas",
+          "Analíticas avanzadas",
+          "Exportar CSV y PDF",
+          "Gastos recurrentes"
+        ],
+        "pro_cta": "Prueba Pro gratis 1 mes"
+      },
+      "faq": {
+        "title": "Preguntas frecuentes",
+        "items": [
+          {
+            "q": "¿Mis datos están seguros?",
+            "a": "Sí. Tus datos están cifrados en tránsito y en reposo en servidores AWS. Cumplimos con RGPD, CCPA y LGPD. Sin anuncios, sin rastreo, sin venta de datos. Nunca."
+          },
+          {
+            "q": "¿Cómo funciona el escáner IA de tickets?",
+            "a": "Haz una foto a cualquier ticket. Nuestra IA extrae el total, cada artículo, descuentos, impuestos, nombre de la tienda e incluso la moneda — automáticamente. Tú revisas y confirmas."
+          },
+          {
+            "q": "¿Puedo usarlo para viajes con amigos?",
+            "a": "Sí. Usa el modo «División de Gastos» para viajes — cada persona paga con su dinero y HomePot calcula quién debe a quién al final, minimizando las transferencias."
+          },
+          {
+            "q": "¿Cuánto cuesta?",
+            "a": "Plan gratuito: 1 grupo, 20 gastos/mes, 10 escaneos IA/mes, multi-moneda, sin anuncios. Pro: todo ilimitado desde 2,92€/mes (anual). 15 veces menos que un café al día."
+          }
+        ]
+      }
+    },
+    "comparisons": {
+      "splitwise": {
+        "title": "HomePot vs Splitwise — comparación honesta (2026)",
+        "description": "¿Harto de los límites diarios y anuncios de Splitwise? HomePot tiene escaneo con IA, 14 monedas y cero anuncios desde 2,92€/mes. Comparativa completa.",
+        "h1": "HomePot vs Splitwise — la comparación honesta",
+        "intro": "Splitwise popularizó la división de gastos. Pero los usuarios gratuitos ahora tienen un tope de 3 gastos al día y ven anuncios con temporizador entre pantallas. Si eso te tiene harto, aquí tienes cómo HomePot compara en lo que de verdad importa.",
+        "table_title": "Comparación lado a lado",
+        "table_subtitle": "Precio, límites, funciones, privacidad — todo en una página.",
+        "features": [
+          { "label": "Precio mensual (Pro)", "ours": "2,92€/mes", "theirs": "4,99$/mes" },
+          { "label": "Límite diario gratuito", "ours": "Ilimitado", "theirs": "3 gastos/día" },
+          { "label": "Anuncios en plan gratis", "ours": false, "theirs": true },
+          { "label": "Escáner IA de tickets", "ours": "Artículos + total", "theirs": "Solo total (Pro)" },
+          { "label": "Multi-divisa", "ours": "14 + detección auto", "theirs": "100+ (manual)" },
+          { "label": "Idiomas", "ours": "5 nativos", "theirs": "7" },
+          { "label": "Rastreo analítico", "ours": false, "theirs": true },
+          { "label": "Cumple RGPD / CCPA", "ours": true, "theirs": true },
+          { "label": "Modo offline", "ours": true, "theirs": "Limitado" },
+          { "label": "Gastos recurrentes", "ours": true, "theirs": "Solo Pro" },
+          { "label": "Cierre mensual + liquidación", "ours": true, "theirs": false },
+          { "label": "División fija vs variable", "ours": true, "theirs": false }
+        ],
+        "differentiators": [
+          {
+            "icon": "document_scanner",
+            "title": "La IA lee cada línea",
+            "desc": "Nuestro escáner extrae cada artículo, impuesto, descuento y propina — no solo el total. Perfecto para dividir una cuenta de restaurante donde no todos pidieron lo mismo."
+          },
+          {
+            "icon": "currency_exchange",
+            "title": "Detección automática de moneda",
+            "desc": "Escanea un ticket en Bangkok y lo ves convertido a euros al instante con la tasa del día. 14 monedas soportadas, sin seleccionar nada manualmente."
+          },
+          {
+            "icon": "block",
+            "title": "Cero anuncios, cero rastreadores",
+            "desc": "Ganamos dinero con suscripciones, no con tu atención o tus datos. Sin anuncios intersticiales, sin temporizadores, sin SDKs de analítica. Nunca."
+          },
+          {
+            "icon": "tune",
+            "title": "División fija vs variable",
+            "desc": "El alquiler se divide a partes iguales. La cena se divide entre quien estuvo. HomePot maneja ambos modelos en el mismo grupo sin trucos ni workarounds."
+          },
+          {
+            "icon": "auto_awesome",
+            "title": "Liquidación con mínimo de transferencias",
+            "desc": "Al final del mes, HomePot calcula el mínimo de transferencias para saldar todos los balances. Se acabaron las cadenas de pagos — solo una o dos liquidaciones limpias."
+          },
+          {
+            "icon": "shield",
+            "title": "Privacidad real, documentada",
+            "desc": "Política RGPD pública, datos alojados en la UE, borrado total de la cuenta en un toque. Nada escondido en letra pequeña."
+          }
+        ],
+        "pain_title": "Lo que los usuarios de Splitwise nos cuentan",
+        "pain_subtitle": "Frustraciones comunes que los trajeron hasta aquí.",
+        "pain_points": [
+          "El límite de 3 gastos al día es un chiste en un viaje. Lo gasté al segundo día.",
+          "Los anuncios con temporizador entre pantallas me hacían sentir castigado por no pagar.",
+          "El escáner de tickets lee el total pero no los artículos — inútil cuando dividimos una cuenta de restaurante línea por línea.",
+          "Quería soporte multi-divisa sin tener que elegir la moneda a mano cada vez.",
+          "Splitwise se volvió más lento y torpe con los años. Solo quiero algo simple que respete mi tiempo."
+        ],
+        "faq_title": "Preguntas frecuentes",
+        "faq": [
+          {
+            "q": "¿Puedo importar mis datos de Splitwise a HomePot?",
+            "a": "La importación CSV está en el roadmap. Por ahora puedes exportar tu grupo de Splitwise como CSV y pronto añadiremos un importador. Escríbenos a homepotapp@gmail.com y te avisamos el día que salga."
+          },
+          {
+            "q": "¿HomePot es realmente gratis?",
+            "a": "Sí. El plan gratuito incluye 1 grupo, 20 gastos al mes, 10 escaneos con IA, multi-divisa y cero anuncios — para siempre. Pro (desde 2,92€/mes anual) quita los límites y añade grupos ilimitados, exportaciones y analíticas avanzadas."
+          },
+          {
+            "q": "¿Cómo gana dinero HomePot si no hay anuncios?",
+            "a": "Suscripciones. Pro cuesta 2,92€/mes en facturación anual — menos que un café al mes. Ese es el único modelo de ingresos. Sin anuncios, sin venta de datos, sin acuerdos de afiliados dentro de la app."
+          },
+          {
+            "q": "¿HomePot funciona sin conexión?",
+            "a": "Sí. Añade gastos sin conexión; se sincronizan automáticamente cuando vuelves a conectarte. Los cálculos de liquidación corren en el dispositivo, así que puedes ver saldos sin conexión."
+          },
+          {
+            "q": "¿Qué monedas soporta HomePot?",
+            "a": "14 monedas con detección automática desde los tickets: EUR, USD, GBP, CHF, CAD, AUD, NZD, JPY, SEK, KRW, PLN, BRL, MXN, CNY. Los tipos de cambio se actualizan a diario."
+          },
+          {
+            "q": "¿HomePot cumple con el RGPD?",
+            "a": "Sí. Cumplimos con RGPD (UE), CCPA (California) y LGPD (Brasil). Los datos están alojados en AWS EU, cifrados en reposo y en tránsito. Borrado completo de cuenta y datos en un toque desde Ajustes."
+          }
+        ]
+      }
+    }
+  }
+}

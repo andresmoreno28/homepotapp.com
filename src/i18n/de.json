@@ -1,0 +1,278 @@
+{
+  "meta": {
+    "ogLocale": "de_DE"
+  },
+  "ui": {
+    "nav": {
+      "download": "Vorbestellen"
+    },
+    "footer": {
+      "desc": "Gemeinsame Ausgaben einfach gemacht — für Paare, WGs und Familien.",
+      "product": "Produkt",
+      "features": "Funktionen",
+      "pricing": "Preise",
+      "download": "Herunterladen",
+      "support_title": "Support",
+      "help": "Hilfezentrum",
+      "contact": "Kontakt",
+      "legal_title": "Rechtliches",
+      "privacy": "Datenschutzrichtlinie",
+      "terms": "Nutzungsbedingungen",
+      "copyright": "© 2026 HomePot. Alle Rechte vorbehalten."
+    },
+    "cta": {
+      "title": "Bereit, den Geldstreit zu beenden?",
+      "subtitle": "Schließ dich Haushalten weltweit an, die gemeinsame Ausgaben mühelos verwalten.",
+      "placeholder": "Deine E-Mail eingeben",
+      "button": "1 Monat Pro gratis",
+      "success": "Fertig! Registriere dich in der App mit derselben E-Mail, um deinen kostenlosen Pro-Monat zu aktivieren.",
+      "error": "Etwas ist schiefgelaufen. Bitte erneut versuchen.",
+      "disclaimer": "Kein Spam. Registriere dich in der App mit derselben E-Mail, um Pro zu aktivieren.",
+      "trust_encrypted": "Verschlüsselt",
+      "trust_gdpr": "DSGVO",
+      "trust_notracking": "Kein Tracking"
+    },
+    "comparison": {
+      "eyebrow": "Ehrlicher Vergleich",
+      "cta_promo": "1 Monat Pro gratis",
+      "table_header_feature": "Funktion",
+      "table_disclaimer": "Basierend auf öffentlich verfügbaren Informationen mit Stand 2026. Splitwise-Daten aus der offiziellen Website und App-Store-Rezensionen.",
+      "diff_title": "Was HomePot anders macht",
+      "diff_subtitle": "Jede Funktion rund um ein Versprechen: keine Werbung, kein Tracking, keine Reibung.",
+      "pain_title": "Was Nutzer sagen",
+      "pain_subtitle": "Echte Frustrationen, die wir von Wechselnden hören.",
+      "pain_disclaimer": "Zitate paraphrasiert aus öffentlichen App-Store-Rezensionen. Keine Einzelpersonen identifiziert."
+    }
+  },
+  "pages": {
+    "home": {
+      "title": "HomePot — Gemeinsame Ausgaben einfach gemacht",
+      "description": "HomePot macht gemeinsame Ausgaben mühelos. Erfasse, teile und begleiche Ausgaben mit deiner Gruppe in Sekunden. Gratis für iOS.",
+      "hero": {
+        "badge": "Kostenlos für iOS",
+        "headline": "Schluss mit Streit ums Geld.",
+        "subtitle": "Erfasse, teile und begleiche gemeinsame Ausgaben in Sekunden. Gemacht für Paare, WGs und Familien, die Frieden wollen.",
+        "cta_promo": "1 Monat Pro gratis",
+        "promo_hint": "Melde dich unten an und erhalte 1 Monat Pro gratis zum Launch.",
+        "trust_noads": "Keine Werbung",
+        "trust_notracking": "Kein Tracking",
+        "trust_gdpr": "DSGVO-konform"
+      },
+      "trust": {
+        "gdpr": "DSGVO-konform",
+        "ccpa": "CCPA-konform",
+        "encryption": "256-Bit-Verschlüsselung",
+        "noads": "Null Werbung, für immer",
+        "notracking": "Kein Tracking",
+        "languages": "5 Sprachen",
+        "currencies": "14 Währungen",
+        "aws": "AWS-Infrastruktur",
+        "delete": "Jederzeit löschen",
+        "ai": "KI-gestützter Scanner"
+      },
+      "showcase": {
+        "title": "Feature-Highlights",
+        "subtitle": "Entdecke, was HomePot besonders macht.",
+        "scan_title": "Belege per KI scannen.",
+        "scan_desc": "Richte deine Kamera auf einen Beleg. Betrag, Geschäft, Artikel, Rabatte, Steuern — automatisch erkannt.",
+        "balance_title": "Immer wissen, wer was schuldet.",
+        "balance_desc": "Echtzeit-Salden, Ausgabenaufschlüsselung, fix vs. variabel. Alle sehen dieselben Zahlen, kein Raten mehr.",
+        "balance_total": "Monatsgesamt",
+        "balance_per_person": "SALDO PRO PERSON",
+        "balance_paid": "Bezahlt",
+        "balance_owes": "Schuldet",
+        "balance_transfers": "ZU LEISTENDE ÜBERWEISUNGEN"
+      },
+      "f1": {
+        "pill": "Smartes Tracking",
+        "title": "Ausgaben in Sekunden erfassen",
+        "desc": "Ein Tipp, Kategorie wählen, fertig. Keine peinlichen »Wer hat was bezahlt?«-Gespräche mehr.",
+        "bullet": "Smarte Kategorien & wiederkehrende Ausgaben"
+      },
+      "f2": {
+        "pill": "KI-gestützt",
+        "title": "Belege per KI scannen",
+        "desc": "Halte deine Kamera auf einen Beleg. Betrag, Händler, Artikel — automatisch erkannt.",
+        "bullet": "Einzelposten & Konfidenzerkennung"
+      },
+      "f3": {
+        "pill": "Echtzeit",
+        "title": "Immer wissen, wer wem was schuldet",
+        "desc": "Live-Salden, Ausgabenübersicht, fix vs. variabel. Alle sehen dieselben Zahlen, kein Raten mehr.",
+        "bullet": "Gemeinschaftskasse & Ausgabenteilung"
+      },
+      "f4": {
+        "pill": "Ein Tipp",
+        "title": "Mit einem Tipp abrechnen",
+        "desc": "Der Monatsabschluss berechnet die minimalen Überweisungen. Sieh, wer wem schuldet, bestätige, fertig.",
+        "bullet": "Faire Berechnungen, minimierte Überweisungen"
+      },
+      "f5": {
+        "pill": "Einblicke",
+        "title": "Sieh, wohin dein Geld fließt",
+        "desc": "Interaktive Diagramme, Kategorie-Aufschlüsselungen und Ausgabentrends. Wissen ist Macht.",
+        "bullet": "CSV- & PDF-Export jederzeit"
+      },
+      "how": {
+        "title": "In unter einer Minute loslegen",
+        "step1_title": "Erstelle deine Gruppe",
+        "step1_desc": "Melde dich an und lade deine Mitbewohner oder deinen Partner ein. Dauert 30 Sekunden.",
+        "step2_title": "Gemeinsame Ausgaben hinzufügen",
+        "step2_desc": "Beleg scannen oder manuell eintragen. Wir übernehmen die Rechnung.",
+        "step3_title": "Monatlich abrechnen",
+        "step3_desc": "Sieh, wer was schuldet, und begleiche Schulden mit minimalen Überweisungen."
+      },
+      "pricing": {
+        "title": "Einfache, ehrliche Preise",
+        "subtitle": "Starte kostenlos, upgrade, wenn du mehr brauchst.",
+        "monthly": "Monatlich",
+        "annual": "Jährlich",
+        "save": "42% sparen",
+        "free_name": "Kostenlos",
+        "free_desc": "Perfekt zum Einstieg.",
+        "free_price": "0€",
+        "free_period": "/Monat",
+        "free_features": [
+          "1 Gruppe",
+          "20 Ausgaben/Monat",
+          "10 KI-Scans/Monat",
+          "Smarte Abrechnungen",
+          "Multi-Währung",
+          "Keine Werbung",
+          "Cloud-Sync"
+        ],
+        "free_cta": "1 Monat Pro gratis holen",
+        "pro_name": "Pro",
+        "pro_badge": "Am beliebtesten",
+        "pro_desc": "Für alle, die das volle Erlebnis wollen.",
+        "pro_price_monthly": "4,99€",
+        "pro_price_annual": "2,92€",
+        "pro_period_monthly": "/Monat",
+        "pro_period_annual": "/Mo., jährlich abgerechnet",
+        "pro_features": [
+          "Unbegrenzte Ausgaben",
+          "Unbegrenzte Gruppen",
+          "KI-Belegscanner",
+          "Währungsumrechnung",
+          "Smarte Analysen",
+          "CSV- & PDF-Export",
+          "Wiederkehrende Ausgaben"
+        ],
+        "pro_cta": "Pro 1 Monat gratis testen"
+      },
+      "faq": {
+        "title": "Häufige Fragen",
+        "items": [
+          {
+            "q": "Sind meine Daten sicher?",
+            "a": "Ja. Deine Daten sind in Transit und im Ruhezustand auf AWS-Servern verschlüsselt. Wir erfüllen DSGVO, CCPA und LGPD. Keine Werbung, kein Tracking, kein Datenverkauf. Nie."
+          },
+          {
+            "q": "Wie funktioniert der KI-Belegscanner?",
+            "a": "Fotografiere einen Beleg. Unsere KI extrahiert Gesamtbetrag, jeden einzelnen Posten, Rabatte, Steuern, Geschäftsname und sogar die Währung — automatisch. Du prüfst und bestätigst."
+          },
+          {
+            "q": "Kann ich es für Reisen mit Freunden nutzen?",
+            "a": "Ja. Nutze den Modus »Ausgabenteilung« für Reisen — jeder zahlt mit seinem eigenen Geld, und HomePot berechnet am Ende, wer wem schuldet, und minimiert die Anzahl der Überweisungen."
+          },
+          {
+            "q": "Wie viel kostet es?",
+            "a": "Kostenlos: 1 Gruppe, 20 Ausgaben/Monat, 10 KI-Scans/Monat, Multi-Währung, keine Werbung. Pro: alles unbegrenzt ab 2,92€/Monat (jährlich). 15-mal weniger als ein Kaffee pro Tag."
+          }
+        ]
+      }
+    },
+    "comparisons": {
+      "splitwise": {
+        "title": "HomePot vs Splitwise — ehrlicher Vergleich (2026)",
+        "description": "Genervt von Splitwise-Tageslimits und Werbung? HomePot hat KI-Belegscan, 14 Währungen und null Werbung ab 2,92€/Mo. Vollständiger Vergleich.",
+        "h1": "HomePot vs Splitwise — der ehrliche Vergleich",
+        "intro": "Splitwise hat das Ausgabenteilen populär gemacht. Aber Free-Nutzer stoßen jetzt auf ein Tageslimit von 3 Ausgaben und sehen Werbung mit Cooldown-Timern zwischen den Bildschirmen. Wenn dich das nervt, hier der Vergleich bei allem, was wirklich zählt.",
+        "table_title": "Vergleich Seite an Seite",
+        "table_subtitle": "Preis, Limits, Funktionen, Datenschutz — alles auf einer Seite.",
+        "features": [
+          { "label": "Monatlicher Preis (Pro)", "ours": "2,92€/Mo.", "theirs": "4,99$/Mo." },
+          { "label": "Tägliches Limit (Free)", "ours": "Unbegrenzt", "theirs": "3 Ausgaben/Tag" },
+          { "label": "Werbung im Free-Tarif", "ours": false, "theirs": true },
+          { "label": "KI-Belegscanner", "ours": "Einzelposten + Total", "theirs": "Nur Total (Pro)" },
+          { "label": "Multi-Währung", "ours": "14 + Auto-Erkennung", "theirs": "100+ (manuell)" },
+          { "label": "Sprachen", "ours": "5 nativ", "theirs": "7" },
+          { "label": "Analyse-Tracking", "ours": false, "theirs": true },
+          { "label": "DSGVO / CCPA konform", "ours": true, "theirs": true },
+          { "label": "Offline-Modus", "ours": true, "theirs": "Begrenzt" },
+          { "label": "Wiederkehrende Ausgaben", "ours": true, "theirs": "Nur Pro" },
+          { "label": "Monatsabschluss + Abrechnung", "ours": true, "theirs": false },
+          { "label": "Fixe vs. variable Aufteilung", "ours": true, "theirs": false }
+        ],
+        "differentiators": [
+          {
+            "icon": "document_scanner",
+            "title": "KI liest jede Zeile",
+            "desc": "Unser Scanner erkennt jeden Artikel, jede Steuer, jeden Rabatt und jedes Trinkgeld — nicht nur den Gesamtbetrag. Perfekt, um eine Restaurantrechnung zu teilen, bei der nicht alle dasselbe bestellt haben."
+          },
+          {
+            "icon": "currency_exchange",
+            "title": "Automatische Währungserkennung",
+            "desc": "Scanne einen Beleg in Bangkok und sieh ihn sofort zum Tageskurs in Euro umgerechnet. 14 Währungen unterstützt, keine manuelle Auswahl nötig."
+          },
+          {
+            "icon": "block",
+            "title": "Null Werbung, null Tracker",
+            "desc": "Wir verdienen Geld mit Abonnements, nicht mit deiner Aufmerksamkeit oder deinen Daten. Keine Interstitial-Werbung, keine Cooldown-Timer, keine Analytics-SDKs. Niemals."
+          },
+          {
+            "icon": "tune",
+            "title": "Fixe vs. variable Aufteilung",
+            "desc": "Miete wird zu gleichen Teilen geteilt. Das Abendessen teilt sich auf diejenigen auf, die dabei waren. HomePot handhabt beide Modelle in derselben Gruppe ohne Tricks."
+          },
+          {
+            "icon": "auto_awesome",
+            "title": "Abrechnung mit minimalen Überweisungen",
+            "desc": "Am Monatsende berechnet HomePot die wenigsten nötigen Überweisungen, um alle Salden auf Null zu bringen. Keine Zahlungsketten mehr — nur ein oder zwei saubere Abrechnungen."
+          },
+          {
+            "icon": "shield",
+            "title": "Echte Privatsphäre, dokumentiert",
+            "desc": "Öffentliche DSGVO-konforme Richtlinie, Daten in der EU gehostet, vollständige Kontolöschung mit einem Tipp. Nichts im Kleingedruckten versteckt."
+          }
+        ],
+        "pain_title": "Was Splitwise-Nutzer uns sagen",
+        "pain_subtitle": "Häufige Frustrationen, die sie hierhergebracht haben.",
+        "pain_points": [
+          "Das Tageslimit von 3 Ausgaben ist auf einer Reise ein Witz. Am zweiten Tag war es aufgebraucht.",
+          "Werbung mit Cooldown-Timern zwischen den Bildschirmen fühlte sich an, als würde ich bestraft, weil ich nicht zahle.",
+          "Der Belegscanner liest den Gesamtbetrag, aber nicht die Artikel — nutzlos, wenn wir eine Restaurantrechnung Zeile für Zeile teilen.",
+          "Ich wollte Multi-Währungs-Unterstützung, ohne jedes Mal die Währung manuell auszuwählen.",
+          "Splitwise wurde über die Jahre langsamer und umständlicher. Ich will einfach etwas Simples, das meine Zeit respektiert."
+        ],
+        "faq_title": "Häufig gestellte Fragen",
+        "faq": [
+          {
+            "q": "Kann ich meine Splitwise-Daten in HomePot importieren?",
+            "a": "CSV-Import ist auf der Roadmap. Vorerst kannst du deine Splitwise-Gruppe als CSV exportieren, und wir werden bald einen Importer hinzufügen. Schreib uns an homepotapp@gmail.com und wir benachrichtigen dich am Tag der Veröffentlichung."
+          },
+          {
+            "q": "Ist HomePot wirklich kostenlos?",
+            "a": "Ja. Der kostenlose Plan umfasst 1 Gruppe, 20 Ausgaben pro Monat, 10 KI-Belegscans, Multi-Währung und null Werbung — für immer. Pro (ab 2,92€/Mo. jährlich) entfernt Limits und fügt unbegrenzte Gruppen, Exporte und erweiterte Analysen hinzu."
+          },
+          {
+            "q": "Wie verdient HomePot Geld, wenn es keine Werbung gibt?",
+            "a": "Abonnements. Pro kostet 2,92€/Monat bei Jahresabrechnung — weniger als ein Kaffee pro Monat. Das ist das einzige Geschäftsmodell. Keine Werbung, kein Datenverkauf, keine Affiliate-Deals in der App."
+          },
+          {
+            "q": "Funktioniert HomePot offline?",
+            "a": "Ja. Füge Ausgaben offline hinzu; sie werden automatisch synchronisiert, wenn du wieder verbunden bist. Abrechnungsberechnungen laufen auf dem Gerät, sodass du Salden ohne Verbindung sehen kannst."
+          },
+          {
+            "q": "Welche Währungen unterstützt HomePot?",
+            "a": "14 Währungen mit automatischer Erkennung aus Belegen: EUR, USD, GBP, CHF, CAD, AUD, NZD, JPY, SEK, KRW, PLN, BRL, MXN, CNY. Wechselkurse werden täglich aktualisiert."
+          },
+          {
+            "q": "Ist HomePot DSGVO-konform?",
+            "a": "Ja. Wir erfüllen die DSGVO (EU), den CCPA (Kalifornien) und die LGPD (Brasilien). Daten werden auf AWS EU gehostet, im Ruhezustand und in Transit verschlüsselt. Vollständige Konto- und Datenlöschung mit einem Tipp in den Einstellungen."
+          }
+        ]
+      }
+    }
+  }
+}

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="<%= it.locale %>">
+<%~ include('_head', it) %>
+<body class="font-sans text-darkBlue antialiased<%= it.bodyClass ? ' ' + it.bodyClass : '' %>">
+
+<%~ include('_navbar', it) %>
+
+<%~ it.body %>
+
+<%~ include('_footer', it) %>
+
+<script>
+  window.__alternates = <%~ JSON.stringify(it.alternates || {}) %>;
+  window.__locale = <%~ JSON.stringify(it.locale) %>;
+</script>
+<script src="/src/js/lang-switcher.js" defer></script>
+<script src="/src/js/site.js" defer></script>
+<% if (it.extraScripts) { %><%~ it.extraScripts %><% } %>
+
+</body>
+</html>

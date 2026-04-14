@@ -1,0 +1,278 @@
+{
+  "meta": {
+    "ogLocale": "en_US"
+  },
+  "ui": {
+    "nav": {
+      "download": "Pre-Order Free"
+    },
+    "footer": {
+      "desc": "Shared expenses made simple for couples, roommates, and families.",
+      "product": "Product",
+      "features": "Features",
+      "pricing": "Pricing",
+      "download": "Download",
+      "support_title": "Support",
+      "help": "Help Center",
+      "contact": "Contact Us",
+      "legal_title": "Legal",
+      "privacy": "Privacy Policy",
+      "terms": "Terms of Service",
+      "copyright": "© 2026 HomePot. All rights reserved."
+    },
+    "cta": {
+      "title": "Ready to stop the money arguments?",
+      "subtitle": "Join households worldwide managing shared expenses effortlessly.",
+      "placeholder": "Enter your email",
+      "button": "1 month Pro free",
+      "success": "Done! Sign up in the app with the same email to activate your free month of Pro.",
+      "error": "Something went wrong. Please try again.",
+      "disclaimer": "No spam. Sign up in the app with the same email to activate Pro.",
+      "trust_encrypted": "Encrypted",
+      "trust_gdpr": "GDPR",
+      "trust_notracking": "No tracking"
+    },
+    "comparison": {
+      "eyebrow": "Honest comparison",
+      "cta_promo": "1 month Pro free",
+      "table_header_feature": "Feature",
+      "table_disclaimer": "Based on publicly available information as of 2026. Splitwise details sourced from their website and App Store reviews.",
+      "diff_title": "What makes HomePot different",
+      "diff_subtitle": "Every feature built around one promise: no ads, no tracking, no friction.",
+      "pain_title": "What users are saying",
+      "pain_subtitle": "Real frustrations we hear from people switching.",
+      "pain_disclaimer": "Quotes paraphrased from public App Store reviews. No individuals identified."
+    }
+  },
+  "pages": {
+    "home": {
+      "title": "HomePot — Shared Expenses Made Simple",
+      "description": "HomePot makes shared expenses effortless. Track, split, and settle expenses with your group. Free for iOS.",
+      "hero": {
+        "badge": "Free for iOS",
+        "headline": "Stop fighting about money.",
+        "subtitle": "Track, split, and settle shared expenses in seconds. Built for couples, roommates, and families who want peace.",
+        "cta_promo": "1 month Pro free",
+        "promo_hint": "Sign up below and get 1 month of Pro for free when we launch.",
+        "trust_noads": "No ads",
+        "trust_notracking": "No tracking",
+        "trust_gdpr": "GDPR compliant"
+      },
+      "trust": {
+        "gdpr": "GDPR Compliant",
+        "ccpa": "CCPA Compliant",
+        "encryption": "256-bit Encryption",
+        "noads": "Zero Ads Forever",
+        "notracking": "No Tracking",
+        "languages": "5 Languages",
+        "currencies": "14 Currencies",
+        "aws": "AWS Infrastructure",
+        "delete": "Delete Anytime",
+        "ai": "AI-Powered Scanner"
+      },
+      "showcase": {
+        "title": "Feature Showcase",
+        "subtitle": "See what makes HomePot different.",
+        "scan_title": "Scan receipts with AI.",
+        "scan_desc": "Point your camera at any receipt. Amount, merchant, items, discounts, taxes — extracted automatically.",
+        "balance_title": "Always know who owes what.",
+        "balance_desc": "Live balances, spending breakdown, fixed vs variable. Everyone sees the same numbers, no more guessing.",
+        "balance_total": "Monthly total",
+        "balance_per_person": "BALANCE PER PERSON",
+        "balance_paid": "Paid",
+        "balance_owes": "Owes",
+        "balance_transfers": "TRANSFERS TO SETTLE"
+      },
+      "f1": {
+        "pill": "Smart Tracking",
+        "title": "Add expenses in seconds",
+        "desc": "One tap, choose a category, done. No more awkward 'who paid for what?' conversations.",
+        "bullet": "Smart categories & recurring expenses"
+      },
+      "f2": {
+        "pill": "AI Powered",
+        "title": "Scan receipts with AI",
+        "desc": "Point your camera at any receipt. Amount, merchant, items — extracted automatically.",
+        "bullet": "Line items & confidence detection"
+      },
+      "f3": {
+        "pill": "Real-Time",
+        "title": "Always know who owes what",
+        "desc": "Live balances, spending breakdown, fixed vs variable. Everyone sees the same numbers, no more guessing.",
+        "bullet": "Shared Fund & Expense Split modes"
+      },
+      "f4": {
+        "pill": "One Tap",
+        "title": "Settle up with one tap",
+        "desc": "Monthly close calculates the minimum transfers needed. See who owes whom, confirm, done.",
+        "bullet": "Fair calculations, minimized transfers"
+      },
+      "f5": {
+        "pill": "Insights",
+        "title": "See where your money goes",
+        "desc": "Interactive charts, category breakdowns, and spending trends. Knowledge is power.",
+        "bullet": "Export CSV & PDF anytime"
+      },
+      "how": {
+        "title": "Get started in under a minute",
+        "step1_title": "Create your group",
+        "step1_desc": "Sign up and invite your roommates or partner. Takes 30 seconds.",
+        "step2_title": "Add shared expenses",
+        "step2_desc": "Snap a receipt or add manually. We handle the math.",
+        "step3_title": "Settle up monthly",
+        "step3_desc": "See who owes what and settle debts with minimal transfers."
+      },
+      "pricing": {
+        "title": "Simple, honest pricing",
+        "subtitle": "Start for free, upgrade when you need more.",
+        "monthly": "Monthly",
+        "annual": "Annual",
+        "save": "Save 42%",
+        "free_name": "Free",
+        "free_desc": "Perfect for getting started.",
+        "free_price": "$0",
+        "free_period": "/month",
+        "free_features": [
+          "1 group",
+          "20 expenses/month",
+          "10 AI scans/month",
+          "Smart settlements",
+          "Multi-currency",
+          "No ads ever",
+          "Cloud sync"
+        ],
+        "free_cta": "Get 1 month Pro free",
+        "pro_name": "Pro",
+        "pro_badge": "Most Popular",
+        "pro_desc": "For power users who want the full experience.",
+        "pro_price_monthly": "€4.99",
+        "pro_price_annual": "€2.92",
+        "pro_period_monthly": "/month",
+        "pro_period_annual": "/mo, billed annually",
+        "pro_features": [
+          "Unlimited expenses",
+          "Unlimited groups",
+          "AI Receipt Scanner",
+          "Currency conversion",
+          "Smart Analytics",
+          "CSV & PDF Export",
+          "Recurring expenses"
+        ],
+        "pro_cta": "Try Pro free for 1 month"
+      },
+      "faq": {
+        "title": "Common questions",
+        "items": [
+          {
+            "q": "Is my data secure?",
+            "a": "Yes. Your data is encrypted in transit and at rest on AWS servers. We comply with GDPR, CCPA, and LGPD. No ads, no tracking, no data selling. Ever."
+          },
+          {
+            "q": "How does the AI receipt scanner work?",
+            "a": "Take a photo of any receipt. Our AI extracts the total, each line item, discounts, taxes, merchant name, and even the currency — automatically. You review and confirm."
+          },
+          {
+            "q": "Can I use it for trips with friends?",
+            "a": "Yes. Use \"Expense Split\" mode for trips — each person pays with their own money, and HomePot calculates who owes whom at the end, minimizing the number of transfers."
+          },
+          {
+            "q": "How much does it cost?",
+            "a": "Free plan: 1 group, 20 expenses/month, 10 AI scans/month, multi-currency, no ads. Pro: unlimited everything from €2.92/month (annual). That's 15x less than a coffee per day."
+          }
+        ]
+      }
+    },
+    "comparisons": {
+      "splitwise": {
+        "title": "HomePot vs Splitwise — honest comparison (2026)",
+        "description": "Tired of Splitwise daily limits and ads? HomePot has AI receipt scanning, 14 currencies, zero ads for €2.92/mo. Full comparison, pricing, features.",
+        "h1": "HomePot vs Splitwise — the honest comparison",
+        "intro": "Splitwise made expense splitting mainstream. But free users now hit a 3-expense daily cap and see ads with cooldown timers between screens. If that's driving you crazy, here's how HomePot compares on every feature that matters.",
+        "table_title": "Side-by-side comparison",
+        "table_subtitle": "Price, limits, features, privacy — everything on one page.",
+        "features": [
+          { "label": "Monthly price (Pro)", "ours": "€2.92/mo", "theirs": "$4.99/mo" },
+          { "label": "Free tier daily limit", "ours": "Unlimited", "theirs": "3 expenses/day" },
+          { "label": "Ads in free tier", "ours": false, "theirs": true },
+          { "label": "AI receipt scanner", "ours": "Line items + total", "theirs": "Total only (Pro)" },
+          { "label": "Multi-currency", "ours": "14 + auto-detect", "theirs": "100+ (manual)" },
+          { "label": "Languages", "ours": "5 native", "theirs": "7" },
+          { "label": "Analytics tracking", "ours": false, "theirs": true },
+          { "label": "GDPR / CCPA compliant", "ours": true, "theirs": true },
+          { "label": "Offline mode", "ours": true, "theirs": "Limited" },
+          { "label": "Recurring expenses", "ours": true, "theirs": "Pro only" },
+          { "label": "Monthly close + settlement", "ours": true, "theirs": false },
+          { "label": "Fixed vs variable split", "ours": true, "theirs": false }
+        ],
+        "differentiators": [
+          {
+            "icon": "document_scanner",
+            "title": "AI reads every line",
+            "desc": "Our scanner extracts each item, tax, discount, and tip — not just the total. Perfect for splitting a restaurant bill where not everyone ordered the same."
+          },
+          {
+            "icon": "currency_exchange",
+            "title": "Automatic currency detection",
+            "desc": "Scan a receipt in Bangkok, see it converted to euros instantly using today's rate. 14 currencies supported, no manual selection needed."
+          },
+          {
+            "icon": "block",
+            "title": "Zero ads, zero trackers",
+            "desc": "We make money from subscriptions, not your attention or data. No interstitial ads, no cooldown timers, no analytics SDKs. Ever."
+          },
+          {
+            "icon": "tune",
+            "title": "Fixed vs variable splitting",
+            "desc": "Rent splits evenly. Dinner splits by who was there. HomePot handles both models in the same group without hacks or workarounds."
+          },
+          {
+            "icon": "auto_awesome",
+            "title": "Minimum-transfer settlement",
+            "desc": "At month end, HomePot calculates the fewest transfers needed to zero out balances. No more chains of payments — just one or two clean settlements."
+          },
+          {
+            "icon": "shield",
+            "title": "Real privacy, documented",
+            "desc": "Open GDPR-compliant policy, data hosted in the EU, full account deletion in one tap. Nothing hidden in fine print."
+          }
+        ],
+        "pain_title": "What Splitwise users tell us",
+        "pain_subtitle": "Common frustrations that brought people here.",
+        "pain_points": [
+          "The 3-expense daily limit is a joke on a trip. I hit it by day two.",
+          "Ads with cooldown timers between screens made me feel like I was being punished for not paying.",
+          "Receipt scanning reads the total but not the items — useless when we split a restaurant bill line by line.",
+          "I wanted multi-currency support without manually picking the currency every single time.",
+          "Splitwise got slower and clunkier over the years. I just want something simple that respects my time."
+        ],
+        "faq_title": "Frequently asked questions",
+        "faq": [
+          {
+            "q": "Can I import my Splitwise data into HomePot?",
+            "a": "CSV import is on the roadmap. For now, you can export your Splitwise group as CSV and we'll add an importer soon. Contact us at homepotapp@gmail.com and we'll notify you the day it ships."
+          },
+          {
+            "q": "Is HomePot really free?",
+            "a": "Yes. The free plan includes 1 group, 20 expenses per month, 10 AI receipt scans, multi-currency, and zero ads — forever. Pro (from €2.92/mo annual) removes limits and adds unlimited groups, exports, and advanced analytics."
+          },
+          {
+            "q": "How does HomePot make money if there are no ads?",
+            "a": "Subscriptions. Pro costs €2.92/mo on annual billing — less than a coffee per month. That's the only revenue model. No ads, no data selling, no affiliate deals inside the app."
+          },
+          {
+            "q": "Does HomePot work offline?",
+            "a": "Yes. Add expenses offline; they sync automatically when you reconnect. Settlement calculations run on-device, so you can see balances without a connection."
+          },
+          {
+            "q": "What currencies does HomePot support?",
+            "a": "14 currencies with automatic detection from receipts: EUR, USD, GBP, CHF, CAD, AUD, NZD, JPY, SEK, KRW, PLN, BRL, MXN, CNY. Exchange rates update daily."
+          },
+          {
+            "q": "Is HomePot GDPR compliant?",
+            "a": "Yes. We comply with GDPR (EU), CCPA (California), and LGPD (Brazil). Data is hosted on AWS EU, encrypted at rest and in transit. Full account and data deletion in one tap from Settings."
+          }
+        ]
+      }
+    }
+  }
+}

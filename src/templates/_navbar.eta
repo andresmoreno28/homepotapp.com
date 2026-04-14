@@ -1,0 +1,27 @@
+<!-- ========== NAVBAR ========== -->
+<nav data-navbar class="fixed top-0 inset-x-0 z-50 transition-shadow duration-300" style="backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); background: rgba(244,241,222,0.8);">
+  <div class="max-w-7xl mx-auto flex items-center justify-between px-6 py-4">
+    <!-- Logo -->
+    <a href="<%= it.homeHref %>" class="flex items-center gap-2">
+      <img src="/assets/favicon-40.png" alt="HomePot" class="w-10 h-10 rounded-xl">
+      <img src="/assets/homepot-wordmark.png" alt="HomePot" class="h-7 sm:h-9">
+    </a>
+
+    <!-- Language pills -->
+    <div class="lang-pills flex items-center gap-0 lg:gap-1 rounded-full lg:px-2 lg:py-1" style="background: rgba(244,241,222,0.6); backdrop-filter: blur(8px);">
+      <%
+        const langs = ['en', 'es', 'fr', 'de', 'pt'];
+        langs.forEach((lang) => {
+          const isActive = lang === it.locale;
+          const classes = isActive
+            ? 'px-1.5 py-1 lg:px-3 rounded-full text-[11px] lg:text-sm font-semibold text-darkBlue transition-colors'
+            : 'px-1.5 py-1 lg:px-3 rounded-full text-[11px] lg:text-sm text-darkBlue/40 transition-colors';
+      %>
+      <a href="<%= (it.alternates && it.alternates[lang]) || '/' %>" data-lang="<%= lang %>" class="<%= classes %>"><%= lang.toUpperCase() %></a>
+      <% }); %>
+    </div>
+
+    <!-- Download button (desktop only) -->
+    <a href="<%= it.appStoreUrl %>" target="_blank" rel="noopener" class="hidden lg:inline-flex bg-terracotta text-white px-5 py-2.5 rounded-full text-sm font-semibold hover:bg-terracotta/90 transition-colors"><%= it.ui.nav.download %></a>
+  </div>
+</nav>
