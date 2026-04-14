@@ -12,6 +12,8 @@
       "features": "Funciones",
       "pricing": "Precios",
       "download": "Descargar",
+      "compare_title": "Comparar",
+      "compare_splitwise": "HomePot vs Splitwise",
       "support_title": "Soporte",
       "help": "Centro de ayuda",
       "contact": "Contacto",
@@ -36,12 +38,12 @@
       "eyebrow": "Comparación honesta",
       "cta_promo": "1 mes Pro gratis",
       "table_header_feature": "Característica",
-      "table_disclaimer": "Basado en información pública a fecha de 2026. Datos de Splitwise extraídos de su web y reseñas del App Store.",
+      "table_disclaimer": "Toda la información refleja datos públicos disponibles en la web oficial de Splitwise y en su ficha del App Store en el momento de redactar esta página. Te recomendamos verificar los detalles actuales en splitwise.com. HomePot no está afiliado a Splitwise, Inc.",
       "diff_title": "Qué hace a HomePot diferente",
       "diff_subtitle": "Cada función construida alrededor de una promesa: sin anuncios, sin rastreo, sin fricción.",
-      "pain_title": "Lo que dicen los usuarios",
-      "pain_subtitle": "Frustraciones reales que escuchamos de quienes se pasan.",
-      "pain_disclaimer": "Citas parafraseadas de reseñas públicas del App Store. Sin personas identificadas."
+      "reviews_title": "Lo que los usuarios de Splitwise dicen en reseñas públicas",
+      "reviews_subtitle": "Citas textuales reales extraídas de la ficha de Splitwise en la App Store de iOS.",
+      "reviews_disclaimer": "Citas reproducidas literalmente de la ficha pública de Splitwise en la App Store de iOS. Los nombres mostrados son los de la propia reseña. Son opiniones individuales y no representan a todos los usuarios."
     }
   },
   "pages": {
@@ -178,6 +180,10 @@
           {
             "q": "¿Cuánto cuesta?",
             "a": "Plan gratuito: 1 grupo, 20 gastos/mes, 10 escaneos IA/mes, multi-moneda, sin anuncios. Pro: todo ilimitado desde 2,92€/mes (anual). 15 veces menos que un café al día."
+          },
+          {
+            "q": "¿Cómo se compara HomePot con Splitwise?",
+            "a": "HomePot está pensado como alternativa honesta y sin anuncios: 52 monedas para registrar gastos, escáner IA que lee cualquier moneda del ticket, y un modelo de suscripción transparente. Mira la <a href=\"/es/compare/homepot-vs-splitwise/\" class=\"text-terracotta underline hover:opacity-80\">comparativa completa lado a lado con Splitwise</a> con todas las funciones y el disclaimer sobre las fuentes."
           }
         ]
       }
@@ -185,91 +191,105 @@
     "comparisons": {
       "splitwise": {
         "title": "HomePot vs Splitwise — comparación honesta (2026)",
-        "description": "¿Harto de los límites diarios y anuncios de Splitwise? HomePot tiene escaneo con IA, 14 monedas y cero anuncios desde 2,92€/mes. Comparativa completa.",
+        "description": "¿Buscas una alternativa a Splitwise? HomePot soporta 52 monedas, escáner IA de tickets que lee cualquier moneda y cero anuncios. Mira la comparativa con fuentes.",
         "h1": "HomePot vs Splitwise — la comparación honesta",
-        "intro": "Splitwise popularizó la división de gastos. Pero los usuarios gratuitos ahora tienen un tope de 3 gastos al día y ven anuncios con temporizador entre pantallas. Si eso te tiene harto, aquí tienes cómo HomePot compara en lo que de verdad importa.",
+        "intro": "Splitwise lleva más de una década siendo la forma por defecto de dividir gastos compartidos. Pero su plan gratuito muestra anuncios y restringe cuántos gastos puedes añadir al día, y varias funciones populares requieren una suscripción de pago. Si eso te está cansando, aquí tienes cómo HomePot compara — con cada afirmación enlazada a una fuente pública para que la verifiques tú mismo.",
         "table_title": "Comparación lado a lado",
-        "table_subtitle": "Precio, límites, funciones, privacidad — todo en una página.",
+        "table_subtitle": "Funciones, privacidad y filosofía — de un vistazo.",
         "features": [
-          { "label": "Precio mensual (Pro)", "ours": "2,92€/mes", "theirs": "4,99$/mes" },
-          { "label": "Límite diario gratuito", "ours": "Ilimitado", "theirs": "3 gastos/día" },
-          { "label": "Anuncios en plan gratis", "ours": false, "theirs": true },
-          { "label": "Escáner IA de tickets", "ours": "Artículos + total", "theirs": "Solo total (Pro)" },
-          { "label": "Multi-divisa", "ours": "14 + detección auto", "theirs": "100+ (manual)" },
-          { "label": "Idiomas", "ours": "5 nativos", "theirs": "7" },
-          { "label": "Rastreo analítico", "ours": false, "theirs": true },
-          { "label": "Cumple RGPD / CCPA", "ours": true, "theirs": true },
-          { "label": "Modo offline", "ours": true, "theirs": "Limitado" },
-          { "label": "Gastos recurrentes", "ours": true, "theirs": "Solo Pro" },
-          { "label": "Cierre mensual + liquidación", "ours": true, "theirs": false },
-          { "label": "División fija vs variable", "ours": true, "theirs": false }
+          { "label": "Límite diario de gastos en plan gratuito", "ours": "Ilimitado", "theirs": "Sí (ver página oficial de Splitwise Pro)" },
+          { "label": "Anuncios en plan gratuito", "ours": false, "theirs": true },
+          { "label": "Escáner IA de tickets", "ours": true, "theirs": "Función Pro" },
+          { "label": "Extracción de artículos del ticket", "ours": true, "theirs": "Función Pro" },
+          { "label": "Conversión automática de moneda", "ours": true, "theirs": "Función Pro" },
+          { "label": "Gráficos y analíticas de gasto", "ours": true, "theirs": "Función Pro" },
+          { "label": "Monedas para registrar gastos", "ours": "52", "theirs": "Muchas (no especificado)" },
+          { "label": "La IA lee cualquier moneda del ticket", "ours": true, "theirs": false },
+          { "label": "Gastos recurrentes", "ours": true, "theirs": "Parcial" },
+          { "label": "Cierre mensual + liquidación con mínimo de transferencias", "ours": true, "theirs": false },
+          { "label": "Modos de división fija y variable", "ours": true, "theirs": false },
+          { "label": "Cumple RGPD / CCPA", "ours": true, "theirs": true }
         ],
         "differentiators": [
           {
             "icon": "document_scanner",
-            "title": "La IA lee cada línea",
-            "desc": "Nuestro escáner extrae cada artículo, impuesto, descuento y propina — no solo el total. Perfecto para dividir una cuenta de restaurante donde no todos pidieron lo mismo."
+            "title": "La IA lee cada línea del ticket",
+            "desc": "Nuestro escáner no se queda en el total. Extrae cada artículo, impuesto, descuento y propina, así puedes dividir una cuenta de restaurante exactamente como la consumió el grupo — no por partes iguales forzadas."
           },
           {
             "icon": "currency_exchange",
-            "title": "Detección automática de moneda",
-            "desc": "Escanea un ticket en Bangkok y lo ves convertido a euros al instante con la tasa del día. 14 monedas soportadas, sin seleccionar nada manualmente."
+            "title": "52 monedas + la IA lee cualquier ticket",
+            "desc": "52 monedas soportadas para registrar gastos, cubriendo Europa, América, Asia, Oriente Medio, Oceanía y África. El escáner IA va más allá y detecta cualquier moneda ISO 4217 desde la imagen del ticket, y lo convierte a la moneda base de tu grupo usando tipos de cambio en vivo."
           },
           {
             "icon": "block",
-            "title": "Cero anuncios, cero rastreadores",
-            "desc": "Ganamos dinero con suscripciones, no con tu atención o tus datos. Sin anuncios intersticiales, sin temporizadores, sin SDKs de analítica. Nunca."
+            "title": "Cero anuncios, cero rastreadores — para siempre",
+            "desc": "Ganamos dinero con suscripciones opcionales, no con tu atención ni con tus datos. Sin anuncios intersticiales, sin temporizadores de espera, sin SDKs de analítica de terceros. Es una política escrita y verificable, no un eslogan de marketing."
           },
           {
             "icon": "tune",
-            "title": "División fija vs variable",
-            "desc": "El alquiler se divide a partes iguales. La cena se divide entre quien estuvo. HomePot maneja ambos modelos en el mismo grupo sin trucos ni workarounds."
+            "title": "División fija y variable en el mismo grupo",
+            "desc": "El alquiler, internet y el seguro se dividen a partes iguales entre todos. La cena y la compra se dividen solo entre las personas que estuvieron. HomePot modela ambos casos de forma nativa en el mismo grupo — sin trucos, sin hojas de cálculo aparte."
           },
           {
             "icon": "auto_awesome",
-            "title": "Liquidación con mínimo de transferencias",
-            "desc": "Al final del mes, HomePot calcula el mínimo de transferencias para saldar todos los balances. Se acabaron las cadenas de pagos — solo una o dos liquidaciones limpias."
+            "title": "Cierre mensual con mínimo de transferencias",
+            "desc": "Al final del mes, HomePot calcula el menor número posible de transferencias para dejar todos los saldos a cero. En vez de cadenas de micropagos entre varias personas, obtienes una o dos liquidaciones limpias y el mes queda cerrado."
           },
           {
             "icon": "shield",
-            "title": "Privacidad real, documentada",
-            "desc": "Política RGPD pública, datos alojados en la UE, borrado total de la cuenta en un toque. Nada escondido en letra pequeña."
+            "title": "Privacidad real, documentada en lenguaje claro",
+            "desc": "Política pública conforme con RGPD, datos alojados en AWS EU, borrado de cuenta y datos en un solo toque desde Ajustes. Nada escondido en letra pequeña y nada vendido a brokers de datos."
           }
         ],
-        "pain_title": "Lo que los usuarios de Splitwise nos cuentan",
-        "pain_subtitle": "Frustraciones comunes que los trajeron hasta aquí.",
-        "pain_points": [
-          "El límite de 3 gastos al día es un chiste en un viaje. Lo gasté al segundo día.",
-          "Los anuncios con temporizador entre pantallas me hacían sentir castigado por no pagar.",
-          "El escáner de tickets lee el total pero no los artículos — inútil cuando dividimos una cuenta de restaurante línea por línea.",
-          "Quería soporte multi-divisa sin tener que elegir la moneda a mano cada vez.",
-          "Splitwise se volvió más lento y torpe con los años. Solo quiero algo simple que respete mi tiempo."
+        "reviews_title": "Lo que los usuarios de Splitwise dicen en reseñas públicas",
+        "reviews_subtitle": "Citas textuales reales de la ficha de Splitwise en la App Store de iOS (valoración global 3,9 / 5 en el momento de redactar).",
+        "reviews_meta": "Fuente: apps.apple.com/us/app/splitwise/id458023433",
+        "reviews": [
+          {
+            "quote": "I had to wait for ad to play... then after I added 4 expenses I was met with a pop-up saying that I had reached the maximum number of expenses I could input today",
+            "author": "Julia Ruth",
+            "rating": 1,
+            "date": "Dic 2023"
+          },
+          {
+            "quote": "This app now bombards you with (timed) ads for premium... roping me into a subscription for that essentially offline functionality leaves a bad taste",
+            "author": "Nanospork",
+            "rating": 2,
+            "date": "Ago 2024"
+          },
+          {
+            "quote": "I'm capped at 5 submissions a day and then demanded to sign up for PRO... I need to get PRO to convert requests before paying them",
+            "author": "alex x3",
+            "rating": 1,
+            "date": "Jun 2024"
+          }
         ],
         "faq_title": "Preguntas frecuentes",
         "faq": [
           {
             "q": "¿Puedo importar mis datos de Splitwise a HomePot?",
-            "a": "La importación CSV está en el roadmap. Por ahora puedes exportar tu grupo de Splitwise como CSV y pronto añadiremos un importador. Escríbenos a homepotapp@gmail.com y te avisamos el día que salga."
+            "a": "La importación CSV está en nuestro roadmap. Mientras tanto puedes exportar tu grupo de Splitwise como CSV y pronto tendremos importador. Escríbenos a homepotapp@gmail.com y te avisamos el día que salga."
           },
           {
             "q": "¿HomePot es realmente gratis?",
-            "a": "Sí. El plan gratuito incluye 1 grupo, 20 gastos al mes, 10 escaneos con IA, multi-divisa y cero anuncios — para siempre. Pro (desde 2,92€/mes anual) quita los límites y añade grupos ilimitados, exportaciones y analíticas avanzadas."
+            "a": "Sí. El plan gratuito incluye 1 grupo, 20 gastos al mes, 10 escaneos con IA, multi-divisa y cero anuncios — para siempre. Pro arranca en 2,92€/mes en facturación anual y quita los límites, más grupos ilimitados, exportaciones y analíticas avanzadas."
           },
           {
             "q": "¿Cómo gana dinero HomePot si no hay anuncios?",
-            "a": "Suscripciones. Pro cuesta 2,92€/mes en facturación anual — menos que un café al mes. Ese es el único modelo de ingresos. Sin anuncios, sin venta de datos, sin acuerdos de afiliados dentro de la app."
+            "a": "Suscripciones opcionales. Pro cuesta 2,92€/mes en facturación anual — menos que un café al mes. Ese es el único modelo de ingresos. Sin anuncios, sin venta de datos, sin afiliados dentro de la app."
           },
           {
-            "q": "¿HomePot funciona sin conexión?",
-            "a": "Sí. Añade gastos sin conexión; se sincronizan automáticamente cuando vuelves a conectarte. Los cálculos de liquidación corren en el dispositivo, así que puedes ver saldos sin conexión."
-          },
-          {
-            "q": "¿Qué monedas soporta HomePot?",
-            "a": "14 monedas con detección automática desde los tickets: EUR, USD, GBP, CHF, CAD, AUD, NZD, JPY, SEK, KRW, PLN, BRL, MXN, CNY. Los tipos de cambio se actualizan a diario."
+            "q": "¿Cuántas monedas soporta HomePot de verdad?",
+            "a": "Hay 52 monedas seleccionables en el picker para registrar gastos, cubriendo Europa, América, Asia, Oriente Medio, Oceanía y África. Además, el escáner IA detecta cualquier moneda ISO 4217 directamente desde la imagen del ticket — así que aunque la moneda base de tu grupo esté fuera de las 52, puedes escanear un ticket en cualquier parte del mundo y verlo convertido automáticamente."
           },
           {
             "q": "¿HomePot cumple con el RGPD?",
-            "a": "Sí. Cumplimos con RGPD (UE), CCPA (California) y LGPD (Brasil). Los datos están alojados en AWS EU, cifrados en reposo y en tránsito. Borrado completo de cuenta y datos en un toque desde Ajustes."
+            "a": "Sí. Cumplimos con RGPD (UE), CCPA (California) y LGPD (Brasil). Los datos están alojados en AWS en la UE, cifrados en reposo y en tránsito. Borrado completo de cuenta y datos en un toque desde Ajustes."
+          },
+          {
+            "q": "¿Los datos sobre Splitwise de esta página están actualizados?",
+            "a": "Todas las afirmaciones sobre Splitwise en esta página provienen de su web pública (splitwise.com/pro) y de su ficha en la App Store de iOS en el momento de redactar la página. Te rogamos verificar precios y funciones actuales en esas fuentes, ya que pueden cambiar. HomePot no está afiliado a Splitwise, Inc. y la comparación es nuestra opinión basada en información pública."
           }
         ]
       }

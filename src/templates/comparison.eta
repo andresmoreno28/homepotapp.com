@@ -99,22 +99,30 @@
   </div>
 </section>
 
-<!-- ========== WHAT USERS SAY (pain points) ========== -->
-<% if (c.pain_points && c.pain_points.length) { %>
+<!-- ========== REAL APP STORE REVIEWS ========== -->
+<% if (c.reviews && c.reviews.length) { %>
 <section class="bg-white py-20 lg:py-28">
   <div class="max-w-4xl mx-auto px-6">
-    <h2 class="text-3xl lg:text-5xl font-extrabold text-darkBlue text-center mb-4 reveal"><%= c.pain_title %></h2>
-    <p class="text-lg text-gray-500 text-center mb-16 reveal"><%= c.pain_subtitle %></p>
+    <h2 class="text-3xl lg:text-5xl font-extrabold text-darkBlue text-center mb-4 reveal"><%= c.reviews_title %></h2>
+    <p class="text-lg text-gray-500 text-center mb-4 reveal"><%= c.reviews_subtitle %></p>
+    <% if (c.reviews_meta) { %>
+    <p class="text-sm text-gray-400 text-center mb-16 reveal"><%= c.reviews_meta %></p>
+    <% } %>
 
-    <div class="space-y-4">
-      <% c.pain_points.forEach(p => { %>
-      <div class="bg-cream/60 rounded-2xl p-6 border-l-4 border-terracotta reveal">
-        <p class="text-darkBlue italic leading-relaxed">"<%= p %>"</p>
-      </div>
+    <div class="space-y-5">
+      <% c.reviews.forEach(r => { %>
+      <figure class="bg-cream/60 rounded-2xl p-6 border-l-4 border-terracotta reveal">
+        <div class="flex items-center gap-2 mb-3 text-terracotta">
+          <% for (let i = 0; i < (r.rating || 1); i++) { %><span class="material-symbols-outlined text-base">star</span><% } %>
+          <% for (let i = (r.rating || 1); i < 5; i++) { %><span class="material-symbols-outlined text-base text-gray-300">star</span><% } %>
+        </div>
+        <blockquote class="text-darkBlue leading-relaxed mb-3">"<%= r.quote %>"</blockquote>
+        <figcaption class="text-sm text-gray-500">— <%= r.author %><% if (r.date) { %> · <%= r.date %><% } %></figcaption>
+      </figure>
       <% }) %>
     </div>
 
-    <p class="text-xs text-gray-400 text-center mt-8"><%= c.pain_disclaimer %></p>
+    <p class="text-xs text-gray-400 text-center mt-8"><%= c.reviews_disclaimer %></p>
   </div>
 </section>
 <% } %>
