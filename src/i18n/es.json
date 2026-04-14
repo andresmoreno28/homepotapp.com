@@ -193,22 +193,24 @@
         "title": "HomePot vs Splitwise — comparación honesta (2026)",
         "description": "¿Buscas una alternativa a Splitwise? HomePot soporta 52 monedas, escáner IA de tickets que lee cualquier moneda y cero anuncios. Mira la comparativa con fuentes.",
         "h1": "HomePot vs Splitwise — la comparación honesta",
-        "intro": "Splitwise lleva más de una década siendo la forma por defecto de dividir gastos compartidos. Pero su plan gratuito muestra anuncios y restringe cuántos gastos puedes añadir al día, y varias funciones populares requieren una suscripción de pago. Si eso te está cansando, aquí tienes cómo HomePot compara — con cada afirmación enlazada a una fuente pública para que la verifiques tú mismo.",
+        "intro": "Splitwise lleva más de una década siendo la forma por defecto de dividir gastos compartidos. Tanto HomePot como Splitwise tienen un plan gratuito y un plan Pro de pago, así que una comparación justa tiene que mostrar qué te da realmente cada plan. Aquí tienes el desglose honesto — y la versión corta es que la mayoría de lo que Splitwise reserva para Pro, HomePot lo incluye gratis. Cada fila enlaza con una fuente pública para que lo verifiques tú mismo.",
         "table_title": "Comparación lado a lado",
-        "table_subtitle": "Funciones, privacidad y filosofía — de un vistazo.",
+        "table_subtitle": "Cada celda indica en qué plan está disponible la función. Un check significa sin restricciones para todos los usuarios; un texto significa que hay un plan o límite específico.",
         "features": [
-          { "label": "Límite diario de gastos en plan gratuito", "ours": "Ilimitado", "theirs": "Sí (ver página oficial de Splitwise Pro)" },
-          { "label": "Anuncios en plan gratuito", "ours": false, "theirs": true },
-          { "label": "Escáner IA de tickets", "ours": true, "theirs": "Función Pro" },
-          { "label": "Extracción de artículos del ticket", "ours": true, "theirs": "Función Pro" },
-          { "label": "Conversión automática de moneda", "ours": true, "theirs": "Función Pro" },
-          { "label": "Gráficos y analíticas de gasto", "ours": true, "theirs": "Función Pro" },
-          { "label": "Monedas para registrar gastos", "ours": "52", "theirs": "Muchas (no especificado)" },
-          { "label": "La IA lee cualquier moneda del ticket", "ours": true, "theirs": false },
-          { "label": "Gastos recurrentes", "ours": true, "theirs": "Parcial" },
-          { "label": "Cierre mensual + liquidación con mínimo de transferencias", "ours": true, "theirs": false },
-          { "label": "Modos de división fija y variable", "ours": true, "theirs": false },
-          { "label": "Cumple RGPD / CCPA", "ours": true, "theirs": true }
+          { "label": "Anuncios en el plan gratuito", "ours": "Nunca, jamás", "theirs": "Sí, mostrados a los usuarios gratis" },
+          { "label": "Escáner IA de tickets", "ours": "Gratis (con límite mensual de escaneos) · Ilimitado en Pro", "theirs": "Solo en Pro" },
+          { "label": "Extracción de artículos del ticket", "ours": "Gratis (con el escaneo IA)", "theirs": "Solo en Pro" },
+          { "label": "Conversión automática de moneda", "ours": "Gratis (con el escaneo IA)", "theirs": "Solo en Pro" },
+          { "label": "Gráficos y analíticas de gasto", "ours": "Gratis", "theirs": "Solo en Pro" },
+          { "label": "Gastos recurrentes", "ours": "Gratis", "theirs": "Parcial / Pro" },
+          { "label": "División fija y variable en el mismo grupo", "ours": "Gratis", "theirs": "No disponible" },
+          { "label": "Cierre mensual con mínimo de transferencias", "ours": "Gratis", "theirs": "No disponible" },
+          { "label": "Monedas seleccionables para registrar gastos", "ours": "52", "theirs": "Muchas (no especificado)" },
+          { "label": "La IA lee cualquier moneda de la imagen del ticket", "ours": "Gratis (dentro del límite de escaneos)", "theirs": false },
+          { "label": "Exportar estadísticas a CSV / PDF", "ours": "Solo en Pro", "theirs": "Solo en Pro" },
+          { "label": "Cumple RGPD / CCPA", "ours": true, "theirs": true },
+          { "label": "Gastos al mes", "ours": "20 gratis (sin tope diario — hazlos en cualquier día) · Ilimitados en Pro", "theirs": "Tope diario aplicable — ver página de Splitwise Pro" },
+          { "label": "Grupos", "ours": "1 grupo familiar gratis · Ilimitados en Pro", "theirs": "Ilimitados" }
         ],
         "differentiators": [
           {
@@ -274,6 +276,10 @@
           {
             "q": "¿HomePot es realmente gratis?",
             "a": "Sí. El plan gratuito incluye 1 grupo, 20 gastos al mes, 10 escaneos con IA, multi-divisa y cero anuncios — para siempre. Pro arranca en 2,92€/mes en facturación anual y quita los límites, más grupos ilimitados, exportaciones y analíticas avanzadas."
+          },
+          {
+            "q": "¿Qué obtengo exactamente en el plan gratuito de HomePot, sin pagar?",
+            "a": "Una cuenta gratuita de HomePot te da: 1 grupo con miembros ilimitados, 20 gastos al mes, un número limitado de escaneos IA de tickets al mes, subida de fotos de tickets, el selector completo de 52 monedas, gráficos y analíticas de gasto, gastos recurrentes, división fija y variable en el mismo grupo, el cierre mensual con mínimo de transferencias, tema oscuro, y cero anuncios. Pro básicamente quita los límites de grupos/gastos/escaneos y añade exportación CSV/PDF de tus estadísticas."
           },
           {
             "q": "¿Cómo gana dinero HomePot si no hay anuncios?",

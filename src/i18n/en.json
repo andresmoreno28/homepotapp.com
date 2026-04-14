@@ -193,22 +193,24 @@
         "title": "HomePot vs Splitwise — honest comparison (2026)",
         "description": "Looking for a Splitwise alternative? HomePot supports 52 currencies, AI receipt scanning that reads any currency, and zero ads. See the full side-by-side comparison with sources.",
         "h1": "HomePot vs Splitwise — the honest comparison",
-        "intro": "Splitwise has been the default way to split shared expenses for over a decade. But its free tier shows ads and restricts how many expenses you can add each day, and several popular features are behind a paid subscription. If that's been grinding on you, here's how HomePot compares — with every claim linked to a public source so you can verify for yourself.",
+        "intro": "Splitwise has been the default way to split shared expenses for over a decade. Both HomePot and Splitwise have a free tier and a paid Pro tier, so a fair comparison must show what each plan actually gives you. Here's the honest breakdown — and the short version is that most of what Splitwise reserves for Pro, HomePot includes for free. Every row below links to a public source so you can verify it yourself.",
         "table_title": "Side-by-side comparison",
-        "table_subtitle": "Features, privacy, and philosophy — at a glance.",
+        "table_subtitle": "Each cell states which plan tier the feature is available on. A checkmark means unrestricted for all users; text means there's a specific tier or limit.",
         "features": [
-          { "label": "Free tier daily expense cap", "ours": "Unlimited", "theirs": "Yes (see Splitwise Pro page)" },
-          { "label": "Ads in free tier", "ours": false, "theirs": true },
-          { "label": "AI receipt scanner", "ours": true, "theirs": "Pro feature" },
-          { "label": "Receipt line-item extraction", "ours": true, "theirs": "Pro feature" },
-          { "label": "Automatic currency conversion", "ours": true, "theirs": "Pro feature" },
-          { "label": "Charts & spending analytics", "ours": true, "theirs": "Pro feature" },
-          { "label": "Currencies for expense entry", "ours": "52", "theirs": "Many (unspecified)" },
-          { "label": "AI reads any receipt currency", "ours": true, "theirs": false },
-          { "label": "Recurring expenses", "ours": true, "theirs": "Partial" },
-          { "label": "Monthly close + minimum-transfer settlement", "ours": true, "theirs": false },
-          { "label": "Fixed vs variable split modes", "ours": true, "theirs": false },
-          { "label": "GDPR / CCPA compliant", "ours": true, "theirs": true }
+          { "label": "Ads in the free tier", "ours": "None — ever", "theirs": "Shown to free users" },
+          { "label": "AI receipt scanner", "ours": "Free (monthly scan limit) · Unlimited on Pro", "theirs": "Pro only" },
+          { "label": "Line-item extraction from receipts", "ours": "Free (via AI scan)", "theirs": "Pro only" },
+          { "label": "Automatic currency conversion", "ours": "Free (via AI scan)", "theirs": "Pro only" },
+          { "label": "Charts & spending analytics", "ours": "Free", "theirs": "Pro only" },
+          { "label": "Recurring expenses", "ours": "Free", "theirs": "Partial / Pro" },
+          { "label": "Fixed vs variable split modes in the same group", "ours": "Free", "theirs": "Not available" },
+          { "label": "Monthly close with minimum-transfer settlement", "ours": "Free", "theirs": "Not available" },
+          { "label": "Currencies selectable for expense entry", "ours": "52", "theirs": "Many (unspecified)" },
+          { "label": "AI reads any currency from the receipt image", "ours": "Free (within scan limit)", "theirs": false },
+          { "label": "CSV / PDF export of stats", "ours": "Pro only", "theirs": "Pro only" },
+          { "label": "GDPR / CCPA compliant", "ours": true, "theirs": true },
+          { "label": "Expenses per month", "ours": "20 free (no daily cap — batch them any day) · Unlimited on Pro", "theirs": "Daily cap applies — see Splitwise Pro page" },
+          { "label": "Groups", "ours": "1 free household group · Unlimited on Pro", "theirs": "Unlimited" }
         ],
         "differentiators": [
           {
@@ -274,6 +276,10 @@
           {
             "q": "Is HomePot really free?",
             "a": "Yes. The free plan includes 1 group, 20 expenses per month, 10 AI receipt scans, multi-currency, and zero ads — forever. Pro starts at €2.92/month on annual billing and removes the limits, plus adds unlimited groups, exports and advanced analytics."
+          },
+          {
+            "q": "What exactly do I get on HomePot's free tier, without paying?",
+            "a": "A free HomePot account gives you: 1 group with unlimited members, 20 expenses per month, a limited number of AI receipt scans per month, receipt photo uploads, the full 52-currency picker, charts and spending analytics, recurring expenses, fixed and variable splitting in the same group, the monthly close with minimum-transfer settlement, dark mode, and zero ads. Pro mainly removes the group/expense/scan limits and adds CSV/PDF export for your stats."
           },
           {
             "q": "How does HomePot make money if there are no ads?",

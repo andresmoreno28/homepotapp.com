@@ -193,22 +193,24 @@
         "title": "HomePot vs Splitwise — comparação honesta (2026)",
         "description": "Procurando uma alternativa ao Splitwise? O HomePot suporta 52 moedas, scanner com IA que lê qualquer moeda e zero anúncios. Veja a comparação com fontes.",
         "h1": "HomePot vs Splitwise — a comparação honesta",
-        "intro": "O Splitwise é há mais de uma década a forma padrão de dividir despesas compartilhadas. Mas o plano gratuito mostra anúncios e limita quantas despesas você pode adicionar por dia, e vários recursos populares ficam atrás de uma assinatura paga. Se isso está te irritando, veja como o HomePot se compara — com cada afirmação ligada a uma fonte pública para você verificar.",
+        "intro": "O Splitwise é há mais de uma década a forma padrão de dividir despesas compartilhadas. Tanto o HomePot quanto o Splitwise têm um plano gratuito e um plano Pro pago, então uma comparação justa precisa mostrar o que cada plano realmente oferece. Aqui está o detalhamento honesto — e a versão curta é que a maior parte do que o Splitwise reserva para o Pro, o HomePot inclui de graça. Cada linha abaixo tem link para uma fonte pública para você verificar.",
         "table_title": "Comparação lado a lado",
-        "table_subtitle": "Recursos, privacidade e filosofia — em uma olhada.",
+        "table_subtitle": "Cada célula indica em qual plano o recurso está disponível. Um check significa sem restrições para todos os usuários; texto significa que há um plano ou limite específico.",
         "features": [
-          { "label": "Limite diário de despesas no plano grátis", "ours": "Ilimitado", "theirs": "Sim (ver página oficial do Splitwise Pro)" },
-          { "label": "Anúncios no plano grátis", "ours": false, "theirs": true },
-          { "label": "Scanner IA de recibos", "ours": true, "theirs": "Recurso Pro" },
-          { "label": "Extração de itens do recibo", "ours": true, "theirs": "Recurso Pro" },
-          { "label": "Conversão automática de moeda", "ours": true, "theirs": "Recurso Pro" },
-          { "label": "Gráficos e análises de gastos", "ours": true, "theirs": "Recurso Pro" },
-          { "label": "Moedas para registrar despesas", "ours": "52", "theirs": "Muitas (não especificado)" },
-          { "label": "IA lê qualquer moeda do recibo", "ours": true, "theirs": false },
-          { "label": "Despesas recorrentes", "ours": true, "theirs": "Parcial" },
-          { "label": "Fechamento mensal + acerto com transferências mínimas", "ours": true, "theirs": false },
-          { "label": "Modos de divisão fixa e variável", "ours": true, "theirs": false },
-          { "label": "Conformidade RGPD / CCPA", "ours": true, "theirs": true }
+          { "label": "Anúncios no plano grátis", "ours": "Nunca, jamais", "theirs": "Sim, mostrados aos usuários grátis" },
+          { "label": "Scanner IA de recibos", "ours": "Grátis (limite mensal de scans) · Ilimitado no Pro", "theirs": "Só Pro" },
+          { "label": "Extração de itens do recibo", "ours": "Grátis (via scan IA)", "theirs": "Só Pro" },
+          { "label": "Conversão automática de moeda", "ours": "Grátis (via scan IA)", "theirs": "Só Pro" },
+          { "label": "Gráficos e análises de gastos", "ours": "Grátis", "theirs": "Só Pro" },
+          { "label": "Despesas recorrentes", "ours": "Grátis", "theirs": "Parcial / Pro" },
+          { "label": "Divisão fixa e variável no mesmo grupo", "ours": "Grátis", "theirs": "Não disponível" },
+          { "label": "Fechamento mensal com transferências mínimas", "ours": "Grátis", "theirs": "Não disponível" },
+          { "label": "Moedas selecionáveis para registrar despesas", "ours": "52", "theirs": "Muitas (não especificado)" },
+          { "label": "A IA lê qualquer moeda da imagem do recibo", "ours": "Grátis (dentro do limite de scans)", "theirs": false },
+          { "label": "Exportar estatísticas para CSV / PDF", "ours": "Só Pro", "theirs": "Só Pro" },
+          { "label": "Conformidade RGPD / CCPA", "ours": true, "theirs": true },
+          { "label": "Despesas por mês", "ours": "20 grátis (sem limite diário — use qualquer dia) · Ilimitadas no Pro", "theirs": "Limite diário aplicado — ver página do Splitwise Pro" },
+          { "label": "Grupos", "ours": "1 grupo familiar grátis · Ilimitados no Pro", "theirs": "Ilimitados" }
         ],
         "differentiators": [
           {
@@ -274,6 +276,10 @@
           {
             "q": "O HomePot é realmente grátis?",
             "a": "Sim. O plano grátis inclui 1 grupo, 20 despesas por mês, 10 scans de recibo com IA, multi-moeda e zero anúncios — para sempre. O Pro começa em R$14,90/mês no anual e remove os limites, mais grupos ilimitados, exportações e análises avançadas."
+          },
+          {
+            "q": "O que exatamente eu recebo no plano grátis do HomePot, sem pagar?",
+            "a": "Uma conta grátis do HomePot te dá: 1 grupo com membros ilimitados, 20 despesas por mês, um número limitado de scans IA de recibos por mês, upload de fotos de recibos, o seletor completo de 52 moedas, gráficos e análises de gastos, despesas recorrentes, divisão fixa e variável no mesmo grupo, o fechamento mensal com transferências mínimas, tema escuro e zero anúncios. O Pro basicamente remove os limites de grupos/despesas/scans e adiciona exportação CSV/PDF das suas estatísticas."
           },
           {
             "q": "Como o HomePot ganha dinheiro sem anúncios?",

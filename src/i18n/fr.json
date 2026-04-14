@@ -193,22 +193,24 @@
         "title": "HomePot vs Splitwise — comparaison honnête (2026)",
         "description": "Tu cherches une alternative à Splitwise ? HomePot prend en charge 52 devises, un scanner IA qui lit n'importe quelle devise, et zéro pub. Comparaison avec sources.",
         "h1": "HomePot vs Splitwise — la comparaison honnête",
-        "intro": "Splitwise est depuis plus d'une décennie la façon par défaut de partager des dépenses. Mais sa version gratuite affiche des pubs et limite combien de dépenses tu peux ajouter par jour, et plusieurs fonctionnalités populaires sont derrière un abonnement payant. Si ça t'agace, voici comment HomePot se compare — avec chaque affirmation liée à une source publique pour que tu puisses vérifier toi-même.",
+        "intro": "Splitwise est depuis plus d'une décennie la façon par défaut de partager des dépenses. HomePot comme Splitwise ont un palier gratuit et un palier Pro payant, donc une comparaison honnête doit montrer ce que chaque plan offre réellement. Voici le détail sincère — et la version courte, c'est que la plupart de ce que Splitwise réserve à Pro, HomePot l'inclut gratuitement. Chaque ligne ci-dessous est liée à une source publique pour que tu puisses vérifier toi-même.",
         "table_title": "Comparaison côte à côte",
-        "table_subtitle": "Fonctionnalités, confidentialité et philosophie — en un coup d'œil.",
+        "table_subtitle": "Chaque cellule indique le palier sur lequel la fonctionnalité est disponible. Une coche signifie sans restriction pour tous les utilisateurs ; un texte signifie qu'il y a un palier ou une limite spécifique.",
         "features": [
-          { "label": "Plafond quotidien de dépenses en version gratuite", "ours": "Illimité", "theirs": "Oui (voir la page officielle Splitwise Pro)" },
-          { "label": "Pubs en version gratuite", "ours": false, "theirs": true },
-          { "label": "Scanner IA de reçus", "ours": true, "theirs": "Fonction Pro" },
-          { "label": "Extraction des articles du reçu", "ours": true, "theirs": "Fonction Pro" },
-          { "label": "Conversion automatique de devise", "ours": true, "theirs": "Fonction Pro" },
-          { "label": "Graphiques et analyses de dépenses", "ours": true, "theirs": "Fonction Pro" },
-          { "label": "Devises pour saisir les dépenses", "ours": "52", "theirs": "Nombreuses (non spécifié)" },
-          { "label": "L'IA lit n'importe quelle devise du reçu", "ours": true, "theirs": false },
-          { "label": "Dépenses récurrentes", "ours": true, "theirs": "Partiel" },
-          { "label": "Clôture mensuelle + règlement avec transferts minimaux", "ours": true, "theirs": false },
-          { "label": "Modes de partage fixe et variable", "ours": true, "theirs": false },
-          { "label": "Conforme RGPD / CCPA", "ours": true, "theirs": true }
+          { "label": "Publicités dans le palier gratuit", "ours": "Aucune — jamais", "theirs": "Affichées aux utilisateurs gratuits" },
+          { "label": "Scanner IA de reçus", "ours": "Gratuit (plafond mensuel de scans) · Illimité en Pro", "theirs": "Pro uniquement" },
+          { "label": "Extraction des articles du reçu", "ours": "Gratuit (via le scan IA)", "theirs": "Pro uniquement" },
+          { "label": "Conversion automatique de devise", "ours": "Gratuit (via le scan IA)", "theirs": "Pro uniquement" },
+          { "label": "Graphiques et analyses de dépenses", "ours": "Gratuit", "theirs": "Pro uniquement" },
+          { "label": "Dépenses récurrentes", "ours": "Gratuit", "theirs": "Partiel / Pro" },
+          { "label": "Modes de partage fixe et variable dans le même groupe", "ours": "Gratuit", "theirs": "Non disponible" },
+          { "label": "Clôture mensuelle avec transferts minimaux", "ours": "Gratuit", "theirs": "Non disponible" },
+          { "label": "Devises sélectionnables pour saisir les dépenses", "ours": "52", "theirs": "Nombreuses (non spécifié)" },
+          { "label": "L'IA lit n'importe quelle devise sur l'image du reçu", "ours": "Gratuit (dans la limite de scans)", "theirs": false },
+          { "label": "Export CSV / PDF des statistiques", "ours": "Pro uniquement", "theirs": "Pro uniquement" },
+          { "label": "Conforme RGPD / CCPA", "ours": true, "theirs": true },
+          { "label": "Dépenses par mois", "ours": "20 gratuites (sans plafond quotidien — ajoute-les quand tu veux) · Illimitées en Pro", "theirs": "Plafond quotidien appliqué — voir la page Splitwise Pro" },
+          { "label": "Groupes", "ours": "1 groupe foyer gratuit · Illimités en Pro", "theirs": "Illimités" }
         ],
         "differentiators": [
           {
@@ -274,6 +276,10 @@
           {
             "q": "HomePot est-il vraiment gratuit ?",
             "a": "Oui. Le plan gratuit inclut 1 groupe, 20 dépenses par mois, 10 scans IA de reçus, multi-devises et zéro pub — pour toujours. Pro démarre à 2,92€/mois en facturation annuelle et supprime les limites, plus des groupes illimités, des exports et des analyses avancées."
+          },
+          {
+            "q": "Qu'est-ce que j'obtiens exactement dans le palier gratuit de HomePot, sans payer ?",
+            "a": "Un compte HomePot gratuit te donne : 1 groupe avec un nombre illimité de membres, 20 dépenses par mois, un nombre limité de scans IA de reçus par mois, l'upload de photos de reçus, le sélecteur complet de 52 devises, les graphiques et analyses de dépenses, les dépenses récurrentes, le partage fixe et variable dans le même groupe, la clôture mensuelle avec transferts minimaux, le mode sombre et zéro pub. Pro supprime principalement les limites groupes/dépenses/scans et ajoute l'export CSV/PDF de tes statistiques."
           },
           {
             "q": "Comment HomePot gagne-t-il de l'argent sans pub ?",

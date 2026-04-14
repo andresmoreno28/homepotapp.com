@@ -193,22 +193,24 @@
         "title": "HomePot vs Splitwise — ehrlicher Vergleich (2026)",
         "description": "Suchst du eine Splitwise-Alternative? HomePot unterstützt 52 Währungen, KI-Belegscan, der jede Währung liest, und null Werbung. Vergleich mit Quellen.",
         "h1": "HomePot vs Splitwise — der ehrliche Vergleich",
-        "intro": "Splitwise ist seit über einem Jahrzehnt die Standardlösung für das Teilen gemeinsamer Ausgaben. Doch der kostenlose Tarif zeigt Werbung und begrenzt, wie viele Ausgaben du pro Tag hinzufügen kannst, und mehrere beliebte Funktionen stecken hinter einem kostenpflichtigen Abo. Wenn dich das stört, hier ist der Vergleich mit HomePot — mit jeder Aussage belegt durch eine öffentliche Quelle, damit du selbst nachprüfen kannst.",
+        "intro": "Splitwise ist seit über einem Jahrzehnt die Standardlösung für das Teilen gemeinsamer Ausgaben. Sowohl HomePot als auch Splitwise haben einen kostenlosen und einen kostenpflichtigen Pro-Tarif, daher muss ein fairer Vergleich zeigen, was jeder Plan tatsächlich bietet. Hier ist die ehrliche Aufschlüsselung — und die Kurzfassung ist: Das meiste, was Splitwise für Pro reserviert, hat HomePot kostenlos. Jede Zeile verlinkt eine öffentliche Quelle, damit du es selbst prüfen kannst.",
         "table_title": "Vergleich Seite an Seite",
-        "table_subtitle": "Funktionen, Datenschutz und Philosophie — auf einen Blick.",
+        "table_subtitle": "Jede Zelle gibt den Tarif an, in dem die Funktion verfügbar ist. Ein Haken bedeutet uneingeschränkt für alle Nutzer; Text bedeutet, dass ein Tarif oder Limit gilt.",
         "features": [
-          { "label": "Tägliches Ausgabenlimit im Gratis-Tarif", "ours": "Unbegrenzt", "theirs": "Ja (siehe offizielle Splitwise-Pro-Seite)" },
-          { "label": "Werbung im Gratis-Tarif", "ours": false, "theirs": true },
-          { "label": "KI-Belegscanner", "ours": true, "theirs": "Pro-Funktion" },
-          { "label": "Einzelposten aus dem Beleg", "ours": true, "theirs": "Pro-Funktion" },
-          { "label": "Automatische Währungsumrechnung", "ours": true, "theirs": "Pro-Funktion" },
-          { "label": "Diagramme & Ausgabenanalyse", "ours": true, "theirs": "Pro-Funktion" },
-          { "label": "Währungen für die Ausgabenerfassung", "ours": "52", "theirs": "Viele (nicht spezifiziert)" },
-          { "label": "KI liest jede Beleg-Währung", "ours": true, "theirs": false },
-          { "label": "Wiederkehrende Ausgaben", "ours": true, "theirs": "Teilweise" },
-          { "label": "Monatsabschluss + minimale Überweisungen", "ours": true, "theirs": false },
-          { "label": "Fixe und variable Aufteilung", "ours": true, "theirs": false },
-          { "label": "DSGVO / CCPA konform", "ours": true, "theirs": true }
+          { "label": "Werbung im Gratis-Tarif", "ours": "Keine — niemals", "theirs": "Gratis-Nutzern angezeigt" },
+          { "label": "KI-Belegscanner", "ours": "Gratis (monatliches Scan-Limit) · Unbegrenzt in Pro", "theirs": "Nur Pro" },
+          { "label": "Einzelposten aus dem Beleg", "ours": "Gratis (über den KI-Scan)", "theirs": "Nur Pro" },
+          { "label": "Automatische Währungsumrechnung", "ours": "Gratis (über den KI-Scan)", "theirs": "Nur Pro" },
+          { "label": "Diagramme & Ausgabenanalyse", "ours": "Gratis", "theirs": "Nur Pro" },
+          { "label": "Wiederkehrende Ausgaben", "ours": "Gratis", "theirs": "Teilweise / Pro" },
+          { "label": "Fixe und variable Aufteilung in derselben Gruppe", "ours": "Gratis", "theirs": "Nicht verfügbar" },
+          { "label": "Monatsabschluss mit minimalen Überweisungen", "ours": "Gratis", "theirs": "Nicht verfügbar" },
+          { "label": "Auswählbare Währungen für die Ausgabenerfassung", "ours": "52", "theirs": "Viele (nicht spezifiziert)" },
+          { "label": "KI liest jede Währung aus dem Beleg-Bild", "ours": "Gratis (innerhalb des Scan-Limits)", "theirs": false },
+          { "label": "CSV- / PDF-Export der Statistiken", "ours": "Nur Pro", "theirs": "Nur Pro" },
+          { "label": "DSGVO / CCPA konform", "ours": true, "theirs": true },
+          { "label": "Ausgaben pro Monat", "ours": "20 gratis (kein Tageslimit — verteile sie wie du willst) · Unbegrenzt in Pro", "theirs": "Tageslimit gilt — siehe Splitwise-Pro-Seite" },
+          { "label": "Gruppen", "ours": "1 Haushaltsgruppe gratis · Unbegrenzt in Pro", "theirs": "Unbegrenzt" }
         ],
         "differentiators": [
           {
@@ -274,6 +276,10 @@
           {
             "q": "Ist HomePot wirklich kostenlos?",
             "a": "Ja. Der kostenlose Plan umfasst 1 Gruppe, 20 Ausgaben pro Monat, 10 KI-Belegscans, Multi-Währung und null Werbung — für immer. Pro startet bei 2,92€/Monat im Jahres-Abo und entfernt die Limits, dazu unbegrenzte Gruppen, Exporte und erweiterte Analysen."
+          },
+          {
+            "q": "Was bekomme ich genau im HomePot-Gratis-Tarif, ohne zu bezahlen?",
+            "a": "Ein kostenloses HomePot-Konto gibt dir: 1 Gruppe mit unbegrenzten Mitgliedern, 20 Ausgaben pro Monat, eine begrenzte Anzahl KI-Belegscans pro Monat, Upload von Beleg-Fotos, den vollständigen 52-Währungen-Picker, Diagramme und Ausgabenanalyse, wiederkehrende Ausgaben, fixe und variable Aufteilung in derselben Gruppe, den Monatsabschluss mit minimalen Überweisungen, Dark Mode und null Werbung. Pro entfernt hauptsächlich die Gruppen-/Ausgaben-/Scan-Limits und fügt den CSV-/PDF-Export deiner Statistiken hinzu."
           },
           {
             "q": "Wie verdient HomePot Geld, wenn es keine Werbung gibt?",
