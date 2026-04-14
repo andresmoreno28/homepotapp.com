@@ -57,6 +57,8 @@ for (const loc of config.locales) {
 }
 
 const comparisons = loadJson(join(SRC, 'data', 'comparisons.json'));
+const tools = loadJson(join(SRC, 'data', 'tools.json'));
+const guides = loadJson(join(SRC, 'data', 'guides.json'));
 
 // ------------- init eta -------------
 const eta = new Eta({
@@ -131,32 +133,22 @@ function renderHome() {
   }
 }
 
-// ------------- COMPARE HUB -------------
-function renderCompareHub() {
-  const route = '/compare/';
+// ------------- GENERIC HUB RENDERER -------------
+function renderHub({ route, hubKey, items, label, placeholders, showTrust }) {
   const alternates = buildAlternatesRel(route);
   const alternatesAbs = buildAlternatesAbs(route);
 
   for (const locale of config.locales) {
     const bundle = i18n[locale];
-    const hub = bundle.ui.compareHub;
+    const hub = bundle.ui[hubKey];
+    if (!hub) {
+      console.warn(`  skipped ${route} (${locale}): missing ui.${hubKey}`);
+      continue;
+    }
     const homeHref = localePrefix(locale) + '/';
 
-    // Build cards from published comparisons
-    const items = comparisons
-      .filter((e) => e.published)
-      .map((entry) => {
-        const comparisonBundle = bundle.pages.comparisons[entry.i18nKey];
-        return {
-          href: `${localePrefix(locale)}/compare/${entry.slug}/`,
-          title: comparisonBundle?.h1 || entry.competitor,
-          excerpt: comparisonBundle?.description || '',
-          icon: entry.icon || 'compare',
-        };
-      });
-
-    // Placeholder cards for upcoming comparisons (more competitors in the pipeline)
-    const placeholders = items.length < 4 ? [bundle.ui.compareHub.cta + '…'] : [];
+    const localizedItems = (items || []).map((fn) => fn(locale, bundle));
+    const localizedPlaceholders = placeholders ? placeholders(bundle) : [];
 
     const jsonLd = {
       '@context': 'https://schema.org',
@@ -165,7 +157,7 @@ function renderCompareHub() {
       description: hub.description,
       url: absoluteUrl(locale, route),
       inLanguage: locale,
-      hasPart: items.map((it) => ({
+      hasPart: localizedItems.map((it) => ({
         '@type': 'Article',
         headline: it.title,
         url: `${config.baseUrl}${it.href}`,
@@ -190,15 +182,109 @@ function renderCompareHub() {
       ogType: 'website',
       jsonLd,
       ui: bundle.ui,
-      items,
-      placeholders,
+      hub,
+      items: localizedItems,
+      placeholders: localizedPlaceholders,
     };
 
-    const html = renderWithLayout('compare-hub', ctx);
+    const html = renderWithLayout('hub', ctx);
     writeFile(outPath(locale, route), html);
     registerRoute(route, locale);
-    console.log(`✓ compare hub (${locale})`);
+    console.log(`✓ ${label} (${locale})`);
   }
+}
+
+function renderCompareHub() {
+  renderHub({
+    route: '/compare/',
+    hubKey: 'compareHub',
+    label: 'compare hub',
+    items: comparisons
+      .filter((e) => e.published)
+      .map((entry) => (locale, bundle) => {
+        const comparisonBundle = bundle.pages.comparisons[entry.i18nKey];
+        return {
+          href: `${localePrefix(locale)}/compare/${entry.slug}/`,
+          title: comparisonBundle?.h1 || entry.competitor,
+          excerpt: comparisonBundle?.description || '',
+          icon: entry.icon || 'compare',
+        };
+      }),
+    placeholders: (bundle) => (comparisons.filter((e) => e.published).length < 4 ? [bundle.ui.compareHub.cta + '…'] : []),
+  });
+}
+
+function renderToolsHub() {
+  renderHub({
+    route: '/tools/',
+    hubKey: 'toolsHub',
+    label: 'tools hub',
+    items: tools
+      .filter((e) => e.published)
+      .map((entry) => (locale, bundle) => {
+        const toolBundle = bundle.pages.tools?.[entry.i18nKey];
+        return {
+          href: `${localePrefix(locale)}/tools/${entry.slug}/`,
+          title: toolBundle?.h1 || entry.slug,
+          excerpt: toolBundle?.description || '',
+          icon: entry.icon || 'calculate',
+        };
+      }),
+    placeholders: (bundle) => [bundle.ui.toolsHub.empty_body],
+  });
+}
+
+function renderGuidesHub() {
+  renderHub({
+    route: '/guides/',
+    hubKey: 'guidesHub',
+    label: 'guides hub',
+    items: guides
+      .filter((e) => e.published)
+      .map((entry) => (locale, bundle) => {
+        const guideBundle = bundle.pages.guides?.[entry.i18nKey];
+        return {
+          href: `${localePrefix(locale)}/guides/${entry.slug}/`,
+          title: guideBundle?.h1 || entry.slug,
+          excerpt: guideBundle?.description || '',
+          icon: entry.icon || 'menu_book',
+        };
+      }),
+    placeholders: (bundle) => [bundle.ui.guidesHub.empty_body],
+  });
+}
+
+function renderResourcesHub() {
+  // Top-level: links to the 3 category hubs
+  renderHub({
+    route: '/resources/',
+    hubKey: 'resourcesHub',
+    label: 'resources hub',
+    items: [
+      (locale, bundle) => ({
+        href: `${localePrefix(locale)}/compare/`,
+        title: bundle.ui.compareHub.h1,
+        excerpt: bundle.ui.compareHub.description,
+        icon: 'compare',
+        badge: bundle.ui.compareHub.badge,
+      }),
+      (locale, bundle) => ({
+        href: `${localePrefix(locale)}/tools/`,
+        title: bundle.ui.toolsHub.h1,
+        excerpt: bundle.ui.toolsHub.description,
+        icon: 'calculate',
+        badge: bundle.ui.toolsHub.badge,
+      }),
+      (locale, bundle) => ({
+        href: `${localePrefix(locale)}/guides/`,
+        title: bundle.ui.guidesHub.h1,
+        excerpt: bundle.ui.guidesHub.description,
+        icon: 'menu_book',
+        badge: bundle.ui.guidesHub.badge,
+      }),
+    ],
+    placeholders: () => [],
+  });
 }
 
 // ------------- COMPARISONS -------------
@@ -264,6 +350,172 @@ function renderComparisons() {
   }
 }
 
+// ------------- FROM SPLITWISE LANDING -------------
+function renderFromSplitwise() {
+  const route = '/from-splitwise/';
+  const alternates = buildAlternatesRel(route);
+  const alternatesAbs = buildAlternatesAbs(route);
+
+  for (const locale of config.locales) {
+    const bundle = i18n[locale];
+    const landingBundle = bundle.pages.fromSplitwise;
+    if (!landingBundle) continue;
+    const homeHref = localePrefix(locale) + '/';
+
+    const jsonLd = {
+      '@context': 'https://schema.org',
+      '@type': 'WebPage',
+      name: landingBundle.title,
+      description: landingBundle.description,
+      url: absoluteUrl(locale, route),
+      inLanguage: locale,
+    };
+
+    const ctx = {
+      locale,
+      baseUrl: config.baseUrl,
+      appStoreUrl: config.appStoreUrl,
+      contactEmail: config.contactEmail,
+      promoSignupUrl: config.promoSignupUrl,
+      homeHref,
+      alternates,
+      alternatesAbs,
+      pageTitle: landingBundle.title,
+      pageDescription: landingBundle.description,
+      canonicalUrl: absoluteUrl(locale, route),
+      ogTitle: landingBundle.title,
+      ogDescription: landingBundle.description,
+      ogLocale: bundle.meta.ogLocale,
+      ogType: 'website',
+      jsonLd,
+      ui: bundle.ui,
+      page: { landing: landingBundle },
+    };
+
+    const html = renderWithLayout('landing', ctx);
+    writeFile(outPath(locale, route), html);
+    registerRoute(route, locale);
+    console.log(`✓ from-splitwise (${locale})`);
+  }
+}
+
+// ------------- TOOLS (calculators) -------------
+function renderTools() {
+  for (const entry of tools) {
+    if (!entry.published) continue;
+    const route = `/tools/${entry.slug}/`;
+    const alternates = buildAlternatesRel(route);
+    const alternatesAbs = buildAlternatesAbs(route);
+
+    for (const locale of config.locales) {
+      const bundle = i18n[locale];
+      const toolBundle = bundle.pages.tools?.[entry.i18nKey];
+      if (!toolBundle) {
+        console.warn(`  skipped ${entry.slug} (${locale}): missing tools.${entry.i18nKey}`);
+        continue;
+      }
+      const homeHref = localePrefix(locale) + '/';
+
+      const jsonLd = {
+        '@context': 'https://schema.org',
+        '@type': 'WebApplication',
+        name: toolBundle.h1,
+        description: toolBundle.description,
+        url: absoluteUrl(locale, route),
+        applicationCategory: 'FinanceApplication',
+        operatingSystem: 'Any (browser)',
+        offers: { '@type': 'Offer', price: '0', priceCurrency: 'USD' },
+        inLanguage: locale,
+      };
+
+      const ctx = {
+        locale,
+        baseUrl: config.baseUrl,
+        appStoreUrl: config.appStoreUrl,
+        contactEmail: config.contactEmail,
+        promoSignupUrl: config.promoSignupUrl,
+        homeHref,
+        alternates,
+        alternatesAbs,
+        pageTitle: toolBundle.title,
+        pageDescription: toolBundle.description,
+        canonicalUrl: absoluteUrl(locale, route),
+        ogTitle: toolBundle.title,
+        ogDescription: toolBundle.description,
+        ogLocale: bundle.meta.ogLocale,
+        ogType: 'website',
+        jsonLd,
+        ui: bundle.ui,
+        entry,
+        page: { calculator: toolBundle },
+      };
+
+      const html = renderWithLayout('calculator', ctx);
+      writeFile(outPath(locale, route), html);
+      registerRoute(route, locale);
+      console.log(`✓ ${entry.slug} (${locale})`);
+    }
+  }
+}
+
+// ------------- GUIDES -------------
+function renderGuides() {
+  for (const entry of guides) {
+    if (!entry.published) continue;
+    const route = `/guides/${entry.slug}/`;
+    const alternates = buildAlternatesRel(route);
+    const alternatesAbs = buildAlternatesAbs(route);
+
+    for (const locale of config.locales) {
+      const bundle = i18n[locale];
+      const guideBundle = bundle.pages.guides?.[entry.i18nKey];
+      if (!guideBundle) {
+        console.warn(`  skipped ${entry.slug} (${locale}): missing guides.${entry.i18nKey}`);
+        continue;
+      }
+      const homeHref = localePrefix(locale) + '/';
+
+      const jsonLd = {
+        '@context': 'https://schema.org',
+        '@type': 'Article',
+        headline: guideBundle.h1,
+        description: guideBundle.description,
+        url: absoluteUrl(locale, route),
+        inLanguage: locale,
+        author: { '@type': 'Organization', name: 'HomePot' },
+        publisher: { '@type': 'Organization', name: 'HomePot' },
+      };
+
+      const ctx = {
+        locale,
+        baseUrl: config.baseUrl,
+        appStoreUrl: config.appStoreUrl,
+        contactEmail: config.contactEmail,
+        promoSignupUrl: config.promoSignupUrl,
+        homeHref,
+        alternates,
+        alternatesAbs,
+        pageTitle: guideBundle.title,
+        pageDescription: guideBundle.description,
+        canonicalUrl: absoluteUrl(locale, route),
+        ogTitle: guideBundle.title,
+        ogDescription: guideBundle.description,
+        ogLocale: bundle.meta.ogLocale,
+        ogType: 'article',
+        jsonLd,
+        ui: bundle.ui,
+        entry,
+        page: { guide: guideBundle },
+      };
+
+      const html = renderWithLayout('guide', ctx);
+      writeFile(outPath(locale, route), html);
+      registerRoute(route, locale);
+      console.log(`✓ ${entry.slug} (${locale})`);
+    }
+  }
+}
+
 // ------------- SITEMAP -------------
 function renderSitemap() {
   // Group routes by path so each URL entry has all hreflang alternates
@@ -316,8 +568,14 @@ function renderRobots() {
 // ------------- MAIN -------------
 console.log('Building homepotapp.com...\n');
 renderHome();
+renderResourcesHub();
 renderCompareHub();
+renderToolsHub();
+renderGuidesHub();
 renderComparisons();
+renderFromSplitwise();
+renderTools();
+renderGuides();
 renderSitemap();
 renderRobots();
 console.log(`\nDone. ${routes.length} pages generated.`);

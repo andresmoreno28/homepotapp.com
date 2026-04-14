@@ -1,0 +1,94 @@
+<% const p = it.page.calculator; %>
+
+<!-- ========== HERO ========== -->
+<section class="bg-cream grain-bg pt-32 pb-12 lg:pt-40 lg:pb-16 relative overflow-hidden">
+  <div class="absolute w-[500px] h-[500px] bg-yellowSoft rounded-full blur-[120px] opacity-15 -top-20 -right-20"></div>
+  <div class="absolute w-[400px] h-[400px] bg-sage rounded-full blur-[100px] opacity-10 bottom-0 -left-10"></div>
+
+  <div class="max-w-4xl mx-auto px-6 relative z-10 text-center">
+    <div class="inline-flex items-center gap-2 bg-sage/10 text-sage rounded-full px-4 py-2 text-sm font-medium mb-6">
+      <span class="material-symbols-outlined text-lg">calculate</span>
+      <span><%= p.eyebrow %></span>
+    </div>
+    <h1 class="text-4xl lg:text-[56px] font-extrabold text-darkBlue leading-tight mb-6"><%= p.h1 %></h1>
+    <p class="text-lg lg:text-xl text-gray-500 max-w-2xl mx-auto"><%= p.intro %></p>
+  </div>
+</section>
+
+<!-- ========== WIDGET ========== -->
+<section class="bg-white py-16 lg:py-20">
+  <div class="max-w-4xl mx-auto px-6">
+    <div id="<%= p.widget.id %>" class="bg-cream/40 border border-gray-100 rounded-3xl p-6 lg:p-10 shadow-sm">
+      <!-- Widget is populated by client-side JS -->
+      <noscript>
+        <div class="text-center text-gray-500 py-10">
+          <span class="material-symbols-outlined text-4xl mb-3">warning</span>
+          <p><%= p.widget.noscript %></p>
+        </div>
+      </noscript>
+    </div>
+  </div>
+</section>
+
+<script>
+  window.__calcLabels = <%~ JSON.stringify(p.widget.labels) %>;
+  window.__calcLocale = <%~ JSON.stringify(it.locale) %>;
+  window.__calcCurrency = <%~ JSON.stringify(p.widget.defaultCurrency || 'EUR') %>;
+</script>
+<script src="/src/js/calculators/<%= p.widget.script %>" defer></script>
+
+<!-- ========== HOW IT WORKS ========== -->
+<section class="bg-cream grain-bg py-20 lg:py-28">
+  <div class="max-w-5xl mx-auto px-6">
+    <h2 class="text-3xl lg:text-5xl font-extrabold text-darkBlue text-center mb-16 reveal"><%= p.steps_title %></h2>
+    <div class="grid md:grid-cols-3 gap-8">
+      <% p.steps.forEach((step, idx) => { %>
+      <div class="bg-white rounded-2xl p-8 shadow-sm text-center reveal reveal-delay-<%= idx + 1 %>">
+        <div class="w-16 h-16 bg-terracotta/15 rounded-full flex items-center justify-center mx-auto mb-5">
+          <span class="material-symbols-outlined text-terracotta text-3xl"><%= step.icon %></span>
+        </div>
+        <h3 class="text-lg font-bold text-darkBlue mb-2"><%= step.title %></h3>
+        <p class="text-gray-500"><%= step.desc %></p>
+      </div>
+      <% }) %>
+    </div>
+  </div>
+</section>
+
+<!-- ========== UPSELL: APP DOES IT AUTOMATICALLY ========== -->
+<section class="bg-white py-20 lg:py-28">
+  <div class="max-w-4xl mx-auto px-6">
+    <div class="bg-terracotta/5 border border-terracotta/20 rounded-3xl p-8 lg:p-12 text-center reveal">
+      <span class="material-symbols-outlined text-terracotta text-5xl mb-4">phone_iphone</span>
+      <h2 class="text-2xl lg:text-4xl font-extrabold text-darkBlue mb-4"><%= p.upsell_title %></h2>
+      <p class="text-gray-600 max-w-2xl mx-auto mb-8"><%= p.upsell_desc %></p>
+      <div class="flex flex-row items-center justify-center gap-3 sm:gap-4 flex-wrap">
+        <a href="<%= it.appStoreUrl %>" target="_blank" rel="noopener" class="hover:opacity-80 transition-opacity">
+          <img src="/assets/badges/preorder-<%= it.locale %>.svg" alt="Pre-order on the App Store" style="height:48px;width:auto;">
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== FAQ ========== -->
+<% if (p.faq && p.faq.length) { %>
+<section class="bg-cream grain-bg py-20 lg:py-28">
+  <div class="max-w-3xl mx-auto px-6">
+    <h2 class="text-3xl lg:text-4xl font-extrabold text-darkBlue text-center mb-12 reveal"><%= p.faq_title %></h2>
+    <div class="space-y-3 reveal">
+      <% p.faq.forEach(item => { %>
+      <details class="group bg-white rounded-2xl border border-gray-100 overflow-hidden">
+        <summary class="flex items-center justify-between p-6 cursor-pointer font-semibold text-darkBlue list-none">
+          <span><%= item.q %></span>
+          <span class="material-symbols-outlined text-gray-400 group-open:rotate-180 transition-transform">expand_more</span>
+        </summary>
+        <div class="px-6 pb-6 text-gray-500 text-sm leading-relaxed"><%= item.a %></div>
+      </details>
+      <% }) %>
+    </div>
+  </div>
+</section>
+<% } %>
+
+<%~ include('partials/cta-final', it) %>

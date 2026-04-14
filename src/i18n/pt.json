@@ -5,7 +5,8 @@
   "ui": {
     "nav": {
       "download": "Reservar grátis",
-      "compare": "Comparar"
+      "compare": "Comparar",
+      "resources": "Recursos"
     },
     "footer": {
       "desc": "Despesas compartilhadas simplificadas para casais, colegas de apartamento e famílias.",
@@ -35,6 +36,42 @@
       "trust_encrypted": "Criptografado",
       "trust_gdpr": "LGPD",
       "trust_notracking": "Sem rastreamento"
+    },
+    "resourcesHub": {
+      "title": "Recursos do HomePot — ferramentas, guias, comparações",
+      "description": "Calculadoras grátis, comparações honestas e guias práticos para dividir despesas compartilhadas. Tudo num só lugar.",
+      "icon": "auto_stories",
+      "eyebrow": "Tudo para despesas compartilhadas",
+      "h1": "Ferramentas, guias e comparações honestas",
+      "intro": "Calculadoras grátis, guias práticos e comparações lado a lado com outros apps de divisão de despesas — tudo em um hub. Cada conteúdo é escrito para ajudar de verdade, não para enganar o SEO.",
+      "badge": "Recurso",
+      "cta": "Explorar",
+      "empty_title": "Em breve",
+      "empty_body": "Adicionamos conteúdo novo aqui regularmente."
+    },
+    "toolsHub": {
+      "title": "Calculadoras grátis para dividir despesas",
+      "description": "Calculadoras grátis sem cadastro que dividem custos de viagem, contas de república e mais. Feitas pela equipe do HomePot.",
+      "icon": "calculate",
+      "eyebrow": "Ferramentas grátis",
+      "h1": "Calculadoras grátis para despesas compartilhadas",
+      "intro": "Faça as contas sem criar uma conta. Estas calculadoras no navegador lidam com divisão de viagens, contas de república e cenários comuns de despesas compartilhadas. Sem cadastro, sem anúncios, sem pedir email.",
+      "badge": "Calculadora",
+      "cta": "Abrir calculadora",
+      "empty_title": "Mais ferramentas a caminho",
+      "empty_body": "Em breve: calculadora de contas de república e ferramentas por par de moedas."
+    },
+    "guidesHub": {
+      "title": "Guias para dividir despesas compartilhadas",
+      "description": "Guias práticos para dividir despesas com colegas de apartamento, casais, famílias e grupos de viagem. Escritos pela equipe do HomePot.",
+      "icon": "menu_book",
+      "eyebrow": "Guias honestos",
+      "h1": "Guias para dividir despesas compartilhadas",
+      "intro": "Conteúdo direto e prático sobre como lidar com dinheiro compartilhado com colegas de apartamento, casais, viagens e famílias. Atualizamos conforme situações e melhores práticas evoluem.",
+      "badge": "Guia",
+      "cta": "Ler o guia",
+      "empty_title": "Guias em breve",
+      "empty_body": "A primeira leva de guias está sendo escrita agora."
     },
     "compareHub": {
       "title": "Compare o HomePot com outros apps de divisão de despesas",
@@ -83,7 +120,7 @@
         "noads": "Zero anúncios, para sempre",
         "notracking": "Sem rastreamento",
         "languages": "5 idiomas",
-        "currencies": "14 moedas",
+        "currencies": "52 moedas",
         "aws": "Infraestrutura AWS",
         "delete": "Apagar quando quiser",
         "ai": "Scanner com IA"
@@ -200,6 +237,203 @@
           {
             "q": "Como o HomePot se compara ao Splitwise?",
             "a": "O HomePot é construído como uma alternativa honesta e sem anúncios: 52 moedas para registrar despesas, scanner com IA que lê qualquer moeda do recibo e um modelo de assinatura transparente. Veja a <a href=\"/pt/compare/homepot-vs-splitwise/\" class=\"text-terracotta underline hover:opacity-80\">comparação completa lado a lado com o Splitwise</a> com todos os recursos e o aviso sobre nossas fontes."
+          }
+        ]
+      }
+    },
+    "fromSplitwise": {
+      "title": "Saindo do Splitwise? Bem-vindo ao HomePot",
+      "description": "Bem-vindo, refugiado do Splitwise. Zero anúncios, scanner IA de recibos no plano grátis, 52 moedas e um modelo de assinatura transparente. Compare e experimente o HomePot.",
+      "eyebrow": "Bem-vindo, refugiado do Splitwise",
+      "eyebrow_icon": "waving_hand",
+      "h1": "Cansado de anúncios e limites diários? Entre.",
+      "intro": "Construímos o HomePot para quem bate no limite diário de despesas no meio de uma viagem, vê um temporizador antes de adicionar um jantar de R$60, ou desistiu do scanner de recibos porque a extração só do total era inútil. Você não deve lealdade ao Splitwise. Aqui está o que fazemos diferente.",
+      "cta_compare": "Comparação completa",
+      "props_title": "O que muda desde o primeiro dia",
+      "props_subtitle": "Diferenças práticas que você sente de cara.",
+      "props": [
+        {
+          "icon": "block",
+          "title": "Zero anúncios — para sempre",
+          "desc": "Sem banners, sem intersticiais, sem temporizadores. Nosso modelo de negócio é uma assinatura opcional, não sua atenção. Verificado: não há um único SDK de anúncio no código do HomePot."
+        },
+        {
+          "icon": "document_scanner",
+          "title": "Scanner IA de recibos no plano grátis",
+          "desc": "Tire foto de qualquer recibo e nossa IA extrai o total, cada item, impostos, gorjetas, estabelecimento e moeda — não só o total. Disponível grátis com limite mensal de scans; ilimitado no Pro."
+        },
+        {
+          "icon": "autorenew",
+          "title": "Contas recorrentes + fechamento mensal",
+          "desc": "Aluguel, internet, seguro — configure uma vez e se repetem. No fim do mês, o HomePot calcula o mínimo de transferências para zerar todos os saldos, não uma cadeia de micropagamentos."
+        },
+        {
+          "icon": "currency_exchange",
+          "title": "52 moedas + a IA lê qualquer recibo",
+          "desc": "52 moedas selecionáveis no app, e o scanner IA detecta qualquer moeda ISO 4217 direto da imagem do recibo. Conversão automática no câmbio do dia."
+        }
+      ],
+      "honest_note": {
+        "eyebrow": "Uma ressalva honesta",
+        "title": "O HomePot ainda não é offline-first",
+        "body": "Se registrar despesas offline é requisito obrigatório pra você, o HomePot hoje precisa de conexão de rede (sincroniza ao vivo). Tricount e o Splitwise antigo lidam melhor com offline neste momento. Estamos trabalhando nisso, mas preferimos te avisar de antemão a deixar você descobrir num avião."
+      },
+      "faq_title": "Perguntas frequentes",
+      "faq": [
+        {
+          "q": "Posso importar meus dados do Splitwise?",
+          "a": "A importação CSV está no roadmap. Hoje você pode exportar seu grupo do Splitwise como CSV e logo teremos um importador. Escreva para homepotapp@gmail.com e avisamos no dia que sair."
+        },
+        {
+          "q": "O HomePot é realmente grátis?",
+          "a": "Sim. O plano grátis inclui 1 grupo, 20 despesas por mês, um scanner IA com limite mensal de scans, multi-moeda e zero anúncios — para sempre. O Pro (a partir de R$14,90/mês no anual) remove os limites e adiciona grupos ilimitados, exportações e análises avançadas."
+        },
+        {
+          "q": "Como isso é diferente da página de comparação do Splitwise?",
+          "a": "Esta página é para quem já sabe que quer sair do Splitwise. A <a href=\"/pt/compare/homepot-vs-splitwise/\" class=\"text-terracotta underline\">comparação completa</a> é para quem ainda está decidindo — passa por cada recurso plano por plano com links para fontes públicas."
+        },
+        {
+          "q": "As afirmações sobre o Splitwise são honestas?",
+          "a": "Sim. Cada afirmação sobre o Splitwise vem do site oficial (splitwise.com/pro) ou da página da App Store de iOS no momento da redação, e está linkada para você verificar. O HomePot não é afiliado ao Splitwise, Inc."
+        }
+      ]
+    },
+    "tools": {
+      "tripSplitter": {
+        "title": "Calculadora grátis para dividir custos de viagem",
+        "description": "Calculadora grátis no navegador para dividir custos de viagem entre amigos. Adicione pessoas, adicione despesas, receba o acerto com transferências mínimas. Sem cadastro, sem anúncios.",
+        "eyebrow": "Calculadora grátis",
+        "h1": "Divisor de custos de viagem — quem deve a quem?",
+        "intro": "Adicione as pessoas e as despesas. Calculamos o saldo líquido de cada uma e o mínimo de transferências para acertar o grupo. Funciona no seu navegador, sem cadastro, sem anúncios.",
+        "widget": {
+          "id": "trip-splitter",
+          "script": "trip-splitter.js",
+          "defaultCurrency": "BRL",
+          "noscript": "Esta calculadora precisa de JavaScript. Ative ou use o app HomePot para iOS.",
+          "labels": {
+            "people_title": "Pessoas",
+            "add_person": "Adicionar",
+            "remove": "Remover",
+            "person_placeholder": "Pessoa",
+            "example_name_1": "Alex",
+            "example_name_2": "Sam",
+            "expenses_title": "Despesas",
+            "add_expense": "Adicionar despesa",
+            "expense_desc_placeholder": "Descrição",
+            "example_expense": "Jantar",
+            "new_expense": "Nova despesa",
+            "paid_by": "Pago por",
+            "split_between": "Dividido entre",
+            "results_title": "Quem deve a quem",
+            "total": "Total",
+            "transfers": "Acerto",
+            "all_settled": "Tudo acertado! Nenhuma transferência necessária.",
+            "empty_state": "Adicione pessoas e despesas para ver quem deve a quem."
+          }
+        },
+        "steps_title": "Como funciona",
+        "steps": [
+          { "icon": "group_add", "title": "Adicione pessoas", "desc": "Digite os nomes de todos da viagem." },
+          { "icon": "receipt_long", "title": "Adicione despesas", "desc": "Para cada despesa, escolha quem pagou e quem participa." },
+          { "icon": "account_balance", "title": "Veja o acerto", "desc": "Calculamos o mínimo de transferências para zerar todos os saldos." }
+        ],
+        "upsell_title": "Quer isso automático do celular?",
+        "upsell_desc": "O HomePot faz a mesma matemática no seu celular — mais scanner IA de recibos, multi-moeda, contas recorrentes e ritual de fechamento mensal. O plano grátis é generoso, o Pro remove todos os limites.",
+        "faq_title": "Perguntas frequentes",
+        "faq": [
+          {
+            "q": "A calculadora é realmente grátis?",
+            "a": "Sim. Funciona inteira no seu navegador — nunca vemos seus dados. Sem conta, sem email, sem anúncios. Se quiser a mesma matemática automatizada no celular em várias viagens, instale o HomePot."
+          },
+          {
+            "q": "Como funciona o algoritmo de acerto?",
+            "a": "Calculamos o saldo líquido de cada pessoa (pago menos a parte justa) e combinamos gulosamente o maior credor com o maior devedor até todos os saldos ficarem em zero. Isso gera o mínimo de transferências para acertar o grupo — não uma cadeia de micropagamentos."
+          },
+          {
+            "q": "Posso compartilhar o resultado com meu grupo?",
+            "a": "Por enquanto, com uma captura de tela. Se for para o app HomePot, cada membro do grupo vê os mesmos números ao vivo e o fechamento mensal envia a cada pessoa sua lista exata de transferências."
+          },
+          {
+            "q": "Qual moeda ela usa?",
+            "a": "Por padrão BRL e formata os valores com o locale do seu navegador. Se sua viagem for em outra moeda, o app HomePot lida com 52 moedas nativamente mais qualquer ISO 4217 detectada pelo scanner IA."
+          }
+        ]
+      }
+    },
+    "guides": {
+      "roommates": {
+        "title": "Como dividir despesas com colegas de apartamento de forma justa (guia 2026)",
+        "description": "Guia prático para dividir aluguel, contas e despesas compartilhadas com colegas de apartamento de forma justa. Divisão igual, ponderada por renda e armadilhas comuns.",
+        "eyebrow": "Guia de república",
+        "eyebrow_icon": "apartment",
+        "h1": "Como dividir despesas com colegas de apartamento de forma justa",
+        "intro": "Dividir apartamento é uma das formas mais comuns de as pessoas acabarem brigando por dinheiro. Este guia passa pelas três formas justas de dividir despesas do lar, quando cada uma faz sentido de verdade e como lidar com os casos constrangedores (quartos desiguais, rendas diferentes, compras que ninguém anota).",
+        "read_time": "6 min de leitura",
+        "updated": "Atualizado em 2026",
+        "sections": [
+          {
+            "h2": "As três formas justas de dividir",
+            "icon": "balance",
+            "paragraphs": [
+              "Quando colegas de apartamento dividem um lar, matematicamente só existem três formas «justas» de dividir despesas compartilhadas. Cada uma é justa sob pressupostos diferentes, então ajuda conhecer as três e escolher a que combina com sua casa.",
+              "A divisão errada não é injusta por si só — ela vira injusta quando o pressuposto por trás deixa de ser verdadeiro. O objetivo é escolher um modelo que o grupo todo aceite e parar de brigar."
+            ],
+            "list": [
+              "<strong>Divisão igual.</strong> Todos pagam a mesma parte. Funciona quando todos ganham parecido, os quartos são parecidos e o consumo é parecido.",
+              "<strong>Divisão por tamanho do quarto.</strong> O aluguel é dividido por tamanho ou qualidade do quarto. Funciona quando os quartos diferem bastante (suíte vs quartinho).",
+              "<strong>Divisão por renda.</strong> Todos pagam a mesma <em>porcentagem da renda</em>, não o mesmo valor absoluto. Funciona quando as rendas diferem muito e o grupo quer carga financeira igual, não custo igual."
+            ]
+          },
+          {
+            "h2": "Aluguel vs contas vs compras — não se dividem do mesmo jeito",
+            "icon": "bolt",
+            "paragraphs": [
+              "Muito conflito entre colegas vem de aplicar uma regra a todo tipo de despesa. Aluguel, contas e compras se comportam diferente e se beneficiam de regras diferentes.",
+              "<strong>Aluguel</strong>: geralmente se divide com o modelo combinado na mudança (igual, por quarto ou por renda). Uma vez definido, não renegocie todo mês.",
+              "<strong>Contas</strong> (luz, gás, internet, água): normalmente dividem igual porque o consumo é difícil de medir por pessoa e todos se beneficiam. Exceção: se alguém trabalha de casa todo dia, um ajuste pequeno pode ser razoável.",
+              "<strong>Compras</strong>: as mais complicadas. Ou mantenha totalmente separadas (cada um compra as suas) ou trate como um bolo comum onde todos contribuem igual e cada um pega o que precisa. Tentar dividir um recibo item por item é onde começam as brigas — economize energia."
+            ],
+            "note": "O HomePot suporta <strong>divisão fixa e variável no mesmo grupo</strong> — o aluguel divide de um jeito, as compras de outro, tudo automático. Você não precisa escolher um modelo para tudo."
+          },
+          {
+            "h2": "Quando as rendas são muito diferentes",
+            "icon": "payments",
+            "paragraphs": [
+              "Se um colega ganha o dobro do outro, dividir o aluguel igual pode deixar o que ganha menos com uma parte desproporcional da sua renda mensal indo para moradia. Não é injusto contabilmente, mas pode ser no vivido.",
+              "A solução é a divisão por renda: some as rendas líquidas mensais de todos, calcule qual porcentagem cada um ganha e aplique essa porcentagem ao aluguel total. Todos acabam pagando a mesma <em>fração da renda</em> em moradia, o que parece justo pra maioria dos grupos.",
+              "Se isso for desconfortável de conversar, comece com divisão igual e combine rever em três meses. Baixo atrito muitas vezes importa mais que ótimo matemático."
+            ]
+          },
+          {
+            "h2": "Controlar despesas compartilhadas sem planilha",
+            "icon": "smartphone",
+            "paragraphs": [
+              "Qualquer que seja o modelo, controlar por memória ou WhatsApp quebra depois de algumas semanas. A abordagem de menor esforço é um app que registre cada despesa compartilhada na hora e calcule o saldo do fim do mês automaticamente.",
+              "Nossa <a href=\"/pt/tools/trip-cost-splitter/\" class=\"text-terracotta underline\">calculadora grátis de custos de viagem</a> lida com cenários pontuais. Para a finança contínua de uma república com contas recorrentes e fechamento mensal, o HomePot foi feito exatamente para isso."
+            ]
+          }
+        ],
+        "upsell": {
+          "title": "Gerencie a república no HomePot",
+          "desc": "Contas recorrentes, divisão fixa e variável, scanner IA de recibos no plano grátis, e fechamento mensal que calcula o mínimo de transferências — tudo pensado para o caso de casa."
+        },
+        "faq_title": "FAQ de república",
+        "faq": [
+          {
+            "q": "Devemos dividir tudo igual?",
+            "a": "Só se todos ganharem parecido e os quartos forem parecidos. Caso contrário, considere divisão por quarto para o aluguel e por renda para o resto. A chave é que a república inteira concorde com a regra antes de aplicar."
+          },
+          {
+            "q": "E se um colega sempre faz as compras?",
+            "a": "Ele deve registrar os recibos como despesas compartilhadas e no fim do mês cada um paga sua parte. O scanner IA do HomePot consegue ler o total mais cada item, o que permite excluir o que não é compartilhado (por exemplo, uma marca específica que só um compra)."
+          },
+          {
+            "q": "Como lidar com um colega que muda no meio do mês?",
+            "a": "Rateie aluguel e contas pelos dias em que ele esteve. A maioria dos apps de república (e o HomePot) permite dar data de fim a uma despesa compartilhada para o fechamento mensal calcular certo."
+          },
+          {
+            "q": "Vale a pena registrar despesas pequenas como papel higiênico?",
+            "a": "Geralmente não. Registrar cada compra de R$3 cria mais atrito do que resolve. Uma abordagem comum é um «caixa da casa» mensal: todos colocam um valor fixo que cobre itens compartilhados pequenos e ninguém precisa controlar no detalhe."
           }
         ]
       }

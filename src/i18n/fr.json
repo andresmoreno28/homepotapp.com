@@ -5,7 +5,8 @@
   "ui": {
     "nav": {
       "download": "Précommander",
-      "compare": "Comparer"
+      "compare": "Comparer",
+      "resources": "Ressources"
     },
     "footer": {
       "desc": "Les dépenses partagées simplifiées pour les couples, colocs et familles.",
@@ -35,6 +36,42 @@
       "trust_encrypted": "Chiffré",
       "trust_gdpr": "RGPD",
       "trust_notracking": "Sans traçage"
+    },
+    "resourcesHub": {
+      "title": "Ressources HomePot — outils, guides, comparaisons",
+      "description": "Calculatrices gratuites, comparaisons honnêtes et guides pratiques pour partager les dépenses. Tout au même endroit.",
+      "icon": "auto_stories",
+      "eyebrow": "Tout pour les dépenses partagées",
+      "h1": "Outils, guides et comparaisons honnêtes",
+      "intro": "Calculatrices gratuites, guides pratiques et comparaisons côte à côte avec les autres apps de partage de dépenses — tout dans un seul hub. Chaque contenu est écrit pour vraiment aider, pas pour faire du SEO creux.",
+      "badge": "Ressource",
+      "cta": "Explorer",
+      "empty_title": "Bientôt disponible",
+      "empty_body": "Nous ajoutons régulièrement du nouveau contenu ici."
+    },
+    "toolsHub": {
+      "title": "Calculatrices gratuites pour partager les dépenses",
+      "description": "Calculatrices gratuites sans inscription qui partagent les frais de voyage, les factures de colocation et plus. Construites par l'équipe HomePot.",
+      "icon": "calculate",
+      "eyebrow": "Outils gratuits",
+      "h1": "Calculatrices gratuites pour dépenses partagées",
+      "intro": "Fais les comptes sans créer de compte. Ces calculatrices dans le navigateur gèrent les partages de voyage, les factures de colocation et les scénarios courants de dépenses partagées. Sans inscription, sans pub, sans email demandé.",
+      "badge": "Calculatrice",
+      "cta": "Ouvrir la calculatrice",
+      "empty_title": "D'autres outils arrivent",
+      "empty_body": "Une calculatrice de factures de colocation et des outils de paires de devises arrivent bientôt."
+    },
+    "guidesHub": {
+      "title": "Guides pour partager les dépenses communes",
+      "description": "Guides pratiques pour partager les dépenses avec colocs, couples, familles et groupes de voyage. Écrits par l'équipe HomePot.",
+      "icon": "menu_book",
+      "eyebrow": "Guides honnêtes",
+      "h1": "Guides pour partager les dépenses communes",
+      "intro": "Du contenu direct et pratique sur comment gérer l'argent partagé avec colocs, couples, voyages et familles. Mis à jour au fil des situations et des bonnes pratiques.",
+      "badge": "Guide",
+      "cta": "Lire le guide",
+      "empty_title": "Guides bientôt disponibles",
+      "empty_body": "Notre première série de guides est en cours de rédaction."
     },
     "compareHub": {
       "title": "Compare HomePot aux autres apps de partage de frais",
@@ -83,7 +120,7 @@
         "noads": "Zéro pub, pour toujours",
         "notracking": "Sans traçage",
         "languages": "5 langues",
-        "currencies": "14 devises",
+        "currencies": "52 devises",
         "aws": "Infrastructure AWS",
         "delete": "Supprime quand tu veux",
         "ai": "Scanner alimenté par l'IA"
@@ -200,6 +237,203 @@
           {
             "q": "Comment HomePot se compare-t-il à Splitwise ?",
             "a": "HomePot est pensé comme une alternative honnête, sans pub : 52 devises pour saisir les dépenses, scanner IA qui lit n'importe quelle devise sur un reçu, et un modèle d'abonnement transparent. Consulte la <a href=\"/fr/compare/homepot-vs-splitwise/\" class=\"text-terracotta underline hover:opacity-80\">comparaison complète côte à côte avec Splitwise</a> avec toutes les fonctionnalités et l'avertissement sur nos sources."
+          }
+        ]
+      }
+    },
+    "fromSplitwise": {
+      "title": "Tu quittes Splitwise ? Bienvenue sur HomePot",
+      "description": "Bienvenue, réfugié·e de Splitwise. Zéro pub, scanner IA de reçus sur le palier gratuit, 52 devises et un modèle d'abonnement transparent. Compare et essaie HomePot.",
+      "eyebrow": "Bienvenue, réfugié·e de Splitwise",
+      "eyebrow_icon": "waving_hand",
+      "h1": "Marre des pubs et des plafonds quotidiens ? Entre.",
+      "intro": "On a construit HomePot pour les gens qui ont atteint le plafond quotidien de dépenses en plein voyage, qui ont regardé un minuteur de cooldown avant d'ajouter un dîner à 12€, ou qui ont abandonné le scanner de reçus parce que l'extraction du total seul était inutile. Tu ne dois pas de loyauté à Splitwise. Voici ce qu'on fait différemment.",
+      "cta_compare": "Comparaison complète",
+      "props_title": "Ce qui change dès le premier jour",
+      "props_subtitle": "Des différences pratiques que tu ressens immédiatement.",
+      "props": [
+        {
+          "icon": "block",
+          "title": "Zéro pub — à jamais",
+          "desc": "Pas de bannières, pas d'interstitiels, pas de minuteurs. Notre modèle économique est un abonnement optionnel, pas ton attention. Vérifié : il n'y a pas un seul SDK publicitaire dans le code de HomePot."
+        },
+        {
+          "icon": "document_scanner",
+          "title": "Scanner IA de reçus sur le palier gratuit",
+          "desc": "Photographie n'importe quel reçu et notre IA en extrait le total, chaque article, taxes, pourboires, commerce et devise — pas juste le total. Disponible gratuitement avec un plafond mensuel de scans ; illimité en Pro."
+        },
+        {
+          "icon": "autorenew",
+          "title": "Factures récurrentes + clôture mensuelle",
+          "desc": "Loyer, internet, assurance — configure-les une fois et elles se répètent. À la fin du mois, HomePot calcule le minimum de transferts nécessaires pour remettre chaque solde à zéro, pas une chaîne de micro-paiements."
+        },
+        {
+          "icon": "currency_exchange",
+          "title": "52 devises + l'IA lit n'importe quel reçu",
+          "desc": "52 devises sélectionnables dans l'app, et le scanner IA détecte n'importe quelle devise ISO 4217 directement depuis l'image d'un reçu. Conversion automatique au taux du jour."
+        }
+      ],
+      "honest_note": {
+        "eyebrow": "Un bémol honnête",
+        "title": "HomePot n'est pas encore offline-first",
+        "body": "Si la saisie hors ligne des dépenses est incontournable pour toi, HomePot a besoin d'une connexion réseau pour l'instant (synchro en temps réel). Tricount et l'ancien Splitwise gèrent mieux l'offline aujourd'hui. On y travaille, mais on préfère te le dire franchement plutôt que te laisser le découvrir dans un avion."
+      },
+      "faq_title": "Questions fréquentes",
+      "faq": [
+        {
+          "q": "Puis-je importer mes données Splitwise ?",
+          "a": "L'import CSV est sur la roadmap. Aujourd'hui tu peux exporter ton groupe Splitwise en CSV et on ajoutera un importateur bientôt. Écris-nous à homepotapp@gmail.com et on te préviendra le jour où ça sort."
+        },
+        {
+          "q": "HomePot est-il vraiment gratuit ?",
+          "a": "Oui. Le palier gratuit inclut 1 groupe, 20 dépenses par mois, un scanner IA de reçus avec plafond mensuel, multi-devises et zéro pub — pour toujours. Pro (à partir de 2,92€/mois en annuel) supprime les limites et ajoute des groupes illimités, des exports et des analyses avancées."
+        },
+        {
+          "q": "En quoi c'est différent de la page de comparaison Splitwise ?",
+          "a": "Cette page est pour ceux qui savent déjà qu'ils veulent quitter Splitwise. La <a href=\"/fr/compare/homepot-vs-splitwise/\" class=\"text-terracotta underline\">comparaison complète</a> est pour ceux qui hésitent encore — elle passe en revue chaque fonctionnalité palier par palier avec des liens vers des sources publiques."
+        },
+        {
+          "q": "Les affirmations sur Splitwise sont-elles honnêtes ?",
+          "a": "Oui. Chaque affirmation sur Splitwise vient de leur site public (splitwise.com/pro) ou de la fiche iOS App Store au moment de la rédaction, et est liée pour que tu vérifies. HomePot n'est pas affilié à Splitwise, Inc."
+        }
+      ]
+    },
+    "tools": {
+      "tripSplitter": {
+        "title": "Calculatrice gratuite pour partager les frais de voyage",
+        "description": "Calculatrice gratuite dans le navigateur pour partager les frais de voyage entre amis. Ajoute les personnes, les dépenses, obtiens le règlement avec transferts minimaux. Sans inscription, sans pub.",
+        "eyebrow": "Calculatrice gratuite",
+        "h1": "Partageur de frais de voyage — qui doit quoi ?",
+        "intro": "Ajoute les personnes et les dépenses. On calcule le solde net de chacun et le minimum de transferts nécessaires pour régler le groupe. Fonctionne dans ton navigateur, sans inscription, sans pub.",
+        "widget": {
+          "id": "trip-splitter",
+          "script": "trip-splitter.js",
+          "defaultCurrency": "EUR",
+          "noscript": "Cette calculatrice nécessite JavaScript. Active-le ou utilise l'app iOS HomePot.",
+          "labels": {
+            "people_title": "Personnes",
+            "add_person": "Ajouter",
+            "remove": "Supprimer",
+            "person_placeholder": "Personne",
+            "example_name_1": "Alex",
+            "example_name_2": "Sam",
+            "expenses_title": "Dépenses",
+            "add_expense": "Ajouter",
+            "expense_desc_placeholder": "Description",
+            "example_expense": "Dîner",
+            "new_expense": "Nouvelle dépense",
+            "paid_by": "Payé par",
+            "split_between": "Partagé entre",
+            "results_title": "Qui doit quoi",
+            "total": "Total",
+            "transfers": "Règlement",
+            "all_settled": "Tout est réglé ! Aucun transfert nécessaire.",
+            "empty_state": "Ajoute des personnes et des dépenses pour voir qui doit quoi."
+          }
+        },
+        "steps_title": "Comment ça marche",
+        "steps": [
+          { "icon": "group_add", "title": "Ajoute les personnes", "desc": "Tape les noms de toutes les personnes du voyage." },
+          { "icon": "receipt_long", "title": "Ajoute les dépenses", "desc": "Pour chaque dépense, choisis qui a payé et qui partage." },
+          { "icon": "account_balance", "title": "Vois le règlement", "desc": "On calcule le minimum de transferts pour remettre tous les soldes à zéro." }
+        ],
+        "upsell_title": "Tu veux ça automatique depuis ton téléphone ?",
+        "upsell_desc": "HomePot fait les mêmes calculs sur ton téléphone — plus le scanner IA de reçus, le multi-devises, les factures récurrentes et le rituel de clôture mensuelle. Le palier gratuit est généreux, Pro supprime toutes les limites.",
+        "faq_title": "Questions fréquentes",
+        "faq": [
+          {
+            "q": "Cette calculatrice est-elle vraiment gratuite ?",
+            "a": "Oui. Elle tourne entièrement dans ton navigateur — on ne voit jamais tes données. Pas de compte, pas d'email, pas de pub. Si tu veux les mêmes calculs automatisés sur ton téléphone pour plusieurs voyages, installe HomePot."
+          },
+          {
+            "q": "Comment marche l'algorithme de règlement ?",
+            "a": "On calcule le solde net de chaque personne (payé moins sa juste part) puis on associe gloutonnement le plus grand créancier au plus grand débiteur jusqu'à ce que tous les soldes soient à zéro. Ça produit le minimum de transferts pour régler le groupe — pas une chaîne de petits paiements entre tout le monde."
+          },
+          {
+            "q": "Puis-je partager le résultat avec mon groupe ?",
+            "a": "Une capture d'écran pour le moment. Si tu passes à l'app HomePot, chaque membre du groupe voit les mêmes chiffres en direct et la clôture mensuelle envoie à chacun sa liste exacte de transferts."
+          },
+          {
+            "q": "Quelle devise est utilisée ?",
+            "a": "Par défaut EUR et le format utilise le locale de ton navigateur. Si ton voyage est dans une autre devise, l'app HomePot gère 52 devises nativement plus n'importe quelle ISO 4217 détectée par son scanner IA."
+          }
+        ]
+      }
+    },
+    "guides": {
+      "roommates": {
+        "title": "Comment partager les dépenses entre colocs équitablement (guide 2026)",
+        "description": "Guide pratique pour partager loyer, factures et dépenses partagées entre colocs équitablement. Partage égal, pondéré par revenus et pièges courants.",
+        "eyebrow": "Guide colocation",
+        "eyebrow_icon": "apartment",
+        "h1": "Comment partager les dépenses entre colocs équitablement",
+        "intro": "Partager un appart est une des façons les plus courantes de finir par se disputer pour l'argent. Ce guide passe en revue les trois façons équitables de partager les dépenses communes du foyer, quand chacune a vraiment du sens, et comment gérer les cas délicats (chambres inégales, revenus différents, courses que personne ne suit).",
+        "read_time": "6 min de lecture",
+        "updated": "Mis à jour en 2026",
+        "sections": [
+          {
+            "h2": "Les trois façons équitables de partager",
+            "icon": "balance",
+            "paragraphs": [
+              "Quand on est en coloc, il n'y a vraiment que trois façons mathématiquement «équitables» de partager les dépenses communes. Chacune est équitable sous des hypothèses différentes, donc ça aide de les connaître toutes et de choisir celle qui correspond à votre foyer.",
+              "Le mauvais partage n'est pas intrinsèquement injuste — il le devient quand l'hypothèse derrière cesse d'être vraie. L'objectif est de choisir un modèle que tout le groupe accepte, et d'arrêter de se disputer."
+            ],
+            "list": [
+              "<strong>Partage égal.</strong> Tout le monde paie la même part. Fonctionne quand les revenus sont similaires, les chambres sont de taille similaire et la consommation est similaire.",
+              "<strong>Partage pondéré par la chambre.</strong> Le loyer est divisé selon la taille ou la qualité de la chambre. Fonctionne quand les chambres diffèrent beaucoup (suite principale vs petite chambre).",
+              "<strong>Partage pondéré par les revenus.</strong> Tout le monde paie le même <em>pourcentage de son revenu</em>, pas le même montant absolu. Fonctionne quand les revenus diffèrent beaucoup et que le groupe veut une charge financière égale, pas un coût égal."
+            ]
+          },
+          {
+            "h2": "Loyer vs factures vs courses — ils ne se partagent pas pareil",
+            "icon": "bolt",
+            "paragraphs": [
+              "Beaucoup de conflits entre colocs viennent d'appliquer une seule règle à tous les types de dépenses. Loyer, factures et courses se comportent différemment et bénéficient de règles différentes.",
+              "<strong>Loyer</strong> : c'est généralement le modèle choisi à l'emménagement (égal, par chambre ou par revenus). Une fois fixé, ne renégocie pas chaque mois.",
+              "<strong>Factures</strong> (électricité, gaz, internet, eau) : habituellement partagées également parce que la consommation est difficile à mesurer par personne et tout le monde en profite. Exception : si un·e coloc télétravaille tous les jours, un petit ajustement peut être raisonnable.",
+              "<strong>Courses</strong> : les plus délicates. Soit gardez-les totalement séparées (chacun achète les siennes), soit traitez-les comme un pot commun où tout le monde met la même somme et prend ce qu'il faut. Essayer de diviser un ticket de caisse article par article, c'est là que les disputes commencent — économise ton énergie."
+            ],
+            "note": "HomePot gère <strong>les partages fixes et variables dans le même groupe</strong> — le loyer se partage d'une façon, les courses d'une autre, tout automatique. Tu n'as pas à choisir un seul modèle pour tout."
+          },
+          {
+            "h2": "Quand les revenus sont très différents",
+            "icon": "payments",
+            "paragraphs": [
+              "Si un·e coloc gagne le double d'un·e autre, partager le loyer également peut laisser celui qui gagne moins avec une part disproportionnée de son revenu mensuel consacré au logement. Ce n'est pas injuste comptablement, mais ça peut l'être dans le vécu.",
+              "La solution est le partage pondéré par les revenus : additionne les revenus nets mensuels de tout le monde, calcule quel pourcentage du total chacun gagne et applique ce pourcentage au loyer total. Tout le monde finit par payer la même <em>part de son revenu</em> sur le logement, ce qui semble équitable à la plupart des groupes.",
+              "Si c'est gênant à aborder, commencez par un partage égal et convenez de revoir dans trois mois. Une faible friction est souvent plus importante qu'un optimum mathématique."
+            ]
+          },
+          {
+            "h2": "Suivre les dépenses partagées sans tableur",
+            "icon": "smartphone",
+            "paragraphs": [
+              "Quelle que soit la méthode choisie, suivre par mémoire ou par messages WhatsApp casse après quelques semaines. L'approche la moins fatigante, c'est une app qui enregistre chaque dépense partagée au moment où elle arrive et calcule le solde de fin de mois automatiquement.",
+              "Notre <a href=\"/fr/tools/trip-cost-splitter/\" class=\"text-terracotta underline\">calculatrice gratuite de frais de voyage</a> gère les scénarios ponctuels. Pour la finance continue d'une colocation avec des factures récurrentes et une clôture mensuelle, HomePot est fait exactement pour ça."
+            ]
+          }
+        ],
+        "upsell": {
+          "title": "Gère tes finances de coloc sur HomePot",
+          "desc": "Factures récurrentes, partages fixes et variables, scanner IA de reçus sur le palier gratuit, et une clôture mensuelle qui calcule le minimum de transferts — tout construit pour le foyer."
+        },
+        "faq_title": "FAQ colocation",
+        "faq": [
+          {
+            "q": "On devrait tout partager également ?",
+            "a": "Seulement si les revenus sont similaires et les chambres aussi. Sinon, pense à un partage par chambre pour le loyer et un partage par revenus pour le reste. L'essentiel est que toute la colocation soit d'accord sur la règle avant de l'appliquer."
+          },
+          {
+            "q": "Et si un·e coloc fait toujours les courses ?",
+            "a": "Qu'il·elle enregistre les tickets de caisse comme dépenses partagées et en fin de mois chacun paie sa part. Le scanner IA de HomePot peut lire le total plus chaque article, ce qui permet d'exclure ce qui n'est pas partagé (une marque précise qu'un·e seul·e coloc achète)."
+          },
+          {
+            "q": "Comment gérer un·e coloc qui part en milieu de mois ?",
+            "a": "Proratise le loyer et les factures sur les jours où il·elle était là. La plupart des apps de coloc (et HomePot) permettent d'attribuer une date de fin à une dépense partagée pour que la clôture mensuelle fasse les comptes correctement."
+          },
+          {
+            "q": "Ça vaut le coup de suivre les petites dépenses comme le papier toilette ?",
+            "a": "Généralement non. Suivre chaque achat à 3€ crée plus de friction que ça n'en résout. Une approche courante est un «pot foyer» mensuel : tout le monde y met une somme fixe qui couvre les petites dépenses partagées et personne n'a à suivre en détail."
           }
         ]
       }

@@ -5,7 +5,8 @@
   "ui": {
     "nav": {
       "download": "Pre-Order Free",
-      "compare": "Compare"
+      "compare": "Compare",
+      "resources": "Resources"
     },
     "footer": {
       "desc": "Shared expenses made simple for couples, roommates, and families.",
@@ -35,6 +36,42 @@
       "trust_encrypted": "Encrypted",
       "trust_gdpr": "GDPR",
       "trust_notracking": "No tracking"
+    },
+    "resourcesHub": {
+      "title": "HomePot resources — tools, guides, comparisons",
+      "description": "Free calculators, honest comparisons and practical guides for splitting shared expenses. Everything in one place.",
+      "icon": "auto_stories",
+      "eyebrow": "Everything for shared expenses",
+      "h1": "Tools, guides and honest comparisons",
+      "intro": "Free calculators, practical guides and side-by-side comparisons with other expense-splitting apps — all in one hub. Every piece of content is written to actually help you, not to game SEO.",
+      "badge": "Resource",
+      "cta": "Browse",
+      "empty_title": "Coming soon",
+      "empty_body": "New content is being added here regularly."
+    },
+    "toolsHub": {
+      "title": "Free calculators for splitting expenses",
+      "description": "Free, no-signup calculators that split trip costs, roommate bills and more. Built by the HomePot team.",
+      "icon": "calculate",
+      "eyebrow": "Free tools",
+      "h1": "Free calculators for shared expenses",
+      "intro": "Run the numbers without creating an account. These browser-based calculators handle trip splits, roommate bills, and common shared-expense scenarios. No sign-up, no ads, no email gate.",
+      "badge": "Calculator",
+      "cta": "Open calculator",
+      "empty_title": "More tools on the way",
+      "empty_body": "We're adding a roommate bill calculator and currency-pair tools soon."
+    },
+    "guidesHub": {
+      "title": "Guides on how to split shared expenses",
+      "description": "Practical guides for splitting expenses with roommates, couples, families and travel groups. Written by the HomePot team.",
+      "icon": "menu_book",
+      "eyebrow": "Honest guides",
+      "h1": "Guides for splitting shared expenses",
+      "intro": "Straightforward, practical writing on how to handle shared money with roommates, couples, trips, and families. We update these as situations and best practices evolve.",
+      "badge": "Guide",
+      "cta": "Read the guide",
+      "empty_title": "Guides coming soon",
+      "empty_body": "Our first round of guides is being written right now."
     },
     "compareHub": {
       "title": "Compare HomePot vs other expense-sharing apps",
@@ -83,7 +120,7 @@
         "noads": "Zero Ads Forever",
         "notracking": "No Tracking",
         "languages": "5 Languages",
-        "currencies": "14 Currencies",
+        "currencies": "52 Currencies",
         "aws": "AWS Infrastructure",
         "delete": "Delete Anytime",
         "ai": "AI-Powered Scanner"
@@ -200,6 +237,203 @@
           {
             "q": "How does HomePot compare to Splitwise?",
             "a": "HomePot is built as an honest, ad-free alternative: 52 currencies for expense entry, AI receipt scanning that reads any currency from receipts, and a transparent subscription model. See the <a href=\"/compare/homepot-vs-splitwise/\" class=\"text-terracotta underline hover:opacity-80\">full side-by-side comparison with Splitwise</a> for every feature and a disclaimer about our sources."
+          }
+        ]
+      }
+    },
+    "fromSplitwise": {
+      "title": "Leaving Splitwise? Welcome to HomePot",
+      "description": "Welcome, Splitwise refugee. Zero ads, AI receipt scanning on the free tier, 52 currencies, and a transparent subscription model. Compare and try HomePot.",
+      "eyebrow": "Welcome, Splitwise refugee",
+      "eyebrow_icon": "waving_hand",
+      "h1": "Tired of ads and daily caps? Come on in.",
+      "intro": "We built HomePot for the people who hit the 5-expense daily cap mid-trip, watched a cooldown timer before adding a €12 dinner, or gave up on receipt scanning because the total-only extraction was useless. You don't owe Splitwise your loyalty. Here's what we do differently.",
+      "cta_compare": "Full side-by-side",
+      "props_title": "What changes on day one",
+      "props_subtitle": "Practical differences you'll feel as soon as you start.",
+      "props": [
+        {
+          "icon": "block",
+          "title": "Zero ads — forever",
+          "desc": "No banners, no interstitials, no cooldown timers. Our business model is an optional subscription, not your attention. Verified: there is not a single ad SDK in the HomePot codebase."
+        },
+        {
+          "icon": "document_scanner",
+          "title": "AI receipt scanner on the free tier",
+          "desc": "Snap a photo of any receipt and our AI extracts the total, each item, taxes, tips, merchant and currency — not just the total. Available for free with a monthly scan limit; unlimited on Pro."
+        },
+        {
+          "icon": "autorenew",
+          "title": "Recurring bills + monthly close",
+          "desc": "Rent, internet, insurance — set them once and they repeat. At the end of the month, HomePot calculates the minimum transfers needed to zero everyone's balance, not a chain of small payments."
+        },
+        {
+          "icon": "currency_exchange",
+          "title": "52 currencies + AI reads any receipt",
+          "desc": "52 currencies selectable in the app, and the AI scanner detects any ISO 4217 currency directly from a receipt image. Auto-converts at today's exchange rate."
+        }
+      ],
+      "honest_note": {
+        "eyebrow": "One honest caveat",
+        "title": "HomePot isn't offline-first yet",
+        "body": "If offline expense entry is a hard requirement, HomePot currently needs a network connection (it syncs live). Tricount and the older Splitwise client both handle offline better right now. We're working on it, but we'd rather tell you upfront than let you find out on a plane."
+      },
+      "faq_title": "Frequently asked questions",
+      "faq": [
+        {
+          "q": "Can I import my Splitwise data?",
+          "a": "CSV import is on the roadmap. You can export your Splitwise group as CSV today and we'll ship an importer soon. Drop us a line at homepotapp@gmail.com and we'll notify you the day it lands."
+        },
+        {
+          "q": "Is HomePot really free?",
+          "a": "Yes. The free plan includes 1 group, 20 expenses per month, an AI receipt scanner with a monthly scan limit, multi-currency, and zero ads — forever. Pro (from €2.92/month on annual billing) removes the limits and adds unlimited groups, exports and advanced analytics."
+        },
+        {
+          "q": "How is this different from the Splitwise comparison page?",
+          "a": "This page is for people who already know they want to leave Splitwise. The <a href=\"/compare/homepot-vs-splitwise/\" class=\"text-terracotta underline\">full comparison</a> is for people still deciding — it walks through every feature tier by tier with links to public sources."
+        },
+        {
+          "q": "Are the claims about Splitwise honest?",
+          "a": "Yes. Every claim we make about Splitwise is taken from their public website (splitwise.com/pro) or the iOS App Store listing at the time of writing, and linked so you can verify. HomePot is not affiliated with Splitwise, Inc."
+        }
+      ]
+    },
+    "tools": {
+      "tripSplitter": {
+        "title": "Free trip cost splitter — who owes who calculator",
+        "description": "Free browser calculator to split trip costs between friends. Add people, add expenses, get the minimum-transfer settlement. No sign-up, no ads.",
+        "eyebrow": "Free calculator",
+        "h1": "Trip cost splitter — who owes who?",
+        "intro": "Add the people and the expenses. We'll compute each person's net balance and the minimum number of transfers needed to settle everyone up. Works in your browser, no sign-up, no ads.",
+        "widget": {
+          "id": "trip-splitter",
+          "script": "trip-splitter.js",
+          "defaultCurrency": "EUR",
+          "noscript": "This calculator requires JavaScript. Please enable it or use the HomePot iOS app.",
+          "labels": {
+            "people_title": "People",
+            "add_person": "Add person",
+            "remove": "Remove",
+            "person_placeholder": "Person",
+            "example_name_1": "Alex",
+            "example_name_2": "Sam",
+            "expenses_title": "Expenses",
+            "add_expense": "Add expense",
+            "expense_desc_placeholder": "Description",
+            "example_expense": "Dinner",
+            "new_expense": "New expense",
+            "paid_by": "Paid by",
+            "split_between": "Split between",
+            "results_title": "Who owes who",
+            "total": "Total",
+            "transfers": "Settle up",
+            "all_settled": "All settled! No transfers needed.",
+            "empty_state": "Add people and expenses to see who owes who."
+          }
+        },
+        "steps_title": "How it works",
+        "steps": [
+          { "icon": "group_add", "title": "Add people", "desc": "Type in the names of everyone on the trip." },
+          { "icon": "receipt_long", "title": "Add expenses", "desc": "For each expense, pick who paid and who's sharing it." },
+          { "icon": "account_balance", "title": "See the settlement", "desc": "We compute the minimum transfers needed to zero everyone's balance." }
+        ],
+        "upsell_title": "Want this automatic from your phone?",
+        "upsell_desc": "HomePot does the same math on your phone — plus AI receipt scanning, multi-currency, recurring bills and a monthly close ritual. Free tier is generous, Pro removes all the limits.",
+        "faq_title": "Frequently asked questions",
+        "faq": [
+          {
+            "q": "Is this calculator really free?",
+            "a": "Yes. It runs entirely in your browser — we never see your data. No account, no email, no ads. If you want the same math automated on your phone across multiple trips, install HomePot."
+          },
+          {
+            "q": "How does the settlement algorithm work?",
+            "a": "We compute each person's net balance (paid minus fair share) and then greedily match the largest creditor with the largest debtor until all balances are zero. This produces the minimum number of transfers needed to settle the group — not a chain of small payments between everyone."
+          },
+          {
+            "q": "Can I share the result with my group?",
+            "a": "Share a screenshot for now. If you move to the HomePot app, every group member sees the same live numbers and the monthly close sends each person their exact transfer list."
+          },
+          {
+            "q": "What currency does it use?",
+            "a": "It defaults to EUR and formats amounts using your browser locale. If your trip is in a different currency, the HomePot app handles 52 currencies natively plus any ISO 4217 currency detected by its AI receipt scanner."
+          }
+        ]
+      }
+    },
+    "guides": {
+      "roommates": {
+        "title": "How to split expenses with roommates fairly (2026 guide)",
+        "description": "Practical guide to splitting rent, utilities and shared bills with roommates fairly. Covers equal splits, income-weighted splits, and common traps.",
+        "eyebrow": "Roommates guide",
+        "eyebrow_icon": "apartment",
+        "h1": "How to split expenses with roommates fairly",
+        "intro": "Sharing a flat is one of the most common ways people end up arguing about money. This guide walks through the three fair ways to split shared household bills, when each one actually makes sense, and how to handle the awkward cases (unequal rooms, different incomes, groceries no one tracks).",
+        "read_time": "6 min read",
+        "updated": "Updated 2026",
+        "sections": [
+          {
+            "h2": "The three fair ways to split",
+            "icon": "balance",
+            "paragraphs": [
+              "When roommates share a flat, there are really only three mathematically \"fair\" ways to split shared expenses. Each one is fair under different assumptions, so it helps to know all three and pick the one that matches your household.",
+              "The wrong split isn't inherently unfair — it becomes unfair when the assumption behind it stops being true. The goal is to pick a model the whole group agrees with and then stop arguing."
+            ],
+            "list": [
+              "<strong>Equal split.</strong> Everyone pays the same share. Works when everyone earns similarly, rooms are similarly sized, and consumption is similar.",
+              "<strong>Room-weighted split.</strong> Rent splits by room size or quality. Works when rooms differ significantly (master suite vs tiny box room).",
+              "<strong>Income-weighted split.</strong> Everyone pays the same <em>percentage of their income</em>, not the same absolute amount. Works when incomes differ significantly and the group wants equal financial burden, not equal cost."
+            ]
+          },
+          {
+            "h2": "Rent vs utilities vs groceries — they don't all split the same way",
+            "icon": "bolt",
+            "paragraphs": [
+              "A lot of roommate conflict comes from applying one rule to every kind of expense. Rent, utilities and groceries behave differently and benefit from different rules.",
+              "<strong>Rent</strong> is usually best split using the model you agreed on when you moved in (equal, room-weighted, or income-weighted). Once set, don't renegotiate every month.",
+              "<strong>Utilities</strong> (electricity, gas, internet, water) usually split equally because consumption is hard to track per person and everyone benefits. The exception: if one roommate works from home every day, a small adjustment can be reasonable.",
+              "<strong>Groceries</strong> are the trickiest. Either keep them fully separate (everyone buys their own) or treat them as a shared pot where everyone contributes the same and takes what they need. Trying to split a grocery receipt item-by-item is where arguments start — save your energy."
+            ],
+            "note": "HomePot supports <strong>fixed and variable splits in the same group</strong> — rent splits one way, groceries split another, all automatically. You don't have to pick one model for everything."
+          },
+          {
+            "h2": "When incomes are very different",
+            "icon": "payments",
+            "paragraphs": [
+              "If one roommate earns twice as much as another, splitting rent equally can leave the lower earner with a disproportionate share of their monthly income going to housing. This isn't unfair in an accounting sense, but it can be in a lived sense.",
+              "The fix is income-weighted split: add up everyone's net monthly income, compute what percentage of the total each person earns, and apply that percentage to the total rent. Everyone ends up paying the same <em>share of their income</em> on rent, which feels fair to most groups.",
+              "If that feels uncomfortable to discuss, start with equal splits and agree to revisit in three months. Low-friction is often more important than mathematically optimal."
+            ]
+          },
+          {
+            "h2": "Track shared expenses without a spreadsheet",
+            "icon": "smartphone",
+            "paragraphs": [
+              "Whatever split you agree on, tracking by memory or WhatsApp messages breaks down after a few weeks. The least-effort approach is an app that records each shared expense as it happens and computes the month-end balance automatically.",
+              "Our free <a href=\"/tools/trip-cost-splitter/\" class=\"text-terracotta underline\">Trip cost splitter</a> handles one-off scenarios. For ongoing roommate finances with recurring bills and a monthly close, HomePot is built exactly for that."
+            ]
+          }
+        ],
+        "upsell": {
+          "title": "Run your roommate finances on HomePot",
+          "desc": "Recurring bills, fixed vs variable splits, AI receipt scanner on the free tier, and a monthly close that calculates the minimum transfers — all built for the household use case."
+        },
+        "faq_title": "Roommate expense FAQ",
+        "faq": [
+          {
+            "q": "Should we split everything equally?",
+            "a": "Only if everyone earns similarly and has similar-sized rooms. Otherwise, consider a room-weighted split for rent and an income-weighted split for everything else. The key is that the whole household agrees on the rule before applying it."
+          },
+          {
+            "q": "What if one roommate always buys the groceries?",
+            "a": "Have them track the grocery receipts as shared expenses and at month end everyone pays their share. HomePot's AI receipt scanner can read the total plus line items, which lets you exclude anything that wasn't shared (e.g., a specific brand one roommate buys)."
+          },
+          {
+            "q": "How do we handle a roommate who moves out mid-month?",
+            "a": "Pro-rate rent and utilities for the days they were there. Most rental apps (and HomePot) let you add a dated end to a shared expense so the monthly close handles the math correctly."
+          },
+          {
+            "q": "Is it worth tracking small expenses like toilet paper?",
+            "a": "Usually not. Tracking every €3 purchase creates more friction than it solves. A common approach is a monthly \"household pot\" — everyone puts in a fixed amount that covers shared small items and nobody has to track them individually."
           }
         ]
       }

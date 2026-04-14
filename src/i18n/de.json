@@ -5,7 +5,8 @@
   "ui": {
     "nav": {
       "download": "Vorbestellen",
-      "compare": "Vergleichen"
+      "compare": "Vergleichen",
+      "resources": "Ressourcen"
     },
     "footer": {
       "desc": "Gemeinsame Ausgaben einfach gemacht — für Paare, WGs und Familien.",
@@ -35,6 +36,42 @@
       "trust_encrypted": "Verschlüsselt",
       "trust_gdpr": "DSGVO",
       "trust_notracking": "Kein Tracking"
+    },
+    "resourcesHub": {
+      "title": "HomePot-Ressourcen — Tools, Guides, Vergleiche",
+      "description": "Kostenlose Rechner, ehrliche Vergleiche und praktische Guides fürs Teilen gemeinsamer Ausgaben. Alles an einem Ort.",
+      "icon": "auto_stories",
+      "eyebrow": "Alles für geteilte Ausgaben",
+      "h1": "Tools, Guides und ehrliche Vergleiche",
+      "intro": "Kostenlose Rechner, praktische Guides und Seite-an-Seite-Vergleiche mit anderen Ausgabenteilungs-Apps — alles in einem Hub. Jeder Inhalt ist geschrieben, um wirklich zu helfen, nicht um SEO auszutricksen.",
+      "badge": "Ressource",
+      "cta": "Durchstöbern",
+      "empty_title": "Kommt bald",
+      "empty_body": "Hier kommt regelmäßig neuer Inhalt dazu."
+    },
+    "toolsHub": {
+      "title": "Kostenlose Rechner fürs Teilen von Ausgaben",
+      "description": "Kostenlose Rechner ohne Anmeldung, die Reisekosten, WG-Rechnungen und mehr aufteilen. Vom HomePot-Team gebaut.",
+      "icon": "calculate",
+      "eyebrow": "Kostenlose Tools",
+      "h1": "Kostenlose Rechner für gemeinsame Ausgaben",
+      "intro": "Rechne durch, ohne ein Konto anzulegen. Diese browser-basierten Rechner handhaben Reiseaufteilungen, WG-Rechnungen und übliche geteilte Ausgaben. Keine Anmeldung, keine Werbung, kein E-Mail-Zwang.",
+      "badge": "Rechner",
+      "cta": "Rechner öffnen",
+      "empty_title": "Mehr Tools sind unterwegs",
+      "empty_body": "Wir fügen bald einen WG-Rechnungs-Rechner und Währungspaar-Tools hinzu."
+    },
+    "guidesHub": {
+      "title": "Guides zum Teilen gemeinsamer Ausgaben",
+      "description": "Praktische Guides fürs Teilen von Ausgaben mit Mitbewohnern, Paaren, Familien und Reisegruppen. Geschrieben vom HomePot-Team.",
+      "icon": "menu_book",
+      "eyebrow": "Ehrliche Guides",
+      "h1": "Guides fürs Teilen gemeinsamer Ausgaben",
+      "intro": "Klare, praktische Texte dazu, wie man geteiltes Geld mit WG, Paar, Reise und Familie handhabt. Wir aktualisieren sie, wenn sich Situationen und Best Practices weiterentwickeln.",
+      "badge": "Guide",
+      "cta": "Guide lesen",
+      "empty_title": "Guides kommen bald",
+      "empty_body": "Unsere erste Runde Guides wird gerade geschrieben."
     },
     "compareHub": {
       "title": "HomePot vs andere Apps für gemeinsame Ausgaben",
@@ -83,7 +120,7 @@
         "noads": "Null Werbung, für immer",
         "notracking": "Kein Tracking",
         "languages": "5 Sprachen",
-        "currencies": "14 Währungen",
+        "currencies": "52 Währungen",
         "aws": "AWS-Infrastruktur",
         "delete": "Jederzeit löschen",
         "ai": "KI-gestützter Scanner"
@@ -200,6 +237,203 @@
           {
             "q": "Wie vergleicht sich HomePot mit Splitwise?",
             "a": "HomePot ist als ehrliche, werbefreie Alternative gebaut: 52 Währungen für die Ausgabenerfassung, KI-Belegscanner, der jede Währung vom Beleg liest, und ein transparentes Abomodell. Sieh dir den <a href=\"/de/compare/homepot-vs-splitwise/\" class=\"text-terracotta underline hover:opacity-80\">vollständigen Seite-an-Seite-Vergleich mit Splitwise</a> mit allen Funktionen und unserem Quellenhinweis an."
+          }
+        ]
+      }
+    },
+    "fromSplitwise": {
+      "title": "Du verlässt Splitwise? Willkommen bei HomePot",
+      "description": "Willkommen, Splitwise-Flüchtling. Null Werbung, KI-Belegscanner im Gratis-Tarif, 52 Währungen und ein transparentes Abo-Modell. Vergleiche und probiere HomePot.",
+      "eyebrow": "Willkommen, Splitwise-Flüchtling",
+      "eyebrow_icon": "waving_hand",
+      "h1": "Genug von Werbung und Tageslimits? Komm rein.",
+      "intro": "Wir haben HomePot für die Leute gebaut, die mitten auf einer Reise an das Tageslimit stoßen, einen Cooldown-Timer sehen, bevor sie ein 12€-Abendessen eintragen können, oder den Beleg-Scanner aufgegeben haben, weil die reine Total-Extraktion nutzlos war. Du schuldest Splitwise keine Treue. Hier ist, was wir anders machen.",
+      "cta_compare": "Vollständiger Vergleich",
+      "props_title": "Was sich ab Tag eins ändert",
+      "props_subtitle": "Praktische Unterschiede, die du sofort spürst.",
+      "props": [
+        {
+          "icon": "block",
+          "title": "Null Werbung — für immer",
+          "desc": "Keine Banner, keine Interstitials, keine Cooldown-Timer. Unser Geschäftsmodell ist ein optionales Abo, nicht deine Aufmerksamkeit. Verifiziert: Es gibt kein einziges Werbe-SDK im HomePot-Code."
+        },
+        {
+          "icon": "document_scanner",
+          "title": "KI-Belegscanner im Gratis-Tarif",
+          "desc": "Fotografiere einen Beleg und unsere KI extrahiert Gesamtbetrag, jeden Posten, Steuern, Trinkgeld, Händler und Währung — nicht nur den Gesamtbetrag. Gratis verfügbar mit monatlichem Scan-Limit; unbegrenzt in Pro."
+        },
+        {
+          "icon": "autorenew",
+          "title": "Wiederkehrende Rechnungen + Monatsabschluss",
+          "desc": "Miete, Internet, Versicherung — einmal einrichten und sie wiederholen sich. Am Monatsende berechnet HomePot die minimalen Überweisungen, um alle Salden auf null zu bringen, keine Zahlungskette."
+        },
+        {
+          "icon": "currency_exchange",
+          "title": "52 Währungen + KI liest jeden Beleg",
+          "desc": "52 Währungen in der App auswählbar, und der KI-Scanner erkennt jede ISO 4217-Währung direkt aus dem Beleg-Bild. Automatische Umrechnung zum Tageskurs."
+        }
+      ],
+      "honest_note": {
+        "eyebrow": "Ein ehrlicher Haken",
+        "title": "HomePot ist noch nicht offline-first",
+        "body": "Wenn Offline-Erfassung von Ausgaben für dich Pflicht ist, braucht HomePot derzeit eine Netzwerkverbindung (Live-Sync). Tricount und der alte Splitwise-Client handhaben Offline momentan besser. Wir arbeiten daran, aber wir sagen es dir lieber vorab, als dass du es im Flugzeug merkst."
+      },
+      "faq_title": "Häufig gestellte Fragen",
+      "faq": [
+        {
+          "q": "Kann ich meine Splitwise-Daten importieren?",
+          "a": "CSV-Import ist auf der Roadmap. Du kannst deine Splitwise-Gruppe heute schon als CSV exportieren und wir liefern bald einen Importer. Schreib an homepotapp@gmail.com und wir benachrichtigen dich am Tag der Veröffentlichung."
+        },
+        {
+          "q": "Ist HomePot wirklich kostenlos?",
+          "a": "Ja. Der Gratis-Tarif umfasst 1 Gruppe, 20 Ausgaben pro Monat, einen KI-Belegscanner mit monatlichem Scan-Limit, Multi-Währung und null Werbung — für immer. Pro (ab 2,92€/Monat im Jahres-Abo) entfernt die Limits und fügt unbegrenzte Gruppen, Exporte und erweiterte Analysen hinzu."
+        },
+        {
+          "q": "Wie unterscheidet sich das von der Splitwise-Vergleichsseite?",
+          "a": "Diese Seite ist für Leute, die schon wissen, dass sie Splitwise verlassen wollen. Der <a href=\"/de/compare/homepot-vs-splitwise/\" class=\"text-terracotta underline\">vollständige Vergleich</a> ist für Unentschlossene — er geht jede Funktion Tarif für Tarif durch, mit Links zu öffentlichen Quellen."
+        },
+        {
+          "q": "Sind die Aussagen über Splitwise ehrlich?",
+          "a": "Ja. Jede Aussage über Splitwise stammt von ihrer öffentlichen Website (splitwise.com/pro) oder dem iOS-App-Store-Eintrag zum Zeitpunkt der Erstellung und ist verlinkt, damit du es prüfen kannst. HomePot ist nicht mit Splitwise, Inc. verbunden."
+        }
+      ]
+    },
+    "tools": {
+      "tripSplitter": {
+        "title": "Kostenloser Reisekostenrechner — Wer schuldet wem?",
+        "description": "Kostenloser Browser-Rechner zum Aufteilen von Reisekosten unter Freunden. Leute hinzufügen, Ausgaben eintragen, minimale Überweisungen berechnen. Keine Anmeldung, keine Werbung.",
+        "eyebrow": "Kostenloser Rechner",
+        "h1": "Reisekostenrechner — Wer schuldet wem?",
+        "intro": "Füge die Leute und die Ausgaben hinzu. Wir berechnen den Nettosaldo jeder Person und die minimale Anzahl Überweisungen, die nötig sind, um die Gruppe auszugleichen. Funktioniert in deinem Browser, keine Anmeldung, keine Werbung.",
+        "widget": {
+          "id": "trip-splitter",
+          "script": "trip-splitter.js",
+          "defaultCurrency": "EUR",
+          "noscript": "Dieser Rechner benötigt JavaScript. Bitte aktiviere es oder verwende die HomePot iOS-App.",
+          "labels": {
+            "people_title": "Personen",
+            "add_person": "Hinzufügen",
+            "remove": "Entfernen",
+            "person_placeholder": "Person",
+            "example_name_1": "Alex",
+            "example_name_2": "Sam",
+            "expenses_title": "Ausgaben",
+            "add_expense": "Ausgabe hinzufügen",
+            "expense_desc_placeholder": "Beschreibung",
+            "example_expense": "Abendessen",
+            "new_expense": "Neue Ausgabe",
+            "paid_by": "Bezahlt von",
+            "split_between": "Aufgeteilt auf",
+            "results_title": "Wer schuldet wem",
+            "total": "Gesamt",
+            "transfers": "Ausgleich",
+            "all_settled": "Alles ausgeglichen! Keine Überweisungen nötig.",
+            "empty_state": "Füge Personen und Ausgaben hinzu, um zu sehen, wer wem schuldet."
+          }
+        },
+        "steps_title": "So funktioniert's",
+        "steps": [
+          { "icon": "group_add", "title": "Personen hinzufügen", "desc": "Gib die Namen aller Reiseteilnehmer ein." },
+          { "icon": "receipt_long", "title": "Ausgaben hinzufügen", "desc": "Für jede Ausgabe wähle, wer bezahlt hat und wer teilt." },
+          { "icon": "account_balance", "title": "Ausgleich sehen", "desc": "Wir berechnen die minimalen Überweisungen, um alle Salden auszugleichen." }
+        ],
+        "upsell_title": "Automatisch auf deinem Handy?",
+        "upsell_desc": "HomePot macht dieselben Berechnungen auf deinem Handy — plus KI-Belegscan, Multi-Währung, wiederkehrende Rechnungen und ein monatliches Abschluss-Ritual. Der Gratis-Tarif ist großzügig, Pro entfernt alle Limits.",
+        "faq_title": "Häufig gestellte Fragen",
+        "faq": [
+          {
+            "q": "Ist dieser Rechner wirklich kostenlos?",
+            "a": "Ja. Er läuft vollständig in deinem Browser — wir sehen deine Daten nie. Kein Konto, keine E-Mail, keine Werbung. Wenn du dieselbe Berechnung auf deinem Handy über mehrere Reisen hinweg automatisiert haben willst, installiere HomePot."
+          },
+          {
+            "q": "Wie funktioniert der Abrechnungs-Algorithmus?",
+            "a": "Wir berechnen den Nettosaldo jeder Person (bezahlt minus fairer Anteil) und matchen dann gierig den größten Gläubiger mit dem größten Schuldner, bis alle Salden auf null sind. Das ergibt die minimale Anzahl Überweisungen, um die Gruppe auszugleichen — keine Kette von Kleinzahlungen."
+          },
+          {
+            "q": "Kann ich das Ergebnis mit meiner Gruppe teilen?",
+            "a": "Im Moment per Screenshot. Wenn du zur HomePot-App wechselst, sieht jedes Gruppenmitglied dieselben Live-Zahlen, und der Monatsabschluss schickt jeder Person ihre genaue Überweisungsliste."
+          },
+          {
+            "q": "Welche Währung wird verwendet?",
+            "a": "Standardmäßig EUR, formatiert mit dem Locale deines Browsers. Wenn deine Reise in einer anderen Währung ist, handhabt die HomePot-App 52 Währungen nativ plus jede ISO 4217-Währung, die der KI-Belegscanner erkennt."
+          }
+        ]
+      }
+    },
+    "guides": {
+      "roommates": {
+        "title": "WG-Ausgaben fair aufteilen (Guide 2026)",
+        "description": "Praktischer Guide zum fairen Aufteilen von Miete, Nebenkosten und geteilten Rechnungen in der WG. Gleich, einkommensgewichtet und häufige Fallen.",
+        "eyebrow": "WG-Guide",
+        "eyebrow_icon": "apartment",
+        "h1": "Wie man WG-Ausgaben fair aufteilt",
+        "intro": "Eine WG zu teilen ist eine der häufigsten Arten, wie Menschen am Ende über Geld streiten. Dieser Guide geht durch die drei fairen Wege, gemeinsame Haushaltsrechnungen aufzuteilen, wann jeder wirklich sinnvoll ist, und wie man mit den unangenehmen Fällen umgeht (ungleich große Zimmer, unterschiedliche Einkommen, Einkäufe, die niemand verfolgt).",
+        "read_time": "6 Min. Lesezeit",
+        "updated": "Aktualisiert 2026",
+        "sections": [
+          {
+            "h2": "Die drei fairen Wege zu teilen",
+            "icon": "balance",
+            "paragraphs": [
+              "Wenn Mitbewohner eine Wohnung teilen, gibt es eigentlich nur drei mathematisch „faire\" Wege, gemeinsame Ausgaben aufzuteilen. Jeder ist unter unterschiedlichen Annahmen fair, also hilft es, alle drei zu kennen und die passende für deine WG zu wählen.",
+              "Die falsche Aufteilung ist nicht per se unfair — sie wird unfair, wenn die Annahme dahinter nicht mehr stimmt. Ziel ist, ein Modell zu wählen, mit dem die ganze Gruppe einverstanden ist, und dann aufzuhören zu streiten."
+            ],
+            "list": [
+              "<strong>Gleiche Aufteilung.</strong> Alle zahlen den gleichen Anteil. Funktioniert, wenn alle ähnlich verdienen, Zimmer ähnlich groß sind und der Verbrauch ähnlich ist.",
+              "<strong>Zimmer-gewichtete Aufteilung.</strong> Die Miete wird nach Zimmergröße oder -qualität geteilt. Funktioniert, wenn sich Zimmer stark unterscheiden (großes Zimmer vs kleine Kammer).",
+              "<strong>Einkommens-gewichtete Aufteilung.</strong> Alle zahlen denselben <em>Prozentsatz ihres Einkommens</em>, nicht denselben absoluten Betrag. Funktioniert, wenn Einkommen stark variieren und die Gruppe gleiche finanzielle Belastung will, nicht gleiche Kosten."
+            ]
+          },
+          {
+            "h2": "Miete vs Nebenkosten vs Einkäufe — sie teilen sich nicht gleich",
+            "icon": "bolt",
+            "paragraphs": [
+              "Viele WG-Konflikte entstehen, wenn man eine Regel auf jede Art von Ausgabe anwendet. Miete, Nebenkosten und Einkäufe verhalten sich unterschiedlich und profitieren von unterschiedlichen Regeln.",
+              "<strong>Miete</strong> wird meist mit dem Modell geteilt, das ihr beim Einzug vereinbart habt (gleich, zimmer- oder einkommens-gewichtet). Einmal festgelegt, nicht jeden Monat neu verhandeln.",
+              "<strong>Nebenkosten</strong> (Strom, Gas, Internet, Wasser) werden meist gleich geteilt, weil der Verbrauch pro Person schwer zu messen ist und alle profitieren. Ausnahme: Wenn eine Person täglich Homeoffice macht, kann eine kleine Anpassung vernünftig sein.",
+              "<strong>Einkäufe</strong> sind am kniffligsten. Entweder vollständig getrennt (jeder kauft seine eigenen) oder als gemeinsamer Topf, in den alle gleich einzahlen und jeder nimmt, was er braucht. Einen Kassenbon Posten für Posten aufzuteilen, ist der Punkt, an dem Streit anfängt — spar deine Energie."
+            ],
+            "note": "HomePot unterstützt <strong>fixe und variable Aufteilungen in derselben Gruppe</strong> — die Miete wird anders aufgeteilt als die Einkäufe, alles automatisch. Du musst nicht ein Modell für alles wählen."
+          },
+          {
+            "h2": "Wenn die Einkommen sehr unterschiedlich sind",
+            "icon": "payments",
+            "paragraphs": [
+              "Wenn ein Mitbewohner doppelt so viel verdient wie ein anderer, kann eine gleiche Mietaufteilung dazu führen, dass der Geringverdiener einen überproportionalen Anteil seines Monatseinkommens für das Wohnen ausgibt. Buchhalterisch nicht unfair, aber im Erleben schon.",
+              "Die Lösung ist die einkommens-gewichtete Aufteilung: Addiere die Nettomonatseinkommen aller, berechne, welchen Prozentsatz der Summe jeder verdient, und wende diesen Prozentsatz auf die Gesamtmiete an. Am Ende zahlen alle denselben <em>Anteil ihres Einkommens</em> für die Miete, was den meisten Gruppen fair erscheint.",
+              "Wenn das unangenehm zu besprechen ist, starte mit gleicher Aufteilung und vereinbare, in drei Monaten zu überprüfen. Geringe Reibung ist oft wichtiger als mathematisch optimal."
+            ]
+          },
+          {
+            "h2": "Geteilte Ausgaben ohne Tabellenkalkulation verfolgen",
+            "icon": "smartphone",
+            "paragraphs": [
+              "Welches Modell ihr auch wählt, Verfolgung per Gedächtnis oder WhatsApp bricht nach ein paar Wochen zusammen. Der am wenigsten aufwändige Ansatz ist eine App, die jede geteilte Ausgabe erfasst, sobald sie passiert, und den Monatsendsaldo automatisch berechnet.",
+              "Unser kostenloser <a href=\"/de/tools/trip-cost-splitter/\" class=\"text-terracotta underline\">Reisekostenrechner</a> handhabt Einzelszenarien. Für laufende WG-Finanzen mit wiederkehrenden Rechnungen und Monatsabschluss ist HomePot genau dafür gebaut."
+            ]
+          }
+        ],
+        "upsell": {
+          "title": "Führe deine WG-Finanzen mit HomePot",
+          "desc": "Wiederkehrende Rechnungen, fixe vs variable Aufteilung, KI-Belegscanner im Gratis-Tarif und ein Monatsabschluss, der die minimalen Überweisungen berechnet — alles für den Haushalt gebaut."
+        },
+        "faq_title": "WG-Ausgaben FAQ",
+        "faq": [
+          {
+            "q": "Sollten wir alles gleich aufteilen?",
+            "a": "Nur wenn alle ähnlich verdienen und die Zimmer ähnlich groß sind. Sonst ist eine zimmer-gewichtete Aufteilung für die Miete und eine einkommens-gewichtete für alles andere zu erwägen. Der Schlüssel ist, dass der ganze Haushalt der Regel zustimmt, bevor sie angewendet wird."
+          },
+          {
+            "q": "Was, wenn ein Mitbewohner immer einkauft?",
+            "a": "Er soll die Kassenbons als geteilte Ausgaben erfassen, und am Monatsende zahlt jeder seinen Anteil. HomePots KI-Belegscanner kann Gesamtbetrag plus Einzelposten lesen, sodass du ausschließen kannst, was nicht geteilt wird (z.B. eine bestimmte Marke, die nur einer kauft)."
+          },
+          {
+            "q": "Wie handhaben wir jemanden, der mitten im Monat auszieht?",
+            "a": "Miete und Nebenkosten anteilig für die Tage berechnen, an denen er da war. Die meisten WG-Apps (und HomePot) erlauben es, einer geteilten Ausgabe ein Enddatum zu geben, damit der Monatsabschluss richtig rechnet."
+          },
+          {
+            "q": "Lohnt es sich, kleine Ausgaben wie Toilettenpapier zu erfassen?",
+            "a": "Meistens nicht. Jede 3€-Anschaffung zu verfolgen, erzeugt mehr Reibung, als es löst. Ein gängiger Ansatz ist ein monatlicher „Haushaltstopf\": Alle zahlen einen festen Betrag ein, der kleine geteilte Dinge abdeckt, und niemand muss einzeln verfolgen."
           }
         ]
       }

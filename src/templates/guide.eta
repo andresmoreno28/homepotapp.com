@@ -1,0 +1,98 @@
+<% const p = it.page.guide; %>
+
+<!-- ========== HERO ========== -->
+<section class="bg-cream grain-bg pt-32 pb-16 lg:pt-40 lg:pb-24 relative overflow-hidden">
+  <div class="absolute w-[500px] h-[500px] bg-yellowSoft rounded-full blur-[120px] opacity-15 -top-20 -right-20"></div>
+  <div class="absolute w-[400px] h-[400px] bg-sage rounded-full blur-[100px] opacity-10 bottom-0 -left-10"></div>
+
+  <div class="max-w-3xl mx-auto px-6 relative z-10">
+    <div class="inline-flex items-center gap-2 bg-sage/10 text-sage rounded-full px-4 py-2 text-sm font-medium mb-6">
+      <span class="material-symbols-outlined text-lg"><%= p.eyebrow_icon || 'menu_book' %></span>
+      <span><%= p.eyebrow %></span>
+    </div>
+    <h1 class="text-4xl lg:text-[56px] font-extrabold text-darkBlue leading-tight mb-6"><%= p.h1 %></h1>
+    <p class="text-lg lg:text-xl text-gray-500 mb-8"><%= p.intro %></p>
+    <div class="text-sm text-gray-400 flex items-center gap-3">
+      <span class="flex items-center gap-1.5"><span class="material-symbols-outlined text-base">schedule</span><span><%= p.read_time %></span></span>
+      <span>·</span>
+      <span class="flex items-center gap-1.5"><span class="material-symbols-outlined text-base">update</span><span><%= p.updated %></span></span>
+    </div>
+  </div>
+</section>
+
+<!-- ========== ARTICLE BODY ========== -->
+<article class="bg-white py-16 lg:py-20">
+  <div class="max-w-3xl mx-auto px-6 reveal">
+    <% p.sections.forEach((section, idx) => { %>
+    <div class="mb-12 last:mb-0">
+      <% if (section.h2) { %>
+      <h2 class="text-2xl lg:text-3xl font-extrabold text-darkBlue mb-5 mt-12 first:mt-0 flex items-start gap-3">
+        <% if (section.icon) { %><span class="material-symbols-outlined text-terracotta text-3xl mt-1 flex-shrink-0"><%= section.icon %></span><% } %>
+        <span><%= section.h2 %></span>
+      </h2>
+      <% } %>
+      <% section.paragraphs.forEach(para => { %>
+      <p class="text-gray-600 leading-relaxed mb-4"><%~ para %></p>
+      <% }) %>
+      <% if (section.list) { %>
+      <ul class="space-y-3 mb-4">
+        <% section.list.forEach(li => { %>
+        <li class="flex items-start gap-3 text-gray-600">
+          <span class="material-symbols-outlined text-sage text-xl mt-0.5 flex-shrink-0">check_circle</span>
+          <span><%~ li %></span>
+        </li>
+        <% }) %>
+      </ul>
+      <% } %>
+      <% if (section.note) { %>
+      <div class="bg-yellowSoft/20 border-l-4 border-yellowSoft rounded-r-xl p-5 my-6">
+        <div class="flex items-start gap-3">
+          <span class="material-symbols-outlined text-darkBlue text-xl flex-shrink-0">lightbulb</span>
+          <p class="text-sm text-darkBlue/80 leading-relaxed"><%~ section.note %></p>
+        </div>
+      </div>
+      <% } %>
+    </div>
+    <% }) %>
+  </div>
+</article>
+
+<!-- ========== RELATED / UPSELL ========== -->
+<% if (p.upsell) { %>
+<section class="bg-cream grain-bg py-16 lg:py-20">
+  <div class="max-w-4xl mx-auto px-6">
+    <div class="bg-white border border-terracotta/20 rounded-3xl p-8 lg:p-10 text-center reveal">
+      <span class="material-symbols-outlined text-terracotta text-4xl mb-3">phone_iphone</span>
+      <h2 class="text-2xl lg:text-3xl font-extrabold text-darkBlue mb-3"><%= p.upsell.title %></h2>
+      <p class="text-gray-600 max-w-xl mx-auto mb-6"><%= p.upsell.desc %></p>
+      <div class="flex flex-row items-center justify-center gap-3 sm:gap-4 flex-wrap">
+        <a href="<%= it.appStoreUrl %>" target="_blank" rel="noopener" class="hover:opacity-80 transition-opacity">
+          <img src="/assets/badges/preorder-<%= it.locale %>.svg" alt="Pre-order on the App Store" style="height:48px;width:auto;">
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+<% } %>
+
+<!-- ========== FAQ ========== -->
+<% if (p.faq && p.faq.length) { %>
+<section class="bg-white py-20 lg:py-28">
+  <div class="max-w-3xl mx-auto px-6">
+    <h2 class="text-3xl lg:text-4xl font-extrabold text-darkBlue text-center mb-12 reveal"><%= p.faq_title %></h2>
+    <div class="space-y-3 reveal">
+      <% p.faq.forEach(item => { %>
+      <details class="group bg-cream/50 rounded-2xl border border-gray-100 overflow-hidden">
+        <summary class="flex items-center justify-between p-6 cursor-pointer font-semibold text-darkBlue list-none">
+          <span><%= item.q %></span>
+          <span class="material-symbols-outlined text-gray-400 group-open:rotate-180 transition-transform">expand_more</span>
+        </summary>
+        <div class="px-6 pb-6 text-gray-500 text-sm leading-relaxed"><%~ item.a %></div>
+      </details>
+      <% }) %>
+    </div>
+  </div>
+</section>
+<% } %>
+
+<%~ include('partials/cta-final', it) %>

@@ -5,7 +5,8 @@
   "ui": {
     "nav": {
       "download": "Reservar gratis",
-      "compare": "Comparar"
+      "compare": "Comparar",
+      "resources": "Recursos"
     },
     "footer": {
       "desc": "Gastos compartidos simplificados para parejas, compis de piso y familias.",
@@ -35,6 +36,42 @@
       "trust_encrypted": "Cifrado",
       "trust_gdpr": "RGPD",
       "trust_notracking": "Sin rastreo"
+    },
+    "resourcesHub": {
+      "title": "Recursos de HomePot — herramientas, guías, comparaciones",
+      "description": "Calculadoras gratis, comparaciones honestas y guías prácticas para dividir gastos compartidos. Todo en un solo sitio.",
+      "icon": "auto_stories",
+      "eyebrow": "Todo para gastos compartidos",
+      "h1": "Herramientas, guías y comparaciones honestas",
+      "intro": "Calculadoras gratuitas, guías prácticas y comparaciones lado a lado con otras apps de división de gastos — todo en un hub. Cada contenido está escrito para ayudarte de verdad, no para hacer SEO vacío.",
+      "badge": "Recurso",
+      "cta": "Explorar",
+      "empty_title": "Próximamente",
+      "empty_body": "Añadimos contenido nuevo aquí regularmente."
+    },
+    "toolsHub": {
+      "title": "Calculadoras gratis para dividir gastos",
+      "description": "Calculadoras gratuitas sin registro que dividen costes de viaje, gastos de piso compartido y más. Hechas por el equipo de HomePot.",
+      "icon": "calculate",
+      "eyebrow": "Herramientas gratis",
+      "h1": "Calculadoras gratis para gastos compartidos",
+      "intro": "Haz los números sin crear una cuenta. Estas calculadoras en el navegador manejan divisiones de viaje, gastos de piso y escenarios comunes de gastos compartidos. Sin registro, sin anuncios, sin email.",
+      "badge": "Calculadora",
+      "cta": "Abrir calculadora",
+      "empty_title": "Más herramientas en camino",
+      "empty_body": "Pronto añadiremos una calculadora de gastos de piso y herramientas de pares de monedas."
+    },
+    "guidesHub": {
+      "title": "Guías para dividir gastos compartidos",
+      "description": "Guías prácticas para dividir gastos con compañeros de piso, parejas, familias y grupos de viaje. Escritas por el equipo de HomePot.",
+      "icon": "menu_book",
+      "eyebrow": "Guías honestas",
+      "h1": "Guías para dividir gastos compartidos",
+      "intro": "Contenido directo y práctico sobre cómo llevar el dinero compartido con compañeros de piso, parejas, viajes y familias. Las actualizamos cuando cambian las situaciones o las mejores prácticas.",
+      "badge": "Guía",
+      "cta": "Leer la guía",
+      "empty_title": "Guías próximamente",
+      "empty_body": "Nuestra primera tanda de guías se está escribiendo ahora mismo."
     },
     "compareHub": {
       "title": "Compara HomePot con otras apps de gastos compartidos",
@@ -83,7 +120,7 @@
         "noads": "Cero anuncios para siempre",
         "notracking": "Sin rastreo",
         "languages": "5 idiomas",
-        "currencies": "14 monedas",
+        "currencies": "52 monedas",
         "aws": "Infraestructura AWS",
         "delete": "Borra cuando quieras",
         "ai": "Escáner con IA"
@@ -200,6 +237,203 @@
           {
             "q": "¿Cómo se compara HomePot con Splitwise?",
             "a": "HomePot está pensado como alternativa honesta y sin anuncios: 52 monedas para registrar gastos, escáner IA que lee cualquier moneda del ticket, y un modelo de suscripción transparente. Mira la <a href=\"/es/compare/homepot-vs-splitwise/\" class=\"text-terracotta underline hover:opacity-80\">comparativa completa lado a lado con Splitwise</a> con todas las funciones y el disclaimer sobre las fuentes."
+          }
+        ]
+      }
+    },
+    "fromSplitwise": {
+      "title": "¿Te vas de Splitwise? Bienvenido a HomePot",
+      "description": "Bienvenido, refugiado de Splitwise. Cero anuncios, escáner IA de tickets en el plan gratis, 52 monedas y un modelo de suscripción transparente. Compara y prueba HomePot.",
+      "eyebrow": "Bienvenido, refugiado de Splitwise",
+      "eyebrow_icon": "waving_hand",
+      "h1": "¿Harto de anuncios y topes diarios? Entra.",
+      "intro": "Hicimos HomePot para quienes chocan con el tope diario de gastos en mitad de un viaje, ven un temporizador de cooldown antes de añadir una cena de 12€, o se rindieron con el escáner de tickets porque solo extraía el total. No le debes lealtad a Splitwise. Esto es lo que hacemos diferente.",
+      "cta_compare": "Comparativa completa",
+      "props_title": "Lo que cambia desde el día uno",
+      "props_subtitle": "Diferencias prácticas que notas nada más empezar.",
+      "props": [
+        {
+          "icon": "block",
+          "title": "Cero anuncios — para siempre",
+          "desc": "Sin banners, sin intersticiales, sin temporizadores de cooldown. Nuestro modelo de negocio es una suscripción opcional, no tu atención. Verificado: no hay ni un SDK de anuncios en el código de HomePot."
+        },
+        {
+          "icon": "document_scanner",
+          "title": "Escáner IA de tickets en el plan gratis",
+          "desc": "Haz una foto a cualquier ticket y nuestra IA extrae el total, cada artículo, impuestos, propinas, comercio y moneda — no solo el total. Disponible gratis con un límite mensual de escaneos; ilimitado en Pro."
+        },
+        {
+          "icon": "autorenew",
+          "title": "Facturas recurrentes + cierre mensual",
+          "desc": "Alquiler, internet, seguro — configúralo una vez y se repite. A final de mes, HomePot calcula el mínimo de transferencias necesarias para dejar todos los saldos a cero, no una cadena de micropagos."
+        },
+        {
+          "icon": "currency_exchange",
+          "title": "52 monedas + la IA lee cualquier ticket",
+          "desc": "52 monedas seleccionables en la app, y el escáner IA detecta cualquier moneda ISO 4217 directamente desde la imagen del ticket. Conversión automática al tipo de cambio del día."
+        }
+      ],
+      "honest_note": {
+        "eyebrow": "Una pega honesta",
+        "title": "HomePot aún no es offline-first",
+        "body": "Si necesitas poder registrar gastos sin conexión, HomePot ahora mismo necesita red (sincroniza en vivo). Tricount y el Splitwise clásico manejan offline mejor hoy por hoy. Estamos trabajando en ello, pero preferimos decírtelo de frente que dejar que lo descubras en un avión."
+      },
+      "faq_title": "Preguntas frecuentes",
+      "faq": [
+        {
+          "q": "¿Puedo importar mis datos de Splitwise?",
+          "a": "La importación CSV está en el roadmap. Hoy puedes exportar tu grupo de Splitwise como CSV y pronto añadiremos un importador. Escríbenos a homepotapp@gmail.com y te avisamos el día que salga."
+        },
+        {
+          "q": "¿HomePot es realmente gratis?",
+          "a": "Sí. El plan gratuito incluye 1 grupo, 20 gastos al mes, un escáner IA con límite mensual de escaneos, multi-divisa y cero anuncios — para siempre. Pro (desde 2,92€/mes en anual) quita los límites y añade grupos ilimitados, exportaciones y analíticas avanzadas."
+        },
+        {
+          "q": "¿En qué se diferencia de la página de comparación de Splitwise?",
+          "a": "Esta página es para quien ya sabe que quiere dejar Splitwise. La <a href=\"/es/compare/homepot-vs-splitwise/\" class=\"text-terracotta underline\">comparativa completa</a> es para quien aún está decidiendo — repasa cada función plan por plan con enlaces a fuentes públicas."
+        },
+        {
+          "q": "¿Las afirmaciones sobre Splitwise son honestas?",
+          "a": "Sí. Cada afirmación sobre Splitwise viene de su web pública (splitwise.com/pro) o de la ficha de iOS en el App Store en el momento de redactar, y está enlazada para que la verifiques. HomePot no está afiliado a Splitwise, Inc."
+        }
+      ]
+    },
+    "tools": {
+      "tripSplitter": {
+        "title": "Calculadora gratis para dividir gastos de viaje",
+        "description": "Calculadora gratuita en el navegador para dividir gastos de viaje entre amigos. Añade personas, añade gastos, obtén la liquidación con mínimo de transferencias. Sin registro, sin anuncios.",
+        "eyebrow": "Calculadora gratuita",
+        "h1": "Dividir gastos de viaje — ¿quién debe qué?",
+        "intro": "Añade las personas y los gastos. Calculamos el saldo neto de cada una y el mínimo de transferencias necesarias para liquidar al grupo. Funciona en tu navegador, sin registro, sin anuncios.",
+        "widget": {
+          "id": "trip-splitter",
+          "script": "trip-splitter.js",
+          "defaultCurrency": "EUR",
+          "noscript": "Esta calculadora necesita JavaScript. Actívalo o usa la app iOS de HomePot.",
+          "labels": {
+            "people_title": "Personas",
+            "add_person": "Añadir persona",
+            "remove": "Eliminar",
+            "person_placeholder": "Persona",
+            "example_name_1": "Alex",
+            "example_name_2": "Sam",
+            "expenses_title": "Gastos",
+            "add_expense": "Añadir gasto",
+            "expense_desc_placeholder": "Descripción",
+            "example_expense": "Cena",
+            "new_expense": "Nuevo gasto",
+            "paid_by": "Pagado por",
+            "split_between": "Dividir entre",
+            "results_title": "Quién debe a quién",
+            "total": "Total",
+            "transfers": "Liquidación",
+            "all_settled": "¡Todo saldado! No hay transferencias.",
+            "empty_state": "Añade personas y gastos para ver quién debe a quién."
+          }
+        },
+        "steps_title": "Cómo funciona",
+        "steps": [
+          { "icon": "group_add", "title": "Añade personas", "desc": "Escribe los nombres de quienes van al viaje." },
+          { "icon": "receipt_long", "title": "Añade gastos", "desc": "Para cada gasto, elige quién pagó y quién participa." },
+          { "icon": "account_balance", "title": "Mira la liquidación", "desc": "Calculamos el mínimo de transferencias para dejar todos los saldos a cero." }
+        ],
+        "upsell_title": "¿Quieres esto automático desde el móvil?",
+        "upsell_desc": "HomePot hace la misma matemática en tu móvil — más escáner IA de tickets, multi-divisa, facturas recurrentes y ritual de cierre mensual. El plan gratis es generoso; Pro quita todos los límites.",
+        "faq_title": "Preguntas frecuentes",
+        "faq": [
+          {
+            "q": "¿La calculadora es realmente gratis?",
+            "a": "Sí. Funciona entera en tu navegador — nunca vemos tus datos. Sin cuenta, sin email, sin anuncios. Si quieres esta matemática automatizada en el móvil en varios viajes, instala HomePot."
+          },
+          {
+            "q": "¿Cómo funciona el algoritmo de liquidación?",
+            "a": "Calculamos el saldo neto de cada persona (pagado menos su parte justa) y luego emparejamos al mayor acreedor con el mayor deudor hasta que todos los saldos están a cero. Esto produce el mínimo de transferencias para liquidar al grupo — no una cadena de micropagos entre todos."
+          },
+          {
+            "q": "¿Puedo compartir el resultado con mi grupo?",
+            "a": "De momento, con una captura de pantalla. Si te mudas a la app HomePot, cada miembro del grupo ve los mismos números en vivo y el cierre mensual envía a cada persona su lista exacta de transferencias."
+          },
+          {
+            "q": "¿Qué moneda usa?",
+            "a": "Usa EUR por defecto y formatea los importes con el locale de tu navegador. Si tu viaje está en otra moneda, la app de HomePot soporta 52 monedas de forma nativa, más cualquier ISO 4217 que detecte el escáner IA desde el ticket."
+          }
+        ]
+      }
+    },
+    "guides": {
+      "roommates": {
+        "title": "Cómo dividir gastos con compis de piso justamente (guía 2026)",
+        "description": "Guía práctica para dividir alquiler, gastos comunes y facturas compartidas con compañeros de piso de forma justa. División igual, ponderada por ingresos y trampas comunes.",
+        "eyebrow": "Guía para pisos compartidos",
+        "eyebrow_icon": "apartment",
+        "h1": "Cómo dividir gastos con compis de piso justamente",
+        "intro": "Compartir piso es una de las formas más comunes de acabar discutiendo por dinero. Esta guía recorre las tres formas justas de dividir los gastos del hogar, cuándo tiene sentido cada una, y cómo manejar los casos incómodos (habitaciones desiguales, ingresos distintos, compra que nadie anota).",
+        "read_time": "6 min de lectura",
+        "updated": "Actualizada en 2026",
+        "sections": [
+          {
+            "h2": "Las tres formas justas de dividir",
+            "icon": "balance",
+            "paragraphs": [
+              "Cuando se comparte piso, matemáticamente solo hay tres formas «justas» de dividir los gastos comunes. Cada una es justa bajo supuestos distintos, así que conviene conocer las tres y elegir la que encaja con tu hogar.",
+              "La división equivocada no es injusta por sí sola — se vuelve injusta cuando el supuesto detrás deja de ser cierto. El objetivo es elegir un modelo con el que todo el grupo esté de acuerdo y dejar de discutir."
+            ],
+            "list": [
+              "<strong>División igual.</strong> Todos pagan lo mismo. Funciona cuando todos ganan parecido, las habitaciones son similares y el consumo es similar.",
+              "<strong>División por tamaño de habitación.</strong> El alquiler se divide según el tamaño o calidad de la habitación. Funciona cuando hay habitaciones muy distintas (una suite principal vs un cuarto pequeño).",
+              "<strong>División por ingresos.</strong> Todos pagan el mismo <em>porcentaje de sus ingresos</em>, no la misma cantidad absoluta. Funciona cuando los ingresos son muy distintos y el grupo quiere carga financiera igual, no coste igual."
+            ]
+          },
+          {
+            "h2": "Alquiler vs facturas vs compra — no se dividen igual",
+            "icon": "bolt",
+            "paragraphs": [
+              "Muchos conflictos entre compis vienen de aplicar una sola regla a todo tipo de gasto. El alquiler, las facturas y la compra se comportan distinto y se benefician de reglas distintas.",
+              "<strong>Alquiler:</strong> normalmente se divide con el modelo que acordasteis al mudaros (igual, por habitación o por ingresos). Una vez fijado, no lo renegocies cada mes.",
+              "<strong>Facturas</strong> (luz, gas, internet, agua): suelen dividirse por igual porque el consumo es difícil de medir por persona y todos se benefician. Excepción: si alguien teletrabaja todos los días, un pequeño ajuste puede ser razonable.",
+              "<strong>Compra</strong>: lo más difícil. O mantenedla totalmente separada (cada uno la suya) o tratadla como un bote común donde todos ponen lo mismo y cada uno coge lo que necesita. Dividir una cesta artículo por artículo es donde empiezan las discusiones — ahorra energía."
+            ],
+            "note": "HomePot soporta <strong>división fija y variable en el mismo grupo</strong> — el alquiler se divide de una forma, la compra de otra, todo automático. No tienes que elegir un modelo para todo."
+          },
+          {
+            "h2": "Cuando los ingresos son muy distintos",
+            "icon": "payments",
+            "paragraphs": [
+              "Si un compi gana el doble que otro, dividir el alquiler por igual puede dejar al que menos gana con una parte desproporcionada de su ingreso mensual en vivienda. No es injusto contablemente, pero sí en lo vivido.",
+              "La solución es la división por ingresos: suma los ingresos netos mensuales de todos, calcula qué porcentaje del total aporta cada persona y aplica ese porcentaje al alquiler total. Todos acaban pagando la misma <em>parte de su ingreso</em> en vivienda, lo que a la mayoría le parece justo.",
+              "Si hablarlo resulta incómodo, empezad con divisiones iguales y acordad revisar en tres meses. La baja fricción suele importar más que el óptimo matemático."
+            ]
+          },
+          {
+            "h2": "Llevar los gastos sin hoja de cálculo",
+            "icon": "smartphone",
+            "paragraphs": [
+              "Elijáis el modelo que elijáis, llevarlo por memoria o por WhatsApp se rompe tras unas semanas. La forma de menor esfuerzo es una app que registre cada gasto compartido según ocurre y calcule el balance de fin de mes automáticamente.",
+              "Nuestra <a href=\"/es/tools/trip-cost-splitter/\" class=\"text-terracotta underline\">calculadora gratuita de gastos de viaje</a> gestiona escenarios puntuales. Para la finanza continua de un piso compartido con facturas recurrentes y cierre mensual, HomePot está hecho exactamente para eso."
+            ]
+          }
+        ],
+        "upsell": {
+          "title": "Lleva las finanzas del piso con HomePot",
+          "desc": "Facturas recurrentes, división fija y variable, escáner IA de tickets en el plan gratis, y un cierre mensual que calcula el mínimo de transferencias — todo pensado para el caso de uso del hogar."
+        },
+        "faq_title": "Preguntas frecuentes de pisos compartidos",
+        "faq": [
+          {
+            "q": "¿Deberíamos dividirlo todo por igual?",
+            "a": "Solo si todos ganan parecido y las habitaciones son similares. Si no, considerad una división por habitación para el alquiler y por ingresos para lo demás. La clave es que todo el piso esté de acuerdo con la regla antes de aplicarla."
+          },
+          {
+            "q": "¿Qué hacemos si un compi siempre hace la compra?",
+            "a": "Que registre los tickets de la compra como gasto compartido y al final de mes cada uno paga su parte. El escáner IA de HomePot puede leer el total más cada artículo, lo que permite excluir lo que no se comparte (por ejemplo, una marca concreta que solo compra uno)."
+          },
+          {
+            "q": "¿Cómo manejamos a alguien que se muda a mitad de mes?",
+            "a": "Prorratea el alquiler y las facturas por los días que estuvo. La mayoría de apps de alquiler (y HomePot) permiten dar fecha de fin a un gasto compartido para que el cierre mensual haga las cuentas bien."
+          },
+          {
+            "q": "¿Merece la pena registrar gastos pequeños como el papel higiénico?",
+            "a": "Normalmente no. Registrar cada gasto de 3€ crea más fricción que soluciona. Un enfoque común es un «bote del piso» mensual: todos ponen una cantidad fija que cubre pequeños gastos compartidos y nadie tiene que llevar la cuenta al detalle."
           }
         ]
       }
