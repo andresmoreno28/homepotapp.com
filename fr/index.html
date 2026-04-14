@@ -35,32 +35,19 @@
 
   <link rel="icon" type="image/png" href="/assets/favicon.png">
 
-  <!-- Google Fonts -->
+  <!-- Google Fonts (non-blocking, swap) -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" rel="stylesheet">
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" media="print" onload="this.media='all'">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&display=swap" media="print" onload="this.media='all'">
+  <noscript>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&display=swap">
+  </noscript>
 
-  <!-- Tailwind CDN -->
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script>
-    tailwind.config = {
-      theme: {
-        extend: {
-          colors: {
-            cream: '#F4F1DE',
-            darkBlue: '#3D405B',
-            terracotta: '#E07A5F',
-            sage: '#81B29A',
-            yellowSoft: '#F2CC8F',
-          },
-          fontFamily: {
-            sans: ['"Plus Jakarta Sans"', 'system-ui', 'sans-serif'],
-          },
-        },
-      },
-    }
-  </script>
+  <!-- Pre-compiled Tailwind CSS (no CDN, no runtime JIT) -->
+  <link rel="stylesheet" href="/assets/tailwind.css">
 
   <style>
     /* Grain texture */
@@ -214,12 +201,12 @@
       <div class="hidden lg:flex lg:col-span-5 relative justify-center items-center min-h-[500px]">
         <div class="absolute w-[500px] h-[500px] bg-yellowSoft rounded-full blur-[120px] opacity-15 -top-10 -right-20"></div>
         <div class="absolute w-[400px] h-[400px] bg-sage rounded-full blur-[100px] opacity-10 bottom-0 -left-10"></div>
-        <img src="/assets/screenshots/stats.png" alt="HomePot statistics" class="absolute max-w-[280px] rounded-[2.5rem] shadow-2xl transform rotate-[5deg] translate-x-8 -translate-y-4 z-10">
-        <img src="/assets/screenshots/dashboard.png" alt="HomePot dashboard" class="relative max-w-[280px] rounded-[2.5rem] shadow-2xl transform -rotate-[5deg] -translate-x-4 translate-y-4 z-20">
+        <img src="/assets/screenshots/stats.jpg" alt="HomePot statistics" width="600" height="1300" class="absolute max-w-[280px] rounded-[2.5rem] shadow-2xl transform rotate-[5deg] translate-x-8 -translate-y-4 z-10">
+        <img src="/assets/screenshots/dashboard.jpg" alt="HomePot dashboard" width="600" height="1300" fetchpriority="high" class="relative max-w-[280px] rounded-[2.5rem] shadow-2xl transform -rotate-[5deg] -translate-x-4 translate-y-4 z-20">
       </div>
       <!-- Phone side (mobile) -->
       <div class="flex lg:hidden justify-center">
-        <img src="/assets/screenshots/dashboard.png" alt="HomePot dashboard" class="max-w-[260px] rounded-[2.5rem] shadow-2xl">
+        <img src="/assets/screenshots/dashboard.jpg" alt="HomePot dashboard" width="600" height="1300" fetchpriority="high" class="max-w-[260px] rounded-[2.5rem] shadow-2xl">
       </div>
     </div>
   </div>
@@ -348,7 +335,7 @@
     </div>
     <div class="relative flex justify-center">
       <div class="absolute w-[350px] h-[350px] bg-sage rounded-full blur-[100px] opacity-10 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"></div>
-      <img src="/assets/screenshots/expense.png" alt="Add expense screen" loading="lazy" class="relative max-w-[300px] mx-auto rounded-[2rem] shadow-2xl transform rotate-2 hover:rotate-0 transition-transform duration-500">
+      <img src="/assets/screenshots/expense.jpg" alt="Add expense screen" width="600" height="1300" loading="lazy" class="relative max-w-[300px] mx-auto rounded-[2rem] shadow-2xl transform rotate-2 hover:rotate-0 transition-transform duration-500">
     </div>
   </div>
 </section>
@@ -358,7 +345,7 @@
   <div class="max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-12 lg:gap-20 items-center reveal">
     <div class="relative flex justify-center order-2 lg:order-1">
       <div class="absolute w-[350px] h-[350px] bg-terracotta rounded-full blur-[100px] opacity-10 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"></div>
-      <img src="/assets/screenshots/paywall.png" alt="AI receipt scanner" loading="lazy" class="relative max-w-[300px] mx-auto rounded-[2rem] shadow-2xl transform -rotate-2 hover:rotate-0 transition-transform duration-500">
+      <img src="/assets/screenshots/paywall.jpg" alt="AI receipt scanner" width="600" height="1300" loading="lazy" class="relative max-w-[300px] mx-auto rounded-[2rem] shadow-2xl transform -rotate-2 hover:rotate-0 transition-transform duration-500">
     </div>
     <div class="order-1 lg:order-2">
       <span class="inline-block bg-terracotta/10 text-terracotta text-sm font-semibold px-4 py-1.5 rounded-full mb-4">IA intégrée</span>
@@ -386,7 +373,7 @@
     </div>
     <div class="relative flex justify-center">
       <div class="absolute w-[350px] h-[350px] bg-sage rounded-full blur-[100px] opacity-10 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"></div>
-      <img src="/assets/screenshots/dashboard.png" alt="Real-time balances" loading="lazy" class="relative max-w-[300px] mx-auto rounded-[2rem] shadow-2xl transform rotate-2 hover:rotate-0 transition-transform duration-500">
+      <img src="/assets/screenshots/dashboard.jpg" alt="Real-time balances" width="600" height="1300" loading="lazy" class="relative max-w-[300px] mx-auto rounded-[2rem] shadow-2xl transform rotate-2 hover:rotate-0 transition-transform duration-500">
     </div>
   </div>
 </section>
@@ -396,7 +383,7 @@
   <div class="max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-12 lg:gap-20 items-center reveal">
     <div class="relative flex justify-center order-2 lg:order-1">
       <div class="absolute w-[350px] h-[350px] bg-terracotta rounded-full blur-[100px] opacity-10 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"></div>
-      <img src="/assets/screenshots/close-month.png" alt="Monthly settlement" loading="lazy" class="relative max-w-[300px] mx-auto rounded-[2rem] shadow-2xl transform -rotate-2 hover:rotate-0 transition-transform duration-500">
+      <img src="/assets/screenshots/close-month.jpg" alt="Monthly settlement" width="600" height="1300" loading="lazy" class="relative max-w-[300px] mx-auto rounded-[2rem] shadow-2xl transform -rotate-2 hover:rotate-0 transition-transform duration-500">
     </div>
     <div class="order-1 lg:order-2">
       <span class="inline-block bg-terracotta/10 text-terracotta text-sm font-semibold px-4 py-1.5 rounded-full mb-4">Un tap</span>
@@ -424,7 +411,7 @@
     </div>
     <div class="relative flex justify-center">
       <div class="absolute w-[350px] h-[350px] bg-sage rounded-full blur-[100px] opacity-10 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"></div>
-      <img src="/assets/screenshots/stats.png" alt="Statistics and charts" loading="lazy" class="relative max-w-[300px] mx-auto rounded-[2rem] shadow-2xl transform rotate-2 hover:rotate-0 transition-transform duration-500">
+      <img src="/assets/screenshots/stats.jpg" alt="Statistics and charts" width="600" height="1300" loading="lazy" class="relative max-w-[300px] mx-auto rounded-[2rem] shadow-2xl transform rotate-2 hover:rotate-0 transition-transform duration-500">
     </div>
   </div>
 </section>

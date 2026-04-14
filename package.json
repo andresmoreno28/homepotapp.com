@@ -5,11 +5,15 @@
   "description": "HomePot marketing site — static multilingual generator",
   "type": "module",
   "scripts": {
-    "build": "node build.js",
+    "build": "node build.js && pnpm run build:css",
+    "build:css": "tailwindcss -i src/styles/tailwind.css -o assets/tailwind.css --minify",
     "clean": "node build.js --clean"
   },
   "dependencies": {
     "eta": "^3.5.0"
   },
-  "packageManager": "pnpm@9.0.0"
+  "packageManager": "pnpm@9.0.0",
+  "devDependencies": {
+    "tailwindcss": "^3"
+  }
 }
