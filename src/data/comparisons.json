@@ -6,5 +6,13 @@
     "competitorUrl": "https://www.splitwise.com",
     "icon": "receipt_long",
     "published": true
+  },
+  {
+    "slug": "homepot-vs-tricount",
+    "i18nKey": "tricount",
+    "competitor": "Tricount",
+    "competitorUrl": "https://www.tricount.com",
+    "icon": "luggage",
+    "published": true
   }
 ]

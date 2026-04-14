@@ -99,6 +99,26 @@
   </div>
 </section>
 
+<!-- ========== HONEST NOTE (when competitor is excellent too) ========== -->
+<% if (c.honest_note) { %>
+<section class="bg-white py-16">
+  <div class="max-w-3xl mx-auto px-6">
+    <div class="bg-yellowSoft/20 border border-yellowSoft/40 rounded-3xl p-8 lg:p-10 reveal">
+      <div class="flex items-start gap-4">
+        <div class="flex-shrink-0 w-12 h-12 bg-yellowSoft/40 rounded-xl flex items-center justify-center">
+          <span class="material-symbols-outlined text-darkBlue text-2xl">handshake</span>
+        </div>
+        <div class="flex-1">
+          <div class="text-xs font-semibold text-darkBlue/60 uppercase tracking-wider mb-2"><%= c.honest_note.eyebrow %></div>
+          <h3 class="text-2xl font-extrabold text-darkBlue mb-3"><%= c.honest_note.title %></h3>
+          <p class="text-gray-600 leading-relaxed"><%= c.honest_note.body %></p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<% } %>
+
 <!-- ========== REAL APP STORE REVIEWS ========== -->
 <% if (c.reviews && c.reviews.length) { %>
 <section class="bg-white py-20 lg:py-28">

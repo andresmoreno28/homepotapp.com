@@ -205,6 +205,86 @@
       }
     },
     "comparisons": {
+      "tricount": {
+        "title": "HomePot vs Tricount — honest comparison (2026)",
+        "description": "Tricount is the gold standard for free trip-splitting. HomePot is built for ongoing household finances with AI receipt scanning. Honest side-by-side with sources.",
+        "h1": "HomePot vs Tricount — the honest comparison",
+        "intro": "Tricount (by bunq) is probably the best-rated free expense-splitting app on iOS, and it genuinely deserves it: simple, 100% free, great for one-off group trips. HomePot plays a different game — ongoing household finance with AI receipt scanning, recurring expenses, fixed vs variable splits, and a monthly close ritual. Both are honest, ad-free apps; this page shows exactly where each one wins so you can pick the right tool.",
+        "table_title": "Side-by-side comparison",
+        "table_subtitle": "Each cell states how the feature is offered in each app. Sources linked where possible.",
+        "features": [
+          { "label": "Pricing model", "ours": "Free + optional Pro from €2.92/mo", "theirs": "100% free (no paid tier)" },
+          { "label": "Ads", "ours": "None — ever", "theirs": "None — ever" },
+          { "label": "AI receipt scanner with OCR", "ours": "Free (monthly scan limit) · Unlimited on Pro", "theirs": "Not available — only photo attachment" },
+          { "label": "Line-item extraction from receipts", "ours": "Free (via AI scan)", "theirs": "Not available" },
+          { "label": "Automatic currency conversion", "ours": "Free (via AI scan) — any ISO 4217", "theirs": "Yes — free (built-in)" },
+          { "label": "Currencies selectable for expense entry", "ours": "52", "theirs": "Many (unspecified number)" },
+          { "label": "Recurring expenses", "ours": "Free", "theirs": "Not a listed feature" },
+          { "label": "Fixed vs variable split modes in the same group", "ours": "Free", "theirs": "Split equally, by parts, or custom amounts" },
+          { "label": "Monthly close with minimum-transfer settlement", "ours": "Free", "theirs": "Continuous settlement (no monthly close ritual)" },
+          { "label": "Charts & spending analytics", "ours": "Free (CSV/PDF export on Pro)", "theirs": "Spending insights, monthly breakdowns" },
+          { "label": "Offline mode (add expenses without connection)", "ours": "Not implemented — requires network", "theirs": "Yes — free (tricount's own feature page)" },
+          { "label": "Splitwise import", "ours": "On roadmap", "theirs": "Yes — free (built-in)" },
+          { "label": "Bank-card auto-add expenses", "ours": "Not available", "theirs": "Yes — with a bunq card" },
+          { "label": "Groups", "ours": "1 free household group · Unlimited on Pro", "theirs": "Unlimited" },
+          { "label": "Expenses per group", "ours": "20/month on free · Unlimited on Pro", "theirs": "Unlimited" },
+          { "label": "GDPR compliant", "ours": true, "theirs": true }
+        ],
+        "differentiators": [
+          {
+            "icon": "document_scanner",
+            "title": "AI reads every line of the receipt",
+            "desc": "HomePot's scanner doesn't just attach the photo — it extracts the total, each line item, taxes, discounts, tips, merchant and currency, so you can split a restaurant bill exactly the way the group consumed it. Tricount lets you attach a receipt photo, but you still enter the amount and items by hand."
+          },
+          {
+            "icon": "autorenew",
+            "title": "Built for recurring household finance",
+            "desc": "Rent, internet, insurance, utilities — HomePot has first-class recurring expenses, fixed vs variable split modes in the same group, and a monthly close with minimum-transfer settlement. Tricount is designed around one-off trips and continuous settlement, and doesn't list recurring expenses as a feature."
+          },
+          {
+            "icon": "currency_exchange",
+            "title": "52 currencies + AI reads any receipt",
+            "desc": "Both apps handle multi-currency. HomePot ships 52 currencies in the expense picker and, thanks to the AI scanner, can read any ISO 4217 currency directly from a receipt image and auto-convert at live exchange rates, even if it's outside those 52."
+          },
+          {
+            "icon": "lock",
+            "title": "Ongoing balances & history — not just per-trip",
+            "desc": "HomePot is designed for households that want to track shared finance month after month, with historical stats per category and a ritual monthly close. Tricount shines for a single trip where you want to settle once and move on."
+          }
+        ],
+        "honest_note": {
+          "eyebrow": "Credit where credit's due",
+          "title": "When Tricount is actually the better choice",
+          "body": "If your only need is splitting a one-off group trip — a weekend away, a ski trip, a wedding — Tricount is outstanding. It's free with no paid tier, genuinely offline-capable, has Splitwise import built in, and sits at 4.9 / 5 on the iOS App Store (5,497 ratings at time of writing). We'd honestly recommend it for that use case. HomePot is built for a different job: ongoing household and roommate finances where recurring bills, AI receipt scanning, fixed vs variable splits, and a monthly close ritual actually matter."
+        },
+        "reviews_title": "",
+        "reviews_subtitle": "",
+        "reviews_meta": "",
+        "reviews": [],
+        "faq_title": "Frequently asked questions",
+        "faq": [
+          {
+            "q": "Is Tricount really 100% free?",
+            "a": "According to Tricount's own website and feature page, yes — Tricount is described as \"100% free\" with no paid subscription tier advertised. Features like multi-currency, offline mode, Splitwise import and spending insights are all listed as free on tricount.com. HomePot has a free tier too, plus an optional Pro subscription that removes limits on groups, expenses and AI scans."
+          },
+          {
+            "q": "Does Tricount have AI receipt scanning?",
+            "a": "Tricount's official feature page mentions attaching photos of receipts to expenses, but does not list OCR or AI extraction as a feature. HomePot's AI scanner is built on Claude Haiku and extracts the total, line items, taxes, merchant and currency directly from the receipt image."
+          },
+          {
+            "q": "Can I import my Tricount data into HomePot?",
+            "a": "Not yet. Tricount can import from Splitwise; HomePot's own importer is on the roadmap. Write to homepotapp@gmail.com and we'll notify you the day it ships."
+          },
+          {
+            "q": "Which app should I choose for a one-off group trip?",
+            "a": "For a single group trip where you just want to split expenses and settle once, Tricount is an excellent and honest choice — it's free, offline-capable and extremely well-reviewed. HomePot is a better fit if the group shares expenses month after month, wants AI receipt scanning, recurring bills, fixed vs variable splits and a monthly close ritual."
+          },
+          {
+            "q": "Are the facts about Tricount on this page up to date?",
+            "a": "All Tricount claims on this page come from Tricount's official website (tricount.com and tricount.com/en-us/expense-tracker-features) and its iOS App Store listing at the time of writing. Please verify current details on those sources since they can change. HomePot is not affiliated with Tricount or bunq, and the comparison is our own opinion based on publicly available information."
+          }
+        ]
+      },
       "splitwise": {
         "title": "HomePot vs Splitwise — honest comparison (2026)",
         "description": "Looking for a Splitwise alternative? HomePot supports 52 currencies, AI receipt scanning that reads any currency, and zero ads. See the full side-by-side comparison with sources.",

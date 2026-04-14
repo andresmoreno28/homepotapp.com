@@ -205,6 +205,86 @@
       }
     },
     "comparisons": {
+      "tricount": {
+        "title": "HomePot vs Tricount — ehrlicher Vergleich (2026)",
+        "description": "Tricount ist der Goldstandard für kostenloses Reisen-Splitting. HomePot ist für laufende Haushaltsfinanzen mit KI-Belegscan gebaut. Ehrlicher Vergleich mit Quellen.",
+        "h1": "HomePot vs Tricount — der ehrliche Vergleich",
+        "intro": "Tricount (by bunq) ist vermutlich die am besten bewertete kostenlose Ausgabenteilungs-App auf iOS, und sie verdient es: einfach, 100% kostenlos, großartig für einmalige Gruppenreisen. HomePot spielt ein anderes Spiel — laufende Haushaltsfinanzen mit KI-Belegscanner, wiederkehrende Ausgaben, fixe vs. variable Aufteilung und ein monatliches Abschluss-Ritual. Beide sind ehrliche, werbefreie Apps; diese Seite zeigt genau, wo jede gewinnt, damit du das richtige Werkzeug wählen kannst.",
+        "table_title": "Vergleich Seite an Seite",
+        "table_subtitle": "Jede Zelle gibt an, wie die Funktion in der jeweiligen App angeboten wird. Quellen sind wo möglich verlinkt.",
+        "features": [
+          { "label": "Preismodell", "ours": "Kostenlos + optionales Pro ab 2,92€/Mo.", "theirs": "100% kostenlos (kein bezahlter Tarif)" },
+          { "label": "Werbung", "ours": "Keine — niemals", "theirs": "Keine — niemals" },
+          { "label": "KI-Belegscanner mit OCR", "ours": "Kostenlos (monatliches Scan-Limit) · Unbegrenzt in Pro", "theirs": "Nicht verfügbar — nur Foto-Anhang" },
+          { "label": "Einzelposten-Extraktion aus Belegen", "ours": "Kostenlos (über den KI-Scan)", "theirs": "Nicht verfügbar" },
+          { "label": "Automatische Währungsumrechnung", "ours": "Kostenlos (über den KI-Scan) — jede ISO 4217", "theirs": "Ja — kostenlos (integriert)" },
+          { "label": "Auswählbare Währungen für die Ausgabenerfassung", "ours": "52", "theirs": "Viele (Anzahl nicht spezifiziert)" },
+          { "label": "Wiederkehrende Ausgaben", "ours": "Kostenlos", "theirs": "Keine gelistete Funktion" },
+          { "label": "Fixe und variable Aufteilung in derselben Gruppe", "ours": "Kostenlos", "theirs": "Gleichmäßig, nach Teilen oder individuell aufteilen" },
+          { "label": "Monatsabschluss mit minimalen Überweisungen", "ours": "Kostenlos", "theirs": "Kontinuierliche Abrechnung (kein Monatsabschluss-Ritual)" },
+          { "label": "Diagramme & Ausgabenanalyse", "ours": "Kostenlos (CSV/PDF-Export in Pro)", "theirs": "Ausgaben-Insights, monatliche Übersicht" },
+          { "label": "Offline-Modus (Ausgaben ohne Verbindung hinzufügen)", "ours": "Nicht implementiert — Netzwerk erforderlich", "theirs": "Ja — kostenlos (Tricount-Features-Seite)" },
+          { "label": "Import aus Splitwise", "ours": "Auf der Roadmap", "theirs": "Ja — kostenlos (integriert)" },
+          { "label": "Automatisches Hinzufügen von Ausgaben per Bankkarte", "ours": "Nicht verfügbar", "theirs": "Ja — nur mit bunq-Karte" },
+          { "label": "Gruppen", "ours": "1 Haushaltsgruppe kostenlos · Unbegrenzt in Pro", "theirs": "Unbegrenzt" },
+          { "label": "Ausgaben pro Gruppe", "ours": "20/Monat gratis · Unbegrenzt in Pro", "theirs": "Unbegrenzt" },
+          { "label": "DSGVO-konform", "ours": true, "theirs": true }
+        ],
+        "differentiators": [
+          {
+            "icon": "document_scanner",
+            "title": "KI liest jede Zeile des Belegs",
+            "desc": "HomePots Scanner hängt nicht nur das Foto an — er extrahiert den Gesamtbetrag, jeden Posten, Steuern, Rabatte, Trinkgeld, Händler und Währung, damit du eine Restaurantrechnung genau so aufteilst, wie die Gruppe sie konsumiert hat. Mit Tricount kannst du ein Beleg-Foto anhängen, aber Betrag und Artikel musst du weiterhin von Hand eintragen."
+          },
+          {
+            "icon": "autorenew",
+            "title": "Gebaut für wiederkehrende Haushaltsfinanzen",
+            "desc": "Miete, Internet, Versicherung, Nebenkosten — HomePot hat erstklassige wiederkehrende Ausgaben, fixe und variable Aufteilung in derselben Gruppe und einen Monatsabschluss mit minimalen Überweisungen. Tricount ist rund um einmalige Reisen und kontinuierliche Abrechnung konzipiert und listet wiederkehrende Ausgaben nicht als Funktion."
+          },
+          {
+            "icon": "currency_exchange",
+            "title": "52 Währungen + KI liest jeden Beleg",
+            "desc": "Beide Apps handhaben Multi-Währung. HomePot liefert 52 Währungen im Ausgaben-Picker und kann dank des KI-Scanners jede ISO 4217-Währung direkt aus dem Beleg-Bild lesen und zum Live-Kurs umrechnen, selbst wenn sie nicht unter den 52 ist."
+          },
+          {
+            "icon": "lock",
+            "title": "Laufende Salden und Historie — nicht nur pro Reise",
+            "desc": "HomePot ist für Haushalte gedacht, die geteilte Finanzen Monat für Monat verfolgen wollen, mit historischen Statistiken pro Kategorie und einem monatlichen Abschluss-Ritual. Tricount glänzt auf einer einzelnen Reise, wo du einmal abrechnen und weitermachen willst."
+          }
+        ],
+        "honest_note": {
+          "eyebrow": "Ehre, wem Ehre gebührt",
+          "title": "Wann Tricount tatsächlich die bessere Wahl ist",
+          "body": "Wenn dein einziger Bedarf das Aufteilen einer einmaligen Gruppenreise ist — ein Wochenendtrip, eine Skireise, eine Hochzeit — ist Tricount hervorragend. Es ist kostenlos ohne bezahlten Tarif, wirklich offline-fähig, hat Splitwise-Import integriert und liegt bei 4,9 / 5 im iOS App Store (5.497 Bewertungen zum Zeitpunkt der Erstellung). Wir würden es für diesen Anwendungsfall ehrlich empfehlen. HomePot ist für eine andere Aufgabe gebaut: laufende Haushalts- und WG-Finanzen, bei denen wiederkehrende Rechnungen, KI-Belegscan, fixe vs. variable Aufteilung und ein monatliches Abschluss-Ritual wirklich zählen."
+        },
+        "reviews_title": "",
+        "reviews_subtitle": "",
+        "reviews_meta": "",
+        "reviews": [],
+        "faq_title": "Häufig gestellte Fragen",
+        "faq": [
+          {
+            "q": "Ist Tricount wirklich 100% kostenlos?",
+            "a": "Laut Tricounts eigener Website und Funktionsseite ja — Tricount wird als „100% kostenlos\" beschrieben, ohne beworbenen bezahlten Abo-Tarif. Funktionen wie Multi-Währung, Offline-Modus, Splitwise-Import und Ausgaben-Insights sind auf tricount.com alle als kostenlos gelistet. HomePot hat ebenfalls einen Gratis-Tarif, plus ein optionales Pro-Abo, das Limits für Gruppen, Ausgaben und KI-Scans entfernt."
+          },
+          {
+            "q": "Hat Tricount einen KI-Belegscanner?",
+            "a": "Tricounts offizielle Funktionsseite erwähnt das Anhängen von Beleg-Fotos an Ausgaben, listet aber weder OCR noch KI-Extraktion als Funktion. HomePots KI-Scanner basiert auf Claude Haiku und extrahiert Gesamtbetrag, Posten, Steuern, Händler und Währung direkt aus dem Beleg-Bild."
+          },
+          {
+            "q": "Kann ich meine Tricount-Daten in HomePot importieren?",
+            "a": "Noch nicht. Tricount kann aus Splitwise importieren; HomePots eigener Importer ist auf der Roadmap. Schreib an homepotapp@gmail.com und wir benachrichtigen dich am Tag der Veröffentlichung."
+          },
+          {
+            "q": "Welche App sollte ich für eine einmalige Gruppenreise wählen?",
+            "a": "Für eine einzige Gruppenreise, bei der du nur Ausgaben teilen und einmal abrechnen willst, ist Tricount eine hervorragende und ehrliche Wahl — kostenlos, offline-fähig und sehr gut bewertet. HomePot passt besser, wenn die Gruppe Ausgaben Monat für Monat teilt, KI-Belegscan, wiederkehrende Rechnungen, fixe vs. variable Aufteilung und ein monatliches Abschluss-Ritual will."
+          },
+          {
+            "q": "Sind die Angaben zu Tricount auf dieser Seite aktuell?",
+            "a": "Alle Aussagen zu Tricount auf dieser Seite stammen von der offiziellen Tricount-Website (tricount.com und tricount.com/en-us/expense-tracker-features) und ihrem iOS-App-Store-Eintrag zum Zeitpunkt der Erstellung. Bitte prüfe aktuelle Details an diesen Quellen, da sie sich ändern können. HomePot ist nicht mit Tricount oder bunq verbunden, und der Vergleich ist unsere Meinung auf Basis öffentlich verfügbarer Informationen."
+          }
+        ]
+      },
       "splitwise": {
         "title": "HomePot vs Splitwise — ehrlicher Vergleich (2026)",
         "description": "Suchst du eine Splitwise-Alternative? HomePot unterstützt 52 Währungen, KI-Belegscan, der jede Währung liest, und null Werbung. Vergleich mit Quellen.",

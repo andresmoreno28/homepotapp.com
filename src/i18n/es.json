@@ -205,6 +205,86 @@
       }
     },
     "comparisons": {
+      "tricount": {
+        "title": "HomePot vs Tricount — comparación honesta (2026)",
+        "description": "Tricount es el estándar de oro para dividir gastos en viajes, gratis. HomePot está construido para finanzas recurrentes del hogar con IA. Comparación honesta con fuentes.",
+        "h1": "HomePot vs Tricount — la comparación honesta",
+        "intro": "Tricount (by bunq) es posiblemente la app gratuita de división de gastos mejor valorada en iOS, y se lo merece: simple, 100% gratis, excelente para viajes de grupo puntuales. HomePot juega en otra liga — finanzas recurrentes del hogar con escáner IA de tickets, gastos recurrentes, división fija vs variable y un ritual de cierre mensual. Ambas son apps honestas y sin anuncios; esta página muestra exactamente dónde gana cada una para que elijas la herramienta correcta.",
+        "table_title": "Comparación lado a lado",
+        "table_subtitle": "Cada celda indica cómo se ofrece la función en cada app. Enlazamos fuentes donde es posible.",
+        "features": [
+          { "label": "Modelo de precios", "ours": "Gratis + Pro opcional desde 2,92€/mes", "theirs": "100% gratis (sin plan de pago)" },
+          { "label": "Anuncios", "ours": "Nunca, jamás", "theirs": "Nunca, jamás" },
+          { "label": "Escáner IA de tickets con OCR", "ours": "Gratis (con límite mensual de escaneos) · Ilimitado en Pro", "theirs": "No disponible — solo adjuntar foto" },
+          { "label": "Extracción de artículos del ticket", "ours": "Gratis (con el escaneo IA)", "theirs": "No disponible" },
+          { "label": "Conversión automática de moneda", "ours": "Gratis (con el escaneo IA) — cualquier ISO 4217", "theirs": "Sí — gratis (integrado)" },
+          { "label": "Monedas seleccionables para registrar gastos", "ours": "52", "theirs": "Muchas (número no especificado)" },
+          { "label": "Gastos recurrentes", "ours": "Gratis", "theirs": "No es una función listada" },
+          { "label": "División fija y variable en el mismo grupo", "ours": "Gratis", "theirs": "División igual, por partes o cantidades personalizadas" },
+          { "label": "Cierre mensual con mínimo de transferencias", "ours": "Gratis", "theirs": "Liquidación continua (sin ritual de cierre mensual)" },
+          { "label": "Gráficos y analíticas de gasto", "ours": "Gratis (exportación CSV/PDF en Pro)", "theirs": "Insights de gasto, desgloses mensuales" },
+          { "label": "Modo offline (añadir gastos sin conexión)", "ours": "No implementado — requiere red", "theirs": "Sí — gratis (página oficial de funciones de Tricount)" },
+          { "label": "Importación desde Splitwise", "ours": "En el roadmap", "theirs": "Sí — gratis (integrado)" },
+          { "label": "Auto-añadir gastos desde tarjeta bancaria", "ours": "No disponible", "theirs": "Sí — solo con tarjeta bunq" },
+          { "label": "Grupos", "ours": "1 grupo familiar gratis · Ilimitados en Pro", "theirs": "Ilimitados" },
+          { "label": "Gastos por grupo", "ours": "20/mes en gratis · Ilimitados en Pro", "theirs": "Ilimitados" },
+          { "label": "Cumple RGPD", "ours": true, "theirs": true }
+        ],
+        "differentiators": [
+          {
+            "icon": "document_scanner",
+            "title": "La IA lee cada línea del ticket",
+            "desc": "El escáner de HomePot no se queda en adjuntar la foto — extrae el total, cada artículo, impuestos, descuentos, propinas, comercio y moneda, para que dividas una cuenta de restaurante exactamente como la consumió el grupo. Tricount te permite adjuntar una foto del ticket, pero aún tienes que meter el importe y los artículos a mano."
+          },
+          {
+            "icon": "autorenew",
+            "title": "Construido para finanzas recurrentes del hogar",
+            "desc": "Alquiler, internet, seguro, facturas — HomePot tiene gastos recurrentes nativos, división fija y variable en el mismo grupo, y un cierre mensual con mínimo de transferencias. Tricount está pensado para viajes puntuales y liquidación continua, y no lista los gastos recurrentes como función."
+          },
+          {
+            "icon": "currency_exchange",
+            "title": "52 monedas + la IA lee cualquier ticket",
+            "desc": "Ambas apps manejan multi-divisa. HomePot trae 52 monedas en el picker de gastos y, gracias al escáner IA, puede leer cualquier moneda ISO 4217 directamente desde una imagen de ticket y convertirla al cambio en vivo, incluso si no está entre esas 52."
+          },
+          {
+            "icon": "lock",
+            "title": "Balances e historial continuos — no solo por viaje",
+            "desc": "HomePot está pensado para hogares que quieren llevar la finanza compartida mes a mes, con estadísticas históricas por categoría y un ritual de cierre mensual. Tricount brilla en un viaje único donde quieres saldar una vez y olvidarte."
+          }
+        ],
+        "honest_note": {
+          "eyebrow": "Hay que darle crédito",
+          "title": "Cuándo Tricount es de hecho la mejor opción",
+          "body": "Si tu única necesidad es dividir un viaje de grupo puntual — un fin de semana, una escapada de esquí, una boda — Tricount es excelente. Es gratis sin plan de pago, genuinamente offline, tiene importación desde Splitwise integrada y está en 4,9 / 5 en el App Store de iOS (5.497 valoraciones en el momento de redactar). Lo recomendamos honestamente para ese caso de uso. HomePot está construido para otro trabajo: finanzas continuas de hogar y compis de piso donde los gastos recurrentes, el escaneo IA de tickets, la división fija vs variable y el ritual de cierre mensual realmente importan."
+        },
+        "reviews_title": "",
+        "reviews_subtitle": "",
+        "reviews_meta": "",
+        "reviews": [],
+        "faq_title": "Preguntas frecuentes",
+        "faq": [
+          {
+            "q": "¿Tricount es realmente 100% gratis?",
+            "a": "Según la propia web de Tricount y su página de funciones, sí — Tricount se describe como «100% gratis» sin ningún plan de suscripción de pago anunciado. Funciones como multi-divisa, modo offline, importación desde Splitwise e insights de gasto aparecen listadas como gratuitas en tricount.com. HomePot también tiene un plan gratuito, más una suscripción Pro opcional que quita los límites de grupos, gastos y escaneos IA."
+          },
+          {
+            "q": "¿Tricount tiene escáner IA de tickets?",
+            "a": "La página oficial de funciones de Tricount menciona adjuntar fotos de tickets a los gastos, pero no lista OCR ni extracción con IA como función. El escáner IA de HomePot está construido sobre Claude Haiku y extrae el total, artículos, impuestos, comercio y moneda directamente desde la imagen del ticket."
+          },
+          {
+            "q": "¿Puedo importar mis datos de Tricount a HomePot?",
+            "a": "Aún no. Tricount sí puede importar desde Splitwise; el importador propio de HomePot está en el roadmap. Escríbenos a homepotapp@gmail.com y te avisamos el día que salga."
+          },
+          {
+            "q": "¿Qué app debería elegir para un viaje de grupo puntual?",
+            "a": "Para un solo viaje donde solo quieres dividir gastos y saldar una vez, Tricount es una elección excelente y honesta — gratis, con modo offline y muy bien valorada. HomePot encaja mejor si el grupo comparte gastos mes a mes, quiere escáner IA de tickets, facturas recurrentes, división fija vs variable y un ritual de cierre mensual."
+          },
+          {
+            "q": "¿Los datos sobre Tricount de esta página están actualizados?",
+            "a": "Todas las afirmaciones sobre Tricount de esta página provienen de la web oficial de Tricount (tricount.com y tricount.com/en-us/expense-tracker-features) y de su ficha en la App Store de iOS en el momento de redactar. Te rogamos verificar los detalles actuales en esas fuentes, ya que pueden cambiar. HomePot no está afiliado a Tricount ni a bunq, y la comparación es nuestra opinión basada en información pública."
+          }
+        ]
+      },
       "splitwise": {
         "title": "HomePot vs Splitwise — comparación honesta (2026)",
         "description": "¿Buscas una alternativa a Splitwise? HomePot soporta 52 monedas, escáner IA de tickets que lee cualquier moneda y cero anuncios. Mira la comparativa con fuentes.",
