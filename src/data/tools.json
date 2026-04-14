@@ -3,6 +3,6 @@
     "slug": "trip-cost-splitter",
     "i18nKey": "tripSplitter",
     "icon": "luggage",
-    "published": true
+    "published": false
   }
 ]

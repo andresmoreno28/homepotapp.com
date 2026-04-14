@@ -37,18 +37,6 @@
     <xhtml:link rel="alternate" hreflang="x-default" href="https://homepotapp.com/compare/"/>
   </url>
   <url>
-    <loc>https://homepotapp.com/tools/</loc>
-    <lastmod>2026-04-14</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-    <xhtml:link rel="alternate" hreflang="en" href="https://homepotapp.com/tools/"/>
-    <xhtml:link rel="alternate" hreflang="es" href="https://homepotapp.com/es/tools/"/>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://homepotapp.com/fr/tools/"/>
-    <xhtml:link rel="alternate" hreflang="de" href="https://homepotapp.com/de/tools/"/>
-    <xhtml:link rel="alternate" hreflang="pt" href="https://homepotapp.com/pt/tools/"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://homepotapp.com/tools/"/>
-  </url>
-  <url>
     <loc>https://homepotapp.com/guides/</loc>
     <lastmod>2026-04-14</lastmod>
     <changefreq>weekly</changefreq>
@@ -95,18 +83,6 @@
     <xhtml:link rel="alternate" hreflang="de" href="https://homepotapp.com/de/from-splitwise/"/>
     <xhtml:link rel="alternate" hreflang="pt" href="https://homepotapp.com/pt/from-splitwise/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://homepotapp.com/from-splitwise/"/>
-  </url>
-  <url>
-    <loc>https://homepotapp.com/tools/trip-cost-splitter/</loc>
-    <lastmod>2026-04-14</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-    <xhtml:link rel="alternate" hreflang="en" href="https://homepotapp.com/tools/trip-cost-splitter/"/>
-    <xhtml:link rel="alternate" hreflang="es" href="https://homepotapp.com/es/tools/trip-cost-splitter/"/>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://homepotapp.com/fr/tools/trip-cost-splitter/"/>
-    <xhtml:link rel="alternate" hreflang="de" href="https://homepotapp.com/de/tools/trip-cost-splitter/"/>
-    <xhtml:link rel="alternate" hreflang="pt" href="https://homepotapp.com/pt/tools/trip-cost-splitter/"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://homepotapp.com/tools/trip-cost-splitter/"/>
   </url>
   <url>
     <loc>https://homepotapp.com/guides/split-expenses-with-roommates/</loc>

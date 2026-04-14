@@ -409,7 +409,7 @@
             "icon": "smartphone",
             "paragraphs": [
               "Whatever split you agree on, tracking by memory or WhatsApp messages breaks down after a few weeks. The least-effort approach is an app that records each shared expense as it happens and computes the month-end balance automatically.",
-              "Our free <a href=\"/tools/trip-cost-splitter/\" class=\"text-terracotta underline\">Trip cost splitter</a> handles one-off scenarios. For ongoing roommate finances with recurring bills and a monthly close, HomePot is built exactly for that."
+              "HomePot is built exactly for this: recurring rent and utilities, AI receipt scanning for the grocery trip nobody wants to log manually, and a monthly close that turns the balance into a short list of transfers. It's the lowest-friction way we've seen to stop arguing about who owes who at the end of the month."
             ]
           }
         ],

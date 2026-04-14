@@ -215,6 +215,8 @@ function renderCompareHub() {
 }
 
 function renderToolsHub() {
+  // Skip entirely while there are no published tools
+  if (!tools.some((e) => e.published)) return;
   renderHub({
     route: '/tools/',
     hubKey: 'toolsHub',
@@ -255,34 +257,45 @@ function renderGuidesHub() {
 }
 
 function renderResourcesHub() {
-  // Top-level: links to the 3 category hubs
+  // Top-level: links only to category hubs that have at least one published entry
+  const hasTools = tools.some((e) => e.published);
+  const hasGuides = guides.some((e) => e.published);
+  const hasComparisons = comparisons.some((e) => e.published);
+
+  const items = [];
+  if (hasComparisons) {
+    items.push((locale, bundle) => ({
+      href: `${localePrefix(locale)}/compare/`,
+      title: bundle.ui.compareHub.h1,
+      excerpt: bundle.ui.compareHub.description,
+      icon: 'compare',
+      badge: bundle.ui.compareHub.badge,
+    }));
+  }
+  if (hasTools) {
+    items.push((locale, bundle) => ({
+      href: `${localePrefix(locale)}/tools/`,
+      title: bundle.ui.toolsHub.h1,
+      excerpt: bundle.ui.toolsHub.description,
+      icon: 'calculate',
+      badge: bundle.ui.toolsHub.badge,
+    }));
+  }
+  if (hasGuides) {
+    items.push((locale, bundle) => ({
+      href: `${localePrefix(locale)}/guides/`,
+      title: bundle.ui.guidesHub.h1,
+      excerpt: bundle.ui.guidesHub.description,
+      icon: 'menu_book',
+      badge: bundle.ui.guidesHub.badge,
+    }));
+  }
+
   renderHub({
     route: '/resources/',
     hubKey: 'resourcesHub',
     label: 'resources hub',
-    items: [
-      (locale, bundle) => ({
-        href: `${localePrefix(locale)}/compare/`,
-        title: bundle.ui.compareHub.h1,
-        excerpt: bundle.ui.compareHub.description,
-        icon: 'compare',
-        badge: bundle.ui.compareHub.badge,
-      }),
-      (locale, bundle) => ({
-        href: `${localePrefix(locale)}/tools/`,
-        title: bundle.ui.toolsHub.h1,
-        excerpt: bundle.ui.toolsHub.description,
-        icon: 'calculate',
-        badge: bundle.ui.toolsHub.badge,
-      }),
-      (locale, bundle) => ({
-        href: `${localePrefix(locale)}/guides/`,
-        title: bundle.ui.guidesHub.h1,
-        excerpt: bundle.ui.guidesHub.description,
-        icon: 'menu_book',
-        badge: bundle.ui.guidesHub.badge,
-      }),
-    ],
+    items,
     placeholders: () => [],
   });
 }
