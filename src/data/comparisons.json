@@ -4,6 +4,7 @@
     "i18nKey": "splitwise",
     "competitor": "Splitwise",
     "competitorUrl": "https://www.splitwise.com",
+    "icon": "receipt_long",
     "published": true
   }
 ]

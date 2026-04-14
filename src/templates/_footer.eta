@@ -26,6 +26,7 @@
       <div>
         <h4 class="font-bold text-darkBlue mb-4"><%= it.ui.footer.compare_title %></h4>
         <ul class="space-y-2 text-sm text-gray-500">
+          <li><a href="<%= (it.locale === 'en' ? '' : '/' + it.locale) %>/compare/" class="hover:text-terracotta transition-colors"><%= it.ui.footer.compare_all %></a></li>
           <li><a href="<%= (it.locale === 'en' ? '' : '/' + it.locale) %>/compare/homepot-vs-splitwise/" class="hover:text-terracotta transition-colors"><%= it.ui.footer.compare_splitwise %></a></li>
         </ul>
       </div>

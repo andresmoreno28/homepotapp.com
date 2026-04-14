@@ -4,7 +4,8 @@
   },
   "ui": {
     "nav": {
-      "download": "Précommander"
+      "download": "Précommander",
+      "compare": "Comparer"
     },
     "footer": {
       "desc": "Les dépenses partagées simplifiées pour les couples, colocs et familles.",
@@ -13,6 +14,7 @@
       "pricing": "Tarifs",
       "download": "Télécharger",
       "compare_title": "Comparer",
+      "compare_all": "Toutes les comparaisons",
       "compare_splitwise": "HomePot vs Splitwise",
       "support_title": "Support",
       "help": "Centre d'aide",
@@ -33,6 +35,20 @@
       "trust_encrypted": "Chiffré",
       "trust_gdpr": "RGPD",
       "trust_notracking": "Sans traçage"
+    },
+    "compareHub": {
+      "title": "Compare HomePot aux autres apps de partage de frais",
+      "description": "Vois comment HomePot se compare aux apps les plus populaires pour partager les dépenses. Comparaisons côte à côte, fonctionnalités réelles, sans blabla.",
+      "eyebrow": "Comparaisons honnêtes",
+      "h1": "HomePot comparé aux autres apps de dépenses",
+      "intro": "On ne prétend pas que HomePot soit le bon outil pour tout le monde. Ces comparaisons côte à côte passent en revue les vraies fonctionnalités, palier par palier, pour que tu choisisses l'app qui correspond vraiment à la façon dont ton foyer, ton couple ou ton groupe de voyage partage l'argent.",
+      "badge": "Comparaison",
+      "cta": "Lire la comparaison",
+      "trust_title": "Comment on écrit ces comparaisons",
+      "trust_desc": "Chaque fonctionnalité qu'on affirme sur HomePot est vérifiée directement dans le code source actuel de l'app iOS. Chaque affirmation sur une autre app est liée à une source publique sur leur propre site ou leur fiche App Store au moment de la rédaction.",
+      "trust_1": "Vérifié dans le code",
+      "trust_2": "Sources publiques uniquement",
+      "trust_3": "Daté et mis à jour"
     },
     "comparison": {
       "eyebrow": "Comparaison honnête",

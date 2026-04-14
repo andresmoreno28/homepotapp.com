@@ -13,6 +13,18 @@
     <xhtml:link rel="alternate" hreflang="x-default" href="https://homepotapp.com/"/>
   </url>
   <url>
+    <loc>https://homepotapp.com/compare/</loc>
+    <lastmod>2026-04-14</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://homepotapp.com/compare/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://homepotapp.com/es/compare/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://homepotapp.com/fr/compare/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://homepotapp.com/de/compare/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://homepotapp.com/pt/compare/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://homepotapp.com/compare/"/>
+  </url>
+  <url>
     <loc>https://homepotapp.com/compare/homepot-vs-splitwise/</loc>
     <lastmod>2026-04-14</lastmod>
     <changefreq>weekly</changefreq>

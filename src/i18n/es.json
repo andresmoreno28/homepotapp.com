@@ -4,7 +4,8 @@
   },
   "ui": {
     "nav": {
-      "download": "Reservar gratis"
+      "download": "Reservar gratis",
+      "compare": "Comparar"
     },
     "footer": {
       "desc": "Gastos compartidos simplificados para parejas, compis de piso y familias.",
@@ -13,6 +14,7 @@
       "pricing": "Precios",
       "download": "Descargar",
       "compare_title": "Comparar",
+      "compare_all": "Todas las comparaciones",
       "compare_splitwise": "HomePot vs Splitwise",
       "support_title": "Soporte",
       "help": "Centro de ayuda",
@@ -33,6 +35,20 @@
       "trust_encrypted": "Cifrado",
       "trust_gdpr": "RGPD",
       "trust_notracking": "Sin rastreo"
+    },
+    "compareHub": {
+      "title": "Compara HomePot con otras apps de gastos compartidos",
+      "description": "Mira cómo se compara HomePot con las apps más populares para dividir gastos. Comparaciones lado a lado, funciones reales, sin marketing vacío.",
+      "eyebrow": "Comparaciones honestas",
+      "h1": "HomePot comparada con otras apps de gastos",
+      "intro": "No pretendemos que HomePot sea la herramienta adecuada para todo el mundo. Estas comparaciones lado a lado recorren las funciones reales, plan por plan, para que elijas la app que de verdad encaja con cómo tu hogar, tu pareja o tu grupo de viaje dividen el dinero.",
+      "badge": "Comparación",
+      "cta": "Leer la comparación",
+      "trust_title": "Cómo escribimos estas comparaciones",
+      "trust_desc": "Cada función que afirmamos sobre HomePot la verificamos directamente contra el código fuente actual de la app iOS. Cada afirmación sobre otras apps viene enlazada a una fuente pública en su propia web o ficha de App Store en el momento de redactar.",
+      "trust_1": "Verificado en código",
+      "trust_2": "Solo fuentes públicas",
+      "trust_3": "Fechado y actualizable"
     },
     "comparison": {
       "eyebrow": "Comparación honesta",

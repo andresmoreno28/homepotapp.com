@@ -4,7 +4,8 @@
   },
   "ui": {
     "nav": {
-      "download": "Pre-Order Free"
+      "download": "Pre-Order Free",
+      "compare": "Compare"
     },
     "footer": {
       "desc": "Shared expenses made simple for couples, roommates, and families.",
@@ -13,6 +14,7 @@
       "pricing": "Pricing",
       "download": "Download",
       "compare_title": "Compare",
+      "compare_all": "All comparisons",
       "compare_splitwise": "HomePot vs Splitwise",
       "support_title": "Support",
       "help": "Help Center",
@@ -33,6 +35,20 @@
       "trust_encrypted": "Encrypted",
       "trust_gdpr": "GDPR",
       "trust_notracking": "No tracking"
+    },
+    "compareHub": {
+      "title": "Compare HomePot vs other expense-sharing apps",
+      "description": "See how HomePot stacks up against popular expense-splitting apps. Side-by-side comparisons, real feature breakdowns, zero spin.",
+      "eyebrow": "Honest comparisons",
+      "h1": "HomePot compared to other expense apps",
+      "intro": "We don't pretend HomePot is the right tool for everyone. These side-by-side comparisons walk through the real feature set, tier by tier, so you can pick the app that actually fits how your household, couple, or travel group splits money.",
+      "badge": "Comparison",
+      "cta": "Read the comparison",
+      "trust_title": "How we write these comparisons",
+      "trust_desc": "Every feature we claim about HomePot is verified against the current iOS app source code. Every claim about another app is linked to a public source on their own website or App Store listing at the time of writing.",
+      "trust_1": "Code-verified",
+      "trust_2": "Public sources only",
+      "trust_3": "Dated & updatable"
     },
     "comparison": {
       "eyebrow": "Honest comparison",

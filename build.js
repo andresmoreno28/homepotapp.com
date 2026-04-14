@@ -131,6 +131,76 @@ function renderHome() {
   }
 }
 
+// ------------- COMPARE HUB -------------
+function renderCompareHub() {
+  const route = '/compare/';
+  const alternates = buildAlternatesRel(route);
+  const alternatesAbs = buildAlternatesAbs(route);
+
+  for (const locale of config.locales) {
+    const bundle = i18n[locale];
+    const hub = bundle.ui.compareHub;
+    const homeHref = localePrefix(locale) + '/';
+
+    // Build cards from published comparisons
+    const items = comparisons
+      .filter((e) => e.published)
+      .map((entry) => {
+        const comparisonBundle = bundle.pages.comparisons[entry.i18nKey];
+        return {
+          href: `${localePrefix(locale)}/compare/${entry.slug}/`,
+          title: comparisonBundle?.h1 || entry.competitor,
+          excerpt: comparisonBundle?.description || '',
+          icon: entry.icon || 'compare',
+        };
+      });
+
+    // Placeholder cards for upcoming comparisons (more competitors in the pipeline)
+    const placeholders = items.length < 4 ? [bundle.ui.compareHub.cta + '…'] : [];
+
+    const jsonLd = {
+      '@context': 'https://schema.org',
+      '@type': 'CollectionPage',
+      name: hub.title,
+      description: hub.description,
+      url: absoluteUrl(locale, route),
+      inLanguage: locale,
+      hasPart: items.map((it) => ({
+        '@type': 'Article',
+        headline: it.title,
+        url: `${config.baseUrl}${it.href}`,
+      })),
+    };
+
+    const ctx = {
+      locale,
+      baseUrl: config.baseUrl,
+      appStoreUrl: config.appStoreUrl,
+      contactEmail: config.contactEmail,
+      promoSignupUrl: config.promoSignupUrl,
+      homeHref,
+      alternates,
+      alternatesAbs,
+      pageTitle: hub.title,
+      pageDescription: hub.description,
+      canonicalUrl: absoluteUrl(locale, route),
+      ogTitle: hub.title,
+      ogDescription: hub.description,
+      ogLocale: bundle.meta.ogLocale,
+      ogType: 'website',
+      jsonLd,
+      ui: bundle.ui,
+      items,
+      placeholders,
+    };
+
+    const html = renderWithLayout('compare-hub', ctx);
+    writeFile(outPath(locale, route), html);
+    registerRoute(route, locale);
+    console.log(`✓ compare hub (${locale})`);
+  }
+}
+
 // ------------- COMPARISONS -------------
 function renderComparisons() {
   for (const entry of comparisons) {
@@ -246,6 +316,7 @@ function renderRobots() {
 // ------------- MAIN -------------
 console.log('Building homepotapp.com...\n');
 renderHome();
+renderCompareHub();
 renderComparisons();
 renderSitemap();
 renderRobots();

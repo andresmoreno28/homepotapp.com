@@ -21,7 +21,10 @@
       <% }); %>
     </div>
 
-    <!-- Download button (desktop only) -->
-    <a href="<%= it.appStoreUrl %>" target="_blank" rel="noopener" class="hidden lg:inline-flex bg-terracotta text-white px-5 py-2.5 rounded-full text-sm font-semibold hover:bg-terracotta/90 transition-colors"><%= it.ui.nav.download %></a>
+    <!-- Right cluster: Compare link + Download button (desktop) -->
+    <div class="hidden lg:flex items-center gap-5">
+      <a href="<%= (it.locale === 'en' ? '' : '/' + it.locale) %>/compare/" class="text-sm font-semibold text-darkBlue/80 hover:text-terracotta transition-colors"><%= it.ui.nav.compare %></a>
+      <a href="<%= it.appStoreUrl %>" target="_blank" rel="noopener" class="inline-flex bg-terracotta text-white px-5 py-2.5 rounded-full text-sm font-semibold hover:bg-terracotta/90 transition-colors"><%= it.ui.nav.download %></a>
+    </div>
   </div>
 </nav>
