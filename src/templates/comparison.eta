@@ -15,7 +15,7 @@
 
     <div class="flex flex-row items-center justify-center gap-3 sm:gap-4 flex-wrap">
       <a href="<%= it.appStoreUrl %>" target="_blank" rel="noopener" class="hover:opacity-80 transition-opacity">
-        <img src="/assets/badges/preorder-<%= it.locale %>.svg" alt="Pre-order on the App Store" style="height:48px;width:auto;">
+        <img src="/assets/badges/download-<%= it.locale %>.svg" alt="Download on the App Store" style="height:48px;width:auto;">
       </a>
       <a href="#cta" class="hero-promo-cta inline-flex items-center justify-center gap-2 text-terracotta font-semibold border-2 border-terracotta rounded-xl hover:bg-terracotta/5 transition-colors" style="height:48px;padding:0 24px;">
         <span class="material-symbols-outlined text-xl">star</span>

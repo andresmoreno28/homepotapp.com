@@ -4,7 +4,7 @@
   },
   "ui": {
     "nav": {
-      "download": "Pre-Order Free",
+      "download": "Download",
       "compare": "Compare",
       "resources": "Resources"
     },
@@ -108,7 +108,7 @@
         "headline": "Stop fighting about money.",
         "subtitle": "Track, split, and settle shared expenses in seconds. Built for couples, roommates, and families who want peace.",
         "cta_promo": "1 month Pro free",
-        "promo_hint": "Sign up below and get 1 month of Pro for free when we launch.",
+        "promo_hint": "Activate 1 month of Pro free when you download the app and register with the same email.",
         "trust_noads": "No ads",
         "trust_notracking": "No tracking",
         "trust_gdpr": "GDPR compliant"

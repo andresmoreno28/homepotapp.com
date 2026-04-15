@@ -4,7 +4,7 @@
   },
   "ui": {
     "nav": {
-      "download": "Précommander",
+      "download": "Télécharger",
       "compare": "Comparer",
       "resources": "Ressources"
     },
@@ -108,7 +108,7 @@
         "headline": "Arrête de te disputer pour l'argent.",
         "subtitle": "Enregistre, partage et règle les dépenses communes en quelques secondes. Conçu pour les couples, colocs et familles qui veulent la paix.",
         "cta_promo": "1 mois Pro gratuit",
-        "promo_hint": "Inscris-toi ci-dessous et reçois 1 mois de Pro gratuit au lancement.",
+        "promo_hint": "Active 1 mois de Pro gratuit en téléchargeant l'app et en t'inscrivant avec le même email.",
         "trust_noads": "Sans pub",
         "trust_notracking": "Sans traçage",
         "trust_gdpr": "Conforme RGPD"

@@ -4,7 +4,7 @@
   },
   "ui": {
     "nav": {
-      "download": "Reservar grátis",
+      "download": "Baixar",
       "compare": "Comparar",
       "resources": "Recursos"
     },
@@ -108,7 +108,7 @@
         "headline": "Pare de brigar por dinheiro.",
         "subtitle": "Registre, divida e acerte despesas compartilhadas em segundos. Feito para casais, colegas de apartamento e famílias que querem paz.",
         "cta_promo": "1 mês Pro grátis",
-        "promo_hint": "Cadastre-se abaixo e ganhe 1 mês de Pro grátis no lançamento.",
+        "promo_hint": "Ative 1 mês de Pro grátis ao baixar o app e se registrar com o mesmo email.",
         "trust_noads": "Sem anúncios",
         "trust_notracking": "Sem rastreamento",
         "trust_gdpr": "Conforme com LGPD"

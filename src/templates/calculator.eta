@@ -64,7 +64,7 @@
       <p class="text-gray-600 max-w-2xl mx-auto mb-8"><%= p.upsell_desc %></p>
       <div class="flex flex-row items-center justify-center gap-3 sm:gap-4 flex-wrap">
         <a href="<%= it.appStoreUrl %>" target="_blank" rel="noopener" class="hover:opacity-80 transition-opacity">
-          <img src="/assets/badges/preorder-<%= it.locale %>.svg" alt="Pre-order on the App Store" style="height:48px;width:auto;">
+          <img src="/assets/badges/download-<%= it.locale %>.svg" alt="Download on the App Store" style="height:48px;width:auto;">
         </a>
       </div>
     </div>

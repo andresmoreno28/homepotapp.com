@@ -4,7 +4,7 @@
   },
   "ui": {
     "nav": {
-      "download": "Vorbestellen",
+      "download": "Herunterladen",
       "compare": "Vergleichen",
       "resources": "Ressourcen"
     },
@@ -108,7 +108,7 @@
         "headline": "Schluss mit Streit ums Geld.",
         "subtitle": "Erfasse, teile und begleiche gemeinsame Ausgaben in Sekunden. Gemacht für Paare, WGs und Familien, die Frieden wollen.",
         "cta_promo": "1 Monat Pro gratis",
-        "promo_hint": "Melde dich unten an und erhalte 1 Monat Pro gratis zum Launch.",
+        "promo_hint": "Aktiviere 1 Monat Pro gratis, wenn du die App lädst und dich mit derselben E-Mail registrierst.",
         "trust_noads": "Keine Werbung",
         "trust_notracking": "Kein Tracking",
         "trust_gdpr": "DSGVO-konform"

@@ -4,7 +4,7 @@
   },
   "ui": {
     "nav": {
-      "download": "Reservar gratis",
+      "download": "Descargar",
       "compare": "Comparar",
       "resources": "Recursos"
     },
@@ -108,7 +108,7 @@
         "headline": "Deja de discutir por dinero.",
         "subtitle": "Registra, divide y liquida gastos compartidos en segundos. Hecha para parejas, compis de piso y familias que quieren vivir en paz.",
         "cta_promo": "1 mes Pro gratis",
-        "promo_hint": "Regístrate abajo y consigue 1 mes de Pro gratis cuando lancemos.",
+        "promo_hint": "Activa 1 mes de Pro gratis al descargar la app y registrarte con el mismo email.",
         "trust_noads": "Sin anuncios",
         "trust_notracking": "Sin rastreo",
         "trust_gdpr": "Cumple con RGPD"
