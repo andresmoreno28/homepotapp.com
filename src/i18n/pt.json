@@ -26,13 +26,13 @@
       "copyright": "© 2026 HomePot. Todos os direitos reservados."
     },
     "cta": {
-      "title": "Pronto pra parar de brigar por dinheiro?",
-      "subtitle": "Junte-se a lares do mundo todo que gerenciam despesas compartilhadas sem estresse.",
+      "title": "Ainda não quer instalar? Experimente o Pro grátis por 1 mês.",
+      "subtitle": "Deixe seu email aqui, baixe o HomePot quando quiser e se registre com o mesmo endereço — seu mês grátis de Pro é ativado automaticamente.",
       "placeholder": "Digite seu email",
       "button": "1 mês Pro grátis",
-      "success": "Pronto! Registre-se no app com o mesmo email para ativar seu mês grátis de Pro.",
+      "success": "Pronto! Agora baixe o HomePot e se registre com o mesmo email para ativar seu mês grátis de Pro.",
       "error": "Algo deu errado. Tente novamente.",
-      "disclaimer": "Sem spam. Registre-se no app com o mesmo email para ativar o Pro.",
+      "disclaimer": "Sem spam. Quando você baixar o HomePot e se registrar com o mesmo email, seu mês grátis de Pro é ativado automaticamente.",
       "trust_encrypted": "Criptografado",
       "trust_gdpr": "LGPD",
       "trust_notracking": "Sem rastreamento"

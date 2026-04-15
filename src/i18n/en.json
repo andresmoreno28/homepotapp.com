@@ -26,13 +26,13 @@
       "copyright": "© 2026 HomePot. All rights reserved."
     },
     "cta": {
-      "title": "Ready to stop the money arguments?",
-      "subtitle": "Join households worldwide managing shared expenses effortlessly.",
+      "title": "Not ready to install right now? Try Pro free for 1 month.",
+      "subtitle": "Drop your email here, download HomePot whenever you're ready, and sign up with the same address — your free month of Pro activates automatically.",
       "placeholder": "Enter your email",
       "button": "1 month Pro free",
-      "success": "Done! Sign up in the app with the same email to activate your free month of Pro.",
+      "success": "Done! Now download HomePot and sign up with the same email to activate your free month of Pro.",
       "error": "Something went wrong. Please try again.",
-      "disclaimer": "No spam. Sign up in the app with the same email to activate Pro.",
+      "disclaimer": "No spam. When you download HomePot and register with the same email, your free month of Pro activates automatically.",
       "trust_encrypted": "Encrypted",
       "trust_gdpr": "GDPR",
       "trust_notracking": "No tracking"

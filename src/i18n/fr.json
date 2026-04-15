@@ -26,13 +26,13 @@
       "copyright": "© 2026 HomePot. Tous droits réservés."
     },
     "cta": {
-      "title": "Prêt·e à en finir avec les disputes d'argent ?",
-      "subtitle": "Rejoins des foyers du monde entier qui gèrent leurs dépenses communes sans prise de tête.",
+      "title": "Pas prêt·e à installer maintenant ? Essaie Pro gratuit pendant 1 mois.",
+      "subtitle": "Laisse ton email ici, télécharge HomePot quand tu veux, et inscris-toi avec la même adresse — ton mois gratuit de Pro s'active automatiquement.",
       "placeholder": "Entre ton email",
       "button": "1 mois Pro gratuit",
-      "success": "C'est fait ! Inscris-toi dans l'app avec le même email pour activer ton mois gratuit de Pro.",
+      "success": "C'est fait ! Télécharge maintenant HomePot et inscris-toi avec le même email pour activer ton mois gratuit de Pro.",
       "error": "Une erreur s'est produite. Réessaie.",
-      "disclaimer": "Pas de spam. Inscris-toi dans l'app avec le même email pour activer Pro.",
+      "disclaimer": "Pas de spam. Quand tu télécharges HomePot et que tu t'inscris avec le même email, ton mois gratuit de Pro s'active automatiquement.",
       "trust_encrypted": "Chiffré",
       "trust_gdpr": "RGPD",
       "trust_notracking": "Sans traçage"
