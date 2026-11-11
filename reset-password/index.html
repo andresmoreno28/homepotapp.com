@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="color-scheme" content="light">
+  <meta name="robots" content="noindex, nofollow">
+  <meta name="referrer" content="no-referrer">
+  <title data-t="rp.title">Reset your password | HomePot</title>
+  <link rel="icon" type="image/png" href="/assets/favicon.png">
+
+  <!-- Google Fonts (non-blocking, swap) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" media="print" onload="this.media='all'">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&display=swap" media="print" onload="this.media='all'">
+  <noscript>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&display=swap">
+  </noscript>
+
+  <!-- Pre-compiled Tailwind CSS -->
+  <link rel="stylesheet" href="/assets/tailwind.css">
+
+  <style>
+    [hidden] { display: none !important; }
+    .grain-bg { position: relative; }
+    .grain-bg::before {
+      content: ""; position: absolute; inset: 0;
+      opacity: 0.03; pointer-events: none; z-index: 1;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+    }
+    .material-symbols-outlined { user-select: none; }
+    /* 404 page: pick the view before first paint (class set in <head> by not-found.js) */
+    html.hp-join #notfound-view { display: none !important; }
+    html:not(.hp-join) #join-view { display: none !important; }
+    /* Password rules checklist */
+    .hp-rule { color: #9ca3af; transition: color .15s ease; }
+    .hp-rule[data-ok="true"] { color: #3D405B; }
+    .hp-rule[data-ok="true"] .hp-rule-icon { color: #81B29A; }
+    /* Spinner */
+    .hp-spinner {
+      width: 1.25rem; height: 1.25rem; border-radius: 9999px; flex-shrink: 0;
+      border: 2px solid rgba(224,122,95,.25); border-top-color: #E07A5F;
+      animation: hp-spin .8s linear infinite;
+    }
+    @keyframes hp-spin { to { transform: rotate(360deg); } }
+    @media (prefers-reduced-motion: reduce) { .hp-spinner { animation-duration: 2.4s; } }
+  </style>
+
+  <script>window.__HP_I18N = {"defaultLocale":"en","strings":{"en":{"common.language":"Language","common.help":"Help Center","common.privacy":"Privacy Policy","common.terms":"Terms of Service","common.delete_account":"Delete account","common.copyright":"© 2026 HomePot. All rights reserved.","rp.title":"Reset your password | HomePot","rp.h1":"Reset your password","rp.checking":"Checking your link…","rp.intro":"Choose a new password for your HomePot account.","rp.new_password":"New password","rp.confirm_password":"Confirm new password","rp.show_password":"Show password","rp.rules_title":"Your password needs:","rp.rule_length":"At least 6 characters","rp.rule_lower":"One lowercase letter","rp.rule_upper":"One uppercase letter","rp.rule_digit":"One number","rp.rule_symbol":"One symbol, such as ! @ # $ %","rp.rule_match":"Both passwords match","rp.rule_ok":"done","rp.rule_missing":"missing","rp.submit":"Update password","rp.submitting":"Updating…","rp.err_rules":"Your new password doesn't meet all the requirements yet.","rp.err_mismatch":"The passwords don't match.","rp.err_same":"Your new password must be different from your current one.","rp.err_weak":"This password isn't secure enough. Make sure it meets every requirement, or choose a less common one.","rp.err_session":"Your reset session has expired. Request a new link from the HomePot app and try again.","rp.err_rate":"Too many attempts. Wait a few minutes and try again.","rp.err_generic":"We couldn't update your password. Check your connection and try again.","rp.invalid_title":"This link is invalid or has expired","rp.invalid_body":"Password reset links can only be used once and expire after a while. Request a new one from the HomePot app: on the sign-in screen, tap \"Forgot password?\".","rp.network_title":"We couldn't check your link","rp.network_body":"Check your internet connection, then open the link from the email again. If it still doesn't work, request a new one from the HomePot app.","rp.load_title":"This page didn't load properly","rp.load_body":"Check your internet connection and reload the page.","rp.success_title":"Password updated","rp.success_body":"Your new password is ready. Use it the next time you sign in to HomePot.","rp.success_hint":"On a computer? Open HomePot on your phone and sign in with your new password.","rp.open_app":"Open HomePot"},"es":{"common.language":"Idioma","common.help":"Centro de ayuda","common.privacy":"Política de privacidad","common.terms":"Términos de servicio","common.delete_account":"Eliminar cuenta","common.copyright":"© 2026 HomePot. Todos los derechos reservados.","rp.title":"Restablecer contraseña | HomePot","rp.h1":"Restablece tu contraseña","rp.checking":"Comprobando el enlace…","rp.intro":"Elige una contraseña nueva para tu cuenta de HomePot.","rp.new_password":"Nueva contraseña","rp.confirm_password":"Repite la nueva contraseña","rp.show_password":"Mostrar contraseña","rp.rules_title":"Tu contraseña debe tener:","rp.rule_length":"Al menos 6 caracteres","rp.rule_lower":"Una letra minúscula","rp.rule_upper":"Una letra mayúscula","rp.rule_digit":"Un número","rp.rule_symbol":"Un símbolo, por ejemplo ! @ # $ %","rp.rule_match":"Las dos contraseñas coinciden","rp.rule_ok":"cumplido","rp.rule_missing":"pendiente","rp.submit":"Guardar contraseña","rp.submitting":"Guardando…","rp.err_rules":"La nueva contraseña todavía no cumple todos los requisitos.","rp.err_mismatch":"Las contraseñas no coinciden.","rp.err_same":"La nueva contraseña tiene que ser distinta de la actual.","rp.err_weak":"Esta contraseña no es lo bastante segura. Comprueba que cumple todos los requisitos o elige una menos común.","rp.err_session":"Tu sesión para restablecer la contraseña ha caducado. Solicita un enlace nuevo desde la app de HomePot y vuelve a intentarlo.","rp.err_rate":"Demasiados intentos. Espera unos minutos y vuelve a intentarlo.","rp.err_generic":"No hemos podido cambiar tu contraseña. Comprueba tu conexión y vuelve a intentarlo.","rp.invalid_title":"Este enlace no es válido o ha caducado","rp.invalid_body":"Los enlaces para restablecer la contraseña solo se pueden usar una vez y caducan pasado un tiempo. Solicita uno nuevo desde la app de HomePot: en la pantalla de inicio de sesión, toca «¿Has olvidado tu contraseña?».","rp.network_title":"No hemos podido comprobar el enlace","rp.network_body":"Comprueba tu conexión a internet y vuelve a abrir el enlace del correo. Si sigue sin funcionar, solicita uno nuevo desde la app de HomePot.","rp.load_title":"La página no se ha cargado bien","rp.load_body":"Comprueba tu conexión a internet y vuelve a cargar la página.","rp.success_title":"Contraseña actualizada","rp.success_body":"Tu nueva contraseña ya está lista. Úsala la próxima vez que inicies sesión en HomePot.","rp.success_hint":"¿Estás en un ordenador? Abre HomePot en tu móvil e inicia sesión con tu nueva contraseña.","rp.open_app":"Abrir HomePot"},"fr":{"common.language":"Langue","common.help":"Centre d'aide","common.privacy":"Politique de confidentialité","common.terms":"Conditions d'utilisation","common.delete_account":"Supprimer le compte","common.copyright":"© 2026 HomePot. Tous droits réservés.","rp.title":"Réinitialiser le mot de passe | HomePot","rp.h1":"Réinitialisez votre mot de passe","rp.checking":"Vérification du lien…","rp.intro":"Choisissez un nouveau mot de passe pour votre compte HomePot.","rp.new_password":"Nouveau mot de passe","rp.confirm_password":"Confirmez le nouveau mot de passe","rp.show_password":"Afficher le mot de passe","rp.rules_title":"Votre mot de passe doit contenir :","rp.rule_length":"Au moins 6 caractères","rp.rule_lower":"Une lettre minuscule","rp.rule_upper":"Une lettre majuscule","rp.rule_digit":"Un chiffre","rp.rule_symbol":"Un symbole, par exemple ! @ # $ %","rp.rule_match":"Les deux mots de passe sont identiques","rp.rule_ok":"fait","rp.rule_missing":"manquant","rp.submit":"Mettre à jour le mot de passe","rp.submitting":"Mise à jour…","rp.err_rules":"Votre nouveau mot de passe ne remplit pas encore tous les critères.","rp.err_mismatch":"Les mots de passe ne correspondent pas.","rp.err_same":"Le nouveau mot de passe doit être différent de l'actuel.","rp.err_weak":"Ce mot de passe n'est pas assez sûr. Vérifiez qu'il remplit tous les critères ou choisissez-en un moins courant.","rp.err_session":"Votre session de réinitialisation a expiré. Demandez un nouveau lien depuis l'app HomePot et réessayez.","rp.err_rate":"Trop de tentatives. Patientez quelques minutes, puis réessayez.","rp.err_generic":"Impossible de mettre à jour votre mot de passe. Vérifiez votre connexion et réessayez.","rp.invalid_title":"Ce lien n'est pas valide ou a expiré","rp.invalid_body":"Les liens de réinitialisation ne fonctionnent qu'une seule fois et expirent au bout d'un certain temps. Demandez-en un nouveau depuis l'app HomePot : sur l'écran de connexion, touchez « Mot de passe oublié ? ».","rp.network_title":"Impossible de vérifier votre lien","rp.network_body":"Vérifiez votre connexion internet, puis rouvrez le lien reçu par e-mail. Si le problème persiste, demandez un nouveau lien depuis l'app HomePot.","rp.load_title":"La page ne s'est pas chargée correctement","rp.load_body":"Vérifiez votre connexion internet et rechargez la page.","rp.success_title":"Mot de passe mis à jour","rp.success_body":"Votre nouveau mot de passe est prêt. Utilisez-le la prochaine fois que vous vous connecterez à HomePot.","rp.success_hint":"Vous êtes sur un ordinateur ? Ouvrez HomePot sur votre téléphone et connectez-vous avec votre nouveau mot de passe.","rp.open_app":"Ouvrir HomePot"},"de":{"common.language":"Sprache","common.help":"Hilfezentrum","common.privacy":"Datenschutzrichtlinie","common.terms":"Nutzungsbedingungen","common.delete_account":"Konto löschen","common.copyright":"© 2026 HomePot. Alle Rechte vorbehalten.","rp.title":"Passwort zurücksetzen | HomePot","rp.h1":"Passwort zurücksetzen","rp.checking":"Link wird geprüft…","rp.intro":"Wähle ein neues Passwort für dein HomePot-Konto.","rp.new_password":"Neues Passwort","rp.confirm_password":"Neues Passwort bestätigen","rp.show_password":"Passwort anzeigen","rp.rules_title":"Dein Passwort braucht:","rp.rule_length":"Mindestens 6 Zeichen","rp.rule_lower":"Einen Kleinbuchstaben","rp.rule_upper":"Einen Großbuchstaben","rp.rule_digit":"Eine Ziffer","rp.rule_symbol":"Ein Sonderzeichen, z. B. ! @ # $ %","rp.rule_match":"Beide Passwörter stimmen überein","rp.rule_ok":"erfüllt","rp.rule_missing":"fehlt","rp.submit":"Passwort speichern","rp.submitting":"Wird gespeichert…","rp.err_rules":"Dein neues Passwort erfüllt noch nicht alle Anforderungen.","rp.err_mismatch":"Die Passwörter stimmen nicht überein.","rp.err_same":"Das neue Passwort muss sich von deinem aktuellen unterscheiden.","rp.err_weak":"Dieses Passwort ist nicht sicher genug. Achte darauf, dass es alle Anforderungen erfüllt, oder wähle ein weniger gängiges.","rp.err_session":"Deine Sitzung zum Zurücksetzen ist abgelaufen. Fordere in der HomePot-App einen neuen Link an und versuche es erneut.","rp.err_rate":"Zu viele Versuche. Warte ein paar Minuten und versuche es dann erneut.","rp.err_generic":"Dein Passwort konnte nicht geändert werden. Prüfe deine Verbindung und versuche es erneut.","rp.invalid_title":"Dieser Link ist ungültig oder abgelaufen","rp.invalid_body":"Links zum Zurücksetzen des Passworts funktionieren nur einmal und laufen nach einer Weile ab. Fordere in der HomePot-App einen neuen an: Tippe auf dem Anmeldebildschirm auf „Passwort vergessen?“.","rp.network_title":"Dein Link konnte nicht geprüft werden","rp.network_body":"Prüfe deine Internetverbindung und öffne den Link aus der E-Mail erneut. Wenn es weiterhin nicht klappt, fordere in der HomePot-App einen neuen an.","rp.load_title":"Die Seite wurde nicht richtig geladen","rp.load_body":"Prüfe deine Internetverbindung und lade die Seite neu.","rp.success_title":"Passwort aktualisiert","rp.success_body":"Dein neues Passwort ist eingerichtet. Verwende es, wenn du dich das nächste Mal bei HomePot anmeldest.","rp.success_hint":"Bist du am Computer? Öffne HomePot auf deinem Handy und melde dich mit deinem neuen Passwort an.","rp.open_app":"HomePot öffnen"},"pt":{"common.language":"Idioma","common.help":"Central de ajuda","common.privacy":"Política de privacidade","common.terms":"Termos de serviço","common.delete_account":"Excluir conta","common.copyright":"© 2026 HomePot. Todos os direitos reservados.","rp.title":"Redefinir senha | HomePot","rp.h1":"Redefina sua senha","rp.checking":"Verificando o link…","rp.intro":"Escolha uma nova senha para sua conta do HomePot.","rp.new_password":"Nova senha","rp.confirm_password":"Confirme a nova senha","rp.show_password":"Mostrar senha","rp.rules_title":"Sua senha precisa ter:","rp.rule_length":"Pelo menos 6 caracteres","rp.rule_lower":"Uma letra minúscula","rp.rule_upper":"Uma letra maiúscula","rp.rule_digit":"Um número","rp.rule_symbol":"Um símbolo, como ! @ # $ %","rp.rule_match":"As duas senhas são iguais","rp.rule_ok":"ok","rp.rule_missing":"pendente","rp.submit":"Salvar nova senha","rp.submitting":"Salvando…","rp.err_rules":"Sua nova senha ainda não atende a todos os requisitos.","rp.err_mismatch":"As senhas não coincidem.","rp.err_same":"A nova senha precisa ser diferente da atual.","rp.err_weak":"Essa senha não é segura o suficiente. Confira se ela atende a todos os requisitos ou escolha uma menos comum.","rp.err_session":"Sua sessão de redefinição expirou. Peça um novo link pelo app HomePot e tente de novo.","rp.err_rate":"Muitas tentativas. Aguarde alguns minutos e tente de novo.","rp.err_generic":"Não foi possível atualizar sua senha. Verifique sua conexão e tente de novo.","rp.invalid_title":"Este link é inválido ou expirou","rp.invalid_body":"Os links de redefinição de senha só podem ser usados uma vez e expiram depois de um tempo. Peça um novo pelo app HomePot: na tela de login, toque em “Esqueceu a senha?”.","rp.network_title":"Não foi possível verificar seu link","rp.network_body":"Verifique sua conexão com a internet e abra de novo o link do e-mail. Se ainda não funcionar, peça um novo link pelo app HomePot.","rp.load_title":"A página não carregou direito","rp.load_body":"Verifique sua conexão com a internet e recarregue a página.","rp.success_title":"Senha atualizada","rp.success_body":"Sua nova senha está pronta. Use-a na próxima vez que entrar no HomePot.","rp.success_hint":"Está no computador? Abra o HomePot no celular e entre com sua nova senha.","rp.open_app":"Abrir o HomePot"}}};</script>
+  <script src="/src/js/utility-i18n.js"></script>
+</head>
+<body class="font-sans text-darkBlue antialiased bg-cream min-h-screen flex flex-col">
+
+<!-- ========== HEADER ========== -->
+<header class="fixed top-0 inset-x-0 z-50" style="backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); background: rgba(244,241,222,0.8);">
+  <div class="max-w-7xl mx-auto flex items-center justify-between px-4 sm:px-6 py-4">
+    <a href="/" data-lhref="/" class="flex items-center gap-2">
+      <img src="/assets/favicon-40.png" alt="HomePot" class="w-10 h-10 rounded-xl">
+      <img src="/assets/homepot-wordmark.png" alt="" class="h-7 sm:h-9">
+    </a>
+    <div role="group" aria-label="Language" data-t-aria-label="common.language" class="flex items-center gap-0 lg:gap-1 rounded-full lg:px-2 lg:py-1" style="background: rgba(244,241,222,0.6);">
+      <button type="button" data-set-lang="en" lang="en" aria-pressed="true" class="px-1.5 py-1 lg:px-3 rounded-full text-[11px] lg:text-sm transition-colors font-semibold text-darkBlue">EN</button>
+      <button type="button" data-set-lang="es" lang="es" aria-pressed="false" class="px-1.5 py-1 lg:px-3 rounded-full text-[11px] lg:text-sm transition-colors text-darkBlue/40">ES</button>
+      <button type="button" data-set-lang="fr" lang="fr" aria-pressed="false" class="px-1.5 py-1 lg:px-3 rounded-full text-[11px] lg:text-sm transition-colors text-darkBlue/40">FR</button>
+      <button type="button" data-set-lang="de" lang="de" aria-pressed="false" class="px-1.5 py-1 lg:px-3 rounded-full text-[11px] lg:text-sm transition-colors text-darkBlue/40">DE</button>
+      <button type="button" data-set-lang="pt" lang="pt" aria-pressed="false" class="px-1.5 py-1 lg:px-3 rounded-full text-[11px] lg:text-sm transition-colors text-darkBlue/40">PT</button>
+    </div>
+  </div>
+</header>
+
+<main class="flex-1 bg-cream grain-bg relative overflow-hidden pt-28 pb-16 px-4 sm:px-6">
+  <div class="absolute w-[400px] h-[400px] bg-yellowSoft rounded-full blur-[100px] opacity-15 -top-20 -right-20" aria-hidden="true"></div>
+  <div class="absolute w-[300px] h-[300px] bg-sage rounded-full blur-[100px] opacity-10 bottom-0 -left-10" aria-hidden="true"></div>
+  <div class="relative z-10 max-w-md mx-auto">
+    <script>window.__HP_SUPABASE = {"url":"https://haggaeeajlbmktsinbek.supabase.co","anonKey":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImhhZ2dhZWVhamxibWt0c2luYmVrIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjkyODU1MTQsImV4cCI6MjA4NDg2MTUxNH0.Tolm7Vco3AHp1MRMdoniNXn1xckKB2YICT-eOpOUL_k"};</script>
+
+    <div class="bg-white rounded-3xl shadow-sm p-6 sm:p-8">
+      <div class="w-14 h-14 rounded-2xl bg-terracotta/10 text-terracotta flex items-center justify-center mb-5">
+        <span class="material-symbols-outlined text-3xl" aria-hidden="true">lock_reset</span>
+      </div>
+      <h1 class="text-2xl sm:text-3xl font-extrabold text-darkBlue leading-tight mb-4" data-t="rp.h1">Reset your password</h1>
+
+      <!-- Checking the link -->
+      <div data-view="loading" class="flex items-center gap-3 text-gray-500 py-2" role="status" aria-live="polite">
+        <span class="hp-spinner" aria-hidden="true"></span>
+        <span data-t="rp.checking">Checking your link…</span>
+      </div>
+
+      <!-- Invalid / expired link, network or load problems -->
+      <div data-view="invalid" hidden>
+        <div class="bg-terracotta/5 border border-terracotta/20 rounded-2xl p-5 mb-6" role="alert">
+          <h2 class="font-bold text-darkBlue mb-2 flex items-start gap-2">
+            <span class="material-symbols-outlined text-terracotta" aria-hidden="true">link_off</span>
+            <span id="rp-problem-title" data-t="rp.invalid_title">This link is invalid or has expired</span>
+          </h2>
+          <p id="rp-problem-body" class="text-sm text-gray-600 leading-relaxed" data-t="rp.invalid_body">Password reset links can only be used once and expire after a while. Request a new one from the HomePot app: on the sign-in screen, tap &quot;Forgot password?&quot;.</p>
+        </div>
+        <a href="homepot://" class="flex items-center justify-center gap-2 w-full bg-white text-darkBlue rounded-full py-3.5 px-6 font-semibold ring-1 ring-gray-200 hover:ring-terracotta transition-colors">
+          <span class="material-symbols-outlined text-xl" aria-hidden="true">open_in_new</span>
+          <span data-t="rp.open_app">Open HomePot</span>
+        </a>
+      </div>
+
+      <!-- New password form -->
+      <form data-view="form" id="rp-form" novalidate hidden>
+        <p class="text-gray-500 mb-6" data-t="rp.intro">Choose a new password for your HomePot account.</p>
+        <!-- Lets password managers store the new password under the right account -->
+        <input id="rp-username" name="username" type="email" autocomplete="username" readonly tabindex="-1" aria-hidden="true" class="sr-only">
+
+        <div class="mb-4">
+          <label for="rp-password" class="block text-sm font-semibold text-darkBlue mb-2" data-t="rp.new_password">New password</label>
+          <div class="relative">
+            <input id="rp-password" name="password" type="password" autocomplete="new-password" autocapitalize="off" autocorrect="off" spellcheck="false" required aria-describedby="rp-rules" class="w-full rounded-2xl bg-white py-3.5 pl-4 pr-12 text-darkBlue outline-none ring-1 ring-gray-200 focus:ring-2 focus:ring-terracotta transition-shadow">
+            <button type="button" data-toggle-password="rp-password" aria-pressed="false" aria-label="Show password" data-t-aria-label="rp.show_password" class="absolute inset-y-0 right-0 flex items-center px-3 text-gray-400 hover:text-darkBlue rounded-r-2xl">
+              <span class="material-symbols-outlined" aria-hidden="true">visibility</span>
+            </button>
+          </div>
+        </div>
+
+        <div class="mb-5">
+          <label for="rp-confirm" class="block text-sm font-semibold text-darkBlue mb-2" data-t="rp.confirm_password">Confirm new password</label>
+          <div class="relative">
+            <input id="rp-confirm" name="confirm" type="password" autocomplete="new-password" autocapitalize="off" autocorrect="off" spellcheck="false" required class="w-full rounded-2xl bg-white py-3.5 pl-4 pr-12 text-darkBlue outline-none ring-1 ring-gray-200 focus:ring-2 focus:ring-terracotta transition-shadow">
+            <button type="button" data-toggle-password="rp-confirm" aria-pressed="false" aria-label="Show password" data-t-aria-label="rp.show_password" class="absolute inset-y-0 right-0 flex items-center px-3 text-gray-400 hover:text-darkBlue rounded-r-2xl">
+              <span class="material-symbols-outlined" aria-hidden="true">visibility</span>
+            </button>
+          </div>
+        </div>
+
+        <div id="rp-rules" class="bg-cream/60 rounded-2xl p-4 mb-5">
+          <p class="text-sm font-semibold text-darkBlue mb-2" data-t="rp.rules_title">Your password needs:</p>
+          <ul class="space-y-1.5 text-sm">
+            <li class="hp-rule flex items-center gap-2" data-rule="length" data-ok="false">
+              <span class="hp-rule-icon material-symbols-outlined text-lg" aria-hidden="true">radio_button_unchecked</span>
+              <span data-t="rp.rule_length">At least 6 characters</span>
+              <span class="sr-only" data-rule-state></span>
+            </li>
+            <li class="hp-rule flex items-center gap-2" data-rule="lower" data-ok="false">
+              <span class="hp-rule-icon material-symbols-outlined text-lg" aria-hidden="true">radio_button_unchecked</span>
+              <span data-t="rp.rule_lower">One lowercase letter</span>
+              <span class="sr-only" data-rule-state></span>
+            </li>
+            <li class="hp-rule flex items-center gap-2" data-rule="upper" data-ok="false">
+              <span class="hp-rule-icon material-symbols-outlined text-lg" aria-hidden="true">radio_button_unchecked</span>
+              <span data-t="rp.rule_upper">One uppercase letter</span>
+              <span class="sr-only" data-rule-state></span>
+            </li>
+            <li class="hp-rule flex items-center gap-2" data-rule="digit" data-ok="false">
+              <span class="hp-rule-icon material-symbols-outlined text-lg" aria-hidden="true">radio_button_unchecked</span>
+              <span data-t="rp.rule_digit">One number</span>
+              <span class="sr-only" data-rule-state></span>
+            </li>
+            <li class="hp-rule flex items-center gap-2" data-rule="symbol" data-ok="false">
+              <span class="hp-rule-icon material-symbols-outlined text-lg" aria-hidden="true">radio_button_unchecked</span>
+              <span data-t="rp.rule_symbol">One symbol, such as ! @ # $ %</span>
+              <span class="sr-only" data-rule-state></span>
+            </li>
+            <li class="hp-rule flex items-center gap-2" data-rule="match" data-ok="false">
+              <span class="hp-rule-icon material-symbols-outlined text-lg" aria-hidden="true">radio_button_unchecked</span>
+              <span data-t="rp.rule_match">Both passwords match</span>
+              <span class="sr-only" data-rule-state></span>
+            </li>
+          </ul>
+        </div>
+
+        <p id="rp-error" class="text-sm text-red-600 font-medium mb-4" role="alert" hidden></p>
+
+        <button type="submit" id="rp-submit" class="w-full bg-terracotta text-white rounded-full py-4 px-6 font-semibold hover:bg-terracotta/90 disabled:opacity-60 disabled:cursor-not-allowed transition-colors">
+          <span id="rp-submit-label" data-t="rp.submit">Update password</span>
+        </button>
+      </form>
+
+      <!-- Done -->
+      <div data-view="success" hidden>
+        <div class="bg-sage/10 border border-sage/20 rounded-2xl p-5 mb-6" role="status">
+          <h2 id="rp-success-title" class="font-bold text-darkBlue mb-2 flex items-start gap-2" tabindex="-1">
+            <span class="material-symbols-outlined text-sage" aria-hidden="true">check_circle</span>
+            <span data-t="rp.success_title">Password updated</span>
+          </h2>
+          <p class="text-sm text-gray-600 leading-relaxed" data-t="rp.success_body">Your new password is ready. Use it the next time you sign in to HomePot.</p>
+        </div>
+        <a href="homepot://" class="flex items-center justify-center gap-2 w-full bg-terracotta text-white rounded-full py-4 px-6 font-semibold hover:bg-terracotta/90 transition-colors">
+          <span class="material-symbols-outlined text-xl" aria-hidden="true">open_in_new</span>
+          <span data-t="rp.open_app">Open HomePot</span>
+        </a>
+        <p class="text-sm text-gray-500 text-center mt-4" data-t="rp.success_hint">On a computer? Open HomePot on your phone and sign in with your new password.</p>
+      </div>
+    </div>
+
+    <noscript>
+      <p class="text-sm text-gray-500 text-center mt-4">JavaScript is required to reset your password.</p>
+    </noscript>
+  </div>
+</main>
+
+<!-- ========== FOOTER ========== -->
+<footer class="bg-white border-t border-gray-100">
+  <div class="max-w-7xl mx-auto px-6 py-8 flex flex-col md:flex-row items-center justify-between gap-4 text-sm">
+    <nav class="flex flex-wrap justify-center gap-x-5 gap-y-2 text-gray-500">
+      <a href="/support" class="hover:text-terracotta transition-colors" data-t="common.help">Help Center</a>
+      <a href="/privacy" class="hover:text-terracotta transition-colors" data-t="common.privacy">Privacy Policy</a>
+      <a href="/terms" class="hover:text-terracotta transition-colors" data-t="common.terms">Terms of Service</a>
+      <a href="/delete-account/" data-lhref="/delete-account/" class="hover:text-terracotta transition-colors" data-t="common.delete_account">Delete account</a>
+      <a href="mailto:homepotapp@gmail.com" class="hover:text-terracotta transition-colors">homepotapp@gmail.com</a>
+    </nav>
+    <p class="text-gray-400" data-t="common.copyright">© 2026 HomePot. All rights reserved.</p>
+  </div>
+</footer>
+
+<script>HP.mount();</script>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.49.4/dist/umd/supabase.min.js" defer></script>
+<script src="/src/js/reset-password.js" defer></script>
+
+</body>
+</html>

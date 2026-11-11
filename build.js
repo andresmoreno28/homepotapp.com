@@ -18,6 +18,35 @@ function writeFile(filePath, content) {
   writeFileSync(filePath, content, 'utf8');
 }
 
+function escapeHtml(value) {
+  return String(value)
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;')
+    .replace(/'/g, '&#39;');
+}
+
+// JSON safe to inline inside a <script> element
+function inlineJson(value) {
+  return JSON.stringify(value)
+    .replace(/</g, '\\u003c')
+    .replace(/>/g, '\\u003e')
+    .replace(/&/g, '\\u0026')
+    .replace(/\u2028/g, '\\u2028')
+    .replace(/\u2029/g, '\\u2029');
+}
+
+// { a: { b: 'x' } } -> { 'prefix.a.b': 'x' }
+function flatten(prefix, obj, out = {}) {
+  for (const [key, value] of Object.entries(obj)) {
+    const path = prefix ? `${prefix}.${key}` : key;
+    if (value && typeof value === 'object' && !Array.isArray(value)) flatten(path, value, out);
+    else out[path] = value;
+  }
+  return out;
+}
+
 function localePrefix(locale) {
   return locale === config.defaultLocale ? '' : `/${locale}`;
 }
@@ -529,6 +558,175 @@ function renderGuides() {
   }
 }
 
+// ------------- DELETE ACCOUNT (Google Play "account deletion URL") -------------
+function renderDeleteAccount() {
+  const route = '/delete-account/';
+  const alternates = buildAlternatesRel(route);
+  const alternatesAbs = buildAlternatesAbs(route);
+
+  for (const locale of config.locales) {
+    const bundle = i18n[locale];
+    const pageBundle = bundle.pages.deleteAccount;
+    if (!pageBundle) {
+      console.warn(`  skipped delete-account (${locale}): missing pages.deleteAccount`);
+      continue;
+    }
+    const homeHref = localePrefix(locale) + '/';
+
+    const jsonLd = {
+      '@context': 'https://schema.org',
+      '@type': 'WebPage',
+      name: pageBundle.h1,
+      description: pageBundle.description,
+      url: absoluteUrl(locale, route),
+      inLanguage: locale,
+      publisher: { '@type': 'Organization', name: 'HomePot', email: config.contactEmail },
+    };
+
+    const ctx = {
+      locale,
+      baseUrl: config.baseUrl,
+      appStoreUrl: config.appStoreUrl,
+      contactEmail: config.contactEmail,
+      promoSignupUrl: config.promoSignupUrl,
+      developerName: config.developerName,
+      homeHref,
+      alternates,
+      alternatesAbs,
+      pageTitle: pageBundle.title,
+      pageDescription: pageBundle.description,
+      canonicalUrl: absoluteUrl(locale, route),
+      ogTitle: pageBundle.title,
+      ogDescription: pageBundle.description,
+      ogLocale: bundle.meta.ogLocale,
+      ogType: 'website',
+      jsonLd,
+      ui: bundle.ui,
+      page: { deleteAccount: pageBundle },
+    };
+
+    const html = renderWithLayout('delete-account', ctx);
+    writeFile(outPath(locale, route), html);
+    registerRoute(route, locale);
+    console.log(`✓ delete-account (${locale})`);
+  }
+}
+
+// ------------- UTILITY PAGES (one URL, language picked in the browser) -------------
+// Not registered in `routes` → never in the sitemap. Always noindex.
+function utilityStrings(pick) {
+  const strings = {};
+  for (const locale of config.locales) {
+    const bundle = i18n[locale];
+    strings[locale] = {
+      'common.language': bundle.ui.nav.language,
+      'common.help': bundle.ui.footer.help,
+      'common.privacy': bundle.ui.footer.privacy,
+      'common.terms': bundle.ui.footer.terms,
+      'common.delete_account': bundle.ui.footer.delete_account,
+      'common.copyright': bundle.ui.footer.copyright,
+      ...pick(bundle),
+    };
+  }
+  return strings;
+}
+
+function renderUtility(template, { outFile, robots, referrer, titleKey, strings, headScripts, bodyScripts, extra }) {
+  const locale = config.defaultLocale; // server-rendered fallback (no JS)
+  const ctx = {
+    locale,
+    locales: config.locales,
+    baseUrl: config.baseUrl,
+    appStoreUrl: config.appStoreUrl,
+    playStoreUrl: config.playStoreUrl,
+    playStoreLive: config.playStoreLive,
+    appScheme: config.appScheme,
+    contactEmail: config.contactEmail,
+    robots,
+    referrer,
+    titleKey,
+    headScripts,
+    bodyScripts,
+    s: strings[locale],
+    esc: escapeHtml,
+    i18nJson: inlineJson({ defaultLocale: locale, strings }),
+    ...extra,
+  };
+  const body = render(template, ctx);
+  writeFile(join(ROOT, outFile), render('_utility-layout', { ...ctx, body }));
+  console.log(`✓ ${outFile} (runtime language: ${config.locales.join('/')})`);
+}
+
+// GitHub Pages serves /404.html for every unknown path → also the /join/CODE fallback
+function renderNotFound() {
+  renderUtility('not-found', {
+    outFile: '404.html',
+    robots: 'noindex',
+    titleKey: 'nf.title',
+    strings: utilityStrings((b) => ({ ...flatten('nf', b.pages.notFound), ...flatten('join', b.pages.join) })),
+    headScripts: ['/src/js/not-found.js'],
+    bodyScripts: [],
+  });
+}
+
+// The app always links to exactly https://homepotapp.com/reset-password/
+function renderResetPassword() {
+  renderUtility('reset-password', {
+    outFile: 'reset-password/index.html',
+    robots: 'noindex, nofollow',
+    referrer: 'no-referrer', // recovery tokens travel in the URL
+    titleKey: 'rp.title',
+    strings: utilityStrings((b) => flatten('rp', b.pages.resetPassword)),
+    headScripts: [],
+    bodyScripts: [config.supabase.jsUrl, '/src/js/reset-password.js'],
+    extra: { supabaseJson: inlineJson({ url: config.supabase.url, anonKey: config.supabase.anonKey }) },
+  });
+}
+
+// ------------- DEEP LINKS (.well-known) + .nojekyll -------------
+function renderWellKnown() {
+  const { iosAppId, androidPackage, androidSha256, paths } = config.appLinks;
+
+  // Modern format (appIDs + components, iOS 13+) plus legacy appID + paths (iOS 12-)
+  const aasa = {
+    applinks: {
+      apps: [],
+      details: [
+        {
+          appIDs: [iosAppId],
+          components: paths.map(({ path, comment }) => ({ '/': path, comment })),
+          appID: iosAppId,
+          paths: paths.map(({ path }) => path),
+        },
+      ],
+    },
+  };
+  // Served without extension; GitHub Pages sends it as application/octet-stream,
+  // which Apple's CDN accepts.
+  writeFile(join(ROOT, '.well-known', 'apple-app-site-association'), JSON.stringify(aasa, null, 2) + '\n');
+  console.log('✓ .well-known/apple-app-site-association');
+
+  const assetlinks = [
+    {
+      relation: ['delegate_permission/common.handle_all_urls'],
+      target: {
+        namespace: 'android_app',
+        package_name: androidPackage,
+        sha256_cert_fingerprints: androidSha256,
+      },
+    },
+  ];
+  writeFile(join(ROOT, '.well-known', 'assetlinks.json'), JSON.stringify(assetlinks, null, 2) + '\n');
+  console.log('✓ .well-known/assetlinks.json');
+  if (androidSha256.some((fp) => fp.startsWith('REPLACE_WITH'))) {
+    console.warn('  warning: assetlinks.json still has the placeholder SHA-256 (build.config.js → appLinks.androidSha256)');
+  }
+
+  // Without .nojekyll, GitHub Pages runs Jekyll, which drops dot-directories like .well-known
+  writeFile(join(ROOT, '.nojekyll'), '');
+  console.log('✓ .nojekyll');
+}
+
 // ------------- SITEMAP -------------
 function renderSitemap() {
   // Group routes by path so each URL entry has all hreflang alternates
@@ -589,6 +787,10 @@ renderComparisons();
 renderFromSplitwise();
 renderTools();
 renderGuides();
+renderDeleteAccount();
+renderNotFound();
+renderResetPassword();
+renderWellKnown();
 renderSitemap();
 renderRobots();
 console.log(`\nDone. ${routes.length} pages generated.`);

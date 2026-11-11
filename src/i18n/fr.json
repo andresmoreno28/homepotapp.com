@@ -6,7 +6,8 @@
     "nav": {
       "download": "Télécharger",
       "compare": "Comparer",
-      "resources": "Ressources"
+      "resources": "Ressources",
+      "language": "Langue"
     },
     "footer": {
       "desc": "Les dépenses partagées simplifiées pour les couples, colocs et familles.",
@@ -23,6 +24,7 @@
       "legal_title": "Légal",
       "privacy": "Politique de confidentialité",
       "terms": "Conditions d'utilisation",
+      "delete_account": "Supprimer le compte",
       "copyright": "© 2026 HomePot. Tous droits réservés."
     },
     "cta": {
@@ -629,6 +631,118 @@
           }
         ]
       }
+    },
+    "deleteAccount": {
+      "title": "Supprimer votre compte HomePot",
+      "description": "Comment supprimer votre compte HomePot depuis l'app ou par e-mail, quelles données sont supprimées et ce qu'il advient des groupes partagés et des abonnements.",
+      "eyebrow": "Suppression de compte",
+      "h1": "Comment supprimer votre compte HomePot",
+      "intro": "HomePot est une app de dépenses partagées pour les couples, les colocs et les familles. Cette page explique comment supprimer votre compte HomePot et ses données, ce qui est supprimé et ce qui reste dans les groupes que vous partagez avec d'autres personnes.",
+      "app_label": "App",
+      "developer_label": "Développeur",
+      "updated": "Mis à jour en novembre 2026",
+      "steps_title": "Supprimer votre compte depuis l'app",
+      "steps_intro": "Le plus rapide est de passer par l'app. Cela ne prend qu'une minute :",
+      "steps": [
+        "Ouvrez HomePot et connectez-vous avec le compte que vous voulez supprimer.",
+        "Allez dans l'onglet <strong>Réglages</strong> et faites défiler jusqu'à la section <strong>Zone de danger</strong>.",
+        "Dans <strong>Supprimer le compte</strong>, touchez <strong>Supprimer mon compte</strong>.",
+        "Tapez <strong>SUPPRIMER</strong> pour confirmer, puis touchez à nouveau <strong>Supprimer mon compte</strong>."
+      ],
+      "steps_note": "Votre compte est supprimé dès que vous confirmez. Vous êtes déconnecté et l'opération est irréversible.",
+      "deleted_title": "Ce qui est supprimé",
+      "deleted_list": [
+        "Votre compte et votre profil : nom, adresse e-mail et photo de profil.",
+        "Votre appartenance à tous vos groupes.",
+        "Les groupes dont vous êtes le seul membre, avec tout leur contenu : dépenses, catégories, dépenses récurrentes, clôtures mensuelles et photos de reçus."
+      ],
+      "shared_title": "Les groupes que vous partagez avec d'autres personnes",
+      "shared_paragraphs": [
+        "Les groupes qui comptent encore d'autres membres ne sont pas supprimés. Vous en êtes retiré et, si vous en étiez le propriétaire, un autre membre le devient.",
+        "Les dépenses que vous y avez enregistrées, y compris les photos de reçus jointes, restent visibles pour les autres membres dans l'historique commun du groupe, afin que leurs mois passés et leurs soldes restent justes. Elles ne sont plus liées à votre profil."
+      ],
+      "subscription_title": "Supprimer votre compte n'annule pas votre abonnement",
+      "subscription_intro": "Si vous avez HomePot Pro, votre abonnement est facturé par Apple ou Google, pas par nous. La suppression du compte ne l'annule pas : résiliez-le vous-même, de préférence avant de supprimer votre compte :",
+      "subscription_list": [
+        "<strong>iPhone ou iPad :</strong> app Réglages > votre nom > Abonnements > HomePot > Annuler l'abonnement.",
+        "<strong>Android :</strong> Google Play Store > icône de profil > Paiements et abonnements > Abonnements > HomePot > Résilier l'abonnement."
+      ],
+      "email_title": "Demander la suppression par e-mail",
+      "email_paragraphs": [
+        "Si vous ne pouvez plus accéder à l'app, envoyez un e-mail à {email} depuis l'adresse associée à votre compte HomePot, avec l'objet « {subject} ».",
+        "Nous traiterons votre demande sous 30 jours maximum et vous répondrons pour confirmer la suppression de votre compte. Si la demande ne provient pas de l'adresse du compte, nous pourrons vous demander de prouver que le compte vous appartient."
+      ],
+      "email_subject_label": "Objet",
+      "email_subject": "Delete my account",
+      "email_to_label": "À",
+      "email_button": "Envoyer la demande de suppression",
+      "notes_title": "Bon à savoir",
+      "notes_list": [
+        "La suppression est immédiate et définitive. Nous ne pouvons pas restaurer un compte supprimé ni ses données.",
+        "Désinstaller l'app ne supprime ni votre compte ni vos données.",
+        "Vous pouvez aussi supprimer certaines données sans fermer votre compte : retirer votre photo de profil, quitter un groupe ou supprimer un groupe dont vous êtes propriétaire, directement depuis l'app."
+      ],
+      "privacy_note": "Pour en savoir plus sur la façon dont nous traitons vos données, consultez notre {link}.",
+      "privacy_link": "Politique de confidentialité"
+    },
+    "notFound": {
+      "title": "Page introuvable | HomePot",
+      "h1": "Page introuvable",
+      "body": "La page que vous cherchez n'existe pas ou a été déplacée.",
+      "home": "Retour à l'accueil"
+    },
+    "join": {
+      "title": "Rejoindre un groupe | HomePot",
+      "eyebrow": "Invitation à un groupe",
+      "h1": "On vous invite à rejoindre un groupe",
+      "intro": "Quelqu'un vous invite à partager vos dépenses sur HomePot. Utilisez ce code d'invitation pour rejoindre son groupe.",
+      "code_label": "Code d'invitation",
+      "open_app": "Ouvrir dans l'app",
+      "copy_code": "Copier le code",
+      "copied": "Copié",
+      "copy_failed": "Impossible de copier le code. Sélectionnez-le et copiez-le manuellement.",
+      "install_title": "Vous n'avez pas encore HomePot ?",
+      "step1": "Installez HomePot depuis l'App Store.",
+      "step2": "Ensuite, rouvrez ce lien d'invitation ou saisissez le code dans « Rejoindre un groupe ».",
+      "app_store_alt": "Télécharger dans l'App Store",
+      "coming_soon": "Bientôt disponible"
+    },
+    "resetPassword": {
+      "title": "Réinitialiser le mot de passe | HomePot",
+      "h1": "Réinitialisez votre mot de passe",
+      "checking": "Vérification du lien…",
+      "intro": "Choisissez un nouveau mot de passe pour votre compte HomePot.",
+      "new_password": "Nouveau mot de passe",
+      "confirm_password": "Confirmez le nouveau mot de passe",
+      "show_password": "Afficher le mot de passe",
+      "rules_title": "Votre mot de passe doit contenir :",
+      "rule_length": "Au moins 6 caractères",
+      "rule_lower": "Une lettre minuscule",
+      "rule_upper": "Une lettre majuscule",
+      "rule_digit": "Un chiffre",
+      "rule_symbol": "Un symbole, par exemple ! @ # $ %",
+      "rule_match": "Les deux mots de passe sont identiques",
+      "rule_ok": "fait",
+      "rule_missing": "manquant",
+      "submit": "Mettre à jour le mot de passe",
+      "submitting": "Mise à jour…",
+      "err_rules": "Votre nouveau mot de passe ne remplit pas encore tous les critères.",
+      "err_mismatch": "Les mots de passe ne correspondent pas.",
+      "err_same": "Le nouveau mot de passe doit être différent de l'actuel.",
+      "err_weak": "Ce mot de passe n'est pas assez sûr. Vérifiez qu'il remplit tous les critères ou choisissez-en un moins courant.",
+      "err_session": "Votre session de réinitialisation a expiré. Demandez un nouveau lien depuis l'app HomePot et réessayez.",
+      "err_rate": "Trop de tentatives. Patientez quelques minutes, puis réessayez.",
+      "err_generic": "Impossible de mettre à jour votre mot de passe. Vérifiez votre connexion et réessayez.",
+      "invalid_title": "Ce lien n'est pas valide ou a expiré",
+      "invalid_body": "Les liens de réinitialisation ne fonctionnent qu'une seule fois et expirent au bout d'un certain temps. Demandez-en un nouveau depuis l'app HomePot : sur l'écran de connexion, touchez « Mot de passe oublié ? ».",
+      "network_title": "Impossible de vérifier votre lien",
+      "network_body": "Vérifiez votre connexion internet, puis rouvrez le lien reçu par e-mail. Si le problème persiste, demandez un nouveau lien depuis l'app HomePot.",
+      "load_title": "La page ne s'est pas chargée correctement",
+      "load_body": "Vérifiez votre connexion internet et rechargez la page.",
+      "success_title": "Mot de passe mis à jour",
+      "success_body": "Votre nouveau mot de passe est prêt. Utilisez-le la prochaine fois que vous vous connecterez à HomePot.",
+      "success_hint": "Vous êtes sur un ordinateur ? Ouvrez HomePot sur votre téléphone et connectez-vous avec votre nouveau mot de passe.",
+      "open_app": "Ouvrir HomePot"
     }
   }
 }

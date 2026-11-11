@@ -6,7 +6,8 @@
     "nav": {
       "download": "Herunterladen",
       "compare": "Vergleichen",
-      "resources": "Ressourcen"
+      "resources": "Ressourcen",
+      "language": "Sprache"
     },
     "footer": {
       "desc": "Gemeinsame Ausgaben einfach gemacht — für Paare, WGs und Familien.",
@@ -23,6 +24,7 @@
       "legal_title": "Rechtliches",
       "privacy": "Datenschutzrichtlinie",
       "terms": "Nutzungsbedingungen",
+      "delete_account": "Konto löschen",
       "copyright": "© 2026 HomePot. Alle Rechte vorbehalten."
     },
     "cta": {
@@ -629,6 +631,118 @@
           }
         ]
       }
+    },
+    "deleteAccount": {
+      "title": "HomePot-Konto löschen",
+      "description": "So löschst du dein HomePot-Konto in der App oder per E-Mail: welche Daten gelöscht werden und was mit geteilten Gruppen und Abos passiert.",
+      "eyebrow": "Konto löschen",
+      "h1": "So löschst du dein HomePot-Konto",
+      "intro": "HomePot ist eine App für gemeinsame Ausgaben – für Paare, WGs und Familien. Hier erfährst du, wie du dein HomePot-Konto und die zugehörigen Daten löschst, was gelöscht wird und was in Gruppen bleibt, die du mit anderen teilst.",
+      "app_label": "App",
+      "developer_label": "Entwickler",
+      "updated": "Aktualisiert im November 2026",
+      "steps_title": "Konto in der App löschen",
+      "steps_intro": "Am schnellsten geht es direkt in der App. Das dauert nur eine Minute:",
+      "steps": [
+        "Öffne HomePot und melde dich mit dem Konto an, das du löschen möchtest.",
+        "Geh zum Tab <strong>Einstellungen</strong> und scrolle nach unten zum Bereich <strong>Gefahrenzone</strong>.",
+        "Tippe unter <strong>Konto löschen</strong> auf <strong>Mein Konto löschen</strong>.",
+        "Gib zur Bestätigung <strong>LÖSCHEN</strong> ein und tippe erneut auf <strong>Mein Konto löschen</strong>."
+      ],
+      "steps_note": "Dein Konto wird sofort nach der Bestätigung gelöscht. Du wirst abgemeldet, und das lässt sich nicht rückgängig machen.",
+      "deleted_title": "Was gelöscht wird",
+      "deleted_list": [
+        "Dein Konto und dein Profil: Name, E-Mail-Adresse und Profilbild.",
+        "Deine Mitgliedschaft in all deinen Gruppen.",
+        "Gruppen, in denen du das einzige Mitglied bist, mit allen Inhalten: Ausgaben, Kategorien, wiederkehrende Ausgaben, Monatsabschlüsse und Belegfotos."
+      ],
+      "shared_title": "Gruppen, die du mit anderen teilst",
+      "shared_paragraphs": [
+        "Gruppen mit weiteren Mitgliedern werden nicht gelöscht. Du wirst daraus entfernt, und falls du Inhaber warst, übernimmt ein anderes Mitglied diese Rolle.",
+        "Die Ausgaben, die du dort erfasst hast, einschließlich angehängter Belegfotos, bleiben für die anderen Mitglieder als Teil des gemeinsamen Gruppenverlaufs sichtbar, damit ihre vergangenen Monate und Salden stimmen. Sie sind dann nicht mehr mit deinem Profil verknüpft."
+      ],
+      "subscription_title": "Das Löschen des Kontos beendet dein Abo nicht",
+      "subscription_intro": "Wenn du HomePot Pro hast, wird dein Abo über Apple oder Google abgerechnet, nicht über uns. Das Löschen deines Kontos kündigt es nicht. Kündige es also selbst, am besten bevor du dein Konto löschst:",
+      "subscription_list": [
+        "<strong>iPhone oder iPad:</strong> Einstellungen-App > dein Name > Abonnements > HomePot > Abonnement kündigen.",
+        "<strong>Android:</strong> Google Play Store > Profilsymbol > Zahlungen und Abos > Abos > HomePot > Abo kündigen."
+      ],
+      "email_title": "Löschung per E-Mail beantragen",
+      "email_paragraphs": [
+        "Wenn du keinen Zugriff mehr auf die App hast, schreib eine E-Mail an {email} – von der E-Mail-Adresse, die mit deinem HomePot-Konto verknüpft ist, und mit dem Betreff „{subject}“.",
+        "Wir bearbeiten deine Anfrage innerhalb von 30 Tagen und bestätigen dir per E-Mail, sobald dein Konto gelöscht ist. Kommt die Anfrage nicht von der E-Mail-Adresse des Kontos, bitten wir dich eventuell, nachzuweisen, dass das Konto dir gehört."
+      ],
+      "email_subject_label": "Betreff",
+      "email_subject": "Delete my account",
+      "email_to_label": "An",
+      "email_button": "Löschanfrage senden",
+      "notes_title": "Gut zu wissen",
+      "notes_list": [
+        "Die Löschung erfolgt sofort und endgültig. Wir können ein gelöschtes Konto und seine Daten nicht wiederherstellen.",
+        "Wenn du die App deinstallierst, werden dein Konto und deine Daten nicht gelöscht.",
+        "Du kannst auch einzelne Daten löschen, ohne dein Konto aufzugeben: dein Profilbild entfernen, eine Gruppe verlassen oder eine Gruppe löschen, deren Inhaber du bist – alles direkt in der App."
+      ],
+      "privacy_note": "Mehr dazu, wie wir mit deinen Daten umgehen, findest du in unserer {link}.",
+      "privacy_link": "Datenschutzrichtlinie"
+    },
+    "notFound": {
+      "title": "Seite nicht gefunden | HomePot",
+      "h1": "Seite nicht gefunden",
+      "body": "Die gesuchte Seite gibt es nicht oder sie wurde verschoben.",
+      "home": "Zur Startseite"
+    },
+    "join": {
+      "title": "Einer Gruppe beitreten | HomePot",
+      "eyebrow": "Gruppeneinladung",
+      "h1": "Du wurdest in eine Gruppe eingeladen",
+      "intro": "Jemand hat dich eingeladen, Ausgaben mit HomePot zu teilen. Mit diesem Einladungscode trittst du der Gruppe bei.",
+      "code_label": "Einladungscode",
+      "open_app": "In der App öffnen",
+      "copy_code": "Code kopieren",
+      "copied": "Kopiert",
+      "copy_failed": "Der Code konnte nicht kopiert werden. Markiere ihn und kopiere ihn manuell.",
+      "install_title": "Du hast HomePot noch nicht?",
+      "step1": "Installiere HomePot aus dem App Store.",
+      "step2": "Öffne danach diesen Einladungslink erneut oder gib den Code unter „Einer Gruppe beitreten“ ein.",
+      "app_store_alt": "Laden im App Store",
+      "coming_soon": "Demnächst"
+    },
+    "resetPassword": {
+      "title": "Passwort zurücksetzen | HomePot",
+      "h1": "Passwort zurücksetzen",
+      "checking": "Link wird geprüft…",
+      "intro": "Wähle ein neues Passwort für dein HomePot-Konto.",
+      "new_password": "Neues Passwort",
+      "confirm_password": "Neues Passwort bestätigen",
+      "show_password": "Passwort anzeigen",
+      "rules_title": "Dein Passwort braucht:",
+      "rule_length": "Mindestens 6 Zeichen",
+      "rule_lower": "Einen Kleinbuchstaben",
+      "rule_upper": "Einen Großbuchstaben",
+      "rule_digit": "Eine Ziffer",
+      "rule_symbol": "Ein Sonderzeichen, z. B. ! @ # $ %",
+      "rule_match": "Beide Passwörter stimmen überein",
+      "rule_ok": "erfüllt",
+      "rule_missing": "fehlt",
+      "submit": "Passwort speichern",
+      "submitting": "Wird gespeichert…",
+      "err_rules": "Dein neues Passwort erfüllt noch nicht alle Anforderungen.",
+      "err_mismatch": "Die Passwörter stimmen nicht überein.",
+      "err_same": "Das neue Passwort muss sich von deinem aktuellen unterscheiden.",
+      "err_weak": "Dieses Passwort ist nicht sicher genug. Achte darauf, dass es alle Anforderungen erfüllt, oder wähle ein weniger gängiges.",
+      "err_session": "Deine Sitzung zum Zurücksetzen ist abgelaufen. Fordere in der HomePot-App einen neuen Link an und versuche es erneut.",
+      "err_rate": "Zu viele Versuche. Warte ein paar Minuten und versuche es dann erneut.",
+      "err_generic": "Dein Passwort konnte nicht geändert werden. Prüfe deine Verbindung und versuche es erneut.",
+      "invalid_title": "Dieser Link ist ungültig oder abgelaufen",
+      "invalid_body": "Links zum Zurücksetzen des Passworts funktionieren nur einmal und laufen nach einer Weile ab. Fordere in der HomePot-App einen neuen an: Tippe auf dem Anmeldebildschirm auf „Passwort vergessen?“.",
+      "network_title": "Dein Link konnte nicht geprüft werden",
+      "network_body": "Prüfe deine Internetverbindung und öffne den Link aus der E-Mail erneut. Wenn es weiterhin nicht klappt, fordere in der HomePot-App einen neuen an.",
+      "load_title": "Die Seite wurde nicht richtig geladen",
+      "load_body": "Prüfe deine Internetverbindung und lade die Seite neu.",
+      "success_title": "Passwort aktualisiert",
+      "success_body": "Dein neues Passwort ist eingerichtet. Verwende es, wenn du dich das nächste Mal bei HomePot anmeldest.",
+      "success_hint": "Bist du am Computer? Öffne HomePot auf deinem Handy und melde dich mit deinem neuen Passwort an.",
+      "open_app": "HomePot öffnen"
     }
   }
 }

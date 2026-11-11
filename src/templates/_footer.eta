@@ -46,6 +46,7 @@
         <ul class="space-y-2 text-sm text-gray-500">
           <li><a href="/privacy" class="hover:text-terracotta transition-colors"><%= it.ui.footer.privacy %></a></li>
           <li><a href="/terms" class="hover:text-terracotta transition-colors"><%= it.ui.footer.terms %></a></li>
+          <li><a href="<%= (it.locale === 'en' ? '' : '/' + it.locale) %>/delete-account/" class="hover:text-terracotta transition-colors"><%= it.ui.footer.delete_account %></a></li>
         </ul>
       </div>
     </div>

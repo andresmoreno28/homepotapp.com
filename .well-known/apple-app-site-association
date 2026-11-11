@@ -1,0 +1,22 @@
+{
+  "applinks": {
+    "apps": [],
+    "details": [
+      {
+        "appIDs": [
+          "F69JJSZC9V.com.homepot.app"
+        ],
+        "components": [
+          {
+            "/": "/join/*",
+            "comment": "Group invite links"
+          }
+        ],
+        "appID": "F69JJSZC9V.com.homepot.app",
+        "paths": [
+          "/join/*"
+        ]
+      }
+    ]
+  }
+}

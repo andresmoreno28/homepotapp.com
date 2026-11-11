@@ -6,7 +6,8 @@
     "nav": {
       "download": "Download",
       "compare": "Compare",
-      "resources": "Resources"
+      "resources": "Resources",
+      "language": "Language"
     },
     "footer": {
       "desc": "Shared expenses made simple for couples, roommates, and families.",
@@ -23,6 +24,7 @@
       "legal_title": "Legal",
       "privacy": "Privacy Policy",
       "terms": "Terms of Service",
+      "delete_account": "Delete account",
       "copyright": "© 2026 HomePot. All rights reserved."
     },
     "cta": {
@@ -629,6 +631,118 @@
           }
         ]
       }
+    },
+    "deleteAccount": {
+      "title": "Delete your HomePot account",
+      "description": "How to delete your HomePot account from the app or by email, what data is deleted, and what happens to shared groups and subscriptions.",
+      "eyebrow": "Account deletion",
+      "h1": "How to delete your HomePot account",
+      "intro": "HomePot is a shared expenses app for couples, roommates and families. This page explains how to delete your HomePot account and its data, what is deleted and what stays in the groups you share with other people.",
+      "app_label": "App",
+      "developer_label": "Developer",
+      "updated": "Updated November 2026",
+      "steps_title": "Delete your account in the app",
+      "steps_intro": "The quickest way is from the app itself. It only takes a minute:",
+      "steps": [
+        "Open HomePot and sign in with the account you want to delete.",
+        "Go to the <strong>Settings</strong> tab and scroll down to the <strong>Danger zone</strong> section.",
+        "Under <strong>Delete account</strong>, tap <strong>Delete my account</strong>.",
+        "Type <strong>DELETE</strong> to confirm and tap <strong>Delete my account</strong> again."
+      ],
+      "steps_note": "Your account is deleted as soon as you confirm. You will be signed out and this cannot be undone.",
+      "deleted_title": "What gets deleted",
+      "deleted_list": [
+        "Your account and profile: your name, email address and profile photo.",
+        "Your membership in all of your groups.",
+        "Groups where you are the only member, with everything in them: expenses, categories, recurring expenses, monthly closings and receipt photos."
+      ],
+      "shared_title": "Groups you share with other people",
+      "shared_paragraphs": [
+        "Groups that still have other members are not deleted. You are removed from them and, if you were the owner, another member becomes the owner.",
+        "The expenses you recorded in those groups, including any receipt photos attached to them, remain visible to the other members as part of the group's shared history, so their past months and balances stay correct. They are no longer linked to your profile."
+      ],
+      "subscription_title": "Deleting your account does not cancel your subscription",
+      "subscription_intro": "If you have HomePot Pro, your subscription is billed by Apple or Google, not by us. Deleting your account does not cancel it, so cancel it yourself, ideally before you delete your account:",
+      "subscription_list": [
+        "<strong>iPhone or iPad:</strong> Settings app > your name > Subscriptions > HomePot > Cancel Subscription.",
+        "<strong>Android:</strong> Google Play Store > profile icon > Payments & subscriptions > Subscriptions > HomePot > Cancel subscription."
+      ],
+      "email_title": "Request deletion by email",
+      "email_paragraphs": [
+        "If you can no longer access the app, send an email to {email} from the email address linked to your HomePot account, with the subject \"{subject}\".",
+        "We will process your request within 30 days and reply to confirm once your account has been deleted. If the request does not come from the account's email address, we may ask you to verify that the account is yours."
+      ],
+      "email_subject_label": "Subject",
+      "email_subject": "Delete my account",
+      "email_to_label": "To",
+      "email_button": "Send deletion request",
+      "notes_title": "Good to know",
+      "notes_list": [
+        "Deletion is immediate and permanent. We cannot restore a deleted account or its data.",
+        "Uninstalling the app does not delete your account or your data.",
+        "You can also delete some data without closing your account: remove your profile photo, leave a group or delete a group you own, all from the app."
+      ],
+      "privacy_note": "For more details on how we handle your data, see our {link}.",
+      "privacy_link": "Privacy Policy"
+    },
+    "notFound": {
+      "title": "Page not found | HomePot",
+      "h1": "Page not found",
+      "body": "The page you're looking for doesn't exist or has been moved.",
+      "home": "Back to home"
+    },
+    "join": {
+      "title": "Join a group | HomePot",
+      "eyebrow": "Group invite",
+      "h1": "You've been invited to a group",
+      "intro": "Someone has invited you to share expenses on HomePot. Use this invite code to join their group.",
+      "code_label": "Invite code",
+      "open_app": "Open in app",
+      "copy_code": "Copy code",
+      "copied": "Copied",
+      "copy_failed": "Couldn't copy the code. Select it and copy it manually.",
+      "install_title": "Don't have HomePot yet?",
+      "step1": "Install HomePot from the App Store.",
+      "step2": "Then open this invite link again, or enter the code in \"Join a group\".",
+      "app_store_alt": "Download on the App Store",
+      "coming_soon": "Coming soon"
+    },
+    "resetPassword": {
+      "title": "Reset your password | HomePot",
+      "h1": "Reset your password",
+      "checking": "Checking your link…",
+      "intro": "Choose a new password for your HomePot account.",
+      "new_password": "New password",
+      "confirm_password": "Confirm new password",
+      "show_password": "Show password",
+      "rules_title": "Your password needs:",
+      "rule_length": "At least 6 characters",
+      "rule_lower": "One lowercase letter",
+      "rule_upper": "One uppercase letter",
+      "rule_digit": "One number",
+      "rule_symbol": "One symbol, such as ! @ # $ %",
+      "rule_match": "Both passwords match",
+      "rule_ok": "done",
+      "rule_missing": "missing",
+      "submit": "Update password",
+      "submitting": "Updating…",
+      "err_rules": "Your new password doesn't meet all the requirements yet.",
+      "err_mismatch": "The passwords don't match.",
+      "err_same": "Your new password must be different from your current one.",
+      "err_weak": "This password isn't secure enough. Make sure it meets every requirement, or choose a less common one.",
+      "err_session": "Your reset session has expired. Request a new link from the HomePot app and try again.",
+      "err_rate": "Too many attempts. Wait a few minutes and try again.",
+      "err_generic": "We couldn't update your password. Check your connection and try again.",
+      "invalid_title": "This link is invalid or has expired",
+      "invalid_body": "Password reset links can only be used once and expire after a while. Request a new one from the HomePot app: on the sign-in screen, tap \"Forgot password?\".",
+      "network_title": "We couldn't check your link",
+      "network_body": "Check your internet connection, then open the link from the email again. If it still doesn't work, request a new one from the HomePot app.",
+      "load_title": "This page didn't load properly",
+      "load_body": "Check your internet connection and reload the page.",
+      "success_title": "Password updated",
+      "success_body": "Your new password is ready. Use it the next time you sign in to HomePot.",
+      "success_hint": "On a computer? Open HomePot on your phone and sign in with your new password.",
+      "open_app": "Open HomePot"
     }
   }
 }

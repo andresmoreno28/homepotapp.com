@@ -6,7 +6,8 @@
     "nav": {
       "download": "Baixar",
       "compare": "Comparar",
-      "resources": "Recursos"
+      "resources": "Recursos",
+      "language": "Idioma"
     },
     "footer": {
       "desc": "Despesas compartilhadas simplificadas para casais, colegas de apartamento e famílias.",
@@ -23,6 +24,7 @@
       "legal_title": "Legal",
       "privacy": "Política de privacidade",
       "terms": "Termos de serviço",
+      "delete_account": "Excluir conta",
       "copyright": "© 2026 HomePot. Todos os direitos reservados."
     },
     "cta": {
@@ -629,6 +631,118 @@
           }
         ]
       }
+    },
+    "deleteAccount": {
+      "title": "Excluir sua conta do HomePot",
+      "description": "Como excluir sua conta do HomePot pelo app ou por e-mail, quais dados são apagados e o que acontece com grupos compartilhados e assinaturas.",
+      "eyebrow": "Exclusão de conta",
+      "h1": "Como excluir sua conta do HomePot",
+      "intro": "O HomePot é um app de despesas compartilhadas para casais, colegas de apartamento e famílias. Esta página explica como excluir sua conta do HomePot e os dados dela, o que é apagado e o que continua nos grupos que você compartilha com outras pessoas.",
+      "app_label": "App",
+      "developer_label": "Desenvolvedor",
+      "updated": "Atualizado em novembro de 2026",
+      "steps_title": "Exclua sua conta pelo app",
+      "steps_intro": "O jeito mais rápido é pelo próprio app. Leva só um minuto:",
+      "steps": [
+        "Abra o HomePot e entre com a conta que você quer excluir.",
+        "Vá até a aba <strong>Ajustes</strong> e role até a seção <strong>Zona de perigo</strong>.",
+        "Em <strong>Excluir conta</strong>, toque em <strong>Excluir minha conta</strong>.",
+        "Digite <strong>EXCLUIR</strong> para confirmar e toque de novo em <strong>Excluir minha conta</strong>."
+      ],
+      "steps_note": "Sua conta é excluída assim que você confirma. Sua sessão será encerrada e não é possível desfazer.",
+      "deleted_title": "O que é excluído",
+      "deleted_list": [
+        "Sua conta e seu perfil: nome, endereço de e-mail e foto de perfil.",
+        "Sua participação em todos os seus grupos.",
+        "Os grupos em que você é o único membro, com todo o conteúdo: despesas, categorias, despesas recorrentes, fechamentos mensais e fotos de recibos."
+      ],
+      "shared_title": "Grupos que você compartilha com outras pessoas",
+      "shared_paragraphs": [
+        "Os grupos que ainda têm outros membros não são excluídos. Você deixa de fazer parte deles e, se era o dono, outro membro passa a ser o dono.",
+        "As despesas que você registrou nesses grupos, incluindo as fotos de recibos anexadas, continuam visíveis para os outros membros como parte do histórico compartilhado do grupo, para que os meses anteriores e os saldos deles continuem corretos. Elas deixam de estar vinculadas ao seu perfil."
+      ],
+      "subscription_title": "Excluir a conta não cancela sua assinatura",
+      "subscription_intro": "Se você tem o HomePot Pro, a assinatura é cobrada pela Apple ou pelo Google, não por nós. Excluir a conta não cancela a assinatura, então cancele você mesmo, de preferência antes de excluir a conta:",
+      "subscription_list": [
+        "<strong>iPhone ou iPad:</strong> app Ajustes > seu nome > Assinaturas > HomePot > Cancelar Assinatura.",
+        "<strong>Android:</strong> Google Play Store > ícone do perfil > Pagamentos e assinaturas > Assinaturas > HomePot > Cancelar assinatura."
+      ],
+      "email_title": "Pedir a exclusão por e-mail",
+      "email_paragraphs": [
+        "Se você não consegue mais acessar o app, envie um e-mail para {email} a partir do endereço vinculado à sua conta do HomePot, com o assunto “{subject}”.",
+        "Vamos processar seu pedido em até 30 dias e responder confirmando quando a conta for excluída. Se o pedido não vier do e-mail da conta, podemos pedir que você comprove que a conta é sua."
+      ],
+      "email_subject_label": "Assunto",
+      "email_subject": "Delete my account",
+      "email_to_label": "Para",
+      "email_button": "Enviar pedido de exclusão",
+      "notes_title": "Bom saber",
+      "notes_list": [
+        "A exclusão é imediata e permanente. Não conseguimos restaurar uma conta excluída nem os dados dela.",
+        "Desinstalar o app não exclui sua conta nem seus dados.",
+        "Você também pode apagar alguns dados sem encerrar a conta: remover sua foto de perfil, sair de um grupo ou excluir um grupo do qual você é dono, tudo pelo app."
+      ],
+      "privacy_note": "Para saber mais sobre como tratamos seus dados, veja nossa {link}.",
+      "privacy_link": "Política de privacidade"
+    },
+    "notFound": {
+      "title": "Página não encontrada | HomePot",
+      "h1": "Página não encontrada",
+      "body": "A página que você procura não existe ou foi movida.",
+      "home": "Voltar ao início"
+    },
+    "join": {
+      "title": "Entre em um grupo | HomePot",
+      "eyebrow": "Convite para grupo",
+      "h1": "Você foi convidado para um grupo",
+      "intro": "Alguém convidou você para dividir despesas no HomePot. Use este código de convite para entrar no grupo.",
+      "code_label": "Código de convite",
+      "open_app": "Abrir no app",
+      "copy_code": "Copiar código",
+      "copied": "Copiado",
+      "copy_failed": "Não foi possível copiar o código. Selecione e copie manualmente.",
+      "install_title": "Ainda não tem o HomePot?",
+      "step1": "Instale o HomePot pela App Store.",
+      "step2": "Depois, abra este link de convite de novo ou digite o código em “Entrar em um grupo”.",
+      "app_store_alt": "Baixar na App Store",
+      "coming_soon": "Em breve"
+    },
+    "resetPassword": {
+      "title": "Redefinir senha | HomePot",
+      "h1": "Redefina sua senha",
+      "checking": "Verificando o link…",
+      "intro": "Escolha uma nova senha para sua conta do HomePot.",
+      "new_password": "Nova senha",
+      "confirm_password": "Confirme a nova senha",
+      "show_password": "Mostrar senha",
+      "rules_title": "Sua senha precisa ter:",
+      "rule_length": "Pelo menos 6 caracteres",
+      "rule_lower": "Uma letra minúscula",
+      "rule_upper": "Uma letra maiúscula",
+      "rule_digit": "Um número",
+      "rule_symbol": "Um símbolo, como ! @ # $ %",
+      "rule_match": "As duas senhas são iguais",
+      "rule_ok": "ok",
+      "rule_missing": "pendente",
+      "submit": "Salvar nova senha",
+      "submitting": "Salvando…",
+      "err_rules": "Sua nova senha ainda não atende a todos os requisitos.",
+      "err_mismatch": "As senhas não coincidem.",
+      "err_same": "A nova senha precisa ser diferente da atual.",
+      "err_weak": "Essa senha não é segura o suficiente. Confira se ela atende a todos os requisitos ou escolha uma menos comum.",
+      "err_session": "Sua sessão de redefinição expirou. Peça um novo link pelo app HomePot e tente de novo.",
+      "err_rate": "Muitas tentativas. Aguarde alguns minutos e tente de novo.",
+      "err_generic": "Não foi possível atualizar sua senha. Verifique sua conexão e tente de novo.",
+      "invalid_title": "Este link é inválido ou expirou",
+      "invalid_body": "Os links de redefinição de senha só podem ser usados uma vez e expiram depois de um tempo. Peça um novo pelo app HomePot: na tela de login, toque em “Esqueceu a senha?”.",
+      "network_title": "Não foi possível verificar seu link",
+      "network_body": "Verifique sua conexão com a internet e abra de novo o link do e-mail. Se ainda não funcionar, peça um novo link pelo app HomePot.",
+      "load_title": "A página não carregou direito",
+      "load_body": "Verifique sua conexão com a internet e recarregue a página.",
+      "success_title": "Senha atualizada",
+      "success_body": "Sua nova senha está pronta. Use-a na próxima vez que entrar no HomePot.",
+      "success_hint": "Está no computador? Abra o HomePot no celular e entre com sua nova senha.",
+      "open_app": "Abrir o HomePot"
     }
   }
 }

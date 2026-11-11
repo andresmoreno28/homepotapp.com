@@ -1,0 +1,76 @@
+<% const s = it.s; const e = it.esc; %>
+    <!-- ========== JOIN (shown for /join/CODE) ========== -->
+    <section id="join-view" aria-labelledby="join-h1">
+      <div class="bg-white rounded-3xl shadow-sm p-6 sm:p-8 text-center">
+        <div class="inline-flex items-center gap-2 bg-sage/10 text-sage rounded-full px-4 py-2 text-sm font-medium mb-5">
+          <span class="material-symbols-outlined text-lg" aria-hidden="true">group_add</span>
+          <span data-t="join.eyebrow"><%= e(s['join.eyebrow']) %></span>
+        </div>
+        <h1 id="join-h1" class="text-2xl sm:text-3xl font-extrabold text-darkBlue leading-tight mb-3" data-t="join.h1"><%= e(s['join.h1']) %></h1>
+        <p class="text-gray-500 mb-6" data-t="join.intro"><%= e(s['join.intro']) %></p>
+
+        <div class="bg-cream/70 border border-gray-100 rounded-2xl px-4 py-5 mb-4">
+          <p id="join-code-label" class="text-xs font-semibold uppercase tracking-wider text-gray-400 mb-2" data-t="join.code_label"><%= e(s['join.code_label']) %></p>
+          <p id="join-code" class="font-mono text-3xl sm:text-4xl font-bold text-darkBlue tracking-wider break-all select-all" aria-describedby="join-code-label"></p>
+        </div>
+
+        <a id="join-open" href="<%= it.appScheme %>join/" data-base="<%= it.appScheme %>join/" class="flex items-center justify-center gap-2 w-full bg-terracotta text-white rounded-full py-4 px-6 font-semibold hover:bg-terracotta/90 transition-colors mb-3">
+          <span class="material-symbols-outlined text-xl" aria-hidden="true">open_in_new</span>
+          <span data-t="join.open_app"><%= e(s['join.open_app']) %></span>
+        </a>
+        <button type="button" id="join-copy" class="flex items-center justify-center gap-2 w-full bg-white text-darkBlue rounded-full py-3.5 px-6 font-semibold ring-1 ring-gray-200 hover:ring-terracotta transition-colors">
+          <span id="join-copy-icon" class="material-symbols-outlined text-xl" aria-hidden="true">content_copy</span>
+          <span id="join-copy-label" data-t="join.copy_code"><%= e(s['join.copy_code']) %></span>
+        </button>
+        <p id="join-copy-status" class="sr-only" role="status" aria-live="polite"></p>
+        <p id="join-copy-error" class="text-sm text-red-600 font-medium mt-3" role="alert" hidden></p>
+      </div>
+
+      <div class="bg-white rounded-3xl shadow-sm p-6 sm:p-8 mt-4">
+        <h2 class="text-lg font-bold text-darkBlue mb-4" data-t="join.install_title"><%= e(s['join.install_title']) %></h2>
+        <ol class="space-y-3 mb-6">
+          <li class="flex items-start gap-3">
+            <span class="flex-shrink-0 w-7 h-7 rounded-full bg-terracotta/10 text-terracotta text-sm font-bold flex items-center justify-center" aria-hidden="true">1</span>
+            <span class="text-gray-600 leading-relaxed pt-0.5" data-t="join.step1"><%= e(s['join.step1']) %></span>
+          </li>
+          <li class="flex items-start gap-3">
+            <span class="flex-shrink-0 w-7 h-7 rounded-full bg-terracotta/10 text-terracotta text-sm font-bold flex items-center justify-center" aria-hidden="true">2</span>
+            <span class="text-gray-600 leading-relaxed pt-0.5" data-t="join.step2"><%= e(s['join.step2']) %></span>
+          </li>
+        </ol>
+        <div class="flex flex-wrap items-center justify-center gap-3">
+          <a href="<%= it.appStoreUrl %>" target="_blank" rel="noopener" class="hover:opacity-80 transition-opacity">
+            <img src="/assets/badges/download-<%= it.locale %>.svg" data-lsrc="/assets/badges/download-{lang}.svg" alt="<%= e(s['join.app_store_alt']) %>" data-t-alt="join.app_store_alt" style="height:48px;width:auto;">
+          </a>
+<% if (it.playStoreLive) { %>
+          <a href="<%= it.playStoreUrl %>" target="_blank" rel="noopener" class="inline-flex items-center gap-2 h-12 px-4 rounded-xl bg-darkBlue text-white text-sm font-semibold hover:opacity-80 transition-opacity">
+            <span class="material-symbols-outlined text-xl" aria-hidden="true">android</span>
+            <span>Google Play</span>
+          </a>
+<% } else { %>
+          <span class="inline-flex items-center gap-2 h-12 px-4 rounded-xl border border-dashed border-gray-300 text-gray-400 text-sm font-semibold cursor-not-allowed select-none" aria-disabled="true">
+            <span class="material-symbols-outlined text-xl" aria-hidden="true">android</span>
+            <span>Google Play</span>
+            <span class="text-[11px] uppercase tracking-wide bg-gray-100 text-gray-500 rounded-full px-2 py-0.5" data-t="join.coming_soon"><%= e(s['join.coming_soon']) %></span>
+          </span>
+<% } %>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== 404 ========== -->
+    <section id="notfound-view" class="text-center py-8" aria-labelledby="nf-h1">
+      <p class="text-7xl sm:text-8xl font-extrabold text-terracotta/80 mb-4" aria-hidden="true">404</p>
+      <h1 id="nf-h1" class="text-3xl sm:text-4xl font-extrabold text-darkBlue mb-3" data-t="nf.h1"><%= e(s['nf.h1']) %></h1>
+      <p class="text-gray-500 text-lg mb-8" data-t="nf.body"><%= e(s['nf.body']) %></p>
+      <div class="flex flex-col sm:flex-row gap-3 justify-center">
+        <a href="/" data-lhref="/" class="inline-flex items-center justify-center gap-2 bg-terracotta text-white rounded-full py-3.5 px-6 font-semibold hover:bg-terracotta/90 transition-colors">
+          <span class="material-symbols-outlined text-xl" aria-hidden="true">home</span>
+          <span data-t="nf.home"><%= e(s['nf.home']) %></span>
+        </a>
+        <a href="/support" class="inline-flex items-center justify-center gap-2 bg-white text-darkBlue rounded-full py-3.5 px-6 font-semibold ring-1 ring-gray-200 hover:ring-terracotta transition-colors">
+          <span class="material-symbols-outlined text-xl" aria-hidden="true">help</span>
+          <span data-t="common.help"><%= e(s['common.help']) %></span>
+        </a>
+      </div>
+    </section>

@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<%/*
+  Minimal shell for utility pages that live at ONE URL and pick their language in
+  the browser (404 + /join/ fallback, /reset-password/). All 5 string sets are
+  inlined; the server-rendered text is the default locale (no-JS fallback).
+  Every URL here must be absolute: 404.html is served at arbitrary nested paths.
+*/%>
+<html lang="<%= it.locale %>">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="color-scheme" content="light">
+  <meta name="robots" content="<%= it.robots %>">
+<% if (it.referrer) { %>
+  <meta name="referrer" content="<%= it.referrer %>">
+<% } %>
+  <title data-t="<%= it.titleKey %>"><%= it.esc(it.s[it.titleKey]) %></title>
+  <link rel="icon" type="image/png" href="/assets/favicon.png">
+
+  <!-- Google Fonts (non-blocking, swap) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" media="print" onload="this.media='all'">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&display=swap" media="print" onload="this.media='all'">
+  <noscript>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&display=swap">
+  </noscript>
+
+  <!-- Pre-compiled Tailwind CSS -->
+  <link rel="stylesheet" href="/assets/tailwind.css">
+
+  <style>
+    [hidden] { display: none !important; }
+    .grain-bg { position: relative; }
+    .grain-bg::before {
+      content: ""; position: absolute; inset: 0;
+      opacity: 0.03; pointer-events: none; z-index: 1;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+    }
+    .material-symbols-outlined { user-select: none; }
+    /* 404 page: pick the view before first paint (class set in <head> by not-found.js) */
+    html.hp-join #notfound-view { display: none !important; }
+    html:not(.hp-join) #join-view { display: none !important; }
+    /* Password rules checklist */
+    .hp-rule { color: #9ca3af; transition: color .15s ease; }
+    .hp-rule[data-ok="true"] { color: #3D405B; }
+    .hp-rule[data-ok="true"] .hp-rule-icon { color: #81B29A; }
+    /* Spinner */
+    .hp-spinner {
+      width: 1.25rem; height: 1.25rem; border-radius: 9999px; flex-shrink: 0;
+      border: 2px solid rgba(224,122,95,.25); border-top-color: #E07A5F;
+      animation: hp-spin .8s linear infinite;
+    }
+    @keyframes hp-spin { to { transform: rotate(360deg); } }
+    @media (prefers-reduced-motion: reduce) { .hp-spinner { animation-duration: 2.4s; } }
+  </style>
+
+  <script>window.__HP_I18N = <%~ it.i18nJson %>;</script>
+<% for (const src of (it.headScripts || [])) { %>
+  <script src="<%= src %>"></script>
+<% } %>
+  <script src="/src/js/utility-i18n.js"></script>
+</head>
+<body class="font-sans text-darkBlue antialiased bg-cream min-h-screen flex flex-col">
+
+<!-- ========== HEADER ========== -->
+<header class="fixed top-0 inset-x-0 z-50" style="backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); background: rgba(244,241,222,0.8);">
+  <div class="max-w-7xl mx-auto flex items-center justify-between px-4 sm:px-6 py-4">
+    <a href="/" data-lhref="/" class="flex items-center gap-2">
+      <img src="/assets/favicon-40.png" alt="HomePot" class="w-10 h-10 rounded-xl">
+      <img src="/assets/homepot-wordmark.png" alt="" class="h-7 sm:h-9">
+    </a>
+    <div role="group" aria-label="<%= it.esc(it.s['common.language']) %>" data-t-aria-label="common.language" class="flex items-center gap-0 lg:gap-1 rounded-full lg:px-2 lg:py-1" style="background: rgba(244,241,222,0.6);">
+<% for (const lang of it.locales) { %>
+      <button type="button" data-set-lang="<%= lang %>" lang="<%= lang %>" aria-pressed="<%= lang === it.locale ? 'true' : 'false' %>" class="px-1.5 py-1 lg:px-3 rounded-full text-[11px] lg:text-sm transition-colors <%= lang === it.locale ? 'font-semibold text-darkBlue' : 'text-darkBlue/40' %>"><%= lang.toUpperCase() %></button>
+<% } %>
+    </div>
+  </div>
+</header>
+
+<main class="flex-1 bg-cream grain-bg relative overflow-hidden pt-28 pb-16 px-4 sm:px-6">
+  <div class="absolute w-[400px] h-[400px] bg-yellowSoft rounded-full blur-[100px] opacity-15 -top-20 -right-20" aria-hidden="true"></div>
+  <div class="absolute w-[300px] h-[300px] bg-sage rounded-full blur-[100px] opacity-10 bottom-0 -left-10" aria-hidden="true"></div>
+  <div class="relative z-10 max-w-md mx-auto">
+<%~ it.body %>
+  </div>
+</main>
+
+<!-- ========== FOOTER ========== -->
+<footer class="bg-white border-t border-gray-100">
+  <div class="max-w-7xl mx-auto px-6 py-8 flex flex-col md:flex-row items-center justify-between gap-4 text-sm">
+    <nav class="flex flex-wrap justify-center gap-x-5 gap-y-2 text-gray-500">
+      <a href="/support" class="hover:text-terracotta transition-colors" data-t="common.help"><%= it.esc(it.s['common.help']) %></a>
+      <a href="/privacy" class="hover:text-terracotta transition-colors" data-t="common.privacy"><%= it.esc(it.s['common.privacy']) %></a>
+      <a href="/terms" class="hover:text-terracotta transition-colors" data-t="common.terms"><%= it.esc(it.s['common.terms']) %></a>
+      <a href="/delete-account/" data-lhref="/delete-account/" class="hover:text-terracotta transition-colors" data-t="common.delete_account"><%= it.esc(it.s['common.delete_account']) %></a>
+      <a href="mailto:<%= it.contactEmail %>" class="hover:text-terracotta transition-colors"><%= it.contactEmail %></a>
+    </nav>
+    <p class="text-gray-400" data-t="common.copyright"><%= it.esc(it.s['common.copyright']) %></p>
+  </div>
+</footer>
+
+<script>HP.mount();</script>
+<% for (const src of (it.bodyScripts || [])) { %>
+<script src="<%= src %>" defer></script>
+<% } %>
+
+</body>
+</html>
