@@ -1,21 +1,34 @@
 <!DOCTYPE html>
+<%/*
+  Shell of the content pages (compare, guides, resources, from-splitwise): one page per language,
+  in the landing's identity. Styles: src/styles/site.css.
+  The band is the landing's: lockup, three links, language menu. In Spanish the links sit in the
+  comp's boxes; the other languages lay them out from the same right edge (see site.css).
+*/%>
+<% const e = it.esc; const n = it.nav; %>
 <html lang="<%= it.locale %>">
 <%~ include('_head', it) %>
-<body class="font-sans text-darkBlue antialiased<%= it.bodyClass ? ' ' + it.bodyClass : '' %>">
+<body>
 
-<%~ include('_navbar', it) %>
+<header class="band has-nav">
+  <a class="brand" href="<%= it.homeHref %>"><img src="/assets/brand/logo-horizontal-white.svg" alt="HomePot" width="485" height="100"></a>
+  <nav<%= it.locale === 'es' ? '' : ' class="nav-auto"' %> aria-label="<%= e(n.label) %>">
+    <a class="nav-link" style="--x:1296;--w:200" href="<%= it.homeHref %>#como"><%= n.how %></a>
+    <a class="nav-link" style="--x:1547;--w:100" href="<%= it.homeHref %>#precios"><%= n.pricing %></a>
+    <a class="nav-link" style="--x:1698;--w:135" href="<%= it.prefix %>/compare/"><%= n.compare %></a>
+  </nav>
+  <details class="lang">
+<%~ include('partials/lang-menu', it) %>
+  </details>
+</header>
 
+<main class="page" id="content">
 <%~ it.body %>
+</main>
 
-<%~ include('_footer', it) %>
+<%~ include('partials/foot', it) %>
 
-<script>
-  window.__alternates = <%~ JSON.stringify(it.alternates || {}) %>;
-  window.__locale = <%~ JSON.stringify(it.locale) %>;
-</script>
-<script src="/src/js/lang-switcher.js" defer></script>
-<script src="/src/js/site.js" defer></script>
-<% if (it.extraScripts) { %><%~ it.extraScripts %><% } %>
+<script src="/src/js/lang-menu.js" defer></script>
 <%~ it.analytics || '' %>
 
 </body>

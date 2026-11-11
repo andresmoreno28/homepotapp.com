@@ -3,6 +3,9 @@
   Shell of the utility pages, in the identity of the new landing (green band with the
   lockup, paper, rules, Archivo, same footer). Styles: src/styles/utility.css.
 
+  Shell of the pages that are not part of the per-language tree: the utility pages and the three
+  hand-written ones (support, privacy, terms), which get the band's nav links (it.nav).
+
   Two modes:
   - it.runtime = true  → one URL, language picked in the browser (404, /join/,
     /reset-password/). All 5 string sets are inlined; the server-rendered text is the
@@ -85,8 +88,15 @@
 </head>
 <body>
 
-<header class="band">
+<header class="band<%= it.nav ? ' has-nav' : '' %>">
   <a class="brand" href="<%= it.homeHref %>"<% if (it.runtime) { %> data-lhref="/"<% } %>><img src="/assets/brand/logo-horizontal-white.svg" alt="HomePot" width="485" height="100"></a>
+<% if (it.nav) { %>
+  <nav class="nav-auto" aria-label="<%= e(it.nav.label) %>" data-t-aria-label="common.nav_label">
+    <a class="nav-link" href="/#como" data-lhref="/#como" data-t="common.nav_how"><%= e(it.nav.how) %></a>
+    <a class="nav-link" href="/#precios" data-lhref="/#precios" data-t="common.nav_pricing"><%= e(it.nav.pricing) %></a>
+    <a class="nav-link" href="/compare/" data-lhref="/compare/" data-t="common.nav_compare"><%= e(it.nav.compare) %></a>
+  </nav>
+<% } %>
   <details class="lang">
     <summary aria-label="<%= e(b.language) %>: <%= e(current.name) %>"<% if (it.runtime) { %> data-lang-summary<% } %>><span<% if (it.runtime) { %> data-lang-code<% } %>><%= it.locale.toUpperCase() %></span> <svg viewBox="0 0 12 8" aria-hidden="true"><path d="M0 0h12L6 8z" fill="currentColor"/></svg></summary>
     <ul class="lang-menu">

@@ -1,12 +1,11 @@
 {
   "meta": {
-    "ogLocale": "de_DE"
+    "ogLocale": "de_DE",
+    "numberLocale": "de-DE",
+    "currency": "EUR"
   },
   "ui": {
     "nav": {
-      "download": "Herunterladen",
-      "compare": "Vergleichen",
-      "resources": "Ressourcen",
       "language": "Sprache"
     },
     "brand": {
@@ -17,47 +16,22 @@
       "help": "Hilfe",
       "delete_account": "Mein Konto löschen"
     },
-    "footer": {
-      "desc": "Gemeinsame Ausgaben einfach gemacht — für Paare, WGs und Familien.",
-      "product": "Produkt",
-      "features": "Funktionen",
-      "pricing": "Preise",
-      "download": "Herunterladen",
-      "compare_title": "Vergleichen",
-      "compare_all": "Alle Vergleiche",
-      "compare_splitwise": "HomePot vs Splitwise",
-      "support_title": "Support",
-      "help": "Hilfezentrum",
-      "contact": "Kontakt",
-      "legal_title": "Rechtliches",
-      "privacy": "Datenschutzrichtlinie",
-      "terms": "Nutzungsbedingungen",
-      "delete_account": "Konto löschen",
-      "copyright": "© 2026 HomePot. Alle Rechte vorbehalten."
-    },
-    "cta": {
-      "title": "Noch nicht bereit zu installieren? Teste Pro 1 Monat gratis.",
-      "subtitle": "Lass deine E-Mail hier, lade HomePot herunter, wann du willst, und melde dich mit derselben Adresse an — dein kostenloser Pro-Monat aktiviert sich automatisch.",
-      "placeholder": "Deine E-Mail eingeben",
-      "button": "1 Monat Pro gratis",
-      "success": "Fertig! Lade jetzt HomePot herunter und melde dich mit derselben E-Mail an, um deinen kostenlosen Pro-Monat zu aktivieren.",
-      "error": "Etwas ist schiefgelaufen. Bitte erneut versuchen.",
-      "disclaimer": "Kein Spam. Wenn du HomePot herunterlädst und dich mit derselben E-Mail registrierst, aktiviert sich dein kostenloser Pro-Monat automatisch.",
-      "trust_encrypted": "Verschlüsselt",
-      "trust_gdpr": "DSGVO",
-      "trust_notracking": "Kein Tracking"
+    "yes": "Ja",
+    "no": "Nein",
+    "links": {
+      "all_comparisons": "Alle Vergleiche",
+      "all_guides": "Alle Guides",
+      "resources": "Mehr Ressourcen"
     },
     "resourcesHub": {
-      "title": "HomePot-Ressourcen — Tools, Guides, Vergleiche",
-      "description": "Kostenlose Rechner, ehrliche Vergleiche und praktische Guides fürs Teilen gemeinsamer Ausgaben. Alles an einem Ort.",
+      "title": "HomePot-Ressourcen — Guides und Vergleiche",
+      "description": "Ehrliche Vergleiche und praktische Guides fürs Teilen gemeinsamer Ausgaben. Alles an einem Ort.",
       "icon": "auto_stories",
       "eyebrow": "Alles für geteilte Ausgaben",
-      "h1": "Tools, Guides und ehrliche Vergleiche",
-      "intro": "Kostenlose Rechner, praktische Guides und Seite-an-Seite-Vergleiche mit anderen Ausgabenteilungs-Apps — alles in einem Hub. Jeder Inhalt ist geschrieben, um wirklich zu helfen, nicht um SEO auszutricksen.",
+      "h1": "Guides und ehrliche Vergleiche",
+      "intro": "Praktische Guides und Seite-an-Seite-Vergleiche mit anderen Ausgabenteilungs-Apps — alles in einem Hub. Jeder Inhalt ist geschrieben, um wirklich zu helfen, nicht um SEO auszutricksen.",
       "badge": "Ressource",
-      "cta": "Durchstöbern",
-      "empty_title": "Kommt bald",
-      "empty_body": "Hier kommt regelmäßig neuer Inhalt dazu."
+      "cta": "Durchstöbern"
     },
     "toolsHub": {
       "title": "Kostenlose Rechner fürs Teilen von Ausgaben",
@@ -67,9 +41,7 @@
       "h1": "Kostenlose Rechner für gemeinsame Ausgaben",
       "intro": "Rechne durch, ohne ein Konto anzulegen. Diese browser-basierten Rechner handhaben Reiseaufteilungen, WG-Rechnungen und übliche geteilte Ausgaben. Keine Anmeldung, keine Werbung, kein E-Mail-Zwang.",
       "badge": "Rechner",
-      "cta": "Rechner öffnen",
-      "empty_title": "Mehr Tools sind unterwegs",
-      "empty_body": "Wir fügen bald einen WG-Rechnungs-Rechner und Währungspaar-Tools hinzu."
+      "cta": "Rechner öffnen"
     },
     "guidesHub": {
       "title": "Guides zum Teilen gemeinsamer Ausgaben",
@@ -79,9 +51,7 @@
       "h1": "Guides fürs Teilen gemeinsamer Ausgaben",
       "intro": "Klare, praktische Texte dazu, wie man geteiltes Geld mit WG, Paar, Reise und Familie handhabt. Wir aktualisieren sie, wenn sich Situationen und Best Practices weiterentwickeln.",
       "badge": "Guide",
-      "cta": "Guide lesen",
-      "empty_title": "Guides kommen bald",
-      "empty_body": "Unsere erste Runde Guides wird gerade geschrieben."
+      "cta": "Guide lesen"
     },
     "compareHub": {
       "title": "HomePot vs andere Apps für gemeinsame Ausgaben",
@@ -99,7 +69,6 @@
     },
     "comparison": {
       "eyebrow": "Ehrlicher Vergleich",
-      "cta_promo": "1 Monat Pro gratis",
       "table_header_feature": "Funktion",
       "table_disclaimer": "Alle Angaben spiegeln öffentlich verfügbare Informationen von der offiziellen Splitwise-Website und ihrem App-Store-Eintrag zum Zeitpunkt der Erstellung wider. Bitte prüfe aktuelle Details auf splitwise.com. HomePot ist nicht mit Splitwise, Inc. verbunden.",
       "diff_title": "Was HomePot anders macht",
@@ -111,143 +80,265 @@
   },
   "pages": {
     "home": {
-      "title": "HomePot — Gemeinsame Ausgaben einfach gemacht",
-      "description": "HomePot macht gemeinsame Ausgaben mühelos. Erfasse, teile und begleiche Ausgaben mit deiner Gruppe in Sekunden. Gratis für iOS.",
+      "title": "HomePot · Die gemeinsame Kasse eures Haushalts",
+      "description": "HomePot ist die gemeinsame Kasse für Paare und WGs: Scannt eure Belege, seht, wie viel übrig ist und wie lange es reicht, und schließt den Monat mit einer Überweisung pro Person ab.",
+      "nav": {
+        "how": "So geht’s",
+        "pricing": "Preise",
+        "compare": "Vergleich",
+        "label": "Hauptnavigation",
+        "header": "Kopfbereich",
+        "legal": "Rechtliches"
+      },
+      "lang_label": "Sprache: Deutsch. Sprache ändern",
       "hero": {
-        "badge": "Kostenlos für iOS",
-        "headline": "Schluss mit Streit ums Geld.",
-        "subtitle": "Erfasse, teile und begleiche gemeinsame Ausgaben in Sekunden. Gemacht für Paare, WGs und Familien, die Frieden wollen.",
-        "cta_promo": "1 Monat Pro gratis",
-        "promo_hint": "Aktiviere 1 Monat Pro gratis, wenn du die App lädst und dich mit derselben E-Mail registrierst.",
-        "trust_noads": "Keine Werbung",
-        "trust_notracking": "Kein Tracking",
-        "trust_gdpr": "DSGVO-konform"
+        "h1": "Wisst, wie viel in der Kasse ist und wie lange es reicht.",
+        "sub": "Die Kasse für Paare und WGs: Scannt eure Belege und schließt den Monat mit einer Überweisung pro Person ab."
       },
-      "trust": {
-        "gdpr": "DSGVO-konform",
-        "ccpa": "CCPA-konform",
-        "encryption": "256-Bit-Verschlüsselung",
-        "noads": "Null Werbung, für immer",
-        "notracking": "Kein Tracking",
-        "languages": "5 Sprachen",
-        "currencies": "54 Währungen",
-        "aws": "AWS-Infrastruktur",
-        "delete": "Jederzeit löschen",
-        "ai": "KI-gestützter Scanner"
+      "chart": {
+        "month": "November",
+        "example": "ein Beispielhaushalt",
+        "legend_spend": "Tagesausgaben",
+        "legend_balance": "Geld in der Kasse (Restbetrag)",
+        "aria": "Beispiel November: Am 9. sind 412,30 € in der Kasse; beim aktuellen Ausgabentempo reicht sie bis zum 26.",
+        "aria_m": "Beispiel November: 412,30 € in der Kasse am 9.; reicht bis zum 26.",
+        "today": "Heute · 412,30 € in der Kasse",
+        "lasts": "Reicht bis zum 26."
       },
-      "showcase": {
-        "title": "Feature-Highlights",
-        "subtitle": "Entdecke, was HomePot besonders macht.",
-        "scan_title": "Belege per KI scannen.",
-        "scan_desc": "Richte deine Kamera auf einen Beleg. Betrag, Geschäft, Artikel, Rabatte, Steuern — automatisch erkannt.",
-        "balance_title": "Immer wissen, wer was schuldet.",
-        "balance_desc": "Echtzeit-Salden, Ausgabenaufschlüsselung, fix vs. variabel. Alle sehen dieselben Zahlen, kein Raten mehr.",
-        "balance_total": "Monatsgesamt",
-        "balance_per_person": "SALDO PRO PERSON",
-        "balance_paid": "Bezahlt",
-        "balance_owes": "Schuldet",
-        "balance_transfers": "ZU LEISTENDE ÜBERWEISUNGEN"
+      "summary": {
+        "people": "<b>4 Personen</b> · Carlos, Ana, Marta, Luis",
+        "spend_label": "Ausgaben im Monat",
+        "spend": "1.550,45 €",
+        "close": "Abschluss: <b>Carlos</b> → Ana",
+        "close_amount": "42,10 €"
       },
-      "f1": {
-        "pill": "Smartes Tracking",
-        "title": "Ausgaben in Sekunden erfassen",
-        "desc": "Ein Tipp, Kategorie wählen, fertig. Keine peinlichen »Wer hat was bezahlt?«-Gespräche mehr.",
-        "bullet": "Smarte Kategorien & wiederkehrende Ausgaben"
-      },
-      "f2": {
-        "pill": "KI-gestützt",
-        "title": "Belege per KI scannen",
-        "desc": "Halte deine Kamera auf einen Beleg. Betrag, Händler, Artikel — automatisch erkannt.",
-        "bullet": "Einzelposten & Konfidenzerkennung"
-      },
-      "f3": {
-        "pill": "Echtzeit",
-        "title": "Immer wissen, wer wem was schuldet",
-        "desc": "Live-Salden, Ausgabenübersicht, fix vs. variabel. Alle sehen dieselben Zahlen, kein Raten mehr.",
-        "bullet": "Gemeinschaftskasse & Ausgabenteilung"
-      },
-      "f4": {
-        "pill": "Ein Tipp",
-        "title": "Mit einem Tipp abrechnen",
-        "desc": "Der Monatsabschluss berechnet die minimalen Überweisungen. Sieh, wer wem schuldet, bestätige, fertig.",
-        "bullet": "Faire Berechnungen, minimierte Überweisungen"
-      },
-      "f5": {
-        "pill": "Einblicke",
-        "title": "Sieh, wohin dein Geld fließt",
-        "desc": "Interaktive Diagramme, Kategorie-Aufschlüsselungen und Ausgabentrends. Wissen ist Macht.",
-        "bullet": "CSV- & PDF-Export jederzeit"
+      "store": {
+        "appstore": "Laden im App Store",
+        "appstore_stub": "Laden im <br>App Store",
+        "qr_aria": "QR-Code zum Laden von HomePot im App Store",
+        "qr_aria_short": "QR-Code zum Laden von HomePot",
+        "qr_text": "Scannt den Code, um die App zu laden.",
+        "android": "Android, schon bald",
+        "android_stub": "Android, <br>schon bald",
+        "android_slip": "Android,<br> schon bald",
+        "play": "Jetzt bei Google Play",
+        "stub_aria": "HomePot laden"
       },
       "how": {
-        "title": "In unter einer Minute loslegen",
-        "step1_title": "Erstelle deine Gruppe",
-        "step1_desc": "Melde dich an und lade deine Mitbewohner oder deinen Partner ein. Dauert 30 Sekunden.",
-        "step2_title": "Gemeinsame Ausgaben hinzufügen",
-        "step2_desc": "Beleg scannen oder manuell eintragen. Wir übernehmen die Rechnung.",
-        "step3_title": "Monatlich abrechnen",
-        "step3_desc": "Sieh, wer was schuldet, und begleiche Schulden mit minimalen Überweisungen."
+        "title": "So funktioniert die Kasse",
+        "s1_title": "1. Ihr scannt die Belege",
+        "s1_text": "Tragt die Ausgaben des Tages in eine gemeinsame Kasse ein.",
+        "s2_title": "2. Ihr seht Stand und Reichweite",
+        "s2_text": "HomePot aktualisiert die Kasse und sagt euch, bis zu welchem Tag sie reicht.",
+        "s3_title": "3. Ihr schließt den Monat ab",
+        "s3_text": "HomePot rechnet aus, was jede Person zahlt, und zeigt es euch als eine Überweisung."
       },
-      "pricing": {
-        "title": "Einfache, ehrliche Preise",
-        "subtitle": "Starte kostenlos, upgrade, wenn du mehr brauchst.",
-        "monthly": "Monatlich",
-        "annual": "Jährlich",
-        "save": "42% sparen",
-        "free_name": "Kostenlos",
-        "free_desc": "Perfekt zum Einstieg.",
-        "free_price": "0€",
-        "free_period": "/Monat",
-        "free_features": [
-          "1 Gruppe, unbegrenzt viele Mitglieder",
-          "20 Ausgaben pro Person und Monat",
-          "10 KI-Belegscans pro Monat",
-          "Monatsabschluss und Abrechnungen",
-          "Wiederkehrende Ausgaben",
-          "54 Währungen",
-          "Keine Werbung"
+      "sim": {
+        "title": "Jetzt die von eurem Haushalt.",
+        "text": "Tippt auf eine beliebige Zahl der Übersicht und HomePot rechnet neu, wie viel in der Kasse ist und wie lange es reicht.",
+        "meta_title": "Eure Monatsübersicht",
+        "people": "Personen",
+        "less": "Eine Person weniger",
+        "more": "Eine Person mehr",
+        "each_before": "jede Person legt",
+        "each_after": "ein",
+        "each_sr": "Was jede Person pro Monat einlegt, in Euro",
+        "caption": "Ausgaben des Monats, bearbeitbar",
+        "rent": "Miete",
+        "food": "Einkäufe",
+        "power": "Strom",
+        "net": "Internet",
+        "other": "Sonstiges",
+        "total": "Summe",
+        "close_label": "Monatsabschluss",
+        "note_short": "in der Kasse · deckt nicht einmal die Fixkosten",
+        "note_all": "in der Kasse · reicht den ganzen Monat",
+        "note_until": "in der Kasse · reicht bis zum {day}.",
+        "spare": "euch bleiben {amount} übrig",
+        "more_each": "jede Person legt {amount} mehr ein"
+      },
+      "scan": {
+        "photo_alt": "Zerknitterter Supermarktbeleg auf einer Küchenarbeitsplatte",
+        "title": "Ihr fotografiert den Beleg. HomePot trägt ihn ein.",
+        "lead": "Der Scanner liest Geschäft, Summe, Datum und jeden Artikel und teilt so auf, wie ihr es sagt. Ihr prüft kurz, fertig.",
+        "caption": "Auslesung eines Beispielbelegs",
+        "rows": [
+          [
+            "Geschäft",
+            "Súper La Esquina"
+          ],
+          [
+            "Datum",
+            "9. November"
+          ],
+          [
+            "Artikel",
+            "11, mit 1,20 € Rabatt"
+          ],
+          [
+            "Kategorie",
+            "Supermarkt"
+          ],
+          [
+            "Aufteilung",
+            "Halbe-halbe zwischen Ana und Carlos"
+          ]
         ],
-        "free_cta": "Kostenlos starten",
-        "pro_name": "Pro",
-        "pro_badge": "Am beliebtesten",
-        "pro_desc": "Für alle, die das volle Erlebnis wollen.",
-        "pro_price_monthly": "4,99€",
-        "pro_price_annual": "2,92€",
-        "pro_period_monthly": "/Monat",
-        "pro_period_annual": "/Mo. · 34,99€ pro Jahr",
-        "pro_features": [
-          "Unbegrenzte Ausgaben",
-          "50 KI-Belegscans pro Monat",
-          "So viele Gruppen, wie du willst",
-          "Erweiterte Statistiken",
-          "CSV- & PDF-Export",
-          "Ein Abo für den ganzen Haushalt"
+        "total_label": "Summe",
+        "total": "48,20 €",
+        "fine": "10 Scans pro Monat im Gratis-Tarif und 50 mit Pro. Ist der Beleg in einer anderen Währung, rechnet er ihn zum Tageskurs in die der Kasse um."
+      },
+      "trust": {
+        "title": "Das Kleingedruckte, groß gedruckt.",
+        "facts": [
+          [
+            "Werbung",
+            "Keine, auch nicht im Gratis-Tarif."
+          ],
+          [
+            "Eure Daten",
+            "Gespeichert in der Europäischen Union (Irland)."
+          ],
+          [
+            "Euer Konto",
+            "Ihr löscht es, wann ihr wollt, direkt in der App."
+          ],
+          [
+            "Sprachen",
+            "Spanisch, Portugiesisch, Englisch, Französisch und Deutsch."
+          ],
+          [
+            "Währungen",
+            "54, und der Scanner liest jede andere."
+          ]
         ],
-        "pro_cta": "App laden und Pro holen"
+        "compare_caption": "HomePot im Vergleich mit Splitwise und Tricount",
+        "feature": "Funktion",
+        "rows": [
+          [
+            "Gemeinsame Kasse mit Stand und Prognose",
+            "Ja",
+            "Nein",
+            "Nein"
+          ],
+          [
+            "Monatsabschluss mit einer Überweisung pro Person",
+            "Ja",
+            "Nein",
+            "Nein"
+          ],
+          [
+            "KI-Belegscanner",
+            "Gratis, 10 pro Monat",
+            "Nur in Pro",
+            "Nein"
+          ],
+          [
+            "Wiederkehrende Ausgaben",
+            "Gratis",
+            "Teilweise",
+            "Nein"
+          ],
+          [
+            "Werbung im Gratis-Tarif",
+            "Nie",
+            "Ja",
+            "Nie"
+          ]
+        ],
+        "fine": "Öffentliche Angaben jeder App im November 2026. Quellen und Details in den Vergleichen {splitwise} und {tricount}.",
+        "fine_splitwise": "mit Splitwise",
+        "fine_tricount": "mit Tricount"
+      },
+      "prices": {
+        "title": "Was es kostet, schwarz auf weiß.",
+        "billing_label": "Zahlungsweise für Pro",
+        "year": "Jährlich",
+        "month": "Monatlich",
+        "caption": "Was jeder HomePot-Tarif enthält",
+        "concept": "Posten",
+        "free": "Gratis-Tarif",
+        "pro": "Pro",
+        "price": "Preis",
+        "free_price": "0 €",
+        "free_per": "für immer",
+        "pro_price_year": "34,99 €",
+        "pro_per_year": "pro Jahr, etwa 2,92 € pro Monat",
+        "pro_price_month": "4,99 €",
+        "pro_per_month": "pro Monat, jederzeit kündbar",
+        "rows": [
+          {
+            "label": "Kassen",
+            "free": "1, mit so vielen Mitgliedern wie nötig",
+            "pro": "So viele ihr wollt: Zuhause, Reisen, Paar"
+          },
+          {
+            "label": "Eingetragene Ausgaben pro Monat, pro Person",
+            "free": "20",
+            "free_kind": "n",
+            "pro": "Unbegrenzt"
+          },
+          {
+            "label": "KI-Belegscans pro Monat",
+            "free": "10",
+            "free_kind": "n",
+            "pro": "50",
+            "pro_kind": "n"
+          },
+          {
+            "label": "Monatsabschluss und Abrechnungen",
+            "free": "Inklusive",
+            "pro": "Inklusive"
+          },
+          {
+            "label": "Wiederkehrende Ausgaben und 54 Währungen",
+            "free": "Inklusive",
+            "pro": "Inklusive"
+          },
+          {
+            "label": "Erweiterte Statistiken und Export als PDF und CSV",
+            "free": "Nein",
+            "free_kind": "no",
+            "pro": "Inklusive"
+          }
+        ],
+        "start": "So fangt ihr an",
+        "free_cta": "Gratis starten",
+        "pro_cta": "Laden und zu Pro wechseln",
+        "pro_note": "Ihr aktiviert es in der App, wenn ihr es braucht.",
+        "fine": "Preise in Euro inkl. MwSt. In der App seht ihr den Preis für euer Land.",
+        "fine_household": "Ein einziges Pro-Abo gilt für alle Personen in euren Kassen."
       },
       "faq": {
-        "title": "Häufige Fragen",
+        "title": "Fragen aus dem Haushalt",
+        "more": "Noch eine Frage? Auf der {link} stehen alle Antworten.",
+        "more_link": "Hilfeseite",
         "items": [
           {
-            "q": "Sind meine Daten sicher?",
-            "a": "Ja. Deine Daten sind in Transit und im Ruhezustand auf AWS-Servern verschlüsselt. Wir erfüllen DSGVO, CCPA und LGPD. Keine Werbung, kein Tracking, kein Datenverkauf. Nie."
+            "q": "Muss die andere Person die App herunterladen?",
+            "a": "Ja, um ihre Ausgaben einzutragen. Ihr schickt ihr einen Link und sie ist in einer Minute in der Kasse; hat sie die App nicht, führt der Link in den Store."
           },
           {
-            "q": "Wie funktioniert der KI-Belegscanner?",
-            "a": "Fotografiere einen Beleg. Unsere KI extrahiert Gesamtbetrag, jeden einzelnen Posten, Rabatte, Steuern, Geschäftsname und sogar die Währung — automatisch. Du prüfst und bestätigst."
+            "q": "Ist es für Paare oder für WGs?",
+            "a": "Für beide. Paare haben meist eine gemeinsame Kasse; in einer WG zahlt jeder und am Ende wird ausgeglichen. HomePot kann beides."
           },
           {
-            "q": "Kann ich es für Reisen mit Freunden nutzen?",
-            "a": "Ja. Nutze den Modus »Ausgabenteilung« für Reisen — jeder zahlt mit seinem eigenen Geld, und HomePot berechnet am Ende, wer wem schuldet, und minimiert die Anzahl der Überweisungen."
+            "q": "Müssen wir ein Gemeinschaftskonto eröffnen?",
+            "a": "Nein. HomePot fasst eure Bank nicht an: Es führt den Stand der Kasse aus dem, was jeder einlegt, und dem, was ausgegeben wird."
           },
           {
-            "q": "Wie viel kostet es?",
-            "a": "Kostenlos: 1 Gruppe mit unbegrenzt vielen Mitgliedern, 20 Ausgaben pro Person und Monat, 10 KI-Belegscans pro Monat, Monatsabschluss und Abrechnungen, wiederkehrende Ausgaben, keine Werbung. Pro: unbegrenzte Ausgaben, 50 Scans pro Monat, so viele Gruppen, wie du willst, erweiterte Statistiken und CSV-/PDF-Export, für 4,99€ pro Monat oder 34,99€ pro Jahr (etwa 2,92€ pro Monat). Ein Abo gilt für alle Personen in deinen Gruppen."
+            "q": "Was passiert, wenn ich 20 Ausgaben in einem Monat erreiche?",
+            "a": "Im Gratis-Tarif trägt jede Person bis zu 20 Ausgaben pro Monat ein. Danach könnt ihr die Kasse weiter sehen und den Monat abschließen; um mehr einzutragen, wechselt zu Pro oder wartet auf den nächsten Monat."
           },
           {
-            "q": "Wie vergleicht sich HomePot mit Splitwise?",
-            "a": "HomePot ist als ehrliche, werbefreie Alternative gebaut: 54 Währungen für die Ausgabenerfassung, KI-Belegscanner, der jede Währung vom Beleg liest, und ein transparentes Abomodell. Sieh dir den <a href=\"/de/compare/homepot-vs-splitwise/\" class=\"text-terracotta underline hover:opacity-80\">vollständigen Seite-an-Seite-Vergleich mit Splitwise</a> mit allen Funktionen und unserem Quellenhinweis an."
+            "q": "Wir kommen von Splitwise. Was ändert sich?",
+            "a": "HomePot ist für einen Haushalt gemacht: gemeinsame Kasse mit Stand, Prognose, Monatsabschluss und Scanner inklusive, ohne Werbung im Gratis-Tarif."
           }
         ]
+      },
+      "close": {
+        "title": "Startet eure erste Übersicht noch heute Abend.",
+        "text": "Es dauert eine Minute, die Kasse anzulegen, und eine weitere, bis die andere Person dabei ist."
       }
     },
     "fromSplitwise": {
@@ -299,7 +390,7 @@
         },
         {
           "q": "Wie unterscheidet sich das von der Splitwise-Vergleichsseite?",
-          "a": "Diese Seite ist für Leute, die schon wissen, dass sie Splitwise verlassen wollen. Der <a href=\"/de/compare/homepot-vs-splitwise/\" class=\"text-terracotta underline\">vollständige Vergleich</a> ist für Unentschlossene — er geht jede Funktion Tarif für Tarif durch, mit Links zu öffentlichen Quellen."
+          "a": "Diese Seite ist für Leute, die schon wissen, dass sie Splitwise verlassen wollen. Der <a href=\"/de/compare/homepot-vs-splitwise/\">vollständige Vergleich</a> ist für Unentschlossene — er geht jede Funktion Tarif für Tarif durch, mit Links zu öffentlichen Quellen."
         },
         {
           "q": "Sind die Aussagen über Splitwise ehrlich?",

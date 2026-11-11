@@ -1,6 +1,6 @@
 import { Eta } from 'eta';
-import { readFileSync, writeFileSync, mkdirSync, readdirSync, existsSync, statSync, rmSync } from 'node:fs';
-import { join, dirname, resolve } from 'node:path';
+import { readFileSync, writeFileSync, mkdirSync } from 'node:fs';
+import { join, dirname } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { createHash } from 'node:crypto';
 import config from './build.config.js';
@@ -71,15 +71,6 @@ function buildAlternatesAbs(route) {
   return alternates;
 }
 
-// Relative URLs for in-page navigation (navbar language switcher)
-function buildAlternatesRel(route) {
-  const links = {};
-  for (const loc of config.locales) {
-    links[loc] = `${localePrefix(loc)}${route}`;
-  }
-  return links;
-}
-
 // ------------- measurement hooks (off by default, see build.config.js) -------------
 // Every App Store link on the site is built here. With appStore.providerToken set it
 // carries Apple's campaign parameters (pt = provider, ct = placement, mt = 8) so App Store
@@ -89,6 +80,15 @@ function appStoreLink(placement) {
   if (!token) return config.appStoreUrl;
   const sep = config.appStoreUrl.includes('?') ? '&' : '?';
   return `${config.appStoreUrl}${sep}pt=${encodeURIComponent(token)}&ct=${encodeURIComponent(placement)}&mt=8`;
+}
+
+// QR codes carry the short form of the store link (…/app/id123), as on the landing: fewer
+// characters make a coarser code, which is what a phone can read off a screen.
+function appStoreQrLink(placement) {
+  const id = (config.appStoreUrl.match(/id\d+/) || [])[0];
+  const base = id ? `https://apps.apple.com/app/${id}` : config.appStoreUrl;
+  const token = String(config.appStore?.providerToken || '').trim();
+  return token ? `${base}?pt=${encodeURIComponent(token)}&ct=${encodeURIComponent(placement)}&mt=8` : base;
 }
 
 // HTML-attribute-safe version for templates (autoEscape is off).
@@ -112,16 +112,7 @@ function ogImageUrl(locale) {
   return `${config.baseUrl}/og-image${suffix}.png?v=${OG_IMAGE_VERSION}`;
 }
 
-// Context every per-language page gets: store links, analytics and its preview image.
-function shared(locale) {
-  return {
-    appStore: (slot) => appStoreHref(`web-${locale}-${slot}`),
-    analytics: analyticsSnippet(),
-    ogImage: ogImageUrl(locale),
-  };
-}
-
-// ------------- new identity (utility pages) -------------
+// ------------- identity -------------
 // Language menu, in the landing's order, with native names.
 const LANG_NAMES = { es: 'Español', en: 'English', pt: 'Português', fr: 'Français', de: 'Deutsch' };
 const LANG_ORDER = Object.keys(LANG_NAMES).filter((code) => config.locales.includes(code));
@@ -138,14 +129,17 @@ const icons = {
   eye: '<svg class="eye" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2.5 12S6 5.5 12 5.5 21.5 12 21.5 12 18 18.5 12 18.5 2.5 12 2.5 12z"/><circle cx="12" cy="12" r="2.8"/></svg>',
   eyeOff: '<svg class="eye-off" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2.5 12S6 5.5 12 5.5 21.5 12 21.5 12 18 18.5 12 18.5 2.5 12 2.5 12z"/><circle cx="12" cy="12" r="2.8"/><path d="M4.5 4.5l15 15"/></svg>',
   ruleMark: '<svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect class="mark-todo" x="4" y="4" width="12" height="12" stroke-width="1.8"/><path class="mark-ok" d="M3.5 10.5 8 15 16.5 5" stroke-width="2.6"/></svg>',
+  // The landing's plus that folds into a minus when a question opens.
+  plus: '<svg class="pm" viewBox="0 0 20 20" aria-hidden="true"><path d="M4 10h12"/><path class="pm-v" d="M10 4v12"/></svg>',
+  star: '<svg viewBox="0 0 20 20" aria-hidden="true"><path fill="currentColor" d="M10 1.6l2.5 5.4 5.9.7-4.4 4 1.2 5.8L10 14.6l-5.2 2.9L6 11.7l-4.4-4 5.9-.7z"/></svg>',
 };
 
-// src/styles/utility.css → /assets/utility.css, linked with a content hash.
-function buildUtilityCss() {
-  const css = readFileSync(join(SRC, 'styles', 'utility.css'), 'utf8');
-  writeFile(join(ROOT, 'assets', 'utility.css'), css);
-  console.log('✓ assets/utility.css');
-  return `/assets/utility.css?v=${createHash('sha1').update(css).digest('hex').slice(0, 8)}`;
+// src/styles/<name>.css → /assets/<name>.css, linked with a content hash.
+function buildCss(name) {
+  const css = readFileSync(join(SRC, 'styles', `${name}.css`), 'utf8');
+  writeFile(join(ROOT, 'assets', `${name}.css`), css);
+  console.log(`✓ assets/${name}.css`);
+  return `/assets/${name}.css?v=${createHash('sha1').update(css).digest('hex').slice(0, 8)}`;
 }
 
 // ------------- load data -------------
@@ -153,6 +147,8 @@ const i18n = {};
 for (const loc of config.locales) {
   i18n[loc] = loadJson(join(SRC, 'i18n', `${loc}.json`));
 }
+// Text of the three hand-written pages (support, privacy, terms): { en: { 'support.title': … }, … }
+const legal = loadJson(join(SRC, 'i18n', 'pages-translations.json'));
 
 const comparisons = loadJson(join(SRC, 'data', 'comparisons.json'));
 const tools = loadJson(join(SRC, 'data', 'tools.json'));
@@ -180,62 +176,179 @@ function registerRoute(route, locale) {
   routes.push({ route, locale, canonical: absoluteUrl(locale, route) });
 }
 
-// ------------- HOME -------------
-function renderHome() {
-  const route = '/';
-  const alternates = buildAlternatesRel(route);
-  const alternatesAbs = buildAlternatesAbs(route);
+// ------------- money: the examples follow each language's number format and currency -------------
+function moneyOf(locale) {
+  const { numberLocale, currency } = i18n[locale].meta;
+  const money = new Intl.NumberFormat(numberLocale, { style: 'currency', currency, useGrouping: 'always' });
+  const plain = new Intl.NumberFormat(numberLocale, { minimumFractionDigits: 2, maximumFractionDigits: 2, useGrouping: 'always' });
+  // «650 €» · «€650» · «R$ 650»: what goes before and after a figure the visitor can edit
+  const parts = money.formatToParts(1);
+  const first = parts.findIndex((part) => part.type === 'integer');
+  const last = parts.map((part) => part.type).lastIndexOf('fraction');
+  const text = (list) => list.map((part) => part.value).join('');
+  return {
+    numberLocale,
+    currency,
+    decimal: parts.find((part) => part.type === 'decimal').value,
+    prefix: text(parts.slice(0, first)),
+    suffix: text(parts.slice(last + 1)),
+    format: (value) => money.format(value),
+    plain: (value) => plain.format(value),
+  };
+}
 
+// The statement's starting figures, worked out exactly as src/js/home.js does, so the page
+// already shows what the script would write (no flash on load).
+function statementDefaults(locale) {
+  const m = moneyOf(locale);
+  const t = i18n[locale].pages.home.sim;
+  const people = 2, each = 650, days = 30;
+  const rows = [
+    { id: 'rent', kind: 'fixed', amount: 950 },
+    { id: 'food', kind: 'var', amount: 320 },
+    { id: 'power', kind: 'fixed', amount: 64.2 },
+    { id: 'net', kind: 'fixed', amount: 35 },
+    { id: 'other', kind: 'var', amount: 88.9 },
+  ];
+  const sum = (kind) => rows.filter((row) => row.kind === kind).reduce((total, row) => total + row.amount, 0);
+  const pot = people * each, fixed = sum('fixed'), variable = sum('var'), total = fixed + variable;
+  const available = pot - fixed;
+  const note = available <= 0 ? t.note_short
+    : variable <= 0 || available >= variable ? t.note_all
+      : t.note_until.replace('{day}', Math.max(1, Math.floor(available / (variable / days))));
+  const diff = pot - total;
+  const close = diff >= 0 ? t.spare.replace('{amount}', m.format(diff))
+    : t.more_each.replace('{amount}', m.format(Math.ceil((-diff / people) * 100) / 100));
+  return {
+    each: String(each),
+    rows: rows.map((row) => ({ id: row.id, kind: row.kind, value: m.plain(row.amount) })),
+    pot: m.format(pot),
+    total: m.format(total),
+    note,
+    close,
+  };
+}
+
+// ------------- context of every page that exists once per language -------------
+function pageCtx(locale, route, { title, description, ogType = 'website', jsonLd, cssHref }) {
+  const bundle = i18n[locale];
+  const home = bundle.pages.home;
+  const prefix = localePrefix(locale);
+  return {
+    locale,
+    defaultLocale: config.defaultLocale,
+    prefix,
+    homeHref: `${prefix}/`,
+    baseUrl: config.baseUrl,
+    contactEmail: config.contactEmail,
+    pageTitle: title,
+    pageDescription: description,
+    canonicalUrl: absoluteUrl(locale, route),
+    alternatesAbs: buildAlternatesAbs(route),
+    ogLocale: bundle.meta.ogLocale,
+    ogLocaleAlternates: config.locales.filter((loc) => loc !== locale).map((loc) => i18n[loc].meta.ogLocale),
+    ogImage: ogImageUrl(locale),
+    ogType,
+    jsonLd,
+    jsonLdJson: jsonLd ? inlineJson(jsonLd) : '',
+    cssHref,
+    langs: LANG_ORDER.map((code) => ({ code, name: LANG_NAMES[code], href: `${localePrefix(code)}${route}` })),
+    langLabel: home.lang_label,
+    nav: home.nav,
+    brand: { language: bundle.ui.nav.language, ...bundle.ui.brand },
+    store: home.store,
+    slip: { title: home.close.title, text: home.close.text, slot: 'cta' },
+    appStore: (slot) => appStoreHref(`web-${locale}-${slot}`),
+    appStoreQr: (slot) => appStoreQrLink(`web-${locale}-${slot}`),
+    playStoreUrl: config.playStoreUrl,
+    playStoreLive: config.playStoreLive,
+    analytics: analyticsSnippet(),
+    icons,
+    esc: escapeHtml,
+    ui: bundle.ui,
+  };
+}
+
+// ------------- HOME: the landing, one template for the five languages -------------
+function renderHome(cssHref) {
+  const route = '/';
   for (const locale of config.locales) {
     const bundle = i18n[locale];
-    const homeHref = localePrefix(locale) + '/';
+    const home = bundle.pages.home;
+    const m = moneyOf(locale);
+    // Prices as written on the page (pages.home.prices), so the structured data cannot drift from it.
+    const price = (text) => {
+      const digits = text.replace(/[^\d.,]/g, '');
+      const normal = m.decimal === ',' ? digits.replace(/\./g, '').replace(',', '.') : digits.replace(/,/g, '');
+      return Number(normal).toFixed(2);
+    };
 
     const jsonLd = {
       '@context': 'https://schema.org',
-      '@type': 'MobileApplication',
+      '@type': 'SoftwareApplication',
       name: 'HomePot',
-      operatingSystem: 'iOS',
+      operatingSystem: config.playStoreLive ? 'iOS, Android' : 'iOS',
       applicationCategory: 'FinanceApplication',
-      offers: { '@type': 'Offer', price: '0', priceCurrency: 'EUR' },
-      description: bundle.pages.home.description,
+      description: home.description,
       url: absoluteUrl(locale, route),
       inLanguage: locale,
+      installUrl: config.appStoreUrl,
+      offers: [
+        { '@type': 'Offer', name: home.prices.free, price: '0', priceCurrency: m.currency },
+        { '@type': 'Offer', name: `HomePot Pro · ${home.prices.month}`, price: price(home.prices.pro_price_month), priceCurrency: m.currency },
+        { '@type': 'Offer', name: `HomePot Pro · ${home.prices.year}`, price: price(home.prices.pro_price_year), priceCurrency: m.currency },
+      ],
       publisher: { '@type': 'Organization', name: 'HomePot', email: config.contactEmail },
     };
 
-    const ctx = {
-      locale,
-      baseUrl: config.baseUrl,
-      ...shared(locale),
-      contactEmail: config.contactEmail,
-      promoSignupUrl: config.promoSignupUrl,
-      homeHref,
-      alternates,
-      alternatesAbs,
-      pageTitle: bundle.pages.home.title,
-      pageDescription: bundle.pages.home.description,
-      canonicalUrl: absoluteUrl(locale, route),
-      ogTitle: bundle.pages.home.title,
-      ogDescription: bundle.pages.home.description,
-      ogLocale: bundle.meta.ogLocale,
-      ogType: 'website',
-      jsonLd,
-      ui: bundle.ui,
-      page: { home: bundle.pages.home },
-    };
-
-    const html = renderWithLayout('home', ctx);
+    const ctx = pageCtx(locale, route, { title: home.title, description: home.description, jsonLd, cssHref });
+    const html = render('home', {
+      ...ctx,
+      page: { home },
+      money: { prefix: m.prefix, suffix: m.suffix },
+      sim: statementDefaults(locale),
+      homeJson: inlineJson({
+        numberLocale: m.numberLocale,
+        currency: m.currency,
+        decimal: m.decimal,
+        qr: { qr: ctx.appStoreQr('qr-hero'), qr2: ctx.appStoreQr('qr-sheet'), qr3: ctx.appStoreQr('qr-close') },
+        t: {
+          today: home.chart.today,
+          lasts: home.chart.lasts,
+          noteShort: home.sim.note_short,
+          noteAll: home.sim.note_all,
+          noteUntil: home.sim.note_until,
+          spare: home.sim.spare,
+          moreEach: home.sim.more_each,
+          priceYear: home.prices.pro_price_year,
+          perYear: home.prices.pro_per_year,
+          priceMonth: home.prices.pro_price_month,
+          perMonth: home.prices.pro_per_month,
+        },
+      }),
+    });
     writeFile(outPath(locale, route), html);
     registerRoute(route, locale);
     console.log(`✓ home (${locale})`);
   }
 }
 
-// ------------- GENERIC HUB RENDERER -------------
-function renderHub({ route, hubKey, items, label, placeholders, showTrust }) {
-  const alternates = buildAlternatesRel(route);
-  const alternatesAbs = buildAlternatesAbs(route);
+// Links back to the hubs, at the end of a content page.
+function backLinks(locale, keys) {
+  const prefix = localePrefix(locale);
+  const links = i18n[locale].ui.links;
+  const all = {
+    compare: { href: `${prefix}/compare/`, label: links.all_comparisons },
+    guides: { href: `${prefix}/guides/`, label: links.all_guides },
+    resources: { href: `${prefix}/resources/`, label: links.resources },
+  };
+  return keys.map((key) => all[key]);
+}
 
+// ------------- HUBS: a ruled list of links -------------
+// A hub with nothing published is not built (no "coming soon" pages).
+function renderHub({ route, hubKey, items, label, back }) {
+  if (!items.length) return false;
   for (const locale of config.locales) {
     const bundle = i18n[locale];
     const hub = bundle.ui[hubKey];
@@ -243,10 +356,7 @@ function renderHub({ route, hubKey, items, label, placeholders, showTrust }) {
       console.warn(`  skipped ${route} (${locale}): missing ui.${hubKey}`);
       continue;
     }
-    const homeHref = localePrefix(locale) + '/';
-
-    const localizedItems = (items || []).map((fn) => fn(locale, bundle));
-    const localizedPlaceholders = placeholders ? placeholders(bundle) : [];
+    const localizedItems = items.map((fn) => fn(locale, bundle));
 
     const jsonLd = {
       '@context': 'https://schema.org',
@@ -262,150 +372,78 @@ function renderHub({ route, hubKey, items, label, placeholders, showTrust }) {
       })),
     };
 
-    const ctx = {
-      locale,
-      baseUrl: config.baseUrl,
-      ...shared(locale),
-      contactEmail: config.contactEmail,
-      promoSignupUrl: config.promoSignupUrl,
-      homeHref,
-      alternates,
-      alternatesAbs,
-      pageTitle: hub.title,
-      pageDescription: hub.description,
-      canonicalUrl: absoluteUrl(locale, route),
-      ogTitle: hub.title,
-      ogDescription: hub.description,
-      ogLocale: bundle.meta.ogLocale,
-      ogType: 'website',
-      jsonLd,
-      ui: bundle.ui,
-      hub,
-      items: localizedItems,
-      placeholders: localizedPlaceholders,
-    };
-
-    const html = renderWithLayout('hub', ctx);
+    const ctx = pageCtx(locale, route, { title: hub.title, description: hub.description, jsonLd, cssHref: siteCss });
+    const html = renderWithLayout('hub', { ...ctx, hub, items: localizedItems, back: backLinks(locale, back) });
     writeFile(outPath(locale, route), html);
     registerRoute(route, locale);
     console.log(`✓ ${label} (${locale})`);
   }
+  return true;
 }
 
+const publishedComparisons = comparisons.filter((e) => e.published);
+const publishedGuides = guides.filter((e) => e.published);
+
 function renderCompareHub() {
-  renderHub({
+  return renderHub({
     route: '/compare/',
     hubKey: 'compareHub',
     label: 'compare hub',
-    items: comparisons
-      .filter((e) => e.published)
-      .map((entry) => (locale, bundle) => {
-        const comparisonBundle = bundle.pages.comparisons[entry.i18nKey];
-        return {
-          href: `${localePrefix(locale)}/compare/${entry.slug}/`,
-          title: comparisonBundle?.h1 || entry.competitor,
-          excerpt: comparisonBundle?.description || '',
-          icon: entry.icon || 'compare',
-        };
-      }),
-    placeholders: (bundle) => (comparisons.filter((e) => e.published).length < 4 ? [bundle.ui.compareHub.cta + '…'] : []),
-  });
-}
-
-function renderToolsHub() {
-  // Skip entirely while there are no published tools
-  if (!tools.some((e) => e.published)) return;
-  renderHub({
-    route: '/tools/',
-    hubKey: 'toolsHub',
-    label: 'tools hub',
-    items: tools
-      .filter((e) => e.published)
-      .map((entry) => (locale, bundle) => {
-        const toolBundle = bundle.pages.tools?.[entry.i18nKey];
-        return {
-          href: `${localePrefix(locale)}/tools/${entry.slug}/`,
-          title: toolBundle?.h1 || entry.slug,
-          excerpt: toolBundle?.description || '',
-          icon: entry.icon || 'calculate',
-        };
-      }),
-    placeholders: (bundle) => [bundle.ui.toolsHub.empty_body],
+    back: ['resources'],
+    items: publishedComparisons.map((entry) => (locale, bundle) => {
+      const comparisonBundle = bundle.pages.comparisons[entry.i18nKey];
+      return {
+        href: `${localePrefix(locale)}/compare/${entry.slug}/`,
+        title: comparisonBundle?.h1 || entry.competitor,
+        excerpt: comparisonBundle?.description || '',
+      };
+    }),
   });
 }
 
 function renderGuidesHub() {
-  renderHub({
+  return renderHub({
     route: '/guides/',
     hubKey: 'guidesHub',
     label: 'guides hub',
-    items: guides
-      .filter((e) => e.published)
-      .map((entry) => (locale, bundle) => {
-        const guideBundle = bundle.pages.guides?.[entry.i18nKey];
-        return {
-          href: `${localePrefix(locale)}/guides/${entry.slug}/`,
-          title: guideBundle?.h1 || entry.slug,
-          excerpt: guideBundle?.description || '',
-          icon: entry.icon || 'menu_book',
-        };
-      }),
-    placeholders: (bundle) => [bundle.ui.guidesHub.empty_body],
+    back: ['resources'],
+    items: publishedGuides.map((entry) => (locale, bundle) => {
+      const guideBundle = bundle.pages.guides?.[entry.i18nKey];
+      return {
+        href: `${localePrefix(locale)}/guides/${entry.slug}/`,
+        title: guideBundle?.h1 || entry.slug,
+        excerpt: guideBundle?.description || '',
+      };
+    }),
   });
 }
 
 function renderResourcesHub() {
-  // Top-level: links only to category hubs that have at least one published entry
-  const hasTools = tools.some((e) => e.published);
-  const hasGuides = guides.some((e) => e.published);
-  const hasComparisons = comparisons.some((e) => e.published);
-
+  // Links only to the category hubs that have something published
   const items = [];
-  if (hasComparisons) {
+  if (publishedComparisons.length) {
     items.push((locale, bundle) => ({
       href: `${localePrefix(locale)}/compare/`,
       title: bundle.ui.compareHub.h1,
       excerpt: bundle.ui.compareHub.description,
-      icon: 'compare',
-      badge: bundle.ui.compareHub.badge,
+      cta: bundle.ui.links.all_comparisons,
     }));
   }
-  if (hasTools) {
-    items.push((locale, bundle) => ({
-      href: `${localePrefix(locale)}/tools/`,
-      title: bundle.ui.toolsHub.h1,
-      excerpt: bundle.ui.toolsHub.description,
-      icon: 'calculate',
-      badge: bundle.ui.toolsHub.badge,
-    }));
-  }
-  if (hasGuides) {
+  if (publishedGuides.length) {
     items.push((locale, bundle) => ({
       href: `${localePrefix(locale)}/guides/`,
       title: bundle.ui.guidesHub.h1,
       excerpt: bundle.ui.guidesHub.description,
-      icon: 'menu_book',
-      badge: bundle.ui.guidesHub.badge,
+      cta: bundle.ui.links.all_guides,
     }));
   }
-
-  renderHub({
-    route: '/resources/',
-    hubKey: 'resourcesHub',
-    label: 'resources hub',
-    items,
-    placeholders: () => [],
-  });
+  return renderHub({ route: '/resources/', hubKey: 'resourcesHub', label: 'resources hub', back: [], items });
 }
 
 // ------------- COMPARISONS -------------
 function renderComparisons() {
-  for (const entry of comparisons) {
-    if (!entry.published) continue;
+  for (const entry of publishedComparisons) {
     const route = `/compare/${entry.slug}/`;
-    const alternates = buildAlternatesRel(route);
-    const alternatesAbs = buildAlternatesAbs(route);
-
     for (const locale of config.locales) {
       const bundle = i18n[locale];
       const comparisonBundle = bundle.pages.comparisons[entry.i18nKey];
@@ -413,7 +451,6 @@ function renderComparisons() {
         console.warn(`  skipped ${entry.slug} (${locale}): missing i18n key ${entry.i18nKey}`);
         continue;
       }
-      const homeHref = localePrefix(locale) + '/';
 
       // Merge shared UI with page-specific content
       const mergedComparison = {
@@ -431,29 +468,8 @@ function renderComparisons() {
         })),
       };
 
-      const ctx = {
-        locale,
-        baseUrl: config.baseUrl,
-        ...shared(locale),
-        contactEmail: config.contactEmail,
-        promoSignupUrl: config.promoSignupUrl,
-        homeHref,
-        alternates,
-        alternatesAbs,
-        pageTitle: comparisonBundle.title,
-        pageDescription: comparisonBundle.description,
-        canonicalUrl: absoluteUrl(locale, route),
-        ogTitle: comparisonBundle.title,
-        ogDescription: comparisonBundle.description,
-        ogLocale: bundle.meta.ogLocale,
-        ogType: 'article',
-        jsonLd,
-        ui: bundle.ui,
-        entry,
-        page: { comparison: mergedComparison },
-      };
-
-      const html = renderWithLayout('comparison', ctx);
+      const ctx = pageCtx(locale, route, { title: comparisonBundle.title, description: comparisonBundle.description, ogType: 'article', jsonLd, cssHref: siteCss });
+      const html = renderWithLayout('comparison', { ...ctx, entry, page: { comparison: mergedComparison }, back: backLinks(locale, ['compare', 'resources']) });
       writeFile(outPath(locale, route), html);
       registerRoute(route, locale);
       console.log(`✓ ${entry.slug} (${locale})`);
@@ -461,17 +477,13 @@ function renderComparisons() {
   }
 }
 
-// ------------- FROM SPLITWISE LANDING -------------
+// ------------- FROM SPLITWISE -------------
 function renderFromSplitwise() {
   const route = '/from-splitwise/';
-  const alternates = buildAlternatesRel(route);
-  const alternatesAbs = buildAlternatesAbs(route);
-
   for (const locale of config.locales) {
     const bundle = i18n[locale];
     const landingBundle = bundle.pages.fromSplitwise;
     if (!landingBundle) continue;
-    const homeHref = localePrefix(locale) + '/';
 
     const jsonLd = {
       '@context': 'https://schema.org',
@@ -482,28 +494,8 @@ function renderFromSplitwise() {
       inLanguage: locale,
     };
 
-    const ctx = {
-      locale,
-      baseUrl: config.baseUrl,
-      ...shared(locale),
-      contactEmail: config.contactEmail,
-      promoSignupUrl: config.promoSignupUrl,
-      homeHref,
-      alternates,
-      alternatesAbs,
-      pageTitle: landingBundle.title,
-      pageDescription: landingBundle.description,
-      canonicalUrl: absoluteUrl(locale, route),
-      ogTitle: landingBundle.title,
-      ogDescription: landingBundle.description,
-      ogLocale: bundle.meta.ogLocale,
-      ogType: 'website',
-      jsonLd,
-      ui: bundle.ui,
-      page: { landing: landingBundle },
-    };
-
-    const html = renderWithLayout('landing', ctx);
+    const ctx = pageCtx(locale, route, { title: landingBundle.title, description: landingBundle.description, jsonLd, cssHref: siteCss });
+    const html = renderWithLayout('landing', { ...ctx, page: { landing: landingBundle } });
     writeFile(outPath(locale, route), html);
     registerRoute(route, locale);
     console.log(`✓ from-splitwise (${locale})`);
@@ -511,72 +503,18 @@ function renderFromSplitwise() {
 }
 
 // ------------- TOOLS (calculators) -------------
+// None is published. src/templates/calculator.eta and src/js/calculators/ still carry the old
+// markup (Tailwind classes); they must be redrawn in the new identity before one goes live.
 function renderTools() {
   for (const entry of tools) {
-    if (!entry.published) continue;
-    const route = `/tools/${entry.slug}/`;
-    const alternates = buildAlternatesRel(route);
-    const alternatesAbs = buildAlternatesAbs(route);
-
-    for (const locale of config.locales) {
-      const bundle = i18n[locale];
-      const toolBundle = bundle.pages.tools?.[entry.i18nKey];
-      if (!toolBundle) {
-        console.warn(`  skipped ${entry.slug} (${locale}): missing tools.${entry.i18nKey}`);
-        continue;
-      }
-      const homeHref = localePrefix(locale) + '/';
-
-      const jsonLd = {
-        '@context': 'https://schema.org',
-        '@type': 'WebApplication',
-        name: toolBundle.h1,
-        description: toolBundle.description,
-        url: absoluteUrl(locale, route),
-        applicationCategory: 'FinanceApplication',
-        operatingSystem: 'Any (browser)',
-        offers: { '@type': 'Offer', price: '0', priceCurrency: 'USD' },
-        inLanguage: locale,
-      };
-
-      const ctx = {
-        locale,
-        baseUrl: config.baseUrl,
-        ...shared(locale),
-        contactEmail: config.contactEmail,
-        promoSignupUrl: config.promoSignupUrl,
-        homeHref,
-        alternates,
-        alternatesAbs,
-        pageTitle: toolBundle.title,
-        pageDescription: toolBundle.description,
-        canonicalUrl: absoluteUrl(locale, route),
-        ogTitle: toolBundle.title,
-        ogDescription: toolBundle.description,
-        ogLocale: bundle.meta.ogLocale,
-        ogType: 'website',
-        jsonLd,
-        ui: bundle.ui,
-        entry,
-        page: { calculator: toolBundle },
-      };
-
-      const html = renderWithLayout('calculator', ctx);
-      writeFile(outPath(locale, route), html);
-      registerRoute(route, locale);
-      console.log(`✓ ${entry.slug} (${locale})`);
-    }
+    if (entry.published) console.warn(`  skipped tool ${entry.slug}: calculator.eta is not ported to the new identity yet`);
   }
 }
 
 // ------------- GUIDES -------------
 function renderGuides() {
-  for (const entry of guides) {
-    if (!entry.published) continue;
+  for (const entry of publishedGuides) {
     const route = `/guides/${entry.slug}/`;
-    const alternates = buildAlternatesRel(route);
-    const alternatesAbs = buildAlternatesAbs(route);
-
     for (const locale of config.locales) {
       const bundle = i18n[locale];
       const guideBundle = bundle.pages.guides?.[entry.i18nKey];
@@ -584,7 +522,6 @@ function renderGuides() {
         console.warn(`  skipped ${entry.slug} (${locale}): missing guides.${entry.i18nKey}`);
         continue;
       }
-      const homeHref = localePrefix(locale) + '/';
 
       const jsonLd = {
         '@context': 'https://schema.org',
@@ -597,29 +534,10 @@ function renderGuides() {
         publisher: { '@type': 'Organization', name: 'HomePot' },
       };
 
-      const ctx = {
-        locale,
-        baseUrl: config.baseUrl,
-        ...shared(locale),
-        contactEmail: config.contactEmail,
-        promoSignupUrl: config.promoSignupUrl,
-        homeHref,
-        alternates,
-        alternatesAbs,
-        pageTitle: guideBundle.title,
-        pageDescription: guideBundle.description,
-        canonicalUrl: absoluteUrl(locale, route),
-        ogTitle: guideBundle.title,
-        ogDescription: guideBundle.description,
-        ogLocale: bundle.meta.ogLocale,
-        ogType: 'article',
-        jsonLd,
-        ui: bundle.ui,
-        entry,
-        page: { guide: guideBundle },
-      };
-
-      const html = renderWithLayout('guide', ctx);
+      const ctx = pageCtx(locale, route, { title: guideBundle.title, description: guideBundle.description, ogType: 'article', jsonLd, cssHref: siteCss });
+      // The guide's own closing words head the download slip.
+      const slip = guideBundle.upsell ? { title: guideBundle.upsell.title, text: guideBundle.upsell.desc, slot: `guide-${entry.i18nKey.toLowerCase()}` } : ctx.slip;
+      const html = renderWithLayout('guide', { ...ctx, entry, slip, page: { guide: guideBundle }, back: backLinks(locale, ['guides', 'resources']) });
       writeFile(outPath(locale, route), html);
       registerRoute(route, locale);
       console.log(`✓ ${entry.slug} (${locale})`);
@@ -629,7 +547,7 @@ function renderGuides() {
 
 // ------------- DELETE ACCOUNT (Google Play "account deletion URL") -------------
 // One page per language, in the new identity. noindex and therefore not in the sitemap.
-function renderDeleteAccount(cssHref) {
+function renderDeleteAccount() {
   const route = '/delete-account/';
   const alternatesAbs = buildAlternatesAbs(route);
 
@@ -662,7 +580,7 @@ function renderDeleteAccount(cssHref) {
       alternatesAbs,
       jsonLd,
       jsonLdJson: inlineJson(jsonLd),
-      cssHref,
+      cssHref: siteCss,
       langs: LANG_ORDER.map((code) => ({ code, name: LANG_NAMES[code], href: `${localePrefix(code)}${route}` })),
       homeHref: localePrefix(locale) + '/',
       deleteHref: `${localePrefix(locale)}${route}`,
@@ -686,16 +604,21 @@ function utilityStrings(pick) {
   const strings = {};
   for (const locale of config.locales) {
     const bundle = i18n[locale];
+    const nav = bundle.pages.home.nav;
     strings[locale] = {
       'common.language': bundle.ui.nav.language,
       ...flatten('common', bundle.ui.brand),
-      ...pick(bundle),
+      'common.nav_label': nav.label,
+      'common.nav_how': nav.how,
+      'common.nav_pricing': nav.pricing,
+      'common.nav_compare': nav.compare,
+      ...pick(bundle, locale),
     };
   }
   return strings;
 }
 
-function renderUtility(template, { outFile, cssHref, robots, referrer, titleKey, strings, headInline, headScripts, bodyScripts, analytics = true, extra }) {
+function renderUtility(template, { outFile, robots, referrer, titleKey, strings, nav = false, headInline, headScripts, bodyScripts, analytics = true, extra }) {
   const locale = config.defaultLocale; // server-rendered fallback (no JS)
   const ctx = {
     locale,
@@ -710,7 +633,8 @@ function renderUtility(template, { outFile, cssHref, robots, referrer, titleKey,
     robots,
     referrer,
     titleKey,
-    cssHref,
+    cssHref: siteCss,
+    nav: nav ? i18n[locale].pages.home.nav : null,
     headInline,
     headScripts,
     bodyScripts,
@@ -732,10 +656,9 @@ function renderUtility(template, { outFile, cssHref, robots, referrer, titleKey,
 
 // GitHub Pages serves /404.html for every unknown path. It also forwards the legacy
 // invite links /join/CODE to /join/?c=CODE (src/js/not-found.js).
-function renderNotFound(cssHref) {
+function renderNotFound() {
   renderUtility('not-found', {
     outFile: '404.html',
-    cssHref,
     robots: 'noindex',
     titleKey: 'nf.title',
     strings: utilityStrings((b) => flatten('nf', b.pages.notFound)),
@@ -749,12 +672,11 @@ function renderNotFound(cssHref) {
 // (crawlers do not run scripts) and the page is one URL for every language, so they are
 // written in Spanish + English; the page itself is shown in the visitor's language.
 // No canonical / og:url on purpose: some crawlers would follow it and drop the ?c= code.
-function renderJoin(cssHref) {
+function renderJoin() {
   const es = i18n.es.pages.join;
   const en = i18n.en.pages.join;
   renderUtility('join', {
     outFile: 'join/index.html',
-    cssHref,
     robots: 'noindex',
     titleKey: 'join.title',
     // card_* strings only feed the static preview tags below
@@ -778,10 +700,9 @@ function renderJoin(cssHref) {
 // The app always links to exactly https://homepotapp.com/reset-password/
 // No analytics beacon here, whatever the config says: recovery tokens travel in this
 // page's URL and must not reach a third party.
-function renderResetPassword(cssHref) {
+function renderResetPassword() {
   renderUtility('reset-password', {
     outFile: 'reset-password/index.html',
-    cssHref,
     robots: 'noindex, nofollow',
     referrer: 'no-referrer', // recovery tokens travel in the URL
     titleKey: 'rp.title',
@@ -791,6 +712,37 @@ function renderResetPassword(cssHref) {
     analytics: false,
     extra: { supabaseJson: inlineJson({ url: config.supabase.url, anonKey: config.supabase.anonKey }) },
   });
+}
+
+// ------------- SUPPORT, PRIVACY, TERMS -------------
+// One URL each (the app links to them), language picked in the browser like the utility pages.
+// Their text is src/i18n/pages-translations.json, untouched; only the page around it is new.
+const singlePages = [
+  { name: 'support', description: 'Get help with HomePot. FAQs, troubleshooting, and contact information.' },
+  { name: 'privacy', description: 'HomePot Privacy Policy. Learn how we protect your data.' },
+  { name: 'terms', description: 'HomePot Terms of Service. Read our terms and conditions.' },
+];
+function renderLegalPages() {
+  for (const page of singlePages) {
+    const keys = Object.keys(legal[config.defaultLocale]);
+    renderUtility(page.name, {
+      outFile: `${page.name}/index.html`,
+      robots: 'index, follow',
+      titleKey: `${page.name}.doc_title`,
+      nav: true,
+      strings: utilityStrings((bundle, locale) => {
+        const own = Object.fromEntries(Object.entries(legal[locale]).filter(([key]) => key.startsWith(`${page.name}.`)));
+        return { ...own, [`${page.name}.doc_title`]: `${own[`${page.name}.title`]} · HomePot` };
+      }),
+      headScripts: [],
+      bodyScripts: [],
+      extra: {
+        description: page.description,
+        canonicalUrl: `${config.baseUrl}/${page.name}/`,
+        sections: keys.filter((key) => new RegExp(`^${page.name}\\.s\\d+_title$`).test(key)).length,
+      },
+    });
+  }
 }
 
 // ------------- DEEP LINKS (.well-known) + .nojekyll -------------
@@ -841,6 +793,7 @@ function renderWellKnown() {
 // One <url> entry per language version (not only the default locale), each listing the
 // full set of hreflang alternates, as Google asks for localized pages. Only pages that
 // call registerRoute() get here: /join/, /reset-password/, /delete-account/ and 404 do not.
+// The three single-URL pages (support, privacy, terms) are added at the end.
 function renderSitemap() {
   // Group routes by path so each URL entry has all hreflang alternates
   const byRoute = new Map();
@@ -877,30 +830,20 @@ function renderSitemap() {
     }
   }
 
+  // Support, privacy and terms: one URL each, the language is chosen in the browser
+  for (const page of singlePages) {
+    xml.push('  <url>');
+    xml.push(`    <loc>${config.baseUrl}/${page.name}/</loc>`);
+    xml.push(`    <lastmod>${today}</lastmod>`);
+    xml.push('    <changefreq>monthly</changefreq>');
+    xml.push('    <priority>0.5</priority>');
+    xml.push('  </url>');
+    count++;
+  }
+
   xml.push('</urlset>');
   writeFile(join(ROOT, 'sitemap.xml'), xml.join('\n') + '\n');
   console.log(`✓ sitemap.xml (${count} URLs: ${byRoute.size} routes × language versions)`);
-}
-
-// ------------- ANALYTICS ON HAND-WRITTEN PAGES -------------
-// /privacy/, /terms/ and /support/ are not generated. They carry a pair of marker comments
-// before </body>; the beacon (or nothing, while the token is empty) is written between them.
-const STATIC_PAGES = ['privacy/index.html', 'terms/index.html', 'support/index.html'];
-function injectStaticAnalytics() {
-  const snippet = analyticsSnippet();
-  const marker = /(<!-- analytics:start[^>]*-->)[\s\S]*?(<!-- analytics:end -->)/;
-  for (const rel of STATIC_PAGES) {
-    const file = join(ROOT, rel);
-    if (!existsSync(file)) continue;
-    const html = readFileSync(file, 'utf8');
-    if (!marker.test(html)) {
-      console.warn(`  warning: ${rel} has no analytics markers, the beacon cannot be added there`);
-      continue;
-    }
-    const next = html.replace(marker, (_, open, close) => `${open}${snippet ? `\n${snippet}\n` : ''}${close}`);
-    if (next !== html) writeFileSync(file, next, 'utf8');
-    console.log(`✓ ${rel} (analytics ${snippet ? 'on' : 'off'})`);
-  }
 }
 
 // ------------- ROBOTS -------------
@@ -918,24 +861,24 @@ function renderRobots() {
 
 // ------------- MAIN -------------
 console.log('Building homepotapp.com...\n');
-renderHome();
+const siteCss = buildCss('site');
+const homeCss = buildCss('home');
+renderHome(homeCss);
 renderResourcesHub();
 renderCompareHub();
-renderToolsHub();
 renderGuidesHub();
 renderComparisons();
 renderFromSplitwise();
 renderTools();
 renderGuides();
-const utilityCss = buildUtilityCss();
-renderDeleteAccount(utilityCss);
-renderNotFound(utilityCss);
-renderJoin(utilityCss);
-renderResetPassword(utilityCss);
+renderDeleteAccount();
+renderNotFound();
+renderJoin();
+renderResetPassword();
+renderLegalPages();
 renderWellKnown();
 renderSitemap();
 renderRobots();
-injectStaticAnalytics();
 if (!analyticsSnippet()) console.log('  analytics: off (build.config.js → analytics.cloudflareToken is empty)');
 if (!String(config.appStore?.providerToken || '').trim()) console.log('  App Store campaign links: off (build.config.js → appStore.providerToken is empty)');
 console.log(`\nDone. ${routes.length} pages generated.`);

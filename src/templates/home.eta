@@ -1,357 +1,266 @@
-<% const t = it.ui; const h = it.page.home; %>
+<%/*
+  Home page = the approved landing «El resumen del mes» (app repo: design/landing/index.html),
+  one template for the five languages. Structure, chart, statement, tariff and motion are the
+  landing's; only the words (src/i18n/<lang>.json → pages.home), the example currency and the
+  links change. Styles: src/styles/home.css. Script: src/js/home.js.
 
-<!-- ========== HERO ========== -->
-<section class="min-h-screen bg-cream grain-bg flex items-center pt-20">
-  <div class="max-w-7xl mx-auto px-6 py-16 lg:py-24 w-full">
-    <div class="grid lg:grid-cols-12 gap-12 lg:gap-16 items-center">
-      <div class="lg:col-span-7 relative z-10">
-        <div class="inline-flex items-center gap-2 bg-sage/10 text-sage rounded-full px-4 py-2 text-sm font-medium mb-6">
-          <span class="relative flex h-2.5 w-2.5">
-            <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-sage opacity-75"></span>
-            <span class="relative inline-flex rounded-full h-2.5 w-2.5 bg-sage"></span>
-          </span>
-          <span><%= h.hero.badge %></span>
-        </div>
+  The first viewport is the 2048 × 1280 comp: every element sits at its comp coordinates.
+  They are listed once below; a language can override a box in pages.home.frame when its
+  words need other room (Spanish never does: it is the comp).
+*/%>
+<%
+  const h = it.page.home;
+  const e = it.esc;
+  const m = it.money;
+  const F = {
+    brand: [70, 10, 302, 58], nav1: [1296, 18, 200, 42], nav2: [1547, 18, 100, 42], nav3: [1698, 18, 135, 42], lang: [1872, 14, 128, 50],
+    h1: [62, 103, 1756, 72], sub: [62, 178, 1690, 42], ruleTop: [56, 243, 1936, 2],
+    month: [56, 260, 1100, 62], legend: [1226, 266, 762, 44], runway: [36, 330, 1966, 404],
+    rule1: [40, 755, 1966, 2], sum1: [66, 770, 596, 60], vd1: [767, 768, 2, 62], sum2: [814, 766, 470, 64], vd2: [1376, 768, 2, 62], sum3: [1424, 766, 488, 64], rule2: [40, 840, 1966, 2],
+    cut: [44, 864, 1964, 36], store: [141, 916, 568, 86], vd3: [784, 910, 2, 98], qr: [866, 904, 110, 110], qrText: [1004, 912, 250, 96], vd4: [1380, 910, 2, 98], android: [1494, 918, 430, 80], ruleCta: [40, 1035, 1966, 2],
+    h2: [48, 1058, 700, 66], rule3: [40, 1133, 1966, 2],
+    ic1: [98, 1156, 72, 82], st1: [208, 1150, 334, 94], vd5: [635, 1148, 2, 98],
+    ic2: [686, 1156, 86, 76], st2: [804, 1150, 428, 94], vd6: [1325, 1148, 2, 98],
+    ic3: [1386, 1156, 90, 76], st3: [1508, 1150, 474, 94], rule4: [40, 1266, 1966, 2],
+  };
+  const at = (key) => { const [x, y, w, hh] = (h.frame && h.frame[key]) || F[key]; return `--x:${x};--y:${y};--w:${w};--h:${hh}`; };
+  const apple = '<svg viewBox="0 0 24 28" aria-hidden="true"><path fill="currentColor" d="M19.7 14.9c0-3 2.5-4.5 2.6-4.6-1.4-2.1-3.6-2.4-4.4-2.4-1.9-.2-3.7 1.1-4.6 1.1-1 0-2.4-1.1-4-1.1-2 0-3.9 1.2-5 3-2.1 3.7-.5 9.2 1.5 12.2 1 1.4 2.2 3.1 3.7 3 1.5-.1 2.1-1 3.9-1s2.3 1 3.9.9c1.6 0 2.6-1.4 3.6-2.9 1.1-1.7 1.6-3.3 1.6-3.4-.1 0-3.2-1.2-2.8-4.8zM16.8 5.8c.8-1 1.4-2.4 1.2-3.8-1.2.1-2.6.8-3.5 1.8-.8.9-1.4 2.3-1.2 3.6 1.3.1 2.7-.7 3.5-1.6z"/></svg>';
+  const android = '<svg viewBox="0 0 56 64" aria-hidden="true"><path fill="currentColor" d="M14 22h28v26a4 4 0 0 1-4 4h-2v8a4 4 0 0 1-8 0v-8h-4v8a4 4 0 0 1-8 0v-8h-2a4 4 0 0 1-4-4zM5 24a4 4 0 0 1 8 0v16a4 4 0 0 1-8 0zM43 24a4 4 0 0 1 8 0v16a4 4 0 0 1-8 0zM14 19c0-6 5-11 11-12l-3-5 1.5-1 3.3 5.4a14 14 0 0 1 2.4 0L32.5 1 34 2l-3 5c6 1 11 6 11 12zm8-6a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm12 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4z"/></svg>';
+  const scissors = '<svg viewBox="0 0 44 36" fill="none" stroke="currentColor" stroke-width="3"><circle cx="9" cy="9" r="6"/><circle cx="9" cy="27" r="6"/><path d="M14 12 42 30M14 24 42 6"/></svg>';
+  const plus = '<svg class="pm" viewBox="0 0 20 20" aria-hidden="true"><path d="M4 10h12"/><path class="pm-v" d="M10 4v12"/></svg>';
+  // «Android, muy pronto», or the Play Store link once the app is published there.
+  const androidLine = (soon) => it.playStoreLive ? `<a href="${it.playStoreUrl}" rel="noopener">${h.store.play}</a>` : soon;
+  const cell = (text, kind) => kind === 'n' ? `<span class="n">${text}</span>` : text;
+%>
+<!doctype html>
+<html lang="<%= it.locale %>">
+<%~ include('_head', it) %>
+<body>
+<div class="frame" id="top">
+  <header class="band" aria-label="<%= e(h.nav.header) %>"></header>
+  <a class="brand at" style="<%= at('brand') %>" href="#top"><img src="/assets/brand/logo-horizontal-white.svg" alt="HomePot" width="485" height="100"></a>
+<% if (it.locale === 'es') { %>
+  <nav aria-label="<%= e(h.nav.label) %>" style="display:contents">
+<% } else { %>
+  <nav class="nav-auto" aria-label="<%= e(h.nav.label) %>">
+<% } %>
+    <a class="nav-link at" style="<%= at('nav1') %>" href="#como"><%= h.nav.how %></a>
+    <a class="nav-link at" style="<%= at('nav2') %>" href="#precios"><%= h.nav.pricing %></a>
+    <a class="nav-link at" style="<%= at('nav3') %>" href="#comparar"><%= h.nav.compare %></a>
+  </nav>
+  <details class="lang at" style="<%= at('lang') %>">
+<%~ include('partials/lang-menu', it) %>
+  </details>
 
-        <h1 class="text-4xl lg:text-[56px] font-extrabold text-darkBlue leading-tight mb-6"><%= h.hero.headline %></h1>
-        <p class="text-lg lg:text-xl text-gray-500 mb-8 max-w-xl"><%= h.hero.subtitle %></p>
+  <h1 class="h1 at" style="<%= at('h1') %>"><%= h.hero.h1 %></h1>
+  <p class="sub at" style="<%= at('sub') %>"><%= h.hero.sub %></p>
+  <div class="rule rule-top at" style="<%= at('ruleTop') %>" aria-hidden="true"></div>
 
-        <div class="flex flex-row items-center gap-3 sm:gap-4 mb-8 flex-wrap">
-          <a href="<%= it.appStore('hero') %>" target="_blank" rel="noopener" class="hover:opacity-80 transition-opacity">
-            <img src="/assets/badges/download-<%= it.locale %>.svg" alt="Download on the App Store" style="height:48px;width:auto;">
-          </a>
-          <a href="#cta" class="hero-promo-cta inline-flex items-center justify-center gap-2 text-terracotta font-semibold border-2 border-terracotta rounded-xl hover:bg-terracotta/5 transition-colors" style="height:48px;padding:0 24px;">
-            <span class="material-symbols-outlined text-xl">star</span>
-            <span><%= h.hero.cta_promo %></span>
-          </a>
-        </div>
-        <p class="text-sm text-gray-400 mb-4"><%= h.hero.promo_hint %></p>
-
-        <div class="flex flex-wrap items-center gap-4 text-sm text-gray-500">
-          <span class="flex items-center gap-1.5"><span class="material-symbols-outlined text-sage text-lg">check_circle</span><span><%= h.hero.trust_noads %></span></span>
-          <span class="text-gray-300">·</span>
-          <span class="flex items-center gap-1.5"><span class="material-symbols-outlined text-sage text-lg">check_circle</span><span><%= h.hero.trust_notracking %></span></span>
-          <span class="text-gray-300">·</span>
-          <span class="flex items-center gap-1.5"><span class="material-symbols-outlined text-sage text-lg">check_circle</span><span><%= h.hero.trust_gdpr %></span></span>
-        </div>
-      </div>
-
-      <!-- Phone side (desktop) -->
-      <div class="hidden lg:flex lg:col-span-5 relative justify-center items-center min-h-[500px]">
-        <div class="absolute w-[500px] h-[500px] bg-yellowSoft rounded-full blur-[120px] opacity-15 -top-10 -right-20"></div>
-        <div class="absolute w-[400px] h-[400px] bg-sage rounded-full blur-[100px] opacity-10 bottom-0 -left-10"></div>
-        <img src="/assets/screenshots/stats.jpg" alt="HomePot statistics" width="600" height="1300" class="absolute max-w-[280px] rounded-[2.5rem] shadow-2xl transform rotate-[5deg] translate-x-8 -translate-y-4 z-10">
-        <img src="/assets/screenshots/dashboard.jpg" alt="HomePot dashboard" width="600" height="1300" fetchpriority="high" class="relative max-w-[280px] rounded-[2.5rem] shadow-2xl transform -rotate-[5deg] -translate-x-4 translate-y-4 z-20">
-      </div>
-      <!-- Phone side (mobile) -->
-      <div class="flex lg:hidden justify-center">
-        <img src="/assets/screenshots/dashboard.jpg" alt="HomePot dashboard" width="600" height="1300" fetchpriority="high" class="max-w-[260px] rounded-[2.5rem] shadow-2xl">
-      </div>
-    </div>
+  <div class="month-line at" style="<%= at('month') %>">
+    <h2 class="month"><%= h.chart.month %></h2>
+    <p class="example"><%= h.chart.example %></p>
   </div>
-</section>
+  <ul class="legend at" style="<%= at('legend') %>" aria-hidden="true">
+    <li><span class="swatch-bar"></span><%= h.chart.legend_spend %></li>
+    <li><svg class="swatch-line" viewBox="0 0 60 22"><line x1="2" y1="11" x2="58" y2="11" stroke="#0F4A30" stroke-width="4"/><circle cx="30" cy="11" r="7" fill="#fff" stroke="#0F4A30" stroke-width="3.5"/></svg><%= h.chart.legend_balance %></li>
+  </ul>
+  <div class="runway-scroll at" style="<%= at('runway') %>"><svg class="runway" id="runway" viewBox="36 330 1966 404" role="img" aria-label="<%= e(h.chart.aria) %>" style="width:100%;height:100%"></svg></div>
+  <svg class="runway-m" id="runway-m" viewBox="0 0 540 392" role="img" aria-label="<%= e(h.chart.aria_m) %>"></svg>
 
-<!-- ========== TRUST MARQUEE ========== -->
-<section class="bg-white py-8 overflow-hidden">
-  <div class="trust-marquee">
-    <div class="trust-marquee-track">
-      <% for (let i = 0; i < 2; i++) { %>
-      <div class="trust-item"><span class="material-symbols-outlined text-sage">verified_user</span><span><%= h.trust.gdpr %></span></div>
-      <div class="trust-item"><span class="material-symbols-outlined text-sage">shield</span><span><%= h.trust.ccpa %></span></div>
-      <div class="trust-item"><span class="material-symbols-outlined text-sage">lock</span><span><%= h.trust.encryption %></span></div>
-      <div class="trust-item"><span class="material-symbols-outlined text-sage">block</span><span><%= h.trust.noads %></span></div>
-      <div class="trust-item"><span class="material-symbols-outlined text-sage">visibility_off</span><span><%= h.trust.notracking %></span></div>
-      <div class="trust-item"><span class="material-symbols-outlined text-sage">translate</span><span><%= h.trust.languages %></span></div>
-      <div class="trust-item"><span class="material-symbols-outlined text-sage">currency_exchange</span><span><%= h.trust.currencies %></span></div>
-      <div class="trust-item"><span class="material-symbols-outlined text-sage">cloud_done</span><span><%= h.trust.aws %></span></div>
-      <div class="trust-item"><span class="material-symbols-outlined text-sage">delete_forever</span><span><%= h.trust.delete %></span></div>
-      <div class="trust-item"><span class="material-symbols-outlined text-sage">smart_toy</span><span><%= h.trust.ai %></span></div>
-      <% } %>
-    </div>
+  <div class="rule strong at" style="<%= at('rule1') %>" aria-hidden="true"></div>
+  <p class="sum at" style="<%= at('sum1') %>">
+    <svg viewBox="0 0 60 48" fill="none" stroke="currentColor" stroke-width="3.2" aria-hidden="true"><circle cx="14" cy="13" r="6"/><circle cx="30" cy="9" r="6"/><circle cx="46" cy="13" r="6"/><path d="M3 41c0-8 5-13 11-13s11 5 11 13M19 37c1-8 5-12 11-12s10 4 11 12M35 41c0-8 5-13 11-13s11 5 11 13"/></svg>
+    <span><%~ h.summary.people %></span>
+  </p>
+  <div class="vdiv soft at" style="<%= at('vd1') %>" aria-hidden="true"></div>
+  <p class="sum at" style="<%= at('sum2') %>"><span><%= h.summary.spend_label %></span><span class="big"><%= h.summary.spend %></span></p>
+  <div class="vdiv soft at" style="<%= at('vd2') %>" aria-hidden="true"></div>
+  <p class="sum at" style="<%= at('sum3') %>"><span><%~ h.summary.close %></span><span class="big"><%= h.summary.close_amount %></span></p>
+  <div class="rule strong at" style="<%= at('rule2') %>" aria-hidden="true"></div>
+
+  <div class="cutline at" style="<%= at('cut') %>" aria-hidden="true">
+    <%~ scissors %>
   </div>
-</section>
+  <a class="store at" style="<%= at('store') %>" href="<%= it.appStore('hero') %>" rel="noopener">
+    <%~ apple %>
+    <%= h.store.appstore %>
+  </a>
+  <div class="vdiv soft at" style="<%= at('vd3') %>" aria-hidden="true"></div>
+  <div class="qr at" id="qr" style="<%= at('qr') %>" role="img" aria-label="<%= e(h.store.qr_aria) %>"></div>
+  <p class="qr-text at" style="<%= at('qrText') %>"><b>HomePot</b><span><%= h.store.qr_text %></span></p>
+  <div class="vdiv soft at" style="<%= at('vd4') %>" aria-hidden="true"></div>
+  <p class="android at" style="<%= at('android') %>">
+    <%~ android %>
+    <%~ androidLine(h.store.android) %>
+  </p>
+  <div class="rule rule-cta at" style="<%= at('ruleCta') %>" aria-hidden="true"></div>
 
-<!-- ========== FEATURE SHOWCASE ========== -->
-<section class="bg-cream py-20 lg:py-28">
-  <div class="max-w-7xl mx-auto px-6">
-    <h2 class="text-3xl lg:text-5xl font-extrabold text-darkBlue text-center mb-4 reveal"><%= h.showcase.title %></h2>
-    <p class="text-lg text-gray-500 text-center mb-16 reveal"><%= h.showcase.subtitle %></p>
+  <h2 class="h2 at" id="como" style="<%= at('h2') %>"><%= h.how.title %></h2>
+  <div class="rule at" style="<%= at('rule3') %>" aria-hidden="true"></div>
+  <div class="step-icon fill at" style="<%= at('ic1') %>" aria-hidden="true"><svg viewBox="0 0 72 82" fill="none" stroke="currentColor" stroke-width="4.1"><path d="M5 5.3H62.7V78.4L51.2 67.9 43.1 78.4 33.7 67.9 24.9 78.4 16.1 67.9 5 78.4Z"/><path d="M17.9 24H49.8M17.9 37.2H49.8M17.9 50.1H49.8"/></svg></div>
+  <p class="step at" style="<%= at('st1') %>"><b><%= h.how.s1_title %></b><%= h.how.s1_text %></p>
+  <div class="vdiv soft at" style="<%= at('vd5') %>" aria-hidden="true"></div>
+  <div class="step-icon fill at" style="<%= at('ic2') %>" aria-hidden="true"><svg viewBox="0 0 86 76" fill="none" stroke="currentColor" stroke-width="4.1"><rect x="9.1" y="49.3" width="13.6" height="21"/><rect x="35.3" y="28.5" width="13.7" height="41.8"/><rect x="61.6" y="5.9" width="14.2" height="64.4"/></svg></div>
+  <p class="step at" style="<%= at('st2') %>"><b><%= h.how.s2_title %></b><%= h.how.s2_text %></p>
+  <div class="vdiv soft at" style="<%= at('vd6') %>" aria-hidden="true"></div>
+  <div class="step-icon at" style="<%= at('ic3') %>" aria-hidden="true"><svg viewBox="0 0 62 52" fill="none" stroke="currentColor" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"><path d="M6 16h46M42 6l10 10-10 10M56 36H10M20 26 10 36l10 10"/></svg></div>
+  <p class="step at" style="<%= at('st3') %>"><b><%= h.how.s3_title %></b><%= h.how.s3_text %></p>
+  <div class="rule at" style="<%= at('rule4') %>" aria-hidden="true"></div>
+</div>
 
-    <div class="grid md:grid-cols-2 gap-8 reveal">
-      <div class="bg-white rounded-3xl p-8 border border-gray-100 shadow-sm">
-        <div class="aspect-[4/3] bg-cream rounded-2xl mb-8 flex items-center justify-center relative overflow-hidden border border-gray-100">
-          <div class="relative w-48 h-64 bg-white shadow-xl rounded-lg border border-gray-200 p-4" style="transform:rotate(-5deg)">
-            <div class="w-full h-2 bg-gray-200 rounded mb-2"></div>
-            <div class="w-3/4 h-2 bg-gray-200 rounded mb-6"></div>
-            <div class="space-y-3 mb-6">
-              <div class="flex justify-between"><div class="w-1/2 h-2 bg-gray-100 rounded"></div><div class="w-1/4 h-2 bg-gray-200 rounded"></div></div>
-              <div class="flex justify-between"><div class="w-2/3 h-2 bg-gray-100 rounded"></div><div class="w-1/4 h-2 bg-gray-200 rounded"></div></div>
-              <div class="flex justify-between"><div class="w-1/3 h-2 bg-gray-100 rounded"></div><div class="w-1/4 h-2 bg-gray-200 rounded"></div></div>
-              <div class="flex justify-between"><div class="w-1/2 h-2 bg-gray-100 rounded"></div><div class="w-1/4 h-2 bg-gray-200 rounded"></div></div>
-            </div>
-            <div class="w-full h-px bg-gray-300 mb-2"></div>
-            <div class="flex justify-between"><div class="w-1/3 h-3 bg-gray-300 rounded"></div><div class="w-1/4 h-3 bg-gray-400 rounded"></div></div>
+<main id="contenido">
+  <section class="sim" id="resumen" aria-labelledby="sim-title">
+    <div class="sim-head">
+      <h2 id="sim-title"><%= h.sim.title %></h2>
+      <p><%= h.sim.text %></p>
+    </div>
+    <div class="sim-stage">
+      <img class="sim-sheet" src="/assets/landing/sheet2.webp" alt="" width="2048" height="1072">
+      <div class="sheet-box">
+        <div class="sheet-main">
+          <p class="sheet-brand"><img src="/assets/brand/logo-horizontal-green.svg" alt="HomePot" width="485" height="100"></p>
+          <p class="sheet-meta"><span class="meta-title"><%= h.sim.meta_title %><span class="sep"> ·</span></span>
+            <span class="stepper"><button type="button" data-step="-1" aria-label="<%= e(h.sim.less) %>"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3.5 8h9"/></svg></button><output id="sim-people-out" aria-live="polite">2</output><button type="button" data-step="1" aria-label="<%= e(h.sim.more) %>"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3.5 8h9M8 3.5v9"/></svg></button></span>
+            <span><%= h.sim.people %><span class="sep"> ·</span></span>
+            <span class="meta-each"><%= h.sim.each_before %> <%= m.prefix %><label class="fig"><span class="sr"><%= h.sim.each_sr %></span><input id="sim-each" inputmode="decimal" autocomplete="off" value="<%= it.sim.each %>" size="5"></label><%= m.suffix %><%= h.sim.each_after ? ' ' + h.sim.each_after : '' %></span>
+            <input type="hidden" id="sim-people" value="2">
+          </p>
+          <div class="sheet-pot" aria-live="polite">
+            <p class="pot-amount" id="r-pot"><%= it.sim.pot %></p>
+            <p class="pot-note" id="r-note"><%= it.sim.note %></p>
           </div>
-          <div class="scanner-line"></div>
+          <table class="sheet-table">
+            <caption class="sr"><%= h.sim.caption %></caption>
+            <tbody>
+<% for (const row of it.sim.rows) { %>
+              <tr><th scope="row"><label for="g-<%= row.id %>"><%= h.sim[row.id] %></label></th><td><%= m.prefix %><input class="fig-in" id="g-<%= row.id %>" data-kind="<%= row.kind %>" inputmode="decimal" autocomplete="off" value="<%= row.value %>"><%= m.suffix %></td></tr>
+<% } %>
+              <tr class="total"><th scope="row"><%= h.sim.total %></th><td id="r-total"><%= it.sim.total %></td></tr>
+            </tbody>
+          </table>
+          <p class="sheet-close"><span><%= h.sim.close_label %></span><strong id="r-close"><%= it.sim.close %></strong></p>
         </div>
-        <h3 class="text-2xl font-extrabold text-darkBlue mb-3"><%= h.showcase.scan_title %></h3>
-        <p class="text-gray-500 leading-relaxed"><%= h.showcase.scan_desc %></p>
+        <aside class="sheet-stub" aria-label="<%= e(h.store.stub_aria) %>">
+          <a class="stub-store" href="<%= it.appStore('sheet') %>" rel="noopener">
+            <%~ apple %>
+            <span><%~ h.store.appstore_stub %></span>
+          </a>
+          <div class="qr stub-qr" id="qr2" role="img" aria-label="<%= e(h.store.qr_aria_short) %>"></div>
+          <p class="stub-android"><%~ androidLine(h.store.android_stub) %></p>
+        </aside>
       </div>
+    </div>
+  </section>
 
-      <div class="bg-white rounded-3xl p-8 border border-gray-100 shadow-sm">
-        <div class="aspect-[4/3] bg-cream/50 rounded-2xl mb-8 flex items-center justify-center relative overflow-hidden border border-terracotta/10">
-          <div class="w-full max-w-sm bg-white rounded-2xl shadow-xl border border-gray-200 p-5" style="transform:scale(0.85)">
-            <div class="text-center mb-5">
-              <div class="text-sm text-gray-500 mb-1"><%= h.showcase.balance_total %></div>
-              <div class="text-3xl font-extrabold text-darkBlue">€3,308.15</div>
-            </div>
-            <div class="text-[10px] font-bold text-gray-400 tracking-widest mb-3"><%= h.showcase.balance_per_person %></div>
-            <div class="space-y-3 mb-5">
-              <div class="flex items-center justify-between">
-                <div class="flex items-center gap-2">
-                  <div class="w-8 h-8 rounded-full bg-sage/20 flex items-center justify-center text-xs font-bold text-sage">AR</div>
-                  <div>
-                    <div class="text-xs font-bold text-darkBlue">Alex Rubio</div>
-                    <div class="text-[10px] text-gray-400"><%= h.showcase.balance_paid %> €2,813 · <%= h.showcase.balance_owes %> €1,103</div>
-                  </div>
-                </div>
-                <div class="text-xs font-bold text-emerald-600 bg-emerald-50 px-2 py-1 rounded-full">+€1,710</div>
-              </div>
-              <div class="flex items-center justify-between">
-                <div class="flex items-center gap-2">
-                  <div class="w-8 h-8 rounded-full bg-terracotta/20 flex items-center justify-center text-xs font-bold text-terracotta">MG</div>
-                  <div>
-                    <div class="text-xs font-bold text-darkBlue">María García</div>
-                    <div class="text-[10px] text-gray-400"><%= h.showcase.balance_paid %> €273 · <%= h.showcase.balance_owes %> €1,103</div>
-                  </div>
-                </div>
-                <div class="text-xs font-bold text-red-600 bg-red-50 px-2 py-1 rounded-full">-€830</div>
-              </div>
-            </div>
-            <div class="text-[10px] font-bold text-gray-400 tracking-widest mb-3"><%= h.showcase.balance_transfers %></div>
-            <div class="flex items-center justify-center gap-4">
-              <div class="flex flex-col items-center gap-1">
-                <div class="w-7 h-7 rounded-full bg-yellowSoft/40 flex items-center justify-center text-[10px] font-bold text-darkBlue">CL</div>
-                <span class="text-[9px] text-gray-400">Carlos</span>
-              </div>
-              <div class="flex flex-col items-center text-terracotta">
-                <span class="material-symbols-outlined text-sm">arrow_forward</span>
-                <span class="text-xs font-bold">€881</span>
-              </div>
-              <div class="flex flex-col items-center gap-1">
-                <div class="w-7 h-7 rounded-full bg-sage/20 flex items-center justify-center text-[10px] font-bold text-sage">AR</div>
-                <span class="text-[9px] text-gray-400">Alex</span>
-              </div>
-            </div>
-          </div>
+  <section class="scan section" id="escaner" aria-labelledby="scan-title">
+    <div class="scan-photo"><img src="/assets/landing/receipt.jpg" alt="<%= e(h.scan.photo_alt) %>" width="1536" height="1536" loading="lazy"></div>
+    <div class="scan-read">
+      <h2 id="scan-title"><%= h.scan.title %></h2>
+      <p class="lead"><%= h.scan.lead %></p>
+      <table class="ledger">
+        <caption><%= h.scan.caption %></caption>
+        <tbody>
+<% for (const [label, value] of h.scan.rows) { %>
+          <tr><th scope="row"><%= label %></th><td><%= value %></td></tr>
+<% } %>
+          <tr class="total"><th scope="row"><%= h.scan.total_label %></th><td><%= h.scan.total %></td></tr>
+        </tbody>
+      </table>
+      <p class="fine"><%= h.scan.fine %></p>
+    </div>
+  </section>
+
+  <section class="trust section" id="comparar" aria-labelledby="trust-title">
+    <h2 id="trust-title"><%= h.trust.title %></h2>
+    <dl class="facts">
+<% for (const [term, value] of h.trust.facts) { %>
+      <div><dt><%= term %></dt><dd><%= value %></dd></div>
+<% } %>
+    </dl>
+    <div class="table-wrap">
+      <table class="compare">
+        <caption><%= h.trust.compare_caption %></caption>
+        <thead><tr><th scope="col"><span class="sr"><%= h.trust.feature %></span></th><th scope="col">HomePot</th><th scope="col">Splitwise</th><th scope="col">Tricount</th></tr></thead>
+        <tbody>
+<% for (const [label, ours, splitwise, tricount] of h.trust.rows) { %>
+          <tr><th scope="row"><%= label %></th><td class="yes" data-label="HomePot"><%= ours %></td><td data-label="Splitwise"><%= splitwise %></td><td data-label="Tricount"><%= tricount %></td></tr>
+<% } %>
+        </tbody>
+      </table>
+    </div>
+    <p class="fine"><%~ h.trust.fine.replace('{splitwise}', `<a href="${it.prefix}/compare/homepot-vs-splitwise/">${h.trust.fine_splitwise}</a>`).replace('{tricount}', `<a href="${it.prefix}/compare/homepot-vs-tricount/">${h.trust.fine_tricount}</a>`) %></p>
+  </section>
+
+  <section class="prices section" id="precios" aria-labelledby="prices-title">
+    <div class="prices-head">
+      <h2 id="prices-title"><%= h.prices.title %></h2>
+      <div class="billing" role="group" aria-label="<%= e(h.prices.billing_label) %>">
+        <button type="button" data-billing="year" aria-pressed="true"><%= h.prices.year %></button>
+        <button type="button" data-billing="month" aria-pressed="false"><%= h.prices.month %></button>
+      </div>
+    </div>
+    <div class="statement">
+      <table class="tariff">
+        <caption class="sr"><%= h.prices.caption %></caption>
+        <colgroup><col class="c-item"><col class="c-free"><col class="c-pro"></colgroup>
+        <thead>
+          <tr><th scope="col"><span class="sr"><%= h.prices.concept %></span></th><th scope="col"><%= h.prices.free %></th><th scope="col" class="pro"><%= h.prices.pro %></th></tr>
+        </thead>
+        <tbody>
+          <tr class="t-price"><th scope="row"><%= h.prices.price %></th><td><span class="price"><%= h.prices.free_price %></span><span class="per"><%= h.prices.free_per %></span></td><td class="pro"><span class="price" id="pro-price"><%= h.prices.pro_price_year %></span><span class="per" id="pro-per"><%= h.prices.pro_per_year %></span></td></tr>
+<% for (const row of h.prices.rows) { %>
+          <tr><th scope="row"><%= row.label %></th><td<%= row.free_kind === 'no' ? ' class="no"' : '' %>><%~ cell(row.free, row.free_kind) %></td><td class="pro"><%~ cell(row.pro, row.pro_kind) %></td></tr>
+<% } %>
+        </tbody>
+        <tfoot>
+          <tr><th scope="row"><span class="sr"><%= h.prices.start %></span></th>
+            <td><a class="btn btn-line" href="<%= it.appStore('pricing-free') %>" rel="noopener"><%= h.prices.free_cta %></a></td>
+            <td class="pro"><a class="btn btn-solid" href="<%= it.appStore('pricing-pro') %>" rel="noopener"><%= h.prices.pro_cta %></a><span class="t-note"><%= h.prices.pro_note %></span></td></tr>
+        </tfoot>
+      </table>
+    </div>
+    <p class="fine"><%= h.prices.fine %> <%= h.prices.fine_household %></p>
+  </section>
+
+  <section class="faq section" id="preguntas" aria-labelledby="faq-title">
+    <div class="faq-head">
+      <h2 id="faq-title"><%= h.faq.title %></h2>
+      <p class="faq-more"><%~ h.faq.more.replace('{link}', `<a href="/support/">${h.faq.more_link}</a>`) %></p>
+    </div>
+    <div class="faq-list">
+<% for (const item of h.faq.items) { %>
+      <details><summary><%= item.q %><%~ plus %></summary><p><%= item.a %></p></details>
+<% } %>
+    </div>
+  </section>
+
+  <section class="close" id="descargar" aria-labelledby="close-title">
+    <img class="close-photo" src="/assets/landing/still.jpg" alt="" width="2048" height="1024" loading="lazy">
+    <div class="close-body">
+      <h2 id="close-title"><%= h.close.title %></h2>
+      <p><%= h.close.text %></p>
+      <div class="slip">
+        <div class="slip-cut" aria-hidden="true"><%~ scissors %></div>
+        <div class="slip-body">
+          <a class="store slip-store" href="<%= it.appStore('close') %>" rel="noopener">
+            <%~ apple %>
+            <%= h.store.appstore %>
+          </a>
+          <div class="qr slip-qr" id="qr3" role="img" aria-label="<%= e(h.store.qr_aria) %>"></div>
+          <p class="slip-android"><%~ android %><span><%~ androidLine(h.store.android_slip) %></span></p>
         </div>
-        <h3 class="text-2xl font-extrabold text-darkBlue mb-3"><%= h.showcase.balance_title %></h3>
-        <p class="text-gray-500 leading-relaxed"><%= h.showcase.balance_desc %></p>
       </div>
     </div>
-  </div>
-</section>
+  </section>
+</main>
 
-<!-- ========== FEATURE 1 ========== -->
-<section id="features" class="bg-white py-20 lg:py-28">
-  <div class="max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-12 lg:gap-20 items-center reveal">
-    <div>
-      <span class="inline-block bg-sage/10 text-sage text-sm font-semibold px-4 py-1.5 rounded-full mb-4"><%= h.f1.pill %></span>
-      <h2 class="text-3xl lg:text-5xl font-extrabold text-darkBlue mb-4"><%= h.f1.title %></h2>
-      <p class="text-lg text-gray-500 mb-6"><%= h.f1.desc %></p>
-      <div class="flex items-center gap-2 text-sage font-medium">
-        <span class="material-symbols-outlined">check_circle</span>
-        <span><%= h.f1.bullet %></span>
-      </div>
-    </div>
-    <div class="relative flex justify-center">
-      <div class="absolute w-[350px] h-[350px] bg-sage rounded-full blur-[100px] opacity-10 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"></div>
-      <img src="/assets/screenshots/expense.jpg" alt="Add expense screen" width="600" height="1300" loading="lazy" class="relative max-w-[300px] mx-auto rounded-[2rem] shadow-2xl transform rotate-2 hover:rotate-0 transition-transform duration-500">
-    </div>
-  </div>
-</section>
+<%~ include('partials/foot', it) %>
 
-<!-- ========== FEATURE 2 ========== -->
-<section class="bg-cream grain-bg py-20 lg:py-28">
-  <div class="max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-12 lg:gap-20 items-center reveal">
-    <div class="relative flex justify-center order-2 lg:order-1">
-      <div class="absolute w-[350px] h-[350px] bg-terracotta rounded-full blur-[100px] opacity-10 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"></div>
-      <img src="/assets/screenshots/paywall.jpg" alt="AI receipt scanner" width="600" height="1300" loading="lazy" class="relative max-w-[300px] mx-auto rounded-[2rem] shadow-2xl transform -rotate-2 hover:rotate-0 transition-transform duration-500">
-    </div>
-    <div class="order-1 lg:order-2">
-      <span class="inline-block bg-terracotta/10 text-terracotta text-sm font-semibold px-4 py-1.5 rounded-full mb-4"><%= h.f2.pill %></span>
-      <h2 class="text-3xl lg:text-5xl font-extrabold text-darkBlue mb-4"><%= h.f2.title %></h2>
-      <p class="text-lg text-gray-500 mb-6"><%= h.f2.desc %></p>
-      <div class="flex items-center gap-2 text-terracotta font-medium">
-        <span class="material-symbols-outlined">auto_awesome</span>
-        <span><%= h.f2.bullet %></span>
-      </div>
-    </div>
-  </div>
-</section>
+<script>window.__HP_HOME = <%~ it.homeJson %>;</script>
+<script src="/src/js/vendor/qrcode.min.js"></script>
+<script src="/src/js/home.js"></script>
+<script src="/src/js/lang-menu.js" defer></script>
+<%~ it.analytics || '' %>
 
-<!-- ========== FEATURE 3 ========== -->
-<section class="bg-white py-20 lg:py-28">
-  <div class="max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-12 lg:gap-20 items-center reveal">
-    <div>
-      <span class="inline-block bg-sage/10 text-sage text-sm font-semibold px-4 py-1.5 rounded-full mb-4"><%= h.f3.pill %></span>
-      <h2 class="text-3xl lg:text-5xl font-extrabold text-darkBlue mb-4"><%= h.f3.title %></h2>
-      <p class="text-lg text-gray-500 mb-6"><%= h.f3.desc %></p>
-      <div class="flex items-center gap-2 text-sage font-medium">
-        <span class="material-symbols-outlined">sync_alt</span>
-        <span><%= h.f3.bullet %></span>
-      </div>
-    </div>
-    <div class="relative flex justify-center">
-      <div class="absolute w-[350px] h-[350px] bg-sage rounded-full blur-[100px] opacity-10 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"></div>
-      <img src="/assets/screenshots/dashboard.jpg" alt="Real-time balances" width="600" height="1300" loading="lazy" class="relative max-w-[300px] mx-auto rounded-[2rem] shadow-2xl transform rotate-2 hover:rotate-0 transition-transform duration-500">
-    </div>
-  </div>
-</section>
-
-<!-- ========== FEATURE 4 ========== -->
-<section class="bg-cream grain-bg py-20 lg:py-28">
-  <div class="max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-12 lg:gap-20 items-center reveal">
-    <div class="relative flex justify-center order-2 lg:order-1">
-      <div class="absolute w-[350px] h-[350px] bg-terracotta rounded-full blur-[100px] opacity-10 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"></div>
-      <img src="/assets/screenshots/close-month.jpg" alt="Monthly settlement" width="600" height="1300" loading="lazy" class="relative max-w-[300px] mx-auto rounded-[2rem] shadow-2xl transform -rotate-2 hover:rotate-0 transition-transform duration-500">
-    </div>
-    <div class="order-1 lg:order-2">
-      <span class="inline-block bg-terracotta/10 text-terracotta text-sm font-semibold px-4 py-1.5 rounded-full mb-4"><%= h.f4.pill %></span>
-      <h2 class="text-3xl lg:text-5xl font-extrabold text-darkBlue mb-4"><%= h.f4.title %></h2>
-      <p class="text-lg text-gray-500 mb-6"><%= h.f4.desc %></p>
-      <div class="flex items-center gap-2 text-terracotta font-medium">
-        <span class="material-symbols-outlined">payments</span>
-        <span><%= h.f4.bullet %></span>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ========== FEATURE 5 ========== -->
-<section class="bg-white py-20 lg:py-28">
-  <div class="max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-12 lg:gap-20 items-center reveal">
-    <div>
-      <span class="inline-block bg-sage/10 text-sage text-sm font-semibold px-4 py-1.5 rounded-full mb-4"><%= h.f5.pill %></span>
-      <h2 class="text-3xl lg:text-5xl font-extrabold text-darkBlue mb-4"><%= h.f5.title %></h2>
-      <p class="text-lg text-gray-500 mb-6"><%= h.f5.desc %></p>
-      <div class="flex items-center gap-2 text-sage font-medium">
-        <span class="material-symbols-outlined">bar_chart</span>
-        <span><%= h.f5.bullet %></span>
-      </div>
-    </div>
-    <div class="relative flex justify-center">
-      <div class="absolute w-[350px] h-[350px] bg-sage rounded-full blur-[100px] opacity-10 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"></div>
-      <img src="/assets/screenshots/stats.jpg" alt="Statistics and charts" width="600" height="1300" loading="lazy" class="relative max-w-[300px] mx-auto rounded-[2rem] shadow-2xl transform rotate-2 hover:rotate-0 transition-transform duration-500">
-    </div>
-  </div>
-</section>
-
-<!-- ========== HOW IT WORKS ========== -->
-<section class="bg-cream grain-bg py-20 lg:py-28">
-  <div class="max-w-5xl mx-auto px-6">
-    <h2 class="text-3xl lg:text-5xl font-extrabold text-darkBlue text-center mb-16 reveal"><%= h.how.title %></h2>
-    <div class="relative grid md:grid-cols-3 gap-8">
-      <div class="hidden md:block absolute top-12 left-[20%] right-[20%] border-t-2 border-dashed border-darkBlue/10"></div>
-      <div class="bg-white rounded-2xl p-8 shadow-sm hover:shadow-md transition-shadow text-center relative reveal reveal-delay-1">
-        <div class="w-16 h-16 bg-sage/15 rounded-full flex items-center justify-center mx-auto mb-5">
-          <span class="material-symbols-outlined text-sage text-3xl">cottage</span>
-        </div>
-        <h3 class="text-lg font-bold text-darkBlue mb-2"><%= h.how.step1_title %></h3>
-        <p class="text-gray-500"><%= h.how.step1_desc %></p>
-      </div>
-      <div class="bg-white rounded-2xl p-8 shadow-sm hover:shadow-md transition-shadow text-center relative reveal reveal-delay-2">
-        <div class="w-16 h-16 bg-terracotta/15 rounded-full flex items-center justify-center mx-auto mb-5">
-          <span class="material-symbols-outlined text-terracotta text-3xl">receipt_long</span>
-        </div>
-        <h3 class="text-lg font-bold text-darkBlue mb-2"><%= h.how.step2_title %></h3>
-        <p class="text-gray-500"><%= h.how.step2_desc %></p>
-      </div>
-      <div class="bg-white rounded-2xl p-8 shadow-sm hover:shadow-md transition-shadow text-center relative reveal reveal-delay-3">
-        <div class="w-16 h-16 bg-yellowSoft/30 rounded-full flex items-center justify-center mx-auto mb-5">
-          <span class="material-symbols-outlined text-yellowSoft text-3xl">check_circle</span>
-        </div>
-        <h3 class="text-lg font-bold text-darkBlue mb-2"><%= h.how.step3_title %></h3>
-        <p class="text-gray-500"><%= h.how.step3_desc %></p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ========== PRICING ========== -->
-<section id="pricing" class="bg-white py-20 lg:py-28">
-  <div class="max-w-5xl mx-auto px-6">
-    <div class="text-center mb-12 reveal">
-      <h2 class="text-3xl lg:text-5xl font-extrabold text-darkBlue mb-4"><%= h.pricing.title %></h2>
-      <p class="text-lg text-gray-500"><%= h.pricing.subtitle %></p>
-    </div>
-
-    <div class="flex items-center justify-center gap-4 mb-12 reveal">
-      <span class="text-sm font-medium text-darkBlue"><%= h.pricing.monthly %></span>
-      <button data-pricing-toggle role="switch" aria-checked="true" class="relative inline-flex h-7 w-12 items-center rounded-full bg-terracotta transition-colors focus:outline-none focus:ring-2 focus:ring-terracotta/50">
-        <span class="inline-block h-5 w-5 transform rounded-full bg-white shadow transition-transform translate-x-5"></span>
-      </button>
-      <span class="text-sm font-medium text-darkBlue"><%= h.pricing.annual %></span>
-      <span class="bg-sage/15 text-sage text-xs font-bold px-3 py-1 rounded-full"><%= h.pricing.save %></span>
-    </div>
-
-    <div class="grid lg:grid-cols-2 max-w-4xl mx-auto gap-8 reveal">
-      <!-- Free card -->
-      <div class="ring-1 ring-gray-200 rounded-3xl p-8 flex flex-col">
-        <h3 class="text-2xl font-bold text-darkBlue mb-1"><%= h.pricing.free_name %></h3>
-        <p class="text-gray-500 text-sm mb-6"><%= h.pricing.free_desc %></p>
-        <div class="flex items-baseline gap-1 mb-8">
-          <span class="text-4xl font-extrabold text-darkBlue"><%= h.pricing.free_price %></span>
-          <span class="text-gray-400"><%= h.pricing.free_period %></span>
-        </div>
-        <ul class="space-y-3 mb-8 flex-1">
-          <% h.pricing.free_features.forEach(f => { %>
-          <li class="flex items-center gap-2 text-sm"><span class="material-symbols-outlined text-terracotta text-lg">check</span><span><%= f %></span></li>
-          <% }) %>
-        </ul>
-        <a href="<%= it.appStore('pricing-free') %>" target="_blank" rel="noopener" class="block text-center border-2 border-darkBlue text-darkBlue font-semibold rounded-full py-3 hover:bg-darkBlue/5 transition-colors"><%= h.pricing.free_cta %></a>
-      </div>
-
-      <!-- Pro card -->
-      <div class="ring-2 ring-terracotta rounded-3xl p-8 relative flex flex-col">
-        <div class="absolute -top-4 left-1/2 -translate-x-1/2 bg-terracotta text-white text-xs font-bold px-4 py-1.5 rounded-full"><%= h.pricing.pro_badge %></div>
-        <h3 class="text-2xl font-bold text-terracotta mb-1"><%= h.pricing.pro_name %></h3>
-        <p class="text-gray-500 text-sm mb-6"><%= h.pricing.pro_desc %></p>
-        <div data-price-monthly class="hidden flex items-baseline gap-1 mb-8">
-          <span class="text-4xl font-extrabold text-darkBlue"><%= h.pricing.pro_price_monthly %></span>
-          <span class="text-gray-400"><%= h.pricing.pro_period_monthly %></span>
-        </div>
-        <div data-price-annual class="flex items-baseline gap-1 mb-8">
-          <span class="text-4xl font-extrabold text-darkBlue"><%= h.pricing.pro_price_annual %></span>
-          <span class="text-gray-400"><%= h.pricing.pro_period_annual %></span>
-        </div>
-        <ul class="space-y-3 mb-8 flex-1">
-          <% h.pricing.pro_features.forEach((f, idx) => { %>
-          <li class="flex items-center gap-2 text-sm<%= idx === 0 ? ' font-semibold' : '' %>"><span class="material-symbols-outlined text-terracotta text-lg">check</span><span><%= f %></span></li>
-          <% }) %>
-        </ul>
-        <a href="<%= it.appStore('pricing-pro') %>" target="_blank" rel="noopener" class="block text-center bg-terracotta text-white font-semibold rounded-full py-3 hover:bg-terracotta/90 transition-colors"><%= h.pricing.pro_cta %></a>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ========== FAQ INLINE ========== -->
-<section class="bg-white py-20 lg:py-28">
-  <div class="max-w-3xl mx-auto px-6">
-    <h2 class="text-3xl lg:text-4xl font-extrabold text-darkBlue text-center mb-12 reveal"><%= h.faq.title %></h2>
-    <div class="space-y-3 reveal">
-      <% h.faq.items.forEach(item => { %>
-      <details class="group bg-cream/50 rounded-2xl border border-gray-100 overflow-hidden">
-        <summary class="flex items-center justify-between p-6 cursor-pointer font-semibold text-darkBlue list-none">
-          <span><%= item.q %></span>
-          <span class="material-symbols-outlined text-gray-400 group-open:rotate-180 transition-transform">expand_more</span>
-        </summary>
-        <div class="px-6 pb-6 text-gray-500 text-sm leading-relaxed"><%= item.a %></div>
-      </details>
-      <% }) %>
-    </div>
-  </div>
-</section>
-
-<%~ include('partials/cta-final', it) %>
+</body>
+</html>

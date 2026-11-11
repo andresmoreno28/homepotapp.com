@@ -480,4 +480,22 @@
     <xhtml:link rel="alternate" hreflang="pt" href="https://homepotapp.com/pt/guides/split-expenses-with-roommates/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://homepotapp.com/guides/split-expenses-with-roommates/"/>
   </url>
+  <url>
+    <loc>https://homepotapp.com/support/</loc>
+    <lastmod>2026-11-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://homepotapp.com/privacy/</loc>
+    <lastmod>2026-11-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://homepotapp.com/terms/</loc>
+    <lastmod>2026-11-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
 </urlset>

@@ -1,9 +1,11 @@
-/* HomePot utility pages: 404, /join/, /reset-password/, /delete-account/.
-   Same identity as the landing «El resumen del mes» (app repo: design/landing/styles.css + DESIGN.md).
-   Tokens, band, lockup, type roles, buttons, cut line and footer are taken from it unchanged.
+/* HomePot site styles: every page except the home (which is the landing itself, src/styles/home.css).
+   Content pages (compare, guides, resources, from-splitwise, support, privacy, terms) and utility
+   pages (404, /join/, /reset-password/, /delete-account/) share them.
+   Same identity as the landing «El resumen del mes» (app repo: design/landing/styles.css + DESIGN.md):
+   tokens, band, lockup, type roles, buttons, tables, FAQ, cut line and footer are taken from it unchanged.
    One comp unit (--u) = 1 px of the 2048-wide comp on desktop; below 1024px it is a fixed 0.5px
    and the page becomes a single centred column.
-   build.js copies this file to /assets/utility.css. */
+   build.js copies this file to /assets/site.css. */
 @font-face {
   font-family: "Archivo";
   src: url("/assets/fonts/Archivo-VF-latin.woff2") format("woff2");
@@ -76,6 +78,14 @@ input { caret-color: var(--green); }
 .lang-menu a:hover, .lang-menu button:hover { background: var(--tint); }
 .lang-menu a[aria-current], .lang-menu button[aria-pressed="true"] { font-weight: 800; color: var(--green-ink); }
 .lang-menu :focus-visible { outline-color: var(--green); outline-offset: -3px; }
+
+/* Nav links, on pages that have them. In Spanish they sit in the comp's three boxes (--x / --w, as on
+   the landing); in the other languages they are laid out from the same right edge with the comp's gap. */
+.nav-link { position: absolute; left: calc(var(--x) * var(--u)); top: calc(18 * var(--u)); width: calc(var(--w) * var(--u)); height: calc(42 * var(--u)); display: flex; align-items: center; justify-content: center; color: var(--on-green); text-decoration: none; font-size: calc(27 * var(--u)); font-weight: 500; white-space: nowrap; }
+.nav-link:hover { text-decoration: underline; }
+.nav-auto { position: absolute; right: calc(221.4 * var(--u)); top: calc(18 * var(--u)); height: calc(42 * var(--u)); display: flex; gap: calc(61.5 * var(--u)); }
+.nav-auto .nav-link { position: static; width: auto; height: auto; }
+.band.has-nav .lang summary::before { background: var(--on-green); opacity: .8; }
 
 /* ======================= page: heading column + ruled body (the landing's FAQ split) ======================= */
 .page { flex: 1; display: grid; grid-template-columns: minmax(0, 0.78fr) minmax(0, 1.4fr); gap: calc(90 * var(--u)); align-items: start; padding: calc(130 * var(--u)) calc(56 * var(--u)); }
@@ -188,6 +198,69 @@ html.hp-redirect body { visibility: hidden; }
 .ledger th { width: 34%; color: var(--ink-soft); }
 .ledger td { font-weight: 600; overflow-wrap: anywhere; }
 
+/* ======================= content pages ======================= */
+.head-actions { display: flex; flex-wrap: wrap; align-items: center; gap: calc(22 * var(--u)); margin-top: calc(44 * var(--u)); }
+.block h2 + .text, .statement h2 + .text { margin-top: calc(16 * var(--u)); }
+.text + .text { margin-top: calc(14 * var(--u)); }
+h3 { margin: calc(40 * var(--u)) 0 0; font-size: calc(31 * var(--u)); font-weight: 700; line-height: 1.25; color: var(--ink); }
+.block > h3:first-child { margin-top: 0; }
+.statement > :first-child { margin-top: 0; }
+.statement:last-child { margin-bottom: 0; }
+.back { display: flex; flex-wrap: wrap; gap: calc(10 * var(--u)) calc(34 * var(--u)); }
+.back a { font-weight: 600; }
+/* a block followed by the download slip hands its closing rule over to the scissor line */
+.block:has(+ .block.slip) { border-bottom: 0; }
+
+/* ----- a ruled list of links (hubs): rules, not cards ----- */
+.links { margin: 0; padding: 0; list-style: none; }
+.links li { border-bottom: calc(2 * var(--u)) solid var(--sage-faint); }
+.links a { display: block; padding: calc(34 * var(--u)) 0 calc(36 * var(--u)); text-decoration: none; }
+.links-title { display: block; font-size: calc(34 * var(--u)); font-weight: 800; font-stretch: var(--wide); letter-spacing: -0.01em; line-height: 1.12; color: var(--green-ink); text-wrap: balance; }
+.links-text { display: block; margin-top: calc(12 * var(--u)); font-size: max(15px, calc(27 * var(--u))); line-height: 1.5; color: var(--ink-soft); max-width: 46em; text-wrap: pretty; }
+.links-more { display: inline-block; margin-top: calc(14 * var(--u)); font-size: max(13px, calc(22 * var(--u))); font-weight: 600; color: var(--green-ink); text-decoration: underline; text-underline-offset: .22em; text-decoration-thickness: 1px; }
+.links a:hover { background: var(--tint); }
+.links a:hover .links-title { text-decoration: underline; text-decoration-thickness: calc(2 * var(--u)); text-underline-offset: .14em; }
+
+/* ----- points: a term and what it means, one under the other ----- */
+.points { margin: calc(28 * var(--u)) 0 0; border-top: calc(2 * var(--u)) solid var(--sage-faint); }
+.points > div { padding: calc(24 * var(--u)) 0 calc(26 * var(--u)); border-bottom: calc(2 * var(--u)) solid var(--sage-faint); }
+.points > div:last-child { border-bottom: 0; padding-bottom: 0; }
+.points dt { font-size: calc(31 * var(--u)); font-weight: 700; line-height: 1.25; }
+.points dd { margin: calc(8 * var(--u)) 0 0; font-size: max(15px, calc(27 * var(--u))); line-height: 1.5; color: var(--ink-soft); max-width: 46em; text-wrap: pretty; }
+
+/* ----- comparison table (the landing's) ----- */
+.table-wrap { overflow-x: auto; scrollbar-width: thin; margin-top: calc(34 * var(--u)); }
+.compare { width: 100%; border-collapse: collapse; font-size: max(15px, calc(27 * var(--u))); line-height: 1.35; }
+.compare th, .compare td { padding: calc(20 * var(--u)) calc(18 * var(--u)); text-align: left; vertical-align: top; border-bottom: calc(2 * var(--u)) solid var(--sage-faint); }
+.compare thead th { font-size: max(13px, calc(24 * var(--u))); color: var(--ink-soft); border-bottom: calc(3 * var(--u)) solid var(--green); vertical-align: bottom; }
+.compare thead th:nth-child(2) { color: var(--green-ink); }
+.compare tbody th { font-weight: 600; width: 36%; padding-left: 0; }
+.compare td { color: var(--ink-soft); }
+.compare td.yes { font-weight: 800; color: var(--green-ink); background: var(--tint); width: 32%; }
+.compare .tick { display: block; width: calc(34 * var(--u)); height: calc(34 * var(--u)); color: var(--green-ink); }
+
+/* ----- FAQ with drawn +/− (the landing's) ----- */
+.qa { margin-top: calc(28 * var(--u)); border-top: calc(3 * var(--u)) solid var(--green); }
+h3 + .qa { margin-top: calc(18 * var(--u)); }
+.qa details { border-bottom: calc(2 * var(--u)) solid var(--sage-faint); }
+.qa summary { display: flex; justify-content: space-between; align-items: center; gap: calc(24 * var(--u)); padding: calc(28 * var(--u)) 0; font-size: calc(31 * var(--u)); font-weight: 700; line-height: 1.25; cursor: pointer; list-style: none; }
+.qa summary::-webkit-details-marker { display: none; }
+.qa summary:hover { color: var(--green-ink); }
+.pm { width: calc(30 * var(--u)); height: calc(30 * var(--u)); flex: none; fill: none; stroke: var(--green-ink); stroke-width: 2.4; stroke-linecap: round; }
+.pm-v { transform-box: fill-box; transform-origin: center; transition: transform .25s cubic-bezier(.16, 1, .3, 1); }
+.qa details[open] .pm-v { transform: scaleY(0); }
+.qa details p { font-size: max(15px, calc(27 * var(--u))); line-height: 1.5; max-width: 46em; margin: 0; padding: 0 0 calc(30 * var(--u)); color: var(--ink-soft); text-wrap: pretty; }
+.qa details p a { color: var(--green-ink); font-weight: 600; }
+
+/* ----- quoted reviews ----- */
+.quotes { margin-top: calc(28 * var(--u)); border-top: calc(2 * var(--u)) solid var(--sage-faint); }
+.quote { margin: 0; padding: calc(26 * var(--u)) 0; border-bottom: calc(2 * var(--u)) solid var(--sage-faint); }
+.quote blockquote { margin: 0; font-size: max(16px, calc(29 * var(--u))); line-height: 1.45; font-weight: 500; max-width: 44em; text-wrap: pretty; }
+.quote figcaption { display: flex; flex-wrap: wrap; align-items: center; gap: calc(8 * var(--u)) calc(18 * var(--u)); margin-top: calc(12 * var(--u)); font-size: max(13px, calc(22 * var(--u))); color: var(--ink-soft); }
+.stars { display: inline-flex; gap: calc(4 * var(--u)); color: var(--sage); }
+.stars svg { width: calc(22 * var(--u)); height: calc(22 * var(--u)); }
+.stars .on { color: var(--green-ink); }
+
 /* ======================= footer ======================= */
 .foot { flex: none; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: calc(24 * var(--u)); padding: calc(44 * var(--u)) calc(56 * var(--u)) calc(60 * var(--u)); font-size: max(13px, calc(22 * var(--u))); color: var(--ink-soft); border-top: calc(2 * var(--u)) solid var(--sage); }
 .foot nav { display: flex; gap: calc(28 * var(--u)); flex-wrap: wrap; }
@@ -262,11 +335,42 @@ html.hp-redirect body { visibility: hidden; }
   .statement { margin: 26px 0; padding: 18px 16px 20px; border-width: 1.5px; }
   .ledger { margin-top: 16px; font-size: 15px; border-top-width: 2px; } .ledger th, .ledger td { padding: 10px 0; border-bottom-width: 1px; }
 
+  .nav-link, .nav-auto { display: none; }
+  .head-actions { gap: 12px; margin-top: 20px; }
+  .block h2 + .text, .statement h2 + .text { margin-top: 8px; } .text + .text { margin-top: 8px; }
+  h3 { font-size: 17px; margin-top: 24px; }
+  .back { gap: 6px 18px; }
+  .links li { border-bottom-width: 1px; } .links a { padding: 20px 0 22px; }
+  .links-title { font-size: 19px; } .links-text { font-size: 15px; margin-top: 6px; } .links-more { font-size: 13px; margin-top: 8px; }
+  .points { margin-top: 14px; border-top-width: 1px; } .points > div { padding: 14px 0 16px; border-bottom-width: 1px; }
+  .points dt { font-size: 17px; } .points dd { font-size: 15px; margin-top: 4px; }
+  .table-wrap { margin-top: 18px; }
+  .compare { font-size: 14px; } .compare thead th { font-size: 13px; border-bottom-width: 2px; }
+  .compare th, .compare td { padding: 10px 8px; border-bottom-width: 1px; }
+  .compare .tick { width: 19px; height: 19px; }
+  .qa { margin-top: 16px; border-top-width: 2px; } h3 + .qa { margin-top: 10px; }
+  .qa details { border-bottom-width: 1px; }
+  .qa summary { font-size: 17px; padding: 18px 0; gap: 16px; } .pm { width: 18px; height: 18px; } .qa details p { font-size: 15px; padding-bottom: 18px; }
+  .quotes { margin-top: 14px; border-top-width: 1px; } .quote { padding: 16px 0; border-bottom-width: 1px; }
+  .quote blockquote { font-size: 16px; } .quote figcaption { font-size: 13px; margin-top: 8px; gap: 4px 12px; }
+  .stars { gap: 2px; } .stars svg { width: 13px; height: 13px; }
   .foot { font-size: 13px; padding: 24px 16px 40px; flex-direction: column; align-items: flex-start; }
   .foot-brand { flex-direction: column; align-items: flex-start; gap: 10px; } .foot-brand img { height: 24px; }
 }
 
+/* phones: the comparison table restacks so both columns stay readable */
+@media (max-width: 640px) {
+  .table-wrap { overflow: visible; }
+  .compare, .compare tbody { display: block; width: 100%; }
+  .compare thead { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); }
+  .compare tr { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0 8px; padding: 14px 0; border-bottom: 1px solid var(--sage-faint); }
+  .compare tbody th { grid-column: 1 / -1; width: auto; padding: 0 0 8px; border: 0; font-size: 15px; }
+  .compare td, .compare td.yes { width: auto; border: 0; padding: 8px 10px; font-size: 14px; line-height: 1.3; }
+  .compare td::before { content: attr(data-label); display: block; margin-bottom: 3px; font-size: 11.5px; font-weight: 600; color: var(--ink-soft); }
+  .compare td.yes::before { color: var(--green-ink); }
+}
+
 @media (prefers-reduced-motion: reduce) {
-  .action, .lang summary svg { transition: none !important; }
+  .action, .lang summary svg, .pm-v { transition: none !important; }
   .hp-spinner { animation-duration: 2.4s; }
 }

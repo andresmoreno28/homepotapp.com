@@ -1,0 +1,29 @@
+<%/* /privacy/ — one URL, language picked in the browser. Text: src/i18n/pages-translations.json (privacy.*). */%>
+<%
+  const s = it.s; const e = it.esc;
+  const t = (key) => `data-t="${key}">${e(s[key])}`;
+%>
+  <div class="page-head">
+    <h1 <%~ t('privacy.title') %></h1>
+    <p class="fine" <%~ t('privacy.last_updated') %></p>
+    <p class="lead" <%~ t('privacy.glance_title') %></p>
+    <ul class="list">
+<% for (const n of [1, 2, 3, 4, 5, 6]) { %>
+      <li <%~ t('privacy.glance_' + n) %></li>
+<% } %>
+    </ul>
+  </div>
+
+  <article class="page-body">
+<% for (let n = 1; n <= it.sections; n++) { %>
+    <section class="block" aria-labelledby="pv-<%= n %>">
+      <h2 id="pv-<%= n %>" <%~ t('privacy.s' + n + '_title') %></h2>
+      <p class="text" <%~ t('privacy.s' + n + '_p1') %></p>
+    </section>
+<% } %>
+
+    <section class="statement" aria-labelledby="pv-summary">
+      <h2 id="pv-summary" <%~ t('privacy.summary_title') %></h2>
+      <p class="text" <%~ t('privacy.summary_text') %></p>
+    </section>
+  </article>

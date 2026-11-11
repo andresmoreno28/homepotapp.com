@@ -1,12 +1,11 @@
 {
   "meta": {
-    "ogLocale": "fr_FR"
+    "ogLocale": "fr_FR",
+    "numberLocale": "fr-FR",
+    "currency": "EUR"
   },
   "ui": {
     "nav": {
-      "download": "Télécharger",
-      "compare": "Comparer",
-      "resources": "Ressources",
       "language": "Langue"
     },
     "brand": {
@@ -17,47 +16,22 @@
       "help": "Aide",
       "delete_account": "Supprimer mon compte"
     },
-    "footer": {
-      "desc": "Les dépenses partagées simplifiées pour les couples, colocs et familles.",
-      "product": "Produit",
-      "features": "Fonctionnalités",
-      "pricing": "Tarifs",
-      "download": "Télécharger",
-      "compare_title": "Comparer",
-      "compare_all": "Toutes les comparaisons",
-      "compare_splitwise": "HomePot vs Splitwise",
-      "support_title": "Support",
-      "help": "Centre d'aide",
-      "contact": "Nous contacter",
-      "legal_title": "Légal",
-      "privacy": "Politique de confidentialité",
-      "terms": "Conditions d'utilisation",
-      "delete_account": "Supprimer le compte",
-      "copyright": "© 2026 HomePot. Tous droits réservés."
-    },
-    "cta": {
-      "title": "Pas prêt·e à installer maintenant ? Essaie Pro gratuit pendant 1 mois.",
-      "subtitle": "Laisse ton email ici, télécharge HomePot quand tu veux, et inscris-toi avec la même adresse — ton mois gratuit de Pro s'active automatiquement.",
-      "placeholder": "Entre ton email",
-      "button": "1 mois Pro gratuit",
-      "success": "C'est fait ! Télécharge maintenant HomePot et inscris-toi avec le même email pour activer ton mois gratuit de Pro.",
-      "error": "Une erreur s'est produite. Réessaie.",
-      "disclaimer": "Pas de spam. Quand tu télécharges HomePot et que tu t'inscris avec le même email, ton mois gratuit de Pro s'active automatiquement.",
-      "trust_encrypted": "Chiffré",
-      "trust_gdpr": "RGPD",
-      "trust_notracking": "Sans traçage"
+    "yes": "Oui",
+    "no": "Non",
+    "links": {
+      "all_comparisons": "Toutes les comparaisons",
+      "all_guides": "Tous les guides",
+      "resources": "Plus de ressources"
     },
     "resourcesHub": {
-      "title": "Ressources HomePot — outils, guides, comparaisons",
-      "description": "Calculatrices gratuites, comparaisons honnêtes et guides pratiques pour partager les dépenses. Tout au même endroit.",
+      "title": "Ressources HomePot — guides et comparaisons",
+      "description": "Comparaisons honnêtes et guides pratiques pour partager les dépenses. Tout au même endroit.",
       "icon": "auto_stories",
       "eyebrow": "Tout pour les dépenses partagées",
-      "h1": "Outils, guides et comparaisons honnêtes",
-      "intro": "Calculatrices gratuites, guides pratiques et comparaisons côte à côte avec les autres apps de partage de dépenses — tout dans un seul hub. Chaque contenu est écrit pour vraiment aider, pas pour faire du SEO creux.",
+      "h1": "Guides et comparaisons honnêtes",
+      "intro": "Guides pratiques et comparaisons côte à côte avec les autres apps de partage de dépenses — tout dans un seul hub. Chaque contenu est écrit pour vraiment aider, pas pour faire du SEO creux.",
       "badge": "Ressource",
-      "cta": "Explorer",
-      "empty_title": "Bientôt disponible",
-      "empty_body": "Nous ajoutons régulièrement du nouveau contenu ici."
+      "cta": "Explorer"
     },
     "toolsHub": {
       "title": "Calculatrices gratuites pour partager les dépenses",
@@ -67,9 +41,7 @@
       "h1": "Calculatrices gratuites pour dépenses partagées",
       "intro": "Fais les comptes sans créer de compte. Ces calculatrices dans le navigateur gèrent les partages de voyage, les factures de colocation et les scénarios courants de dépenses partagées. Sans inscription, sans pub, sans email demandé.",
       "badge": "Calculatrice",
-      "cta": "Ouvrir la calculatrice",
-      "empty_title": "D'autres outils arrivent",
-      "empty_body": "Une calculatrice de factures de colocation et des outils de paires de devises arrivent bientôt."
+      "cta": "Ouvrir la calculatrice"
     },
     "guidesHub": {
       "title": "Guides pour partager les dépenses communes",
@@ -79,9 +51,7 @@
       "h1": "Guides pour partager les dépenses communes",
       "intro": "Du contenu direct et pratique sur comment gérer l'argent partagé avec colocs, couples, voyages et familles. Mis à jour au fil des situations et des bonnes pratiques.",
       "badge": "Guide",
-      "cta": "Lire le guide",
-      "empty_title": "Guides bientôt disponibles",
-      "empty_body": "Notre première série de guides est en cours de rédaction."
+      "cta": "Lire le guide"
     },
     "compareHub": {
       "title": "Compare HomePot aux autres apps de partage de frais",
@@ -99,7 +69,6 @@
     },
     "comparison": {
       "eyebrow": "Comparaison honnête",
-      "cta_promo": "1 mois Pro gratuit",
       "table_header_feature": "Fonctionnalité",
       "table_disclaimer": "Toutes les informations reflètent les données publiques disponibles sur le site officiel de Splitwise et sur sa fiche App Store au moment de la rédaction. Nous vous invitons à vérifier les détails actuels sur splitwise.com. HomePot n'est pas affilié à Splitwise, Inc.",
       "diff_title": "Ce qui rend HomePot différent",
@@ -111,143 +80,265 @@
   },
   "pages": {
     "home": {
-      "title": "HomePot — Dépenses partagées sans prise de tête",
-      "description": "HomePot simplifie les dépenses partagées. Enregistre, partage et règle les comptes avec ton groupe en quelques secondes. Gratuit sur iOS.",
+      "title": "HomePot · La cagnotte de la maison",
+      "description": "HomePot est la cagnotte du couple ou de la colocation : scannez vos tickets, voyez combien il reste et jusqu’à quand elle tient, et clôturez le mois avec un virement par personne.",
+      "nav": {
+        "how": "Fonctionnement",
+        "pricing": "Tarifs",
+        "compare": "Comparer",
+        "label": "Principal",
+        "header": "En-tête",
+        "legal": "Mentions légales"
+      },
+      "lang_label": "Langue : français. Changer de langue",
       "hero": {
-        "badge": "Gratuit sur iOS",
-        "headline": "Arrête de te disputer pour l'argent.",
-        "subtitle": "Enregistre, partage et règle les dépenses communes en quelques secondes. Conçu pour les couples, colocs et familles qui veulent la paix.",
-        "cta_promo": "1 mois Pro gratuit",
-        "promo_hint": "Active 1 mois de Pro gratuit en téléchargeant l'app et en t'inscrivant avec le même email.",
-        "trust_noads": "Sans pub",
-        "trust_notracking": "Sans traçage",
-        "trust_gdpr": "Conforme RGPD"
+        "h1": "Sachez combien il y a dans la cagnotte, et jusqu’à quand.",
+        "sub": "La cagnotte du couple ou de la colocation : scannez vos tickets et clôturez le mois avec un virement par personne."
       },
-      "trust": {
-        "gdpr": "Conforme RGPD",
-        "ccpa": "Conforme CCPA",
-        "encryption": "Chiffrement 256 bits",
-        "noads": "Zéro pub, pour toujours",
-        "notracking": "Sans traçage",
-        "languages": "5 langues",
-        "currencies": "54 devises",
-        "aws": "Infrastructure AWS",
-        "delete": "Supprime quand tu veux",
-        "ai": "Scanner alimenté par l'IA"
+      "chart": {
+        "month": "Novembre",
+        "example": "un foyer d’exemple",
+        "legend_spend": "Dépense quotidienne",
+        "legend_balance": "Argent dans la cagnotte (solde restant)",
+        "aria": "Exemple de novembre : la cagnotte contient 412,30 € le 9 et, au rythme actuel des dépenses, elle tient jusqu’au 26.",
+        "aria_m": "Exemple de novembre : 412,30 € dans la cagnotte le 9 ; elle tient jusqu’au 26.",
+        "today": "Aujourd’hui · 412,30 € dans la cagnotte",
+        "lasts": "Elle tient jusqu’au 26"
       },
-      "showcase": {
-        "title": "Fonctionnalités phares",
-        "subtitle": "Découvre ce qui rend HomePot unique.",
-        "scan_title": "Scanne tes reçus avec l'IA.",
-        "scan_desc": "Pointe ta caméra sur n'importe quel reçu. Montant, commerce, articles, remises, taxes — extraits automatiquement.",
-        "balance_title": "Sache toujours qui doit quoi.",
-        "balance_desc": "Soldes en direct, répartition des dépenses, fixes vs variables. Tout le monde voit les mêmes chiffres, plus de devinettes.",
-        "balance_total": "Total du mois",
-        "balance_per_person": "SOLDE PAR PERSONNE",
-        "balance_paid": "A payé",
-        "balance_owes": "Doit",
-        "balance_transfers": "TRANSFERTS À EFFECTUER"
+      "summary": {
+        "people": "<b>4 personnes</b> · Carlos, Ana, Marta, Luis",
+        "spend_label": "Dépenses du mois",
+        "spend": "1 550,45 €",
+        "close": "Clôture : <b>Carlos</b> → Ana",
+        "close_amount": "42,10 €"
       },
-      "f1": {
-        "pill": "Suivi intelligent",
-        "title": "Ajoute des dépenses en quelques secondes",
-        "desc": "Un tap, choisis une catégorie, c'est fait. Fini les conversations gênantes sur « qui a payé quoi ».",
-        "bullet": "Catégories intelligentes et dépenses récurrentes"
-      },
-      "f2": {
-        "pill": "IA intégrée",
-        "title": "Scanne tes reçus avec l'IA",
-        "desc": "Pointe ta caméra sur n'importe quel reçu. Montant, commerce, articles — extraits automatiquement.",
-        "bullet": "Détail des articles et indice de confiance"
-      },
-      "f3": {
-        "pill": "Temps réel",
-        "title": "Sache toujours qui doit quoi",
-        "desc": "Soldes en direct, répartition des dépenses, fixes vs variables. Tout le monde voit les mêmes chiffres, plus de devinettes.",
-        "bullet": "Modes Cagnotte commune et Partage des frais"
-      },
-      "f4": {
-        "pill": "Un tap",
-        "title": "Règle les comptes en un tap",
-        "desc": "La clôture mensuelle calcule les transferts minimaux. Vois qui doit combien, confirme, terminé.",
-        "bullet": "Calculs équitables, transferts minimisés"
-      },
-      "f5": {
-        "pill": "Analyses",
-        "title": "Vois où passe ton argent",
-        "desc": "Graphiques interactifs, détails par catégorie et tendances de dépenses. Savoir, c'est pouvoir.",
-        "bullet": "Export CSV et PDF à tout moment"
+      "store": {
+        "appstore": "Télécharger dans l’App Store",
+        "appstore_stub": "Télécharger dans <br>l’App Store",
+        "qr_aria": "Code QR pour télécharger HomePot dans l’App Store",
+        "qr_aria_short": "Code QR pour télécharger HomePot",
+        "qr_text": "Scannez le code pour télécharger l’app.",
+        "android": "Android, très bientôt",
+        "android_stub": "Android, <br>très bientôt",
+        "android_slip": "Android,<br> très bientôt",
+        "play": "Disponible sur Google Play",
+        "stub_aria": "Télécharger HomePot"
       },
       "how": {
-        "title": "Lance-toi en moins d'une minute",
-        "step1_title": "Crée ton groupe",
-        "step1_desc": "Inscris-toi et invite tes colocs ou ton/ta partenaire. 30 secondes chrono.",
-        "step2_title": "Ajoute les dépenses partagées",
-        "step2_desc": "Scanne un ticket ou ajoute à la main. On s'occupe des calculs.",
-        "step3_title": "Règle les comptes chaque mois",
-        "step3_desc": "Vois qui doit quoi et règle les dettes en un minimum de transferts."
+        "title": "Comment marche la cagnotte",
+        "s1_title": "1. Vous scannez les tickets",
+        "s1_text": "Ajoutez les dépenses du jour à une cagnotte commune.",
+        "s2_title": "2. Vous voyez le solde et sa durée",
+        "s2_text": "HomePot met à jour la cagnotte et vous dit jusqu’à quel jour elle tient.",
+        "s3_title": "3. Vous clôturez le mois",
+        "s3_text": "HomePot calcule ce que paie chaque personne et vous l’indique par un virement."
       },
-      "pricing": {
-        "title": "Des prix simples et honnêtes",
-        "subtitle": "Commence gratuitement, passe au supérieur quand tu veux.",
-        "monthly": "Mensuel",
-        "annual": "Annuel",
-        "save": "Économise 42%",
-        "free_name": "Gratuit",
-        "free_desc": "Parfait pour démarrer.",
-        "free_price": "0€",
-        "free_period": "/mois",
-        "free_features": [
-          "1 groupe, membres illimités",
-          "20 dépenses par personne et par mois",
-          "10 scans IA de reçus par mois",
-          "Clôture du mois et règlements",
-          "Dépenses récurrentes",
-          "54 devises",
-          "Sans publicité"
+      "sim": {
+        "title": "Maintenant, celui de votre foyer.",
+        "text": "Touchez n’importe quel chiffre du résumé et HomePot recalcule combien il y a dans la cagnotte et jusqu’à quand elle tient.",
+        "meta_title": "Résumé de votre mois",
+        "people": "personnes",
+        "less": "Une personne de moins",
+        "more": "Une personne de plus",
+        "each_before": "chacun met",
+        "each_after": "",
+        "each_sr": "Ce que chacun met par mois, en euros",
+        "caption": "Dépenses du mois, modifiables",
+        "rent": "Loyer",
+        "food": "Courses",
+        "power": "Électricité",
+        "net": "Internet",
+        "other": "Autres",
+        "total": "Total",
+        "close_label": "Clôture du mois",
+        "note_short": "dans la cagnotte · elle ne couvre même pas les frais fixes",
+        "note_all": "dans la cagnotte · elle tient tout le mois",
+        "note_until": "dans la cagnotte · elle tient jusqu’au {day}",
+        "spare": "il vous reste {amount}",
+        "more_each": "chacun met {amount} de plus"
+      },
+      "scan": {
+        "photo_alt": "Ticket de supermarché froissé sur le plan de travail d’une cuisine",
+        "title": "Vous prenez le ticket en photo. HomePot le note.",
+        "lead": "Le scanner lit le commerce, le total, la date et chaque article, et répartit comme vous le dites. Vous vérifiez et c’est fait.",
+        "caption": "Lecture d’un ticket d’exemple",
+        "rows": [
+          [
+            "Commerce",
+            "Súper La Esquina"
+          ],
+          [
+            "Date",
+            "9 novembre"
+          ],
+          [
+            "Articles",
+            "11, avec une remise de 1,20 €"
+          ],
+          [
+            "Catégorie",
+            "Supermarché"
+          ],
+          [
+            "Répartition",
+            "Moitié-moitié entre Ana et Carlos"
+          ]
         ],
+        "total_label": "Total",
+        "total": "48,20 €",
+        "fine": "10 scans par mois avec le plan gratuit et 50 avec Pro. Si le ticket est dans une autre devise, il le convertit dans celle de la cagnotte au taux du jour."
+      },
+      "trust": {
+        "title": "Les petites lignes, en grand.",
+        "facts": [
+          [
+            "Publicités",
+            "Aucune, pas même avec le plan gratuit."
+          ],
+          [
+            "Vos données",
+            "Conservées dans l’Union européenne (Irlande)."
+          ],
+          [
+            "Votre compte",
+            "Vous le supprimez quand vous voulez, depuis l’app."
+          ],
+          [
+            "Langues",
+            "Espagnol, portugais, anglais, français et allemand."
+          ],
+          [
+            "Devises",
+            "54, et le scanner lit toutes les autres."
+          ]
+        ],
+        "compare_caption": "HomePot face à Splitwise et Tricount",
+        "feature": "Fonction",
+        "rows": [
+          [
+            "Cagnotte commune avec solde et prévision",
+            "Oui",
+            "Non",
+            "Non"
+          ],
+          [
+            "Clôture du mois avec un virement par personne",
+            "Oui",
+            "Non",
+            "Non"
+          ],
+          [
+            "Scanner de tickets par IA",
+            "Gratuit, 10 par mois",
+            "Pro uniquement",
+            "Non"
+          ],
+          [
+            "Dépenses récurrentes",
+            "Gratuit",
+            "Partiel",
+            "Non"
+          ],
+          [
+            "Publicités avec le plan gratuit",
+            "Jamais",
+            "Oui",
+            "Jamais"
+          ]
+        ],
+        "fine": "Données publiques de chaque app en novembre 2026. Sources et détails dans les comparatifs {splitwise} et {tricount}.",
+        "fine_splitwise": "avec Splitwise",
+        "fine_tricount": "avec Tricount"
+      },
+      "prices": {
+        "title": "Ce que ça coûte, noir sur blanc.",
+        "billing_label": "Mode de paiement de Pro",
+        "year": "À l’année",
+        "month": "Au mois",
+        "caption": "Ce qu’inclut chaque plan HomePot",
+        "concept": "Élément",
+        "free": "Plan gratuit",
+        "pro": "Pro",
+        "price": "Prix",
+        "free_price": "0 €",
+        "free_per": "pour toujours",
+        "pro_price_year": "34,99 €",
+        "pro_per_year": "par an, soit environ 2,92 € par mois",
+        "pro_price_month": "4,99 €",
+        "pro_per_month": "par mois, sans engagement",
+        "rows": [
+          {
+            "label": "Cagnottes",
+            "free": "1, avec autant de membres qu’il faut",
+            "pro": "Autant que vous voulez : maison, voyages, couple"
+          },
+          {
+            "label": "Dépenses notées par mois, par personne",
+            "free": "20",
+            "free_kind": "n",
+            "pro": "Sans limite"
+          },
+          {
+            "label": "Scans de tickets par IA par mois",
+            "free": "10",
+            "free_kind": "n",
+            "pro": "50",
+            "pro_kind": "n"
+          },
+          {
+            "label": "Clôture du mois et règlements",
+            "free": "Inclus",
+            "pro": "Inclus"
+          },
+          {
+            "label": "Dépenses récurrentes et 54 devises",
+            "free": "Incluses",
+            "pro": "Incluses"
+          },
+          {
+            "label": "Statistiques avancées et export PDF et CSV",
+            "free": "Non",
+            "free_kind": "no",
+            "pro": "Incluses"
+          }
+        ],
+        "start": "Comment commencer",
         "free_cta": "Commencer gratuitement",
-        "pro_name": "Pro",
-        "pro_badge": "Le plus populaire",
-        "pro_desc": "Pour ceux qui veulent l'expérience complète.",
-        "pro_price_monthly": "4,99€",
-        "pro_price_annual": "2,92€",
-        "pro_period_monthly": "/mois",
-        "pro_period_annual": "/mois · 34,99€ par an",
-        "pro_features": [
-          "Dépenses illimitées",
-          "50 scans IA de reçus par mois",
-          "Autant de groupes que tu veux",
-          "Statistiques avancées",
-          "Export CSV et PDF",
-          "Un seul abonnement pour tout le foyer"
-        ],
-        "pro_cta": "Télécharger et passer à Pro"
+        "pro_cta": "Télécharger et passer à Pro",
+        "pro_note": "Il s’active depuis l’app, quand vous en avez besoin.",
+        "fine": "Prix en euros, TVA incluse. Dans l’app, vous verrez le prix de votre pays.",
+        "fine_household": "Un seul abonnement Pro vaut pour toutes les personnes de vos cagnottes."
       },
       "faq": {
-        "title": "Questions fréquentes",
+        "title": "Questions de la maison",
+        "more": "Une autre question ? Toutes les réponses sont sur la {link}.",
+        "more_link": "page d’aide",
         "items": [
           {
-            "q": "Mes données sont-elles sécurisées ?",
-            "a": "Oui. Tes données sont chiffrées en transit et au repos sur des serveurs AWS. Nous respectons le RGPD, le CCPA et la LGPD. Pas de pub, pas de tracking, pas de revente. Jamais."
+            "q": "L’autre personne doit-elle télécharger l’app ?",
+            "a": "Oui, pour noter ses dépenses. Vous lui envoyez un lien et elle rejoint la cagnotte en une minute ; si elle n’a pas l’app, le lien l’amène sur le store."
           },
           {
-            "q": "Comment fonctionne le scanner IA de reçus ?",
-            "a": "Prends une photo de n'importe quel reçu. Notre IA extrait le total, chaque article, remises, taxes, nom du commerce et même la devise — automatiquement. Tu vérifies et confirmes."
+            "q": "C’est pour les couples ou pour les colocations ?",
+            "a": "Pour les deux. En couple, on a souvent une cagnotte commune ; en colocation, chacun paie et on égalise à la fin. HomePot fait les deux."
           },
           {
-            "q": "Puis-je l'utiliser pour des voyages entre amis ?",
-            "a": "Oui. Utilise le mode « Partage des frais » pour les voyages — chacun paie avec son propre argent et HomePot calcule qui doit quoi à la fin, en minimisant les transferts."
+            "q": "Faut-il ouvrir un compte joint ?",
+            "a": "Non. HomePot ne touche pas à votre banque : il tient le solde de la cagnotte avec ce que chacun met et ce qui est dépensé."
           },
           {
-            "q": "Combien ça coûte ?",
-            "a": "Gratuit : 1 groupe avec un nombre illimité de membres, 20 dépenses par personne et par mois, 10 scans IA de reçus par mois, clôture du mois et règlements, dépenses récurrentes, sans pub. Pro : dépenses illimitées, 50 scans par mois, autant de groupes que tu veux, statistiques avancées et export CSV/PDF, pour 4,99€ par mois ou 34,99€ par an (environ 2,92€ par mois). Un seul abonnement couvre toutes les personnes de tes groupes."
+            "q": "Que se passe-t-il si j’atteins 20 dépenses dans le mois ?",
+            "a": "Avec le plan gratuit, chaque personne note jusqu’à 20 dépenses par mois. Une fois la limite atteinte, vous continuez à voir la cagnotte et à clôturer le mois ; pour en noter davantage, passez à Pro ou attendez le mois suivant."
           },
           {
-            "q": "Comment HomePot se compare-t-il à Splitwise ?",
-            "a": "HomePot est pensé comme une alternative honnête, sans pub : 54 devises pour saisir les dépenses, scanner IA qui lit n'importe quelle devise sur un reçu, et un modèle d'abonnement transparent. Consulte la <a href=\"/fr/compare/homepot-vs-splitwise/\" class=\"text-terracotta underline hover:opacity-80\">comparaison complète côte à côte avec Splitwise</a> avec toutes les fonctionnalités et l'avertissement sur nos sources."
+            "q": "Nous venons de Splitwise. Qu’est-ce qui change ?",
+            "a": "HomePot est fait pour un foyer : cagnotte commune avec solde, prévision, clôture mensuelle et scanner inclus, sans publicité avec le plan gratuit."
           }
         ]
+      },
+      "close": {
+        "title": "Commencez votre premier résumé ce soir.",
+        "text": "Il faut une minute pour créer la cagnotte et une autre pour que l’autre personne la rejoigne."
       }
     },
     "fromSplitwise": {
@@ -299,7 +390,7 @@
         },
         {
           "q": "En quoi c'est différent de la page de comparaison Splitwise ?",
-          "a": "Cette page est pour ceux qui savent déjà qu'ils veulent quitter Splitwise. La <a href=\"/fr/compare/homepot-vs-splitwise/\" class=\"text-terracotta underline\">comparaison complète</a> est pour ceux qui hésitent encore — elle passe en revue chaque fonctionnalité palier par palier avec des liens vers des sources publiques."
+          "a": "Cette page est pour ceux qui savent déjà qu'ils veulent quitter Splitwise. La <a href=\"/fr/compare/homepot-vs-splitwise/\">comparaison complète</a> est pour ceux qui hésitent encore — elle passe en revue chaque fonctionnalité palier par palier avec des liens vers des sources publiques."
         },
         {
           "q": "Les affirmations sur Splitwise sont-elles honnêtes ?",

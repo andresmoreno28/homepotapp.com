@@ -1,0 +1,6 @@
+<%/* Footer, as on the landing. Privacy, terms and help are one page each (they pick the language themselves). */%>
+<% const e = it.esc; const b = it.brand; %>
+<footer class="foot">
+  <span class="foot-brand"><img src="/assets/brand/logo-horizontal-green.svg" alt="HomePot" width="485" height="100"> <%= e(b.tagline) %></span>
+  <nav aria-label="<%= e(b.legal) %>"><a href="/privacy/"><%= e(b.privacy) %></a><a href="/terms/"><%= e(b.terms) %></a><a href="/support/"><%= e(b.help) %></a><a href="<%= it.prefix %>/delete-account/"><%= e(b.delete_account) %></a></nav>
+</footer>

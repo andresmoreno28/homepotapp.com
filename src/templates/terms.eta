@@ -1,0 +1,18 @@
+<%/* /terms/ — one URL, language picked in the browser. Text: src/i18n/pages-translations.json (terms.*). */%>
+<%
+  const s = it.s; const e = it.esc;
+  const t = (key) => `data-t="${key}">${e(s[key])}`;
+%>
+  <div class="page-head">
+    <h1 <%~ t('terms.title') %></h1>
+    <p class="fine" <%~ t('terms.last_updated') %></p>
+  </div>
+
+  <article class="page-body">
+<% for (let n = 1; n <= it.sections; n++) { %>
+    <section class="block" aria-labelledby="tm-<%= n %>">
+      <h2 id="tm-<%= n %>" <%~ t('terms.s' + n + '_title') %></h2>
+      <p class="text" <%~ t('terms.s' + n + '_p1') %></p>
+    </section>
+<% } %>
+  </article>

@@ -4,6 +4,12 @@
 (function () {
   var lang = document.querySelector('.lang');
   if (!lang) return;
+
+  // On a page that exists once per language, reading it in a language is a choice: remember it
+  // for the pages that pick theirs in the browser (help, privacy, terms, invite…).
+  if (lang.querySelector('a[hreflang]')) {
+    try { window.localStorage.setItem('homepot_lang', document.documentElement.lang); } catch (e) { /* private mode */ }
+  }
   document.addEventListener('click', function (e) {
     if (lang.open && !lang.contains(e.target)) lang.open = false;
   });

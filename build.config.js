@@ -18,12 +18,13 @@ export default {
   //   Every App Store link on the site is built by one helper (appStoreLink in build.js) and
   //   then becomes <appStoreUrl>?pt=<providerToken>&ct=<placement>&mt=8, with one "ct" per
   //   button so App Store Connect shows where each download came from:
-  //     web-<lang>-nav | hero | pricing-free | pricing-pro | cta | footer   (e.g. web-es-hero)
-  //     web-<lang>-vs-splitwise | vs-tricount | from-splitwise | guide-roommates
-  //     web-join                                                    (the invite page)
+  //     home:     web-<lang>-hero | sheet | pricing-free | pricing-pro | close   (e.g. web-es-hero)
+  //               web-<lang>-qr-hero | qr-sheet | qr-close           (its three QR codes)
+  //     content:  web-<lang>-vs-splitwise | vs-tricount | from-splitwise | guide-roommates
+  //               web-<lang>-cta                                     (the slip that closes a page)
+  //     invite:   web-join
   analytics: { cloudflareToken: '' },
   appStore: { providerToken: '' },
-  promoSignupUrl: 'https://haggaeeajlbmktsinbek.supabase.co/functions/v1/promo-signup',
 
   // Shown on /delete-account/ (Google Play requires the app or developer name).
   developerName: 'HomePot App',

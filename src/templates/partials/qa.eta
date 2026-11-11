@@ -1,0 +1,6 @@
+<%/* Questions and answers with the drawn +/−. it.qa = [{ q, a }] */%>
+      <div class="qa">
+<% for (const item of it.qa) { %>
+        <details><summary><%= item.q %><%~ it.icons.plus %></summary><p><%~ item.a %></p></details>
+<% } %>
+      </div>

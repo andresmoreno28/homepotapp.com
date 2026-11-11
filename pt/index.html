@@ -1,668 +1,280 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="pt">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <meta name="color-scheme" content="light">
-  <title>HomePot — Despesas compartilhadas sem estresse</title>
-  <meta name="description" content="O HomePot simplifica despesas compartilhadas. Registre, divida e acerte contas com seu grupo em segundos. Grátis para iOS.">
+  <meta name="theme-color" content="#184838">
+  <title>HomePot · A caixinha da sua casa</title>
+  <meta name="description" content="O HomePot é a caixinha do casal ou da casa dividida: escaneiem os recibos, vejam quanto resta e até quando dá, e encerrem o mês com uma transferência por pessoa.">
   <meta name="robots" content="index, follow">
   <link rel="canonical" href="https://homepotapp.com/pt/">
+  <link rel="alternate" hreflang="en" href="https://homepotapp.com/">
+  <link rel="alternate" hreflang="es" href="https://homepotapp.com/es/">
+  <link rel="alternate" hreflang="fr" href="https://homepotapp.com/fr/">
+  <link rel="alternate" hreflang="de" href="https://homepotapp.com/de/">
+  <link rel="alternate" hreflang="pt" href="https://homepotapp.com/pt/">
+  <link rel="alternate" hreflang="x-default" href="https://homepotapp.com/">
 
-    <link rel="alternate" hreflang="en" href="https://homepotapp.com/">
-    <link rel="alternate" hreflang="es" href="https://homepotapp.com/es/">
-    <link rel="alternate" hreflang="fr" href="https://homepotapp.com/fr/">
-    <link rel="alternate" hreflang="de" href="https://homepotapp.com/de/">
-    <link rel="alternate" hreflang="pt" href="https://homepotapp.com/pt/">
-      <link rel="alternate" hreflang="x-default" href="https://homepotapp.com/">
-  
-  <!-- Open Graph -->
-  <meta property="og:title" content="HomePot — Despesas compartilhadas sem estresse">
-  <meta property="og:description" content="O HomePot simplifica despesas compartilhadas. Registre, divida e acerte contas com seu grupo em segundos. Grátis para iOS.">
+  <meta property="og:title" content="HomePot · A caixinha da sua casa">
+  <meta property="og:description" content="O HomePot é a caixinha do casal ou da casa dividida: escaneiem os recibos, vejam quanto resta e até quando dá, e encerrem o mês com uma transferência por pessoa.">
   <meta property="og:image" content="https://homepotapp.com/og-image-pt.png?v=4">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://homepotapp.com/pt/">
   <meta property="og:locale" content="pt_BR">
+  <meta property="og:locale:alternate" content="en_US">
+  <meta property="og:locale:alternate" content="es_ES">
+  <meta property="og:locale:alternate" content="fr_FR">
+  <meta property="og:locale:alternate" content="de_DE">
   <meta property="og:site_name" content="HomePot">
-
-  <!-- Twitter -->
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="HomePot — Despesas compartilhadas sem estresse">
-  <meta name="twitter:description" content="O HomePot simplifica despesas compartilhadas. Registre, divida e acerte contas com seu grupo em segundos. Grátis para iOS.">
+  <meta name="twitter:title" content="HomePot · A caixinha da sua casa">
+  <meta name="twitter:description" content="O HomePot é a caixinha do casal ou da casa dividida: escaneiem os recibos, vejam quanto resta e até quando dá, e encerrem o mês com uma transferência por pessoa.">
   <meta name="twitter:image" content="https://homepotapp.com/og-image-pt.png?v=4">
 
-  <link rel="icon" type="image/png" href="/assets/favicon.png">
+  <link rel="icon" href="/assets/brand/favicon.svg" type="image/svg+xml">
+  <link rel="preload" href="/assets/fonts/Archivo-VF-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="/assets/home.css?v=a759c375">
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"HomePot","operatingSystem":"iOS","applicationCategory":"FinanceApplication","description":"O HomePot é a caixinha do casal ou da casa dividida: escaneiem os recibos, vejam quanto resta e até quando dá, e encerrem o mês com uma transferência por pessoa.","url":"https://homepotapp.com/pt/","inLanguage":"pt","installUrl":"https://apps.apple.com/app/homepot-shared-expenses/id6759216594","offers":[{"@type":"Offer","name":"Plano grátis","price":"0","priceCurrency":"BRL"},{"@type":"Offer","name":"HomePot Pro · Por mês","price":"16.90","priceCurrency":"BRL"},{"@type":"Offer","name":"HomePot Pro · Por ano","price":"109.90","priceCurrency":"BRL"}],"publisher":{"@type":"Organization","name":"HomePot","email":"homepotapp@gmail.com"}}</script>
+</head>
+<body>
+<div class="frame" id="top">
+  <header class="band" aria-label="Cabeçalho"></header>
+  <a class="brand at" style="--x:70;--y:10;--w:302;--h:58" href="#top"><img src="/assets/brand/logo-horizontal-white.svg" alt="HomePot" width="485" height="100"></a>
+  <nav class="nav-auto" aria-label="Principal">
+    <a class="nav-link at" style="--x:1296;--y:18;--w:200;--h:42" href="#como">Como funciona</a>
+    <a class="nav-link at" style="--x:1547;--y:18;--w:100;--h:42" href="#precios">Preços</a>
+    <a class="nav-link at" style="--x:1698;--y:18;--w:135;--h:42" href="#comparar">Comparar</a>
+  </nav>
+  <details class="lang at" style="--x:1872;--y:14;--w:128;--h:50">
+    <summary aria-label="Idioma: português. Mudar idioma">PT <svg viewBox="0 0 12 8" aria-hidden="true"><path d="M0 0h12L6 8z" fill="currentColor"/></svg></summary>
+    <ul class="lang-menu">
+      <li><a href="/es/" hreflang="es" lang="es">Español</a></li>
+      <li><a href="/" hreflang="en" lang="en">English</a></li>
+      <li><a href="/pt/" hreflang="pt" aria-current="page">Português</a></li>
+      <li><a href="/fr/" hreflang="fr" lang="fr">Français</a></li>
+      <li><a href="/de/" hreflang="de" lang="de">Deutsch</a></li>
+    </ul>
+  </details>
 
-  <!-- Google Fonts (non-blocking, swap) -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap">
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" media="print" onload="this.media='all'">
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&display=swap" media="print" onload="this.media='all'">
-  <noscript>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&display=swap">
-  </noscript>
+  <h1 class="h1 at" style="--x:62;--y:103;--w:1756;--h:72">Saibam quanto tem na caixinha e até quando dá.</h1>
+  <p class="sub at" style="--x:62;--y:178;--w:1690;--h:42">A caixinha do casal ou da casa dividida: escaneiem os recibos e encerrem o mês com uma transferência por pessoa.</p>
+  <div class="rule rule-top at" style="--x:56;--y:243;--w:1936;--h:2" aria-hidden="true"></div>
 
-  <!-- Pre-compiled Tailwind CSS (no CDN, no runtime JIT) -->
-  <link rel="stylesheet" href="/assets/tailwind.css">
-
-  <style>
-    /* Grain texture */
-    .grain-bg { position: relative; }
-    .grain-bg::before {
-      content: ""; position: absolute; inset: 0;
-      opacity: 0.03; pointer-events: none; z-index: 1;
-      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
-    }
-
-    /* Scroll reveals */
-    .reveal { opacity: 0; transform: translateY(30px); transition: opacity 0.7s ease, transform 0.7s ease; }
-    .reveal.visible { opacity: 1; transform: translateY(0); }
-    .reveal-delay-1 { transition-delay: 0.1s; }
-    .reveal-delay-2 { transition-delay: 0.2s; }
-    .reveal-delay-3 { transition-delay: 0.3s; }
-
-    @media (prefers-reduced-motion: reduce) {
-      .reveal { opacity: 1; transform: none; transition: none; }
-      .trust-marquee-track { animation: none !important; }
-    }
-
-    /* Trust marquee */
-    .trust-marquee { position: relative; }
-    .trust-marquee::before, .trust-marquee::after {
-      content: ""; position: absolute; top: 0; bottom: 0; width: 80px; z-index: 2; pointer-events: none;
-    }
-    .trust-marquee::before { left: 0; background: linear-gradient(to right, white, transparent); }
-    .trust-marquee::after { right: 0; background: linear-gradient(to left, white, transparent); }
-    .trust-marquee-track {
-      display: flex; gap: 3rem; white-space: nowrap;
-      animation: marquee 30s linear infinite;
-    }
-    .trust-item {
-      display: flex; align-items: center; gap: 0.5rem; flex-shrink: 0;
-      font-size: 0.875rem; font-weight: 600; color: #3D405B;
-    }
-    @keyframes marquee {
-      0% { transform: translateX(0); }
-      100% { transform: translateX(-50%); }
-    }
-
-    /* Scanner laser animation */
-    .scanner-line {
-      position: absolute; left: 0; right: 0; height: 2px;
-      background: #E07A5F;
-      box-shadow: 0 0 12px rgba(224,122,95,0.8), 0 0 30px rgba(224,122,95,0.4);
-      animation: scan 3s linear infinite;
-      z-index: 20;
-    }
-    @keyframes scan {
-      0%, 100% { top: 10%; }
-      50% { top: 90%; }
-    }
-
-    /* FAQ details styling */
-    .group summary { list-style: none; }
-    .group summary::-webkit-details-marker { display: none; }
-
-    /* Smooth scroll */
-    html { scroll-behavior: smooth; }
-
-    /* Mobile tweaks */
-    @media (max-width: 639px) {
-      .hero-promo-cta {
-        height: 48px !important;
-        padding: 0 12px !important;
-        font-size: 0.8125rem !important;
-        gap: 0.25rem !important;
-        white-space: nowrap;
-      }
-      .hero-promo-cta .material-symbols-outlined {
-        font-size: 1.125rem !important;
-      }
-      .trust-marquee-track {
-        animation-duration: 10s;
-        gap: 2rem;
-      }
-    }
-  </style>
-
-    <script type="application/ld+json">{"@context":"https://schema.org","@type":"MobileApplication","name":"HomePot","operatingSystem":"iOS","applicationCategory":"FinanceApplication","offers":{"@type":"Offer","price":"0","priceCurrency":"EUR"},"description":"O HomePot simplifica despesas compartilhadas. Registre, divida e acerte contas com seu grupo em segundos. Grátis para iOS.","url":"https://homepotapp.com/pt/","inLanguage":"pt","publisher":{"@type":"Organization","name":"HomePot","email":"homepotapp@gmail.com"}}</script>
-  </head>
-<body class="font-sans text-darkBlue antialiased">
-
-<!-- ========== NAVBAR ========== -->
-<nav data-navbar class="fixed top-0 inset-x-0 z-50 transition-shadow duration-300" style="backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); background: rgba(244,241,222,0.8);">
-  <div class="max-w-7xl mx-auto flex items-center justify-between px-6 py-4">
-    <!-- Logo -->
-    <a href="/pt/" class="flex items-center gap-2">
-      <img src="/assets/favicon-40.png" alt="HomePot" class="w-10 h-10 rounded-xl">
-      <img src="/assets/homepot-wordmark.png" alt="HomePot" class="h-7 sm:h-9">
-    </a>
-
-    <!-- Language pills -->
-    <div class="lang-pills flex items-center gap-0 lg:gap-1 rounded-full lg:px-2 lg:py-1" style="background: rgba(244,241,222,0.6); backdrop-filter: blur(8px);">
-            <a href="/" data-lang="en" class="px-1.5 py-1 lg:px-3 rounded-full text-[11px] lg:text-sm text-darkBlue/40 transition-colors">EN</a>
-            <a href="/es/" data-lang="es" class="px-1.5 py-1 lg:px-3 rounded-full text-[11px] lg:text-sm text-darkBlue/40 transition-colors">ES</a>
-            <a href="/fr/" data-lang="fr" class="px-1.5 py-1 lg:px-3 rounded-full text-[11px] lg:text-sm text-darkBlue/40 transition-colors">FR</a>
-            <a href="/de/" data-lang="de" class="px-1.5 py-1 lg:px-3 rounded-full text-[11px] lg:text-sm text-darkBlue/40 transition-colors">DE</a>
-            <a href="/pt/" data-lang="pt" class="px-1.5 py-1 lg:px-3 rounded-full text-[11px] lg:text-sm font-semibold text-darkBlue transition-colors">PT</a>
-          </div>
-
-    <!-- Right cluster: Resources link + Download button (desktop) -->
-    <div class="hidden lg:flex items-center gap-5">
-      <a href="/pt/resources/" class="text-sm font-semibold text-darkBlue/80 hover:text-terracotta transition-colors">Recursos</a>
-      <a href="/pt/compare/" class="text-sm font-semibold text-darkBlue/80 hover:text-terracotta transition-colors">Comparar</a>
-      <a href="https://apps.apple.com/app/homepot-shared-expenses/id6759216594" target="_blank" rel="noopener" class="inline-flex bg-terracotta text-white px-5 py-2.5 rounded-full text-sm font-semibold hover:bg-terracotta/90 transition-colors">Baixar</a>
-    </div>
+  <div class="month-line at" style="--x:56;--y:260;--w:1100;--h:62">
+    <h2 class="month">Novembro</h2>
+    <p class="example">uma casa de exemplo</p>
   </div>
-</nav>
+  <ul class="legend at" style="--x:1226;--y:266;--w:762;--h:44" aria-hidden="true">
+    <li><span class="swatch-bar"></span>Gasto diário</li>
+    <li><svg class="swatch-line" viewBox="0 0 60 22"><line x1="2" y1="11" x2="58" y2="11" stroke="#0F4A30" stroke-width="4"/><circle cx="30" cy="11" r="7" fill="#fff" stroke="#0F4A30" stroke-width="3.5"/></svg>Dinheiro na caixinha (saldo restante)</li>
+  </ul>
+  <div class="runway-scroll at" style="--x:36;--y:330;--w:1966;--h:404"><svg class="runway" id="runway" viewBox="36 330 1966 404" role="img" aria-label="Exemplo de novembro: a caixinha tem R$ 412,30 no dia 9 e, no ritmo de gasto atual, dá até o dia 26." style="width:100%;height:100%"></svg></div>
+  <svg class="runway-m" id="runway-m" viewBox="0 0 540 392" role="img" aria-label="Exemplo de novembro: R$ 412,30 na caixinha no dia 9; dá até o dia 26."></svg>
 
+  <div class="rule strong at" style="--x:40;--y:755;--w:1966;--h:2" aria-hidden="true"></div>
+  <p class="sum at" style="--x:66;--y:770;--w:596;--h:60">
+    <svg viewBox="0 0 60 48" fill="none" stroke="currentColor" stroke-width="3.2" aria-hidden="true"><circle cx="14" cy="13" r="6"/><circle cx="30" cy="9" r="6"/><circle cx="46" cy="13" r="6"/><path d="M3 41c0-8 5-13 11-13s11 5 11 13M19 37c1-8 5-12 11-12s10 4 11 12M35 41c0-8 5-13 11-13s11 5 11 13"/></svg>
+    <span><b>4 pessoas</b> · Carlos, Ana, Marta, Luís</span>
+  </p>
+  <div class="vdiv soft at" style="--x:767;--y:768;--w:2;--h:62" aria-hidden="true"></div>
+  <p class="sum at" style="--x:814;--y:766;--w:470;--h:64"><span>Gastos do mês</span><span class="big">R$ 1.550,45</span></p>
+  <div class="vdiv soft at" style="--x:1376;--y:768;--w:2;--h:62" aria-hidden="true"></div>
+  <p class="sum at" style="--x:1424;--y:766;--w:488;--h:64"><span>Acerto: <b>Carlos</b> → Ana</span><span class="big">R$ 42,10</span></p>
+  <div class="rule strong at" style="--x:40;--y:840;--w:1966;--h:2" aria-hidden="true"></div>
 
-<!-- ========== HERO ========== -->
-<section class="min-h-screen bg-cream grain-bg flex items-center pt-20">
-  <div class="max-w-7xl mx-auto px-6 py-16 lg:py-24 w-full">
-    <div class="grid lg:grid-cols-12 gap-12 lg:gap-16 items-center">
-      <div class="lg:col-span-7 relative z-10">
-        <div class="inline-flex items-center gap-2 bg-sage/10 text-sage rounded-full px-4 py-2 text-sm font-medium mb-6">
-          <span class="relative flex h-2.5 w-2.5">
-            <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-sage opacity-75"></span>
-            <span class="relative inline-flex rounded-full h-2.5 w-2.5 bg-sage"></span>
-          </span>
-          <span>Grátis para iOS</span>
+  <div class="cutline at" style="--x:44;--y:864;--w:1964;--h:36" aria-hidden="true">
+    <svg viewBox="0 0 44 36" fill="none" stroke="currentColor" stroke-width="3"><circle cx="9" cy="9" r="6"/><circle cx="9" cy="27" r="6"/><path d="M14 12 42 30M14 24 42 6"/></svg>  </div>
+  <a class="store at" style="--x:141;--y:916;--w:568;--h:86" href="https://apps.apple.com/app/homepot-shared-expenses/id6759216594" rel="noopener">
+    <svg viewBox="0 0 24 28" aria-hidden="true"><path fill="currentColor" d="M19.7 14.9c0-3 2.5-4.5 2.6-4.6-1.4-2.1-3.6-2.4-4.4-2.4-1.9-.2-3.7 1.1-4.6 1.1-1 0-2.4-1.1-4-1.1-2 0-3.9 1.2-5 3-2.1 3.7-.5 9.2 1.5 12.2 1 1.4 2.2 3.1 3.7 3 1.5-.1 2.1-1 3.9-1s2.3 1 3.9.9c1.6 0 2.6-1.4 3.6-2.9 1.1-1.7 1.6-3.3 1.6-3.4-.1 0-3.2-1.2-2.8-4.8zM16.8 5.8c.8-1 1.4-2.4 1.2-3.8-1.2.1-2.6.8-3.5 1.8-.8.9-1.4 2.3-1.2 3.6 1.3.1 2.7-.7 3.5-1.6z"/></svg>    Baixar na App Store  </a>
+  <div class="vdiv soft at" style="--x:784;--y:910;--w:2;--h:98" aria-hidden="true"></div>
+  <div class="qr at" id="qr" style="--x:866;--y:904;--w:110;--h:110" role="img" aria-label="QR code para baixar o HomePot na App Store"></div>
+  <p class="qr-text at" style="--x:1004;--y:912;--w:250;--h:96"><b>HomePot</b><span>Escaneie o código para baixar o app.</span></p>
+  <div class="vdiv soft at" style="--x:1380;--y:910;--w:2;--h:98" aria-hidden="true"></div>
+  <p class="android at" style="--x:1494;--y:918;--w:430;--h:80">
+    <svg viewBox="0 0 56 64" aria-hidden="true"><path fill="currentColor" d="M14 22h28v26a4 4 0 0 1-4 4h-2v8a4 4 0 0 1-8 0v-8h-4v8a4 4 0 0 1-8 0v-8h-2a4 4 0 0 1-4-4zM5 24a4 4 0 0 1 8 0v16a4 4 0 0 1-8 0zM43 24a4 4 0 0 1 8 0v16a4 4 0 0 1-8 0zM14 19c0-6 5-11 11-12l-3-5 1.5-1 3.3 5.4a14 14 0 0 1 2.4 0L32.5 1 34 2l-3 5c6 1 11 6 11 12zm8-6a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm12 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4z"/></svg>    Android, em breve  </p>
+  <div class="rule rule-cta at" style="--x:40;--y:1035;--w:1966;--h:2" aria-hidden="true"></div>
+
+  <h2 class="h2 at" id="como" style="--x:48;--y:1058;--w:700;--h:66">Como funciona a caixinha</h2>
+  <div class="rule at" style="--x:40;--y:1133;--w:1966;--h:2" aria-hidden="true"></div>
+  <div class="step-icon fill at" style="--x:98;--y:1156;--w:72;--h:82" aria-hidden="true"><svg viewBox="0 0 72 82" fill="none" stroke="currentColor" stroke-width="4.1"><path d="M5 5.3H62.7V78.4L51.2 67.9 43.1 78.4 33.7 67.9 24.9 78.4 16.1 67.9 5 78.4Z"/><path d="M17.9 24H49.8M17.9 37.2H49.8M17.9 50.1H49.8"/></svg></div>
+  <p class="step at" style="--x:208;--y:1150;--w:334;--h:94"><b>1. Vocês escaneiam os recibos</b>Adicionem os gastos do dia a uma caixinha comum.</p>
+  <div class="vdiv soft at" style="--x:635;--y:1148;--w:2;--h:98" aria-hidden="true"></div>
+  <div class="step-icon fill at" style="--x:686;--y:1156;--w:86;--h:76" aria-hidden="true"><svg viewBox="0 0 86 76" fill="none" stroke="currentColor" stroke-width="4.1"><rect x="9.1" y="49.3" width="13.6" height="21"/><rect x="35.3" y="28.5" width="13.7" height="41.8"/><rect x="61.6" y="5.9" width="14.2" height="64.4"/></svg></div>
+  <p class="step at" style="--x:804;--y:1150;--w:428;--h:94"><b>2. Vocês veem o saldo e até quando dá</b>O HomePot atualiza o dinheiro da caixinha e diz até que dia ele dá.</p>
+  <div class="vdiv soft at" style="--x:1325;--y:1148;--w:2;--h:98" aria-hidden="true"></div>
+  <div class="step-icon at" style="--x:1386;--y:1156;--w:90;--h:76" aria-hidden="true"><svg viewBox="0 0 62 52" fill="none" stroke="currentColor" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"><path d="M6 16h46M42 6l10 10-10 10M56 36H10M20 26 10 36l10 10"/></svg></div>
+  <p class="step at" style="--x:1508;--y:1150;--w:474;--h:94"><b>3. Vocês encerram o mês</b>O HomePot calcula quanto cada pessoa paga e mostra isso em uma transferência.</p>
+  <div class="rule at" style="--x:40;--y:1266;--w:1966;--h:2" aria-hidden="true"></div>
+</div>
+
+<main id="contenido">
+  <section class="sim" id="resumen" aria-labelledby="sim-title">
+    <div class="sim-head">
+      <h2 id="sim-title">Agora, o da casa de vocês.</h2>
+      <p>Toquem em qualquer valor do resumo e o HomePot recalcula quanto tem na caixinha e até quando dá.</p>
+    </div>
+    <div class="sim-stage">
+      <img class="sim-sheet" src="/assets/landing/sheet2.webp" alt="" width="2048" height="1072">
+      <div class="sheet-box">
+        <div class="sheet-main">
+          <p class="sheet-brand"><img src="/assets/brand/logo-horizontal-green.svg" alt="HomePot" width="485" height="100"></p>
+          <p class="sheet-meta"><span class="meta-title">Resumo do mês de vocês<span class="sep"> ·</span></span>
+            <span class="stepper"><button type="button" data-step="-1" aria-label="Uma pessoa a menos"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3.5 8h9"/></svg></button><output id="sim-people-out" aria-live="polite">2</output><button type="button" data-step="1" aria-label="Uma pessoa a mais"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3.5 8h9M8 3.5v9"/></svg></button></span>
+            <span>pessoas<span class="sep"> ·</span></span>
+            <span class="meta-each">cada um põe R$ <label class="fig"><span class="sr">O que cada um põe por mês, em reais</span><input id="sim-each" inputmode="decimal" autocomplete="off" value="650" size="5"></label></span>
+            <input type="hidden" id="sim-people" value="2">
+          </p>
+          <div class="sheet-pot" aria-live="polite">
+            <p class="pot-amount" id="r-pot">R$ 1.300,00</p>
+            <p class="pot-note" id="r-note">na caixinha · dá até o dia 18</p>
+          </div>
+          <table class="sheet-table">
+            <caption class="sr">Gastos do mês, editáveis</caption>
+            <tbody>
+              <tr><th scope="row"><label for="g-rent">Aluguel</label></th><td>R$ <input class="fig-in" id="g-rent" data-kind="fixed" inputmode="decimal" autocomplete="off" value="950,00"></td></tr>
+              <tr><th scope="row"><label for="g-food">Mercado</label></th><td>R$ <input class="fig-in" id="g-food" data-kind="var" inputmode="decimal" autocomplete="off" value="320,00"></td></tr>
+              <tr><th scope="row"><label for="g-power">Luz</label></th><td>R$ <input class="fig-in" id="g-power" data-kind="fixed" inputmode="decimal" autocomplete="off" value="64,20"></td></tr>
+              <tr><th scope="row"><label for="g-net">Internet</label></th><td>R$ <input class="fig-in" id="g-net" data-kind="fixed" inputmode="decimal" autocomplete="off" value="35,00"></td></tr>
+              <tr><th scope="row"><label for="g-other">Outros</label></th><td>R$ <input class="fig-in" id="g-other" data-kind="var" inputmode="decimal" autocomplete="off" value="88,90"></td></tr>
+              <tr class="total"><th scope="row">Total</th><td id="r-total">R$ 1.458,10</td></tr>
+            </tbody>
+          </table>
+          <p class="sheet-close"><span>Encerramento do mês</span><strong id="r-close">cada um põe mais R$ 79,05</strong></p>
         </div>
-
-        <h1 class="text-4xl lg:text-[56px] font-extrabold text-darkBlue leading-tight mb-6">Pare de brigar por dinheiro.</h1>
-        <p class="text-lg lg:text-xl text-gray-500 mb-8 max-w-xl">Registre, divida e acerte despesas compartilhadas em segundos. Feito para casais, colegas de apartamento e famílias que querem paz.</p>
-
-        <div class="flex flex-row items-center gap-3 sm:gap-4 mb-8 flex-wrap">
-          <a href="https://apps.apple.com/app/homepot-shared-expenses/id6759216594" target="_blank" rel="noopener" class="hover:opacity-80 transition-opacity">
-            <img src="/assets/badges/download-pt.svg" alt="Download on the App Store" style="height:48px;width:auto;">
+        <aside class="sheet-stub" aria-label="Baixar o HomePot">
+          <a class="stub-store" href="https://apps.apple.com/app/homepot-shared-expenses/id6759216594" rel="noopener">
+            <svg viewBox="0 0 24 28" aria-hidden="true"><path fill="currentColor" d="M19.7 14.9c0-3 2.5-4.5 2.6-4.6-1.4-2.1-3.6-2.4-4.4-2.4-1.9-.2-3.7 1.1-4.6 1.1-1 0-2.4-1.1-4-1.1-2 0-3.9 1.2-5 3-2.1 3.7-.5 9.2 1.5 12.2 1 1.4 2.2 3.1 3.7 3 1.5-.1 2.1-1 3.9-1s2.3 1 3.9.9c1.6 0 2.6-1.4 3.6-2.9 1.1-1.7 1.6-3.3 1.6-3.4-.1 0-3.2-1.2-2.8-4.8zM16.8 5.8c.8-1 1.4-2.4 1.2-3.8-1.2.1-2.6.8-3.5 1.8-.8.9-1.4 2.3-1.2 3.6 1.3.1 2.7-.7 3.5-1.6z"/></svg>            <span>Baixar na <br>App Store</span>
           </a>
-          <a href="#cta" class="hero-promo-cta inline-flex items-center justify-center gap-2 text-terracotta font-semibold border-2 border-terracotta rounded-xl hover:bg-terracotta/5 transition-colors" style="height:48px;padding:0 24px;">
-            <span class="material-symbols-outlined text-xl">star</span>
-            <span>1 mês Pro grátis</span>
-          </a>
+          <div class="qr stub-qr" id="qr2" role="img" aria-label="QR code para baixar o HomePot"></div>
+          <p class="stub-android">Android, <br>em breve</p>
+        </aside>
+      </div>
+    </div>
+  </section>
+
+  <section class="scan section" id="escaner" aria-labelledby="scan-title">
+    <div class="scan-photo"><img src="/assets/landing/receipt.jpg" alt="Recibo de supermercado amassado sobre a bancada de uma cozinha" width="1536" height="1536" loading="lazy"></div>
+    <div class="scan-read">
+      <h2 id="scan-title">Vocês tiram uma foto do recibo. O HomePot anota.</h2>
+      <p class="lead">O scanner lê o estabelecimento, o total, a data e cada item, e divide do jeito que vocês disserem. Vocês conferem e pronto.</p>
+      <table class="ledger">
+        <caption>Leitura de um recibo de exemplo</caption>
+        <tbody>
+          <tr><th scope="row">Estabelecimento</th><td>Súper La Esquina</td></tr>
+          <tr><th scope="row">Data</th><td>9 de novembro</td></tr>
+          <tr><th scope="row">Itens</th><td>11, com um desconto de R$ 1,20</td></tr>
+          <tr><th scope="row">Categoria</th><td>Supermercado</td></tr>
+          <tr><th scope="row">Divisão</th><td>Meio a meio entre Ana e Carlos</td></tr>
+          <tr class="total"><th scope="row">Total</th><td>R$ 48,20</td></tr>
+        </tbody>
+      </table>
+      <p class="fine">10 scans por mês no plano grátis e 50 no Pro. Se o recibo vier em outra moeda, ele converte para a da caixinha no câmbio do dia.</p>
+    </div>
+  </section>
+
+  <section class="trust section" id="comparar" aria-labelledby="trust-title">
+    <h2 id="trust-title">As letras miúdas, em tamanho grande.</h2>
+    <dl class="facts">
+      <div><dt>Anúncios</dt><dd>Nenhum, nem no plano grátis.</dd></div>
+      <div><dt>Seus dados</dt><dd>Guardados na União Europeia (Irlanda).</dd></div>
+      <div><dt>Sua conta</dt><dd>Vocês apagam quando quiserem, pelo app.</dd></div>
+      <div><dt>Idiomas</dt><dd>Espanhol, português, inglês, francês e alemão.</dd></div>
+      <div><dt>Moedas</dt><dd>54, e o scanner lê qualquer outra.</dd></div>
+    </dl>
+    <div class="table-wrap">
+      <table class="compare">
+        <caption>HomePot em comparação com Splitwise e Tricount</caption>
+        <thead><tr><th scope="col"><span class="sr">Recurso</span></th><th scope="col">HomePot</th><th scope="col">Splitwise</th><th scope="col">Tricount</th></tr></thead>
+        <tbody>
+          <tr><th scope="row">Caixinha com saldo e previsão</th><td class="yes" data-label="HomePot">Sim</td><td data-label="Splitwise">Não</td><td data-label="Tricount">Não</td></tr>
+          <tr><th scope="row">Encerramento do mês com uma transferência por pessoa</th><td class="yes" data-label="HomePot">Sim</td><td data-label="Splitwise">Não</td><td data-label="Tricount">Não</td></tr>
+          <tr><th scope="row">Scanner de recibos com IA</th><td class="yes" data-label="HomePot">Grátis, 10 por mês</td><td data-label="Splitwise">Só no Pro</td><td data-label="Tricount">Não</td></tr>
+          <tr><th scope="row">Despesas recorrentes</th><td class="yes" data-label="HomePot">Grátis</td><td data-label="Splitwise">Parcial</td><td data-label="Tricount">Não</td></tr>
+          <tr><th scope="row">Anúncios no plano grátis</th><td class="yes" data-label="HomePot">Nunca</td><td data-label="Splitwise">Sim</td><td data-label="Tricount">Nunca</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="fine">Dados públicos de cada app em novembro de 2026. Fontes e detalhes nas comparações <a href="/pt/compare/homepot-vs-splitwise/">com o Splitwise</a> e <a href="/pt/compare/homepot-vs-tricount/">com o Tricount</a>.</p>
+  </section>
+
+  <section class="prices section" id="precios" aria-labelledby="prices-title">
+    <div class="prices-head">
+      <h2 id="prices-title">Quanto custa, por escrito.</h2>
+      <div class="billing" role="group" aria-label="Forma de pagamento do Pro">
+        <button type="button" data-billing="year" aria-pressed="true">Por ano</button>
+        <button type="button" data-billing="month" aria-pressed="false">Por mês</button>
+      </div>
+    </div>
+    <div class="statement">
+      <table class="tariff">
+        <caption class="sr">O que cada plano do HomePot inclui</caption>
+        <colgroup><col class="c-item"><col class="c-free"><col class="c-pro"></colgroup>
+        <thead>
+          <tr><th scope="col"><span class="sr">Item</span></th><th scope="col">Plano grátis</th><th scope="col" class="pro">Pro</th></tr>
+        </thead>
+        <tbody>
+          <tr class="t-price"><th scope="row">Preço</th><td><span class="price">R$ 0</span><span class="per">para sempre</span></td><td class="pro"><span class="price" id="pro-price">R$ 109,90</span><span class="per" id="pro-per">por ano, uns R$ 9,16 por mês</span></td></tr>
+          <tr><th scope="row">Caixinhas</th><td>1, com quantos membros precisar</td><td class="pro">Quantas quiserem: casa, viagens, casal</td></tr>
+          <tr><th scope="row">Despesas registradas por mês, por pessoa</th><td><span class="n">20</span></td><td class="pro">Sem limite</td></tr>
+          <tr><th scope="row">Scans de recibos com IA por mês</th><td><span class="n">10</span></td><td class="pro"><span class="n">50</span></td></tr>
+          <tr><th scope="row">Encerramento do mês e acertos</th><td>Incluído</td><td class="pro">Incluído</td></tr>
+          <tr><th scope="row">Despesas recorrentes e 54 moedas</th><td>Incluídas</td><td class="pro">Incluídas</td></tr>
+          <tr><th scope="row">Estatísticas avançadas e exportação para PDF e CSV</th><td class="no">Não</td><td class="pro">Incluídas</td></tr>
+        </tbody>
+        <tfoot>
+          <tr><th scope="row"><span class="sr">Como começar</span></th>
+            <td><a class="btn btn-line" href="https://apps.apple.com/app/homepot-shared-expenses/id6759216594" rel="noopener">Começar grátis</a></td>
+            <td class="pro"><a class="btn btn-solid" href="https://apps.apple.com/app/homepot-shared-expenses/id6759216594" rel="noopener">Baixar e assinar o Pro</a><span class="t-note">É ativado pelo app, quando vocês precisarem.</span></td></tr>
+        </tfoot>
+      </table>
+    </div>
+    <p class="fine">Preços em reais. No app vocês veem o preço do seu país. Uma única assinatura Pro vale para todas as pessoas das caixinhas de vocês.</p>
+  </section>
+
+  <section class="faq section" id="preguntas" aria-labelledby="faq-title">
+    <div class="faq-head">
+      <h2 id="faq-title">Perguntas da casa</h2>
+      <p class="faq-more">Outra dúvida? Na <a href="/support/">página de ajuda</a> estão todas as respostas.</p>
+    </div>
+    <div class="faq-list">
+      <details><summary>A outra pessoa precisa baixar o app?<svg class="pm" viewBox="0 0 20 20" aria-hidden="true"><path d="M4 10h12"/><path class="pm-v" d="M10 4v12"/></svg></summary><p>Sim, para registrar os gastos dela. Vocês mandam um link e ela entra na caixinha em um minuto; se não tiver o app, o link leva para a loja.</p></details>
+      <details><summary>É para casais ou para quem divide apartamento?<svg class="pm" viewBox="0 0 20 20" aria-hidden="true"><path d="M4 10h12"/><path class="pm-v" d="M10 4v12"/></svg></summary><p>Para os dois. Em casal, o normal é uma caixinha; num apartamento dividido, cada um paga e no fim se acerta. O HomePot faz as duas coisas.</p></details>
+      <details><summary>Precisamos abrir uma conta conjunta?<svg class="pm" viewBox="0 0 20 20" aria-hidden="true"><path d="M4 10h12"/><path class="pm-v" d="M10 4v12"/></svg></summary><p>Não. O HomePot não mexe no banco de vocês: ele controla o saldo da caixinha com o que cada um põe e o que se gasta.</p></details>
+      <details><summary>O que acontece se eu chegar a 20 despesas em um mês?<svg class="pm" viewBox="0 0 20 20" aria-hidden="true"><path d="M4 10h12"/><path class="pm-v" d="M10 4v12"/></svg></summary><p>No plano grátis, cada pessoa registra até 20 despesas por mês. Ao chegar lá, vocês continuam vendo a caixinha e encerrando o mês; para registrar mais, passem para o Pro ou esperem o mês seguinte.</p></details>
+      <details><summary>Viemos do Splitwise. O que muda?<svg class="pm" viewBox="0 0 20 20" aria-hidden="true"><path d="M4 10h12"/><path class="pm-v" d="M10 4v12"/></svg></summary><p>O HomePot é feito para uma casa: caixinha com saldo, previsão, encerramento mensal e scanner incluídos, sem anúncios no plano grátis.</p></details>
+    </div>
+  </section>
+
+  <section class="close" id="descargar" aria-labelledby="close-title">
+    <img class="close-photo" src="/assets/landing/still.jpg" alt="" width="2048" height="1024" loading="lazy">
+    <div class="close-body">
+      <h2 id="close-title">Comecem o primeiro resumo de vocês hoje à noite.</h2>
+      <p>Leva um minuto para criar a caixinha e outro para a outra pessoa entrar.</p>
+      <div class="slip">
+        <div class="slip-cut" aria-hidden="true"><svg viewBox="0 0 44 36" fill="none" stroke="currentColor" stroke-width="3"><circle cx="9" cy="9" r="6"/><circle cx="9" cy="27" r="6"/><path d="M14 12 42 30M14 24 42 6"/></svg></div>
+        <div class="slip-body">
+          <a class="store slip-store" href="https://apps.apple.com/app/homepot-shared-expenses/id6759216594" rel="noopener">
+            <svg viewBox="0 0 24 28" aria-hidden="true"><path fill="currentColor" d="M19.7 14.9c0-3 2.5-4.5 2.6-4.6-1.4-2.1-3.6-2.4-4.4-2.4-1.9-.2-3.7 1.1-4.6 1.1-1 0-2.4-1.1-4-1.1-2 0-3.9 1.2-5 3-2.1 3.7-.5 9.2 1.5 12.2 1 1.4 2.2 3.1 3.7 3 1.5-.1 2.1-1 3.9-1s2.3 1 3.9.9c1.6 0 2.6-1.4 3.6-2.9 1.1-1.7 1.6-3.3 1.6-3.4-.1 0-3.2-1.2-2.8-4.8zM16.8 5.8c.8-1 1.4-2.4 1.2-3.8-1.2.1-2.6.8-3.5 1.8-.8.9-1.4 2.3-1.2 3.6 1.3.1 2.7-.7 3.5-1.6z"/></svg>            Baixar na App Store          </a>
+          <div class="qr slip-qr" id="qr3" role="img" aria-label="QR code para baixar o HomePot na App Store"></div>
+          <p class="slip-android"><svg viewBox="0 0 56 64" aria-hidden="true"><path fill="currentColor" d="M14 22h28v26a4 4 0 0 1-4 4h-2v8a4 4 0 0 1-8 0v-8h-4v8a4 4 0 0 1-8 0v-8h-2a4 4 0 0 1-4-4zM5 24a4 4 0 0 1 8 0v16a4 4 0 0 1-8 0zM43 24a4 4 0 0 1 8 0v16a4 4 0 0 1-8 0zM14 19c0-6 5-11 11-12l-3-5 1.5-1 3.3 5.4a14 14 0 0 1 2.4 0L32.5 1 34 2l-3 5c6 1 11 6 11 12zm8-6a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm12 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4z"/></svg><span>Android,<br> em breve</span></p>
         </div>
-        <p class="text-sm text-gray-400 mb-4">Ative 1 mês de Pro grátis ao baixar o app e se registrar com o mesmo email.</p>
-
-        <div class="flex flex-wrap items-center gap-4 text-sm text-gray-500">
-          <span class="flex items-center gap-1.5"><span class="material-symbols-outlined text-sage text-lg">check_circle</span><span>Sem anúncios</span></span>
-          <span class="text-gray-300">·</span>
-          <span class="flex items-center gap-1.5"><span class="material-symbols-outlined text-sage text-lg">check_circle</span><span>Sem rastreamento</span></span>
-          <span class="text-gray-300">·</span>
-          <span class="flex items-center gap-1.5"><span class="material-symbols-outlined text-sage text-lg">check_circle</span><span>Conforme com LGPD</span></span>
-        </div>
-      </div>
-
-      <!-- Phone side (desktop) -->
-      <div class="hidden lg:flex lg:col-span-5 relative justify-center items-center min-h-[500px]">
-        <div class="absolute w-[500px] h-[500px] bg-yellowSoft rounded-full blur-[120px] opacity-15 -top-10 -right-20"></div>
-        <div class="absolute w-[400px] h-[400px] bg-sage rounded-full blur-[100px] opacity-10 bottom-0 -left-10"></div>
-        <img src="/assets/screenshots/stats.jpg" alt="HomePot statistics" width="600" height="1300" class="absolute max-w-[280px] rounded-[2.5rem] shadow-2xl transform rotate-[5deg] translate-x-8 -translate-y-4 z-10">
-        <img src="/assets/screenshots/dashboard.jpg" alt="HomePot dashboard" width="600" height="1300" fetchpriority="high" class="relative max-w-[280px] rounded-[2.5rem] shadow-2xl transform -rotate-[5deg] -translate-x-4 translate-y-4 z-20">
-      </div>
-      <!-- Phone side (mobile) -->
-      <div class="flex lg:hidden justify-center">
-        <img src="/assets/screenshots/dashboard.jpg" alt="HomePot dashboard" width="600" height="1300" fetchpriority="high" class="max-w-[260px] rounded-[2.5rem] shadow-2xl">
       </div>
     </div>
-  </div>
-</section>
+  </section>
+</main>
 
-<!-- ========== TRUST MARQUEE ========== -->
-<section class="bg-white py-8 overflow-hidden">
-  <div class="trust-marquee">
-    <div class="trust-marquee-track">
-            <div class="trust-item"><span class="material-symbols-outlined text-sage">verified_user</span><span>Conforme com LGPD</span></div>
-      <div class="trust-item"><span class="material-symbols-outlined text-sage">shield</span><span>Conforme com CCPA</span></div>
-      <div class="trust-item"><span class="material-symbols-outlined text-sage">lock</span><span>Criptografia de 256 bits</span></div>
-      <div class="trust-item"><span class="material-symbols-outlined text-sage">block</span><span>Zero anúncios, para sempre</span></div>
-      <div class="trust-item"><span class="material-symbols-outlined text-sage">visibility_off</span><span>Sem rastreamento</span></div>
-      <div class="trust-item"><span class="material-symbols-outlined text-sage">translate</span><span>5 idiomas</span></div>
-      <div class="trust-item"><span class="material-symbols-outlined text-sage">currency_exchange</span><span>54 moedas</span></div>
-      <div class="trust-item"><span class="material-symbols-outlined text-sage">cloud_done</span><span>Infraestrutura AWS</span></div>
-      <div class="trust-item"><span class="material-symbols-outlined text-sage">delete_forever</span><span>Apagar quando quiser</span></div>
-      <div class="trust-item"><span class="material-symbols-outlined text-sage">smart_toy</span><span>Scanner com IA</span></div>
-            <div class="trust-item"><span class="material-symbols-outlined text-sage">verified_user</span><span>Conforme com LGPD</span></div>
-      <div class="trust-item"><span class="material-symbols-outlined text-sage">shield</span><span>Conforme com CCPA</span></div>
-      <div class="trust-item"><span class="material-symbols-outlined text-sage">lock</span><span>Criptografia de 256 bits</span></div>
-      <div class="trust-item"><span class="material-symbols-outlined text-sage">block</span><span>Zero anúncios, para sempre</span></div>
-      <div class="trust-item"><span class="material-symbols-outlined text-sage">visibility_off</span><span>Sem rastreamento</span></div>
-      <div class="trust-item"><span class="material-symbols-outlined text-sage">translate</span><span>5 idiomas</span></div>
-      <div class="trust-item"><span class="material-symbols-outlined text-sage">currency_exchange</span><span>54 moedas</span></div>
-      <div class="trust-item"><span class="material-symbols-outlined text-sage">cloud_done</span><span>Infraestrutura AWS</span></div>
-      <div class="trust-item"><span class="material-symbols-outlined text-sage">delete_forever</span><span>Apagar quando quiser</span></div>
-      <div class="trust-item"><span class="material-symbols-outlined text-sage">smart_toy</span><span>Scanner com IA</span></div>
-          </div>
-  </div>
-</section>
-
-<!-- ========== FEATURE SHOWCASE ========== -->
-<section class="bg-cream py-20 lg:py-28">
-  <div class="max-w-7xl mx-auto px-6">
-    <h2 class="text-3xl lg:text-5xl font-extrabold text-darkBlue text-center mb-4 reveal">Destaques do app</h2>
-    <p class="text-lg text-gray-500 text-center mb-16 reveal">Descubra o que torna o HomePot único.</p>
-
-    <div class="grid md:grid-cols-2 gap-8 reveal">
-      <div class="bg-white rounded-3xl p-8 border border-gray-100 shadow-sm">
-        <div class="aspect-[4/3] bg-cream rounded-2xl mb-8 flex items-center justify-center relative overflow-hidden border border-gray-100">
-          <div class="relative w-48 h-64 bg-white shadow-xl rounded-lg border border-gray-200 p-4" style="transform:rotate(-5deg)">
-            <div class="w-full h-2 bg-gray-200 rounded mb-2"></div>
-            <div class="w-3/4 h-2 bg-gray-200 rounded mb-6"></div>
-            <div class="space-y-3 mb-6">
-              <div class="flex justify-between"><div class="w-1/2 h-2 bg-gray-100 rounded"></div><div class="w-1/4 h-2 bg-gray-200 rounded"></div></div>
-              <div class="flex justify-between"><div class="w-2/3 h-2 bg-gray-100 rounded"></div><div class="w-1/4 h-2 bg-gray-200 rounded"></div></div>
-              <div class="flex justify-between"><div class="w-1/3 h-2 bg-gray-100 rounded"></div><div class="w-1/4 h-2 bg-gray-200 rounded"></div></div>
-              <div class="flex justify-between"><div class="w-1/2 h-2 bg-gray-100 rounded"></div><div class="w-1/4 h-2 bg-gray-200 rounded"></div></div>
-            </div>
-            <div class="w-full h-px bg-gray-300 mb-2"></div>
-            <div class="flex justify-between"><div class="w-1/3 h-3 bg-gray-300 rounded"></div><div class="w-1/4 h-3 bg-gray-400 rounded"></div></div>
-          </div>
-          <div class="scanner-line"></div>
-        </div>
-        <h3 class="text-2xl font-extrabold text-darkBlue mb-3">Escaneie recibos com IA.</h3>
-        <p class="text-gray-500 leading-relaxed">Aponte a câmera para qualquer recibo. Valor, estabelecimento, itens, descontos, impostos — extraídos automaticamente.</p>
-      </div>
-
-      <div class="bg-white rounded-3xl p-8 border border-gray-100 shadow-sm">
-        <div class="aspect-[4/3] bg-cream/50 rounded-2xl mb-8 flex items-center justify-center relative overflow-hidden border border-terracotta/10">
-          <div class="w-full max-w-sm bg-white rounded-2xl shadow-xl border border-gray-200 p-5" style="transform:scale(0.85)">
-            <div class="text-center mb-5">
-              <div class="text-sm text-gray-500 mb-1">Total do mês</div>
-              <div class="text-3xl font-extrabold text-darkBlue">€3,308.15</div>
-            </div>
-            <div class="text-[10px] font-bold text-gray-400 tracking-widest mb-3">SALDO POR PESSOA</div>
-            <div class="space-y-3 mb-5">
-              <div class="flex items-center justify-between">
-                <div class="flex items-center gap-2">
-                  <div class="w-8 h-8 rounded-full bg-sage/20 flex items-center justify-center text-xs font-bold text-sage">AR</div>
-                  <div>
-                    <div class="text-xs font-bold text-darkBlue">Alex Rubio</div>
-                    <div class="text-[10px] text-gray-400">Pagou €2,813 · Deve €1,103</div>
-                  </div>
-                </div>
-                <div class="text-xs font-bold text-emerald-600 bg-emerald-50 px-2 py-1 rounded-full">+€1,710</div>
-              </div>
-              <div class="flex items-center justify-between">
-                <div class="flex items-center gap-2">
-                  <div class="w-8 h-8 rounded-full bg-terracotta/20 flex items-center justify-center text-xs font-bold text-terracotta">MG</div>
-                  <div>
-                    <div class="text-xs font-bold text-darkBlue">María García</div>
-                    <div class="text-[10px] text-gray-400">Pagou €273 · Deve €1,103</div>
-                  </div>
-                </div>
-                <div class="text-xs font-bold text-red-600 bg-red-50 px-2 py-1 rounded-full">-€830</div>
-              </div>
-            </div>
-            <div class="text-[10px] font-bold text-gray-400 tracking-widest mb-3">TRANSFERÊNCIAS A ACERTAR</div>
-            <div class="flex items-center justify-center gap-4">
-              <div class="flex flex-col items-center gap-1">
-                <div class="w-7 h-7 rounded-full bg-yellowSoft/40 flex items-center justify-center text-[10px] font-bold text-darkBlue">CL</div>
-                <span class="text-[9px] text-gray-400">Carlos</span>
-              </div>
-              <div class="flex flex-col items-center text-terracotta">
-                <span class="material-symbols-outlined text-sm">arrow_forward</span>
-                <span class="text-xs font-bold">€881</span>
-              </div>
-              <div class="flex flex-col items-center gap-1">
-                <div class="w-7 h-7 rounded-full bg-sage/20 flex items-center justify-center text-[10px] font-bold text-sage">AR</div>
-                <span class="text-[9px] text-gray-400">Alex</span>
-              </div>
-            </div>
-          </div>
-        </div>
-        <h3 class="text-2xl font-extrabold text-darkBlue mb-3">Sempre saiba quem deve o quê.</h3>
-        <p class="text-gray-500 leading-relaxed">Saldos ao vivo, detalhamento de gastos, fixos vs variáveis. Todos veem os mesmos números, sem adivinhação.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ========== FEATURE 1 ========== -->
-<section id="features" class="bg-white py-20 lg:py-28">
-  <div class="max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-12 lg:gap-20 items-center reveal">
-    <div>
-      <span class="inline-block bg-sage/10 text-sage text-sm font-semibold px-4 py-1.5 rounded-full mb-4">Registro inteligente</span>
-      <h2 class="text-3xl lg:text-5xl font-extrabold text-darkBlue mb-4">Adicione despesas em segundos</h2>
-      <p class="text-lg text-gray-500 mb-6">Um toque, escolha a categoria, pronto. Chega de conversas constrangedoras sobre «quem pagou o quê».</p>
-      <div class="flex items-center gap-2 text-sage font-medium">
-        <span class="material-symbols-outlined">check_circle</span>
-        <span>Categorias inteligentes e despesas recorrentes</span>
-      </div>
-    </div>
-    <div class="relative flex justify-center">
-      <div class="absolute w-[350px] h-[350px] bg-sage rounded-full blur-[100px] opacity-10 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"></div>
-      <img src="/assets/screenshots/expense.jpg" alt="Add expense screen" width="600" height="1300" loading="lazy" class="relative max-w-[300px] mx-auto rounded-[2rem] shadow-2xl transform rotate-2 hover:rotate-0 transition-transform duration-500">
-    </div>
-  </div>
-</section>
-
-<!-- ========== FEATURE 2 ========== -->
-<section class="bg-cream grain-bg py-20 lg:py-28">
-  <div class="max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-12 lg:gap-20 items-center reveal">
-    <div class="relative flex justify-center order-2 lg:order-1">
-      <div class="absolute w-[350px] h-[350px] bg-terracotta rounded-full blur-[100px] opacity-10 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"></div>
-      <img src="/assets/screenshots/paywall.jpg" alt="AI receipt scanner" width="600" height="1300" loading="lazy" class="relative max-w-[300px] mx-auto rounded-[2rem] shadow-2xl transform -rotate-2 hover:rotate-0 transition-transform duration-500">
-    </div>
-    <div class="order-1 lg:order-2">
-      <span class="inline-block bg-terracotta/10 text-terracotta text-sm font-semibold px-4 py-1.5 rounded-full mb-4">Com IA</span>
-      <h2 class="text-3xl lg:text-5xl font-extrabold text-darkBlue mb-4">Escaneie recibos com IA</h2>
-      <p class="text-lg text-gray-500 mb-6">Aponte a câmera para qualquer recibo. Valor, estabelecimento, itens — extraídos automaticamente.</p>
-      <div class="flex items-center gap-2 text-terracotta font-medium">
-        <span class="material-symbols-outlined">auto_awesome</span>
-        <span>Itens detalhados e índice de confiança</span>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ========== FEATURE 3 ========== -->
-<section class="bg-white py-20 lg:py-28">
-  <div class="max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-12 lg:gap-20 items-center reveal">
-    <div>
-      <span class="inline-block bg-sage/10 text-sage text-sm font-semibold px-4 py-1.5 rounded-full mb-4">Tempo real</span>
-      <h2 class="text-3xl lg:text-5xl font-extrabold text-darkBlue mb-4">Sempre saiba quem deve o quê</h2>
-      <p class="text-lg text-gray-500 mb-6">Saldos ao vivo, detalhamento de gastos, fixos vs variáveis. Todos veem os mesmos números, sem adivinhação.</p>
-      <div class="flex items-center gap-2 text-sage font-medium">
-        <span class="material-symbols-outlined">sync_alt</span>
-        <span>Modos Vaquinha e Divisão de despesas</span>
-      </div>
-    </div>
-    <div class="relative flex justify-center">
-      <div class="absolute w-[350px] h-[350px] bg-sage rounded-full blur-[100px] opacity-10 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"></div>
-      <img src="/assets/screenshots/dashboard.jpg" alt="Real-time balances" width="600" height="1300" loading="lazy" class="relative max-w-[300px] mx-auto rounded-[2rem] shadow-2xl transform rotate-2 hover:rotate-0 transition-transform duration-500">
-    </div>
-  </div>
-</section>
-
-<!-- ========== FEATURE 4 ========== -->
-<section class="bg-cream grain-bg py-20 lg:py-28">
-  <div class="max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-12 lg:gap-20 items-center reveal">
-    <div class="relative flex justify-center order-2 lg:order-1">
-      <div class="absolute w-[350px] h-[350px] bg-terracotta rounded-full blur-[100px] opacity-10 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"></div>
-      <img src="/assets/screenshots/close-month.jpg" alt="Monthly settlement" width="600" height="1300" loading="lazy" class="relative max-w-[300px] mx-auto rounded-[2rem] shadow-2xl transform -rotate-2 hover:rotate-0 transition-transform duration-500">
-    </div>
-    <div class="order-1 lg:order-2">
-      <span class="inline-block bg-terracotta/10 text-terracotta text-sm font-semibold px-4 py-1.5 rounded-full mb-4">Um toque</span>
-      <h2 class="text-3xl lg:text-5xl font-extrabold text-darkBlue mb-4">Acerte as contas com um toque</h2>
-      <p class="text-lg text-gray-500 mb-6">O fechamento mensal calcula as transferências mínimas. Veja quem deve a quem, confirme e pronto.</p>
-      <div class="flex items-center gap-2 text-terracotta font-medium">
-        <span class="material-symbols-outlined">payments</span>
-        <span>Cálculos justos, transferências minimizadas</span>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ========== FEATURE 5 ========== -->
-<section class="bg-white py-20 lg:py-28">
-  <div class="max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-12 lg:gap-20 items-center reveal">
-    <div>
-      <span class="inline-block bg-sage/10 text-sage text-sm font-semibold px-4 py-1.5 rounded-full mb-4">Insights</span>
-      <h2 class="text-3xl lg:text-5xl font-extrabold text-darkBlue mb-4">Veja para onde vai seu dinheiro</h2>
-      <p class="text-lg text-gray-500 mb-6">Gráficos interativos, detalhamento por categoria e tendências de gastos. Conhecimento é poder.</p>
-      <div class="flex items-center gap-2 text-sage font-medium">
-        <span class="material-symbols-outlined">bar_chart</span>
-        <span>Exporte CSV e PDF a qualquer momento</span>
-      </div>
-    </div>
-    <div class="relative flex justify-center">
-      <div class="absolute w-[350px] h-[350px] bg-sage rounded-full blur-[100px] opacity-10 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"></div>
-      <img src="/assets/screenshots/stats.jpg" alt="Statistics and charts" width="600" height="1300" loading="lazy" class="relative max-w-[300px] mx-auto rounded-[2rem] shadow-2xl transform rotate-2 hover:rotate-0 transition-transform duration-500">
-    </div>
-  </div>
-</section>
-
-<!-- ========== HOW IT WORKS ========== -->
-<section class="bg-cream grain-bg py-20 lg:py-28">
-  <div class="max-w-5xl mx-auto px-6">
-    <h2 class="text-3xl lg:text-5xl font-extrabold text-darkBlue text-center mb-16 reveal">Comece em menos de um minuto</h2>
-    <div class="relative grid md:grid-cols-3 gap-8">
-      <div class="hidden md:block absolute top-12 left-[20%] right-[20%] border-t-2 border-dashed border-darkBlue/10"></div>
-      <div class="bg-white rounded-2xl p-8 shadow-sm hover:shadow-md transition-shadow text-center relative reveal reveal-delay-1">
-        <div class="w-16 h-16 bg-sage/15 rounded-full flex items-center justify-center mx-auto mb-5">
-          <span class="material-symbols-outlined text-sage text-3xl">cottage</span>
-        </div>
-        <h3 class="text-lg font-bold text-darkBlue mb-2">Crie seu grupo</h3>
-        <p class="text-gray-500">Cadastre-se e convide seus colegas ou parceiro(a). Leva 30 segundos.</p>
-      </div>
-      <div class="bg-white rounded-2xl p-8 shadow-sm hover:shadow-md transition-shadow text-center relative reveal reveal-delay-2">
-        <div class="w-16 h-16 bg-terracotta/15 rounded-full flex items-center justify-center mx-auto mb-5">
-          <span class="material-symbols-outlined text-terracotta text-3xl">receipt_long</span>
-        </div>
-        <h3 class="text-lg font-bold text-darkBlue mb-2">Adicione despesas compartilhadas</h3>
-        <p class="text-gray-500">Escaneie um recibo ou adicione manualmente. A gente cuida da matemática.</p>
-      </div>
-      <div class="bg-white rounded-2xl p-8 shadow-sm hover:shadow-md transition-shadow text-center relative reveal reveal-delay-3">
-        <div class="w-16 h-16 bg-yellowSoft/30 rounded-full flex items-center justify-center mx-auto mb-5">
-          <span class="material-symbols-outlined text-yellowSoft text-3xl">check_circle</span>
-        </div>
-        <h3 class="text-lg font-bold text-darkBlue mb-2">Acerte as contas todo mês</h3>
-        <p class="text-gray-500">Veja quem deve o quê e quite dívidas com o mínimo de transferências.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ========== PRICING ========== -->
-<section id="pricing" class="bg-white py-20 lg:py-28">
-  <div class="max-w-5xl mx-auto px-6">
-    <div class="text-center mb-12 reveal">
-      <h2 class="text-3xl lg:text-5xl font-extrabold text-darkBlue mb-4">Preços simples e honestos</h2>
-      <p class="text-lg text-gray-500">Comece de graça, faça upgrade quando precisar.</p>
-    </div>
-
-    <div class="flex items-center justify-center gap-4 mb-12 reveal">
-      <span class="text-sm font-medium text-darkBlue">Mensal</span>
-      <button data-pricing-toggle role="switch" aria-checked="true" class="relative inline-flex h-7 w-12 items-center rounded-full bg-terracotta transition-colors focus:outline-none focus:ring-2 focus:ring-terracotta/50">
-        <span class="inline-block h-5 w-5 transform rounded-full bg-white shadow transition-transform translate-x-5"></span>
-      </button>
-      <span class="text-sm font-medium text-darkBlue">Anual</span>
-      <span class="bg-sage/15 text-sage text-xs font-bold px-3 py-1 rounded-full">Economize 46%</span>
-    </div>
-
-    <div class="grid lg:grid-cols-2 max-w-4xl mx-auto gap-8 reveal">
-      <!-- Free card -->
-      <div class="ring-1 ring-gray-200 rounded-3xl p-8 flex flex-col">
-        <h3 class="text-2xl font-bold text-darkBlue mb-1">Grátis</h3>
-        <p class="text-gray-500 text-sm mb-6">Perfeito para começar.</p>
-        <div class="flex items-baseline gap-1 mb-8">
-          <span class="text-4xl font-extrabold text-darkBlue">R$ 0</span>
-          <span class="text-gray-400">/mês</span>
-        </div>
-        <ul class="space-y-3 mb-8 flex-1">
-                    <li class="flex items-center gap-2 text-sm"><span class="material-symbols-outlined text-terracotta text-lg">check</span><span>1 grupo, membros ilimitados</span></li>
-                    <li class="flex items-center gap-2 text-sm"><span class="material-symbols-outlined text-terracotta text-lg">check</span><span>20 despesas por pessoa por mês</span></li>
-                    <li class="flex items-center gap-2 text-sm"><span class="material-symbols-outlined text-terracotta text-lg">check</span><span>10 scans de recibos com IA por mês</span></li>
-                    <li class="flex items-center gap-2 text-sm"><span class="material-symbols-outlined text-terracotta text-lg">check</span><span>Fechamento do mês e liquidações</span></li>
-                    <li class="flex items-center gap-2 text-sm"><span class="material-symbols-outlined text-terracotta text-lg">check</span><span>Despesas recorrentes</span></li>
-                    <li class="flex items-center gap-2 text-sm"><span class="material-symbols-outlined text-terracotta text-lg">check</span><span>54 moedas</span></li>
-                    <li class="flex items-center gap-2 text-sm"><span class="material-symbols-outlined text-terracotta text-lg">check</span><span>Sem anúncios</span></li>
-                  </ul>
-        <a href="https://apps.apple.com/app/homepot-shared-expenses/id6759216594" target="_blank" rel="noopener" class="block text-center border-2 border-darkBlue text-darkBlue font-semibold rounded-full py-3 hover:bg-darkBlue/5 transition-colors">Começar grátis</a>
-      </div>
-
-      <!-- Pro card -->
-      <div class="ring-2 ring-terracotta rounded-3xl p-8 relative flex flex-col">
-        <div class="absolute -top-4 left-1/2 -translate-x-1/2 bg-terracotta text-white text-xs font-bold px-4 py-1.5 rounded-full">Mais popular</div>
-        <h3 class="text-2xl font-bold text-terracotta mb-1">Pro</h3>
-        <p class="text-gray-500 text-sm mb-6">Para quem quer a experiência completa.</p>
-        <div data-price-monthly class="hidden flex items-baseline gap-1 mb-8">
-          <span class="text-4xl font-extrabold text-darkBlue">R$ 16,90</span>
-          <span class="text-gray-400">/mês</span>
-        </div>
-        <div data-price-annual class="flex items-baseline gap-1 mb-8">
-          <span class="text-4xl font-extrabold text-darkBlue">R$ 9,16</span>
-          <span class="text-gray-400">/mês · R$ 109,90 por ano</span>
-        </div>
-        <ul class="space-y-3 mb-8 flex-1">
-                    <li class="flex items-center gap-2 text-sm font-semibold"><span class="material-symbols-outlined text-terracotta text-lg">check</span><span>Despesas ilimitadas</span></li>
-                    <li class="flex items-center gap-2 text-sm"><span class="material-symbols-outlined text-terracotta text-lg">check</span><span>50 scans de recibos com IA por mês</span></li>
-                    <li class="flex items-center gap-2 text-sm"><span class="material-symbols-outlined text-terracotta text-lg">check</span><span>Quantos grupos você quiser</span></li>
-                    <li class="flex items-center gap-2 text-sm"><span class="material-symbols-outlined text-terracotta text-lg">check</span><span>Estatísticas avançadas</span></li>
-                    <li class="flex items-center gap-2 text-sm"><span class="material-symbols-outlined text-terracotta text-lg">check</span><span>Exportar para CSV e PDF</span></li>
-                    <li class="flex items-center gap-2 text-sm"><span class="material-symbols-outlined text-terracotta text-lg">check</span><span>Uma única assinatura para a casa toda</span></li>
-                  </ul>
-        <a href="https://apps.apple.com/app/homepot-shared-expenses/id6759216594" target="_blank" rel="noopener" class="block text-center bg-terracotta text-white font-semibold rounded-full py-3 hover:bg-terracotta/90 transition-colors">Baixar e assinar o Pro</a>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ========== FAQ INLINE ========== -->
-<section class="bg-white py-20 lg:py-28">
-  <div class="max-w-3xl mx-auto px-6">
-    <h2 class="text-3xl lg:text-4xl font-extrabold text-darkBlue text-center mb-12 reveal">Perguntas frequentes</h2>
-    <div class="space-y-3 reveal">
-            <details class="group bg-cream/50 rounded-2xl border border-gray-100 overflow-hidden">
-        <summary class="flex items-center justify-between p-6 cursor-pointer font-semibold text-darkBlue list-none">
-          <span>Meus dados estão seguros?</span>
-          <span class="material-symbols-outlined text-gray-400 group-open:rotate-180 transition-transform">expand_more</span>
-        </summary>
-        <div class="px-6 pb-6 text-gray-500 text-sm leading-relaxed">Sim. Seus dados são criptografados em trânsito e em repouso em servidores AWS. Cumprimos RGPD, CCPA e LGPD. Sem anúncios, sem rastreamento, sem venda de dados. Nunca.</div>
-      </details>
-            <details class="group bg-cream/50 rounded-2xl border border-gray-100 overflow-hidden">
-        <summary class="flex items-center justify-between p-6 cursor-pointer font-semibold text-darkBlue list-none">
-          <span>Como funciona o scanner de recibos com IA?</span>
-          <span class="material-symbols-outlined text-gray-400 group-open:rotate-180 transition-transform">expand_more</span>
-        </summary>
-        <div class="px-6 pb-6 text-gray-500 text-sm leading-relaxed">Tire uma foto de qualquer recibo. Nossa IA extrai o total, cada item, descontos, impostos, nome da loja e até a moeda — automaticamente. Você revisa e confirma.</div>
-      </details>
-            <details class="group bg-cream/50 rounded-2xl border border-gray-100 overflow-hidden">
-        <summary class="flex items-center justify-between p-6 cursor-pointer font-semibold text-darkBlue list-none">
-          <span>Posso usar para viagens com amigos?</span>
-          <span class="material-symbols-outlined text-gray-400 group-open:rotate-180 transition-transform">expand_more</span>
-        </summary>
-        <div class="px-6 pb-6 text-gray-500 text-sm leading-relaxed">Sim. Use o modo «Divisão de Despesas» para viagens — cada um paga do seu bolso e o HomePot calcula quem deve a quem no final, minimizando as transferências.</div>
-      </details>
-            <details class="group bg-cream/50 rounded-2xl border border-gray-100 overflow-hidden">
-        <summary class="flex items-center justify-between p-6 cursor-pointer font-semibold text-darkBlue list-none">
-          <span>Quanto custa?</span>
-          <span class="material-symbols-outlined text-gray-400 group-open:rotate-180 transition-transform">expand_more</span>
-        </summary>
-        <div class="px-6 pb-6 text-gray-500 text-sm leading-relaxed">Grátis: 1 grupo com membros ilimitados, 20 despesas por pessoa por mês, 10 scans de recibos com IA por mês, fechamento do mês e liquidações, despesas recorrentes, sem anúncios. Pro: despesas ilimitadas, 50 scans por mês, quantos grupos você quiser, estatísticas avançadas e exportação CSV/PDF, por R$ 16,90 por mês ou R$ 109,90 por ano (cerca de R$ 9,16 por mês). Uma única assinatura cobre todas as pessoas dos seus grupos.</div>
-      </details>
-            <details class="group bg-cream/50 rounded-2xl border border-gray-100 overflow-hidden">
-        <summary class="flex items-center justify-between p-6 cursor-pointer font-semibold text-darkBlue list-none">
-          <span>Como o HomePot se compara ao Splitwise?</span>
-          <span class="material-symbols-outlined text-gray-400 group-open:rotate-180 transition-transform">expand_more</span>
-        </summary>
-        <div class="px-6 pb-6 text-gray-500 text-sm leading-relaxed">O HomePot é construído como uma alternativa honesta e sem anúncios: 54 moedas para registrar despesas, scanner com IA que lê qualquer moeda do recibo e um modelo de assinatura transparente. Veja a <a href="/pt/compare/homepot-vs-splitwise/" class="text-terracotta underline hover:opacity-80">comparação completa lado a lado com o Splitwise</a> com todos os recursos e o aviso sobre nossas fontes.</div>
-      </details>
-          </div>
-  </div>
-</section>
-
-<!-- ========== FINAL CTA ========== -->
-<section id="cta" class="bg-cream grain-bg py-20 lg:py-28 relative overflow-hidden">
-  <div class="absolute w-[400px] h-[400px] bg-yellowSoft rounded-full blur-[80px] opacity-15 -top-20 -left-20"></div>
-  <div class="absolute w-[300px] h-[300px] bg-sage rounded-full blur-[80px] opacity-15 -bottom-10 -right-10"></div>
-
-  <div class="max-w-3xl mx-auto px-6 text-center relative z-10">
-    <h2 class="text-3xl lg:text-5xl font-extrabold text-darkBlue mb-4 reveal">Ainda não quer instalar? Experimente o Pro grátis por 1 mês.</h2>
-    <p class="text-lg text-gray-500 mb-10 reveal">Deixe seu email aqui, baixe o HomePot quando quiser e se registre com o mesmo endereço — seu mês grátis de Pro é ativado automaticamente.</p>
-
-    <form id="email-form" data-promo-endpoint="https://haggaeeajlbmktsinbek.supabase.co/functions/v1/promo-signup" class="flex flex-col sm:flex-row gap-3 max-w-lg mx-auto mb-4 reveal">
-      <input type="email" id="email-input" required class="flex-1 rounded-full bg-white py-4 px-6 text-darkBlue placeholder-gray-400 outline-none ring-1 ring-gray-200 focus:ring-terracotta transition-colors" placeholder="Digite seu email">
-      <button type="submit" id="email-btn" data-label-default="1 mês Pro grátis" class="bg-terracotta text-white rounded-full py-4 px-8 font-semibold hover:bg-terracotta/90 transition-colors whitespace-nowrap">1 mês Pro grátis</button>
-    </form>
-    <p id="email-success" class="hidden text-sm text-sage font-medium mb-4">Pronto! Agora baixe o HomePot e se registre com o mesmo email para ativar seu mês grátis de Pro.</p>
-    <p id="email-error" class="hidden text-sm text-red-500 font-medium mb-4">Algo deu errado. Tente novamente.</p>
-    <p class="text-sm text-gray-400 mb-10 reveal">Sem spam. Quando você baixar o HomePot e se registrar com o mesmo email, seu mês grátis de Pro é ativado automaticamente.</p>
-
-    <div class="flex flex-wrap items-center justify-center gap-6 text-sm text-gray-500 mb-10 reveal">
-      <span class="flex items-center gap-1.5"><span class="material-symbols-outlined text-sage text-lg">lock</span><span>Criptografado</span></span>
-      <span class="text-gray-300">·</span>
-      <span class="flex items-center gap-1.5"><span class="material-symbols-outlined text-sage text-lg">verified_user</span><span>LGPD</span></span>
-      <span class="text-gray-300">·</span>
-      <span class="flex items-center gap-1.5"><span class="material-symbols-outlined text-sage text-lg">visibility_off</span><span>Sem rastreamento</span></span>
-    </div>
-
-    <div class="flex justify-center mt-6 reveal">
-      <a href="https://apps.apple.com/app/homepot-shared-expenses/id6759216594" target="_blank" rel="noopener" class="hover:opacity-80 transition-opacity">
-        <img src="/assets/badges/download-pt.svg" alt="Download on the App Store" style="height:48px;width:auto;">
-      </a>
-    </div>
-  </div>
-</section>
-
-<!-- ========== FOOTER ========== -->
-<footer class="bg-white border-t border-gray-100">
-  <div class="max-w-7xl mx-auto px-6 py-16">
-    <div class="grid md:grid-cols-2 lg:grid-cols-6 gap-12 mb-12">
-      <!-- Logo column -->
-      <div class="lg:col-span-2">
-        <a href="/pt/" class="flex items-center gap-2 mb-4">
-          <img src="/assets/favicon-40.png" alt="HomePot" class="w-10 h-10 rounded-xl">
-          <img src="/assets/homepot-wordmark.png" alt="HomePot" class="h-9">
-        </a>
-        <p class="text-gray-500 text-sm mb-4 max-w-xs">Despesas compartilhadas simplificadas para casais, colegas de apartamento e famílias.</p>
-        <a href="mailto:homepotapp@gmail.com" class="text-sm text-terracotta hover:underline">homepotapp@gmail.com</a>
-      </div>
-
-      <!-- Product -->
-      <div>
-        <h4 class="font-bold text-darkBlue mb-4">Produto</h4>
-        <ul class="space-y-2 text-sm text-gray-500">
-          <li><a href="/pt/#features" class="hover:text-terracotta transition-colors">Funcionalidades</a></li>
-          <li><a href="/pt/#pricing" class="hover:text-terracotta transition-colors">Preços</a></li>
-          <li><a href="https://apps.apple.com/app/homepot-shared-expenses/id6759216594" target="_blank" rel="noopener" class="hover:text-terracotta transition-colors">Baixar</a></li>
-        </ul>
-      </div>
-
-      <!-- Compare -->
-      <div>
-        <h4 class="font-bold text-darkBlue mb-4">Comparar</h4>
-        <ul class="space-y-2 text-sm text-gray-500">
-          <li><a href="/pt/compare/" class="hover:text-terracotta transition-colors">Todas as comparações</a></li>
-          <li><a href="/pt/compare/homepot-vs-splitwise/" class="hover:text-terracotta transition-colors">HomePot vs Splitwise</a></li>
-        </ul>
-      </div>
-
-      <!-- Support -->
-      <div>
-        <h4 class="font-bold text-darkBlue mb-4">Suporte</h4>
-        <ul class="space-y-2 text-sm text-gray-500">
-          <li><a href="/support" class="hover:text-terracotta transition-colors">Central de ajuda</a></li>
-          <li><a href="mailto:homepotapp@gmail.com" class="hover:text-terracotta transition-colors">Fale conosco</a></li>
-        </ul>
-      </div>
-
-      <!-- Legal -->
-      <div>
-        <h4 class="font-bold text-darkBlue mb-4">Legal</h4>
-        <ul class="space-y-2 text-sm text-gray-500">
-          <li><a href="/privacy" class="hover:text-terracotta transition-colors">Política de privacidade</a></li>
-          <li><a href="/terms" class="hover:text-terracotta transition-colors">Termos de serviço</a></li>
-          <li><a href="/pt/delete-account/" class="hover:text-terracotta transition-colors">Excluir conta</a></li>
-        </ul>
-      </div>
-    </div>
-
-    <!-- Bottom bar -->
-    <div class="border-t border-gray-100 pt-8 flex flex-col md:flex-row items-center justify-between gap-4">
-      <p class="text-sm text-gray-400">© 2026 HomePot. Todos os direitos reservados.</p>
-      <div class="flex items-center gap-4">
-        <a href="https://x.com/bymorandev" aria-label="Twitter" class="text-gray-400 hover:text-darkBlue transition-colors" target="_blank" rel="noopener">
-          <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
-        </a>
-        <a href="https://www.linkedin.com/in/andres-moreno-dev/" aria-label="LinkedIn" class="text-gray-400 hover:text-darkBlue transition-colors" target="_blank" rel="noopener">
-          <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
-        </a>
-      </div>
-    </div>
-  </div>
+<footer class="foot">
+  <span class="foot-brand"><img src="/assets/brand/logo-horizontal-green.svg" alt="HomePot" width="485" height="100"> Feito na Espanha para casas de todo lugar.</span>
+  <nav aria-label="Legal"><a href="/privacy/">Privacidade</a><a href="/terms/">Termos</a><a href="/support/">Ajuda</a><a href="/pt/delete-account/">Excluir minha conta</a></nav>
 </footer>
 
-<script>
-  window.__alternates = {"en":"/","es":"/es/","fr":"/fr/","de":"/de/","pt":"/pt/"};
-  window.__locale = "pt";
-</script>
-<script src="/src/js/lang-switcher.js" defer></script>
-<script src="/src/js/site.js" defer></script>
+<script>window.__HP_HOME = {"numberLocale":"pt-BR","currency":"BRL","decimal":",","qr":{"qr":"https://apps.apple.com/app/id6759216594","qr2":"https://apps.apple.com/app/id6759216594","qr3":"https://apps.apple.com/app/id6759216594"},"t":{"today":"Hoje · R$ 412,30 na caixinha","lasts":"Dá até o dia 26","noteShort":"na caixinha · não cobre nem os gastos fixos","noteAll":"na caixinha · dá para o mês todo","noteUntil":"na caixinha · dá até o dia {day}","spare":"sobram {amount}","moreEach":"cada um põe mais {amount}","priceYear":"R$ 109,90","perYear":"por ano, uns R$ 9,16 por mês","priceMonth":"R$ 16,90","perMonth":"por mês, sem fidelidade"}};</script>
+<script src="/src/js/vendor/qrcode.min.js"></script>
+<script src="/src/js/home.js"></script>
+<script src="/src/js/lang-menu.js" defer></script>
 
 </body>
 </html>

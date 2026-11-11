@@ -1,5 +1,6 @@
-// Runtime i18n for utility pages that live at a single URL (404, /join/,
-// /reset-password/) and therefore choose their language in the browser.
+// Runtime i18n for the pages that live at a single URL (404, /join/, /reset-password/,
+// /support/, /privacy/, /terms/) and therefore choose their language in the browser:
+// a hint from the page, else the language last used on the site, else the browser's.
 //
 // Build-time input (inline, before this script):
 //   window.__HP_I18N = { defaultLocale: 'en', strings: { en: {...}, es: {...}, ... } }
@@ -27,8 +28,20 @@
     Array.prototype.forEach.call(document.querySelectorAll(selector), fn);
   }
 
+  // The language last chosen or read on the site (also written by lang-menu.js on the
+  // per-language pages), so /es/ → «Ayuda» opens the help in Spanish.
+  var STORE_KEY = 'homepot_lang';
+  function remembered() {
+    try { return window.localStorage.getItem(STORE_KEY); } catch (e) { return null; }
+  }
+  function remember(lang) {
+    try { window.localStorage.setItem(STORE_KEY, lang); } catch (e) { /* private mode */ }
+  }
+
   function detect(hint) {
     if (hint && strings[hint]) return hint;
+    var saved = remembered();
+    if (saved && strings[saved]) return saved;
     var prefs = navigator.languages && navigator.languages.length
       ? navigator.languages
       : [navigator.language || navigator.userLanguage || ''];
@@ -83,6 +96,7 @@
     setLang: function (lang) {
       if (!strings[lang] || lang === HP.lang) return;
       HP.lang = lang;
+      remember(lang);
       HP.apply();
       listeners.forEach(function (fn) { fn(lang); });
     },

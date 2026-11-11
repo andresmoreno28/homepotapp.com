@@ -1,12 +1,11 @@
 {
   "meta": {
-    "ogLocale": "en_US"
+    "ogLocale": "en_US",
+    "numberLocale": "en-IE",
+    "currency": "EUR"
   },
   "ui": {
     "nav": {
-      "download": "Download",
-      "compare": "Compare",
-      "resources": "Resources",
       "language": "Language"
     },
     "brand": {
@@ -17,47 +16,22 @@
       "help": "Help",
       "delete_account": "Delete my account"
     },
-    "footer": {
-      "desc": "Shared expenses made simple for couples, roommates, and families.",
-      "product": "Product",
-      "features": "Features",
-      "pricing": "Pricing",
-      "download": "Download",
-      "compare_title": "Compare",
-      "compare_all": "All comparisons",
-      "compare_splitwise": "HomePot vs Splitwise",
-      "support_title": "Support",
-      "help": "Help Center",
-      "contact": "Contact Us",
-      "legal_title": "Legal",
-      "privacy": "Privacy Policy",
-      "terms": "Terms of Service",
-      "delete_account": "Delete account",
-      "copyright": "© 2026 HomePot. All rights reserved."
-    },
-    "cta": {
-      "title": "Not ready to install right now? Try Pro free for 1 month.",
-      "subtitle": "Drop your email here, download HomePot whenever you're ready, and sign up with the same address — your free month of Pro activates automatically.",
-      "placeholder": "Enter your email",
-      "button": "1 month Pro free",
-      "success": "Done! Now download HomePot and sign up with the same email to activate your free month of Pro.",
-      "error": "Something went wrong. Please try again.",
-      "disclaimer": "No spam. When you download HomePot and register with the same email, your free month of Pro activates automatically.",
-      "trust_encrypted": "Encrypted",
-      "trust_gdpr": "GDPR",
-      "trust_notracking": "No tracking"
+    "yes": "Yes",
+    "no": "No",
+    "links": {
+      "all_comparisons": "All comparisons",
+      "all_guides": "All guides",
+      "resources": "More resources"
     },
     "resourcesHub": {
-      "title": "HomePot resources — tools, guides, comparisons",
-      "description": "Free calculators, honest comparisons and practical guides for splitting shared expenses. Everything in one place.",
+      "title": "HomePot resources — guides and comparisons",
+      "description": "Honest comparisons and practical guides for splitting shared expenses. Everything in one place.",
       "icon": "auto_stories",
       "eyebrow": "Everything for shared expenses",
-      "h1": "Tools, guides and honest comparisons",
-      "intro": "Free calculators, practical guides and side-by-side comparisons with other expense-splitting apps — all in one hub. Every piece of content is written to actually help you, not to game SEO.",
+      "h1": "Guides and honest comparisons",
+      "intro": "Practical guides and side-by-side comparisons with other expense-splitting apps — all in one hub. Every piece of content is written to actually help you, not to game SEO.",
       "badge": "Resource",
-      "cta": "Browse",
-      "empty_title": "Coming soon",
-      "empty_body": "New content is being added here regularly."
+      "cta": "Browse"
     },
     "toolsHub": {
       "title": "Free calculators for splitting expenses",
@@ -67,9 +41,7 @@
       "h1": "Free calculators for shared expenses",
       "intro": "Run the numbers without creating an account. These browser-based calculators handle trip splits, roommate bills, and common shared-expense scenarios. No sign-up, no ads, no email gate.",
       "badge": "Calculator",
-      "cta": "Open calculator",
-      "empty_title": "More tools on the way",
-      "empty_body": "We're adding a roommate bill calculator and currency-pair tools soon."
+      "cta": "Open calculator"
     },
     "guidesHub": {
       "title": "Guides on how to split shared expenses",
@@ -79,9 +51,7 @@
       "h1": "Guides for splitting shared expenses",
       "intro": "Straightforward, practical writing on how to handle shared money with roommates, couples, trips, and families. We update these as situations and best practices evolve.",
       "badge": "Guide",
-      "cta": "Read the guide",
-      "empty_title": "Guides coming soon",
-      "empty_body": "Our first round of guides is being written right now."
+      "cta": "Read the guide"
     },
     "compareHub": {
       "title": "Compare HomePot vs other expense-sharing apps",
@@ -99,7 +69,6 @@
     },
     "comparison": {
       "eyebrow": "Honest comparison",
-      "cta_promo": "1 month Pro free",
       "table_header_feature": "Feature",
       "table_disclaimer": "All information reflects publicly available data from the official Splitwise website and App Store listings at the time of writing. Please verify current details at splitwise.com. HomePot is not affiliated with Splitwise, Inc.",
       "diff_title": "What makes HomePot different",
@@ -111,143 +80,265 @@
   },
   "pages": {
     "home": {
-      "title": "HomePot — Shared Expenses Made Simple",
-      "description": "HomePot makes shared expenses effortless. Track, split, and settle expenses with your group. Free for iOS.",
+      "title": "HomePot · Your household’s shared pot",
+      "description": "HomePot is the shared pot for couples and flatmates: scan your receipts, see how much is left and how long it will last, and close the month with one transfer per person.",
+      "nav": {
+        "how": "How it works",
+        "pricing": "Pricing",
+        "compare": "Compare",
+        "label": "Main",
+        "header": "Header",
+        "legal": "Legal"
+      },
+      "lang_label": "Language: English. Change language",
       "hero": {
-        "badge": "Free for iOS",
-        "headline": "Stop fighting about money.",
-        "subtitle": "Track, split, and settle shared expenses in seconds. Built for couples, roommates, and families who want peace.",
-        "cta_promo": "1 month Pro free",
-        "promo_hint": "Activate 1 month of Pro free when you download the app and register with the same email.",
-        "trust_noads": "No ads",
-        "trust_notracking": "No tracking",
-        "trust_gdpr": "GDPR compliant"
+        "h1": "Know how much is in the pot and how long it will last.",
+        "sub": "The shared pot for couples and flatmates: scan your receipts and close the month with one transfer per person."
       },
-      "trust": {
-        "gdpr": "GDPR Compliant",
-        "ccpa": "CCPA Compliant",
-        "encryption": "256-bit Encryption",
-        "noads": "Zero Ads Forever",
-        "notracking": "No Tracking",
-        "languages": "5 Languages",
-        "currencies": "54 Currencies",
-        "aws": "AWS Infrastructure",
-        "delete": "Delete Anytime",
-        "ai": "AI-Powered Scanner"
+      "chart": {
+        "month": "November",
+        "example": "an example household",
+        "legend_spend": "Daily spending",
+        "legend_balance": "Money in the pot (remaining balance)",
+        "aria": "November example: the pot holds €412.30 on day 9 and, at the current pace of spending, lasts until day 26.",
+        "aria_m": "November example: €412.30 in the pot on day 9; it lasts until day 26.",
+        "today": "Today · €412.30 in the pot",
+        "lasts": "It lasts until day 26"
       },
-      "showcase": {
-        "title": "Feature Showcase",
-        "subtitle": "See what makes HomePot different.",
-        "scan_title": "Scan receipts with AI.",
-        "scan_desc": "Point your camera at any receipt. Amount, merchant, items, discounts, taxes — extracted automatically.",
-        "balance_title": "Always know who owes what.",
-        "balance_desc": "Live balances, spending breakdown, fixed vs variable. Everyone sees the same numbers, no more guessing.",
-        "balance_total": "Monthly total",
-        "balance_per_person": "BALANCE PER PERSON",
-        "balance_paid": "Paid",
-        "balance_owes": "Owes",
-        "balance_transfers": "TRANSFERS TO SETTLE"
+      "summary": {
+        "people": "<b>4 people</b> · Carlos, Ana, Marta, Luis",
+        "spend_label": "Month’s spending",
+        "spend": "€1,550.45",
+        "close": "Month close: <b>Carlos</b> → Ana",
+        "close_amount": "€42.10"
       },
-      "f1": {
-        "pill": "Smart Tracking",
-        "title": "Add expenses in seconds",
-        "desc": "One tap, choose a category, done. No more awkward 'who paid for what?' conversations.",
-        "bullet": "Smart categories & recurring expenses"
-      },
-      "f2": {
-        "pill": "AI Powered",
-        "title": "Scan receipts with AI",
-        "desc": "Point your camera at any receipt. Amount, merchant, items — extracted automatically.",
-        "bullet": "Line items & confidence detection"
-      },
-      "f3": {
-        "pill": "Real-Time",
-        "title": "Always know who owes what",
-        "desc": "Live balances, spending breakdown, fixed vs variable. Everyone sees the same numbers, no more guessing.",
-        "bullet": "Shared Fund & Expense Split modes"
-      },
-      "f4": {
-        "pill": "One Tap",
-        "title": "Settle up with one tap",
-        "desc": "Monthly close calculates the minimum transfers needed. See who owes whom, confirm, done.",
-        "bullet": "Fair calculations, minimized transfers"
-      },
-      "f5": {
-        "pill": "Insights",
-        "title": "See where your money goes",
-        "desc": "Interactive charts, category breakdowns, and spending trends. Knowledge is power.",
-        "bullet": "Export CSV & PDF anytime"
+      "store": {
+        "appstore": "Download on the App Store",
+        "appstore_stub": "Download on the <br>App Store",
+        "qr_aria": "QR code to download HomePot from the App Store",
+        "qr_aria_short": "QR code to download HomePot",
+        "qr_text": "Scan the code to download the app.",
+        "android": "Android, coming soon",
+        "android_stub": "Android, <br>coming soon",
+        "android_slip": "Android,<br> coming soon",
+        "play": "Get it on Google Play",
+        "stub_aria": "Download HomePot"
       },
       "how": {
-        "title": "Get started in under a minute",
-        "step1_title": "Create your group",
-        "step1_desc": "Sign up and invite your roommates or partner. Takes 30 seconds.",
-        "step2_title": "Add shared expenses",
-        "step2_desc": "Snap a receipt or add manually. We handle the math.",
-        "step3_title": "Settle up monthly",
-        "step3_desc": "See who owes what and settle debts with minimal transfers."
+        "title": "How the pot works",
+        "s1_title": "1. You scan the receipts",
+        "s1_text": "Add the day’s spending to a shared pot.",
+        "s2_title": "2. You see what’s left and until when",
+        "s2_text": "HomePot updates the money in the pot and tells you the day it lasts until.",
+        "s3_title": "3. You close the month",
+        "s3_text": "HomePot works out what each person pays and shows it as a single transfer."
       },
-      "pricing": {
-        "title": "Simple, honest pricing",
-        "subtitle": "Start for free, upgrade when you need more.",
-        "monthly": "Monthly",
-        "annual": "Annual",
-        "save": "Save 42%",
-        "free_name": "Free",
-        "free_desc": "Perfect for getting started.",
+      "sim": {
+        "title": "Now, your own household’s.",
+        "text": "Tap any figure in the summary and HomePot recalculates how much is in the pot and how long it will last.",
+        "meta_title": "Your month’s summary",
+        "people": "people",
+        "less": "One person fewer",
+        "more": "One more person",
+        "each_before": "each puts in",
+        "each_after": "",
+        "each_sr": "What each person puts in per month, in euros",
+        "caption": "The month’s expenses, editable",
+        "rent": "Rent",
+        "food": "Groceries",
+        "power": "Electricity",
+        "net": "Internet",
+        "other": "Other",
+        "total": "Total",
+        "close_label": "Month close",
+        "note_short": "in the pot · it doesn’t even cover the fixed costs",
+        "note_all": "in the pot · it lasts the whole month",
+        "note_until": "in the pot · it lasts until day {day}",
+        "spare": "you have {amount} to spare",
+        "more_each": "each puts in {amount} more"
+      },
+      "scan": {
+        "photo_alt": "Crumpled supermarket receipt on a kitchen worktop",
+        "title": "You take a photo of the receipt. HomePot writes it down.",
+        "lead": "The scanner reads the shop, the total, the date and every item, and splits it the way you say. You check it and that’s it.",
+        "caption": "Reading of an example receipt",
+        "rows": [
+          [
+            "Shop",
+            "Súper La Esquina"
+          ],
+          [
+            "Date",
+            "9 November"
+          ],
+          [
+            "Items",
+            "11, with a €1.20 discount"
+          ],
+          [
+            "Category",
+            "Supermarket"
+          ],
+          [
+            "Split",
+            "Half each between Ana and Carlos"
+          ]
+        ],
+        "total_label": "Total",
+        "total": "€48.20",
+        "fine": "10 scans a month on the free plan and 50 on Pro. If the receipt is in another currency, it converts it to the pot’s at the day’s rate."
+      },
+      "trust": {
+        "title": "The small print, in large type.",
+        "facts": [
+          [
+            "Ads",
+            "None, not on the free plan either."
+          ],
+          [
+            "Your data",
+            "Stored in the European Union (Ireland)."
+          ],
+          [
+            "Your account",
+            "You delete it whenever you like, from the app."
+          ],
+          [
+            "Languages",
+            "Spanish, Portuguese, English, French and German."
+          ],
+          [
+            "Currencies",
+            "54, and the scanner reads any other."
+          ]
+        ],
+        "compare_caption": "HomePot compared with Splitwise and Tricount",
+        "feature": "Feature",
+        "rows": [
+          [
+            "Shared pot with balance and forecast",
+            "Yes",
+            "No",
+            "No"
+          ],
+          [
+            "Month close with one transfer per person",
+            "Yes",
+            "No",
+            "No"
+          ],
+          [
+            "AI receipt scanner",
+            "Free, 10 a month",
+            "Pro only",
+            "No"
+          ],
+          [
+            "Recurring expenses",
+            "Free",
+            "Partial",
+            "No"
+          ],
+          [
+            "Ads on the free plan",
+            "Never",
+            "Yes",
+            "Never"
+          ]
+        ],
+        "fine": "Public information from each app in November 2026. Sources and detail in the comparisons {splitwise} and {tricount}.",
+        "fine_splitwise": "with Splitwise",
+        "fine_tricount": "with Tricount"
+      },
+      "prices": {
+        "title": "What it costs, in writing.",
+        "billing_label": "How you pay for Pro",
+        "year": "Yearly",
+        "month": "Monthly",
+        "caption": "What each HomePot plan includes",
+        "concept": "Item",
+        "free": "Free plan",
+        "pro": "Pro",
+        "price": "Price",
         "free_price": "€0",
-        "free_period": "/month",
-        "free_features": [
-          "1 group, unlimited members",
-          "20 expenses per person/month",
-          "10 AI receipt scans/month",
-          "Month close & settlements",
-          "Recurring expenses",
-          "54 currencies",
-          "No ads ever"
+        "free_per": "forever",
+        "pro_price_year": "€34.99",
+        "pro_per_year": "a year, about €2.92 a month",
+        "pro_price_month": "€4.99",
+        "pro_per_month": "a month, cancel anytime",
+        "rows": [
+          {
+            "label": "Pots",
+            "free": "1, with as many members as you need",
+            "pro": "As many as you like: home, trips, couple"
+          },
+          {
+            "label": "Expenses logged per month, per person",
+            "free": "20",
+            "free_kind": "n",
+            "pro": "No limit"
+          },
+          {
+            "label": "AI receipt scans per month",
+            "free": "10",
+            "free_kind": "n",
+            "pro": "50",
+            "pro_kind": "n"
+          },
+          {
+            "label": "Month close and settlements",
+            "free": "Included",
+            "pro": "Included"
+          },
+          {
+            "label": "Recurring expenses and 54 currencies",
+            "free": "Included",
+            "pro": "Included"
+          },
+          {
+            "label": "Advanced statistics and export to PDF and CSV",
+            "free": "No",
+            "free_kind": "no",
+            "pro": "Included"
+          }
         ],
+        "start": "How to start",
         "free_cta": "Start free",
-        "pro_name": "Pro",
-        "pro_badge": "Most Popular",
-        "pro_desc": "For power users who want the full experience.",
-        "pro_price_monthly": "€4.99",
-        "pro_price_annual": "€2.92",
-        "pro_period_monthly": "/month",
-        "pro_period_annual": "/mo · €34.99 a year",
-        "pro_features": [
-          "Unlimited expenses",
-          "50 AI receipt scans/month",
-          "As many groups as you want",
-          "Advanced statistics",
-          "CSV & PDF export",
-          "One subscription for the whole household"
-        ],
-        "pro_cta": "Download and go Pro"
+        "pro_cta": "Download and go Pro",
+        "pro_note": "You switch it on from the app, when you need it.",
+        "fine": "Prices in euros, VAT included. In the app you’ll see the price for your country.",
+        "fine_household": "One Pro subscription covers everyone in your pots."
       },
       "faq": {
-        "title": "Common questions",
+        "title": "Household questions",
+        "more": "Another question? The {link} has all the answers.",
+        "more_link": "help page",
         "items": [
           {
-            "q": "Is my data secure?",
-            "a": "Yes. Your data is encrypted in transit and at rest on AWS servers. We comply with GDPR, CCPA, and LGPD. No ads, no tracking, no data selling. Ever."
+            "q": "Does the other person have to download the app?",
+            "a": "Yes, to log their own expenses. You send them a link and they’re in the pot within a minute; if they don’t have the app, the link takes them to the store."
           },
           {
-            "q": "How does the AI receipt scanner work?",
-            "a": "Take a photo of any receipt. Our AI extracts the total, each line item, discounts, taxes, merchant name, and even the currency — automatically. You review and confirm."
+            "q": "Is it for couples or for shared flats?",
+            "a": "Both. Couples usually keep a shared pot; in a flat, everyone pays and it’s evened out at the end. HomePot does both."
           },
           {
-            "q": "Can I use it for trips with friends?",
-            "a": "Yes. Use \"Expense Split\" mode for trips — each person pays with their own money, and HomePot calculates who owes whom at the end, minimizing the number of transfers."
+            "q": "Do we have to open a joint account?",
+            "a": "No. HomePot doesn’t touch your bank: it keeps the pot’s balance from what each person puts in and what gets spent."
           },
           {
-            "q": "How much does it cost?",
-            "a": "Free plan: 1 group with unlimited members, 20 expenses per person per month, 10 AI receipt scans per month, month close and settlements, recurring expenses, no ads. Pro: unlimited expenses, 50 scans a month, as many groups as you want, advanced statistics and CSV/PDF export, for €4.99 a month or €34.99 a year (about €2.92 a month). One subscription covers everyone in your groups."
+            "q": "What happens if I reach 20 expenses in a month?",
+            "a": "On the free plan each person logs up to 20 expenses a month. Once there, you can still see the pot and close the month; to log more, you move to Pro or wait for the next month."
           },
           {
-            "q": "How does HomePot compare to Splitwise?",
-            "a": "HomePot is built as an honest, ad-free alternative: 54 currencies for expense entry, AI receipt scanning that reads any currency from receipts, and a transparent subscription model. See the <a href=\"/compare/homepot-vs-splitwise/\" class=\"text-terracotta underline hover:opacity-80\">full side-by-side comparison with Splitwise</a> for every feature and a disclaimer about our sources."
+            "q": "We’re coming from Splitwise. What changes?",
+            "a": "HomePot is made for a household: shared pot with balance, forecast, month close and scanner included, with no ads on the free plan."
           }
         ]
+      },
+      "close": {
+        "title": "Start your first summary tonight.",
+        "text": "It takes a minute to create the pot and another for the other person to join."
       }
     },
     "fromSplitwise": {
@@ -299,7 +390,7 @@
         },
         {
           "q": "How is this different from the Splitwise comparison page?",
-          "a": "This page is for people who already know they want to leave Splitwise. The <a href=\"/compare/homepot-vs-splitwise/\" class=\"text-terracotta underline\">full comparison</a> is for people still deciding — it walks through every feature tier by tier with links to public sources."
+          "a": "This page is for people who already know they want to leave Splitwise. The <a href=\"/compare/homepot-vs-splitwise/\">full comparison</a> is for people still deciding — it walks through every feature tier by tier with links to public sources."
         },
         {
           "q": "Are the claims about Splitwise honest?",

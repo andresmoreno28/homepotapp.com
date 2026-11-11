@@ -1,12 +1,11 @@
 {
   "meta": {
-    "ogLocale": "pt_BR"
+    "ogLocale": "pt_BR",
+    "numberLocale": "pt-BR",
+    "currency": "BRL"
   },
   "ui": {
     "nav": {
-      "download": "Baixar",
-      "compare": "Comparar",
-      "resources": "Recursos",
       "language": "Idioma"
     },
     "brand": {
@@ -17,47 +16,22 @@
       "help": "Ajuda",
       "delete_account": "Excluir minha conta"
     },
-    "footer": {
-      "desc": "Despesas compartilhadas simplificadas para casais, colegas de apartamento e famílias.",
-      "product": "Produto",
-      "features": "Funcionalidades",
-      "pricing": "Preços",
-      "download": "Baixar",
-      "compare_title": "Comparar",
-      "compare_all": "Todas as comparações",
-      "compare_splitwise": "HomePot vs Splitwise",
-      "support_title": "Suporte",
-      "help": "Central de ajuda",
-      "contact": "Fale conosco",
-      "legal_title": "Legal",
-      "privacy": "Política de privacidade",
-      "terms": "Termos de serviço",
-      "delete_account": "Excluir conta",
-      "copyright": "© 2026 HomePot. Todos os direitos reservados."
-    },
-    "cta": {
-      "title": "Ainda não quer instalar? Experimente o Pro grátis por 1 mês.",
-      "subtitle": "Deixe seu email aqui, baixe o HomePot quando quiser e se registre com o mesmo endereço — seu mês grátis de Pro é ativado automaticamente.",
-      "placeholder": "Digite seu email",
-      "button": "1 mês Pro grátis",
-      "success": "Pronto! Agora baixe o HomePot e se registre com o mesmo email para ativar seu mês grátis de Pro.",
-      "error": "Algo deu errado. Tente novamente.",
-      "disclaimer": "Sem spam. Quando você baixar o HomePot e se registrar com o mesmo email, seu mês grátis de Pro é ativado automaticamente.",
-      "trust_encrypted": "Criptografado",
-      "trust_gdpr": "LGPD",
-      "trust_notracking": "Sem rastreamento"
+    "yes": "Sim",
+    "no": "Não",
+    "links": {
+      "all_comparisons": "Todas as comparações",
+      "all_guides": "Todos os guias",
+      "resources": "Mais recursos"
     },
     "resourcesHub": {
-      "title": "Recursos do HomePot — ferramentas, guias, comparações",
-      "description": "Calculadoras grátis, comparações honestas e guias práticos para dividir despesas compartilhadas. Tudo num só lugar.",
+      "title": "Recursos do HomePot — guias e comparações",
+      "description": "Comparações honestas e guias práticos para dividir despesas compartilhadas. Tudo num só lugar.",
       "icon": "auto_stories",
       "eyebrow": "Tudo para despesas compartilhadas",
-      "h1": "Ferramentas, guias e comparações honestas",
-      "intro": "Calculadoras grátis, guias práticos e comparações lado a lado com outros apps de divisão de despesas — tudo em um hub. Cada conteúdo é escrito para ajudar de verdade, não para enganar o SEO.",
+      "h1": "Guias e comparações honestas",
+      "intro": "Guias práticos e comparações lado a lado com outros apps de divisão de despesas — tudo em um hub. Cada conteúdo é escrito para ajudar de verdade, não para enganar o SEO.",
       "badge": "Recurso",
-      "cta": "Explorar",
-      "empty_title": "Em breve",
-      "empty_body": "Adicionamos conteúdo novo aqui regularmente."
+      "cta": "Explorar"
     },
     "toolsHub": {
       "title": "Calculadoras grátis para dividir despesas",
@@ -67,9 +41,7 @@
       "h1": "Calculadoras grátis para despesas compartilhadas",
       "intro": "Faça as contas sem criar uma conta. Estas calculadoras no navegador lidam com divisão de viagens, contas de república e cenários comuns de despesas compartilhadas. Sem cadastro, sem anúncios, sem pedir email.",
       "badge": "Calculadora",
-      "cta": "Abrir calculadora",
-      "empty_title": "Mais ferramentas a caminho",
-      "empty_body": "Em breve: calculadora de contas de república e ferramentas por par de moedas."
+      "cta": "Abrir calculadora"
     },
     "guidesHub": {
       "title": "Guias para dividir despesas compartilhadas",
@@ -79,9 +51,7 @@
       "h1": "Guias para dividir despesas compartilhadas",
       "intro": "Conteúdo direto e prático sobre como lidar com dinheiro compartilhado com colegas de apartamento, casais, viagens e famílias. Atualizamos conforme situações e melhores práticas evoluem.",
       "badge": "Guia",
-      "cta": "Ler o guia",
-      "empty_title": "Guias em breve",
-      "empty_body": "A primeira leva de guias está sendo escrita agora."
+      "cta": "Ler o guia"
     },
     "compareHub": {
       "title": "Compare o HomePot com outros apps de divisão de despesas",
@@ -99,7 +69,6 @@
     },
     "comparison": {
       "eyebrow": "Comparação honesta",
-      "cta_promo": "1 mês Pro grátis",
       "table_header_feature": "Recurso",
       "table_disclaimer": "Todas as informações refletem dados públicos disponíveis no site oficial do Splitwise e na página da App Store no momento da redação. Recomendamos verificar os detalhes atuais em splitwise.com. O HomePot não é afiliado ao Splitwise, Inc.",
       "diff_title": "O que torna o HomePot diferente",
@@ -111,143 +80,265 @@
   },
   "pages": {
     "home": {
-      "title": "HomePot — Despesas compartilhadas sem estresse",
-      "description": "O HomePot simplifica despesas compartilhadas. Registre, divida e acerte contas com seu grupo em segundos. Grátis para iOS.",
+      "title": "HomePot · A caixinha da sua casa",
+      "description": "O HomePot é a caixinha do casal ou da casa dividida: escaneiem os recibos, vejam quanto resta e até quando dá, e encerrem o mês com uma transferência por pessoa.",
+      "nav": {
+        "how": "Como funciona",
+        "pricing": "Preços",
+        "compare": "Comparar",
+        "label": "Principal",
+        "header": "Cabeçalho",
+        "legal": "Legal"
+      },
+      "lang_label": "Idioma: português. Mudar idioma",
       "hero": {
-        "badge": "Grátis para iOS",
-        "headline": "Pare de brigar por dinheiro.",
-        "subtitle": "Registre, divida e acerte despesas compartilhadas em segundos. Feito para casais, colegas de apartamento e famílias que querem paz.",
-        "cta_promo": "1 mês Pro grátis",
-        "promo_hint": "Ative 1 mês de Pro grátis ao baixar o app e se registrar com o mesmo email.",
-        "trust_noads": "Sem anúncios",
-        "trust_notracking": "Sem rastreamento",
-        "trust_gdpr": "Conforme com LGPD"
+        "h1": "Saibam quanto tem na caixinha e até quando dá.",
+        "sub": "A caixinha do casal ou da casa dividida: escaneiem os recibos e encerrem o mês com uma transferência por pessoa."
       },
-      "trust": {
-        "gdpr": "Conforme com LGPD",
-        "ccpa": "Conforme com CCPA",
-        "encryption": "Criptografia de 256 bits",
-        "noads": "Zero anúncios, para sempre",
-        "notracking": "Sem rastreamento",
-        "languages": "5 idiomas",
-        "currencies": "54 moedas",
-        "aws": "Infraestrutura AWS",
-        "delete": "Apagar quando quiser",
-        "ai": "Scanner com IA"
+      "chart": {
+        "month": "Novembro",
+        "example": "uma casa de exemplo",
+        "legend_spend": "Gasto diário",
+        "legend_balance": "Dinheiro na caixinha (saldo restante)",
+        "aria": "Exemplo de novembro: a caixinha tem R$ 412,30 no dia 9 e, no ritmo de gasto atual, dá até o dia 26.",
+        "aria_m": "Exemplo de novembro: R$ 412,30 na caixinha no dia 9; dá até o dia 26.",
+        "today": "Hoje · R$ 412,30 na caixinha",
+        "lasts": "Dá até o dia 26"
       },
-      "showcase": {
-        "title": "Destaques do app",
-        "subtitle": "Descubra o que torna o HomePot único.",
-        "scan_title": "Escaneie recibos com IA.",
-        "scan_desc": "Aponte a câmera para qualquer recibo. Valor, estabelecimento, itens, descontos, impostos — extraídos automaticamente.",
-        "balance_title": "Sempre saiba quem deve o quê.",
-        "balance_desc": "Saldos ao vivo, detalhamento de gastos, fixos vs variáveis. Todos veem os mesmos números, sem adivinhação.",
-        "balance_total": "Total do mês",
-        "balance_per_person": "SALDO POR PESSOA",
-        "balance_paid": "Pagou",
-        "balance_owes": "Deve",
-        "balance_transfers": "TRANSFERÊNCIAS A ACERTAR"
+      "summary": {
+        "people": "<b>4 pessoas</b> · Carlos, Ana, Marta, Luís",
+        "spend_label": "Gastos do mês",
+        "spend": "R$ 1.550,45",
+        "close": "Acerto: <b>Carlos</b> → Ana",
+        "close_amount": "R$ 42,10"
       },
-      "f1": {
-        "pill": "Registro inteligente",
-        "title": "Adicione despesas em segundos",
-        "desc": "Um toque, escolha a categoria, pronto. Chega de conversas constrangedoras sobre «quem pagou o quê».",
-        "bullet": "Categorias inteligentes e despesas recorrentes"
-      },
-      "f2": {
-        "pill": "Com IA",
-        "title": "Escaneie recibos com IA",
-        "desc": "Aponte a câmera para qualquer recibo. Valor, estabelecimento, itens — extraídos automaticamente.",
-        "bullet": "Itens detalhados e índice de confiança"
-      },
-      "f3": {
-        "pill": "Tempo real",
-        "title": "Sempre saiba quem deve o quê",
-        "desc": "Saldos ao vivo, detalhamento de gastos, fixos vs variáveis. Todos veem os mesmos números, sem adivinhação.",
-        "bullet": "Modos Vaquinha e Divisão de despesas"
-      },
-      "f4": {
-        "pill": "Um toque",
-        "title": "Acerte as contas com um toque",
-        "desc": "O fechamento mensal calcula as transferências mínimas. Veja quem deve a quem, confirme e pronto.",
-        "bullet": "Cálculos justos, transferências minimizadas"
-      },
-      "f5": {
-        "pill": "Insights",
-        "title": "Veja para onde vai seu dinheiro",
-        "desc": "Gráficos interativos, detalhamento por categoria e tendências de gastos. Conhecimento é poder.",
-        "bullet": "Exporte CSV e PDF a qualquer momento"
+      "store": {
+        "appstore": "Baixar na App Store",
+        "appstore_stub": "Baixar na <br>App Store",
+        "qr_aria": "QR code para baixar o HomePot na App Store",
+        "qr_aria_short": "QR code para baixar o HomePot",
+        "qr_text": "Escaneie o código para baixar o app.",
+        "android": "Android, em breve",
+        "android_stub": "Android, <br>em breve",
+        "android_slip": "Android,<br> em breve",
+        "play": "Disponível no Google Play",
+        "stub_aria": "Baixar o HomePot"
       },
       "how": {
-        "title": "Comece em menos de um minuto",
-        "step1_title": "Crie seu grupo",
-        "step1_desc": "Cadastre-se e convide seus colegas ou parceiro(a). Leva 30 segundos.",
-        "step2_title": "Adicione despesas compartilhadas",
-        "step2_desc": "Escaneie um recibo ou adicione manualmente. A gente cuida da matemática.",
-        "step3_title": "Acerte as contas todo mês",
-        "step3_desc": "Veja quem deve o quê e quite dívidas com o mínimo de transferências."
+        "title": "Como funciona a caixinha",
+        "s1_title": "1. Vocês escaneiam os recibos",
+        "s1_text": "Adicionem os gastos do dia a uma caixinha comum.",
+        "s2_title": "2. Vocês veem o saldo e até quando dá",
+        "s2_text": "O HomePot atualiza o dinheiro da caixinha e diz até que dia ele dá.",
+        "s3_title": "3. Vocês encerram o mês",
+        "s3_text": "O HomePot calcula quanto cada pessoa paga e mostra isso em uma transferência."
       },
-      "pricing": {
-        "title": "Preços simples e honestos",
-        "subtitle": "Comece de graça, faça upgrade quando precisar.",
-        "monthly": "Mensal",
-        "annual": "Anual",
-        "save": "Economize 46%",
-        "free_name": "Grátis",
-        "free_desc": "Perfeito para começar.",
-        "free_price": "R$\u00a00",
-        "free_period": "/mês",
-        "free_features": [
-          "1 grupo, membros ilimitados",
-          "20 despesas por pessoa por mês",
-          "10 scans de recibos com IA por mês",
-          "Fechamento do mês e liquidações",
-          "Despesas recorrentes",
-          "54 moedas",
-          "Sem anúncios"
+      "sim": {
+        "title": "Agora, o da casa de vocês.",
+        "text": "Toquem em qualquer valor do resumo e o HomePot recalcula quanto tem na caixinha e até quando dá.",
+        "meta_title": "Resumo do mês de vocês",
+        "people": "pessoas",
+        "less": "Uma pessoa a menos",
+        "more": "Uma pessoa a mais",
+        "each_before": "cada um põe",
+        "each_after": "",
+        "each_sr": "O que cada um põe por mês, em reais",
+        "caption": "Gastos do mês, editáveis",
+        "rent": "Aluguel",
+        "food": "Mercado",
+        "power": "Luz",
+        "net": "Internet",
+        "other": "Outros",
+        "total": "Total",
+        "close_label": "Encerramento do mês",
+        "note_short": "na caixinha · não cobre nem os gastos fixos",
+        "note_all": "na caixinha · dá para o mês todo",
+        "note_until": "na caixinha · dá até o dia {day}",
+        "spare": "sobram {amount}",
+        "more_each": "cada um põe mais {amount}"
+      },
+      "scan": {
+        "photo_alt": "Recibo de supermercado amassado sobre a bancada de uma cozinha",
+        "title": "Vocês tiram uma foto do recibo. O HomePot anota.",
+        "lead": "O scanner lê o estabelecimento, o total, a data e cada item, e divide do jeito que vocês disserem. Vocês conferem e pronto.",
+        "caption": "Leitura de um recibo de exemplo",
+        "rows": [
+          [
+            "Estabelecimento",
+            "Súper La Esquina"
+          ],
+          [
+            "Data",
+            "9 de novembro"
+          ],
+          [
+            "Itens",
+            "11, com um desconto de R$ 1,20"
+          ],
+          [
+            "Categoria",
+            "Supermercado"
+          ],
+          [
+            "Divisão",
+            "Meio a meio entre Ana e Carlos"
+          ]
         ],
+        "total_label": "Total",
+        "total": "R$ 48,20",
+        "fine": "10 scans por mês no plano grátis e 50 no Pro. Se o recibo vier em outra moeda, ele converte para a da caixinha no câmbio do dia."
+      },
+      "trust": {
+        "title": "As letras miúdas, em tamanho grande.",
+        "facts": [
+          [
+            "Anúncios",
+            "Nenhum, nem no plano grátis."
+          ],
+          [
+            "Seus dados",
+            "Guardados na União Europeia (Irlanda)."
+          ],
+          [
+            "Sua conta",
+            "Vocês apagam quando quiserem, pelo app."
+          ],
+          [
+            "Idiomas",
+            "Espanhol, português, inglês, francês e alemão."
+          ],
+          [
+            "Moedas",
+            "54, e o scanner lê qualquer outra."
+          ]
+        ],
+        "compare_caption": "HomePot em comparação com Splitwise e Tricount",
+        "feature": "Recurso",
+        "rows": [
+          [
+            "Caixinha com saldo e previsão",
+            "Sim",
+            "Não",
+            "Não"
+          ],
+          [
+            "Encerramento do mês com uma transferência por pessoa",
+            "Sim",
+            "Não",
+            "Não"
+          ],
+          [
+            "Scanner de recibos com IA",
+            "Grátis, 10 por mês",
+            "Só no Pro",
+            "Não"
+          ],
+          [
+            "Despesas recorrentes",
+            "Grátis",
+            "Parcial",
+            "Não"
+          ],
+          [
+            "Anúncios no plano grátis",
+            "Nunca",
+            "Sim",
+            "Nunca"
+          ]
+        ],
+        "fine": "Dados públicos de cada app em novembro de 2026. Fontes e detalhes nas comparações {splitwise} e {tricount}.",
+        "fine_splitwise": "com o Splitwise",
+        "fine_tricount": "com o Tricount"
+      },
+      "prices": {
+        "title": "Quanto custa, por escrito.",
+        "billing_label": "Forma de pagamento do Pro",
+        "year": "Por ano",
+        "month": "Por mês",
+        "caption": "O que cada plano do HomePot inclui",
+        "concept": "Item",
+        "free": "Plano grátis",
+        "pro": "Pro",
+        "price": "Preço",
+        "free_price": "R$ 0",
+        "free_per": "para sempre",
+        "pro_price_year": "R$ 109,90",
+        "pro_per_year": "por ano, uns R$ 9,16 por mês",
+        "pro_price_month": "R$ 16,90",
+        "pro_per_month": "por mês, sem fidelidade",
+        "rows": [
+          {
+            "label": "Caixinhas",
+            "free": "1, com quantos membros precisar",
+            "pro": "Quantas quiserem: casa, viagens, casal"
+          },
+          {
+            "label": "Despesas registradas por mês, por pessoa",
+            "free": "20",
+            "free_kind": "n",
+            "pro": "Sem limite"
+          },
+          {
+            "label": "Scans de recibos com IA por mês",
+            "free": "10",
+            "free_kind": "n",
+            "pro": "50",
+            "pro_kind": "n"
+          },
+          {
+            "label": "Encerramento do mês e acertos",
+            "free": "Incluído",
+            "pro": "Incluído"
+          },
+          {
+            "label": "Despesas recorrentes e 54 moedas",
+            "free": "Incluídas",
+            "pro": "Incluídas"
+          },
+          {
+            "label": "Estatísticas avançadas e exportação para PDF e CSV",
+            "free": "Não",
+            "free_kind": "no",
+            "pro": "Incluídas"
+          }
+        ],
+        "start": "Como começar",
         "free_cta": "Começar grátis",
-        "pro_name": "Pro",
-        "pro_badge": "Mais popular",
-        "pro_desc": "Para quem quer a experiência completa.",
-        "pro_price_monthly": "R$\u00a016,90",
-        "pro_price_annual": "R$\u00a09,16",
-        "pro_period_monthly": "/mês",
-        "pro_period_annual": "/mês · R$\u00a0109,90 por ano",
-        "pro_features": [
-          "Despesas ilimitadas",
-          "50 scans de recibos com IA por mês",
-          "Quantos grupos você quiser",
-          "Estatísticas avançadas",
-          "Exportar para CSV e PDF",
-          "Uma única assinatura para a casa toda"
-        ],
-        "pro_cta": "Baixar e assinar o Pro"
+        "pro_cta": "Baixar e assinar o Pro",
+        "pro_note": "É ativado pelo app, quando vocês precisarem.",
+        "fine": "Preços em reais. No app vocês veem o preço do seu país.",
+        "fine_household": "Uma única assinatura Pro vale para todas as pessoas das caixinhas de vocês."
       },
       "faq": {
-        "title": "Perguntas frequentes",
+        "title": "Perguntas da casa",
+        "more": "Outra dúvida? Na {link} estão todas as respostas.",
+        "more_link": "página de ajuda",
         "items": [
           {
-            "q": "Meus dados estão seguros?",
-            "a": "Sim. Seus dados são criptografados em trânsito e em repouso em servidores AWS. Cumprimos RGPD, CCPA e LGPD. Sem anúncios, sem rastreamento, sem venda de dados. Nunca."
+            "q": "A outra pessoa precisa baixar o app?",
+            "a": "Sim, para registrar os gastos dela. Vocês mandam um link e ela entra na caixinha em um minuto; se não tiver o app, o link leva para a loja."
           },
           {
-            "q": "Como funciona o scanner de recibos com IA?",
-            "a": "Tire uma foto de qualquer recibo. Nossa IA extrai o total, cada item, descontos, impostos, nome da loja e até a moeda — automaticamente. Você revisa e confirma."
+            "q": "É para casais ou para quem divide apartamento?",
+            "a": "Para os dois. Em casal, o normal é uma caixinha; num apartamento dividido, cada um paga e no fim se acerta. O HomePot faz as duas coisas."
           },
           {
-            "q": "Posso usar para viagens com amigos?",
-            "a": "Sim. Use o modo «Divisão de Despesas» para viagens — cada um paga do seu bolso e o HomePot calcula quem deve a quem no final, minimizando as transferências."
+            "q": "Precisamos abrir uma conta conjunta?",
+            "a": "Não. O HomePot não mexe no banco de vocês: ele controla o saldo da caixinha com o que cada um põe e o que se gasta."
           },
           {
-            "q": "Quanto custa?",
-            "a": "Grátis: 1 grupo com membros ilimitados, 20 despesas por pessoa por mês, 10 scans de recibos com IA por mês, fechamento do mês e liquidações, despesas recorrentes, sem anúncios. Pro: despesas ilimitadas, 50 scans por mês, quantos grupos você quiser, estatísticas avançadas e exportação CSV/PDF, por R$\u00a016,90 por mês ou R$\u00a0109,90 por ano (cerca de R$\u00a09,16 por mês). Uma única assinatura cobre todas as pessoas dos seus grupos."
+            "q": "O que acontece se eu chegar a 20 despesas em um mês?",
+            "a": "No plano grátis, cada pessoa registra até 20 despesas por mês. Ao chegar lá, vocês continuam vendo a caixinha e encerrando o mês; para registrar mais, passem para o Pro ou esperem o mês seguinte."
           },
           {
-            "q": "Como o HomePot se compara ao Splitwise?",
-            "a": "O HomePot é construído como uma alternativa honesta e sem anúncios: 54 moedas para registrar despesas, scanner com IA que lê qualquer moeda do recibo e um modelo de assinatura transparente. Veja a <a href=\"/pt/compare/homepot-vs-splitwise/\" class=\"text-terracotta underline hover:opacity-80\">comparação completa lado a lado com o Splitwise</a> com todos os recursos e o aviso sobre nossas fontes."
+            "q": "Viemos do Splitwise. O que muda?",
+            "a": "O HomePot é feito para uma casa: caixinha com saldo, previsão, encerramento mensal e scanner incluídos, sem anúncios no plano grátis."
           }
         ]
+      },
+      "close": {
+        "title": "Comecem o primeiro resumo de vocês hoje à noite.",
+        "text": "Leva um minuto para criar a caixinha e outro para a outra pessoa entrar."
       }
     },
     "fromSplitwise": {
@@ -299,7 +390,7 @@
         },
         {
           "q": "Como isso é diferente da página de comparação do Splitwise?",
-          "a": "Esta página é para quem já sabe que quer sair do Splitwise. A <a href=\"/pt/compare/homepot-vs-splitwise/\" class=\"text-terracotta underline\">comparação completa</a> é para quem ainda está decidindo — passa por cada recurso plano por plano com links para fontes públicas."
+          "a": "Esta página é para quem já sabe que quer sair do Splitwise. A <a href=\"/pt/compare/homepot-vs-splitwise/\">comparação completa</a> é para quem ainda está decidindo — passa por cada recurso plano por plano com links para fontes públicas."
         },
         {
           "q": "As afirmações sobre o Splitwise são honestas?",

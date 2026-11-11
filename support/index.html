@@ -2,284 +2,123 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Support - HomePot</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="color-scheme" content="light">
+  <meta name="theme-color" content="#184838">
+  <meta name="robots" content="index, follow">
+  <title data-t="support.doc_title">Support · HomePot</title>
   <meta name="description" content="Get help with HomePot. FAQs, troubleshooting, and contact information.">
-  <link rel="icon" type="image/png" href="/assets/favicon.png">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" rel="stylesheet">
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script>
-    tailwind.config = {
-      theme: { extend: {
-        colors: { cream:'#F4F1DE', darkBlue:'#3D405B', terracotta:'#E07A5F', sage:'#81B29A', yellowSoft:'#F2CC8F' },
-        fontFamily: { sans: ['"Plus Jakarta Sans"','system-ui','sans-serif'] },
-      }}
-    }
-  </script>
-  <style>
-    .grain-bg{position:relative}.grain-bg::before{content:"";position:absolute;inset:0;opacity:.03;pointer-events:none;z-index:1;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
-    html{scroll-behavior:smooth}
-    details summary{list-style:none}details summary::-webkit-details-marker{display:none}
-    details summary::after{content:"+";font-size:1.25rem;font-weight:700;color:#E07A5F;transition:transform .2s ease;flex-shrink:0}
-    details[open] summary::after{content:"\2212"}
-    @media(prefers-reduced-motion:reduce){details summary::after{transition:none}}
-  </style>
+  <link rel="canonical" href="https://homepotapp.com/support/">
+
+  <link rel="icon" href="/assets/brand/favicon.svg" type="image/svg+xml">
+  <link rel="preload" href="/assets/fonts/Archivo-VF-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="/assets/site.css?v=23c5df6f">
+
+  <script>window.__HP_I18N = {"defaultLocale":"en","strings":{"en":{"common.language":"Language","common.tagline":"Made in Spain for homes everywhere.","common.legal":"Legal","common.privacy":"Privacy","common.terms":"Terms","common.help":"Help","common.delete_account":"Delete my account","common.nav_label":"Main","common.nav_how":"How it works","common.nav_pricing":"Pricing","common.nav_compare":"Compare","support.back":"← Back to home","support.badge":"Help Center","support.title":"Support","support.subtitle":"We're here to help","support.contact_title":"Contact Us","support.contact_desc":"Have a question or need help? We typically respond within 24 hours.","support.faq_title":"Frequently Asked Questions","support.cat_about":"About HomePot","support.q_what":"What is HomePot?","support.a_what":"HomePot is an app for managing shared expenses among groups of people. Perfect for couples, roommates, families, or any group sharing expenses. It allows you to record expenses, calculate what each person owes, and keep clear track of shared accounts.","support.q_modes":"What is the difference between Shared Fund and Expense Split?","support.a_modes":"Shared Fund: ideal for homes and stable cohabitation. Everyone contributes to a common fund and expenses are deducted from it. Expense Split: ideal for trips, events, or temporary groups. Each person pays with their own money and at the end, it calculates who owes whom.","support.q_cost":"How much does HomePot cost?","support.a_cost":"HomePot has a free plan for 1 group with unlimited members: up to 20 expenses per person per month, 10 AI receipt scans per month, month close and settlements, recurring expenses and multi-currency support. No ads ever. HomePot Pro adds unlimited expenses, 50 scans per month, unlimited groups, advanced statistics and CSV/PDF export, and one subscription covers everyone in your groups.","support.cat_groups":"Groups \u0026 Members","support.q_invite":"How do I invite someone to my group?","support.a_invite":"In Settings you can view and copy your group's invite code. Share it with the people you want to invite. They can join using that code when signing up or from the \"Join a group\" option.","support.q_multiple_groups":"Can I belong to multiple groups?","support.a_multiple_groups":"With the free plan you can have 1 group. With HomePot Pro you can have unlimited groups and easily switch between them from the group selector on the main screen.","support.q_roles":"What roles are available?","support.a_roles":"Owner: full control, can transfer ownership and delete the group. Admin: full management (members, expenses, categories). Manager: manages expenses and categories. Member: can view and add expenses.","support.cat_expenses":"Expenses \u0026 Finances","support.q_record":"How do I record an expense?","support.a_record":"Tap the \"+\" button on the expenses screen. Enter the amount, a description, select the category and the date. In Expense Split mode, you can also indicate who paid and who participates.","support.q_recurring":"What are recurring expenses?","support.a_recurring":"These are expenses that repeat every month (rent, internet, electricity, etc.). You can set them up once and HomePot will automatically add them each month, saving you time.","support.q_close":"What is the monthly close?","support.a_close":"At the end of each month, you can perform a monthly close. HomePot calculates exactly how much each member needs to contribute or transfer, based on all expenses for the month.","support.q_payments":"Does HomePot process real payments?","support.a_payments":"No. HomePot is a tracking and calculation tool. Actual payments and transfers between members are made outside the app (Venmo, Bizum, bank transfer, cash, etc.).","support.cat_scanner":"AI Receipt Scanner","support.q_scanner_what":"What is the AI Receipt Scanner?","support.a_scanner_what":"It's a feature that lets you take a photo of a receipt and automatically extracts the amount, merchant name, line items, and category. It uses AI (Anthropic Claude) to read the receipt and fill in the expense details for you.","support.q_scanner_limit":"How many scans can I do?","support.a_scanner_limit":"Free users get 10 scans per month. HomePot Pro users get 50 scans per month. Scans reset at the beginning of each month.","support.q_scanner_data":"What data is extracted from the receipt?","support.a_scanner_data":"The scanner extracts: total amount, merchant/store name, individual line items (name, quantity, unit price), and a suggested category. You can review and edit all extracted data before saving.","support.q_scanner_privacy":"Is my receipt data private?","support.a_scanner_privacy":"Yes. Receipt images are sent to Anthropic's AI for text extraction only. They are not stored by the AI provider and are not used for training. The receipt photo is stored in your group's secure storage.","support.cat_privacy":"Privacy \u0026 Data","support.q_data_stored":"Where is my data stored?","support.a_data_stored":"Your data is securely stored on Supabase (Amazon Web Services infrastructure). It is encrypted in transit and at rest, and is only accessible by members of your group.","support.q_delete_data":"Can I delete my data?","support.a_delete_data":"Yes. You can delete your entire account from Settings. This will permanently erase your profile, your membership in all groups, and groups where you are the only member.","support.cat_account":"Account Issues","support.q_forgot_password":"I forgot my password","support.a_forgot_password":"On the sign-in screen or in Settings, you can request a password reset email. Check your inbox (and spam folder).","support.q_delete_app":"What happens if I delete the app?","support.a_delete_app":"Your data remains safe on our servers. If you reinstall and sign in with the same account, you will recover all your data. To permanently delete your data, use \"Delete my account\" in Settings before uninstalling.","support.q_cant_leave":"I cannot leave my group","support.a_cant_leave":"If you are the group owner, you must first transfer ownership to another member from Settings. If you are the only member, you can delete the group directly.","support.cat_coming_soon":"Coming Soon","support.q_push":"Push notifications","support.a_push":"We're working on push notifications to remind you about pending debts and group activity. Stay tuned!","support.help_title":"Still Need Help?","support.help_desc":"If you couldn't find your answer above, try these steps:","support.help_step1":"Make sure you have the latest version of HomePot installed","support.help_step2":"Restart the app","support.help_step3":"Check your internet connection","support.help_step4":"Email us at homepotapp@gmail.com with details about your issue","support.help_note":"We typically respond within 24 hours. Please include your device model and OS version when reporting bugs.","support.doc_title":"Support · HomePot"},"es":{"common.language":"Idioma","common.tagline":"Hecho en España para casas de todas partes.","common.legal":"Legal","common.privacy":"Privacidad","common.terms":"Términos","common.help":"Ayuda","common.delete_account":"Borrar mi cuenta","common.nav_label":"Principal","common.nav_how":"Cómo funciona","common.nav_pricing":"Precios","common.nav_compare":"Comparar","support.back":"← Volver al inicio","support.badge":"Centro de ayuda","support.title":"Soporte","support.subtitle":"Estamos aqui para ayudarte","support.contact_title":"Contactanos","support.contact_desc":"¿Tienes alguna pregunta o necesitas ayuda? Normalmente respondemos en menos de 24 horas.","support.faq_title":"Preguntas frecuentes","support.cat_about":"Sobre HomePot","support.q_what":"¿Qué es HomePot?","support.a_what":"HomePot es una app para gestionar gastos compartidos entre grupos de personas. Perfecta para parejas, companeros de piso, familias o cualquier grupo que comparta gastos. Te permite registrar gastos, calcular lo que cada persona debe y llevar un control claro de las cuentas compartidas.","support.q_modes":"¿Cuál es la diferencia entre Fondo Común y División de Gastos?","support.a_modes":"Fondo Comun: ideal para hogares y convivencia estable. Todos aportan a un fondo comun y los gastos se descuentan de el. Division de Gastos: ideal para viajes, eventos o grupos temporales. Cada persona paga con su propio dinero y al final se calcula quien le debe a quien.","support.q_cost":"¿Cuánto cuesta HomePot?","support.a_cost":"HomePot tiene un plan gratuito para 1 grupo con miembros ilimitados: hasta 20 gastos por persona al mes, 10 escaneos de recibos con IA al mes, cierre de mes y liquidaciones, gastos recurrentes y soporte multidivisa. Sin anuncios nunca. HomePot Pro añade gastos ilimitados, 50 escaneos al mes, grupos ilimitados, estadísticas avanzadas y exportación a CSV/PDF, y una sola suscripción cubre a todas las personas de tus grupos.","support.cat_groups":"Grupos y miembros","support.q_invite":"¿Cómo invito a alguien a mi grupo?","support.a_invite":"En Ajustes puedes ver y copiar el codigo de invitacion de tu grupo. Compartelo con las personas que quieras invitar. Pueden unirse usando ese codigo al registrarse o desde la opcion «Unirse a un grupo».","support.q_multiple_groups":"¿Puedo pertenecer a varios grupos?","support.a_multiple_groups":"Con el plan gratuito puedes tener 1 grupo. Con HomePot Pro puedes tener grupos ilimitados y cambiar facilmente entre ellos desde el selector de grupos en la pantalla principal.","support.q_roles":"¿Qué roles existen?","support.a_roles":"Propietario: control total, puede transferir la propiedad y eliminar el grupo. Admin: gestion completa (miembros, gastos, categorias). Gestor: gestiona gastos y categorias. Miembro: puede ver y anadir gastos.","support.cat_expenses":"Gastos y finanzas","support.q_record":"¿Cómo registro un gasto?","support.a_record":"Pulsa el boton «+» en la pantalla de gastos. Introduce el importe, una descripcion, selecciona la categoria y la fecha. En modo Division de Gastos, tambien puedes indicar quien pago y quien participa.","support.q_recurring":"¿Qué son los gastos recurrentes?","support.a_recurring":"Son gastos que se repiten cada mes (alquiler, internet, electricidad, etc.). Puedes configurarlos una vez y HomePot los anadira automaticamente cada mes, ahorrando tiempo.","support.q_close":"¿Qué es el cierre mensual?","support.a_close":"Al final de cada mes, puedes realizar un cierre mensual. HomePot calcula exactamente cuanto necesita aportar o transferir cada miembro, basandose en todos los gastos del mes.","support.q_payments":"¿HomePot procesa pagos reales?","support.a_payments":"No. HomePot es una herramienta de seguimiento y calculo. Los pagos y transferencias reales entre miembros se realizan fuera de la app (Venmo, Bizum, transferencia bancaria, efectivo, etc.).","support.cat_scanner":"Escáner de Recibos con IA","support.q_scanner_what":"¿Qué es el escáner de recibos con IA?","support.a_scanner_what":"Es una funcion que te permite tomar una foto de un recibo y extrae automaticamente el importe, el nombre del comercio, los articulos y la categoria. Utiliza IA (Anthropic Claude) para leer el recibo y completar los datos del gasto por ti.","support.q_scanner_limit":"¿Cuántos escaneos puedo hacer?","support.a_scanner_limit":"Los usuarios gratuitos tienen 10 escaneos al mes. Los usuarios de HomePot Pro tienen 50 escaneos al mes. Los escaneos se reinician al principio de cada mes.","support.q_scanner_data":"¿Qué datos se extraen del recibo?","support.a_scanner_data":"El escaner extrae: importe total, nombre del comercio/tienda, articulos individuales (nombre, cantidad, precio unitario) y una categoria sugerida. Puedes revisar y editar todos los datos extraidos antes de guardar.","support.q_scanner_privacy":"¿Mis datos de recibos son privados?","support.a_scanner_privacy":"Si. Las imagenes de los recibos se envian a la IA de Anthropic unicamente para la extraccion de texto. No son almacenadas por el proveedor de IA ni se utilizan para entrenamiento. La foto del recibo se guarda en el almacenamiento seguro de tu grupo.","support.cat_privacy":"Privacidad y datos","support.q_data_stored":"¿Dónde se almacenan mis datos?","support.a_data_stored":"Tus datos se almacenan de forma segura en Supabase (infraestructura de Amazon Web Services). Estan cifrados en transito y en reposo, y solo son accesibles por los miembros de tu grupo.","support.q_delete_data":"¿Puedo eliminar mis datos?","support.a_delete_data":"Si. Puedes eliminar tu cuenta completa desde Ajustes. Esto borrara permanentemente tu perfil, tu pertenencia a todos los grupos y los grupos donde eres el unico miembro.","support.cat_account":"Problemas con la cuenta","support.q_forgot_password":"He olvidado mi contrasena","support.a_forgot_password":"En la pantalla de inicio de sesion o en Ajustes, puedes solicitar un correo para restablecer tu contrasena. Revisa tu bandeja de entrada (y la carpeta de spam).","support.q_delete_app":"¿Qué pasa si elimino la app?","support.a_delete_app":"Tus datos permanecen seguros en nuestros servidores. Si reinstalas e inicias sesion con la misma cuenta, recuperaras todos tus datos. Para eliminar permanentemente tus datos, usa «Eliminar mi cuenta» en Ajustes antes de desinstalar.","support.q_cant_leave":"No puedo salir de mi grupo","support.a_cant_leave":"Si eres el propietario del grupo, primero debes transferir la propiedad a otro miembro desde Ajustes. Si eres el unico miembro, puedes eliminar el grupo directamente.","support.cat_coming_soon":"Proximamente","support.q_push":"Notificaciones push","support.a_push":"¡Estamos trabajando en notificaciones push para recordarte deudas pendientes y actividad del grupo. Mantente atento!","support.help_title":"¿Aún necesitas ayuda?","support.help_desc":"Si no encontraste tu respuesta arriba, prueba estos pasos:","support.help_step1":"Asegurate de tener la ultima version de HomePot instalada","support.help_step2":"Reinicia la app","support.help_step3":"Comprueba tu conexion a internet","support.help_step4":"Escribenos a homepotapp@gmail.com con los detalles de tu problema","support.help_note":"Normalmente respondemos en menos de 24 horas. Por favor, incluye el modelo de tu dispositivo y la version del sistema operativo al reportar errores.","support.doc_title":"Soporte · HomePot"},"fr":{"common.language":"Langue","common.tagline":"Fait en Espagne pour les foyers de partout.","common.legal":"Mentions légales","common.privacy":"Confidentialité","common.terms":"Conditions","common.help":"Aide","common.delete_account":"Supprimer mon compte","common.nav_label":"Principal","common.nav_how":"Fonctionnement","common.nav_pricing":"Tarifs","common.nav_compare":"Comparer","support.back":"← Retour a l'accueil","support.badge":"Centre d'aide","support.title":"Support","support.subtitle":"Nous sommes la pour vous aider","support.contact_title":"Contactez-nous","support.contact_desc":"Vous avez une question ou besoin d'aide ? Nous repondons generalement sous 24 heures.","support.faq_title":"Questions frequentes","support.cat_about":"A propos de HomePot","support.q_what":"Qu'est-ce que HomePot ?","support.a_what":"HomePot est une application de gestion des depenses partagees entre groupes de personnes. Ideale pour les couples, colocataires, familles ou tout groupe partageant des depenses. Elle vous permet d'enregistrer les depenses, de calculer ce que chacun doit et de suivre clairement les comptes partages.","support.q_modes":"Quelle est la difference entre Cagnotte commune et Partage de depenses ?","support.a_modes":"Cagnotte commune : ideale pour les foyers et la colocation stable. Chacun contribue a une cagnotte commune et les depenses en sont deduites. Partage de depenses : ideal pour les voyages, evenements ou groupes temporaires. Chacun paie de sa poche et a la fin, le calcul determine qui doit combien a qui.","support.q_cost":"Combien coute HomePot ?","support.a_cost":"HomePot propose un plan gratuit pour 1 groupe avec un nombre illimité de membres : jusqu'à 20 dépenses par personne et par mois, 10 scans de reçus par IA par mois, la clôture du mois et les règlements, les dépenses récurrentes et le support multidevise. Aucune publicité, jamais. HomePot Pro ajoute des dépenses illimitées, 50 scans par mois, des groupes illimités, des statistiques avancées et l'export CSV/PDF, et un seul abonnement couvre toutes les personnes de vos groupes.","support.cat_groups":"Groupes et membres","support.q_invite":"Comment inviter quelqu'un dans mon groupe ?","support.a_invite":"Dans les Parametres, vous pouvez voir et copier le code d'invitation de votre groupe. Partagez-le avec les personnes que vous souhaitez inviter. Elles peuvent rejoindre le groupe en utilisant ce code lors de l'inscription ou depuis l'option « Rejoindre un groupe ».","support.q_multiple_groups":"Puis-je appartenir a plusieurs groupes ?","support.a_multiple_groups":"Avec le plan gratuit, vous pouvez avoir 1 groupe. Avec HomePot Pro, vous pouvez avoir des groupes illimites et passer facilement de l'un a l'autre depuis le selecteur de groupes sur l'ecran principal.","support.q_roles":"Quels roles sont disponibles ?","support.a_roles":"Proprietaire : controle total, peut transferer la propriete et supprimer le groupe. Admin : gestion complete (membres, depenses, categories). Gestionnaire : gere les depenses et les categories. Membre : peut consulter et ajouter des depenses.","support.cat_expenses":"Depenses et finances","support.q_record":"Comment enregistrer une depense ?","support.a_record":"Appuyez sur le bouton « + » sur l'ecran des depenses. Saisissez le montant, une description, selectionnez la categorie et la date. En mode Partage de depenses, vous pouvez aussi indiquer qui a paye et qui participe.","support.q_recurring":"Que sont les depenses recurrentes ?","support.a_recurring":"Ce sont des depenses qui se repetent chaque mois (loyer, internet, electricite, etc.). Vous pouvez les configurer une fois et HomePot les ajoutera automatiquement chaque mois, vous faisant gagner du temps.","support.q_close":"Qu'est-ce que la cloture mensuelle ?","support.a_close":"A la fin de chaque mois, vous pouvez effectuer une cloture mensuelle. HomePot calcule exactement combien chaque membre doit contribuer ou transferer, en fonction de toutes les depenses du mois.","support.q_payments":"HomePot traite-t-il de vrais paiements ?","support.a_payments":"Non. HomePot est un outil de suivi et de calcul. Les paiements et transferts reels entre membres se font en dehors de l'application (Venmo, Bizum, virement bancaire, especes, etc.).","support.cat_scanner":"Scanner de recus par IA","support.q_scanner_what":"Qu'est-ce que le scanner de recus par IA ?","support.a_scanner_what":"C'est une fonctionnalite qui vous permet de prendre en photo un recu et d'extraire automatiquement le montant, le nom du commerce, les articles et la categorie. Elle utilise l'IA (Anthropic Claude) pour lire le recu et remplir les details de la depense pour vous.","support.q_scanner_limit":"Combien de scans puis-je faire ?","support.a_scanner_limit":"Les utilisateurs gratuits disposent de 10 scans par mois. Les utilisateurs HomePot Pro disposent de 50 scans par mois. Les scans sont reinitialises au debut de chaque mois.","support.q_scanner_data":"Quelles donnees sont extraites du recu ?","support.a_scanner_data":"Le scanner extrait : le montant total, le nom du commerce/magasin, les articles individuels (nom, quantite, prix unitaire) et une categorie suggeree. Vous pouvez verifier et modifier toutes les donnees extraites avant de sauvegarder.","support.q_scanner_privacy":"Mes donnees de recus sont-elles privees ?","support.a_scanner_privacy":"Oui. Les images de recus sont envoyees a l'IA d'Anthropic uniquement pour l'extraction de texte. Elles ne sont pas conservees par le fournisseur d'IA et ne sont pas utilisees pour l'entrainement. La photo du recu est stockee dans le stockage securise de votre groupe.","support.cat_privacy":"Confidentialite et donnees","support.q_data_stored":"Ou sont stockees mes donnees ?","support.a_data_stored":"Vos donnees sont stockees de maniere securisee sur Supabase (infrastructure Amazon Web Services). Elles sont chiffrees en transit et au repos, et ne sont accessibles que par les membres de votre groupe.","support.q_delete_data":"Puis-je supprimer mes donnees ?","support.a_delete_data":"Oui. Vous pouvez supprimer l'integralite de votre compte depuis les Parametres. Cela effacera definitivement votre profil, votre appartenance a tous les groupes et les groupes dont vous etes le seul membre.","support.cat_account":"Problemes de compte","support.q_forgot_password":"J'ai oublie mon mot de passe","support.a_forgot_password":"Sur l'ecran de connexion ou dans les Parametres, vous pouvez demander un e-mail de reinitialisation du mot de passe. Verifiez votre boite de reception (et le dossier spam).","support.q_delete_app":"Que se passe-t-il si je supprime l'application ?","support.a_delete_app":"Vos donnees restent en securite sur nos serveurs. Si vous reinstallez et vous connectez avec le meme compte, vous recupererez toutes vos donnees. Pour supprimer definitivement vos donnees, utilisez « Supprimer mon compte » dans les Parametres avant de desinstaller.","support.q_cant_leave":"Je ne peux pas quitter mon groupe","support.a_cant_leave":"Si vous etes le proprietaire du groupe, vous devez d'abord transferer la propriete a un autre membre depuis les Parametres. Si vous etes le seul membre, vous pouvez supprimer le groupe directement.","support.cat_coming_soon":"Bientot disponible","support.q_push":"Notifications push","support.a_push":"Nous travaillons sur les notifications push pour vous rappeler les dettes en attente et l'activite du groupe. Restez a l'ecoute !","support.help_title":"Besoin d'aide supplementaire ?","support.help_desc":"Si vous n'avez pas trouve votre reponse ci-dessus, essayez ces etapes :","support.help_step1":"Assurez-vous d'avoir la derniere version de HomePot installee","support.help_step2":"Redemarrez l'application","support.help_step3":"Verifiez votre connexion internet","support.help_step4":"Ecrivez-nous a homepotapp@gmail.com avec les details de votre probleme","support.help_note":"Nous repondons generalement sous 24 heures. Veuillez inclure le modele de votre appareil et la version du systeme d'exploitation lors du signalement de bugs.","support.doc_title":"Support · HomePot"},"de":{"common.language":"Sprache","common.tagline":"In Spanien gemacht, für Haushalte überall.","common.legal":"Rechtliches","common.privacy":"Datenschutz","common.terms":"Bedingungen","common.help":"Hilfe","common.delete_account":"Mein Konto löschen","common.nav_label":"Hauptnavigation","common.nav_how":"So geht’s","common.nav_pricing":"Preise","common.nav_compare":"Vergleich","support.back":"← Zuruck zur Startseite","support.badge":"Hilfezentrum","support.title":"Support","support.subtitle":"Wir sind für Sie da","support.contact_title":"Kontaktieren Sie uns","support.contact_desc":"Haben Sie eine Frage oder benotigen Hilfe? Wir antworten in der Regel innerhalb von 24 Stunden.","support.faq_title":"Haufig gestellte Fragen","support.cat_about":"Über HomePot","support.q_what":"Was ist HomePot?","support.a_what":"HomePot ist eine App zur Verwaltung gemeinsamer Ausgaben in Gruppen. Perfekt für Paare, Mitbewohner, Familien oder jede Gruppe, die Ausgaben teilt. Sie konnen Ausgaben erfassen, berechnen, was jeder schuldet, und einen klaren Uberblick über gemeinsame Konten behalten.","support.q_modes":"Was ist der Unterschied zwischen Gemeinschaftskasse und Ausgabenteilung?","support.a_modes":"Gemeinschaftskasse: ideal für Haushalte und stabile Wohngemeinschaften. Alle zahlen in eine gemeinsame Kasse ein und Ausgaben werden davon abgezogen. Ausgabenteilung: ideal für Reisen, Events oder temporare Gruppen. Jeder zahlt aus eigener Tasche und am Ende wird berechnet, wer wem wie viel schuldet.","support.q_cost":"Was kostet HomePot?","support.a_cost":"HomePot bietet einen kostenlosen Plan für 1 Gruppe mit unbegrenzt vielen Mitgliedern: bis zu 20 Ausgaben pro Person und Monat, 10 KI-Belegscans pro Monat, Monatsabschluss und Abrechnungen, wiederkehrende Ausgaben und Mehrwährungsunterstützung. Keine Werbung, nie. HomePot Pro bringt zusätzlich unbegrenzte Ausgaben, 50 Scans pro Monat, unbegrenzte Gruppen, erweiterte Statistiken und CSV/PDF-Export, und ein Abo gilt für alle Personen in Ihren Gruppen.","support.cat_groups":"Gruppen und Mitglieder","support.q_invite":"Wie lade ich jemanden in meine Gruppe ein?","support.a_invite":"In den Einstellungen konnen Sie den Einladungscode Ihrer Gruppe sehen und kopieren. Teilen Sie ihn mit den Personen, die Sie einladen mochten. Sie konnen der Gruppe mit diesem Code bei der Registrierung oder über die Option «Gruppe beitreten» beitreten.","support.q_multiple_groups":"Kann ich mehreren Gruppen angehoren?","support.a_multiple_groups":"Mit dem kostenlosen Plan konnen Sie 1 Gruppe haben. Mit HomePot Pro konnen Sie unbegrenzte Gruppen haben und einfach über den Gruppenwahler auf dem Hauptbildschirm zwischen ihnen wechseln.","support.q_roles":"Welche Rollen gibt es?","support.a_roles":"Eigentumer: volle Kontrolle, kann die Eigentumerschaft ubertragen und die Gruppe loschen. Admin: vollstandige Verwaltung (Mitglieder, Ausgaben, Kategorien). Manager: verwaltet Ausgaben und Kategorien. Mitglied: kann Ausgaben einsehen und hinzufugen.","support.cat_expenses":"Ausgaben und Finanzen","support.q_record":"Wie erfasse ich eine Ausgabe?","support.a_record":"Tippen Sie auf die Schaltflache «+» auf dem Ausgabenbildschirm. Geben Sie den Betrag ein, eine Beschreibung, wahlen Sie die Kategorie und das Datum. Im Modus Ausgabenteilung konnen Sie auch angeben, wer bezahlt hat und wer beteiligt ist.","support.q_recurring":"Was sind wiederkehrende Ausgaben?","support.a_recurring":"Das sind Ausgaben, die sich jeden Monat wiederholen (Miete, Internet, Strom usw.). Sie konnen sie einmal einrichten und HomePot fugt sie jeden Monat automatisch hinzu und spart Ihnen Zeit.","support.q_close":"Was ist der Monatsabschluss?","support.a_close":"Am Ende jedes Monats konnen Sie einen Monatsabschluss durchfuhren. HomePot berechnet genau, wie viel jedes Mitglied beitragen oder uberweisen muss, basierend auf allen Ausgaben des Monats.","support.q_payments":"Verarbeitet HomePot echte Zahlungen?","support.a_payments":"Nein. HomePot ist ein Verfolgungs- und Berechnungstool. Tatsachliche Zahlungen und Uberweisungen zwischen Mitgliedern werden ausserhalb der App getatigt (Venmo, Bizum, Bankuberweisung, Bargeld usw.).","support.cat_scanner":"KI-Belegscanner","support.q_scanner_what":"Was ist der KI-Belegscanner?","support.a_scanner_what":"Es ist eine Funktion, mit der Sie einen Beleg fotografieren konnen, und die automatisch den Betrag, den Handlernamen, die Einzelposten und die Kategorie extrahiert. Sie nutzt KI (Anthropic Claude), um den Beleg zu lesen und die Ausgabendetails für Sie auszufullen.","support.q_scanner_limit":"Wie viele Scans kann ich durchfuhren?","support.a_scanner_limit":"Kostenlose Nutzer erhalten 10 Scans pro Monat. HomePot Pro-Nutzer erhalten 50 Scans pro Monat. Die Scans werden zu Beginn jedes Monats zuruckgesetzt.","support.q_scanner_data":"Welche Daten werden aus dem Beleg extrahiert?","support.a_scanner_data":"Der Scanner extrahiert: Gesamtbetrag, Handler-/Geschaftsname, einzelne Posten (Name, Menge, Stuckpreis) und eine vorgeschlagene Kategorie. Sie konnen alle extrahierten Daten vor dem Speichern uberprufen und bearbeiten.","support.q_scanner_privacy":"Sind meine Belegdaten privat?","support.a_scanner_privacy":"Ja. Belegbilder werden ausschliesslich zur Textextraktion an die KI von Anthropic gesendet. Sie werden nicht vom KI-Anbieter gespeichert und nicht für Training verwendet. Das Belegfoto wird im sicheren Speicher Ihrer Gruppe aufbewahrt.","support.cat_privacy":"Datenschutz und Daten","support.q_data_stored":"Wo werden meine Daten gespeichert?","support.a_data_stored":"Ihre Daten werden sicher auf Supabase (Amazon Web Services-Infrastruktur) gespeichert. Sie sind bei der Ubertragung und im Ruhezustand verschlusselt und nur für Mitglieder Ihrer Gruppe zuganglich.","support.q_delete_data":"Kann ich meine Daten loschen?","support.a_delete_data":"Ja. Sie konnen Ihr gesamtes Konto in den Einstellungen loschen. Dies loscht dauerhaft Ihr Profil, Ihre Mitgliedschaft in allen Gruppen und Gruppen, in denen Sie das einzige Mitglied sind.","support.cat_account":"Kontoprobleme","support.q_forgot_password":"Ich habe mein Passwort vergessen","support.a_forgot_password":"Auf dem Anmeldebildschirm oder in den Einstellungen konnen Sie eine E-Mail zum Zurucksetzen des Passworts anfordern. Uberprufen Sie Ihren Posteingang (und den Spam-Ordner).","support.q_delete_app":"Was passiert, wenn ich die App losche?","support.a_delete_app":"Ihre Daten bleiben sicher auf unseren Servern. Wenn Sie die App neu installieren und sich mit demselben Konto anmelden, werden alle Ihre Daten wiederhergestellt. Um Ihre Daten dauerhaft zu loschen, verwenden Sie «Mein Konto loschen» in den Einstellungen vor der Deinstallation.","support.q_cant_leave":"Ich kann meine Gruppe nicht verlassen","support.a_cant_leave":"Wenn Sie der Gruppeneigentumer sind, mussen Sie zunachst die Eigentumerschaft an ein anderes Mitglied in den Einstellungen ubertragen. Wenn Sie das einzige Mitglied sind, konnen Sie die Gruppe direkt loschen.","support.cat_coming_soon":"Demnachst","support.q_push":"Push-Benachrichtigungen","support.a_push":"Wir arbeiten an Push-Benachrichtigungen, um Sie an ausstehende Schulden und Gruppenaktivitaten zu erinnern. Bleiben Sie dran!","support.help_title":"Brauchen Sie noch Hilfe?","support.help_desc":"Wenn Sie Ihre Antwort oben nicht gefunden haben, versuchen Sie diese Schritte:","support.help_step1":"Stellen Sie sicher, dass Sie die neueste Version von HomePot installiert haben","support.help_step2":"Starten Sie die App neu","support.help_step3":"Uberprufen Sie Ihre Internetverbindung","support.help_step4":"Schreiben Sie uns an homepotapp@gmail.com mit Details zu Ihrem Problem","support.help_note":"Wir antworten in der Regel innerhalb von 24 Stunden. Bitte geben Sie beim Melden von Fehlern Ihr Geratemodell und die Betriebssystemversion an.","support.doc_title":"Support · HomePot"},"pt":{"common.language":"Idioma","common.tagline":"Feito na Espanha para casas de todo lugar.","common.legal":"Legal","common.privacy":"Privacidade","common.terms":"Termos","common.help":"Ajuda","common.delete_account":"Excluir minha conta","common.nav_label":"Principal","common.nav_how":"Como funciona","common.nav_pricing":"Preços","common.nav_compare":"Comparar","support.back":"← Voltar ao inicio","support.badge":"Central de ajuda","support.title":"Suporte","support.subtitle":"Estamos aqui para ajudar","support.contact_title":"Fale conosco","support.contact_desc":"Tem alguma duvida ou precisa de ajuda? Normalmente respondemos em ate 24 horas.","support.faq_title":"Perguntas frequentes","support.cat_about":"Sobre o HomePot","support.q_what":"O que e o HomePot?","support.a_what":"HomePot e um aplicativo para gerenciar despesas compartilhadas entre grupos de pessoas. Perfeito para casais, colegas de apartamento, familias ou qualquer grupo que divida despesas. Permite registrar gastos, calcular o que cada pessoa deve e manter um controle claro das contas compartilhadas.","support.q_modes":"Qual e a diferenca entre Fundo Comum e Divisao de Despesas?","support.a_modes":"Fundo Comum: ideal para lares e convivencia estavel. Todos contribuem para um fundo comum e as despesas sao deduzidas dele. Divisao de Despesas: ideal para viagens, eventos ou grupos temporarios. Cada pessoa paga com seu proprio dinheiro e no final calcula-se quem deve a quem.","support.q_cost":"Quanto custa o HomePot?","support.a_cost":"O HomePot tem um plano gratuito para 1 grupo com membros ilimitados: até 20 despesas por pessoa por mês, 10 digitalizações de recibos por IA por mês, fechamento do mês e liquidações, despesas recorrentes e suporte a várias moedas. Sem anúncios, nunca. O HomePot Pro adiciona despesas ilimitadas, 50 digitalizações por mês, grupos ilimitados, estatísticas avançadas e exportação CSV/PDF, e uma única assinatura cobre todas as pessoas dos seus grupos.","support.cat_groups":"Grupos e membros","support.q_invite":"Como convido alguem para o meu grupo?","support.a_invite":"Nas Configuracoes, você pode ver e copiar o codigo de convite do seu grupo. Compartilhe-o com as pessoas que deseja convidar. Elas podem entrar usando esse codigo ao se registrar ou pela opcao «Entrar em um grupo».","support.q_multiple_groups":"Posso pertencer a varios grupos?","support.a_multiple_groups":"Com o plano gratuito, você pode ter 1 grupo. Com o HomePot Pro, você pode ter grupos ilimitados e alternar facilmente entre eles pelo seletor de grupos na tela principal.","support.q_roles":"Quais funcoes estao disponiveis?","support.a_roles":"Proprietario: controle total, pode transferir a propriedade e excluir o grupo. Admin: gestao completa (membros, despesas, categorias). Gestor: gerencia despesas e categorias. Membro: pode visualizar e adicionar despesas.","support.cat_expenses":"Despesas e financas","support.q_record":"Como registro uma despesa?","support.a_record":"Toque no botao «+» na tela de despesas. Digite o valor, uma descricao, selecione a categoria e a data. No modo Divisao de Despesas, você também pode indicar quem pagou e quem participa.","support.q_recurring":"O que sao despesas recorrentes?","support.a_recurring":"Sao despesas que se repetem todo mes (aluguel, internet, eletricidade, etc.). Você pode configura-las uma vez e o HomePot as adicionara automaticamente a cada mes, economizando seu tempo.","support.q_close":"O que e o fechamento mensal?","support.a_close":"No final de cada mes, você pode realizar um fechamento mensal. O HomePot calcula exatamente quanto cada membro precisa contribuir ou transferir, com base em todas as despesas do mes.","support.q_payments":"O HomePot processa pagamentos reais?","support.a_payments":"Nao. O HomePot e uma ferramenta de acompanhamento e calculo. Os pagamentos e transferencias reais entre membros sao feitos fora do aplicativo (Venmo, Bizum, transferencia bancaria, dinheiro, etc.).","support.cat_scanner":"Scanner de recibos por IA","support.q_scanner_what":"O que e o scanner de recibos por IA?","support.a_scanner_what":"E uma funcionalidade que permite tirar uma foto de um recibo e extrair automaticamente o valor, o nome do estabelecimento, os itens e a categoria. Utiliza IA (Anthropic Claude) para ler o recibo e preencher os detalhes da despesa para você.","support.q_scanner_limit":"Quantas digitalizacoes posso fazer?","support.a_scanner_limit":"Usuarios gratuitos tem 10 digitalizacoes por mes. Usuarios HomePot Pro tem 50 digitalizacoes por mes. As digitalizacoes sao reiniciadas no inicio de cada mes.","support.q_scanner_data":"Quais dados sao extraidos do recibo?","support.a_scanner_data":"O scanner extrai: valor total, nome do estabelecimento/loja, itens individuais (nome, quantidade, preco unitario) e uma categoria sugerida. Você pode revisar e editar todos os dados extraidos antes de salvar.","support.q_scanner_privacy":"Meus dados de recibos sao privados?","support.a_scanner_privacy":"Sim. As imagens dos recibos sao enviadas a IA da Anthropic apenas para extracao de texto. Elas nao sao armazenadas pelo provedor de IA e nao sao usadas para treinamento. A foto do recibo e armazenada no armazenamento seguro do seu grupo.","support.cat_privacy":"Privacidade e dados","support.q_data_stored":"Onde meus dados sao armazenados?","support.a_data_stored":"Seus dados sao armazenados com seguranca no Supabase (infraestrutura Amazon Web Services). Eles sao criptografados em transito e em repouso, e sao acessiveis apenas pelos membros do seu grupo.","support.q_delete_data":"Posso excluir meus dados?","support.a_delete_data":"Sim. Você pode excluir toda a sua conta nas Configuracoes. Isso apagara permanentemente seu perfil, sua participacao em todos os grupos e os grupos onde você e o unico membro.","support.cat_account":"Problemas com a conta","support.q_forgot_password":"Esqueci minha senha","support.a_forgot_password":"Na tela de login ou nas Configuracoes, você pode solicitar um e-mail para redefinir sua senha. Verifique sua caixa de entrada (e a pasta de spam).","support.q_delete_app":"O que acontece se eu excluir o aplicativo?","support.a_delete_app":"Seus dados permanecem seguros em nossos servidores. Se você reinstalar e entrar com a mesma conta, recuperara todos os seus dados. Para excluir permanentemente seus dados, use «Excluir minha conta» nas Configuracoes antes de desinstalar.","support.q_cant_leave":"Nao consigo sair do meu grupo","support.a_cant_leave":"Se você e o proprietario do grupo, primeiro deve transferir a propriedade para outro membro nas Configuracoes. Se você e o unico membro, pode excluir o grupo diretamente.","support.cat_coming_soon":"Em breve","support.q_push":"Notificacoes push","support.a_push":"Estamos trabalhando em notificacoes push para lembra-lo de dividas pendentes e atividade do grupo. Fique atento!","support.help_title":"Ainda precisa de ajuda?","support.help_desc":"Se você nao encontrou sua resposta acima, tente estes passos:","support.help_step1":"Certifique-se de ter a versao mais recente do HomePot instalada","support.help_step2":"Reinicie o aplicativo","support.help_step3":"Verifique sua conexao com a internet","support.help_step4":"Envie um e-mail para homepotapp@gmail.com com detalhes sobre o seu problema","support.help_note":"Normalmente respondemos em ate 24 horas. Por favor, inclua o modelo do seu dispositivo e a versao do sistema operacional ao reportar erros.","support.doc_title":"Suporte · HomePot"}}};</script>
+  <script src="/src/js/utility-i18n.js"></script>
 </head>
-<body class="font-sans text-darkBlue antialiased bg-gray-50">
+<body>
 
-  <!-- NAVBAR -->
-  <nav class="fixed top-0 inset-x-0 z-50" style="backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);background:rgba(244,241,222,.8)">
-    <div class="max-w-7xl mx-auto flex items-center justify-between px-6 py-4">
-      <a href="/" class="flex items-center gap-2">
-        <img src="/assets/favicon-40.png" alt="HomePot" class="w-10 h-10 rounded-xl">
-        <img src="/assets/homepot-wordmark.png" alt="HomePot" class="h-9">
-      </a>
-      <!-- Language pills (centered) -->
-      <div class="hidden lg:flex items-center gap-1 rounded-full px-2 py-1" style="background:rgba(244,241,222,0.6);backdrop-filter:blur(8px)">
-        <a href="#" data-lang="en" class="px-3 py-1 rounded-full text-sm font-semibold text-darkBlue transition-colors">EN</a>
-        <a href="#" data-lang="es" class="px-3 py-1 rounded-full text-sm text-darkBlue/40 transition-colors">ES</a>
-        <a href="#" data-lang="fr" class="px-3 py-1 rounded-full text-sm text-darkBlue/40 transition-colors">FR</a>
-        <a href="#" data-lang="de" class="px-3 py-1 rounded-full text-sm text-darkBlue/40 transition-colors">DE</a>
-        <a href="#" data-lang="pt" class="px-3 py-1 rounded-full text-sm text-darkBlue/40 transition-colors">PT</a>
-      </div>
-      <a href="/" class="text-sm text-terracotta font-semibold hover:underline" data-i18n="support.back">&larr; Back to home</a>
-    </div>
+<header class="band has-nav">
+  <a class="brand" href="/" data-lhref="/"><img src="/assets/brand/logo-horizontal-white.svg" alt="HomePot" width="485" height="100"></a>
+  <nav class="nav-auto" aria-label="Main" data-t-aria-label="common.nav_label">
+    <a class="nav-link" href="/#como" data-lhref="/#como" data-t="common.nav_how">How it works</a>
+    <a class="nav-link" href="/#precios" data-lhref="/#precios" data-t="common.nav_pricing">Pricing</a>
+    <a class="nav-link" href="/compare/" data-lhref="/compare/" data-t="common.nav_compare">Compare</a>
   </nav>
+  <details class="lang">
+    <summary aria-label="Language: English" data-lang-summary><span data-lang-code>EN</span> <svg viewBox="0 0 12 8" aria-hidden="true"><path d="M0 0h12L6 8z" fill="currentColor"/></svg></summary>
+    <ul class="lang-menu">
+      <li><button type="button" data-set-lang="es" data-lang-name="Español" lang="es" aria-pressed="false">Español</button></li>
+      <li><button type="button" data-set-lang="en" data-lang-name="English" lang="en" aria-pressed="true">English</button></li>
+      <li><button type="button" data-set-lang="pt" data-lang-name="Português" lang="pt" aria-pressed="false">Português</button></li>
+      <li><button type="button" data-set-lang="fr" data-lang-name="Français" lang="fr" aria-pressed="false">Français</button></li>
+      <li><button type="button" data-set-lang="de" data-lang-name="Deutsch" lang="de" aria-pressed="false">Deutsch</button></li>
+    </ul>
+  </details>
+</header>
 
-  <!-- HEADER -->
-  <section class="bg-cream grain-bg pt-24 pb-16">
-    <div class="max-w-3xl mx-auto px-6 text-center relative z-10">
-      <div class="inline-flex items-center gap-2 bg-terracotta/10 text-terracotta rounded-full px-4 py-2 text-sm font-medium mb-6">
-        <span class="material-symbols-outlined text-lg">support_agent</span>
-        <span data-i18n="support.badge">Help Center</span>
-      </div>
-      <h1 class="text-4xl lg:text-5xl font-extrabold text-darkBlue mb-3" data-i18n="support.title">Support</h1>
-      <p class="text-gray-500 text-lg" data-i18n="support.subtitle">We're here to help</p>
-    </div>
-  </section>
-
-  <!-- CONTENT -->
-  <div class="max-w-3xl mx-auto px-6 -mt-8 relative z-10 pb-20">
-
-    <!-- Contact Box -->
-    <div class="bg-white rounded-2xl shadow-sm p-8 text-center mb-10">
-      <div class="w-14 h-14 bg-terracotta/10 rounded-full flex items-center justify-center mx-auto mb-4">
-        <span class="material-symbols-outlined text-terracotta text-3xl">mail</span>
-      </div>
-      <h2 class="text-xl font-bold text-darkBlue mb-2" data-i18n="support.contact_title">Contact Us</h2>
-      <p class="text-gray-500 mb-6" data-i18n="support.contact_desc">Have a question or need help? We typically respond within 24 hours.</p>
-      <a href="mailto:homepotapp@gmail.com" class="inline-block bg-terracotta text-white px-8 py-3 rounded-full font-semibold hover:bg-terracotta/90 transition-colors">homepotapp@gmail.com</a>
-    </div>
-
-    <!-- FAQ Section -->
-    <div class="bg-white rounded-3xl shadow-sm p-8 lg:p-12">
-      <h2 class="text-2xl font-extrabold text-darkBlue mb-8" data-i18n="support.faq_title">Frequently Asked Questions</h2>
-
-      <!-- About HomePot -->
-      <div class="mb-8">
-        <h3 class="text-lg font-bold text-terracotta mb-4 pb-2 border-b border-terracotta/10 flex items-center gap-2"><span class="material-symbols-outlined">info</span><span data-i18n="support.cat_about">About HomePot</span></h3>
-        <details class="bg-white rounded-xl mb-2 shadow-sm ring-1 ring-gray-100">
-          <summary class="p-4 font-semibold text-darkBlue cursor-pointer flex justify-between items-center" data-i18n="support.q_what">What is HomePot?</summary>
-          <div class="px-4 pb-4 text-gray-600"><p data-i18n="support.a_what">HomePot is an app for managing shared expenses among groups of people. Perfect for couples, roommates, families, or any group sharing expenses. It allows you to record expenses, calculate what each person owes, and keep clear track of shared accounts.</p></div>
-        </details>
-        <details class="bg-white rounded-xl mb-2 shadow-sm ring-1 ring-gray-100">
-          <summary class="p-4 font-semibold text-darkBlue cursor-pointer flex justify-between items-center" data-i18n="support.q_modes">What is the difference between Shared Fund and Expense Split?</summary>
-          <div class="px-4 pb-4 text-gray-600"><p data-i18n="support.a_modes">Shared Fund: ideal for homes and stable cohabitation. Everyone contributes to a common fund and expenses are deducted from it. Expense Split: ideal for trips, events, or temporary groups. Each person pays with their own money and at the end, it calculates who owes whom.</p></div>
-        </details>
-        <details class="bg-white rounded-xl mb-2 shadow-sm ring-1 ring-gray-100">
-          <summary class="p-4 font-semibold text-darkBlue cursor-pointer flex justify-between items-center" data-i18n="support.q_cost">How much does HomePot cost?</summary>
-          <div class="px-4 pb-4 text-gray-600"><p data-i18n="support.a_cost">HomePot has a free plan for 1 group with unlimited members: up to 20 expenses per person per month, 10 AI receipt scans per month, month close and settlements, recurring expenses and multi-currency support. No ads ever. HomePot Pro adds unlimited expenses, 50 scans per month, unlimited groups, advanced statistics and CSV/PDF export, and one subscription covers everyone in your groups.</p></div>
-        </details>
-      </div>
-
-      <!-- Groups & Members -->
-      <div class="mb-8">
-        <h3 class="text-lg font-bold text-terracotta mb-4 pb-2 border-b border-terracotta/10 flex items-center gap-2"><span class="material-symbols-outlined">group</span><span data-i18n="support.cat_groups">Groups &amp; Members</span></h3>
-        <details class="bg-white rounded-xl mb-2 shadow-sm ring-1 ring-gray-100">
-          <summary class="p-4 font-semibold text-darkBlue cursor-pointer flex justify-between items-center" data-i18n="support.q_invite">How do I invite someone to my group?</summary>
-          <div class="px-4 pb-4 text-gray-600"><p data-i18n="support.a_invite">In Settings you can view and copy your group's invite code. Share it with the people you want to invite. They can join using that code when signing up or from the "Join a group" option.</p></div>
-        </details>
-        <details class="bg-white rounded-xl mb-2 shadow-sm ring-1 ring-gray-100">
-          <summary class="p-4 font-semibold text-darkBlue cursor-pointer flex justify-between items-center" data-i18n="support.q_multiple_groups">Can I belong to multiple groups?</summary>
-          <div class="px-4 pb-4 text-gray-600"><p data-i18n="support.a_multiple_groups">With the free plan you can have 1 group. With HomePot Pro you can have unlimited groups and easily switch between them from the group selector on the main screen.</p></div>
-        </details>
-        <details class="bg-white rounded-xl mb-2 shadow-sm ring-1 ring-gray-100">
-          <summary class="p-4 font-semibold text-darkBlue cursor-pointer flex justify-between items-center" data-i18n="support.q_roles">What roles are available?</summary>
-          <div class="px-4 pb-4 text-gray-600"><p data-i18n="support.a_roles">Owner: full control, can transfer ownership and delete the group. Admin: full management (members, expenses, categories). Manager: manages expenses and categories. Member: can view and add expenses.</p></div>
-        </details>
-      </div>
-
-      <!-- Expenses & Finances -->
-      <div class="mb-8">
-        <h3 class="text-lg font-bold text-terracotta mb-4 pb-2 border-b border-terracotta/10 flex items-center gap-2"><span class="material-symbols-outlined">receipt_long</span><span data-i18n="support.cat_expenses">Expenses &amp; Finances</span></h3>
-        <details class="bg-white rounded-xl mb-2 shadow-sm ring-1 ring-gray-100">
-          <summary class="p-4 font-semibold text-darkBlue cursor-pointer flex justify-between items-center" data-i18n="support.q_record">How do I record an expense?</summary>
-          <div class="px-4 pb-4 text-gray-600"><p data-i18n="support.a_record">Tap the "+" button on the expenses screen. Enter the amount, a description, select the category and the date. In Expense Split mode, you can also indicate who paid and who participates.</p></div>
-        </details>
-        <details class="bg-white rounded-xl mb-2 shadow-sm ring-1 ring-gray-100">
-          <summary class="p-4 font-semibold text-darkBlue cursor-pointer flex justify-between items-center" data-i18n="support.q_recurring">What are recurring expenses?</summary>
-          <div class="px-4 pb-4 text-gray-600"><p data-i18n="support.a_recurring">These are expenses that repeat every month (rent, internet, electricity, etc.). You can set them up once and HomePot will automatically add them each month, saving you time.</p></div>
-        </details>
-        <details class="bg-white rounded-xl mb-2 shadow-sm ring-1 ring-gray-100">
-          <summary class="p-4 font-semibold text-darkBlue cursor-pointer flex justify-between items-center" data-i18n="support.q_close">What is the monthly close?</summary>
-          <div class="px-4 pb-4 text-gray-600"><p data-i18n="support.a_close">At the end of each month, you can perform a monthly close. HomePot calculates exactly how much each member needs to contribute or transfer, based on all expenses for the month.</p></div>
-        </details>
-        <details class="bg-white rounded-xl mb-2 shadow-sm ring-1 ring-gray-100">
-          <summary class="p-4 font-semibold text-darkBlue cursor-pointer flex justify-between items-center" data-i18n="support.q_payments">Does HomePot process real payments?</summary>
-          <div class="px-4 pb-4 text-gray-600"><p data-i18n="support.a_payments">No. HomePot is a tracking and calculation tool. Actual payments and transfers between members are made outside the app (Venmo, Bizum, bank transfer, cash, etc.).</p></div>
-        </details>
-      </div>
-
-      <!-- AI Receipt Scanner -->
-      <div class="mb-8">
-        <h3 class="text-lg font-bold text-terracotta mb-4 pb-2 border-b border-terracotta/10 flex items-center gap-2"><span class="material-symbols-outlined">document_scanner</span><span data-i18n="support.cat_scanner">AI Receipt Scanner</span></h3>
-        <details class="bg-white rounded-xl mb-2 shadow-sm ring-1 ring-gray-100">
-          <summary class="p-4 font-semibold text-darkBlue cursor-pointer flex justify-between items-center" data-i18n="support.q_scanner_what">What is the AI Receipt Scanner?</summary>
-          <div class="px-4 pb-4 text-gray-600"><p data-i18n="support.a_scanner_what">It's a feature that lets you take a photo of a receipt and automatically extracts the amount, merchant name, line items, and category. It uses AI (Anthropic Claude) to read the receipt and fill in the expense details for you.</p></div>
-        </details>
-        <details class="bg-white rounded-xl mb-2 shadow-sm ring-1 ring-gray-100">
-          <summary class="p-4 font-semibold text-darkBlue cursor-pointer flex justify-between items-center" data-i18n="support.q_scanner_limit">How many scans can I do?</summary>
-          <div class="px-4 pb-4 text-gray-600"><p data-i18n="support.a_scanner_limit">Free users get 10 scans per month. HomePot Pro users get 50 scans per month. Scans reset at the beginning of each month.</p></div>
-        </details>
-        <details class="bg-white rounded-xl mb-2 shadow-sm ring-1 ring-gray-100">
-          <summary class="p-4 font-semibold text-darkBlue cursor-pointer flex justify-between items-center" data-i18n="support.q_scanner_data">What data is extracted from the receipt?</summary>
-          <div class="px-4 pb-4 text-gray-600"><p data-i18n="support.a_scanner_data">The scanner extracts: total amount, merchant/store name, individual line items (name, quantity, unit price), and a suggested category. You can review and edit all extracted data before saving.</p></div>
-        </details>
-        <details class="bg-white rounded-xl mb-2 shadow-sm ring-1 ring-gray-100">
-          <summary class="p-4 font-semibold text-darkBlue cursor-pointer flex justify-between items-center" data-i18n="support.q_scanner_privacy">Is my receipt data private?</summary>
-          <div class="px-4 pb-4 text-gray-600"><p data-i18n="support.a_scanner_privacy">Yes. Receipt images are sent to Anthropic's AI for text extraction only. They are not stored by the AI provider and are not used for training. The receipt photo is stored in your group's secure storage.</p></div>
-        </details>
-      </div>
-
-      <!-- Privacy & Data -->
-      <div class="mb-8">
-        <h3 class="text-lg font-bold text-terracotta mb-4 pb-2 border-b border-terracotta/10 flex items-center gap-2"><span class="material-symbols-outlined">lock</span><span data-i18n="support.cat_privacy">Privacy &amp; Data</span></h3>
-        <details class="bg-white rounded-xl mb-2 shadow-sm ring-1 ring-gray-100">
-          <summary class="p-4 font-semibold text-darkBlue cursor-pointer flex justify-between items-center" data-i18n="support.q_data_stored">Where is my data stored?</summary>
-          <div class="px-4 pb-4 text-gray-600"><p data-i18n="support.a_data_stored">Your data is securely stored on Supabase (Amazon Web Services infrastructure). It is encrypted in transit and at rest, and is only accessible by members of your group.</p></div>
-        </details>
-        <details class="bg-white rounded-xl mb-2 shadow-sm ring-1 ring-gray-100">
-          <summary class="p-4 font-semibold text-darkBlue cursor-pointer flex justify-between items-center" data-i18n="support.q_delete_data">Can I delete my data?</summary>
-          <div class="px-4 pb-4 text-gray-600"><p data-i18n="support.a_delete_data">Yes. You can delete your entire account from Settings. This will permanently erase your profile, your membership in all groups, and groups where you are the only member.</p></div>
-        </details>
-      </div>
-
-      <!-- Account Issues -->
-      <div class="mb-8">
-        <h3 class="text-lg font-bold text-terracotta mb-4 pb-2 border-b border-terracotta/10 flex items-center gap-2"><span class="material-symbols-outlined">manage_accounts</span><span data-i18n="support.cat_account">Account Issues</span></h3>
-        <details class="bg-white rounded-xl mb-2 shadow-sm ring-1 ring-gray-100">
-          <summary class="p-4 font-semibold text-darkBlue cursor-pointer flex justify-between items-center" data-i18n="support.q_forgot_password">I forgot my password</summary>
-          <div class="px-4 pb-4 text-gray-600"><p data-i18n="support.a_forgot_password">On the sign-in screen or in Settings, you can request a password reset email. Check your inbox (and spam folder).</p></div>
-        </details>
-        <details class="bg-white rounded-xl mb-2 shadow-sm ring-1 ring-gray-100">
-          <summary class="p-4 font-semibold text-darkBlue cursor-pointer flex justify-between items-center" data-i18n="support.q_delete_app">What happens if I delete the app?</summary>
-          <div class="px-4 pb-4 text-gray-600"><p data-i18n="support.a_delete_app">Your data remains safe on our servers. If you reinstall and sign in with the same account, you will recover all your data. To permanently delete your data, use "Delete my account" in Settings before uninstalling.</p></div>
-        </details>
-        <details class="bg-white rounded-xl mb-2 shadow-sm ring-1 ring-gray-100">
-          <summary class="p-4 font-semibold text-darkBlue cursor-pointer flex justify-between items-center" data-i18n="support.q_cant_leave">I cannot leave my group</summary>
-          <div class="px-4 pb-4 text-gray-600"><p data-i18n="support.a_cant_leave">If you are the group owner, you must first transfer ownership to another member from Settings. If you are the only member, you can delete the group directly.</p></div>
-        </details>
-      </div>
-    </div>
-
-    <!-- Coming Soon -->
-    <div class="mb-8 mt-10">
-      <h3 class="text-lg font-bold text-terracotta mb-4 pb-2 border-b border-terracotta/10 flex items-center gap-2"><span class="material-symbols-outlined">rocket_launch</span><span data-i18n="support.cat_coming_soon">Coming Soon</span></h3>
-      <details class="bg-white rounded-xl mb-2 shadow-sm ring-1 ring-gray-100">
-        <summary class="p-4 font-semibold text-darkBlue cursor-pointer flex justify-between items-center" data-i18n="support.q_push">Push notifications</summary>
-        <div class="px-4 pb-4 text-gray-600"><p data-i18n="support.a_push">We're working on push notifications to remind you about pending debts and group activity. Stay tuned!</p></div>
-      </details>
-    </div>
-
-    <!-- Still Need Help? -->
-    <div class="bg-sage/10 border border-sage/20 rounded-2xl p-6 mt-10">
-      <h2 class="text-xl font-bold text-sage mb-3 flex items-center gap-2"><span class="material-symbols-outlined">help</span><span data-i18n="support.help_title">Still Need Help?</span></h2>
-      <p class="text-gray-600 mb-3 leading-relaxed" data-i18n="support.help_desc">If you couldn't find your answer above, try these steps:</p>
-      <ul class="list-disc pl-6 space-y-1 text-gray-600 mb-4">
-        <li data-i18n="support.help_step1">Make sure you have the latest version of HomePot installed</li>
-        <li data-i18n="support.help_step2">Restart the app</li>
-        <li data-i18n="support.help_step3">Check your internet connection</li>
-        <li data-i18n="support.help_step4">Email us at homepotapp@gmail.com with details about your issue</li>
-      </ul>
-      <p class="text-gray-500 text-sm" data-i18n="support.help_note">We typically respond within 24 hours. Please include your device model and OS version when reporting bugs.</p>
-    </div>
+<main class="page" id="content">
+  <div class="page-head">
+    <h1 data-t="support.title">Support</h1>
+    <p class="lead" data-t="support.subtitle">We&#39;re here to help</p>
   </div>
 
-  <!-- FOOTER -->
-  <footer class="bg-white border-t border-gray-100">
-    <div class="max-w-7xl mx-auto px-6 py-16">
-      <div class="grid md:grid-cols-2 lg:grid-cols-5 gap-12 mb-12">
-        <div class="lg:col-span-2">
-          <a href="/" class="flex items-center gap-2 mb-4">
-            <div class="w-10 h-10 bg-terracotta rounded-xl flex items-center justify-center"><span class="material-symbols-outlined text-white text-xl">home</span></div>
-            <span class="text-xl font-extrabold text-darkBlue">HomePot</span>
-          </a>
-          <p class="text-gray-500 text-sm mb-4 max-w-xs" data-i18n="footer.desc">Shared expenses made simple for couples, roommates, and families.</p>
-          <a href="mailto:homepotapp@gmail.com" class="text-sm text-terracotta hover:underline">homepotapp@gmail.com</a>
-        </div>
-        <div>
-          <h4 class="font-bold text-darkBlue mb-4" data-i18n="footer.product">Product</h4>
-          <ul class="space-y-2 text-sm text-gray-500">
-            <li><a href="/#features" class="hover:text-terracotta transition-colors" data-i18n="footer.features">Features</a></li>
-            <li><a href="/#pricing" class="hover:text-terracotta transition-colors" data-i18n="footer.pricing">Pricing</a></li>
-            <li><a href="/#cta" class="hover:text-terracotta transition-colors" data-i18n="footer.download">Download</a></li>
-          </ul>
-        </div>
-        <div>
-          <h4 class="font-bold text-darkBlue mb-4" data-i18n="footer.support_title">Support</h4>
-          <ul class="space-y-2 text-sm text-gray-500">
-            <li><a href="/support" class="hover:text-terracotta transition-colors" data-i18n="footer.help">Help Center</a></li>
-            <li><a href="mailto:homepotapp@gmail.com" class="hover:text-terracotta transition-colors" data-i18n="footer.contact">Contact Us</a></li>
-          </ul>
-        </div>
-        <div>
-          <h4 class="font-bold text-darkBlue mb-4" data-i18n="footer.legal_title">Legal</h4>
-          <ul class="space-y-2 text-sm text-gray-500">
-            <li><a href="/privacy" class="hover:text-terracotta transition-colors" data-i18n="footer.privacy">Privacy Policy</a></li>
-            <li><a href="/terms" class="hover:text-terracotta transition-colors" data-i18n="footer.terms">Terms of Service</a></li>
-            <li><a href="/delete-account/" class="hover:text-terracotta transition-colors" data-i18n="footer.delete_account">Delete account</a></li>
-          </ul>
-        </div>
+  <div class="page-body">
+    <section class="block" aria-labelledby="sp-contact">
+      <h2 id="sp-contact" data-t="support.contact_title">Contact Us</h2>
+      <p class="text" data-t="support.contact_desc">Have a question or need help? We typically respond within 24 hours.</p>
+      <div class="actions">
+        <a class="btn btn-solid" href="mailto:homepotapp@gmail.com">homepotapp@gmail.com</a>
       </div>
-      <div class="border-t border-gray-100 pt-8 flex flex-col md:flex-row items-center justify-between gap-4">
-        <p class="text-sm text-gray-400">&copy; 2026 HomePot. All rights reserved.</p>
+    </section>
+
+    <section class="block" aria-labelledby="sp-faq">
+      <h2 id="sp-faq" data-t="support.faq_title">Frequently Asked Questions</h2>
+      <h3 data-t="support.cat_about">About HomePot</h3>
+      <div class="qa">
+        <details><summary><span data-t="support.q_what">What is HomePot?</span><svg class="pm" viewBox="0 0 20 20" aria-hidden="true"><path d="M4 10h12"/><path class="pm-v" d="M10 4v12"/></svg></summary><p data-t="support.a_what">HomePot is an app for managing shared expenses among groups of people. Perfect for couples, roommates, families, or any group sharing expenses. It allows you to record expenses, calculate what each person owes, and keep clear track of shared accounts.</p></details>
+        <details><summary><span data-t="support.q_modes">What is the difference between Shared Fund and Expense Split?</span><svg class="pm" viewBox="0 0 20 20" aria-hidden="true"><path d="M4 10h12"/><path class="pm-v" d="M10 4v12"/></svg></summary><p data-t="support.a_modes">Shared Fund: ideal for homes and stable cohabitation. Everyone contributes to a common fund and expenses are deducted from it. Expense Split: ideal for trips, events, or temporary groups. Each person pays with their own money and at the end, it calculates who owes whom.</p></details>
+        <details><summary><span data-t="support.q_cost">How much does HomePot cost?</span><svg class="pm" viewBox="0 0 20 20" aria-hidden="true"><path d="M4 10h12"/><path class="pm-v" d="M10 4v12"/></svg></summary><p data-t="support.a_cost">HomePot has a free plan for 1 group with unlimited members: up to 20 expenses per person per month, 10 AI receipt scans per month, month close and settlements, recurring expenses and multi-currency support. No ads ever. HomePot Pro adds unlimited expenses, 50 scans per month, unlimited groups, advanced statistics and CSV/PDF export, and one subscription covers everyone in your groups.</p></details>
       </div>
-    </div>
-  </footer>
+      <h3 data-t="support.cat_groups">Groups &amp; Members</h3>
+      <div class="qa">
+        <details><summary><span data-t="support.q_invite">How do I invite someone to my group?</span><svg class="pm" viewBox="0 0 20 20" aria-hidden="true"><path d="M4 10h12"/><path class="pm-v" d="M10 4v12"/></svg></summary><p data-t="support.a_invite">In Settings you can view and copy your group&#39;s invite code. Share it with the people you want to invite. They can join using that code when signing up or from the &quot;Join a group&quot; option.</p></details>
+        <details><summary><span data-t="support.q_multiple_groups">Can I belong to multiple groups?</span><svg class="pm" viewBox="0 0 20 20" aria-hidden="true"><path d="M4 10h12"/><path class="pm-v" d="M10 4v12"/></svg></summary><p data-t="support.a_multiple_groups">With the free plan you can have 1 group. With HomePot Pro you can have unlimited groups and easily switch between them from the group selector on the main screen.</p></details>
+        <details><summary><span data-t="support.q_roles">What roles are available?</span><svg class="pm" viewBox="0 0 20 20" aria-hidden="true"><path d="M4 10h12"/><path class="pm-v" d="M10 4v12"/></svg></summary><p data-t="support.a_roles">Owner: full control, can transfer ownership and delete the group. Admin: full management (members, expenses, categories). Manager: manages expenses and categories. Member: can view and add expenses.</p></details>
+      </div>
+      <h3 data-t="support.cat_expenses">Expenses &amp; Finances</h3>
+      <div class="qa">
+        <details><summary><span data-t="support.q_record">How do I record an expense?</span><svg class="pm" viewBox="0 0 20 20" aria-hidden="true"><path d="M4 10h12"/><path class="pm-v" d="M10 4v12"/></svg></summary><p data-t="support.a_record">Tap the &quot;+&quot; button on the expenses screen. Enter the amount, a description, select the category and the date. In Expense Split mode, you can also indicate who paid and who participates.</p></details>
+        <details><summary><span data-t="support.q_recurring">What are recurring expenses?</span><svg class="pm" viewBox="0 0 20 20" aria-hidden="true"><path d="M4 10h12"/><path class="pm-v" d="M10 4v12"/></svg></summary><p data-t="support.a_recurring">These are expenses that repeat every month (rent, internet, electricity, etc.). You can set them up once and HomePot will automatically add them each month, saving you time.</p></details>
+        <details><summary><span data-t="support.q_close">What is the monthly close?</span><svg class="pm" viewBox="0 0 20 20" aria-hidden="true"><path d="M4 10h12"/><path class="pm-v" d="M10 4v12"/></svg></summary><p data-t="support.a_close">At the end of each month, you can perform a monthly close. HomePot calculates exactly how much each member needs to contribute or transfer, based on all expenses for the month.</p></details>
+        <details><summary><span data-t="support.q_payments">Does HomePot process real payments?</span><svg class="pm" viewBox="0 0 20 20" aria-hidden="true"><path d="M4 10h12"/><path class="pm-v" d="M10 4v12"/></svg></summary><p data-t="support.a_payments">No. HomePot is a tracking and calculation tool. Actual payments and transfers between members are made outside the app (Venmo, Bizum, bank transfer, cash, etc.).</p></details>
+      </div>
+      <h3 data-t="support.cat_scanner">AI Receipt Scanner</h3>
+      <div class="qa">
+        <details><summary><span data-t="support.q_scanner_what">What is the AI Receipt Scanner?</span><svg class="pm" viewBox="0 0 20 20" aria-hidden="true"><path d="M4 10h12"/><path class="pm-v" d="M10 4v12"/></svg></summary><p data-t="support.a_scanner_what">It&#39;s a feature that lets you take a photo of a receipt and automatically extracts the amount, merchant name, line items, and category. It uses AI (Anthropic Claude) to read the receipt and fill in the expense details for you.</p></details>
+        <details><summary><span data-t="support.q_scanner_limit">How many scans can I do?</span><svg class="pm" viewBox="0 0 20 20" aria-hidden="true"><path d="M4 10h12"/><path class="pm-v" d="M10 4v12"/></svg></summary><p data-t="support.a_scanner_limit">Free users get 10 scans per month. HomePot Pro users get 50 scans per month. Scans reset at the beginning of each month.</p></details>
+        <details><summary><span data-t="support.q_scanner_data">What data is extracted from the receipt?</span><svg class="pm" viewBox="0 0 20 20" aria-hidden="true"><path d="M4 10h12"/><path class="pm-v" d="M10 4v12"/></svg></summary><p data-t="support.a_scanner_data">The scanner extracts: total amount, merchant/store name, individual line items (name, quantity, unit price), and a suggested category. You can review and edit all extracted data before saving.</p></details>
+        <details><summary><span data-t="support.q_scanner_privacy">Is my receipt data private?</span><svg class="pm" viewBox="0 0 20 20" aria-hidden="true"><path d="M4 10h12"/><path class="pm-v" d="M10 4v12"/></svg></summary><p data-t="support.a_scanner_privacy">Yes. Receipt images are sent to Anthropic&#39;s AI for text extraction only. They are not stored by the AI provider and are not used for training. The receipt photo is stored in your group&#39;s secure storage.</p></details>
+      </div>
+      <h3 data-t="support.cat_privacy">Privacy &amp; Data</h3>
+      <div class="qa">
+        <details><summary><span data-t="support.q_data_stored">Where is my data stored?</span><svg class="pm" viewBox="0 0 20 20" aria-hidden="true"><path d="M4 10h12"/><path class="pm-v" d="M10 4v12"/></svg></summary><p data-t="support.a_data_stored">Your data is securely stored on Supabase (Amazon Web Services infrastructure). It is encrypted in transit and at rest, and is only accessible by members of your group.</p></details>
+        <details><summary><span data-t="support.q_delete_data">Can I delete my data?</span><svg class="pm" viewBox="0 0 20 20" aria-hidden="true"><path d="M4 10h12"/><path class="pm-v" d="M10 4v12"/></svg></summary><p data-t="support.a_delete_data">Yes. You can delete your entire account from Settings. This will permanently erase your profile, your membership in all groups, and groups where you are the only member.</p></details>
+      </div>
+      <h3 data-t="support.cat_account">Account Issues</h3>
+      <div class="qa">
+        <details><summary><span data-t="support.q_forgot_password">I forgot my password</span><svg class="pm" viewBox="0 0 20 20" aria-hidden="true"><path d="M4 10h12"/><path class="pm-v" d="M10 4v12"/></svg></summary><p data-t="support.a_forgot_password">On the sign-in screen or in Settings, you can request a password reset email. Check your inbox (and spam folder).</p></details>
+        <details><summary><span data-t="support.q_delete_app">What happens if I delete the app?</span><svg class="pm" viewBox="0 0 20 20" aria-hidden="true"><path d="M4 10h12"/><path class="pm-v" d="M10 4v12"/></svg></summary><p data-t="support.a_delete_app">Your data remains safe on our servers. If you reinstall and sign in with the same account, you will recover all your data. To permanently delete your data, use &quot;Delete my account&quot; in Settings before uninstalling.</p></details>
+        <details><summary><span data-t="support.q_cant_leave">I cannot leave my group</span><svg class="pm" viewBox="0 0 20 20" aria-hidden="true"><path d="M4 10h12"/><path class="pm-v" d="M10 4v12"/></svg></summary><p data-t="support.a_cant_leave">If you are the group owner, you must first transfer ownership to another member from Settings. If you are the only member, you can delete the group directly.</p></details>
+      </div>
+      <h3 data-t="support.cat_coming_soon">Coming Soon</h3>
+      <div class="qa">
+        <details><summary><span data-t="support.q_push">Push notifications</span><svg class="pm" viewBox="0 0 20 20" aria-hidden="true"><path d="M4 10h12"/><path class="pm-v" d="M10 4v12"/></svg></summary><p data-t="support.a_push">We&#39;re working on push notifications to remind you about pending debts and group activity. Stay tuned!</p></details>
+      </div>
+    </section>
 
-  <script>
-    let translations = {};
-    let currentLang = localStorage.getItem('homepot_lang') || (navigator.language?.startsWith('es') ? 'es' : navigator.language?.startsWith('fr') ? 'fr' : navigator.language?.startsWith('de') ? 'de' : navigator.language?.startsWith('pt') ? 'pt' : 'en');
+    <section class="block" aria-labelledby="sp-help">
+      <h2 id="sp-help" data-t="support.help_title">Still Need Help?</h2>
+      <p class="text" data-t="support.help_desc">If you couldn&#39;t find your answer above, try these steps:</p>
+      <ol class="steps">
+        <li><span data-t="support.help_step1">Make sure you have the latest version of HomePot installed</span></li>
+        <li><span data-t="support.help_step2">Restart the app</span></li>
+        <li><span data-t="support.help_step3">Check your internet connection</span></li>
+        <li><span data-t="support.help_step4">Email us at homepotapp@gmail.com with details about your issue</span></li>
+      </ol>
+      <p class="keep" data-t="support.help_note">We typically respond within 24 hours. Please include your device model and OS version when reporting bugs.</p>
+    </section>
+  </div>
+</main>
 
-    async function loadTranslations() {
-      const res = await fetch('/i18n/pages-translations.json');
-      translations = await res.json();
-      setLang(currentLang);
-    }
+<footer class="foot">
+  <span class="foot-brand"><img src="/assets/brand/logo-horizontal-green.svg" alt="HomePot" width="485" height="100"> <span data-t="common.tagline">Made in Spain for homes everywhere.</span></span>
+  <nav aria-label="Legal" data-t-aria-label="common.legal"><a href="/privacy/" data-t="common.privacy">Privacy</a><a href="/terms/" data-t="common.terms">Terms</a><a href="/support/" data-t="common.help">Help</a><a href="/delete-account/" data-lhref="/delete-account/" data-t="common.delete_account">Delete my account</a></nav>
+</footer>
 
-    function setLang(lang) {
-      currentLang = lang;
-      localStorage.setItem('homepot_lang', lang);
-      document.querySelectorAll('[data-i18n]').forEach(el => {
-        const key = el.dataset.i18n;
-        if (translations[lang]?.[key]) el.textContent = translations[lang][key];
-      });
-      document.querySelectorAll('[data-lang]').forEach(pill => {
-        pill.classList.toggle('text-darkBlue', pill.dataset.lang === lang);
-        pill.classList.toggle('font-semibold', pill.dataset.lang === lang);
-        pill.classList.toggle('text-darkBlue/40', pill.dataset.lang !== lang);
-      });
-      document.documentElement.lang = lang;
-    }
+<script>HP.mount();</script>
+<script src="/src/js/lang-menu.js" defer></script>
 
-    document.querySelectorAll('[data-lang]').forEach(pill => {
-      pill.addEventListener('click', e => { e.preventDefault(); setLang(pill.dataset.lang); });
-    });
-    loadTranslations();
-  </script>
-  <!-- analytics:start (filled by build.js from build.config.js, analytics.cloudflareToken; empty while it is off) --><!-- analytics:end -->
 </body>
 </html>

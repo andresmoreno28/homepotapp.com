@@ -1,0 +1,51 @@
+<%/* /support/ — one URL, language picked in the browser. Text: src/i18n/pages-translations.json (support.*). */%>
+<%
+  const s = it.s; const e = it.esc;
+  const t = (key) => `data-t="${key}">${e(s[key])}`;
+  const groups = [
+    ['cat_about', ['what', 'modes', 'cost']],
+    ['cat_groups', ['invite', 'multiple_groups', 'roles']],
+    ['cat_expenses', ['record', 'recurring', 'close', 'payments']],
+    ['cat_scanner', ['scanner_what', 'scanner_limit', 'scanner_data', 'scanner_privacy']],
+    ['cat_privacy', ['data_stored', 'delete_data']],
+    ['cat_account', ['forgot_password', 'delete_app', 'cant_leave']],
+    ['cat_coming_soon', ['push']],
+  ];
+%>
+  <div class="page-head">
+    <h1 <%~ t('support.title') %></h1>
+    <p class="lead" <%~ t('support.subtitle') %></p>
+  </div>
+
+  <div class="page-body">
+    <section class="block" aria-labelledby="sp-contact">
+      <h2 id="sp-contact" <%~ t('support.contact_title') %></h2>
+      <p class="text" <%~ t('support.contact_desc') %></p>
+      <div class="actions">
+        <a class="btn btn-solid" href="mailto:<%= it.contactEmail %>"><%= it.contactEmail %></a>
+      </div>
+    </section>
+
+    <section class="block" aria-labelledby="sp-faq">
+      <h2 id="sp-faq" <%~ t('support.faq_title') %></h2>
+<% for (const [cat, items] of groups) { %>
+      <h3 <%~ t('support.' + cat) %></h3>
+      <div class="qa">
+<% for (const id of items) { %>
+        <details><summary><span <%~ t('support.q_' + id) %></span><%~ it.icons.plus %></summary><p <%~ t('support.a_' + id) %></p></details>
+<% } %>
+      </div>
+<% } %>
+    </section>
+
+    <section class="block" aria-labelledby="sp-help">
+      <h2 id="sp-help" <%~ t('support.help_title') %></h2>
+      <p class="text" <%~ t('support.help_desc') %></p>
+      <ol class="steps">
+<% for (const n of [1, 2, 3, 4]) { %>
+        <li><span <%~ t('support.help_step' + n) %></span></li>
+<% } %>
+      </ol>
+      <p class="keep" <%~ t('support.help_note') %></p>
+    </section>
+  </div>

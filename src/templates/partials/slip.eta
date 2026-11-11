@@ -1,0 +1,15 @@
+<%/* The download, on a tear-off slip (the landing's closing gesture). it.slip = { title, text, slot } */%>
+<% const st = it.store; const i = it.icons; %>
+    <section class="block slip" aria-labelledby="get-homepot">
+      <div class="cutline" aria-hidden="true"><%~ i.scissors %></div>
+      <h2 id="get-homepot"><%= it.slip.title %></h2>
+      <p class="text"><%= it.slip.text %></p>
+      <div class="stores">
+        <a class="action" href="<%= it.appStore(it.slip.slot || 'cta') %>" rel="noopener"><%~ i.apple %><%= st.appstore %></a>
+<% if (it.playStoreLive) { %>
+        <a class="store-line" href="<%= it.playStoreUrl %>" rel="noopener"><%~ i.android %><%= st.play %></a>
+<% } else { %>
+        <p class="android"><%~ i.android %><span><%= st.android %></span></p>
+<% } %>
+      </div>
+    </section>

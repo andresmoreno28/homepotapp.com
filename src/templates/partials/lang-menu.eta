@@ -1,0 +1,8 @@
+<%/* Language menu of pages that exist once per language: links to the other versions. */%>
+<% const e = it.esc; %>
+    <summary aria-label="<%= e(it.langLabel) %>"><%= it.locale.toUpperCase() %> <svg viewBox="0 0 12 8" aria-hidden="true"><path d="M0 0h12L6 8z" fill="currentColor"/></svg></summary>
+    <ul class="lang-menu">
+<% for (const lang of it.langs) { %>
+      <li><a href="<%= lang.href %>" hreflang="<%= lang.code %>"<%= lang.code === it.locale ? ' aria-current="page"' : ` lang="${lang.code}"` %>><%= e(lang.name) %></a></li>
+<% } %>
+    </ul>
