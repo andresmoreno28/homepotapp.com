@@ -9,6 +9,14 @@
       "resources": "Ressourcen",
       "language": "Sprache"
     },
+    "brand": {
+      "tagline": "In Spanien gemacht, für Haushalte überall.",
+      "legal": "Rechtliches",
+      "privacy": "Datenschutz",
+      "terms": "Bedingungen",
+      "help": "Hilfe",
+      "delete_account": "Mein Konto löschen"
+    },
     "footer": {
       "desc": "Gemeinsame Ausgaben einfach gemacht — für Paare, WGs und Familien.",
       "product": "Produkt",
@@ -122,7 +130,7 @@
         "noads": "Null Werbung, für immer",
         "notracking": "Kein Tracking",
         "languages": "5 Sprachen",
-        "currencies": "52 Währungen",
+        "currencies": "54 Währungen",
         "aws": "AWS-Infrastruktur",
         "delete": "Jederzeit löschen",
         "ai": "KI-gestützter Scanner"
@@ -190,32 +198,31 @@
         "free_price": "0€",
         "free_period": "/Monat",
         "free_features": [
-          "1 Gruppe",
-          "20 Ausgaben/Monat",
-          "10 KI-Scans/Monat",
-          "Smarte Abrechnungen",
-          "Multi-Währung",
-          "Keine Werbung",
-          "Cloud-Sync"
+          "1 Gruppe, unbegrenzt viele Mitglieder",
+          "20 Ausgaben pro Person und Monat",
+          "10 KI-Belegscans pro Monat",
+          "Monatsabschluss und Abrechnungen",
+          "Wiederkehrende Ausgaben",
+          "54 Währungen",
+          "Keine Werbung"
         ],
-        "free_cta": "1 Monat Pro gratis holen",
+        "free_cta": "Kostenlos starten",
         "pro_name": "Pro",
         "pro_badge": "Am beliebtesten",
         "pro_desc": "Für alle, die das volle Erlebnis wollen.",
         "pro_price_monthly": "4,99€",
         "pro_price_annual": "2,92€",
         "pro_period_monthly": "/Monat",
-        "pro_period_annual": "/Mo., jährlich abgerechnet",
+        "pro_period_annual": "/Mo. · 34,99€ pro Jahr",
         "pro_features": [
           "Unbegrenzte Ausgaben",
-          "Unbegrenzte Gruppen",
-          "KI-Belegscanner",
-          "Währungsumrechnung",
-          "Smarte Analysen",
+          "50 KI-Belegscans pro Monat",
+          "So viele Gruppen, wie du willst",
+          "Erweiterte Statistiken",
           "CSV- & PDF-Export",
-          "Wiederkehrende Ausgaben"
+          "Ein Abo für den ganzen Haushalt"
         ],
-        "pro_cta": "Pro 1 Monat gratis testen"
+        "pro_cta": "App laden und Pro holen"
       },
       "faq": {
         "title": "Häufige Fragen",
@@ -234,18 +241,18 @@
           },
           {
             "q": "Wie viel kostet es?",
-            "a": "Kostenlos: 1 Gruppe, 20 Ausgaben/Monat, 10 KI-Scans/Monat, Multi-Währung, keine Werbung. Pro: alles unbegrenzt ab 2,92€/Monat (jährlich). 15-mal weniger als ein Kaffee pro Tag."
+            "a": "Kostenlos: 1 Gruppe mit unbegrenzt vielen Mitgliedern, 20 Ausgaben pro Person und Monat, 10 KI-Belegscans pro Monat, Monatsabschluss und Abrechnungen, wiederkehrende Ausgaben, keine Werbung. Pro: unbegrenzte Ausgaben, 50 Scans pro Monat, so viele Gruppen, wie du willst, erweiterte Statistiken und CSV-/PDF-Export, für 4,99€ pro Monat oder 34,99€ pro Jahr (etwa 2,92€ pro Monat). Ein Abo gilt für alle Personen in deinen Gruppen."
           },
           {
             "q": "Wie vergleicht sich HomePot mit Splitwise?",
-            "a": "HomePot ist als ehrliche, werbefreie Alternative gebaut: 52 Währungen für die Ausgabenerfassung, KI-Belegscanner, der jede Währung vom Beleg liest, und ein transparentes Abomodell. Sieh dir den <a href=\"/de/compare/homepot-vs-splitwise/\" class=\"text-terracotta underline hover:opacity-80\">vollständigen Seite-an-Seite-Vergleich mit Splitwise</a> mit allen Funktionen und unserem Quellenhinweis an."
+            "a": "HomePot ist als ehrliche, werbefreie Alternative gebaut: 54 Währungen für die Ausgabenerfassung, KI-Belegscanner, der jede Währung vom Beleg liest, und ein transparentes Abomodell. Sieh dir den <a href=\"/de/compare/homepot-vs-splitwise/\" class=\"text-terracotta underline hover:opacity-80\">vollständigen Seite-an-Seite-Vergleich mit Splitwise</a> mit allen Funktionen und unserem Quellenhinweis an."
           }
         ]
       }
     },
     "fromSplitwise": {
       "title": "Du verlässt Splitwise? Willkommen bei HomePot",
-      "description": "Willkommen, Splitwise-Flüchtling. Null Werbung, KI-Belegscanner im Gratis-Tarif, 52 Währungen und ein transparentes Abo-Modell. Vergleiche und probiere HomePot.",
+      "description": "Willkommen, Splitwise-Flüchtling. Null Werbung, KI-Belegscanner im Gratis-Tarif, 54 Währungen und ein transparentes Abo-Modell. Vergleiche und probiere HomePot.",
       "eyebrow": "Willkommen, Splitwise-Flüchtling",
       "eyebrow_icon": "waving_hand",
       "h1": "Genug von Werbung und Tageslimits? Komm rein.",
@@ -262,7 +269,7 @@
         {
           "icon": "document_scanner",
           "title": "KI-Belegscanner im Gratis-Tarif",
-          "desc": "Fotografiere einen Beleg und unsere KI extrahiert Gesamtbetrag, jeden Posten, Steuern, Trinkgeld, Händler und Währung — nicht nur den Gesamtbetrag. Gratis verfügbar mit monatlichem Scan-Limit; unbegrenzt in Pro."
+          "desc": "Fotografiere einen Beleg und unsere KI extrahiert Gesamtbetrag, jeden Posten, Steuern, Trinkgeld, Händler und Währung — nicht nur den Gesamtbetrag. Gratis mit 10 Scans pro Monat; 50 pro Monat in Pro."
         },
         {
           "icon": "autorenew",
@@ -271,8 +278,8 @@
         },
         {
           "icon": "currency_exchange",
-          "title": "52 Währungen + KI liest jeden Beleg",
-          "desc": "52 Währungen in der App auswählbar, und der KI-Scanner erkennt jede ISO 4217-Währung direkt aus dem Beleg-Bild. Automatische Umrechnung zum Tageskurs."
+          "title": "54 Währungen + KI liest jeden Beleg",
+          "desc": "54 Währungen in der App auswählbar, und der KI-Scanner erkennt jede ISO 4217-Währung direkt aus dem Beleg-Bild. Automatische Umrechnung zum Tageskurs."
         }
       ],
       "honest_note": {
@@ -288,7 +295,7 @@
         },
         {
           "q": "Ist HomePot wirklich kostenlos?",
-          "a": "Ja. Der Gratis-Tarif umfasst 1 Gruppe, 20 Ausgaben pro Monat, einen KI-Belegscanner mit monatlichem Scan-Limit, Multi-Währung und null Werbung — für immer. Pro (ab 2,92€/Monat im Jahres-Abo) entfernt die Limits und fügt unbegrenzte Gruppen, Exporte und erweiterte Analysen hinzu."
+          "a": "Ja. Der Gratis-Tarif umfasst 1 Gruppe mit unbegrenzt vielen Mitgliedern, 20 Ausgaben pro Person und Monat, 10 KI-Belegscans pro Monat, den Monatsabschluss, wiederkehrende Ausgaben und null Werbung — für immer. Pro (ab 2,92€/Monat im Jahres-Abo) bringt unbegrenzte Ausgaben, 50 Scans pro Monat, so viele Gruppen, wie du willst, Exporte und erweiterte Statistiken, und ein Abo gilt für alle Personen in deinen Gruppen."
         },
         {
           "q": "Wie unterscheidet sich das von der Splitwise-Vergleichsseite?",
@@ -340,7 +347,7 @@
           { "icon": "account_balance", "title": "Ausgleich sehen", "desc": "Wir berechnen die minimalen Überweisungen, um alle Salden auszugleichen." }
         ],
         "upsell_title": "Automatisch auf deinem Handy?",
-        "upsell_desc": "HomePot macht dieselben Berechnungen auf deinem Handy — plus KI-Belegscan, Multi-Währung, wiederkehrende Rechnungen und ein monatliches Abschluss-Ritual. Der Gratis-Tarif ist großzügig, Pro entfernt alle Limits.",
+        "upsell_desc": "HomePot macht dieselben Berechnungen auf deinem Handy — plus KI-Belegscan, Multi-Währung, wiederkehrende Rechnungen und ein monatliches Abschluss-Ritual. Der Gratis-Tarif ist großzügig, Pro hebt die Limits an.",
         "faq_title": "Häufig gestellte Fragen",
         "faq": [
           {
@@ -357,7 +364,7 @@
           },
           {
             "q": "Welche Währung wird verwendet?",
-            "a": "Standardmäßig EUR, formatiert mit dem Locale deines Browsers. Wenn deine Reise in einer anderen Währung ist, handhabt die HomePot-App 52 Währungen nativ plus jede ISO 4217-Währung, die der KI-Belegscanner erkennt."
+            "a": "Standardmäßig EUR, formatiert mit dem Locale deines Browsers. Wenn deine Reise in einer anderen Währung ist, handhabt die HomePot-App 54 Währungen nativ plus jede ISO 4217-Währung, die der KI-Belegscanner erkennt."
           }
         ]
       }
@@ -448,22 +455,23 @@
         "intro": "Tricount (by bunq) ist vermutlich die am besten bewertete kostenlose Ausgabenteilungs-App auf iOS, und sie verdient es: einfach, 100% kostenlos, großartig für einmalige Gruppenreisen. HomePot spielt ein anderes Spiel — laufende Haushaltsfinanzen mit KI-Belegscanner, wiederkehrende Ausgaben, fixe vs. variable Aufteilung und ein monatliches Abschluss-Ritual. Beide sind ehrliche, werbefreie Apps; diese Seite zeigt genau, wo jede gewinnt, damit du das richtige Werkzeug wählen kannst.",
         "table_title": "Vergleich Seite an Seite",
         "table_subtitle": "Jede Zelle gibt an, wie die Funktion in der jeweiligen App angeboten wird. Quellen sind wo möglich verlinkt.",
+        "table_disclaimer": "Alle Angaben spiegeln öffentlich verfügbare Informationen von der offiziellen Tricount-Website und ihrem App-Store-Eintrag zum Zeitpunkt der Erstellung wider. Bitte prüfe aktuelle Details auf tricount.com. HomePot ist weder mit Tricount noch mit bunq verbunden.",
         "features": [
           { "label": "Preismodell", "ours": "Kostenlos + optionales Pro ab 2,92€/Mo.", "theirs": "100% kostenlos (kein bezahlter Tarif)" },
           { "label": "Werbung", "ours": "Keine — niemals", "theirs": "Keine — niemals" },
-          { "label": "KI-Belegscanner mit OCR", "ours": "Kostenlos (monatliches Scan-Limit) · Unbegrenzt in Pro", "theirs": "Nicht verfügbar — nur Foto-Anhang" },
+          { "label": "KI-Belegscanner mit OCR", "ours": "Kostenlos: 10 Scans pro Monat · Pro: 50 pro Monat", "theirs": "Nicht verfügbar — nur Foto-Anhang" },
           { "label": "Einzelposten-Extraktion aus Belegen", "ours": "Kostenlos (über den KI-Scan)", "theirs": "Nicht verfügbar" },
           { "label": "Automatische Währungsumrechnung", "ours": "Kostenlos (über den KI-Scan) — jede ISO 4217", "theirs": "Ja — kostenlos (integriert)" },
-          { "label": "Auswählbare Währungen für die Ausgabenerfassung", "ours": "52", "theirs": "Viele (Anzahl nicht spezifiziert)" },
+          { "label": "Auswählbare Währungen für die Ausgabenerfassung", "ours": "54", "theirs": "Viele (Anzahl nicht spezifiziert)" },
           { "label": "Wiederkehrende Ausgaben", "ours": "Kostenlos", "theirs": "Keine gelistete Funktion" },
           { "label": "Fixe und variable Aufteilung in derselben Gruppe", "ours": "Kostenlos", "theirs": "Gleichmäßig, nach Teilen oder individuell aufteilen" },
           { "label": "Monatsabschluss mit minimalen Überweisungen", "ours": "Kostenlos", "theirs": "Kontinuierliche Abrechnung (kein Monatsabschluss-Ritual)" },
-          { "label": "Diagramme & Ausgabenanalyse", "ours": "Kostenlos (CSV/PDF-Export in Pro)", "theirs": "Ausgaben-Insights, monatliche Übersicht" },
+          { "label": "Diagramme & Ausgabenanalyse", "ours": "Monatsübersicht kostenlos · Erweiterte Statistiken und CSV/PDF-Export in Pro", "theirs": "Ausgaben-Insights, monatliche Übersicht" },
           { "label": "Offline-Modus (Ausgaben ohne Verbindung hinzufügen)", "ours": "Nicht implementiert — Netzwerk erforderlich", "theirs": "Ja — kostenlos (Tricount-Features-Seite)" },
           { "label": "Import aus Splitwise", "ours": "Auf der Roadmap", "theirs": "Ja — kostenlos (integriert)" },
           { "label": "Automatisches Hinzufügen von Ausgaben per Bankkarte", "ours": "Nicht verfügbar", "theirs": "Ja — nur mit bunq-Karte" },
           { "label": "Gruppen", "ours": "1 Haushaltsgruppe kostenlos · Unbegrenzt in Pro", "theirs": "Unbegrenzt" },
-          { "label": "Ausgaben pro Gruppe", "ours": "20/Monat gratis · Unbegrenzt in Pro", "theirs": "Unbegrenzt" },
+          { "label": "Ausgaben", "ours": "20 pro Person und Monat gratis · Unbegrenzt in Pro", "theirs": "Unbegrenzt" },
           { "label": "DSGVO-konform", "ours": true, "theirs": true }
         ],
         "differentiators": [
@@ -479,8 +487,8 @@
           },
           {
             "icon": "currency_exchange",
-            "title": "52 Währungen + KI liest jeden Beleg",
-            "desc": "Beide Apps handhaben Multi-Währung. HomePot liefert 52 Währungen im Ausgaben-Picker und kann dank des KI-Scanners jede ISO 4217-Währung direkt aus dem Beleg-Bild lesen und zum Live-Kurs umrechnen, selbst wenn sie nicht unter den 52 ist."
+            "title": "54 Währungen + KI liest jeden Beleg",
+            "desc": "Beide Apps handhaben Multi-Währung. HomePot liefert 54 Währungen im Ausgaben-Picker und kann dank des KI-Scanners jede ISO 4217-Währung direkt aus dem Beleg-Bild lesen und zum Live-Kurs umrechnen, selbst wenn sie nicht unter den 54 ist."
           },
           {
             "icon": "lock",
@@ -501,7 +509,7 @@
         "faq": [
           {
             "q": "Ist Tricount wirklich 100% kostenlos?",
-            "a": "Laut Tricounts eigener Website und Funktionsseite ja — Tricount wird als „100% kostenlos\" beschrieben, ohne beworbenen bezahlten Abo-Tarif. Funktionen wie Multi-Währung, Offline-Modus, Splitwise-Import und Ausgaben-Insights sind auf tricount.com alle als kostenlos gelistet. HomePot hat ebenfalls einen Gratis-Tarif, plus ein optionales Pro-Abo, das Limits für Gruppen, Ausgaben und KI-Scans entfernt."
+            "a": "Laut Tricounts eigener Website und Funktionsseite ja — Tricount wird als „100% kostenlos\" beschrieben, ohne beworbenen bezahlten Abo-Tarif. Funktionen wie Multi-Währung, Offline-Modus, Splitwise-Import und Ausgaben-Insights sind auf tricount.com alle als kostenlos gelistet. HomePot hat ebenfalls einen Gratis-Tarif, plus ein optionales Pro-Abo, das die Limits für Gruppen, Ausgaben und KI-Scans anhebt."
           },
           {
             "q": "Hat Tricount einen KI-Belegscanner?",
@@ -523,25 +531,25 @@
       },
       "splitwise": {
         "title": "HomePot vs Splitwise — ehrlicher Vergleich (2026)",
-        "description": "Suchst du eine Splitwise-Alternative? HomePot unterstützt 52 Währungen, KI-Belegscan, der jede Währung liest, und null Werbung. Vergleich mit Quellen.",
+        "description": "Suchst du eine Splitwise-Alternative? HomePot unterstützt 54 Währungen, KI-Belegscan, der jede Währung liest, und null Werbung. Vergleich mit Quellen.",
         "h1": "HomePot vs Splitwise — der ehrliche Vergleich",
         "intro": "Splitwise ist seit über einem Jahrzehnt die Standardlösung für das Teilen gemeinsamer Ausgaben. Sowohl HomePot als auch Splitwise haben einen kostenlosen und einen kostenpflichtigen Pro-Tarif, daher muss ein fairer Vergleich zeigen, was jeder Plan tatsächlich bietet. Hier ist die ehrliche Aufschlüsselung — und die Kurzfassung ist: Das meiste, was Splitwise für Pro reserviert, hat HomePot kostenlos. Jede Zeile verlinkt eine öffentliche Quelle, damit du es selbst prüfen kannst.",
         "table_title": "Vergleich Seite an Seite",
         "table_subtitle": "Jede Zelle gibt den Tarif an, in dem die Funktion verfügbar ist. Ein Haken bedeutet uneingeschränkt für alle Nutzer; Text bedeutet, dass ein Tarif oder Limit gilt.",
         "features": [
           { "label": "Werbung im Gratis-Tarif", "ours": "Keine — niemals", "theirs": "Gratis-Nutzern angezeigt" },
-          { "label": "KI-Belegscanner", "ours": "Gratis (monatliches Scan-Limit) · Unbegrenzt in Pro", "theirs": "Nur Pro" },
+          { "label": "KI-Belegscanner", "ours": "Gratis: 10 Scans pro Monat · Pro: 50 pro Monat", "theirs": "Nur Pro" },
           { "label": "Einzelposten aus dem Beleg", "ours": "Gratis (über den KI-Scan)", "theirs": "Nur Pro" },
           { "label": "Automatische Währungsumrechnung", "ours": "Gratis (über den KI-Scan)", "theirs": "Nur Pro" },
-          { "label": "Diagramme & Ausgabenanalyse", "ours": "Gratis", "theirs": "Nur Pro" },
+          { "label": "Diagramme & Ausgabenanalyse", "ours": "Monatsübersicht gratis · Erweiterte Statistiken in Pro", "theirs": "Nur Pro" },
           { "label": "Wiederkehrende Ausgaben", "ours": "Gratis", "theirs": "Teilweise / Pro" },
           { "label": "Fixe und variable Aufteilung in derselben Gruppe", "ours": "Gratis", "theirs": "Nicht verfügbar" },
           { "label": "Monatsabschluss mit minimalen Überweisungen", "ours": "Gratis", "theirs": "Nicht verfügbar" },
-          { "label": "Auswählbare Währungen für die Ausgabenerfassung", "ours": "52", "theirs": "Viele (nicht spezifiziert)" },
+          { "label": "Auswählbare Währungen für die Ausgabenerfassung", "ours": "54", "theirs": "Viele (nicht spezifiziert)" },
           { "label": "KI liest jede Währung aus dem Beleg-Bild", "ours": "Gratis (innerhalb des Scan-Limits)", "theirs": false },
           { "label": "CSV- / PDF-Export der Statistiken", "ours": "Nur Pro", "theirs": "Nur Pro" },
           { "label": "DSGVO / CCPA konform", "ours": true, "theirs": true },
-          { "label": "Ausgaben pro Monat", "ours": "20 gratis (kein Tageslimit — verteile sie wie du willst) · Unbegrenzt in Pro", "theirs": "Tageslimit gilt — siehe Splitwise-Pro-Seite" },
+          { "label": "Ausgaben pro Monat", "ours": "20 pro Person gratis (kein Tageslimit — verteile sie wie du willst) · Unbegrenzt in Pro", "theirs": "Tageslimit gilt — siehe Splitwise-Pro-Seite" },
           { "label": "Gruppen", "ours": "1 Haushaltsgruppe gratis · Unbegrenzt in Pro", "theirs": "Unbegrenzt" }
         ],
         "differentiators": [
@@ -552,8 +560,8 @@
           },
           {
             "icon": "currency_exchange",
-            "title": "52 Währungen + KI liest jeden Beleg",
-            "desc": "52 Währungen für die Ausgabenerfassung, abgedeckt sind Europa, Amerika, Asien, Naher Osten, Ozeanien und Afrika. Der KI-Scanner geht weiter und erkennt jede ISO-4217-Währung direkt aus dem Beleg-Bild und rechnet automatisch zum Live-Kurs in die Basiswährung deiner Gruppe um."
+            "title": "54 Währungen + KI liest jeden Beleg",
+            "desc": "54 Währungen für die Ausgabenerfassung, abgedeckt sind Europa, Amerika, Asien, Naher Osten, Ozeanien und Afrika. Der KI-Scanner geht weiter und erkennt jede ISO-4217-Währung direkt aus dem Beleg-Bild und rechnet automatisch zum Live-Kurs in die Basiswährung deiner Gruppe um."
           },
           {
             "icon": "block",
@@ -607,11 +615,11 @@
           },
           {
             "q": "Ist HomePot wirklich kostenlos?",
-            "a": "Ja. Der kostenlose Plan umfasst 1 Gruppe, 20 Ausgaben pro Monat, 10 KI-Belegscans, Multi-Währung und null Werbung — für immer. Pro startet bei 2,92€/Monat im Jahres-Abo und entfernt die Limits, dazu unbegrenzte Gruppen, Exporte und erweiterte Analysen."
+            "a": "Ja. Der kostenlose Plan umfasst 1 Gruppe mit unbegrenzt vielen Mitgliedern, 20 Ausgaben pro Person und Monat, 10 KI-Belegscans pro Monat, Multi-Währung und null Werbung — für immer. Pro startet bei 2,92€/Monat im Jahres-Abo: unbegrenzte Ausgaben, 50 Scans pro Monat, so viele Gruppen, wie du willst, Exporte und erweiterte Statistiken, und ein Abo gilt für alle Personen in deinen Gruppen."
           },
           {
             "q": "Was bekomme ich genau im HomePot-Gratis-Tarif, ohne zu bezahlen?",
-            "a": "Ein kostenloses HomePot-Konto gibt dir: 1 Gruppe mit unbegrenzten Mitgliedern, 20 Ausgaben pro Monat, eine begrenzte Anzahl KI-Belegscans pro Monat, Upload von Beleg-Fotos, den vollständigen 52-Währungen-Picker, Diagramme und Ausgabenanalyse, wiederkehrende Ausgaben, fixe und variable Aufteilung in derselben Gruppe, den Monatsabschluss mit minimalen Überweisungen, Dark Mode und null Werbung. Pro entfernt hauptsächlich die Gruppen-/Ausgaben-/Scan-Limits und fügt den CSV-/PDF-Export deiner Statistiken hinzu."
+            "a": "Ein kostenloses HomePot-Konto gibt dir: 1 Gruppe mit unbegrenzten Mitgliedern, 20 Ausgaben pro Person und Monat, 10 KI-Belegscans pro Monat, Upload von Beleg-Fotos, den vollständigen 54-Währungen-Picker, die Monatsübersicht, wiederkehrende Ausgaben, fixe und variable Aufteilung in derselben Gruppe, den Monatsabschluss mit minimalen Überweisungen, Dark Mode und null Werbung. Pro hebt das Ausgabenlimit auf, gibt dir 50 Scans pro Monat und so viele Gruppen, wie du willst, und bringt erweiterte Statistiken und den CSV-/PDF-Export."
           },
           {
             "q": "Wie verdient HomePot Geld, wenn es keine Werbung gibt?",
@@ -619,7 +627,7 @@
           },
           {
             "q": "Wie viele Währungen unterstützt HomePot wirklich?",
-            "a": "52 Währungen sind im Picker für die Ausgabenerfassung auswählbar und decken Europa, Amerika, Asien, den Nahen Osten, Ozeanien und Afrika ab. Darüber hinaus erkennt der KI-Belegscanner jede ISO-4217-Währung direkt aus dem Beleg-Bild — selbst wenn die Basiswährung deiner Gruppe nicht zu den 52 gehört, kannst du einen Beleg überall auf der Welt scannen und siehst ihn automatisch umgerechnet."
+            "a": "54 Währungen sind im Picker für die Ausgabenerfassung auswählbar und decken Europa, Amerika, Asien, den Nahen Osten, Ozeanien und Afrika ab. Darüber hinaus erkennt der KI-Belegscanner jede ISO-4217-Währung direkt aus dem Beleg-Bild — selbst wenn die Basiswährung deiner Gruppe nicht zu den 54 gehört, kannst du einen Beleg überall auf der Welt scannen und siehst ihn automatisch umgerechnet."
           },
           {
             "q": "Ist HomePot DSGVO-konform?",
@@ -692,20 +700,23 @@
       "home": "Zur Startseite"
     },
     "join": {
-      "title": "Einer Gruppe beitreten | HomePot",
-      "eyebrow": "Gruppeneinladung",
-      "h1": "Du wurdest in eine Gruppe eingeladen",
-      "intro": "Jemand hat dich eingeladen, Ausgaben mit HomePot zu teilen. Mit diesem Einladungscode trittst du der Gruppe bei.",
-      "code_label": "Einladungscode",
+      "title": "Einladung zu einer gemeinsamen Kasse · HomePot",
+      "nocode_title": "HomePot",
+      "h1": "Du wurdest zu einer gemeinsamen Kasse in HomePot eingeladen.",
+      "intro": "HomePot ist die App für die gemeinsame Haushaltskasse: wie viel drin ist und wie lange es reicht. Öffne deine Einladung, um mitzumachen.",
+      "nocode_h1": "Öffne HomePot.",
+      "nocode_intro": "Dieser Link enthält keine Einladung. Öffne die App oder lade sie herunter, falls du sie noch nicht hast.",
+      "code_label": "Code",
       "open_app": "In der App öffnen",
-      "copy_code": "Code kopieren",
-      "copied": "Kopiert",
-      "copy_failed": "Der Code konnte nicht kopiert werden. Markiere ihn und kopiere ihn manuell.",
+      "open_app_plain": "App öffnen",
+      "open_hint": "Wenn HomePot schon auf diesem Handy ist.",
       "install_title": "Du hast HomePot noch nicht?",
-      "step1": "Installiere HomePot aus dem App Store.",
-      "step2": "Öffne danach diesen Einladungslink erneut oder gib den Code unter „Einer Gruppe beitreten“ ein.",
-      "app_store_alt": "Laden im App Store",
-      "coming_soon": "Demnächst"
+      "app_store": "Laden im App Store",
+      "play_store": "Jetzt bei Google Play",
+      "play_soon": "Google Play, schon bald",
+      "copy_hint": "Wenn du auf den Button tippst, kopieren wir deine Einladung, damit du sie nach der Installation in der App einfügen kannst.",
+      "copied": "Wir haben deine Einladung kopiert. Öffne HomePot nach der Installation, tippe auf „Ich habe eine Einladung“ und füge sie ein.",
+      "copy_failed": "Wir konnten deine Einladung nicht kopieren. Öffne diesen Link nach der Installation von HomePot noch einmal, dann landest du direkt in der gemeinsamen Kasse."
     },
     "resetPassword": {
       "title": "Passwort zurücksetzen | HomePot",

@@ -1,141 +1,87 @@
 <%
   const p = it.page.deleteAccount;
-  const emailLink = `<a href="mailto:${it.contactEmail}" class="text-terracotta font-semibold hover:underline">${it.contactEmail}</a>`;
+  const emailLink = `<a href="mailto:${it.contactEmail}">${it.contactEmail}</a>`;
   const mailto = `mailto:${it.contactEmail}?subject=${encodeURIComponent(p.email_subject)}`;
   const fill = (str) => str.replace('{email}', emailLink).replace('{subject}', p.email_subject);
-  const privacyLink = `<a href="/privacy" class="text-terracotta font-semibold hover:underline">${p.privacy_link}</a>`;
+  const privacyLink = `<a href="/privacy/">${p.privacy_link}</a>`;
 %>
-
-<!-- ========== HERO ========== -->
-<section class="bg-cream grain-bg pt-32 pb-16 lg:pt-40 lg:pb-20 relative overflow-hidden">
-  <div class="absolute w-[500px] h-[500px] bg-yellowSoft rounded-full blur-[120px] opacity-15 -top-20 -right-20"></div>
-  <div class="absolute w-[400px] h-[400px] bg-sage rounded-full blur-[100px] opacity-10 bottom-0 -left-10"></div>
-
-  <div class="max-w-3xl mx-auto px-6 relative z-10">
-    <div class="inline-flex items-center gap-2 bg-terracotta/10 text-terracotta rounded-full px-4 py-2 text-sm font-medium mb-6">
-      <span class="material-symbols-outlined text-lg" aria-hidden="true">person_remove</span>
-      <span><%= p.eyebrow %></span>
-    </div>
-    <h1 class="text-4xl lg:text-[56px] font-extrabold text-darkBlue leading-tight mb-6"><%= p.h1 %></h1>
-    <p class="text-lg lg:text-xl text-gray-500 mb-8"><%= p.intro %></p>
-    <div class="text-sm text-gray-500 flex flex-wrap items-center gap-x-6 gap-y-2">
-      <span class="flex items-center gap-1.5"><span class="material-symbols-outlined text-base" aria-hidden="true">smartphone</span><span><strong class="text-darkBlue"><%= p.app_label %>:</strong> HomePot</span></span>
-      <span class="flex items-center gap-1.5"><span class="material-symbols-outlined text-base" aria-hidden="true">business</span><span><strong class="text-darkBlue"><%= p.developer_label %>:</strong> <%= it.developerName %></span></span>
-      <span class="flex items-center gap-1.5"><span class="material-symbols-outlined text-base" aria-hidden="true">update</span><span><%= p.updated %></span></span>
-    </div>
+  <div class="page-head">
+    <h1><%= p.h1 %></h1>
+    <p class="lead"><%= p.intro %></p>
+    <dl class="meta">
+      <dt><%= p.app_label %></dt><dd>HomePot</dd>
+      <dt><%= p.developer_label %></dt><dd><%= it.developerName %></dd>
+    </dl>
+    <p class="fine"><%= p.updated %></p>
   </div>
-</section>
 
-<!-- ========== BODY ========== -->
-<article class="bg-white py-16 lg:py-20">
-  <div class="max-w-3xl mx-auto px-6">
-
+  <article class="page-body">
     <!-- In-app deletion -->
-    <section class="mb-14" aria-labelledby="da-steps">
-      <h2 id="da-steps" class="text-2xl lg:text-3xl font-extrabold text-darkBlue mb-5 flex items-start gap-3">
-        <span class="material-symbols-outlined text-terracotta text-3xl mt-1 flex-shrink-0" aria-hidden="true">smartphone</span>
-        <span><%= p.steps_title %></span>
-      </h2>
-      <p class="text-gray-600 leading-relaxed mb-6"><%= p.steps_intro %></p>
-      <ol class="space-y-4 mb-6">
-        <% p.steps.forEach((step, i) => { %>
-        <li class="flex items-start gap-4">
-          <span class="flex-shrink-0 w-8 h-8 rounded-full bg-terracotta text-white text-sm font-bold flex items-center justify-center" aria-hidden="true"><%= i + 1 %></span>
-          <span class="text-gray-600 leading-relaxed pt-1"><%~ step %></span>
-        </li>
-        <% }) %>
+    <section class="block" aria-labelledby="da-steps">
+      <h2 id="da-steps"><%= p.steps_title %></h2>
+      <p class="text"><%= p.steps_intro %></p>
+      <ol class="steps">
+<% p.steps.forEach((step) => { %>
+        <li><span><%~ step %></span></li>
+<% }) %>
       </ol>
-      <div class="bg-yellowSoft/20 border-l-4 border-yellowSoft rounded-r-xl p-5">
-        <div class="flex items-start gap-3">
-          <span class="material-symbols-outlined text-darkBlue text-xl flex-shrink-0" aria-hidden="true">warning</span>
-          <p class="text-sm text-darkBlue/80 leading-relaxed"><%= p.steps_note %></p>
-        </div>
-      </div>
+      <p class="keep"><%= p.steps_note %></p>
     </section>
 
     <!-- What gets deleted -->
-    <section class="mb-14" aria-labelledby="da-deleted">
-      <h2 id="da-deleted" class="text-2xl lg:text-3xl font-extrabold text-darkBlue mb-5 flex items-start gap-3">
-        <span class="material-symbols-outlined text-terracotta text-3xl mt-1 flex-shrink-0" aria-hidden="true">delete</span>
-        <span><%= p.deleted_title %></span>
-      </h2>
-      <ul class="space-y-3">
-        <% p.deleted_list.forEach(li => { %>
-        <li class="flex items-start gap-3 text-gray-600">
-          <span class="material-symbols-outlined text-terracotta text-xl mt-0.5 flex-shrink-0" aria-hidden="true">remove_circle</span>
-          <span class="leading-relaxed"><%~ li %></span>
-        </li>
-        <% }) %>
+    <section class="block" aria-labelledby="da-deleted">
+      <h2 id="da-deleted"><%= p.deleted_title %></h2>
+      <ul class="list">
+<% p.deleted_list.forEach((li) => { %>
+        <li><%~ li %></li>
+<% }) %>
       </ul>
     </section>
 
     <!-- Shared groups -->
-    <section class="mb-14" aria-labelledby="da-shared">
-      <h2 id="da-shared" class="text-2xl lg:text-3xl font-extrabold text-darkBlue mb-5 flex items-start gap-3">
-        <span class="material-symbols-outlined text-terracotta text-3xl mt-1 flex-shrink-0" aria-hidden="true">group</span>
-        <span><%= p.shared_title %></span>
-      </h2>
-      <% p.shared_paragraphs.forEach(para => { %>
-      <p class="text-gray-600 leading-relaxed mb-4"><%~ para %></p>
-      <% }) %>
+    <section class="block" aria-labelledby="da-shared">
+      <h2 id="da-shared"><%= p.shared_title %></h2>
+<% p.shared_paragraphs.forEach((para) => { %>
+      <p class="text"><%~ para %></p>
+<% }) %>
     </section>
 
-    <!-- Subscriptions -->
-    <section class="mb-14 bg-terracotta/5 border border-terracotta/20 rounded-2xl p-6 lg:p-8" aria-labelledby="da-subscription">
-      <h2 id="da-subscription" class="text-xl lg:text-2xl font-extrabold text-darkBlue mb-4 flex items-start gap-3">
-        <span class="material-symbols-outlined text-terracotta text-2xl mt-0.5 flex-shrink-0" aria-hidden="true">credit_card_off</span>
-        <span><%= p.subscription_title %></span>
-      </h2>
-      <p class="text-gray-600 leading-relaxed mb-4"><%= p.subscription_intro %></p>
-      <ul class="space-y-3">
-        <% p.subscription_list.forEach(li => { %>
-        <li class="flex items-start gap-3 text-gray-600">
-          <span class="material-symbols-outlined text-terracotta text-xl mt-0.5 flex-shrink-0" aria-hidden="true">chevron_right</span>
-          <span class="leading-relaxed"><%~ li %></span>
-        </li>
-        <% }) %>
+    <!-- Subscriptions: the one thing people get wrong, so it is set apart as a framed statement -->
+    <section class="statement" aria-labelledby="da-subscription">
+      <h2 id="da-subscription"><%= p.subscription_title %></h2>
+      <p class="text"><%= p.subscription_intro %></p>
+      <ul class="list">
+<% p.subscription_list.forEach((li) => { %>
+        <li><%~ li %></li>
+<% }) %>
       </ul>
     </section>
 
     <!-- By email -->
-    <section class="mb-14" aria-labelledby="da-email">
-      <h2 id="da-email" class="text-2xl lg:text-3xl font-extrabold text-darkBlue mb-5 flex items-start gap-3">
-        <span class="material-symbols-outlined text-terracotta text-3xl mt-1 flex-shrink-0" aria-hidden="true">mail</span>
-        <span><%= p.email_title %></span>
-      </h2>
-      <% p.email_paragraphs.forEach(para => { %>
-      <p class="text-gray-600 leading-relaxed mb-4"><%~ fill(para) %></p>
-      <% }) %>
-      <div class="bg-cream/60 border border-gray-100 rounded-2xl p-5 mt-6 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
-        <dl class="text-sm text-gray-600 grid grid-cols-[auto_1fr] gap-x-3 gap-y-1">
-          <dt class="font-semibold text-darkBlue"><%= p.email_to_label %>:</dt>
-          <dd class="break-all"><%= it.contactEmail %></dd>
-          <dt class="font-semibold text-darkBlue"><%= p.email_subject_label %>:</dt>
-          <dd><%= p.email_subject %></dd>
-        </dl>
-        <a href="<%= mailto %>" class="inline-flex items-center justify-center gap-2 bg-terracotta text-white rounded-full py-3 px-6 text-sm font-semibold hover:bg-terracotta/90 transition-colors whitespace-nowrap">
-          <span class="material-symbols-outlined text-lg" aria-hidden="true">send</span>
-          <span><%= p.email_button %></span>
-        </a>
+    <section class="block" aria-labelledby="da-email">
+      <h2 id="da-email"><%= p.email_title %></h2>
+<% p.email_paragraphs.forEach((para) => { %>
+      <p class="text"><%~ fill(para) %></p>
+<% }) %>
+      <table class="ledger">
+        <tbody>
+          <tr><th scope="row"><%= p.email_to_label %></th><td><%= it.contactEmail %></td></tr>
+          <tr><th scope="row"><%= p.email_subject_label %></th><td><%= p.email_subject %></td></tr>
+        </tbody>
+      </table>
+      <div class="actions">
+        <a class="btn btn-solid" href="<%= mailto %>"><%= p.email_button %></a>
       </div>
     </section>
 
     <!-- Good to know -->
-    <section aria-labelledby="da-notes">
-      <h2 id="da-notes" class="text-2xl lg:text-3xl font-extrabold text-darkBlue mb-5 flex items-start gap-3">
-        <span class="material-symbols-outlined text-terracotta text-3xl mt-1 flex-shrink-0" aria-hidden="true">info</span>
-        <span><%= p.notes_title %></span>
-      </h2>
-      <ul class="space-y-3 mb-8">
-        <% p.notes_list.forEach(li => { %>
-        <li class="flex items-start gap-3 text-gray-600">
-          <span class="material-symbols-outlined text-sage text-xl mt-0.5 flex-shrink-0" aria-hidden="true">check_circle</span>
-          <span class="leading-relaxed"><%~ li %></span>
-        </li>
-        <% }) %>
+    <section class="block" aria-labelledby="da-notes">
+      <h2 id="da-notes"><%= p.notes_title %></h2>
+      <ul class="list">
+<% p.notes_list.forEach((li) => { %>
+        <li><%~ li %></li>
+<% }) %>
       </ul>
-      <p class="text-gray-600 leading-relaxed"><%~ p.privacy_note.replace('{link}', privacyLink) %></p>
+      <p class="text"><%~ p.privacy_note.replace('{link}', privacyLink) %></p>
     </section>
-
-  </div>
-</article>
+  </article>

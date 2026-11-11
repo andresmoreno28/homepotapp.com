@@ -18,7 +18,7 @@
         <ul class="space-y-2 text-sm text-gray-500">
           <li><a href="<%= it.homeHref %>#features" class="hover:text-terracotta transition-colors"><%= it.ui.footer.features %></a></li>
           <li><a href="<%= it.homeHref %>#pricing" class="hover:text-terracotta transition-colors"><%= it.ui.footer.pricing %></a></li>
-          <li><a href="<%= it.appStoreUrl %>" target="_blank" rel="noopener" class="hover:text-terracotta transition-colors"><%= it.ui.footer.download %></a></li>
+          <li><a href="<%= it.appStore('footer') %>" target="_blank" rel="noopener" class="hover:text-terracotta transition-colors"><%= it.ui.footer.download %></a></li>
         </ul>
       </div>
 

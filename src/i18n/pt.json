@@ -9,6 +9,14 @@
       "resources": "Recursos",
       "language": "Idioma"
     },
+    "brand": {
+      "tagline": "Feito na Espanha para casas de todo lugar.",
+      "legal": "Legal",
+      "privacy": "Privacidade",
+      "terms": "Termos",
+      "help": "Ajuda",
+      "delete_account": "Excluir minha conta"
+    },
     "footer": {
       "desc": "Despesas compartilhadas simplificadas para casais, colegas de apartamento e famílias.",
       "product": "Produto",
@@ -122,7 +130,7 @@
         "noads": "Zero anúncios, para sempre",
         "notracking": "Sem rastreamento",
         "languages": "5 idiomas",
-        "currencies": "52 moedas",
+        "currencies": "54 moedas",
         "aws": "Infraestrutura AWS",
         "delete": "Apagar quando quiser",
         "ai": "Scanner com IA"
@@ -184,38 +192,37 @@
         "subtitle": "Comece de graça, faça upgrade quando precisar.",
         "monthly": "Mensal",
         "annual": "Anual",
-        "save": "Economize 42%",
+        "save": "Economize 46%",
         "free_name": "Grátis",
         "free_desc": "Perfeito para começar.",
-        "free_price": "R$0",
+        "free_price": "R$\u00a00",
         "free_period": "/mês",
         "free_features": [
-          "1 grupo",
-          "20 despesas/mês",
-          "10 scans IA/mês",
-          "Liquidações inteligentes",
-          "Multi-moeda",
-          "Sem anúncios",
-          "Sincronização na nuvem"
+          "1 grupo, membros ilimitados",
+          "20 despesas por pessoa por mês",
+          "10 scans de recibos com IA por mês",
+          "Fechamento do mês e liquidações",
+          "Despesas recorrentes",
+          "54 moedas",
+          "Sem anúncios"
         ],
-        "free_cta": "1 mês Pro grátis",
+        "free_cta": "Começar grátis",
         "pro_name": "Pro",
         "pro_badge": "Mais popular",
         "pro_desc": "Para quem quer a experiência completa.",
-        "pro_price_monthly": "R$24,90",
-        "pro_price_annual": "R$14,90",
+        "pro_price_monthly": "R$\u00a016,90",
+        "pro_price_annual": "R$\u00a09,16",
         "pro_period_monthly": "/mês",
-        "pro_period_annual": "/mês, cobrado anualmente",
+        "pro_period_annual": "/mês · R$\u00a0109,90 por ano",
         "pro_features": [
           "Despesas ilimitadas",
-          "Grupos ilimitados",
-          "Scanner de recibos com IA",
-          "Conversão de moedas",
-          "Análises avançadas",
-          "Exportar CSV e PDF",
-          "Despesas recorrentes"
+          "50 scans de recibos com IA por mês",
+          "Quantos grupos você quiser",
+          "Estatísticas avançadas",
+          "Exportar para CSV e PDF",
+          "Uma única assinatura para a casa toda"
         ],
-        "pro_cta": "Experimente Pro grátis por 1 mês"
+        "pro_cta": "Baixar e assinar o Pro"
       },
       "faq": {
         "title": "Perguntas frequentes",
@@ -234,18 +241,18 @@
           },
           {
             "q": "Quanto custa?",
-            "a": "Grátis: 1 grupo, 20 despesas/mês, 10 scans IA/mês, multi-moeda, sem anúncios. Pro: tudo ilimitado a partir de R$14,90/mês (anual). 15 vezes menos que um café por dia."
+            "a": "Grátis: 1 grupo com membros ilimitados, 20 despesas por pessoa por mês, 10 scans de recibos com IA por mês, fechamento do mês e liquidações, despesas recorrentes, sem anúncios. Pro: despesas ilimitadas, 50 scans por mês, quantos grupos você quiser, estatísticas avançadas e exportação CSV/PDF, por R$\u00a016,90 por mês ou R$\u00a0109,90 por ano (cerca de R$\u00a09,16 por mês). Uma única assinatura cobre todas as pessoas dos seus grupos."
           },
           {
             "q": "Como o HomePot se compara ao Splitwise?",
-            "a": "O HomePot é construído como uma alternativa honesta e sem anúncios: 52 moedas para registrar despesas, scanner com IA que lê qualquer moeda do recibo e um modelo de assinatura transparente. Veja a <a href=\"/pt/compare/homepot-vs-splitwise/\" class=\"text-terracotta underline hover:opacity-80\">comparação completa lado a lado com o Splitwise</a> com todos os recursos e o aviso sobre nossas fontes."
+            "a": "O HomePot é construído como uma alternativa honesta e sem anúncios: 54 moedas para registrar despesas, scanner com IA que lê qualquer moeda do recibo e um modelo de assinatura transparente. Veja a <a href=\"/pt/compare/homepot-vs-splitwise/\" class=\"text-terracotta underline hover:opacity-80\">comparação completa lado a lado com o Splitwise</a> com todos os recursos e o aviso sobre nossas fontes."
           }
         ]
       }
     },
     "fromSplitwise": {
       "title": "Saindo do Splitwise? Bem-vindo ao HomePot",
-      "description": "Bem-vindo, refugiado do Splitwise. Zero anúncios, scanner IA de recibos no plano grátis, 52 moedas e um modelo de assinatura transparente. Compare e experimente o HomePot.",
+      "description": "Bem-vindo, refugiado do Splitwise. Zero anúncios, scanner IA de recibos no plano grátis, 54 moedas e um modelo de assinatura transparente. Compare e experimente o HomePot.",
       "eyebrow": "Bem-vindo, refugiado do Splitwise",
       "eyebrow_icon": "waving_hand",
       "h1": "Cansado de anúncios e limites diários? Entre.",
@@ -262,7 +269,7 @@
         {
           "icon": "document_scanner",
           "title": "Scanner IA de recibos no plano grátis",
-          "desc": "Tire foto de qualquer recibo e nossa IA extrai o total, cada item, impostos, gorjetas, estabelecimento e moeda — não só o total. Disponível grátis com limite mensal de scans; ilimitado no Pro."
+          "desc": "Tire foto de qualquer recibo e nossa IA extrai o total, cada item, impostos, gorjetas, estabelecimento e moeda — não só o total. Grátis com 10 scans por mês; 50 por mês no Pro."
         },
         {
           "icon": "autorenew",
@@ -271,8 +278,8 @@
         },
         {
           "icon": "currency_exchange",
-          "title": "52 moedas + a IA lê qualquer recibo",
-          "desc": "52 moedas selecionáveis no app, e o scanner IA detecta qualquer moeda ISO 4217 direto da imagem do recibo. Conversão automática no câmbio do dia."
+          "title": "54 moedas + a IA lê qualquer recibo",
+          "desc": "54 moedas selecionáveis no app, e o scanner IA detecta qualquer moeda ISO 4217 direto da imagem do recibo. Conversão automática no câmbio do dia."
         }
       ],
       "honest_note": {
@@ -288,7 +295,7 @@
         },
         {
           "q": "O HomePot é realmente grátis?",
-          "a": "Sim. O plano grátis inclui 1 grupo, 20 despesas por mês, um scanner IA com limite mensal de scans, multi-moeda e zero anúncios — para sempre. O Pro (a partir de R$14,90/mês no anual) remove os limites e adiciona grupos ilimitados, exportações e análises avançadas."
+          "a": "Sim. O plano grátis inclui 1 grupo com membros ilimitados, 20 despesas por pessoa por mês, 10 scans de recibos com IA por mês, fechamento do mês, despesas recorrentes e zero anúncios — para sempre. O Pro (a partir de R$\u00a09,16/mês no anual) dá despesas ilimitadas, 50 scans por mês, quantos grupos você quiser, exportações e estatísticas avançadas, e uma única assinatura cobre todas as pessoas dos seus grupos."
         },
         {
           "q": "Como isso é diferente da página de comparação do Splitwise?",
@@ -340,7 +347,7 @@
           { "icon": "account_balance", "title": "Veja o acerto", "desc": "Calculamos o mínimo de transferências para zerar todos os saldos." }
         ],
         "upsell_title": "Quer isso automático do celular?",
-        "upsell_desc": "O HomePot faz a mesma matemática no seu celular — mais scanner IA de recibos, multi-moeda, contas recorrentes e ritual de fechamento mensal. O plano grátis é generoso, o Pro remove todos os limites.",
+        "upsell_desc": "O HomePot faz a mesma matemática no seu celular — mais scanner IA de recibos, multi-moeda, contas recorrentes e ritual de fechamento mensal. O plano grátis é generoso, o Pro amplia os limites.",
         "faq_title": "Perguntas frequentes",
         "faq": [
           {
@@ -357,7 +364,7 @@
           },
           {
             "q": "Qual moeda ela usa?",
-            "a": "Por padrão BRL e formata os valores com o locale do seu navegador. Se sua viagem for em outra moeda, o app HomePot lida com 52 moedas nativamente mais qualquer ISO 4217 detectada pelo scanner IA."
+            "a": "Por padrão BRL e formata os valores com o locale do seu navegador. Se sua viagem for em outra moeda, o app HomePot lida com 54 moedas nativamente mais qualquer ISO 4217 detectada pelo scanner IA."
           }
         ]
       }
@@ -448,22 +455,23 @@
         "intro": "Tricount (by bunq) é provavelmente o app grátis de divisão de despesas mais bem avaliado no iOS, e merece: simples, 100% grátis, ótimo para viagens em grupo pontuais. O HomePot joga em outra liga — finanças recorrentes do lar com scanner IA de recibos, despesas recorrentes, divisão fixa vs variável e um ritual de fechamento mensal. Os dois são apps honestos e sem anúncios; esta página mostra exatamente onde cada um vence para você escolher a ferramenta certa.",
         "table_title": "Comparação lado a lado",
         "table_subtitle": "Cada célula indica como o recurso é oferecido em cada app. Fontes linkadas quando possível.",
+        "table_disclaimer": "Todas as informações refletem dados públicos disponíveis no site oficial do Tricount e na página da App Store no momento da redação. Recomendamos verificar os detalhes atuais em tricount.com. O HomePot não é afiliado ao Tricount nem ao bunq.",
         "features": [
-          { "label": "Modelo de preços", "ours": "Grátis + Pro opcional a partir de R$14,90/mês", "theirs": "100% grátis (sem plano pago)" },
+          { "label": "Modelo de preços", "ours": "Grátis + Pro opcional a partir de R$\u00a09,16/mês", "theirs": "100% grátis (sem plano pago)" },
           { "label": "Anúncios", "ours": "Nunca, jamais", "theirs": "Nunca, jamais" },
-          { "label": "Scanner IA de recibos com OCR", "ours": "Grátis (limite mensal de scans) · Ilimitado no Pro", "theirs": "Não disponível — apenas anexo de foto" },
+          { "label": "Scanner IA de recibos com OCR", "ours": "Grátis: 10 scans por mês · Pro: 50 por mês", "theirs": "Não disponível — apenas anexo de foto" },
           { "label": "Extração de itens do recibo", "ours": "Grátis (via scan IA)", "theirs": "Não disponível" },
           { "label": "Conversão automática de moeda", "ours": "Grátis (via scan IA) — qualquer ISO 4217", "theirs": "Sim — grátis (integrado)" },
-          { "label": "Moedas selecionáveis para registrar despesas", "ours": "52", "theirs": "Muitas (número não especificado)" },
+          { "label": "Moedas selecionáveis para registrar despesas", "ours": "54", "theirs": "Muitas (número não especificado)" },
           { "label": "Despesas recorrentes", "ours": "Grátis", "theirs": "Não é um recurso listado" },
           { "label": "Divisão fixa e variável no mesmo grupo", "ours": "Grátis", "theirs": "Divisão igual, por partes ou valores personalizados" },
           { "label": "Fechamento mensal com transferências mínimas", "ours": "Grátis", "theirs": "Liquidação contínua (sem ritual de fechamento)" },
-          { "label": "Gráficos e análises de gastos", "ours": "Grátis (exportação CSV/PDF no Pro)", "theirs": "Insights de gastos, detalhamentos mensais" },
+          { "label": "Gráficos e análises de gastos", "ours": "Resumo do mês grátis · Estatísticas avançadas e exportação CSV/PDF no Pro", "theirs": "Insights de gastos, detalhamentos mensais" },
           { "label": "Modo offline (adicionar despesas sem conexão)", "ours": "Não implementado — requer rede", "theirs": "Sim — grátis (página oficial de recursos do Tricount)" },
           { "label": "Importação do Splitwise", "ours": "No roadmap", "theirs": "Sim — grátis (integrado)" },
           { "label": "Adição automática de despesas via cartão bancário", "ours": "Não disponível", "theirs": "Sim — apenas com cartão bunq" },
           { "label": "Grupos", "ours": "1 grupo familiar grátis · Ilimitados no Pro", "theirs": "Ilimitados" },
-          { "label": "Despesas por grupo", "ours": "20/mês no grátis · Ilimitadas no Pro", "theirs": "Ilimitadas" },
+          { "label": "Despesas", "ours": "20 por pessoa por mês no grátis · Ilimitadas no Pro", "theirs": "Ilimitadas" },
           { "label": "Conforme LGPD", "ours": true, "theirs": true }
         ],
         "differentiators": [
@@ -479,8 +487,8 @@
           },
           {
             "icon": "currency_exchange",
-            "title": "52 moedas + a IA lê qualquer recibo",
-            "desc": "Os dois apps lidam com multi-moeda. O HomePot traz 52 moedas no picker de despesas e, graças ao scanner IA, consegue ler qualquer moeda ISO 4217 diretamente da imagem do recibo e converter no câmbio ao vivo, mesmo que esteja fora dessas 52."
+            "title": "54 moedas + a IA lê qualquer recibo",
+            "desc": "Os dois apps lidam com multi-moeda. O HomePot traz 54 moedas no picker de despesas e, graças ao scanner IA, consegue ler qualquer moeda ISO 4217 diretamente da imagem do recibo e converter no câmbio ao vivo, mesmo que esteja fora dessas 54."
           },
           {
             "icon": "lock",
@@ -501,7 +509,7 @@
         "faq": [
           {
             "q": "O Tricount é realmente 100% grátis?",
-            "a": "De acordo com o site oficial do Tricount e sua página de recursos, sim — o Tricount é descrito como «100% grátis» sem plano de assinatura paga anunciado. Recursos como multi-moeda, modo offline, importação do Splitwise e insights de gastos estão listados como gratuitos em tricount.com. O HomePot também tem plano grátis, mais uma assinatura Pro opcional que remove os limites de grupos, despesas e scans IA."
+            "a": "De acordo com o site oficial do Tricount e sua página de recursos, sim — o Tricount é descrito como «100% grátis» sem plano de assinatura paga anunciado. Recursos como multi-moeda, modo offline, importação do Splitwise e insights de gastos estão listados como gratuitos em tricount.com. O HomePot também tem plano grátis, mais uma assinatura Pro opcional que amplia os limites de grupos, despesas e scans IA."
           },
           {
             "q": "O Tricount tem scanner IA de recibos?",
@@ -523,25 +531,25 @@
       },
       "splitwise": {
         "title": "HomePot vs Splitwise — comparação honesta (2026)",
-        "description": "Procurando uma alternativa ao Splitwise? O HomePot suporta 52 moedas, scanner com IA que lê qualquer moeda e zero anúncios. Veja a comparação com fontes.",
+        "description": "Procurando uma alternativa ao Splitwise? O HomePot suporta 54 moedas, scanner com IA que lê qualquer moeda e zero anúncios. Veja a comparação com fontes.",
         "h1": "HomePot vs Splitwise — a comparação honesta",
         "intro": "O Splitwise é há mais de uma década a forma padrão de dividir despesas compartilhadas. Tanto o HomePot quanto o Splitwise têm um plano gratuito e um plano Pro pago, então uma comparação justa precisa mostrar o que cada plano realmente oferece. Aqui está o detalhamento honesto — e a versão curta é que a maior parte do que o Splitwise reserva para o Pro, o HomePot inclui de graça. Cada linha abaixo tem link para uma fonte pública para você verificar.",
         "table_title": "Comparação lado a lado",
         "table_subtitle": "Cada célula indica em qual plano o recurso está disponível. Um check significa sem restrições para todos os usuários; texto significa que há um plano ou limite específico.",
         "features": [
           { "label": "Anúncios no plano grátis", "ours": "Nunca, jamais", "theirs": "Sim, mostrados aos usuários grátis" },
-          { "label": "Scanner IA de recibos", "ours": "Grátis (limite mensal de scans) · Ilimitado no Pro", "theirs": "Só Pro" },
+          { "label": "Scanner IA de recibos", "ours": "Grátis: 10 scans por mês · Pro: 50 por mês", "theirs": "Só Pro" },
           { "label": "Extração de itens do recibo", "ours": "Grátis (via scan IA)", "theirs": "Só Pro" },
           { "label": "Conversão automática de moeda", "ours": "Grátis (via scan IA)", "theirs": "Só Pro" },
-          { "label": "Gráficos e análises de gastos", "ours": "Grátis", "theirs": "Só Pro" },
+          { "label": "Gráficos e análises de gastos", "ours": "Resumo do mês grátis · Estatísticas avançadas no Pro", "theirs": "Só Pro" },
           { "label": "Despesas recorrentes", "ours": "Grátis", "theirs": "Parcial / Pro" },
           { "label": "Divisão fixa e variável no mesmo grupo", "ours": "Grátis", "theirs": "Não disponível" },
           { "label": "Fechamento mensal com transferências mínimas", "ours": "Grátis", "theirs": "Não disponível" },
-          { "label": "Moedas selecionáveis para registrar despesas", "ours": "52", "theirs": "Muitas (não especificado)" },
+          { "label": "Moedas selecionáveis para registrar despesas", "ours": "54", "theirs": "Muitas (não especificado)" },
           { "label": "A IA lê qualquer moeda da imagem do recibo", "ours": "Grátis (dentro do limite de scans)", "theirs": false },
           { "label": "Exportar estatísticas para CSV / PDF", "ours": "Só Pro", "theirs": "Só Pro" },
           { "label": "Conformidade RGPD / CCPA", "ours": true, "theirs": true },
-          { "label": "Despesas por mês", "ours": "20 grátis (sem limite diário — use qualquer dia) · Ilimitadas no Pro", "theirs": "Limite diário aplicado — ver página do Splitwise Pro" },
+          { "label": "Despesas por mês", "ours": "20 grátis por pessoa (sem limite diário — use qualquer dia) · Ilimitadas no Pro", "theirs": "Limite diário aplicado — ver página do Splitwise Pro" },
           { "label": "Grupos", "ours": "1 grupo familiar grátis · Ilimitados no Pro", "theirs": "Ilimitados" }
         ],
         "differentiators": [
@@ -552,8 +560,8 @@
           },
           {
             "icon": "currency_exchange",
-            "title": "52 moedas + a IA lê qualquer recibo",
-            "desc": "52 moedas suportadas para registrar despesas, cobrindo Europa, Américas, Ásia, Oriente Médio, Oceania e África. O scanner com IA vai além: detecta qualquer moeda ISO 4217 direto da imagem do recibo e converte automaticamente para a moeda base do seu grupo usando taxas de câmbio em tempo real."
+            "title": "54 moedas + a IA lê qualquer recibo",
+            "desc": "54 moedas suportadas para registrar despesas, cobrindo Europa, Américas, Ásia, Oriente Médio, Oceania e África. O scanner com IA vai além: detecta qualquer moeda ISO 4217 direto da imagem do recibo e converte automaticamente para a moeda base do seu grupo usando taxas de câmbio em tempo real."
           },
           {
             "icon": "block",
@@ -607,19 +615,19 @@
           },
           {
             "q": "O HomePot é realmente grátis?",
-            "a": "Sim. O plano grátis inclui 1 grupo, 20 despesas por mês, 10 scans de recibo com IA, multi-moeda e zero anúncios — para sempre. O Pro começa em R$14,90/mês no anual e remove os limites, mais grupos ilimitados, exportações e análises avançadas."
+            "a": "Sim. O plano grátis inclui 1 grupo com membros ilimitados, 20 despesas por pessoa por mês, 10 scans de recibo com IA por mês, multi-moeda e zero anúncios — para sempre. O Pro começa em R$\u00a09,16/mês no anual: despesas ilimitadas, 50 scans por mês, quantos grupos você quiser, exportações e estatísticas avançadas, e uma única assinatura cobre todas as pessoas dos seus grupos."
           },
           {
             "q": "O que exatamente eu recebo no plano grátis do HomePot, sem pagar?",
-            "a": "Uma conta grátis do HomePot te dá: 1 grupo com membros ilimitados, 20 despesas por mês, um número limitado de scans IA de recibos por mês, upload de fotos de recibos, o seletor completo de 52 moedas, gráficos e análises de gastos, despesas recorrentes, divisão fixa e variável no mesmo grupo, o fechamento mensal com transferências mínimas, tema escuro e zero anúncios. O Pro basicamente remove os limites de grupos/despesas/scans e adiciona exportação CSV/PDF das suas estatísticas."
+            "a": "Uma conta grátis do HomePot te dá: 1 grupo com membros ilimitados, 20 despesas por pessoa por mês, 10 scans IA de recibos por mês, upload de fotos de recibos, o seletor completo de 54 moedas, o resumo do mês, despesas recorrentes, divisão fixa e variável no mesmo grupo, o fechamento mensal com transferências mínimas, tema escuro e zero anúncios. O Pro tira o limite de despesas, dá 50 scans por mês e quantos grupos você quiser, e adiciona estatísticas avançadas e exportação CSV/PDF."
           },
           {
             "q": "Como o HomePot ganha dinheiro sem anúncios?",
-            "a": "Assinaturas opcionais. O Pro custa R$14,90/mês no anual — menos que um café por mês. Esse é o único modelo de receita. Sem anúncios, sem venda de dados, sem afiliados dentro do app."
+            "a": "Assinaturas opcionais. O Pro custa R$\u00a016,90 por mês ou R$\u00a0109,90 por ano (cerca de R$\u00a09,16 por mês). Esse é o único modelo de receita. Sem anúncios, sem venda de dados, sem afiliados dentro do app."
           },
           {
             "q": "Quantas moedas o HomePot realmente suporta?",
-            "a": "52 moedas são selecionáveis no picker para registrar despesas, cobrindo Europa, Américas, Ásia, Oriente Médio, Oceania e África. Além disso, o scanner com IA detecta qualquer moeda ISO 4217 direto da imagem do recibo — então mesmo que a moeda base do seu grupo esteja fora das 52, você pode escanear um recibo em qualquer lugar do mundo e vê-lo convertido automaticamente."
+            "a": "54 moedas são selecionáveis no picker para registrar despesas, cobrindo Europa, Américas, Ásia, Oriente Médio, Oceania e África. Além disso, o scanner com IA detecta qualquer moeda ISO 4217 direto da imagem do recibo — então mesmo que a moeda base do seu grupo esteja fora das 54, você pode escanear um recibo em qualquer lugar do mundo e vê-lo convertido automaticamente."
           },
           {
             "q": "O HomePot é compatível com a LGPD?",
@@ -692,20 +700,23 @@
       "home": "Voltar ao início"
     },
     "join": {
-      "title": "Entre em um grupo | HomePot",
-      "eyebrow": "Convite para grupo",
-      "h1": "Você foi convidado para um grupo",
-      "intro": "Alguém convidou você para dividir despesas no HomePot. Use este código de convite para entrar no grupo.",
-      "code_label": "Código de convite",
+      "title": "Convite para uma caixinha · HomePot",
+      "nocode_title": "HomePot",
+      "h1": "Convidaram você para dividir uma caixinha no HomePot.",
+      "intro": "O HomePot é o app para cuidar da caixinha da casa: quanto tem e até quando dá. Abra o seu convite para entrar na deles.",
+      "nocode_h1": "Entre no HomePot.",
+      "nocode_intro": "Este link não traz nenhum convite. Abra o app ou, se ainda não tem, baixe.",
+      "code_label": "código",
       "open_app": "Abrir no app",
-      "copy_code": "Copiar código",
-      "copied": "Copiado",
-      "copy_failed": "Não foi possível copiar o código. Selecione e copie manualmente.",
+      "open_app_plain": "Abrir o app",
+      "open_hint": "Se você já tem o HomePot neste celular.",
       "install_title": "Ainda não tem o HomePot?",
-      "step1": "Instale o HomePot pela App Store.",
-      "step2": "Depois, abra este link de convite de novo ou digite o código em “Entrar em um grupo”.",
-      "app_store_alt": "Baixar na App Store",
-      "coming_soon": "Em breve"
+      "app_store": "Baixar na App Store",
+      "play_store": "Disponível no Google Play",
+      "play_soon": "Google Play, em breve",
+      "copy_hint": "Ao tocar no botão, copiamos o seu convite para você colar no app depois de instalar.",
+      "copied": "Copiamos o seu convite. Depois de instalar, abra o HomePot, toque em “Tenho um convite” e cole.",
+      "copy_failed": "Não foi possível copiar o seu convite. Depois de instalar o HomePot, abra este link de novo e ele leva você direto para a caixinha."
     },
     "resetPassword": {
       "title": "Redefinir senha | HomePot",

@@ -2,164 +2,59 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <meta name="color-scheme" content="light">
+  <meta name="theme-color" content="#184838">
   <meta name="robots" content="noindex">
   <title data-t="nf.title">Page not found | HomePot</title>
-  <link rel="icon" type="image/png" href="/assets/favicon.png">
 
-  <!-- Google Fonts (non-blocking, swap) -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" media="print" onload="this.media='all'">
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&display=swap" media="print" onload="this.media='all'">
-  <noscript>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&display=swap">
-  </noscript>
+  <link rel="icon" href="/assets/brand/favicon.svg" type="image/svg+xml">
+  <link rel="preload" href="/assets/fonts/Archivo-VF-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="/assets/utility.css?v=10fb310b">
 
-  <!-- Pre-compiled Tailwind CSS -->
-  <link rel="stylesheet" href="/assets/tailwind.css">
-
-  <style>
-    [hidden] { display: none !important; }
-    .grain-bg { position: relative; }
-    .grain-bg::before {
-      content: ""; position: absolute; inset: 0;
-      opacity: 0.03; pointer-events: none; z-index: 1;
-      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
-    }
-    .material-symbols-outlined { user-select: none; }
-    /* 404 page: pick the view before first paint (class set in <head> by not-found.js) */
-    html.hp-join #notfound-view { display: none !important; }
-    html:not(.hp-join) #join-view { display: none !important; }
-    /* Password rules checklist */
-    .hp-rule { color: #9ca3af; transition: color .15s ease; }
-    .hp-rule[data-ok="true"] { color: #3D405B; }
-    .hp-rule[data-ok="true"] .hp-rule-icon { color: #81B29A; }
-    /* Spinner */
-    .hp-spinner {
-      width: 1.25rem; height: 1.25rem; border-radius: 9999px; flex-shrink: 0;
-      border: 2px solid rgba(224,122,95,.25); border-top-color: #E07A5F;
-      animation: hp-spin .8s linear infinite;
-    }
-    @keyframes hp-spin { to { transform: rotate(360deg); } }
-    @media (prefers-reduced-motion: reduce) { .hp-spinner { animation-duration: 2.4s; } }
-  </style>
-
-  <script>window.__HP_I18N = {"defaultLocale":"en","strings":{"en":{"common.language":"Language","common.help":"Help Center","common.privacy":"Privacy Policy","common.terms":"Terms of Service","common.delete_account":"Delete account","common.copyright":"© 2026 HomePot. All rights reserved.","nf.title":"Page not found | HomePot","nf.h1":"Page not found","nf.body":"The page you're looking for doesn't exist or has been moved.","nf.home":"Back to home","join.title":"Join a group | HomePot","join.eyebrow":"Group invite","join.h1":"You've been invited to a group","join.intro":"Someone has invited you to share expenses on HomePot. Use this invite code to join their group.","join.code_label":"Invite code","join.open_app":"Open in app","join.copy_code":"Copy code","join.copied":"Copied","join.copy_failed":"Couldn't copy the code. Select it and copy it manually.","join.install_title":"Don't have HomePot yet?","join.step1":"Install HomePot from the App Store.","join.step2":"Then open this invite link again, or enter the code in \"Join a group\".","join.app_store_alt":"Download on the App Store","join.coming_soon":"Coming soon"},"es":{"common.language":"Idioma","common.help":"Centro de ayuda","common.privacy":"Política de privacidad","common.terms":"Términos de servicio","common.delete_account":"Eliminar cuenta","common.copyright":"© 2026 HomePot. Todos los derechos reservados.","nf.title":"Página no encontrada | HomePot","nf.h1":"Página no encontrada","nf.body":"La página que buscas no existe o se ha movido.","nf.home":"Volver al inicio","join.title":"Únete a un grupo | HomePot","join.eyebrow":"Invitación a un grupo","join.h1":"Te han invitado a un grupo","join.intro":"Alguien te ha invitado a compartir gastos en HomePot. Usa este código de invitación para unirte a su grupo.","join.code_label":"Código de invitación","join.open_app":"Abrir en la app","join.copy_code":"Copiar código","join.copied":"Copiado","join.copy_failed":"No se ha podido copiar. Selecciona el código y cópialo a mano.","join.install_title":"¿Aún no tienes HomePot?","join.step1":"Descarga HomePot desde el App Store.","join.step2":"Después, vuelve a abrir este enlace de invitación o introduce el código en «Unirse a un grupo».","join.app_store_alt":"Consíguelo en el App Store","join.coming_soon":"Próximamente"},"fr":{"common.language":"Langue","common.help":"Centre d'aide","common.privacy":"Politique de confidentialité","common.terms":"Conditions d'utilisation","common.delete_account":"Supprimer le compte","common.copyright":"© 2026 HomePot. Tous droits réservés.","nf.title":"Page introuvable | HomePot","nf.h1":"Page introuvable","nf.body":"La page que vous cherchez n'existe pas ou a été déplacée.","nf.home":"Retour à l'accueil","join.title":"Rejoindre un groupe | HomePot","join.eyebrow":"Invitation à un groupe","join.h1":"On vous invite à rejoindre un groupe","join.intro":"Quelqu'un vous invite à partager vos dépenses sur HomePot. Utilisez ce code d'invitation pour rejoindre son groupe.","join.code_label":"Code d'invitation","join.open_app":"Ouvrir dans l'app","join.copy_code":"Copier le code","join.copied":"Copié","join.copy_failed":"Impossible de copier le code. Sélectionnez-le et copiez-le manuellement.","join.install_title":"Vous n'avez pas encore HomePot ?","join.step1":"Installez HomePot depuis l'App Store.","join.step2":"Ensuite, rouvrez ce lien d'invitation ou saisissez le code dans « Rejoindre un groupe ».","join.app_store_alt":"Télécharger dans l'App Store","join.coming_soon":"Bientôt disponible"},"de":{"common.language":"Sprache","common.help":"Hilfezentrum","common.privacy":"Datenschutzrichtlinie","common.terms":"Nutzungsbedingungen","common.delete_account":"Konto löschen","common.copyright":"© 2026 HomePot. Alle Rechte vorbehalten.","nf.title":"Seite nicht gefunden | HomePot","nf.h1":"Seite nicht gefunden","nf.body":"Die gesuchte Seite gibt es nicht oder sie wurde verschoben.","nf.home":"Zur Startseite","join.title":"Einer Gruppe beitreten | HomePot","join.eyebrow":"Gruppeneinladung","join.h1":"Du wurdest in eine Gruppe eingeladen","join.intro":"Jemand hat dich eingeladen, Ausgaben mit HomePot zu teilen. Mit diesem Einladungscode trittst du der Gruppe bei.","join.code_label":"Einladungscode","join.open_app":"In der App öffnen","join.copy_code":"Code kopieren","join.copied":"Kopiert","join.copy_failed":"Der Code konnte nicht kopiert werden. Markiere ihn und kopiere ihn manuell.","join.install_title":"Du hast HomePot noch nicht?","join.step1":"Installiere HomePot aus dem App Store.","join.step2":"Öffne danach diesen Einladungslink erneut oder gib den Code unter „Einer Gruppe beitreten“ ein.","join.app_store_alt":"Laden im App Store","join.coming_soon":"Demnächst"},"pt":{"common.language":"Idioma","common.help":"Central de ajuda","common.privacy":"Política de privacidade","common.terms":"Termos de serviço","common.delete_account":"Excluir conta","common.copyright":"© 2026 HomePot. Todos os direitos reservados.","nf.title":"Página não encontrada | HomePot","nf.h1":"Página não encontrada","nf.body":"A página que você procura não existe ou foi movida.","nf.home":"Voltar ao início","join.title":"Entre em um grupo | HomePot","join.eyebrow":"Convite para grupo","join.h1":"Você foi convidado para um grupo","join.intro":"Alguém convidou você para dividir despesas no HomePot. Use este código de convite para entrar no grupo.","join.code_label":"Código de convite","join.open_app":"Abrir no app","join.copy_code":"Copiar código","join.copied":"Copiado","join.copy_failed":"Não foi possível copiar o código. Selecione e copie manualmente.","join.install_title":"Ainda não tem o HomePot?","join.step1":"Instale o HomePot pela App Store.","join.step2":"Depois, abra este link de convite de novo ou digite o código em “Entrar em um grupo”.","join.app_store_alt":"Baixar na App Store","join.coming_soon":"Em breve"}}};</script>
+  <script>window.__HP_I18N = {"defaultLocale":"en","strings":{"en":{"common.language":"Language","common.tagline":"Made in Spain for homes everywhere.","common.legal":"Legal","common.privacy":"Privacy","common.terms":"Terms","common.help":"Help","common.delete_account":"Delete my account","nf.title":"Page not found | HomePot","nf.h1":"Page not found","nf.body":"The page you're looking for doesn't exist or has been moved.","nf.home":"Back to home"},"es":{"common.language":"Idioma","common.tagline":"Hecho en España para casas de todas partes.","common.legal":"Legal","common.privacy":"Privacidad","common.terms":"Términos","common.help":"Ayuda","common.delete_account":"Borrar mi cuenta","nf.title":"Página no encontrada | HomePot","nf.h1":"Página no encontrada","nf.body":"La página que buscas no existe o se ha movido.","nf.home":"Volver al inicio"},"fr":{"common.language":"Langue","common.tagline":"Fait en Espagne pour les foyers de partout.","common.legal":"Mentions légales","common.privacy":"Confidentialité","common.terms":"Conditions","common.help":"Aide","common.delete_account":"Supprimer mon compte","nf.title":"Page introuvable | HomePot","nf.h1":"Page introuvable","nf.body":"La page que vous cherchez n'existe pas ou a été déplacée.","nf.home":"Retour à l'accueil"},"de":{"common.language":"Sprache","common.tagline":"In Spanien gemacht, für Haushalte überall.","common.legal":"Rechtliches","common.privacy":"Datenschutz","common.terms":"Bedingungen","common.help":"Hilfe","common.delete_account":"Mein Konto löschen","nf.title":"Seite nicht gefunden | HomePot","nf.h1":"Seite nicht gefunden","nf.body":"Die gesuchte Seite gibt es nicht oder sie wurde verschoben.","nf.home":"Zur Startseite"},"pt":{"common.language":"Idioma","common.tagline":"Feito na Espanha para casas de todo lugar.","common.legal":"Legal","common.privacy":"Privacidade","common.terms":"Termos","common.help":"Ajuda","common.delete_account":"Excluir minha conta","nf.title":"Página não encontrada | HomePot","nf.h1":"Página não encontrada","nf.body":"A página que você procura não existe ou foi movida.","nf.home":"Voltar ao início"}}};</script>
   <script src="/src/js/not-found.js"></script>
   <script src="/src/js/utility-i18n.js"></script>
 </head>
-<body class="font-sans text-darkBlue antialiased bg-cream min-h-screen flex flex-col">
+<body>
 
-<!-- ========== HEADER ========== -->
-<header class="fixed top-0 inset-x-0 z-50" style="backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); background: rgba(244,241,222,0.8);">
-  <div class="max-w-7xl mx-auto flex items-center justify-between px-4 sm:px-6 py-4">
-    <a href="/" data-lhref="/" class="flex items-center gap-2">
-      <img src="/assets/favicon-40.png" alt="HomePot" class="w-10 h-10 rounded-xl">
-      <img src="/assets/homepot-wordmark.png" alt="" class="h-7 sm:h-9">
-    </a>
-    <div role="group" aria-label="Language" data-t-aria-label="common.language" class="flex items-center gap-0 lg:gap-1 rounded-full lg:px-2 lg:py-1" style="background: rgba(244,241,222,0.6);">
-      <button type="button" data-set-lang="en" lang="en" aria-pressed="true" class="px-1.5 py-1 lg:px-3 rounded-full text-[11px] lg:text-sm transition-colors font-semibold text-darkBlue">EN</button>
-      <button type="button" data-set-lang="es" lang="es" aria-pressed="false" class="px-1.5 py-1 lg:px-3 rounded-full text-[11px] lg:text-sm transition-colors text-darkBlue/40">ES</button>
-      <button type="button" data-set-lang="fr" lang="fr" aria-pressed="false" class="px-1.5 py-1 lg:px-3 rounded-full text-[11px] lg:text-sm transition-colors text-darkBlue/40">FR</button>
-      <button type="button" data-set-lang="de" lang="de" aria-pressed="false" class="px-1.5 py-1 lg:px-3 rounded-full text-[11px] lg:text-sm transition-colors text-darkBlue/40">DE</button>
-      <button type="button" data-set-lang="pt" lang="pt" aria-pressed="false" class="px-1.5 py-1 lg:px-3 rounded-full text-[11px] lg:text-sm transition-colors text-darkBlue/40">PT</button>
-    </div>
-  </div>
+<header class="band">
+  <a class="brand" href="/" data-lhref="/"><img src="/assets/brand/logo-horizontal-white.svg" alt="HomePot" width="485" height="100"></a>
+  <details class="lang">
+    <summary aria-label="Language: English" data-lang-summary><span data-lang-code>EN</span> <svg viewBox="0 0 12 8" aria-hidden="true"><path d="M0 0h12L6 8z" fill="currentColor"/></svg></summary>
+    <ul class="lang-menu">
+      <li><button type="button" data-set-lang="es" data-lang-name="Español" lang="es" aria-pressed="false">Español</button></li>
+      <li><button type="button" data-set-lang="en" data-lang-name="English" lang="en" aria-pressed="true">English</button></li>
+      <li><button type="button" data-set-lang="pt" data-lang-name="Português" lang="pt" aria-pressed="false">Português</button></li>
+      <li><button type="button" data-set-lang="fr" data-lang-name="Français" lang="fr" aria-pressed="false">Français</button></li>
+      <li><button type="button" data-set-lang="de" data-lang-name="Deutsch" lang="de" aria-pressed="false">Deutsch</button></li>
+    </ul>
+  </details>
 </header>
 
-<main class="flex-1 bg-cream grain-bg relative overflow-hidden pt-28 pb-16 px-4 sm:px-6">
-  <div class="absolute w-[400px] h-[400px] bg-yellowSoft rounded-full blur-[100px] opacity-15 -top-20 -right-20" aria-hidden="true"></div>
-  <div class="absolute w-[300px] h-[300px] bg-sage rounded-full blur-[100px] opacity-10 bottom-0 -left-10" aria-hidden="true"></div>
-  <div class="relative z-10 max-w-md mx-auto">
-    <!-- ========== JOIN (shown for /join/CODE) ========== -->
-    <section id="join-view" aria-labelledby="join-h1">
-      <div class="bg-white rounded-3xl shadow-sm p-6 sm:p-8 text-center">
-        <div class="inline-flex items-center gap-2 bg-sage/10 text-sage rounded-full px-4 py-2 text-sm font-medium mb-5">
-          <span class="material-symbols-outlined text-lg" aria-hidden="true">group_add</span>
-          <span data-t="join.eyebrow">Group invite</span>
-        </div>
-        <h1 id="join-h1" class="text-2xl sm:text-3xl font-extrabold text-darkBlue leading-tight mb-3" data-t="join.h1">You&#39;ve been invited to a group</h1>
-        <p class="text-gray-500 mb-6" data-t="join.intro">Someone has invited you to share expenses on HomePot. Use this invite code to join their group.</p>
-
-        <div class="bg-cream/70 border border-gray-100 rounded-2xl px-4 py-5 mb-4">
-          <p id="join-code-label" class="text-xs font-semibold uppercase tracking-wider text-gray-400 mb-2" data-t="join.code_label">Invite code</p>
-          <p id="join-code" class="font-mono text-3xl sm:text-4xl font-bold text-darkBlue tracking-wider break-all select-all" aria-describedby="join-code-label"></p>
-        </div>
-
-        <a id="join-open" href="homepot://join/" data-base="homepot://join/" class="flex items-center justify-center gap-2 w-full bg-terracotta text-white rounded-full py-4 px-6 font-semibold hover:bg-terracotta/90 transition-colors mb-3">
-          <span class="material-symbols-outlined text-xl" aria-hidden="true">open_in_new</span>
-          <span data-t="join.open_app">Open in app</span>
-        </a>
-        <button type="button" id="join-copy" class="flex items-center justify-center gap-2 w-full bg-white text-darkBlue rounded-full py-3.5 px-6 font-semibold ring-1 ring-gray-200 hover:ring-terracotta transition-colors">
-          <span id="join-copy-icon" class="material-symbols-outlined text-xl" aria-hidden="true">content_copy</span>
-          <span id="join-copy-label" data-t="join.copy_code">Copy code</span>
-        </button>
-        <p id="join-copy-status" class="sr-only" role="status" aria-live="polite"></p>
-        <p id="join-copy-error" class="text-sm text-red-600 font-medium mt-3" role="alert" hidden></p>
+<main class="page" id="content">
+  <div class="page-head">
+    <h1 data-t="nf.h1">Page not found</h1>
+    <p class="lead" data-t="nf.body">The page you&#39;re looking for doesn&#39;t exist or has been moved.</p>
+  </div>
+  <div class="page-body">
+    <div class="block">
+      <p class="figure" aria-hidden="true">404</p>
+      <div class="actions">
+        <a class="btn btn-solid" href="/" data-lhref="/" data-t="nf.home">Back to home</a>
+        <a class="btn btn-line" href="/support/" data-t="common.help">Help</a>
       </div>
-
-      <div class="bg-white rounded-3xl shadow-sm p-6 sm:p-8 mt-4">
-        <h2 class="text-lg font-bold text-darkBlue mb-4" data-t="join.install_title">Don&#39;t have HomePot yet?</h2>
-        <ol class="space-y-3 mb-6">
-          <li class="flex items-start gap-3">
-            <span class="flex-shrink-0 w-7 h-7 rounded-full bg-terracotta/10 text-terracotta text-sm font-bold flex items-center justify-center" aria-hidden="true">1</span>
-            <span class="text-gray-600 leading-relaxed pt-0.5" data-t="join.step1">Install HomePot from the App Store.</span>
-          </li>
-          <li class="flex items-start gap-3">
-            <span class="flex-shrink-0 w-7 h-7 rounded-full bg-terracotta/10 text-terracotta text-sm font-bold flex items-center justify-center" aria-hidden="true">2</span>
-            <span class="text-gray-600 leading-relaxed pt-0.5" data-t="join.step2">Then open this invite link again, or enter the code in &quot;Join a group&quot;.</span>
-          </li>
-        </ol>
-        <div class="flex flex-wrap items-center justify-center gap-3">
-          <a href="https://apps.apple.com/app/homepot-shared-expenses/id6759216594" target="_blank" rel="noopener" class="hover:opacity-80 transition-opacity">
-            <img src="/assets/badges/download-en.svg" data-lsrc="/assets/badges/download-{lang}.svg" alt="Download on the App Store" data-t-alt="join.app_store_alt" style="height:48px;width:auto;">
-          </a>
-          <span class="inline-flex items-center gap-2 h-12 px-4 rounded-xl border border-dashed border-gray-300 text-gray-400 text-sm font-semibold cursor-not-allowed select-none" aria-disabled="true">
-            <span class="material-symbols-outlined text-xl" aria-hidden="true">android</span>
-            <span>Google Play</span>
-            <span class="text-[11px] uppercase tracking-wide bg-gray-100 text-gray-500 rounded-full px-2 py-0.5" data-t="join.coming_soon">Coming soon</span>
-          </span>
-        </div>
-      </div>
-    </section>
-
-    <!-- ========== 404 ========== -->
-    <section id="notfound-view" class="text-center py-8" aria-labelledby="nf-h1">
-      <p class="text-7xl sm:text-8xl font-extrabold text-terracotta/80 mb-4" aria-hidden="true">404</p>
-      <h1 id="nf-h1" class="text-3xl sm:text-4xl font-extrabold text-darkBlue mb-3" data-t="nf.h1">Page not found</h1>
-      <p class="text-gray-500 text-lg mb-8" data-t="nf.body">The page you&#39;re looking for doesn&#39;t exist or has been moved.</p>
-      <div class="flex flex-col sm:flex-row gap-3 justify-center">
-        <a href="/" data-lhref="/" class="inline-flex items-center justify-center gap-2 bg-terracotta text-white rounded-full py-3.5 px-6 font-semibold hover:bg-terracotta/90 transition-colors">
-          <span class="material-symbols-outlined text-xl" aria-hidden="true">home</span>
-          <span data-t="nf.home">Back to home</span>
-        </a>
-        <a href="/support" class="inline-flex items-center justify-center gap-2 bg-white text-darkBlue rounded-full py-3.5 px-6 font-semibold ring-1 ring-gray-200 hover:ring-terracotta transition-colors">
-          <span class="material-symbols-outlined text-xl" aria-hidden="true">help</span>
-          <span data-t="common.help">Help Center</span>
-        </a>
-      </div>
-    </section>
+    </div>
   </div>
 </main>
 
-<!-- ========== FOOTER ========== -->
-<footer class="bg-white border-t border-gray-100">
-  <div class="max-w-7xl mx-auto px-6 py-8 flex flex-col md:flex-row items-center justify-between gap-4 text-sm">
-    <nav class="flex flex-wrap justify-center gap-x-5 gap-y-2 text-gray-500">
-      <a href="/support" class="hover:text-terracotta transition-colors" data-t="common.help">Help Center</a>
-      <a href="/privacy" class="hover:text-terracotta transition-colors" data-t="common.privacy">Privacy Policy</a>
-      <a href="/terms" class="hover:text-terracotta transition-colors" data-t="common.terms">Terms of Service</a>
-      <a href="/delete-account/" data-lhref="/delete-account/" class="hover:text-terracotta transition-colors" data-t="common.delete_account">Delete account</a>
-      <a href="mailto:homepotapp@gmail.com" class="hover:text-terracotta transition-colors">homepotapp@gmail.com</a>
-    </nav>
-    <p class="text-gray-400" data-t="common.copyright">© 2026 HomePot. All rights reserved.</p>
-  </div>
+<footer class="foot">
+  <span class="foot-brand"><img src="/assets/brand/logo-horizontal-green.svg" alt="HomePot" width="485" height="100"> <span data-t="common.tagline">Made in Spain for homes everywhere.</span></span>
+  <nav aria-label="Legal" data-t-aria-label="common.legal"><a href="/privacy/" data-t="common.privacy">Privacy</a><a href="/terms/" data-t="common.terms">Terms</a><a href="/support/" data-t="common.help">Help</a><a href="/delete-account/" data-lhref="/delete-account/" data-t="common.delete_account">Delete my account</a></nav>
 </footer>
 
 <script>HP.mount();</script>
+<script src="/src/js/lang-menu.js" defer></script>
 
 </body>
 </html>

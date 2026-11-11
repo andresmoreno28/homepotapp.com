@@ -1,4 +1,4 @@
-// Runtime i18n for utility pages that live at a single URL (404 + /join/ fallback,
+// Runtime i18n for utility pages that live at a single URL (404, /join/,
 // /reset-password/) and therefore choose their language in the browser.
 //
 // Build-time input (inline, before this script):
@@ -12,6 +12,8 @@
 //   data-lhref="/path/"      -> href with the locale prefix ('' for default, '/es' ...)
 //   data-lsrc="...{lang}..." -> src with {lang} replaced
 //   data-set-lang="xx"       -> language switch button (in-page, no navigation)
+//   data-lang-code           -> shows the current language code (EN, ES…)
+//   data-lang-summary        -> the language menu's <summary>; gets an aria-label
 //
 // Only textContent / attributes are ever set: strings are never parsed as HTML.
 
@@ -66,12 +68,15 @@
       each('[data-t-alt]', function (el) { el.setAttribute('alt', HP.t(el.getAttribute('data-t-alt'))); });
       each('[data-lhref]', function (el) { el.setAttribute('href', HP.localePath(el.getAttribute('data-lhref'))); });
       each('[data-lsrc]', function (el) { el.setAttribute('src', el.getAttribute('data-lsrc').replace('{lang}', HP.lang)); });
+      var currentName = '';
       each('[data-set-lang]', function (el) {
         var active = el.getAttribute('data-set-lang') === HP.lang;
         el.setAttribute('aria-pressed', active ? 'true' : 'false');
-        el.classList.toggle('font-semibold', active);
-        el.classList.toggle('text-darkBlue', active);
-        el.classList.toggle('text-darkBlue/40', !active);
+        if (active) currentName = el.getAttribute('data-lang-name') || el.textContent;
+      });
+      each('[data-lang-code]', function (el) { el.textContent = HP.lang.toUpperCase(); });
+      each('[data-lang-summary]', function (el) {
+        el.setAttribute('aria-label', HP.t('common.language') + ': ' + currentName);
       });
     },
 
@@ -88,7 +93,16 @@
     // before first paint and before any deferred script runs.
     mount: function () {
       each('[data-set-lang]', function (el) {
-        el.addEventListener('click', function () { HP.setLang(el.getAttribute('data-set-lang')); });
+        el.addEventListener('click', function () {
+          HP.setLang(el.getAttribute('data-set-lang'));
+          // The buttons live in the header's <details> menu: close it and hand focus back.
+          var menu = el.closest ? el.closest('details') : null;
+          if (menu) {
+            menu.open = false;
+            var summary = menu.querySelector('summary');
+            if (summary) summary.focus();
+          }
+        });
       });
       HP.apply();
     },

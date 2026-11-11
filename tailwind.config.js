@@ -2,6 +2,10 @@
 export default {
   content: [
     './src/templates/**/*.eta',
+    // classes the old-design pages set from scripts (pricing toggle, calculators)
+    './src/js/site.js',
+    './src/js/lang-switcher.js',
+    './src/js/calculators/**/*.js',
     './index.html',
     './compare/**/*.html',
     './guides/**/*.html',

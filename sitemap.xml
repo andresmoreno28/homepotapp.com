@@ -2,7 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://homepotapp.com/</loc>
-    <lastmod>2026-11-09</lastmod>
+    <lastmod>2026-11-11</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://homepotapp.com/"/>
@@ -13,8 +13,104 @@
     <xhtml:link rel="alternate" hreflang="x-default" href="https://homepotapp.com/"/>
   </url>
   <url>
+    <loc>https://homepotapp.com/es/</loc>
+    <lastmod>2026-11-11</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://homepotapp.com/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://homepotapp.com/es/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://homepotapp.com/fr/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://homepotapp.com/de/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://homepotapp.com/pt/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://homepotapp.com/"/>
+  </url>
+  <url>
+    <loc>https://homepotapp.com/fr/</loc>
+    <lastmod>2026-11-11</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://homepotapp.com/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://homepotapp.com/es/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://homepotapp.com/fr/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://homepotapp.com/de/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://homepotapp.com/pt/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://homepotapp.com/"/>
+  </url>
+  <url>
+    <loc>https://homepotapp.com/de/</loc>
+    <lastmod>2026-11-11</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://homepotapp.com/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://homepotapp.com/es/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://homepotapp.com/fr/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://homepotapp.com/de/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://homepotapp.com/pt/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://homepotapp.com/"/>
+  </url>
+  <url>
+    <loc>https://homepotapp.com/pt/</loc>
+    <lastmod>2026-11-11</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://homepotapp.com/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://homepotapp.com/es/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://homepotapp.com/fr/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://homepotapp.com/de/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://homepotapp.com/pt/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://homepotapp.com/"/>
+  </url>
+  <url>
     <loc>https://homepotapp.com/resources/</loc>
-    <lastmod>2026-11-09</lastmod>
+    <lastmod>2026-11-11</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://homepotapp.com/resources/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://homepotapp.com/es/resources/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://homepotapp.com/fr/resources/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://homepotapp.com/de/resources/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://homepotapp.com/pt/resources/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://homepotapp.com/resources/"/>
+  </url>
+  <url>
+    <loc>https://homepotapp.com/es/resources/</loc>
+    <lastmod>2026-11-11</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://homepotapp.com/resources/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://homepotapp.com/es/resources/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://homepotapp.com/fr/resources/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://homepotapp.com/de/resources/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://homepotapp.com/pt/resources/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://homepotapp.com/resources/"/>
+  </url>
+  <url>
+    <loc>https://homepotapp.com/fr/resources/</loc>
+    <lastmod>2026-11-11</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://homepotapp.com/resources/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://homepotapp.com/es/resources/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://homepotapp.com/fr/resources/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://homepotapp.com/de/resources/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://homepotapp.com/pt/resources/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://homepotapp.com/resources/"/>
+  </url>
+  <url>
+    <loc>https://homepotapp.com/de/resources/</loc>
+    <lastmod>2026-11-11</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://homepotapp.com/resources/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://homepotapp.com/es/resources/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://homepotapp.com/fr/resources/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://homepotapp.com/de/resources/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://homepotapp.com/pt/resources/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://homepotapp.com/resources/"/>
+  </url>
+  <url>
+    <loc>https://homepotapp.com/pt/resources/</loc>
+    <lastmod>2026-11-11</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://homepotapp.com/resources/"/>
@@ -26,7 +122,55 @@
   </url>
   <url>
     <loc>https://homepotapp.com/compare/</loc>
-    <lastmod>2026-11-09</lastmod>
+    <lastmod>2026-11-11</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://homepotapp.com/compare/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://homepotapp.com/es/compare/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://homepotapp.com/fr/compare/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://homepotapp.com/de/compare/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://homepotapp.com/pt/compare/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://homepotapp.com/compare/"/>
+  </url>
+  <url>
+    <loc>https://homepotapp.com/es/compare/</loc>
+    <lastmod>2026-11-11</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://homepotapp.com/compare/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://homepotapp.com/es/compare/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://homepotapp.com/fr/compare/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://homepotapp.com/de/compare/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://homepotapp.com/pt/compare/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://homepotapp.com/compare/"/>
+  </url>
+  <url>
+    <loc>https://homepotapp.com/fr/compare/</loc>
+    <lastmod>2026-11-11</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://homepotapp.com/compare/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://homepotapp.com/es/compare/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://homepotapp.com/fr/compare/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://homepotapp.com/de/compare/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://homepotapp.com/pt/compare/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://homepotapp.com/compare/"/>
+  </url>
+  <url>
+    <loc>https://homepotapp.com/de/compare/</loc>
+    <lastmod>2026-11-11</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://homepotapp.com/compare/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://homepotapp.com/es/compare/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://homepotapp.com/fr/compare/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://homepotapp.com/de/compare/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://homepotapp.com/pt/compare/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://homepotapp.com/compare/"/>
+  </url>
+  <url>
+    <loc>https://homepotapp.com/pt/compare/</loc>
+    <lastmod>2026-11-11</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://homepotapp.com/compare/"/>
@@ -38,7 +182,55 @@
   </url>
   <url>
     <loc>https://homepotapp.com/guides/</loc>
-    <lastmod>2026-11-09</lastmod>
+    <lastmod>2026-11-11</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://homepotapp.com/guides/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://homepotapp.com/es/guides/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://homepotapp.com/fr/guides/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://homepotapp.com/de/guides/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://homepotapp.com/pt/guides/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://homepotapp.com/guides/"/>
+  </url>
+  <url>
+    <loc>https://homepotapp.com/es/guides/</loc>
+    <lastmod>2026-11-11</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://homepotapp.com/guides/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://homepotapp.com/es/guides/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://homepotapp.com/fr/guides/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://homepotapp.com/de/guides/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://homepotapp.com/pt/guides/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://homepotapp.com/guides/"/>
+  </url>
+  <url>
+    <loc>https://homepotapp.com/fr/guides/</loc>
+    <lastmod>2026-11-11</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://homepotapp.com/guides/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://homepotapp.com/es/guides/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://homepotapp.com/fr/guides/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://homepotapp.com/de/guides/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://homepotapp.com/pt/guides/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://homepotapp.com/guides/"/>
+  </url>
+  <url>
+    <loc>https://homepotapp.com/de/guides/</loc>
+    <lastmod>2026-11-11</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://homepotapp.com/guides/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://homepotapp.com/es/guides/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://homepotapp.com/fr/guides/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://homepotapp.com/de/guides/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://homepotapp.com/pt/guides/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://homepotapp.com/guides/"/>
+  </url>
+  <url>
+    <loc>https://homepotapp.com/pt/guides/</loc>
+    <lastmod>2026-11-11</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://homepotapp.com/guides/"/>
@@ -50,7 +242,55 @@
   </url>
   <url>
     <loc>https://homepotapp.com/compare/homepot-vs-splitwise/</loc>
-    <lastmod>2026-11-09</lastmod>
+    <lastmod>2026-11-11</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://homepotapp.com/compare/homepot-vs-splitwise/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://homepotapp.com/es/compare/homepot-vs-splitwise/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://homepotapp.com/fr/compare/homepot-vs-splitwise/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://homepotapp.com/de/compare/homepot-vs-splitwise/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://homepotapp.com/pt/compare/homepot-vs-splitwise/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://homepotapp.com/compare/homepot-vs-splitwise/"/>
+  </url>
+  <url>
+    <loc>https://homepotapp.com/es/compare/homepot-vs-splitwise/</loc>
+    <lastmod>2026-11-11</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://homepotapp.com/compare/homepot-vs-splitwise/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://homepotapp.com/es/compare/homepot-vs-splitwise/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://homepotapp.com/fr/compare/homepot-vs-splitwise/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://homepotapp.com/de/compare/homepot-vs-splitwise/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://homepotapp.com/pt/compare/homepot-vs-splitwise/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://homepotapp.com/compare/homepot-vs-splitwise/"/>
+  </url>
+  <url>
+    <loc>https://homepotapp.com/fr/compare/homepot-vs-splitwise/</loc>
+    <lastmod>2026-11-11</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://homepotapp.com/compare/homepot-vs-splitwise/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://homepotapp.com/es/compare/homepot-vs-splitwise/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://homepotapp.com/fr/compare/homepot-vs-splitwise/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://homepotapp.com/de/compare/homepot-vs-splitwise/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://homepotapp.com/pt/compare/homepot-vs-splitwise/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://homepotapp.com/compare/homepot-vs-splitwise/"/>
+  </url>
+  <url>
+    <loc>https://homepotapp.com/de/compare/homepot-vs-splitwise/</loc>
+    <lastmod>2026-11-11</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://homepotapp.com/compare/homepot-vs-splitwise/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://homepotapp.com/es/compare/homepot-vs-splitwise/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://homepotapp.com/fr/compare/homepot-vs-splitwise/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://homepotapp.com/de/compare/homepot-vs-splitwise/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://homepotapp.com/pt/compare/homepot-vs-splitwise/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://homepotapp.com/compare/homepot-vs-splitwise/"/>
+  </url>
+  <url>
+    <loc>https://homepotapp.com/pt/compare/homepot-vs-splitwise/</loc>
+    <lastmod>2026-11-11</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://homepotapp.com/compare/homepot-vs-splitwise/"/>
@@ -62,7 +302,55 @@
   </url>
   <url>
     <loc>https://homepotapp.com/compare/homepot-vs-tricount/</loc>
-    <lastmod>2026-11-09</lastmod>
+    <lastmod>2026-11-11</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://homepotapp.com/compare/homepot-vs-tricount/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://homepotapp.com/es/compare/homepot-vs-tricount/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://homepotapp.com/fr/compare/homepot-vs-tricount/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://homepotapp.com/de/compare/homepot-vs-tricount/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://homepotapp.com/pt/compare/homepot-vs-tricount/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://homepotapp.com/compare/homepot-vs-tricount/"/>
+  </url>
+  <url>
+    <loc>https://homepotapp.com/es/compare/homepot-vs-tricount/</loc>
+    <lastmod>2026-11-11</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://homepotapp.com/compare/homepot-vs-tricount/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://homepotapp.com/es/compare/homepot-vs-tricount/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://homepotapp.com/fr/compare/homepot-vs-tricount/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://homepotapp.com/de/compare/homepot-vs-tricount/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://homepotapp.com/pt/compare/homepot-vs-tricount/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://homepotapp.com/compare/homepot-vs-tricount/"/>
+  </url>
+  <url>
+    <loc>https://homepotapp.com/fr/compare/homepot-vs-tricount/</loc>
+    <lastmod>2026-11-11</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://homepotapp.com/compare/homepot-vs-tricount/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://homepotapp.com/es/compare/homepot-vs-tricount/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://homepotapp.com/fr/compare/homepot-vs-tricount/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://homepotapp.com/de/compare/homepot-vs-tricount/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://homepotapp.com/pt/compare/homepot-vs-tricount/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://homepotapp.com/compare/homepot-vs-tricount/"/>
+  </url>
+  <url>
+    <loc>https://homepotapp.com/de/compare/homepot-vs-tricount/</loc>
+    <lastmod>2026-11-11</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://homepotapp.com/compare/homepot-vs-tricount/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://homepotapp.com/es/compare/homepot-vs-tricount/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://homepotapp.com/fr/compare/homepot-vs-tricount/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://homepotapp.com/de/compare/homepot-vs-tricount/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://homepotapp.com/pt/compare/homepot-vs-tricount/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://homepotapp.com/compare/homepot-vs-tricount/"/>
+  </url>
+  <url>
+    <loc>https://homepotapp.com/pt/compare/homepot-vs-tricount/</loc>
+    <lastmod>2026-11-11</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://homepotapp.com/compare/homepot-vs-tricount/"/>
@@ -74,7 +362,55 @@
   </url>
   <url>
     <loc>https://homepotapp.com/from-splitwise/</loc>
-    <lastmod>2026-11-09</lastmod>
+    <lastmod>2026-11-11</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://homepotapp.com/from-splitwise/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://homepotapp.com/es/from-splitwise/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://homepotapp.com/fr/from-splitwise/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://homepotapp.com/de/from-splitwise/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://homepotapp.com/pt/from-splitwise/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://homepotapp.com/from-splitwise/"/>
+  </url>
+  <url>
+    <loc>https://homepotapp.com/es/from-splitwise/</loc>
+    <lastmod>2026-11-11</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://homepotapp.com/from-splitwise/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://homepotapp.com/es/from-splitwise/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://homepotapp.com/fr/from-splitwise/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://homepotapp.com/de/from-splitwise/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://homepotapp.com/pt/from-splitwise/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://homepotapp.com/from-splitwise/"/>
+  </url>
+  <url>
+    <loc>https://homepotapp.com/fr/from-splitwise/</loc>
+    <lastmod>2026-11-11</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://homepotapp.com/from-splitwise/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://homepotapp.com/es/from-splitwise/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://homepotapp.com/fr/from-splitwise/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://homepotapp.com/de/from-splitwise/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://homepotapp.com/pt/from-splitwise/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://homepotapp.com/from-splitwise/"/>
+  </url>
+  <url>
+    <loc>https://homepotapp.com/de/from-splitwise/</loc>
+    <lastmod>2026-11-11</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://homepotapp.com/from-splitwise/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://homepotapp.com/es/from-splitwise/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://homepotapp.com/fr/from-splitwise/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://homepotapp.com/de/from-splitwise/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://homepotapp.com/pt/from-splitwise/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://homepotapp.com/from-splitwise/"/>
+  </url>
+  <url>
+    <loc>https://homepotapp.com/pt/from-splitwise/</loc>
+    <lastmod>2026-11-11</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://homepotapp.com/from-splitwise/"/>
@@ -86,7 +422,7 @@
   </url>
   <url>
     <loc>https://homepotapp.com/guides/split-expenses-with-roommates/</loc>
-    <lastmod>2026-11-09</lastmod>
+    <lastmod>2026-11-11</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://homepotapp.com/guides/split-expenses-with-roommates/"/>
@@ -97,15 +433,51 @@
     <xhtml:link rel="alternate" hreflang="x-default" href="https://homepotapp.com/guides/split-expenses-with-roommates/"/>
   </url>
   <url>
-    <loc>https://homepotapp.com/delete-account/</loc>
-    <lastmod>2026-11-09</lastmod>
+    <loc>https://homepotapp.com/es/guides/split-expenses-with-roommates/</loc>
+    <lastmod>2026-11-11</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
-    <xhtml:link rel="alternate" hreflang="en" href="https://homepotapp.com/delete-account/"/>
-    <xhtml:link rel="alternate" hreflang="es" href="https://homepotapp.com/es/delete-account/"/>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://homepotapp.com/fr/delete-account/"/>
-    <xhtml:link rel="alternate" hreflang="de" href="https://homepotapp.com/de/delete-account/"/>
-    <xhtml:link rel="alternate" hreflang="pt" href="https://homepotapp.com/pt/delete-account/"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://homepotapp.com/delete-account/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://homepotapp.com/guides/split-expenses-with-roommates/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://homepotapp.com/es/guides/split-expenses-with-roommates/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://homepotapp.com/fr/guides/split-expenses-with-roommates/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://homepotapp.com/de/guides/split-expenses-with-roommates/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://homepotapp.com/pt/guides/split-expenses-with-roommates/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://homepotapp.com/guides/split-expenses-with-roommates/"/>
+  </url>
+  <url>
+    <loc>https://homepotapp.com/fr/guides/split-expenses-with-roommates/</loc>
+    <lastmod>2026-11-11</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://homepotapp.com/guides/split-expenses-with-roommates/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://homepotapp.com/es/guides/split-expenses-with-roommates/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://homepotapp.com/fr/guides/split-expenses-with-roommates/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://homepotapp.com/de/guides/split-expenses-with-roommates/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://homepotapp.com/pt/guides/split-expenses-with-roommates/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://homepotapp.com/guides/split-expenses-with-roommates/"/>
+  </url>
+  <url>
+    <loc>https://homepotapp.com/de/guides/split-expenses-with-roommates/</loc>
+    <lastmod>2026-11-11</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://homepotapp.com/guides/split-expenses-with-roommates/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://homepotapp.com/es/guides/split-expenses-with-roommates/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://homepotapp.com/fr/guides/split-expenses-with-roommates/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://homepotapp.com/de/guides/split-expenses-with-roommates/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://homepotapp.com/pt/guides/split-expenses-with-roommates/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://homepotapp.com/guides/split-expenses-with-roommates/"/>
+  </url>
+  <url>
+    <loc>https://homepotapp.com/pt/guides/split-expenses-with-roommates/</loc>
+    <lastmod>2026-11-11</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://homepotapp.com/guides/split-expenses-with-roommates/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://homepotapp.com/es/guides/split-expenses-with-roommates/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://homepotapp.com/fr/guides/split-expenses-with-roommates/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://homepotapp.com/de/guides/split-expenses-with-roommates/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://homepotapp.com/pt/guides/split-expenses-with-roommates/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://homepotapp.com/guides/split-expenses-with-roommates/"/>
   </url>
 </urlset>

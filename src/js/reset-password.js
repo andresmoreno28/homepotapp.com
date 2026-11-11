@@ -122,9 +122,7 @@
     var result = evaluate();
     Array.prototype.forEach.call(document.querySelectorAll('[data-rule]'), function (li) {
       var ok = !!result[li.getAttribute('data-rule')];
-      li.setAttribute('data-ok', ok ? 'true' : 'false');
-      var icon = li.querySelector('.hp-rule-icon');
-      if (icon) icon.textContent = ok ? 'check_circle' : 'radio_button_unchecked';
+      li.setAttribute('data-ok', ok ? 'true' : 'false'); // the drawn mark follows data-ok in CSS
       HP.setText(li.querySelector('[data-rule-state]'), ok ? 'rp.rule_ok' : 'rp.rule_missing');
     });
     return result;
@@ -168,12 +166,10 @@
 
   Array.prototype.forEach.call(document.querySelectorAll('[data-toggle-password]'), function (btn) {
     var input = $(btn.getAttribute('data-toggle-password'));
-    var icon = btn.querySelector('.material-symbols-outlined');
     btn.addEventListener('click', function () {
       var reveal = input.type === 'password';
       input.type = reveal ? 'text' : 'password';
-      btn.setAttribute('aria-pressed', reveal ? 'true' : 'false');
-      if (icon) icon.textContent = reveal ? 'visibility_off' : 'visibility';
+      btn.setAttribute('aria-pressed', reveal ? 'true' : 'false'); // the eye icon follows aria-pressed in CSS
     });
   });
 

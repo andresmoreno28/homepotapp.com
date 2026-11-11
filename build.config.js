@@ -4,6 +4,25 @@ export default {
   defaultLocale: 'en',
   appStoreUrl: 'https://apps.apple.com/app/homepot-shared-expenses/id6759216594',
   contactEmail: 'homepotapp@gmail.com',
+
+  // Measurement hooks. Both are OFF while their token is empty: nothing is added to any page.
+  //
+  // analytics.cloudflareToken — Cloudflare Web Analytics (cookieless, no consent banner needed).
+  //   Create the site at dash.cloudflare.com > Analytics & Logs > Web Analytics and paste the
+  //   token of its JS snippet here (32 hex characters). Every page then loads Cloudflare's
+  //   beacon, except /reset-password/, which is left out on purpose because password recovery
+  //   tokens travel in its URL.
+  //
+  // appStore.providerToken — the numeric "pt" of your App Store Connect campaign links
+  //   (App Analytics > Acquisition > Campaigns > Generate Campaign Link, the number after pt=).
+  //   Every App Store link on the site is built by one helper (appStoreLink in build.js) and
+  //   then becomes <appStoreUrl>?pt=<providerToken>&ct=<placement>&mt=8, with one "ct" per
+  //   button so App Store Connect shows where each download came from:
+  //     web-<lang>-nav | hero | pricing-free | pricing-pro | cta | footer   (e.g. web-es-hero)
+  //     web-<lang>-vs-splitwise | vs-tricount | from-splitwise | guide-roommates
+  //     web-join                                                    (the invite page)
+  analytics: { cloudflareToken: '' },
+  appStore: { providerToken: '' },
   promoSignupUrl: 'https://haggaeeajlbmktsinbek.supabase.co/functions/v1/promo-signup',
 
   // Shown on /delete-account/ (Google Play requires the app or developer name).
@@ -14,7 +33,7 @@ export default {
   playStoreUrl: 'https://play.google.com/store/apps/details?id=com.homepot.app',
   playStoreLive: false,
 
-  // Custom URL scheme of the app (used by /join/ fallback and /reset-password/).
+  // Custom URL scheme of the app (used by /join/ and /reset-password/).
   appScheme: 'homepot://',
 
   // Universal Links (iOS) + App Links (Android) → .well-known/ files.
@@ -24,6 +43,8 @@ export default {
     // Replace with the SHA-256 of the Play App Signing key
     // (Play Console > Test and release > App integrity > App signing).
     androidSha256: ['REPLACE_WITH_PLAY_APP_SIGNING_SHA256'],
+    // '/join/*' covers both the current link (/join/?c=CODE: the path is /join/, the query
+    // string is not part of the match) and the legacy one (/join/CODE).
     paths: [{ path: '/join/*', comment: 'Group invite links' }],
   },
 

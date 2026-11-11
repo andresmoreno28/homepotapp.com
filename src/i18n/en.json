@@ -9,6 +9,14 @@
       "resources": "Resources",
       "language": "Language"
     },
+    "brand": {
+      "tagline": "Made in Spain for homes everywhere.",
+      "legal": "Legal",
+      "privacy": "Privacy",
+      "terms": "Terms",
+      "help": "Help",
+      "delete_account": "Delete my account"
+    },
     "footer": {
       "desc": "Shared expenses made simple for couples, roommates, and families.",
       "product": "Product",
@@ -122,7 +130,7 @@
         "noads": "Zero Ads Forever",
         "notracking": "No Tracking",
         "languages": "5 Languages",
-        "currencies": "52 Currencies",
+        "currencies": "54 Currencies",
         "aws": "AWS Infrastructure",
         "delete": "Delete Anytime",
         "ai": "AI-Powered Scanner"
@@ -187,35 +195,34 @@
         "save": "Save 42%",
         "free_name": "Free",
         "free_desc": "Perfect for getting started.",
-        "free_price": "$0",
+        "free_price": "€0",
         "free_period": "/month",
         "free_features": [
-          "1 group",
-          "20 expenses/month",
-          "10 AI scans/month",
-          "Smart settlements",
-          "Multi-currency",
-          "No ads ever",
-          "Cloud sync"
+          "1 group, unlimited members",
+          "20 expenses per person/month",
+          "10 AI receipt scans/month",
+          "Month close & settlements",
+          "Recurring expenses",
+          "54 currencies",
+          "No ads ever"
         ],
-        "free_cta": "Get 1 month Pro free",
+        "free_cta": "Start free",
         "pro_name": "Pro",
         "pro_badge": "Most Popular",
         "pro_desc": "For power users who want the full experience.",
         "pro_price_monthly": "€4.99",
         "pro_price_annual": "€2.92",
         "pro_period_monthly": "/month",
-        "pro_period_annual": "/mo, billed annually",
+        "pro_period_annual": "/mo · €34.99 a year",
         "pro_features": [
           "Unlimited expenses",
-          "Unlimited groups",
-          "AI Receipt Scanner",
-          "Currency conversion",
-          "Smart Analytics",
-          "CSV & PDF Export",
-          "Recurring expenses"
+          "50 AI receipt scans/month",
+          "As many groups as you want",
+          "Advanced statistics",
+          "CSV & PDF export",
+          "One subscription for the whole household"
         ],
-        "pro_cta": "Try Pro free for 1 month"
+        "pro_cta": "Download and go Pro"
       },
       "faq": {
         "title": "Common questions",
@@ -234,18 +241,18 @@
           },
           {
             "q": "How much does it cost?",
-            "a": "Free plan: 1 group, 20 expenses/month, 10 AI scans/month, multi-currency, no ads. Pro: unlimited everything from €2.92/month (annual). That's 15x less than a coffee per day."
+            "a": "Free plan: 1 group with unlimited members, 20 expenses per person per month, 10 AI receipt scans per month, month close and settlements, recurring expenses, no ads. Pro: unlimited expenses, 50 scans a month, as many groups as you want, advanced statistics and CSV/PDF export, for €4.99 a month or €34.99 a year (about €2.92 a month). One subscription covers everyone in your groups."
           },
           {
             "q": "How does HomePot compare to Splitwise?",
-            "a": "HomePot is built as an honest, ad-free alternative: 52 currencies for expense entry, AI receipt scanning that reads any currency from receipts, and a transparent subscription model. See the <a href=\"/compare/homepot-vs-splitwise/\" class=\"text-terracotta underline hover:opacity-80\">full side-by-side comparison with Splitwise</a> for every feature and a disclaimer about our sources."
+            "a": "HomePot is built as an honest, ad-free alternative: 54 currencies for expense entry, AI receipt scanning that reads any currency from receipts, and a transparent subscription model. See the <a href=\"/compare/homepot-vs-splitwise/\" class=\"text-terracotta underline hover:opacity-80\">full side-by-side comparison with Splitwise</a> for every feature and a disclaimer about our sources."
           }
         ]
       }
     },
     "fromSplitwise": {
       "title": "Leaving Splitwise? Welcome to HomePot",
-      "description": "Welcome, Splitwise refugee. Zero ads, AI receipt scanning on the free tier, 52 currencies, and a transparent subscription model. Compare and try HomePot.",
+      "description": "Welcome, Splitwise refugee. Zero ads, AI receipt scanning on the free tier, 54 currencies, and a transparent subscription model. Compare and try HomePot.",
       "eyebrow": "Welcome, Splitwise refugee",
       "eyebrow_icon": "waving_hand",
       "h1": "Tired of ads and daily caps? Come on in.",
@@ -262,7 +269,7 @@
         {
           "icon": "document_scanner",
           "title": "AI receipt scanner on the free tier",
-          "desc": "Snap a photo of any receipt and our AI extracts the total, each item, taxes, tips, merchant and currency — not just the total. Available for free with a monthly scan limit; unlimited on Pro."
+          "desc": "Snap a photo of any receipt and our AI extracts the total, each item, taxes, tips, merchant and currency — not just the total. Free with 10 scans a month; 50 a month on Pro."
         },
         {
           "icon": "autorenew",
@@ -271,8 +278,8 @@
         },
         {
           "icon": "currency_exchange",
-          "title": "52 currencies + AI reads any receipt",
-          "desc": "52 currencies selectable in the app, and the AI scanner detects any ISO 4217 currency directly from a receipt image. Auto-converts at today's exchange rate."
+          "title": "54 currencies + AI reads any receipt",
+          "desc": "54 currencies selectable in the app, and the AI scanner detects any ISO 4217 currency directly from a receipt image. Auto-converts at today's exchange rate."
         }
       ],
       "honest_note": {
@@ -288,7 +295,7 @@
         },
         {
           "q": "Is HomePot really free?",
-          "a": "Yes. The free plan includes 1 group, 20 expenses per month, an AI receipt scanner with a monthly scan limit, multi-currency, and zero ads — forever. Pro (from €2.92/month on annual billing) removes the limits and adds unlimited groups, exports and advanced analytics."
+          "a": "Yes. The free plan includes 1 group with unlimited members, 20 expenses per person per month, 10 AI receipt scans per month, month close, recurring expenses and zero ads — forever. Pro (from €2.92/month on annual billing) gives you unlimited expenses, 50 scans a month, as many groups as you want, exports and advanced statistics, and one subscription covers everyone in your groups."
         },
         {
           "q": "How is this different from the Splitwise comparison page?",
@@ -340,7 +347,7 @@
           { "icon": "account_balance", "title": "See the settlement", "desc": "We compute the minimum transfers needed to zero everyone's balance." }
         ],
         "upsell_title": "Want this automatic from your phone?",
-        "upsell_desc": "HomePot does the same math on your phone — plus AI receipt scanning, multi-currency, recurring bills and a monthly close ritual. Free tier is generous, Pro removes all the limits.",
+        "upsell_desc": "HomePot does the same math on your phone — plus AI receipt scanning, multi-currency, recurring bills and a monthly close ritual. Free tier is generous, Pro raises the limits.",
         "faq_title": "Frequently asked questions",
         "faq": [
           {
@@ -357,7 +364,7 @@
           },
           {
             "q": "What currency does it use?",
-            "a": "It defaults to EUR and formats amounts using your browser locale. If your trip is in a different currency, the HomePot app handles 52 currencies natively plus any ISO 4217 currency detected by its AI receipt scanner."
+            "a": "It defaults to EUR and formats amounts using your browser locale. If your trip is in a different currency, the HomePot app handles 54 currencies natively plus any ISO 4217 currency detected by its AI receipt scanner."
           }
         ]
       }
@@ -448,22 +455,23 @@
         "intro": "Tricount (by bunq) is probably the best-rated free expense-splitting app on iOS, and it genuinely deserves it: simple, 100% free, great for one-off group trips. HomePot plays a different game — ongoing household finance with AI receipt scanning, recurring expenses, fixed vs variable splits, and a monthly close ritual. Both are honest, ad-free apps; this page shows exactly where each one wins so you can pick the right tool.",
         "table_title": "Side-by-side comparison",
         "table_subtitle": "Each cell states how the feature is offered in each app. Sources linked where possible.",
+        "table_disclaimer": "All information reflects publicly available data from the official Tricount website and App Store listing at the time of writing. Please verify current details at tricount.com. HomePot is not affiliated with Tricount or bunq.",
         "features": [
           { "label": "Pricing model", "ours": "Free + optional Pro from €2.92/mo", "theirs": "100% free (no paid tier)" },
           { "label": "Ads", "ours": "None — ever", "theirs": "None — ever" },
-          { "label": "AI receipt scanner with OCR", "ours": "Free (monthly scan limit) · Unlimited on Pro", "theirs": "Not available — only photo attachment" },
+          { "label": "AI receipt scanner with OCR", "ours": "Free: 10 scans/month · Pro: 50/month", "theirs": "Not available — only photo attachment" },
           { "label": "Line-item extraction from receipts", "ours": "Free (via AI scan)", "theirs": "Not available" },
           { "label": "Automatic currency conversion", "ours": "Free (via AI scan) — any ISO 4217", "theirs": "Yes — free (built-in)" },
-          { "label": "Currencies selectable for expense entry", "ours": "52", "theirs": "Many (unspecified number)" },
+          { "label": "Currencies selectable for expense entry", "ours": "54", "theirs": "Many (unspecified number)" },
           { "label": "Recurring expenses", "ours": "Free", "theirs": "Not a listed feature" },
           { "label": "Fixed vs variable split modes in the same group", "ours": "Free", "theirs": "Split equally, by parts, or custom amounts" },
           { "label": "Monthly close with minimum-transfer settlement", "ours": "Free", "theirs": "Continuous settlement (no monthly close ritual)" },
-          { "label": "Charts & spending analytics", "ours": "Free (CSV/PDF export on Pro)", "theirs": "Spending insights, monthly breakdowns" },
+          { "label": "Charts & spending analytics", "ours": "Monthly summary free · Advanced statistics and CSV/PDF export on Pro", "theirs": "Spending insights, monthly breakdowns" },
           { "label": "Offline mode (add expenses without connection)", "ours": "Not implemented — requires network", "theirs": "Yes — free (tricount's own feature page)" },
           { "label": "Splitwise import", "ours": "On roadmap", "theirs": "Yes — free (built-in)" },
           { "label": "Bank-card auto-add expenses", "ours": "Not available", "theirs": "Yes — with a bunq card" },
           { "label": "Groups", "ours": "1 free household group · Unlimited on Pro", "theirs": "Unlimited" },
-          { "label": "Expenses per group", "ours": "20/month on free · Unlimited on Pro", "theirs": "Unlimited" },
+          { "label": "Expenses", "ours": "20 per person/month on free · Unlimited on Pro", "theirs": "Unlimited" },
           { "label": "GDPR compliant", "ours": true, "theirs": true }
         ],
         "differentiators": [
@@ -479,8 +487,8 @@
           },
           {
             "icon": "currency_exchange",
-            "title": "52 currencies + AI reads any receipt",
-            "desc": "Both apps handle multi-currency. HomePot ships 52 currencies in the expense picker and, thanks to the AI scanner, can read any ISO 4217 currency directly from a receipt image and auto-convert at live exchange rates, even if it's outside those 52."
+            "title": "54 currencies + AI reads any receipt",
+            "desc": "Both apps handle multi-currency. HomePot ships 54 currencies in the expense picker and, thanks to the AI scanner, can read any ISO 4217 currency directly from a receipt image and auto-convert at live exchange rates, even if it's outside those 54."
           },
           {
             "icon": "lock",
@@ -501,7 +509,7 @@
         "faq": [
           {
             "q": "Is Tricount really 100% free?",
-            "a": "According to Tricount's own website and feature page, yes — Tricount is described as \"100% free\" with no paid subscription tier advertised. Features like multi-currency, offline mode, Splitwise import and spending insights are all listed as free on tricount.com. HomePot has a free tier too, plus an optional Pro subscription that removes limits on groups, expenses and AI scans."
+            "a": "According to Tricount's own website and feature page, yes — Tricount is described as \"100% free\" with no paid subscription tier advertised. Features like multi-currency, offline mode, Splitwise import and spending insights are all listed as free on tricount.com. HomePot has a free tier too, plus an optional Pro subscription that raises the limits on groups, expenses and AI scans."
           },
           {
             "q": "Does Tricount have AI receipt scanning?",
@@ -523,25 +531,25 @@
       },
       "splitwise": {
         "title": "HomePot vs Splitwise — honest comparison (2026)",
-        "description": "Looking for a Splitwise alternative? HomePot supports 52 currencies, AI receipt scanning that reads any currency, and zero ads. See the full side-by-side comparison with sources.",
+        "description": "Looking for a Splitwise alternative? HomePot supports 54 currencies, AI receipt scanning that reads any currency, and zero ads. See the full side-by-side comparison with sources.",
         "h1": "HomePot vs Splitwise — the honest comparison",
         "intro": "Splitwise has been the default way to split shared expenses for over a decade. Both HomePot and Splitwise have a free tier and a paid Pro tier, so a fair comparison must show what each plan actually gives you. Here's the honest breakdown — and the short version is that most of what Splitwise reserves for Pro, HomePot includes for free. Every row below links to a public source so you can verify it yourself.",
         "table_title": "Side-by-side comparison",
         "table_subtitle": "Each cell states which plan tier the feature is available on. A checkmark means unrestricted for all users; text means there's a specific tier or limit.",
         "features": [
           { "label": "Ads in the free tier", "ours": "None — ever", "theirs": "Shown to free users" },
-          { "label": "AI receipt scanner", "ours": "Free (monthly scan limit) · Unlimited on Pro", "theirs": "Pro only" },
+          { "label": "AI receipt scanner", "ours": "Free: 10 scans/month · Pro: 50/month", "theirs": "Pro only" },
           { "label": "Line-item extraction from receipts", "ours": "Free (via AI scan)", "theirs": "Pro only" },
           { "label": "Automatic currency conversion", "ours": "Free (via AI scan)", "theirs": "Pro only" },
-          { "label": "Charts & spending analytics", "ours": "Free", "theirs": "Pro only" },
+          { "label": "Charts & spending analytics", "ours": "Monthly summary free · Advanced statistics on Pro", "theirs": "Pro only" },
           { "label": "Recurring expenses", "ours": "Free", "theirs": "Partial / Pro" },
           { "label": "Fixed vs variable split modes in the same group", "ours": "Free", "theirs": "Not available" },
           { "label": "Monthly close with minimum-transfer settlement", "ours": "Free", "theirs": "Not available" },
-          { "label": "Currencies selectable for expense entry", "ours": "52", "theirs": "Many (unspecified)" },
+          { "label": "Currencies selectable for expense entry", "ours": "54", "theirs": "Many (unspecified)" },
           { "label": "AI reads any currency from the receipt image", "ours": "Free (within scan limit)", "theirs": false },
           { "label": "CSV / PDF export of stats", "ours": "Pro only", "theirs": "Pro only" },
           { "label": "GDPR / CCPA compliant", "ours": true, "theirs": true },
-          { "label": "Expenses per month", "ours": "20 free (no daily cap — batch them any day) · Unlimited on Pro", "theirs": "Daily cap applies — see Splitwise Pro page" },
+          { "label": "Expenses per month", "ours": "20 per person free (no daily cap — batch them any day) · Unlimited on Pro", "theirs": "Daily cap applies — see Splitwise Pro page" },
           { "label": "Groups", "ours": "1 free household group · Unlimited on Pro", "theirs": "Unlimited" }
         ],
         "differentiators": [
@@ -552,8 +560,8 @@
           },
           {
             "icon": "currency_exchange",
-            "title": "52 currencies + AI reads any receipt",
-            "desc": "52 currencies supported for expense entry, covering Europe, the Americas, Asia, the Middle East, Oceania and Africa. The AI scanner goes further and detects any ISO 4217 currency from the receipt image, then auto-converts to your group's base currency at live exchange rates."
+            "title": "54 currencies + AI reads any receipt",
+            "desc": "54 currencies supported for expense entry, covering Europe, the Americas, Asia, the Middle East, Oceania and Africa. The AI scanner goes further and detects any ISO 4217 currency from the receipt image, then auto-converts to your group's base currency at live exchange rates."
           },
           {
             "icon": "block",
@@ -607,11 +615,11 @@
           },
           {
             "q": "Is HomePot really free?",
-            "a": "Yes. The free plan includes 1 group, 20 expenses per month, 10 AI receipt scans, multi-currency, and zero ads — forever. Pro starts at €2.92/month on annual billing and removes the limits, plus adds unlimited groups, exports and advanced analytics."
+            "a": "Yes. The free plan includes 1 group with unlimited members, 20 expenses per person per month, 10 AI receipt scans per month, multi-currency, and zero ads — forever. Pro starts at €2.92/month on annual billing: unlimited expenses, 50 scans a month, as many groups as you want, exports and advanced statistics, and one subscription covers everyone in your groups."
           },
           {
             "q": "What exactly do I get on HomePot's free tier, without paying?",
-            "a": "A free HomePot account gives you: 1 group with unlimited members, 20 expenses per month, a limited number of AI receipt scans per month, receipt photo uploads, the full 52-currency picker, charts and spending analytics, recurring expenses, fixed and variable splitting in the same group, the monthly close with minimum-transfer settlement, dark mode, and zero ads. Pro mainly removes the group/expense/scan limits and adds CSV/PDF export for your stats."
+            "a": "A free HomePot account gives you: 1 group with unlimited members, 20 expenses per person per month, 10 AI receipt scans per month, receipt photo uploads, the full 54-currency picker, the monthly summary, recurring expenses, fixed and variable splitting in the same group, the monthly close with minimum-transfer settlement, dark mode, and zero ads. Pro lifts the expense limit, gives you 50 scans a month and as many groups as you want, and adds advanced statistics and CSV/PDF export."
           },
           {
             "q": "How does HomePot make money if there are no ads?",
@@ -619,7 +627,7 @@
           },
           {
             "q": "How many currencies does HomePot really support?",
-            "a": "52 currencies are selectable from the picker for expense entry, covering Europe, the Americas, Asia, the Middle East, Oceania and Africa. On top of that, the AI receipt scanner detects any ISO 4217 currency directly from the receipt image — so even if your group's base currency is outside the 52, you can still scan a receipt anywhere in the world and see it auto-converted."
+            "a": "54 currencies are selectable from the picker for expense entry, covering Europe, the Americas, Asia, the Middle East, Oceania and Africa. On top of that, the AI receipt scanner detects any ISO 4217 currency directly from the receipt image — so even if your group's base currency is outside the 54, you can still scan a receipt anywhere in the world and see it auto-converted."
           },
           {
             "q": "Is HomePot GDPR compliant?",
@@ -692,20 +700,25 @@
       "home": "Back to home"
     },
     "join": {
-      "title": "Join a group | HomePot",
-      "eyebrow": "Group invite",
-      "h1": "You've been invited to a group",
-      "intro": "Someone has invited you to share expenses on HomePot. Use this invite code to join their group.",
-      "code_label": "Invite code",
-      "open_app": "Open in app",
-      "copy_code": "Copy code",
-      "copied": "Copied",
-      "copy_failed": "Couldn't copy the code. Select it and copy it manually.",
+      "title": "You've been invited to a shared pot · HomePot",
+      "nocode_title": "HomePot",
+      "card_title": "You're invited",
+      "card_description": "Open the link to join the pot.",
+      "h1": "You've been invited to share a pot on HomePot.",
+      "intro": "HomePot is the app for a household's shared pot: how much is in it and how long it will last. Open your invitation to join theirs.",
+      "nocode_h1": "Open HomePot.",
+      "nocode_intro": "This link doesn't carry an invitation. Open the app or, if you don't have it yet, download it.",
+      "code_label": "code",
+      "open_app": "Open in the app",
+      "open_app_plain": "Open the app",
+      "open_hint": "If HomePot is already on this phone.",
       "install_title": "Don't have HomePot yet?",
-      "step1": "Install HomePot from the App Store.",
-      "step2": "Then open this invite link again, or enter the code in \"Join a group\".",
-      "app_store_alt": "Download on the App Store",
-      "coming_soon": "Coming soon"
+      "app_store": "Download on the App Store",
+      "play_store": "Get it on Google Play",
+      "play_soon": "Google Play, coming soon",
+      "copy_hint": "When you tap the button we copy your invitation, so you can paste it in the app once it's installed.",
+      "copied": "We copied your invitation. After installing, open HomePot, tap “I have an invitation” and paste it.",
+      "copy_failed": "We couldn't copy your invitation. After installing HomePot, open this link again and it will take you straight to the pot."
     },
     "resetPassword": {
       "title": "Reset your password | HomePot",

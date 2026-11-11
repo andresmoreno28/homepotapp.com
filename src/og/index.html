@@ -1,0 +1,140 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="robots" content="noindex">
+<title>HomePot · link preview image (source)</title>
+<!--
+  Source of the link preview images (1200 × 630). Not a page of the site.
+
+    /src/og/?lang=en  → og-image.png        /src/og/?lang=es → og-image-es.png
+    /src/og/?lang=pt  → og-image-pt.png     /src/og/?lang=fr → og-image-fr.png
+    /src/og/?lang=de  → og-image-de.png     /src/og/?card=join → og-join.png (Spanish + English)
+
+  To regenerate: serve the repo (python3 -m http.server), open each URL in a 1200 × 630 viewport
+  and save a screenshot at 1× into the repo root. Then bump OG_IMAGE_VERSION in build.js so
+  chats and social networks drop their cached copy.
+
+  Same identity as the landing: band + lockup, Archivo, the runway chart and the butter bubble.
+  The words in the chart are the app's own (src/i18n/locales in the app repo: pot.runsOut, pot.inThePot).
+-->
+<style>
+  @font-face { font-family: "Archivo"; src: url("/assets/fonts/Archivo-VF-latin.woff2") format("woff2"); font-weight: 100 900; font-stretch: 62% 125%; }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; }
+  body { width: 1200px; height: 630px; overflow: hidden; background: #FAFAF7; color: #101512; font-family: "Archivo", "Helvetica Neue", Arial, sans-serif; font-variant-numeric: tabular-nums; -webkit-font-smoothing: antialiased; }
+  .card { position: relative; width: 1200px; height: 630px; }
+  .band { position: absolute; inset: 0 0 auto 0; height: 100px; background: #184838; }
+  .band img { position: absolute; left: 68px; top: 18px; height: 63px; width: auto; }
+  h1 { position: absolute; left: 68px; top: 132px; width: 1064px; margin: 0; font-size: 62px; font-weight: 800; letter-spacing: -0.03em; line-height: 1.04; color: #0B3B2B; text-wrap: balance; }
+  .second { position: absolute; left: 68px; width: 1064px; margin: 0; font-size: 34px; font-weight: 500; letter-spacing: -0.01em; line-height: 1.2; color: #4C5A53; }
+  svg { position: absolute; inset: 0; width: 1200px; height: 630px; }
+  svg text { font-family: "Archivo", "Helvetica Neue", Arial, sans-serif; }
+</style>
+</head>
+<body>
+<div class="card">
+  <div class="band"><img src="/assets/brand/logo-horizontal-white.svg" alt="HomePot"></div>
+  <h1 id="h1"></h1>
+  <p class="second" id="second" hidden></p>
+  <svg id="chart" viewBox="0 0 1200 630" aria-hidden="true"></svg>
+</div>
+<script>
+(async () => {
+  const q = new URLSearchParams(location.search);
+  const join = q.get('card') === 'join';
+  const T = {
+    es: { h1: 'Sabed cuánto hay en el bote y hasta cuándo os llega.', today: 'Hoy · 412,30 € en el bote', lasts: 'Os llega hasta el día 26' },
+    en: { h1: 'Know how much is in the pot and how long it will last.', today: 'Today · €412.30 in the pot', lasts: 'It lasts until day 26' },
+    pt: { h1: 'Saibam quanto tem na caixinha e até quando dá.', today: 'Hoje · € 412,30 na caixinha', lasts: 'Dá até o dia 26' },
+    fr: { h1: 'Combien il y a dans la cagnotte, et jusqu’à quand elle tient.', today: 'Aujourd’hui · 412,30 € dans la cagnotte', lasts: 'Elle tient jusqu’au 26' },
+    de: { h1: 'Wisst, wie viel in der Kasse ist und wie lange es reicht.', today: 'Heute · 412,30 € in der Kasse', lasts: 'Reicht bis zum 26.' },
+  };
+  const lang = T[q.get('lang')] ? q.get('lang') : 'en';
+  document.documentElement.lang = join ? 'es' : lang;
+  const h1 = document.getElementById('h1');
+  const second = document.getElementById('second');
+  h1.textContent = join ? 'Te han invitado a compartir un bote.' : T[lang].h1;
+  await document.fonts.load('800 62px Archivo');
+  await document.fonts.ready;
+
+  // The headline keeps to two lines.
+  let size = 62;
+  const lines = () => Math.round(h1.getBoundingClientRect().height / (size * 1.04));
+  while (lines() > 2 && size > 44) { size -= 1; h1.style.fontSize = size + 'px'; }
+  if (join) {
+    second.hidden = false;
+    second.lang = 'en';
+    second.textContent = 'You’ve been invited to share a pot.';
+    second.style.top = (132 + h1.getBoundingClientRect().height + 14) + 'px';
+  }
+
+  /* ---------- the runway chart: the landing's example household, November ---------- */
+  const NS = 'http://www.w3.org/2000/svg';
+  const NIGHT = '#0D1F17', LINE = '#0F4A30', BUTTER = '#F8D471', GRID = '#CAD8C7', AXIS = '#8CA68B', BAR = '#C0D2BE', TAG = '#155235';
+  const balance = [1108, 1045, 967, 885, 803, 707, 625, 525, 412.3, 383, 351, 319, 301, 283, 251, 219, 192, 169, 137, 114, 91, 68, 46, 23, 9, 0, 0, 0, 0, 0];
+  const spend = [22, 40, 40, 40, 140, 60, 50, 52, 52, 56, 50, 50, 40, 150, 52, 60, 40, 50, 40, 92, 40, 60, 20, 8, 0, 0, 0, 0, 0, 0];
+  const TODAY = 9, RUNS_OUT = 26;
+  const svg = document.getElementById('chart');
+  const el = (name, attrs, parent, text) => {
+    const n = document.createElementNS(NS, name);
+    for (const [k, v] of Object.entries(attrs)) n.setAttribute(k, v);
+    if (text != null) n.textContent = text;
+    parent.appendChild(n);
+    return n;
+  };
+  // One outlined shape: the tail grows out of the box with concave sides and lands on the marker.
+  const bubble = (x0, x1, y0, y1, cx, tipY, half) => {
+    const ty = y1 + (tipY - y1) * 0.29;
+    return `M${x0} ${y0}H${x1}V${y1}H${cx + half}C${cx + half * 0.46} ${y1} ${cx + half * 0.27} ${ty} ${cx} ${tipY}` +
+      `C${cx - half * 0.27} ${ty} ${cx - half * 0.46} ${y1} ${cx - half} ${y1}H${x0}Z`;
+  };
+
+  const L = 68, R = 1132, B = 556, PER = (join ? 190 : 236) / 1200;
+  const X0 = 104, STEP = (R - 24 - X0) / 29;
+  const dx = (d) => X0 + (d - 1) * STEP;
+  const vy = (v) => B - v * PER;
+
+  const grid = el('g', { stroke: GRID, 'stroke-width': 1.5 }, svg);
+  [300, 600, 900, 1200].forEach((v) => el('line', { x1: L, x2: R, y1: vy(v), y2: vy(v) }, grid));
+  el('line', { x1: L, x2: R, y1: B, y2: B, stroke: AXIS, 'stroke-width': 2 }, svg);
+
+  const bars = el('g', { fill: BAR }, svg);
+  spend.forEach((s, i) => { if (s > 0) el('rect', { x: dx(i + 1) - 11, y: vy(s), width: 22, height: s * PER }, bars); });
+  el('line', { x1: dx(TODAY), x2: dx(TODAY), y1: vy(balance[TODAY - 1]), y2: B, stroke: LINE, 'stroke-width': 2, 'stroke-dasharray': '6 6' }, svg);
+  el('polyline', { points: balance.map((v, i) => `${dx(i + 1)},${vy(v)}`).join(' '), fill: 'none', stroke: LINE, 'stroke-width': 5, 'stroke-linejoin': 'round' }, svg);
+  const dots = el('g', { stroke: LINE, 'stroke-width': 3.2, fill: '#FFFFFF' }, svg);
+  balance.forEach((v, i) => { const d = i + 1; if (d !== RUNS_OUT) el('circle', { cx: dx(d), cy: vy(v), r: d === TODAY ? 10 : 5.5 }, dots); });
+
+  const xl = el('g', { 'font-size': 19, 'font-weight': 500, fill: '#4C5A53', 'text-anchor': 'middle' }, svg);
+  [1, 5, 15, 20, 30].forEach((d) => el('text', { x: dx(d), y: B + 29 }, xl, String(d)));
+  [TODAY, RUNS_OUT].forEach((d) => {
+    el('rect', { x: dx(d) - 21, y: B + 8, width: 42, height: 31, fill: TAG }, xl);
+    el('text', { x: dx(d), y: B + 30.5, fill: '#FFFFFF', 'font-weight': 800, 'font-size': 20 }, xl, String(d));
+  });
+
+  const cx = dx(RUNS_OUT), r = 10.5;
+  if (!join) {
+    // callout: today
+    const tx = dx(TODAY), ty = vy(balance[TODAY - 1]);
+    const tText = el('text', { x: 0, y: 0, 'font-size': 25, 'font-weight': 800, fill: '#0A301F', style: 'font-stretch:108%' }, svg, T[lang].today);
+    const tw = Math.ceil(tText.getComputedTextLength()) + 44, th = 50, bx = tx - 46, by = ty - 96;
+    el('line', { x1: tx, x2: tx, y1: by + th, y2: ty - 10, stroke: LINE, 'stroke-width': 3 }, svg);
+    el('rect', { x: bx, y: by, width: tw, height: th, fill: '#FFFFFF', stroke: LINE, 'stroke-width': 3 }, svg);
+    tText.setAttribute('x', bx + tw / 2); tText.setAttribute('y', by + 34); tText.setAttribute('text-anchor', 'middle');
+    svg.appendChild(tText);
+
+    // callout: until when the pot lasts (box and tail are one outlined shape)
+    const lText = el('text', { x: 0, y: 0, 'font-size': 27, 'font-weight': 800, fill: '#0A0A08', style: 'font-stretch:108%' }, svg, T[lang].lasts);
+    const W = Math.ceil(lText.getComputedTextLength()) + 52, H = 54, y0 = B - 124;
+    const x0 = Math.min(Math.max(cx - W / 2, L), R - W);
+    el('path', { d: bubble(x0, x0 + W, y0, y0 + H, cx, B - r - 1.5, 13), fill: BUTTER, stroke: NIGHT, 'stroke-width': 2.4, 'stroke-linejoin': 'round' }, svg);
+    lText.setAttribute('x', x0 + W / 2); lText.setAttribute('y', y0 + 36.5); lText.setAttribute('text-anchor', 'middle');
+    svg.appendChild(lText);
+  }
+  el('circle', { cx, cy: B, r, fill: BUTTER, stroke: NIGHT, 'stroke-width': 3.5 }, svg);
+  document.documentElement.setAttribute('data-ready', '1');
+})();
+</script>
+</body>
+</html>

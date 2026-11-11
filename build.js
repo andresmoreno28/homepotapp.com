@@ -2,6 +2,7 @@ import { Eta } from 'eta';
 import { readFileSync, writeFileSync, mkdirSync, readdirSync, existsSync, statSync, rmSync } from 'node:fs';
 import { join, dirname, resolve } from 'node:path';
 import { fileURLToPath } from 'node:url';
+import { createHash } from 'node:crypto';
 import config from './build.config.js';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
@@ -79,6 +80,74 @@ function buildAlternatesRel(route) {
   return links;
 }
 
+// ------------- measurement hooks (off by default, see build.config.js) -------------
+// Every App Store link on the site is built here. With appStore.providerToken set it
+// carries Apple's campaign parameters (pt = provider, ct = placement, mt = 8) so App Store
+// Connect > Analytics > Sources shows which button the download came from.
+function appStoreLink(placement) {
+  const token = String(config.appStore?.providerToken || '').trim();
+  if (!token) return config.appStoreUrl;
+  const sep = config.appStoreUrl.includes('?') ? '&' : '?';
+  return `${config.appStoreUrl}${sep}pt=${encodeURIComponent(token)}&ct=${encodeURIComponent(placement)}&mt=8`;
+}
+
+// HTML-attribute-safe version for templates (autoEscape is off).
+function appStoreHref(placement) {
+  if (placement.length > 40) console.warn(`  warning: campaign token "${placement}" is longer than Apple's 40 characters`);
+  return escapeHtml(appStoreLink(placement));
+}
+
+// Cloudflare Web Analytics beacon (cookieless). Empty string while the token is empty.
+function analyticsSnippet() {
+  // The token is 32 hex characters; anything else is dropped so it can sit raw in the attribute.
+  const token = String(config.analytics?.cloudflareToken || '').replace(/[^A-Za-z0-9_-]/g, '');
+  if (!token) return '';
+  return `<script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "${token}"}'></script>`;
+}
+
+// Link preview image, one per language (og-image.png is the default locale's).
+const OG_IMAGE_VERSION = 4;
+function ogImageUrl(locale) {
+  const suffix = locale === config.defaultLocale ? '' : `-${locale}`;
+  return `${config.baseUrl}/og-image${suffix}.png?v=${OG_IMAGE_VERSION}`;
+}
+
+// Context every per-language page gets: store links, analytics and its preview image.
+function shared(locale) {
+  return {
+    appStore: (slot) => appStoreHref(`web-${locale}-${slot}`),
+    analytics: analyticsSnippet(),
+    ogImage: ogImageUrl(locale),
+  };
+}
+
+// ------------- new identity (utility pages) -------------
+// Language menu, in the landing's order, with native names.
+const LANG_NAMES = { es: 'Español', en: 'English', pt: 'Português', fr: 'Français', de: 'Deutsch' };
+const LANG_ORDER = Object.keys(LANG_NAMES).filter((code) => config.locales.includes(code));
+
+// Drawn icons (strokes in currentColor). Apple, Android and scissors are the landing's own.
+const icons = {
+  apple: '<svg viewBox="0 0 24 28" aria-hidden="true"><path fill="currentColor" d="M19.7 14.9c0-3 2.5-4.5 2.6-4.6-1.4-2.1-3.6-2.4-4.4-2.4-1.9-.2-3.7 1.1-4.6 1.1-1 0-2.4-1.1-4-1.1-2 0-3.9 1.2-5 3-2.1 3.7-.5 9.2 1.5 12.2 1 1.4 2.2 3.1 3.7 3 1.5-.1 2.1-1 3.9-1s2.3 1 3.9.9c1.6 0 2.6-1.4 3.6-2.9 1.1-1.7 1.6-3.3 1.6-3.4-.1 0-3.2-1.2-2.8-4.8zM16.8 5.8c.8-1 1.4-2.4 1.2-3.8-1.2.1-2.6.8-3.5 1.8-.8.9-1.4 2.3-1.2 3.6 1.3.1 2.7-.7 3.5-1.6z"/></svg>',
+  android: '<svg viewBox="0 0 56 64" aria-hidden="true"><path fill="currentColor" d="M14 22h28v26a4 4 0 0 1-4 4h-2v8a4 4 0 0 1-8 0v-8h-4v8a4 4 0 0 1-8 0v-8h-2a4 4 0 0 1-4-4zM5 24a4 4 0 0 1 8 0v16a4 4 0 0 1-8 0zM43 24a4 4 0 0 1 8 0v16a4 4 0 0 1-8 0zM14 19c0-6 5-11 11-12l-3-5 1.5-1 3.3 5.4a14 14 0 0 1 2.4 0L32.5 1 34 2l-3 5c6 1 11 6 11 12zm8-6a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm12 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4z"/></svg>',
+  scissors: '<svg viewBox="0 0 44 36" fill="none" stroke="currentColor" stroke-width="3"><circle cx="9" cy="9" r="6"/><circle cx="9" cy="27" r="6"/><path d="M14 12 42 30M14 24 42 6"/></svg>',
+  // The brand symbol «recibo-casa», cropped to its ink so it sits like the Apple mark does.
+  symbol: '<svg viewBox="17 13 66 78" fill="none" stroke="currentColor" aria-hidden="true"><path d="M22 86V43L50 18l28 25v43l-5.6-5-5.6 5-5.6-5-5.6 5-5.6-5-5.6 5-5.6-5-5.6 5-5.6-5z" stroke-width="7.5" stroke-linejoin="round"/><path d="M36 54h28M36 66h18" stroke-width="7" stroke-linecap="round"/></svg>',
+  check: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4.5 12.5 10 18 19.5 6.5"/></svg>',
+  alert: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" aria-hidden="true"><path d="M12 4.5v10M12 19.4v.1"/></svg>',
+  eye: '<svg class="eye" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2.5 12S6 5.5 12 5.5 21.5 12 21.5 12 18 18.5 12 18.5 2.5 12 2.5 12z"/><circle cx="12" cy="12" r="2.8"/></svg>',
+  eyeOff: '<svg class="eye-off" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2.5 12S6 5.5 12 5.5 21.5 12 21.5 12 18 18.5 12 18.5 2.5 12 2.5 12z"/><circle cx="12" cy="12" r="2.8"/><path d="M4.5 4.5l15 15"/></svg>',
+  ruleMark: '<svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect class="mark-todo" x="4" y="4" width="12" height="12" stroke-width="1.8"/><path class="mark-ok" d="M3.5 10.5 8 15 16.5 5" stroke-width="2.6"/></svg>',
+};
+
+// src/styles/utility.css → /assets/utility.css, linked with a content hash.
+function buildUtilityCss() {
+  const css = readFileSync(join(SRC, 'styles', 'utility.css'), 'utf8');
+  writeFile(join(ROOT, 'assets', 'utility.css'), css);
+  console.log('✓ assets/utility.css');
+  return `/assets/utility.css?v=${createHash('sha1').update(css).digest('hex').slice(0, 8)}`;
+}
+
 // ------------- load data -------------
 const i18n = {};
 for (const loc of config.locales) {
@@ -137,7 +206,7 @@ function renderHome() {
     const ctx = {
       locale,
       baseUrl: config.baseUrl,
-      appStoreUrl: config.appStoreUrl,
+      ...shared(locale),
       contactEmail: config.contactEmail,
       promoSignupUrl: config.promoSignupUrl,
       homeHref,
@@ -196,7 +265,7 @@ function renderHub({ route, hubKey, items, label, placeholders, showTrust }) {
     const ctx = {
       locale,
       baseUrl: config.baseUrl,
-      appStoreUrl: config.appStoreUrl,
+      ...shared(locale),
       contactEmail: config.contactEmail,
       promoSignupUrl: config.promoSignupUrl,
       homeHref,
@@ -365,7 +434,7 @@ function renderComparisons() {
       const ctx = {
         locale,
         baseUrl: config.baseUrl,
-        appStoreUrl: config.appStoreUrl,
+        ...shared(locale),
         contactEmail: config.contactEmail,
         promoSignupUrl: config.promoSignupUrl,
         homeHref,
@@ -416,7 +485,7 @@ function renderFromSplitwise() {
     const ctx = {
       locale,
       baseUrl: config.baseUrl,
-      appStoreUrl: config.appStoreUrl,
+      ...shared(locale),
       contactEmail: config.contactEmail,
       promoSignupUrl: config.promoSignupUrl,
       homeHref,
@@ -473,7 +542,7 @@ function renderTools() {
       const ctx = {
         locale,
         baseUrl: config.baseUrl,
-        appStoreUrl: config.appStoreUrl,
+        ...shared(locale),
         contactEmail: config.contactEmail,
         promoSignupUrl: config.promoSignupUrl,
         homeHref,
@@ -531,7 +600,7 @@ function renderGuides() {
       const ctx = {
         locale,
         baseUrl: config.baseUrl,
-        appStoreUrl: config.appStoreUrl,
+        ...shared(locale),
         contactEmail: config.contactEmail,
         promoSignupUrl: config.promoSignupUrl,
         homeHref,
@@ -559,9 +628,9 @@ function renderGuides() {
 }
 
 // ------------- DELETE ACCOUNT (Google Play "account deletion URL") -------------
-function renderDeleteAccount() {
+// One page per language, in the new identity. noindex and therefore not in the sitemap.
+function renderDeleteAccount(cssHref) {
   const route = '/delete-account/';
-  const alternates = buildAlternatesRel(route);
   const alternatesAbs = buildAlternatesAbs(route);
 
   for (const locale of config.locales) {
@@ -571,7 +640,6 @@ function renderDeleteAccount() {
       console.warn(`  skipped delete-account (${locale}): missing pages.deleteAccount`);
       continue;
     }
-    const homeHref = localePrefix(locale) + '/';
 
     const jsonLd = {
       '@context': 'https://schema.org',
@@ -585,29 +653,29 @@ function renderDeleteAccount() {
 
     const ctx = {
       locale,
-      baseUrl: config.baseUrl,
-      appStoreUrl: config.appStoreUrl,
-      contactEmail: config.contactEmail,
-      promoSignupUrl: config.promoSignupUrl,
-      developerName: config.developerName,
-      homeHref,
-      alternates,
-      alternatesAbs,
+      defaultLocale: config.defaultLocale,
+      runtime: false,
+      robots: 'noindex',
       pageTitle: pageBundle.title,
-      pageDescription: pageBundle.description,
+      description: pageBundle.description,
       canonicalUrl: absoluteUrl(locale, route),
-      ogTitle: pageBundle.title,
-      ogDescription: pageBundle.description,
-      ogLocale: bundle.meta.ogLocale,
-      ogType: 'website',
+      alternatesAbs,
       jsonLd,
-      ui: bundle.ui,
+      jsonLdJson: inlineJson(jsonLd),
+      cssHref,
+      langs: LANG_ORDER.map((code) => ({ code, name: LANG_NAMES[code], href: `${localePrefix(code)}${route}` })),
+      homeHref: localePrefix(locale) + '/',
+      deleteHref: `${localePrefix(locale)}${route}`,
+      brand: { language: bundle.ui.nav.language, ...bundle.ui.brand },
+      contactEmail: config.contactEmail,
+      developerName: config.developerName,
+      analytics: analyticsSnippet(),
+      esc: escapeHtml,
       page: { deleteAccount: pageBundle },
     };
 
-    const html = renderWithLayout('delete-account', ctx);
-    writeFile(outPath(locale, route), html);
-    registerRoute(route, locale);
+    const body = render('delete-account', ctx);
+    writeFile(outPath(locale, route), render('_utility-layout', { ...ctx, body }));
     console.log(`✓ delete-account (${locale})`);
   }
 }
@@ -620,24 +688,21 @@ function utilityStrings(pick) {
     const bundle = i18n[locale];
     strings[locale] = {
       'common.language': bundle.ui.nav.language,
-      'common.help': bundle.ui.footer.help,
-      'common.privacy': bundle.ui.footer.privacy,
-      'common.terms': bundle.ui.footer.terms,
-      'common.delete_account': bundle.ui.footer.delete_account,
-      'common.copyright': bundle.ui.footer.copyright,
+      ...flatten('common', bundle.ui.brand),
       ...pick(bundle),
     };
   }
   return strings;
 }
 
-function renderUtility(template, { outFile, robots, referrer, titleKey, strings, headScripts, bodyScripts, extra }) {
+function renderUtility(template, { outFile, cssHref, robots, referrer, titleKey, strings, headInline, headScripts, bodyScripts, analytics = true, extra }) {
   const locale = config.defaultLocale; // server-rendered fallback (no JS)
   const ctx = {
     locale,
-    locales: config.locales,
+    defaultLocale: config.defaultLocale,
+    runtime: true,
     baseUrl: config.baseUrl,
-    appStoreUrl: config.appStoreUrl,
+    appStore: appStoreHref,
     playStoreUrl: config.playStoreUrl,
     playStoreLive: config.playStoreLive,
     appScheme: config.appScheme,
@@ -645,8 +710,16 @@ function renderUtility(template, { outFile, robots, referrer, titleKey, strings,
     robots,
     referrer,
     titleKey,
+    cssHref,
+    headInline,
     headScripts,
     bodyScripts,
+    langs: LANG_ORDER.map((code) => ({ code, name: LANG_NAMES[code] })),
+    homeHref: '/',
+    deleteHref: '/delete-account/',
+    brand: { language: i18n[locale].ui.nav.language, ...i18n[locale].ui.brand },
+    icons,
+    analytics: analytics ? analyticsSnippet() : '',
     s: strings[locale],
     esc: escapeHtml,
     i18nJson: inlineJson({ defaultLocale: locale, strings }),
@@ -657,28 +730,65 @@ function renderUtility(template, { outFile, robots, referrer, titleKey, strings,
   console.log(`✓ ${outFile} (runtime language: ${config.locales.join('/')})`);
 }
 
-// GitHub Pages serves /404.html for every unknown path → also the /join/CODE fallback
-function renderNotFound() {
+// GitHub Pages serves /404.html for every unknown path. It also forwards the legacy
+// invite links /join/CODE to /join/?c=CODE (src/js/not-found.js).
+function renderNotFound(cssHref) {
   renderUtility('not-found', {
     outFile: '404.html',
+    cssHref,
     robots: 'noindex',
     titleKey: 'nf.title',
-    strings: utilityStrings((b) => ({ ...flatten('nf', b.pages.notFound), ...flatten('join', b.pages.join) })),
+    strings: utilityStrings((b) => flatten('nf', b.pages.notFound)),
     headScripts: ['/src/js/not-found.js'],
     bodyScripts: [],
   });
 }
 
+// The invite link the app shares: https://homepotapp.com/join/?c=CODE. A real page, so it
+// answers 200 and WhatsApp / iMessage can show a preview card. The card's tags are static
+// (crawlers do not run scripts) and the page is one URL for every language, so they are
+// written in Spanish + English; the page itself is shown in the visitor's language.
+// No canonical / og:url on purpose: some crawlers would follow it and drop the ?c= code.
+function renderJoin(cssHref) {
+  const es = i18n.es.pages.join;
+  const en = i18n.en.pages.join;
+  renderUtility('join', {
+    outFile: 'join/index.html',
+    cssHref,
+    robots: 'noindex',
+    titleKey: 'join.title',
+    // card_* strings only feed the static preview tags below
+    strings: utilityStrings((b) => Object.fromEntries(Object.entries(flatten('join', b.pages.join)).filter(([key]) => !key.startsWith('join.card_')))),
+    headInline: `window.__HP_JOIN = ${inlineJson({ inviteBase: `${config.baseUrl}/join/?c=` })};`,
+    headScripts: ['/src/js/join.js'],
+    bodyScripts: [],
+    extra: {
+      description: `${es.card_description} ${en.card_description}`,
+      og: {
+        title: `${es.card_title} · ${en.card_title}`,
+        description: `${es.card_description} ${en.card_description}`,
+        image: `${config.baseUrl}/og-join.png?v=${OG_IMAGE_VERSION}`,
+        imageAlt: `HomePot. ${es.card_title}. ${en.card_title}.`,
+        locales: [i18n.es.meta.ogLocale, i18n.en.meta.ogLocale],
+      },
+    },
+  });
+}
+
 // The app always links to exactly https://homepotapp.com/reset-password/
-function renderResetPassword() {
+// No analytics beacon here, whatever the config says: recovery tokens travel in this
+// page's URL and must not reach a third party.
+function renderResetPassword(cssHref) {
   renderUtility('reset-password', {
     outFile: 'reset-password/index.html',
+    cssHref,
     robots: 'noindex, nofollow',
     referrer: 'no-referrer', // recovery tokens travel in the URL
     titleKey: 'rp.title',
     strings: utilityStrings((b) => flatten('rp', b.pages.resetPassword)),
     headScripts: [],
     bodyScripts: [config.supabase.jsUrl, '/src/js/reset-password.js'],
+    analytics: false,
     extra: { supabaseJson: inlineJson({ url: config.supabase.url, anonKey: config.supabase.anonKey }) },
   });
 }
@@ -728,6 +838,9 @@ function renderWellKnown() {
 }
 
 // ------------- SITEMAP -------------
+// One <url> entry per language version (not only the default locale), each listing the
+// full set of hreflang alternates, as Google asks for localized pages. Only pages that
+// call registerRoute() get here: /join/, /reset-password/, /delete-account/ and 404 do not.
 function renderSitemap() {
   // Group routes by path so each URL entry has all hreflang alternates
   const byRoute = new Map();
@@ -743,24 +856,51 @@ function renderSitemap() {
     '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">',
   ];
 
+  let count = 0;
   for (const [route, locales] of byRoute.entries()) {
+    const alternates = Object.entries(locales).map(
+      ([lang, url]) => `    <xhtml:link rel="alternate" hreflang="${lang}" href="${url}"/>`
+    );
     const defaultUrl = locales[config.defaultLocale];
-    if (!defaultUrl) continue;
-    xml.push('  <url>');
-    xml.push(`    <loc>${defaultUrl}</loc>`);
-    xml.push(`    <lastmod>${today}</lastmod>`);
-    xml.push('    <changefreq>weekly</changefreq>');
-    xml.push(`    <priority>${route === '/' ? '1.0' : '0.8'}</priority>`);
+    if (defaultUrl) alternates.push(`    <xhtml:link rel="alternate" hreflang="x-default" href="${defaultUrl}"/>`);
+
     for (const [lang, url] of Object.entries(locales)) {
-      xml.push(`    <xhtml:link rel="alternate" hreflang="${lang}" href="${url}"/>`);
+      const isDefault = lang === config.defaultLocale;
+      xml.push('  <url>');
+      xml.push(`    <loc>${url}</loc>`);
+      xml.push(`    <lastmod>${today}</lastmod>`);
+      xml.push('    <changefreq>weekly</changefreq>');
+      xml.push(`    <priority>${route === '/' ? (isDefault ? '1.0' : '0.9') : '0.8'}</priority>`);
+      xml.push(...alternates);
+      xml.push('  </url>');
+      count++;
     }
-    xml.push(`    <xhtml:link rel="alternate" hreflang="x-default" href="${locales[config.defaultLocale]}"/>`);
-    xml.push('  </url>');
   }
 
   xml.push('</urlset>');
   writeFile(join(ROOT, 'sitemap.xml'), xml.join('\n') + '\n');
-  console.log(`✓ sitemap.xml (${byRoute.size} routes × ${config.locales.length} locales)`);
+  console.log(`✓ sitemap.xml (${count} URLs: ${byRoute.size} routes × language versions)`);
+}
+
+// ------------- ANALYTICS ON HAND-WRITTEN PAGES -------------
+// /privacy/, /terms/ and /support/ are not generated. They carry a pair of marker comments
+// before </body>; the beacon (or nothing, while the token is empty) is written between them.
+const STATIC_PAGES = ['privacy/index.html', 'terms/index.html', 'support/index.html'];
+function injectStaticAnalytics() {
+  const snippet = analyticsSnippet();
+  const marker = /(<!-- analytics:start[^>]*-->)[\s\S]*?(<!-- analytics:end -->)/;
+  for (const rel of STATIC_PAGES) {
+    const file = join(ROOT, rel);
+    if (!existsSync(file)) continue;
+    const html = readFileSync(file, 'utf8');
+    if (!marker.test(html)) {
+      console.warn(`  warning: ${rel} has no analytics markers, the beacon cannot be added there`);
+      continue;
+    }
+    const next = html.replace(marker, (_, open, close) => `${open}${snippet ? `\n${snippet}\n` : ''}${close}`);
+    if (next !== html) writeFileSync(file, next, 'utf8');
+    console.log(`✓ ${rel} (analytics ${snippet ? 'on' : 'off'})`);
+  }
 }
 
 // ------------- ROBOTS -------------
@@ -787,10 +927,15 @@ renderComparisons();
 renderFromSplitwise();
 renderTools();
 renderGuides();
-renderDeleteAccount();
-renderNotFound();
-renderResetPassword();
+const utilityCss = buildUtilityCss();
+renderDeleteAccount(utilityCss);
+renderNotFound(utilityCss);
+renderJoin(utilityCss);
+renderResetPassword(utilityCss);
 renderWellKnown();
 renderSitemap();
 renderRobots();
+injectStaticAnalytics();
+if (!analyticsSnippet()) console.log('  analytics: off (build.config.js → analytics.cloudflareToken is empty)');
+if (!String(config.appStore?.providerToken || '').trim()) console.log('  App Store campaign links: off (build.config.js → appStore.providerToken is empty)');
 console.log(`\nDone. ${routes.length} pages generated.`);

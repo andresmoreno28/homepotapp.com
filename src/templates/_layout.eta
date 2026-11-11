@@ -16,6 +16,7 @@
 <script src="/src/js/lang-switcher.js" defer></script>
 <script src="/src/js/site.js" defer></script>
 <% if (it.extraScripts) { %><%~ it.extraScripts %><% } %>
+<%~ it.analytics || '' %>
 
 </body>
 </html>

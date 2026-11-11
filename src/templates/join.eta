@@ -1,0 +1,56 @@
+<% const s = it.s; const e = it.esc; const i = it.icons; %>
+<%/*
+  /join/?c=CODE — the invite link the app shares. With the app installed, Universal Links /
+  App Links open it directly and this page is never seen; this is the page for everyone else.
+  Two states, both in the markup; src/js/join.js picks one in <head>, before first paint:
+    .if-code    a valid ?c= code is present (html.hp-code)
+    .if-nocode  no code: a neutral «open the app» page (also the no-JS fallback)
+*/%>
+  <div class="page-head">
+    <h1>
+      <span class="if-code" data-t="join.h1"><%= e(s['join.h1']) %></span>
+      <span class="if-nocode" data-t="join.nocode_h1"><%= e(s['join.nocode_h1']) %></span>
+    </h1>
+    <p class="lead if-code" data-t="join.intro"><%= e(s['join.intro']) %></p>
+    <p class="lead if-nocode" data-t="join.nocode_intro"><%= e(s['join.nocode_intro']) %></p>
+    <p class="fine if-code"><span data-t="join.code_label"><%= e(s['join.code_label']) %></span>: <span class="code" id="join-code"></span></p>
+  </div>
+
+  <div class="page-body">
+    <div class="block before-slip">
+      <a class="action" id="join-open" href="<%= it.appScheme %>" data-scheme="<%= it.appScheme %>">
+        <%~ i.symbol %>
+        <span class="if-code" data-t="join.open_app"><%= e(s['join.open_app']) %></span>
+        <span class="if-nocode" data-t="join.open_app_plain"><%= e(s['join.open_app_plain']) %></span>
+      </a>
+      <p class="fine" data-t="join.open_hint"><%= e(s['join.open_hint']) %></p>
+    </div>
+
+    <section class="block slip" aria-labelledby="join-install">
+      <div class="cutline" aria-hidden="true"><%~ i.scissors %></div>
+      <h2 id="join-install" data-t="join.install_title"><%= e(s['join.install_title']) %></h2>
+      <div class="stores">
+        <a class="store-line" data-store href="<%= it.appStore('web-join') %>" target="_blank" rel="noopener">
+          <%~ i.apple %>
+          <span data-t="join.app_store"><%= e(s['join.app_store']) %></span>
+        </a>
+<% if (it.playStoreLive) { %>
+        <a class="store-line" data-store href="<%= it.playStoreUrl %>" target="_blank" rel="noopener">
+          <%~ i.android %>
+          <span data-t="join.play_store"><%= e(s['join.play_store']) %></span>
+        </a>
+<% } else { %>
+        <p class="android"><%~ i.android %><span data-t="join.play_soon"><%= e(s['join.play_soon']) %></span></p>
+<% } %>
+      </div>
+      <p class="fine if-code" id="join-copy-hint" data-t="join.copy_hint"><%= e(s['join.copy_hint']) %></p>
+      <div class="notice" id="join-copied" role="status" aria-live="polite" hidden>
+        <%~ i.check %>
+        <p class="notice-text" data-t="join.copied"><%= e(s['join.copied']) %></p>
+      </div>
+      <div class="notice" id="join-copy-failed" role="status" aria-live="polite" hidden>
+        <%~ i.alert %>
+        <p class="notice-text" data-t="join.copy_failed"><%= e(s['join.copy_failed']) %></p>
+      </div>
+    </section>
+  </div>
